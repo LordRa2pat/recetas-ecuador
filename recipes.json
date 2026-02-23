@@ -1,5 +1,121 @@
 [
   {
+    "slug": "caldo-de-bolas-ecuatoriano",
+    "title": "Caldo de Bolas Ecuatoriano",
+    "description": "Disfruta del tradicional caldo de bolas ecuatoriano, una sopa reconfortante de la Sierra, con bolas de plátano verde rellenas de carne y un caldo lleno de sabor con maíz y hierbas frescas. Perfecto para días fríos o reuniones familiares.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "60 min",
+    "total_time": "90 min",
+    "image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80",
+    "image_alt": "Tazón de caldo de bolas ecuatoriano con bolas de plátano y maíz en un caldo aromático",
+    "ingredients": [
+      "4 plátanos verdes (para las bolas)",
+      "500 g de carne de res molida",
+      "1 cebolla blanca finamente picada",
+      "2 dientes de ajo triturados",
+      "1 pimiento verde picado",
+      "2 tomates pelados y picados",
+      "2 litros de agua o caldo de res",
+      "2 mazorcas de maíz cortadas en trozos",
+      "1 taza de arvejas frescas o congeladas",
+      "2 zanahorias en rodajas",
+      "1 ramita de cilantro fresco",
+      "1 cucharadita de comino molido",
+      "Sal y pimienta al gusto"
+    ],
+    "instructions": [
+      "Pelar los plátanos verdes, rallarlos y reservar la mitad para las bolas. Cocinar la otra mitad en agua hirviendo por 5 minutos, luego machacar hasta obtener un puré.",
+      "Mezclar el puré de plátano con el rallado crudo, formar una masa y reservar. Si está muy seca, agregar un poco de agua.",
+      "En un bol, mezclar la carne molida con la mitad de la cebolla, ajo, comino, sal y pimienta. Formar pequeñas albóndigas.",
+      "Tomar porciones de la masa de plátano, hacer un hueco en el centro, colocar una albóndiga de carne y cerrar formando bolas. Reservar.",
+      "En una olla grande, sofreír el resto de cebolla, ajo, pimiento y tomate. Agregar el agua o caldo, llevar a ebullición y añadir el maíz, zanahorias y arvejas. Cocinar a fuego medio por 30 minutos.",
+      "Incorporar las bolas de plátano al caldo, cocinar por 15-20 minutos más hasta que floten. Ajustar sal y pimienta, decorar con cilantro fresco y servir caliente."
+    ],
+    "tips": [
+      "Si las bolas de plátano se deshacen, asegúrate de que la masa esté bien compacta antes de añadirlas al caldo.",
+      "Puedes agregar yuca o papas al caldo para hacerlo más sustancioso.",
+      "Para un sabor más intenso, utiliza caldo de res casero en lugar de agua.",
+      "Sirve con un toque de ají ecuatoriano para un picante adicional."
+    ],
+    "keywords": [
+      "caldo de bolas ecuatoriano",
+      "receta caldo de bolas",
+      "sopa ecuatoriana tradicional",
+      "caldo de bolas sierra",
+      "receta sopa plátano verde",
+      "comida típica ecuador",
+      "platos sierra ecuatoriana",
+      "caldo de bolas receta fácil"
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Cuenca",
+        "province": "Azuay",
+        "region": "Sierra"
+      },
+      {
+        "city": "Riobamba",
+        "province": "Chimborazo",
+        "region": "Sierra"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "plátanos verdes",
+        "sustituto_usa": "plantains verdes (disponibles en mercados latinos)",
+        "sustituto_europa": "plantains verdes en tiendas latinas o africanas"
+      },
+      {
+        "original": "arvejas frescas",
+        "sustituto_usa": "frozen peas",
+        "sustituto_europa": "frozen peas"
+      }
+    ],
+    "tourism_route": "📍 Quito: Mercado San Francisco. Prueba el auténtico caldo de bolas en este mercado tradicional, un lugar icónico para la comida serrana. Precio: $3-5 USD.",
+    "youtube_videos": [
+      {
+        "title": "Caldo de Bola IRRESISTIBLE | KWA",
+        "videoId": "9GhS9PsKPhM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=9GhS9PsKPhM",
+        "embed": "https://www.youtube-nocookie.com/embed/9GhS9PsKPhM",
+        "uploadDate": "2022-03-10",
+        "description": "Seguro lo vas a querer probar! #CaldoDeBola #KWAEC \n\nIngredientes:\n\nPara el Caldo:\n2 Libras de Osobuco\n1 Libra de Costilla de Res\n3 Cucharadas de Achiote\n3 Cucharadas de Ajo Picado\n1/2 Taza de Cebolla"
+      },
+      {
+        "title": "Cómo hacer CALDO DE BOLA Ecuatoriano 🇪🇨 con Camarón 🦐 Receta paso a paso | KWA",
+        "videoId": "H4zMaS9ypo4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=H4zMaS9ypo4",
+        "embed": "https://www.youtube-nocookie.com/embed/H4zMaS9ypo4",
+        "uploadDate": "2025-07-19",
+        "description": "🦐 ¡Deléitate con esta receta tradicional de Caldo de Bola rellena de camarón! 🇪🇨\n\nEn este video te enseñamos paso a paso cómo preparar un delicioso caldo de bola ecuatoriano, una sopa típica llena "
+      },
+      {
+        "title": "CALDO de BOLA | Receta ecuatoriana súper fácil y deliciosa",
+        "videoId": "GuVY0kwe21I",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=GuVY0kwe21I",
+        "embed": "https://www.youtube-nocookie.com/embed/GuVY0kwe21I",
+        "uploadDate": "2023-11-09",
+        "description": "Definitivamente el tradicional caldo de bolas está en el top5 de los caldos que más me gustan, así que hoy te enseño como yo preparo está delicia.\n#caldodebolas #recetasecuatorianas #gastronomiaecuato"
+      }
+    ],
+    "id": 5,
+    "created_at": "2026-02-23T23:40:41.477Z"
+  },
+  {
     "slug": "yahuarlocro-receta-ecuatoriana",
     "title": "Yahuarlocro",
     "description": "Descubre el auténtico Yahuarlocro, una sopa tradicional de la Sierra ecuatoriana hecha con borrego, sangre y papas. Este plato reconfortante combina sabores intensos y texturas únicas, ideal para los amantes de la comida típica andina. ¡Prepáralo en casa y vive Ecuador en cada bocado!",

@@ -1,385 +1,298 @@
-═══════════════════════════════════════════════════════════════════════════════
-  BIBLIOTECA DE RECETAS ECUATORIANAS — GUÍA COMPLETA DE CONFIGURACIÓN n8n
-  Revista Premium de Gastronomía y Turismo Ecuatoriano
-═══════════════════════════════════════════════════════════════════════════════
+====================================================================
+RECETAS-AI-Auto-Publisher — Instrucciones n8n v3.0
+Biblioteca de Recetas Ecuatorianas
+Actualizado: 2026-02-23
+====================================================================
 
-Fecha:   2026-02-23
-Versión: 2.0 — Multi-nicho (Local + Diáspora + Turismo)
-Repo:    https://github.com/LordRa2pat/recetas-ecuador
-Site:    https://recetas-ecuador.vercel.app
-Workflow ID: b8Yncjf4NRZE6kqj
+RESUMEN DEL SISTEMA
+--------------------
+El sitio recetas-ecuador.vercel.app publica recetas automaticamente
+cada 12 horas usando n8n + Grok (xAI) + YouTube API + Google Places.
 
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 1 — ESTRATEGIA EDITORIAL
-───────────────────────────────────────────────────────────────────────────────
+Repositorio: https://github.com/LordRa2pat/recetas-ecuador
+Deploy: Vercel (auto-rebuild al hacer push al branch main)
 
-El sitio sirve a TRES audiencias simultáneas con el mismo JSON:
+====================================================================
+SECCION 1: VARIABLES DE ENTORNO
+====================================================================
 
-1. LOCAL (Ecuador)        — Recetas clásicas para cocinar en Ecuador
-2. DIÁSPORA (Exterior)    — Ecuatorianos en EE.UU./Europa que quieren cocinar
-                            platos patrios con ingredientes locales
-3. TURISTA (Visitantes)   — Viajeros que quieren explorar la gastronomía
-                            y saber DÓNDE probar los platos
+Configura en n8n -> Settings -> Environment Variables:
 
-Cada receta puede servir a 1, 2 o 3 audiencias según los campos opcionales
-que se incluyan (ver esquema JSON en Sección 3).
+  XAI_API_KEY          -> Clave API de xAI / Grok
+                          https://console.x.ai/
+  GITHUB_TOKEN         -> Personal Access Token de GitHub
+                          Permisos: Contents (read/write)
+                          https://github.com/settings/tokens
+  YT_API_KEY           -> YouTube Data API v3
+                          https://console.cloud.google.com/
+                          Habilitar: YouTube Data API v3
+                          Quota gratuita: 10,000 unidades/dia
+  GMAPS_API_KEY        -> Google Places API (New)
+                          https://console.cloud.google.com/
+                          Habilitar: Places API (New)
+                          Costo: ~$0.017 por busqueda de texto
+  PEXELS_API_KEY       -> (Opcional) Pexels API para imagenes fallback
+                          https://www.pexels.com/api/
 
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 2 — WORKFLOW n8n: RECETAS-AI-Auto-Publisher
-───────────────────────────────────────────────────────────────────────────────
+En los nodos n8n, usa expresiones:
+  Authorization: Bearer {{$env.XAI_API_KEY}}
+  token {{$env.GITHUB_TOKEN}}
+  key={{$env.YT_API_KEY}}
+  X-Goog-Api-Key: {{$env.GMAPS_API_KEY}}
 
-El workflow corre de lunes a viernes a las 10:00 AM hora Ecuador (UTC-5).
-Flujo: Schedule → Nombrador → Chef Redactor → Parser → GET GitHub → Merge → PUT GitHub
+====================================================================
+SECCION 2: FLUJO COMPLETO v3
+====================================================================
 
-NODO 1: Schedule Trigger
-  - Cron: 0 15 * * 1-5  (10:00 AM EC = 15:00 UTC)
+Schedule (12h)
+  -> GET existing slugs (GitHub) — anti-dedup
+  -> Extraer slugs existentes (Code)
+  -> Nombrador de Plato (grok-3-mini)
+  -> Chef Redactor v3 (grok-3)
+  -> Parsear Receta JSON (Code)
+  -> [PARALELO]:
+      a) YouTube: Buscar Videos -> YouTube: Validar Embeddable -> Procesar Videos
+      b) Places: Ciudad 1 -+
+         Places: Ciudad 2 -+-> Procesar Places (Code)
+         Places: Ciudad 3 -+
+      c) Wikimedia: Buscar Imagen -> Procesar Imagen (Code)
+  -> Enriquecer Receta (Code) — fusiona a+b+c
+  -> Quality Gate (Code) — validacion minimos
+  -> GET recipes.json (GitHub)
+  -> Merge + Preparar Commit (Code)
+  -> PUT recipes.json a GitHub -> Vercel rebuild automatico
 
-NODO 2: Nombrador de Plato (Grok — grok-2-mini)
-  - HTTP POST → https://api.x.ai/v1/chat/completions
-  - Elige 1 plato ecuatoriano que aún NO esté en recipes.json
-  - Output: choices[0].message.content = nombre del plato
+====================================================================
+SECCION 3: NODO "Nombrador de Plato" (grok-3-mini)
+====================================================================
 
-NODO 3: Chef Redactor (Grok — grok-2)
-  - HTTP POST → https://api.x.ai/v1/chat/completions
-  - Usa el MASTER PROMPT completo (ver Sección 4)
-  - Output: choices[0].message.content = JSON de la receta
+Modelo: grok-3-mini
+Max tokens: 40
+Endpoint: https://api.x.ai/v1/chat/completions
 
-NODO 4: Parsear Receta JSON (Code Node)
-  - Lee la respuesta del LLM y extrae el JSON
-  - Ver código en Sección 5
+PROMPT SISTEMA:
+  "Eres un experto en gastronomia ecuatoriana. Solo respondes con nombres de platos."
 
-NODO 5: GET recipes.json (HTTP Request → GitHub API)
-  - GET https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json
-  - Headers: Authorization: Bearer {TOKEN}, User-Agent: n8n-bot
+PROMPT USUARIO (con anti-dedup):
+  "Dame el nombre de un plato tipico ecuatoriano poco conocido o una variacion
+   original. IMPORTANTE: NO sugieras ninguno de estos platos que ya existen:
+   [lista de titulos existentes, max 30].
+   Elige algo diferente, menos conocido o una variacion regional.
+   Solo responde con el nombre del plato, sin explicaciones, sin puntuacion al final."
 
-NODO 6: Merge + Preparar Commit (Code Node)
-  - Decodifica base64, agrega nueva receta, re-encoda
-  - Ver código en Sección 5
+====================================================================
+SECCION 4: MASTER PROMPT — Chef Redactor v3 (grok-3)
+====================================================================
 
-NODO 7: PUT recipes.json a GitHub (HTTP Request)
-  - PUT mismo endpoint
-  - Body: { message, content (base64), sha }
-  - El commit en GitHub dispara auto-deploy en Vercel
+Modelo: grok-3
+Max tokens: 3000
+Endpoint: https://api.x.ai/v1/chat/completions
 
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 3 — ESQUEMA JSON COMPLETO DE RECETA
-───────────────────────────────────────────────────────────────────────────────
+PROMPT SISTEMA:
+  Eres un equipo de tres expertos combinados:
 
-CAMPOS OBLIGATORIOS:
+  1. CHEF ECUATORIANO PROFESIONAL: Conoces todas las recetas regionales del
+     Ecuador (Sierra, Costa, Amazonia, Galapagos) con profundidad gastronomica,
+     proporciones exactas, tecnicas de coccion y variantes regionales.
+
+  2. GUIA TURISTICO Y CONSULTOR DE DIASPORA: Para platos con ingredientes
+     dificiles fuera de Ecuador, sabes exactamente que sustitutos usar en
+     EE.UU. y Europa. Conoces donde probar cada plato (mercados, restaurantes).
+
+  3. EXPERTO SEO CULINARIO: Escribes titulos y descripciones optimizados para
+     Google. Generas keywords long-tail relevantes.
+
+  RESPONDE UNICAMENTE con JSON valido, sin markdown, sin explicaciones.
+
+SCHEMA JSON COMPLETO A GENERAR:
+  {
+    "slug": "nombre-kebab-case-sin-acentos",
+    "title": "Nombre del Plato",
+    "description": "Descripcion apetitosa MINIMO 90 chars MAXIMO 150",
+    "region": "Sierra|Costa|Amazonia|Galapagos",
+    "category": "Sopas|Platos Fuertes|Entradas|Postres|Bebidas|Desayunos|Mariscos",
+    "difficulty": "Facil|Media|Dificil",
+    "servings": "X personas",
+    "prep_time": "X min",
+    "cook_time": "X min",
+    "total_time": "X min",
+    "image_url": "https://images.unsplash.com/photo-XXXX?w=800&q=80",
+    "image_alt": "Descripcion detallada de la imagen para SEO y accesibilidad",
+    "ingredients": ["cantidad ingrediente"],
+    "instructions": ["Paso 1...", "Paso 2..."],
+    "tips": ["Tip 1..."],
+    "keywords": ["keyword1", "keyword2"],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {"city": "Quito", "province": "Pichincha", "region": "Sierra"}
+    ],
+    "youtube_query": "nombre plato receta ecuatoriana como preparar",
+    "image_keywords": ["english keyword 1", "english keyword 2"],
+    "international_substitutes": [
+      {"original": "...", "sustituto_usa": "...", "sustituto_europa": "..."}
+    ],
+    "tourism_route": "Ciudades: [descripcion]. Precio: $X-Y USD."
+  }
+
+  REGLAS:
+  - origin_cities: 2-4 ciudades donde el plato es tipico.
+  - youtube_query: maximo 8 palabras en espanol para buscar en YouTube.
+  - image_keywords: 5-8 terminos en INGLES para buscar fotos del plato.
+  - Incluye international_substitutes si tiene ingredientes dificiles fuera de Ecuador.
+  - Incluye tourism_route si tiene ruta gastronomica clara.
+  - Minimo 8 ingredientes, 6 instrucciones, 2 tips.
+  - description: MINIMO 90 chars, MAXIMO 150.
+
+====================================================================
+SECCION 5: ESQUEMA JSON COMPLETO — recipes.json v3
+====================================================================
+
+Todos los campos marcados [OPC] son opcionales. El sitio los maneja
+con render condicional (si no existen, la seccion se oculta).
+
 {
-  "id":               integer (auto-incremental),
-  "slug":             "nombre-del-plato-en-kebab-case",
-  "title":            "Nombre del Plato",
-  "description":      "Descripción apetitosa de 1-2 oraciones (60-120 chars)",
-  "region":           "Sierra" | "Costa" | "Amazonia" | "Galapagos",
-  "category":         "Sopas" | "Platos Fuertes" | "Entradas" | "Postres" | "Bebidas" | "Desayunos" | "Mariscos",
-  "difficulty":       "Fácil" | "Media" | "Difícil",
-  "servings":         "4 personas",
-  "prep_time":        "15 min",
-  "cook_time":        "30 min",
-  "total_time":       "45 min",
-  "image_url":        "https://images.unsplash.com/photo-XXXXX?w=800&q=80",
-  "ingredients":      [ "2 tazas de maíz", "1 cebolla paiteña", ... ],
-  "instructions":     [ "Paso 1...", "Paso 2...", ... ],
-  "keywords":         [ "locro", "papas", "sierra ecuatoriana", ... ],
-  "date_published":   "2026-02-23"
-}
+  // CAMPOS BASE (siempre presentes)
+  "id": 1,                              // auto-generado
+  "slug": "locro-de-papa",
+  "title": "Locro de Papa",
+  "description": "...",                 // minimo 90 chars
+  "region": "Sierra",
+  "category": "Sopas",
+  "difficulty": "Media",
+  "servings": "4 personas",
+  "prep_time": "15 min",
+  "cook_time": "45 min",
+  "total_time": "60 min",
+  "image_url": "https://...",
+  "image_alt": "Locro de papa...",      // [v3] alt text descriptivo
+  "ingredients": ["..."],
+  "instructions": ["..."],
+  "tips": ["..."],
+  "keywords": ["..."],
+  "date_published": "2026-02-23",
+  "created_at": "2026-02-23T...",
 
-CAMPOS OPCIONALES (añaden contenido multi-nicho):
-
-  "tips":             [ "Tip 1...", "Tip 2..." ],
-
-  // DIÁSPORA — Para ecuatorianos viviendo en el exterior
-  "target_audience":  "Local" | "Diáspora" | "Turista",
-
+  // CAMPOS AUDIENCE [OPC]
+  "target_audience": "Local",
   "international_substitutes": [
+    {"original": "Achote", "sustituto_usa": "Annatto powder", "sustituto_europa": "Pimenton + curcuma"}
+  ],
+  "tourism_route": "...",
+
+  // CAMPOS v3 NUEVOS [OPC]
+  "origin_cities": [
+    {"city": "Quito", "province": "Pichincha", "region": "Sierra"}
+  ],
+  "places": [
     {
-      "original":          "Achiote (pasta)",
-      "sustituto_usa":     "Annatto seeds or Sazon seasoning",
-      "sustituto_europa":  "Colorante alimentario + pimentón dulce"
-    },
-    {
-      "original":          "Cebolla paiteña",
-      "sustituto_usa":     "Red onion",
-      "sustituto_europa":  "Cebolla morada"
+      "name": "Restaurante La Choza",
+      "city": "Quito",
+      "region": "Sierra",
+      "place_id": "ChIJxxxx",
+      "lat": -0.2201641,
+      "lng": -78.5123274,
+      "googleMapsUri": "https://maps.google.com/?cid=...",
+      "rating": 4.5,
+      "userRatingCount": 1823,
+      "address": "Av. 12 de Octubre..."
     }
   ],
-
-  // TURISMO — Para viajeros que visitan Ecuador
-  "tourism_route": "📍 Quito: Mercado Central (Av. Pichincha), La Mariscal o Guápulo. Pide el locro 'con todo' — con cuero de cerdo y aguacate. Precio referencial: $3-6 USD."
-
-NOTAS:
-- Los 3 campos opcionales son completamente opcionales. Sin ellos, la receta
-  funciona normal para audiencia "Local".
-- NO inventar URLs de imágenes. Usar Unsplash con query real del plato.
-  Ejemplo: https://images.unsplash.com/photo-1567337710282-00832b415979?w=800&q=80
-- El campo "slug" debe ser único. Minúsculas, sin acentos, hífens.
-  Ejemplo: "locro-de-papa", "seco-de-pollo", "encebollado-de-atun"
-
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 4 — MASTER PROMPT: CHEF REDACTOR + GUÍA TURÍSTICO + SEO
-───────────────────────────────────────────────────────────────────────────────
-
-Usar este prompt en el nodo "Chef Redactor" (GPT-4o).
-Variable de entrada: {{ $json.output }} = nombre del plato elegido.
-
-─────────────────────────────────────────────────────────────────────────────
-SYSTEM PROMPT:
-─────────────────────────────────────────────────────────────────────────────
-Eres un equipo de tres expertos combinados en un solo prompt:
-
-1. CHEF ECUATORIANO PROFESIONAL: Conoces todas las recetas regionales del
-   Ecuador (Sierra, Costa, Amazonía, Galápagos) con profundidad gastronómica,
-   proporciones exactas, técnicas de cocción y variantes regionales.
-
-2. GUÍA TURÍSTICO Y CONSULTOR DE DIÁSPORA: Para platos con ingredientes
-   difíciles de conseguir fuera de Ecuador, sabes exactamente qué sustitutos
-   usar en EE.UU. y Europa. También conoces dónde probar cada plato en Ecuador
-   (mercados, restaurantes, ciudades), lo cual es valioso para turistas.
-
-3. EXPERTO SEO CULINARIO: Escribes títulos y descripciones optimizados para
-   Google Search. Generas keywords long-tail relevantes (ej: "cómo hacer locro
-   de papa ecuatoriano", "receta encebollado costa ecuatoriana").
-
-REGLAS:
-- Responde ÚNICAMENTE con JSON válido, sin markdown, sin explicaciones.
-- No inventes recetas. Usa proporciones reales de la cocina ecuatoriana.
-- Si el plato tiene ingredientes difíciles de conseguir fuera de Ecuador,
-  SIEMPRE añade "international_substitutes".
-- Si el plato tiene una ruta gastronómica clara, SIEMPRE añade "tourism_route".
-- Para platos muy locales (fritada, hornado, yaguarlocro), incluye AMBOS
-  campos opcionales (substitutes + tourism).
-- Usa imágenes de Unsplash relevantes (formato: https://images.unsplash.com/photo-ID?w=800&q=80)
-- El "slug" debe ser en kebab-case sin acentos.
-- La "description" debe ser apetitosa y de máximo 120 caracteres.
-- "keywords" debe incluir 5-8 términos, incluyendo variantes regionales y
-  términos de búsqueda en español.
-- Incluye 6-10 ingredientes precisos con cantidades.
-- Incluye 5-8 pasos de instrucciones claros y detallados.
-- Incluye 2-4 tips prácticos del chef.
-─────────────────────────────────────────────────────────────────────────────
-USER PROMPT:
-─────────────────────────────────────────────────────────────────────────────
-Crea la receta completa para: {{ $json.output }}
-
-Responde con un objeto JSON que siga EXACTAMENTE este esquema
-(incluye los campos opcionales cuando sean relevantes):
-
-{
-  "slug": "...",
-  "title": "...",
-  "description": "...",
-  "region": "Sierra|Costa|Amazonia|Galapagos",
-  "category": "Sopas|Platos Fuertes|Entradas|Postres|Bebidas|Desayunos|Mariscos",
-  "difficulty": "Fácil|Media|Difícil",
-  "servings": "X personas",
-  "prep_time": "X min",
-  "cook_time": "X min",
-  "total_time": "X min",
-  "image_url": "https://images.unsplash.com/photo-XXXX?w=800&q=80",
-  "ingredients": ["cantidad ingrediente", ...],
-  "instructions": ["Paso 1...", "Paso 2...", ...],
-  "tips": ["Tip 1...", "Tip 2..."],
-  "keywords": ["keyword1", "keyword2", ...],
-  "date_published": "2026-02-23",
-
-  // OPCIONAL — Incluir si el plato es popular fuera de Ecuador:
-  "target_audience": "Diáspora",
-  "international_substitutes": [
-    { "original": "...", "sustituto_usa": "...", "sustituto_europa": "..." }
+  "youtube_videos": [
+    {
+      "title": "Como hacer Locro de Papa",
+      "videoId": "xxxxxxxxxxx",
+      "channel": "Chef Ecuador",
+      "url": "https://www.youtube.com/watch?v=...",
+      "embed": "https://www.youtube-nocookie.com/embed/...",
+      "uploadDate": "2024-03-15"
+    }
   ],
-
-  // OPCIONAL — Incluir si hay una ruta gastronómica clara:
-  "tourism_route": "📍 [Ciudad]: [Lugar específico]. [Descripción corta]. Precio: $X-Y USD."
-}
-─────────────────────────────────────────────────────────────────────────────
-
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 5 — CÓDIGO DE LOS CODE NODES
-───────────────────────────────────────────────────────────────────────────────
-
-── NODO 4: Parsear Receta JSON ──────────────────────────────────────────────
-
-// Extrae el JSON de la respuesta de Grok (formato OpenAI-compatible)
-const response = $input.first().json;
-const text = response.choices?.[0]?.message?.content
-  || response.message?.content
-  || response.text
-  || '';
-
-// Extraer JSON del texto (puede venir con o sin markdown fences)
-const jsonMatch = text.match(/\{[\s\S]*\}/);
-if (!jsonMatch) throw new Error('No se encontró JSON en la respuesta del LLM: ' + text.substring(0, 200));
-
-const recipe = JSON.parse(jsonMatch[0]);
-
-// Validaciones mínimas
-if (!recipe.title) throw new Error('Campo "title" faltante');
-if (!recipe.slug) {
-  recipe.slug = recipe.title.toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-return [{ json: recipe }];
-
-── NODO 6: Merge + Preparar Commit ──────────────────────────────────────────
-
-// Recibe: nodo 4 (receta) + nodo 5 (respuesta GitHub)
-const recipe = $('Parsear Receta JSON').first().json;
-const githubData = $('GET recipes.json').first().json;
-
-// Decodificar el JSON actual de GitHub (base64)
-const currentContent = Buffer.from(githubData.content.replace(/\n/g, ''), 'base64').toString('utf-8');
-let recipes = JSON.parse(currentContent);
-
-// Verificar duplicados por slug
-const isDuplicate = recipes.some(r => r.slug === recipe.slug);
-if (isDuplicate) {
-  throw new Error('Slug duplicado: ' + recipe.slug + '. Elige otro plato.');
-}
-
-// Asignar ID auto-incremental
-const maxId = recipes.reduce((max, r) => Math.max(max, r.id || 0), 0);
-recipe.id = maxId + 1;
-
-// Agregar al inicio del array (más recientes primero)
-recipes.unshift(recipe);
-
-// Preparar contenido para GitHub API
-const newContent = Buffer.from(JSON.stringify(recipes, null, 2)).toString('base64');
-const commitMessage = 'feat(recipe): agregar ' + recipe.title + ' (#' + recipe.id + ')';
-
-return [{
-  json: {
-    content: newContent,
-    sha: githubData.sha,
-    message: commitMessage,
-    recipe_title: recipe.title,
-    recipe_id: recipe.id
+  "image_credit": {
+    "source": "Wikimedia Commons",
+    "author": "Username",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:..."
   }
-}];
+}
 
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 6 — CONFIGURACIÓN HTTP REQUEST NODES
-───────────────────────────────────────────────────────────────────────────────
+====================================================================
+SECCION 6: CONFIGURACION DE APIs EXTERNAS
+====================================================================
 
-── NODOS 2 y 3: Grok API (Nombrador + Chef Redactor) ────────────────────────
-  Method:  POST
-  URL:     https://api.x.ai/v1/chat/completions
-  Headers:
-    Authorization:  Bearer xai-TU_API_KEY_AQUI
-    Content-Type:   application/json
-  Body (JSON):
-    { "model": "grok-2-mini",  ← Nombrador (rápido)
-      "model": "grok-2",       ← Chef Redactor (más capaz)
-      "max_tokens": 30 / 2500,
-      "messages": [{ "role": "system", ... }, { "role": "user", ... }] }
+A) YouTube Data API v3
+-----------------------
+Busqueda:
+  GET https://www.googleapis.com/youtube/v3/search
+  ?part=snippet&q=[youtube_query]%20receta%20ecuatoriana
+  &type=video&regionCode=EC&relevanceLanguage=es
+  &maxResults=5&key={{$env.YT_API_KEY}}
 
-  Obtén tu API key en: https://console.x.ai/
+Validacion embeddable:
+  GET https://www.googleapis.com/youtube/v3/videos
+  ?part=status,snippet&id=[videoIds]&key={{$env.YT_API_KEY}}
 
-── NODO 5: GET recipes.json ──────────────────────────────────────────────────
-  Method:  GET
-  URL:     https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json
-  Headers:
-    Authorization:  Bearer ghp_XXXXXXXXXXXXXXXX
-    User-Agent:     n8n-recetas-bot
-    Accept:         application/vnd.github.v3+json
+Filtrar: item.status.embeddable !== false
+Embed URL: https://www.youtube-nocookie.com/embed/[videoId]?rel=0
 
-── NODO 7: PUT recipes.json ──────────────────────────────────────────────────
-  Method:  PUT
-  URL:     https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json
-  Headers:
-    Authorization:  Bearer ghp_XXXXXXXXXXXXXXXX
-    User-Agent:     n8n-recetas-bot
-    Content-Type:   application/json
-    Accept:         application/vnd.github.v3+json
-  Body (JSON expression):
-    ={{
-      {
-        "message": $json.message,
-        "content": $json.content,
-        "sha": $json.sha
-      }
-    }}
+B) Google Places API (New)
+---------------------------
+POST https://places.googleapis.com/v1/places:searchText
+Headers:
+  X-Goog-Api-Key: {{$env.GMAPS_API_KEY}}
+  X-Goog-FieldMask: places.id,places.displayName,places.location,
+                    places.rating,places.userRatingCount,places.googleMapsUri,
+                    places.formattedAddress
+Body:
+  {"textQuery": "[PLATO] restaurante [CIUDAD] Ecuador", "maxResultCount": 3, "languageCode": "es"}
 
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 7 — FORMATO DE MENSAJE PARA NOMBRADOR DE PLATO (NODO 2)
-───────────────────────────────────────────────────────────────────────────────
+Respuesta relevante:
+  places[].id -> place_id
+  places[].displayName.text -> name
+  places[].location.latitude -> lat
+  places[].location.longitude -> lng
+  places[].googleMapsUri -> link directo
 
-SYSTEM: Eres un experto en gastronomía ecuatoriana.
+C) Wikimedia Commons (sin clave)
+----------------------------------
+GET https://commons.wikimedia.org/w/api.php
+  ?action=query&generator=search
+  &gsrsearch=[title]%20ecuadorian%20food
+  &gsrlimit=5&prop=imageinfo&iiprop=url|extmetadata
+  &iiurlwidth=800&format=json&origin=*
 
-USER: Lista los slugs actuales en recipes.json:
-{{ $json.slugs_list }}
+Campos utiles:
+  pages[].imageinfo[0].thumburl -> URL redimensionada
+  pages[].imageinfo[0].extmetadata.Artist.value -> autor
+  pages[].imageinfo[0].extmetadata.LicenseShortName.value -> licencia CC
 
-Elige UN plato ecuatoriano que NO esté en esa lista. Puede ser:
-- Un plato principal (seco, sopa, caldo, asado, guiso)
-- Un postre o bebida típica
-- Un plato de desayuno
-- Un plato costero, serrano o amazónico poco conocido
+====================================================================
+SECCION 7: QUALITY GATE
+====================================================================
 
-Responde SOLO con el nombre del plato en español, sin explicaciones.
-Ejemplos válidos: "Seco de chivo", "Chupe de pescado", "Jucho serrano"
+Bloquea publicacion si:
+  - slug vacio o < 3 chars
+  - title < 5 chars
+  - description < 80 chars
+  - ingredients.length < 8
+  - instructions.length < 6
 
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 8 — PRUEBA LOCAL CON n8n-receiver.js
-───────────────────────────────────────────────────────────────────────────────
+Solo ADVERTENCIA (no bloquea):
+  - places vacio Y youtube_videos vacio
 
-El script n8n-receiver.js permite insertar recetas localmente para testing.
-Guarda el JSON del plato en un archivo temporal, luego ejecuta:
+====================================================================
+SECCION 8: COSTOS ESTIMADOS (por ejecucion)
+====================================================================
 
-  node n8n-receiver.js "$(cat test-recipe.json)"
+  Grok grok-3-mini (Nombrador):   ~$0.001
+  Grok grok-3 (Chef):             ~$0.040
+  YouTube API:                    ~0 (dentro de quota gratuita)
+  Google Places (3 busquedas):    ~$0.051
+  Wikimedia:                      GRATIS
+  TOTAL por receta:               ~$0.09-0.10
+  Al dia (2 recetas):             ~$0.20
+  Al mes:                         ~$6 USD
 
-Esto:
-  1. Parsea el JSON
-  2. Asigna ID auto-incremental
-  3. Verifica duplicados por slug
-  4. Agrega al inicio de recipes.json (más reciente primero)
-  5. Escribe atómicamente (previene corrupción)
-
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 9 — CAMPOS DE IMÁGENES
-───────────────────────────────────────────────────────────────────────────────
-
-Para "image_url" usar Unsplash con query relacionado al plato.
-Formato: https://images.unsplash.com/photo-{ID}?w=800&q=80
-
-Ejemplo por tipo de plato:
-  Sopas/caldos:     photo-1548940740-204726a19be3
-  Arroces:          photo-1596560548464-f010549b84d7
-  Mariscos:         photo-1569050467447-ce54b3bbc37d
-  Carnes asadas:    photo-1558030006-450675393462
-  Postres:          photo-1488477181946-6428a0291777
-  Bebidas:          photo-1544145945-f90425340c7e
-  Desayunos:        photo-1533089860892-a7c6f0a88666
-
-Si no existe una imagen exacta, usa una relacionada a la región o ingrediente
-principal. NUNCA dejes image_url vacío.
-
-───────────────────────────────────────────────────────────────────────────────
-SECCIÓN 10 — TROUBLESHOOTING
-───────────────────────────────────────────────────────────────────────────────
-
-PROBLEMA: El workflow falla con "409 Conflict" en el PUT de GitHub
-SOLUCIÓN: El SHA en el nodo GET ya no coincide (alguien editó el archivo).
-          Espera unos minutos y vuelve a ejecutar. El GET traerá el SHA correcto.
-
-PROBLEMA: La receta tiene campos null o vacíos
-SOLUCIÓN: Revisar el Master Prompt en el nodo "Chef Redactor". Asegurarse de
-          que el modelo recibe el esquema JSON completo.
-
-PROBLEMA: Vercel no hace deploy automático
-SOLUCIÓN: Verificar que el repositorio de GitHub está conectado en Vercel.
-          Settings → Git → Producción Branch: main
-
-PROBLEMA: slug duplicado
-SOLUCIÓN: El Nodo 6 lanza un error. n8n marcará la ejecución como fallida.
-          Es normal — el siguiente día el Nombrador elegirá otro plato.
-
-PROBLEMA: El JSON del LLM tiene markdown fences (```json ... ```)
-SOLUCIÓN: El regex en el Nodo 4 (/\{[\s\S]*\}/) ya maneja este caso,
-          extrae solo el objeto JSON independientemente del wrapper.
-
-═══════════════════════════════════════════════════════════════════════════════
-FIN DEL DOCUMENTO — v2.0 — Biblioteca de Recetas Ecuatorianas 2026
-═══════════════════════════════════════════════════════════════════════════════
+====================================================================
+FIN DE INSTRUCCIONES v3.0
+====================================================================

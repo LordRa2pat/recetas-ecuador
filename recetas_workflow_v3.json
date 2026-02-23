@@ -1,0 +1,392 @@
+{
+  "name": "RECETAS-AI-Auto-Publisher-v3",
+  "nodes": [
+    {
+      "id": "sticky-note",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [100, 60],
+      "parameters": {
+        "content": "## RECETAS-AI-Auto-Publisher v3.0\n\n**Flujo:** Schedule → GET existing slugs → Nombrador (grok-3-mini) → Chef Redactor (grok-3) → Parser → YouTube API → Google Places (x3 ciudades) → Wikimedia Image → Enrich → Quality Gate → GET GitHub → Merge → PUT GitHub\n\n**Variables de entorno n8n requeridas:**\n- `XAI_API_KEY` — clave Grok xAI\n- `GITHUB_TOKEN` — token GitHub con permisos contents:write\n- `YT_API_KEY` — YouTube Data API v3\n- `GMAPS_API_KEY` — Google Places API (New)\n- `PEXELS_API_KEY` — (opcional) fallback imágenes\n\n⚠️ Configura las variables en n8n → Settings → Environment Variables antes de activar.",
+        "height": 180,
+        "width": 1900
+      }
+    },
+    {
+      "id": "schedule-trigger",
+      "name": "Cada 12 Horas",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [100, 320],
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "hours", "hoursInterval": 12 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "get-existing-slugs",
+      "name": "GET slugs existentes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [340, 320],
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{$env.GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "User-Agent", "value": "n8n-recetas-ecuador-bot" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "extract-slugs",
+      "name": "Extraer slugs existentes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [580, 320],
+      "parameters": {
+        "jsCode": "const githubData = $input.first().json;\nconst currentContent = Buffer.from(githubData.content, 'base64').toString('utf8');\nlet recipes = [];\ntry { recipes = JSON.parse(currentContent); if (!Array.isArray(recipes)) recipes = []; } catch(e) { recipes = []; }\n\nconst existingSlugs = recipes.map(r => r.slug).filter(Boolean);\nconst existingTitles = recipes.map(r => r.title).filter(Boolean);\n\nreturn [{ json: { existingSlugs, existingTitles, totalExisting: recipes.length } }];"
+      }
+    },
+    {
+      "id": "dish-namer",
+      "name": "Nombrador de Plato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [820, 320],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{$env.XAI_API_KEY}}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "User-Agent", "value": "n8n-recetas-bot/3.0" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'grok-3-mini', max_tokens: 40, messages: [ { role: 'system', content: 'Eres un experto en gastronomía ecuatoriana. Solo respondes con nombres de platos.' }, { role: 'user', content: 'Dame el nombre de un plato típico ecuatoriano poco conocido o una variación original. IMPORTANTE: NO sugieras ninguno de estos platos que ya existen: ' + $('Extraer slugs existentes').first().json.existingTitles.slice(0, 30).join(', ') + '. Elige algo diferente, menos conocido o una variación regional. Solo responde con el nombre del plato, sin explicaciones, sin puntuación al final.' } ] }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "chef-redactor",
+      "name": "Chef Redactor v3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1060, 320],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer {{$env.XAI_API_KEY}}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "User-Agent", "value": "n8n-recetas-bot/3.0" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'grok-3', max_tokens: 3000, messages: [ { role: 'system', content: 'Eres un equipo de tres expertos combinados:\\n\\n1. CHEF ECUATORIANO PROFESIONAL: Conoces todas las recetas regionales del Ecuador con profundidad gastronómica, proporciones exactas, técnicas de cocción y variantes regionales.\\n\\n2. GUÍA TURÍSTICO Y CONSULTOR DE DIÁSPORA: Para platos con ingredientes difíciles fuera de Ecuador, sabes exactamente qué sustitutos usar en EE.UU. y Europa. Conoces dónde probar cada plato (mercados, restaurantes, ciudades).\\n\\n3. EXPERTO SEO CULINARIO: Escribes títulos y descripciones optimizados para Google. Generas keywords long-tail relevantes.\\n\\nRESPONDE ÚNICAMENTE con JSON válido, sin markdown, sin explicaciones.' }, { role: 'user', content: 'Crea la receta completa para: ' + $json.choices[0].message.content + '\\n\\nResponde con un objeto JSON que siga EXACTAMENTE este esquema:\\n{\\n  \"slug\": \"nombre-kebab-case-sin-acentos\",\\n  \"title\": \"Nombre del Plato\",\\n  \"description\": \"Descripción apetitosa mínimo 90 caracteres y máximo 150\",\\n  \"region\": \"Sierra|Costa|Amazonia|Galapagos\",\\n  \"category\": \"Sopas|Platos Fuertes|Entradas|Postres|Bebidas|Desayunos|Mariscos\",\\n  \"difficulty\": \"Fácil|Media|Difícil\",\\n  \"servings\": \"X personas\",\\n  \"prep_time\": \"X min\",\\n  \"cook_time\": \"X min\",\\n  \"total_time\": \"X min\",\\n  \"image_url\": \"https://images.unsplash.com/photo-XXXX?w=800&q=80\",\\n  \"image_alt\": \"Descripción real de la imagen para SEO y accesibilidad\",\\n  \"ingredients\": [\"cantidad ingrediente\"],\\n  \"instructions\": [\"Paso 1...\", \"Paso 2...\"],\\n  \"tips\": [\"Tip 1...\"],\\n  \"keywords\": [\"keyword1\", \"keyword2\"],\\n  \"date_published\": \"2026-02-23\",\\n  \"target_audience\": \"Local|Diáspora|Turista\",\\n  \"origin_cities\": [{\"city\": \"Quito\", \"province\": \"Pichincha\", \"region\": \"Sierra\"}],\\n  \"youtube_query\": \"nombre plato receta ecuatoriana como preparar\",\\n  \"image_keywords\": [\"keyword foto 1\", \"keyword foto 2\"],\\n  \"international_substitutes\": [{\"original\": \"...\", \"sustituto_usa\": \"...\", \"sustituto_europa\": \"...\"}],\\n  \"tourism_route\": \"📍 [Ciudad]: [Lugar]. [Descripción]. Precio: $X-Y USD.\"\\n}\\n\\nREGLAS:\\n- origin_cities: 2-4 ciudades donde el plato es típico.\\n- youtube_query: búsqueda corta y específica para YouTube (máximo 8 palabras).\\n- image_keywords: 5-8 términos para buscar la foto del plato (en inglés para mejor resultado).\\n- Incluye international_substitutes si tiene ingredientes difíciles fuera de Ecuador.\\n- Incluye tourism_route si tiene ruta gastronómica clara.\\n- Mínimo 8 ingredientes con cantidades exactas, 6 pasos de instrucciones, 2-4 tips.\\n- keywords: 5-8 términos incluyendo variantes regionales y long-tail.\\n- description: MÍNIMO 90 caracteres.' } ] }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "parse-recipe",
+      "name": "Parsear Receta JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 320],
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.choices?.[0]?.message?.content || '';\nconst cleaned = raw.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n\nlet recipe;\ntry {\n  recipe = JSON.parse(cleaned);\n} catch(e) {\n  throw new Error('JSON inválido de Grok: ' + e.message + ' | Inicio: ' + cleaned.slice(0, 200));\n}\n\nif (!recipe.title || !recipe.slug) {\n  throw new Error('Faltan campos requeridos title/slug: ' + JSON.stringify(recipe).slice(0, 200));\n}\n\nif ((recipe.description || '').length < 80) {\n  throw new Error('Description demasiado corta (' + (recipe.description || '').length + ' chars): ' + recipe.description);\n}\n\n// Normalizar slug\nrecipe.slug = recipe.slug\n  .toLowerCase().trim()\n  .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e')\n  .replace(/[íìïî]/g, 'i').replace(/[óòöô]/g, 'o')\n  .replace(/[úùüû]/g, 'u').replace(/ñ/g, 'n')\n  .replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\n// Garantizar campos v3\nif (!recipe.origin_cities) recipe.origin_cities = [];\nif (!recipe.youtube_query) recipe.youtube_query = recipe.title + ' receta ecuatoriana';\nif (!recipe.image_keywords) recipe.image_keywords = [recipe.title, 'ecuadorian food', 'traditional dish'];\nif (!recipe.image_alt) recipe.image_alt = recipe.title + ', plato típico ecuatoriano';\n\nreturn [{ json: recipe }];"
+      }
+    },
+    {
+      "id": "youtube-search",
+      "name": "YouTube: Buscar Videos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 220],
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.googleapis.com/youtube/v3/search?part=snippet&q={{ encodeURIComponent($('Parsear Receta JSON').first().json.youtube_query + ' receta ecuatoriana') }}&type=video&regionCode=EC&relevanceLanguage=es&maxResults=5&videoCategoryId=26&key={{ $env.YT_API_KEY }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "youtube-validate",
+      "name": "YouTube: Validar Embeddable",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1780, 220],
+      "parameters": {
+        "method": "GET",
+        "url": "=https://www.googleapis.com/youtube/v3/videos?part=status,snippet&id={{ $json.items.slice(0,5).map(i => i.id.videoId).filter(Boolean).join(',') }}&key={{ $env.YT_API_KEY }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "process-youtube",
+      "name": "Procesar Videos YouTube",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2020, 220],
+      "parameters": {
+        "jsCode": "const ytValidated = $input.first().json;\nconst items = ytValidated.items || [];\n\n// Filtrar solo embeddable\nconst embeddable = items.filter(item => item.status && item.status.embeddable !== false);\n\nconst youtube_videos = embeddable.slice(0, 3).map(item => ({\n  title: item.snippet?.title || '',\n  videoId: item.id,\n  channel: item.snippet?.channelTitle || '',\n  url: 'https://www.youtube.com/watch?v=' + item.id,\n  embed: 'https://www.youtube-nocookie.com/embed/' + item.id,\n  uploadDate: (item.snippet?.publishedAt || '').split('T')[0] || undefined,\n  description: (item.snippet?.description || '').slice(0, 200)\n}));\n\nreturn [{ json: { youtube_videos } }];"
+      }
+    },
+    {
+      "id": "places-city-1",
+      "name": "Places: Ciudad 1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 380],
+      "parameters": {
+        "method": "POST",
+        "url": "https://places.googleapis.com/v1/places:searchText",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "X-Goog-Api-Key", "value": "{{$env.GMAPS_API_KEY}}" },
+            { "name": "X-Goog-FieldMask", "value": "places.id,places.displayName,places.location,places.rating,places.userRatingCount,places.googleMapsUri,places.formattedAddress" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ textQuery: ($('Parsear Receta JSON').first().json.title || '') + ' restaurante ' + (($('Parsear Receta JSON').first().json.origin_cities[0] && $('Parsear Receta JSON').first().json.origin_cities[0].city) || 'Quito') + ' Ecuador', maxResultCount: 3, languageCode: 'es' }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "places-city-2",
+      "name": "Places: Ciudad 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 500],
+      "parameters": {
+        "method": "POST",
+        "url": "https://places.googleapis.com/v1/places:searchText",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "X-Goog-Api-Key", "value": "{{$env.GMAPS_API_KEY}}" },
+            { "name": "X-Goog-FieldMask", "value": "places.id,places.displayName,places.location,places.rating,places.userRatingCount,places.googleMapsUri,places.formattedAddress" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ textQuery: ($('Parsear Receta JSON').first().json.title || '') + ' ' + (($('Parsear Receta JSON').first().json.origin_cities[1] && $('Parsear Receta JSON').first().json.origin_cities[1].city) || 'Guayaquil') + ' Ecuador', maxResultCount: 2, languageCode: 'es' }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "places-city-3",
+      "name": "Places: Ciudad 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 620],
+      "parameters": {
+        "method": "POST",
+        "url": "https://places.googleapis.com/v1/places:searchText",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "X-Goog-Api-Key", "value": "{{$env.GMAPS_API_KEY}}" },
+            { "name": "X-Goog-FieldMask", "value": "places.id,places.displayName,places.location,places.rating,places.userRatingCount,places.googleMapsUri,places.formattedAddress" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ textQuery: ($('Parsear Receta JSON').first().json.title || '') + ' mercado ' + (($('Parsear Receta JSON').first().json.origin_cities[2] && $('Parsear Receta JSON').first().json.origin_cities[2].city) || $('Parsear Receta JSON').first().json.region || 'Sierra') + ' Ecuador', maxResultCount: 2, languageCode: 'es' }) }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "process-places",
+      "name": "Procesar Places",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 500],
+      "parameters": {
+        "jsCode": "// Toma resultados de las 3 ciudades y los fusiona\nconst recipe = $('Parsear Receta JSON').first().json;\n\nfunction parsePlaces(data, cityHint) {\n  const items = (data && data.places) ? data.places : [];\n  return items.map(p => ({\n    name: p.displayName?.text || p.displayName || '',\n    city: cityHint || '',\n    region: recipe.region || '',\n    place_id: p.id || '',\n    lat: p.location?.latitude || null,\n    lng: p.location?.longitude || null,\n    googleMapsUri: p.googleMapsUri || '',\n    rating: p.rating || null,\n    userRatingCount: p.userRatingCount || null,\n    address: p.formattedAddress || ''\n  })).filter(p => p.name);\n}\n\nconst city1 = recipe.origin_cities?.[0]?.city || 'Quito';\nconst city2 = recipe.origin_cities?.[1]?.city || 'Guayaquil';\nconst city3 = recipe.origin_cities?.[2]?.city || recipe.region || 'Ecuador';\n\nlet places = [];\ntry { places = places.concat(parsePlaces($('Places: Ciudad 1').first().json, city1)); } catch(e) {}\ntry { places = places.concat(parsePlaces($('Places: Ciudad 2').first().json, city2)); } catch(e) {}\ntry { places = places.concat(parsePlaces($('Places: Ciudad 3').first().json, city3)); } catch(e) {}\n\n// Deduplicar por place_id\nconst seen = {};\nplaces = places.filter(p => {\n  if (!p.place_id || seen[p.place_id]) return false;\n  seen[p.place_id] = true;\n  return true;\n}).slice(0, 6);\n\nreturn [{ json: { places } }];"
+      }
+    },
+    {
+      "id": "wikimedia-image",
+      "name": "Wikimedia: Buscar Imagen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 740],
+      "parameters": {
+        "method": "GET",
+        "url": "=https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch={{ encodeURIComponent($('Parsear Receta JSON').first().json.title + ' ecuadorian food') }}&gsrlimit=5&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=800&format=json&origin=*",
+        "options": {}
+      }
+    },
+    {
+      "id": "process-image",
+      "name": "Procesar Imagen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1780, 740],
+      "parameters": {
+        "jsCode": "const recipe = $('Parsear Receta JSON').first().json;\nconst wikiData = $input.first().json;\n\nlet image_url = recipe.image_url || '';\nlet image_alt = recipe.image_alt || recipe.title + ', plato típico ecuatoriano';\nlet image_credit = null;\n\n// Intentar Wikimedia\nif (wikiData.query && wikiData.query.pages) {\n  const pages = Object.values(wikiData.query.pages);\n  for (const page of pages) {\n    const info = page.imageinfo?.[0];\n    if (info && info.url && /\\.(jpg|jpeg|png|webp)/i.test(info.url)) {\n      // Verificar que no sea icono/logo pequeño\n      if (info.url.includes('thumb') || (info.thumburl)) {\n        image_url = info.thumburl || info.url;\n      } else {\n        image_url = info.url;\n      }\n      const meta = info.extmetadata || {};\n      const author = meta.Artist?.value?.replace(/<[^>]+>/g, '') || meta.Credit?.value?.replace(/<[^>]+>/g, '') || '';\n      const license = meta.LicenseShortName?.value || meta.License?.value || '';\n      const descUrl = meta.DescriptionUrl?.value || '';\n      if (author || license) {\n        image_credit = {\n          source: 'Wikimedia Commons',\n          author: author.slice(0, 100),\n          license: license,\n          url: descUrl || ('https://commons.wikimedia.org/wiki/' + encodeURIComponent(page.title || ''))\n        };\n      }\n      break;\n    }\n  }\n}\n\n// Si no hay URL válida de Wikimedia, mantener la de Unsplash del chef\nif (!image_url || image_url.includes('XXXX')) {\n  image_url = 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=800&q=80';\n}\n\nreturn [{ json: { image_url, image_alt, image_credit } }];"
+      }
+    },
+    {
+      "id": "enrich-recipe",
+      "name": "Enriquecer Receta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2020, 500],
+      "parameters": {
+        "jsCode": "// Combinar receta base con enrichment de YouTube, Places e Imagen\nconst recipe = $('Parsear Receta JSON').first().json;\nconst youtubeData = $('Procesar Videos YouTube').first().json;\nconst placesData = $('Procesar Places').first().json;\nconst imageData = $('Procesar Imagen').first().json;\n\n// Combinar todo\nconst enriched = Object.assign({}, recipe);\n\n// YouTube\nif (youtubeData.youtube_videos && youtubeData.youtube_videos.length > 0) {\n  enriched.youtube_videos = youtubeData.youtube_videos;\n}\n\n// Places\nif (placesData.places && placesData.places.length > 0) {\n  enriched.places = placesData.places;\n}\n\n// Imagen (overwrite solo si viene de Wikimedia con crédito real)\nif (imageData.image_url && !imageData.image_url.includes('XXXX')) {\n  enriched.image_url = imageData.image_url;\n}\nif (imageData.image_alt) enriched.image_alt = imageData.image_alt;\nif (imageData.image_credit) enriched.image_credit = imageData.image_credit;\n\n// Limpiar campos auxiliares (no van al JSON final)\ndelete enriched.youtube_query;\ndelete enriched.image_keywords;\n\nreturn [{ json: enriched }];"
+      }
+    },
+    {
+      "id": "quality-gate",
+      "name": "Quality Gate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2260, 500],
+      "parameters": {
+        "jsCode": "const recipe = $input.first().json;\nconst errors = [];\n\n// Campos obligatorios\nif (!recipe.slug || recipe.slug.length < 3) errors.push('slug inválido: ' + recipe.slug);\nif (!recipe.title || recipe.title.length < 5) errors.push('title muy corto: ' + recipe.title);\nif (!recipe.description || recipe.description.length < 80) errors.push('description < 80 chars: ' + (recipe.description || '').length + ' chars');\n\n// Contenido mínimo\nif (!recipe.ingredients || recipe.ingredients.length < 8) errors.push('ingredientes < 8: ' + (recipe.ingredients || []).length);\nif (!recipe.instructions || recipe.instructions.length < 6) errors.push('instrucciones < 6: ' + (recipe.instructions || []).length);\n\n// Al menos una fuente de enriquecimiento\nconst hasPlaces = recipe.places && recipe.places.length > 0;\nconst hasVideos = recipe.youtube_videos && recipe.youtube_videos.length > 0;\nif (!hasPlaces && !hasVideos) {\n  console.warn('Receta sin places ni videos — se publica igual pero es pobre');\n  // No bloquear, solo advertencia\n}\n\nif (errors.length > 0) {\n  throw new Error('QUALITY_GATE_FAILED: ' + errors.join(' | '));\n}\n\nconsole.log('Quality Gate OK:', recipe.slug, '| places:', (recipe.places || []).length, '| videos:', (recipe.youtube_videos || []).length);\nreturn [{ json: recipe }];"
+      }
+    },
+    {
+      "id": "get-github",
+      "name": "GET recipes.json (GitHub)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2500, 500],
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{$env.GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "User-Agent", "value": "n8n-recetas-ecuador-bot" }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "merge-commit",
+      "name": "Merge + Preparar Commit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2740, 500],
+      "parameters": {
+        "jsCode": "const newRecipe = $('Quality Gate').first().json;\nconst githubData = $input.first().json;\nconst fileSha = githubData.sha;\n\nconst currentContent = Buffer.from(githubData.content, 'base64').toString('utf8');\nlet recipes = [];\ntry {\n  recipes = JSON.parse(currentContent);\n  if (!Array.isArray(recipes)) recipes = [];\n} catch(e) { recipes = []; }\n\n// Dedup por slug\nif (recipes.some(r => r.slug === newRecipe.slug)) {\n  throw new Error('DUPLICADO_SLUG: ' + newRecipe.slug);\n}\n\n// Auto-increment ID\nconst maxId = recipes.reduce((max, r) => Math.max(max, Number(r.id) || 0), 0);\nnewRecipe.id = maxId + 1;\nnewRecipe.created_at = new Date().toISOString();\n\n// Prepend (más reciente primero)\nrecipes.unshift(newRecipe);\n\nconst newContent = Buffer.from(JSON.stringify(recipes, null, 2), 'utf8').toString('base64');\nconst hasPlaces = (newRecipe.places || []).length;\nconst hasVideos = (newRecipe.youtube_videos || []).length;\nconst extras = [hasPlaces ? hasPlaces + ' lugares' : '', hasVideos ? hasVideos + ' videos' : ''].filter(Boolean).join(', ');\n\nreturn [{ json: {\n  sha: fileSha,\n  content: newContent,\n  slug: newRecipe.slug,\n  title: newRecipe.title,\n  id: newRecipe.id,\n  total: recipes.length,\n  extras: extras || 'sin enriquecimiento'\n} }];"
+      }
+    },
+    {
+      "id": "put-github",
+      "name": "PUT recipes.json a GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2980, 500],
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "token {{$env.GITHUB_TOKEN}}" },
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "User-Agent", "value": "n8n-recetas-ecuador-bot" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { message: 'feat(recetas): agregar ' + $json.slug + ' [ID:' + $json.id + '] ' + $json.extras + ' — auto v3', content: $json.content, sha: $json.sha } }}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Cada 12 Horas": {
+      "main": [[{ "node": "GET slugs existentes", "type": "main", "index": 0 }]]
+    },
+    "GET slugs existentes": {
+      "main": [[{ "node": "Extraer slugs existentes", "type": "main", "index": 0 }]]
+    },
+    "Extraer slugs existentes": {
+      "main": [[{ "node": "Nombrador de Plato", "type": "main", "index": 0 }]]
+    },
+    "Nombrador de Plato": {
+      "main": [[{ "node": "Chef Redactor v3", "type": "main", "index": 0 }]]
+    },
+    "Chef Redactor v3": {
+      "main": [[{ "node": "Parsear Receta JSON", "type": "main", "index": 0 }]]
+    },
+    "Parsear Receta JSON": {
+      "main": [[
+        { "node": "YouTube: Buscar Videos", "type": "main", "index": 0 },
+        { "node": "Places: Ciudad 1", "type": "main", "index": 0 },
+        { "node": "Places: Ciudad 2", "type": "main", "index": 0 },
+        { "node": "Places: Ciudad 3", "type": "main", "index": 0 },
+        { "node": "Wikimedia: Buscar Imagen", "type": "main", "index": 0 }
+      ]]
+    },
+    "YouTube: Buscar Videos": {
+      "main": [[{ "node": "YouTube: Validar Embeddable", "type": "main", "index": 0 }]]
+    },
+    "YouTube: Validar Embeddable": {
+      "main": [[{ "node": "Procesar Videos YouTube", "type": "main", "index": 0 }]]
+    },
+    "Places: Ciudad 1": {
+      "main": [[{ "node": "Procesar Places", "type": "main", "index": 0 }]]
+    },
+    "Places: Ciudad 2": {
+      "main": [[{ "node": "Procesar Places", "type": "main", "index": 1 }]]
+    },
+    "Places: Ciudad 3": {
+      "main": [[{ "node": "Procesar Places", "type": "main", "index": 2 }]]
+    },
+    "Wikimedia: Buscar Imagen": {
+      "main": [[{ "node": "Procesar Imagen", "type": "main", "index": 0 }]]
+    },
+    "Procesar Videos YouTube": {
+      "main": [[{ "node": "Enriquecer Receta", "type": "main", "index": 0 }]]
+    },
+    "Procesar Places": {
+      "main": [[{ "node": "Enriquecer Receta", "type": "main", "index": 1 }]]
+    },
+    "Procesar Imagen": {
+      "main": [[{ "node": "Enriquecer Receta", "type": "main", "index": 2 }]]
+    },
+    "Enriquecer Receta": {
+      "main": [[{ "node": "Quality Gate", "type": "main", "index": 0 }]]
+    },
+    "Quality Gate": {
+      "main": [[{ "node": "GET recipes.json (GitHub)", "type": "main", "index": 0 }]]
+    },
+    "GET recipes.json (GitHub)": {
+      "main": [[{ "node": "Merge + Preparar Commit", "type": "main", "index": 0 }]]
+    },
+    "Merge + Preparar Commit": {
+      "main": [[{ "node": "PUT recipes.json a GitHub", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "active": false
+}

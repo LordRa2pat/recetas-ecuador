@@ -1,11 +1,10 @@
 // ============================================================
-// Biblioteca de Recetas Ecuatorianas — script.js
-// Revista Premium de Gastronomía y Turismo Ecuatoriano
+// Biblioteca de Recetas Ecuatorianas — script.js v3
+// Revista Premium — Places, YouTube, Image Credits, SEO mejorado
 // ============================================================
 
 'use strict';
 
-// ─── Constantes ──────────────────────────────────────────────
 const DATA_URL = 'recipes.json';
 let allRecipes = [];
 
@@ -19,45 +18,47 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function debounce(fn, delay = 250) {
-  let timer;
-  return (...args) => {
+function debounce(fn, delay) {
+  delay = delay || 250;
+  var timer;
+  return function() {
+    var args = arguments;
     clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
+    timer = setTimeout(function() { fn.apply(null, args); }, delay);
   };
 }
 
 function timeToISO8601(timeStr) {
   if (!timeStr) return '';
-  const m = String(timeStr).match(/(\d+)\s*h(?:ora)?s?\s*(\d+)?\s*m?i?n?|(\d+)\s*m?i?n/i);
+  var m = String(timeStr).match(/(\d+)\s*h(?:ora)?s?\s*(\d+)?\s*m?i?n?|(\d+)\s*m?i?n/i);
   if (!m) return '';
   if (m[1]) {
-    const h = parseInt(m[1]);
-    const min = parseInt(m[2] || 0);
-    return `PT${h}H${min > 0 ? min + 'M' : ''}`;
+    var h = parseInt(m[1]);
+    var min = parseInt(m[2] || 0);
+    return 'PT' + h + 'H' + (min > 0 ? min + 'M' : '');
   }
-  return `PT${parseInt(m[3])}M`;
+  return 'PT' + parseInt(m[3]) + 'M';
 }
 
 function parseMinutes(timeStr) {
   if (!timeStr) return 9999;
-  const m = String(timeStr).match(/(\d+)\s*h(?:ora)?s?\s*(\d+)?\s*m?i?n?|(\d+)\s*m?i?n/i);
+  var m = String(timeStr).match(/(\d+)\s*h(?:ora)?s?\s*(\d+)?\s*m?i?n?|(\d+)\s*m?i?n/i);
   if (!m) return 9999;
   if (m[1]) return parseInt(m[1]) * 60 + parseInt(m[2] || 0);
   return parseInt(m[3]);
 }
 
 function sortRecipes(recipes, sortBy) {
-  const copy = [...recipes];
-  if (sortBy === 'alpha') return copy.sort((a, b) => a.title.localeCompare(b.title, 'es'));
-  if (sortBy === 'fast') return copy.sort((a, b) => parseMinutes(a.total_time) - parseMinutes(b.total_time));
-  return copy; // 'recent' = orden original (más reciente primero)
+  var copy = recipes.slice();
+  if (sortBy === 'alpha') return copy.sort(function(a, b) { return a.title.localeCompare(b.title, 'es'); });
+  if (sortBy === 'fast') return copy.sort(function(a, b) { return parseMinutes(a.total_time) - parseMinutes(b.total_time); });
+  return copy;
 }
 
 // ─── Carga de datos ───────────────────────────────────────────
 async function loadRecipes() {
   try {
-    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    var res = await fetch(DATA_URL + '?t=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
     allRecipes = await res.json();
     return allRecipes;
@@ -70,7 +71,7 @@ async function loadRecipes() {
 // ─── AdSense ─────────────────────────────────────────────────
 function initAds() {
   if (typeof adsbygoogle === 'undefined') return;
-  document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])').forEach(() => {
+  document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])').forEach(function() {
     try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
   });
 }
@@ -86,10 +87,10 @@ function renderInFeedAd(slotId) {
 
 // ─── Audience chip ────────────────────────────────────────────
 function getAudienceChip(recipe) {
-  const isDiaspora = recipe.target_audience === 'Diáspora' ||
+  var isDiaspora = recipe.target_audience === 'Di\u00e1spora' ||
     (recipe.international_substitutes && recipe.international_substitutes.length > 0);
-  const isTourism = recipe.target_audience === 'Turista' || !!recipe.tourism_route;
-
+  var isTourism = recipe.target_audience === 'Turista' || !!recipe.tourism_route ||
+    (recipe.places && recipe.places.length > 0);
   if (isDiaspora) {
     return '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100/80 text-blue-700 backdrop-blur-sm border border-blue-200/60">' +
       '\u2708\uFE0F Di\u00e1spora</span>';
@@ -128,30 +129,35 @@ function renderSkeleton(count) {
 // ─── Card ─────────────────────────────────────────────────────
 function renderCard(recipe) {
   var chip = getAudienceChip(recipe);
-  var hasTourism = !!recipe.tourism_route;
+  var hasTourism = !!recipe.tourism_route || (recipe.places && recipe.places.length > 0);
+  var hasVideos = !!(recipe.youtube_videos && recipe.youtube_videos.length > 0);
   var img = recipe.image_url
     ? escapeHtml(recipe.image_url)
     : 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80';
+  var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#006400] focus-within:ring-offset-2">' +
-    '<a href="recipe.html?slug=' + escapeHtml(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '">' +
+    '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '">' +
       '<div class="relative h-52 overflow-hidden">' +
-        '<img src="' + img + '" alt="' + escapeHtml(recipe.title) + '"' +
+        '<img src="' + img + '" alt="' + imgAlt + '"' +
           ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
           ' loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80\'">' +
         '<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>' +
         (chip ? '<div class="absolute top-3 left-3">' + chip + '</div>' : '') +
-        (hasTourism ? '<div class="absolute bottom-3 right-3 text-white text-lg drop-shadow-md" title="Ruta Gastron\u00f3mica">\uD83D\uDDFA\uFE0F</div>' : '') +
+        '<div class="absolute bottom-3 right-3 flex gap-1.5">' +
+          (hasTourism ? '<span class="text-white text-base drop-shadow-md" title="Ruta Gastron\u00f3mica">\uD83D\uDDFA\uFE0F</span>' : '') +
+          (hasVideos ? '<span class="text-white text-base drop-shadow-md" title="Video tutorial">\u25B6\uFE0F</span>' : '') +
+        '</div>' +
       '</div>' +
       '<div class="p-5">' +
         '<div class="flex flex-wrap gap-2 mb-2">' +
           (recipe.region ? '<span class="text-xs font-medium text-[#006400] bg-green-50 border border-green-200 px-2.5 py-0.5 rounded-full">' + escapeHtml(recipe.region) + '</span>' : '') +
           (recipe.difficulty ? '<span class="text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 px-2.5 py-0.5 rounded-full">' + escapeHtml(recipe.difficulty) + '</span>' : '') +
         '</div>' +
-        '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 line-clamp-2 group-hover:text-[#006400] transition-colors duration-200">' +
+        '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 clamp-2 group-hover:text-[#006400] transition-colors duration-200">' +
           escapeHtml(recipe.title) +
         '</h3>' +
-        '<p class="text-gray-500 text-sm line-clamp-2 mb-3">' + escapeHtml(recipe.description || '') + '</p>' +
+        '<p class="text-gray-500 text-sm clamp-2 mb-3">' + escapeHtml(recipe.description || '') + '</p>' +
         '<div class="flex items-center gap-3 pt-3 border-t border-gray-100 text-xs text-gray-400">' +
           (recipe.total_time ? '<span>\u23f1 ' + escapeHtml(recipe.total_time) + '</span>' : '') +
           (recipe.servings ? '<span>\uD83D\uDC65 ' + escapeHtml(recipe.servings) + '</span>' : '') +
@@ -162,9 +168,115 @@ function renderCard(recipe) {
   '</article>';
 }
 
+// ─── Places Card ─────────────────────────────────────────────
+function renderPlacesCard(recipe) {
+  var el = document.getElementById('places-card');
+  if (!el || !recipe.places || recipe.places.length === 0) return;
+
+  var places = recipe.places;
+  var firstPlace = places[0];
+  var mapEmbed = '';
+
+  if (firstPlace.lat && firstPlace.lng) {
+    mapEmbed = '<div class="rounded-2xl overflow-hidden mb-4 border border-amber-200/40" style="height:200px">' +
+      '<iframe src="https://www.google.com/maps?q=' + encodeURIComponent(firstPlace.lat + ',' + firstPlace.lng) + '&z=14&output=embed"' +
+      ' width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"' +
+      ' referrerpolicy="strict-origin-when-cross-origin"' +
+      ' title="Ubicaci\u00f3n de ' + escapeHtml(firstPlace.name) + '"></iframe>' +
+      '</div>';
+  }
+
+  var placesHTML = places.map(function(place) {
+    var mapsUrl = place.googleMapsUri ||
+      (place.place_id ? 'https://www.google.com/maps/place/?q=place_id:' + encodeURIComponent(place.place_id) : '') ||
+      (place.lat && place.lng ? 'https://www.google.com/maps?q=' + place.lat + ',' + place.lng : '') ||
+      ('https://www.google.com/maps/search/' + encodeURIComponent((place.name || '') + ' ' + (place.city || '') + ' Ecuador'));
+
+    var starsHTML = '';
+    if (place.rating) {
+      starsHTML = '<span class="text-amber-400 text-xs">\u2605 ' + parseFloat(place.rating).toFixed(1) + '</span>' +
+        (place.userRatingCount ? '<span class="text-gray-400 text-xs ml-1">(' + place.userRatingCount + ')</span>' : '');
+    }
+
+    return '<div class="flex items-start gap-3 py-3 border-b border-amber-100/60 last:border-0">' +
+      '<div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-sm flex-shrink-0 mt-0.5">\uD83D\uDCCD</div>' +
+      '<div class="flex-1 min-w-0">' +
+        '<p class="font-semibold text-gray-800 text-sm leading-tight">' + escapeHtml(place.name || '') + '</p>' +
+        '<p class="text-amber-700 text-xs mt-0.5">' + escapeHtml(place.city || place.region || '') + '</p>' +
+        (starsHTML ? '<div class="flex items-center gap-1 mt-0.5">' + starsHTML + '</div>' : '') +
+      '</div>' +
+      '<a href="' + escapeHtml(mapsUrl) + '" target="_blank" rel="noopener noreferrer"' +
+        ' class="flex-shrink-0 text-xs font-semibold text-amber-700 bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-xl hover:bg-amber-200 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400"' +
+        ' aria-label="Ver ' + escapeHtml(place.name || '') + ' en Google Maps">' +
+        'Ver mapa \u2192' +
+      '</a>' +
+    '</div>';
+  }).join('');
+
+  el.innerHTML = '<div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 rounded-3xl p-5 backdrop-blur-sm">' +
+    '<h3 class="font-bold text-amber-800 text-sm mb-1 flex items-center gap-2">\uD83D\uDCCD D\u00f3nde comerlo en Ecuador</h3>' +
+    '<p class="text-amber-600 text-xs mb-4">Restaurantes y mercados locales donde probar este plato.</p>' +
+    mapEmbed +
+    '<div>' + placesHTML + '</div>' +
+    '</div>';
+  el.classList.remove('hidden');
+}
+
+// ─── Videos Card ─────────────────────────────────────────────
+function renderVideosCard(recipe) {
+  var el = document.getElementById('videos-card');
+  if (!el || !recipe.youtube_videos || recipe.youtube_videos.length === 0) return;
+
+  var videos = recipe.youtube_videos.slice(0, 3);
+  var videosHTML = videos.map(function(video, i) {
+    if (!video.videoId) return '';
+    var embedUrl = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(video.videoId) + '?rel=0&modestbranding=1';
+    return '<div' + (i > 0 ? ' class="mt-4"' : '') + '>' +
+      '<div class="relative rounded-2xl overflow-hidden bg-black" style="padding-bottom:56.25%;height:0">' +
+        '<iframe src="' + embedUrl + '"' +
+          ' title="' + escapeHtml(video.title || recipe.title) + '"' +
+          ' style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"' +
+          ' loading="lazy" referrerpolicy="strict-origin-when-cross-origin"' +
+          ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+          ' allowfullscreen></iframe>' +
+      '</div>' +
+      (video.title ? '<p class="text-xs text-gray-500 mt-2 font-medium">' + escapeHtml(video.title) + '</p>' : '') +
+      (video.channel ? '<p class="text-xs text-gray-400">' + escapeHtml(video.channel) + '</p>' : '') +
+    '</div>';
+  }).join('');
+
+  if (!videosHTML.trim()) return;
+
+  el.innerHTML = '<div class="bg-gradient-to-br from-red-50 to-rose-50 border border-red-200/60 rounded-3xl p-5 backdrop-blur-sm">' +
+    '<h3 class="font-bold text-red-800 text-sm mb-1 flex items-center gap-2">\u25B6\uFE0F Tutoriales en YouTube</h3>' +
+    '<p class="text-red-600 text-xs mb-4">Aprende a preparar este plato con estos videos.</p>' +
+    videosHTML +
+    '</div>';
+  el.classList.remove('hidden');
+}
+
+// ─── Image Credit ─────────────────────────────────────────────
+function renderImageCredit(recipe) {
+  var el = document.getElementById('image-credit');
+  if (!el || !recipe.image_credit) return;
+
+  var c = recipe.image_credit;
+  var parts = ['Cr\u00e9dito de imagen'];
+  if (c.author) parts.push(': ' + escapeHtml(c.author));
+  if (c.source) parts.push(' v\u00eda ' + escapeHtml(c.source));
+  if (c.license) parts.push(' \u2014 ' + escapeHtml(c.license));
+  var text = parts.join('');
+
+  el.innerHTML = c.url
+    ? '<a href="' + escapeHtml(c.url) + '" target="_blank" rel="noopener noreferrer"' +
+      ' class="text-xs text-gray-400 hover:text-gray-600 transition-colors">' + text + ' \uD83D\uDD17</a>'
+    : '<span class="text-xs text-gray-400">' + text + '</span>';
+  el.classList.remove('hidden');
+}
+
 // ─── Estado vacío ─────────────────────────────────────────────
 function renderEmptyState(containerEl, msg) {
-  msg = msg || 'No hay recetas disponibles aún.';
+  msg = msg || 'No hay recetas disponibles a\u00fan.';
   containerEl.innerHTML = '<div class="col-span-full flex flex-col items-center justify-center py-16 text-center text-gray-400">' +
     '<div class="text-5xl mb-4">\uD83C\uDF7D\uFE0F</div>' +
     '<p class="text-lg font-medium text-gray-500">' + escapeHtml(msg) + '</p>' +
@@ -192,28 +304,50 @@ function renderGridWithAds(recipes, gridEl, adsInterval) {
   gridEl.innerHTML = html;
 }
 
-// ─── SEO ─────────────────────────────────────────────────────
-function setMeta(title, description, imageUrl) {
-  document.title = title;
-  function setTag(sel, attr, val) {
-    var el = document.querySelector(sel);
-    if (!el) { el = document.createElement('meta'); document.head.appendChild(el); }
-    el.setAttribute(attr, val);
+// ─── SEO meta upsert ─────────────────────────────────────────
+function upsertMeta(attrName, attrValue, content) {
+  var sel = 'meta[' + attrName + '="' + CSS.escape(attrValue) + '"]';
+  var el;
+  try { el = document.querySelector(sel); } catch(e) { el = null; }
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attrName, attrValue);
+    document.head.appendChild(el);
   }
-  setTag('meta[name="description"]', 'content', description);
-  setTag('meta[property="og:title"]', 'content', title);
-  setTag('meta[property="og:description"]', 'content', description);
-  setTag('meta[property="og:image"]', 'content', imageUrl || '');
-  setTag('meta[name="twitter:card"]', 'content', 'summary_large_image');
-  setTag('meta[name="twitter:title"]', 'content', title);
-  setTag('meta[name="twitter:description"]', 'content', description);
+  el.setAttribute('content', content);
+}
+
+function setMeta(title, description, imageUrl, canonicalUrl) {
+  document.title = title;
+  upsertMeta('name', 'description', description);
+  upsertMeta('property', 'og:title', title);
+  upsertMeta('property', 'og:description', description);
+  upsertMeta('property', 'og:type', 'article');
+  if (imageUrl) upsertMeta('property', 'og:image', imageUrl);
+  upsertMeta('name', 'twitter:card', 'summary_large_image');
+  upsertMeta('name', 'twitter:title', title);
+  upsertMeta('name', 'twitter:description', description);
+  if (imageUrl) upsertMeta('name', 'twitter:image', imageUrl);
+
+  if (canonicalUrl) {
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+  }
 }
 
 function injectSEO(recipe) {
+  var canonicalUrl = 'https://recetas-ecuador.vercel.app/recipe.html?slug=' + encodeURIComponent(recipe.slug);
+  var imageUrl = recipe.image_url || '';
   setMeta(
     recipe.title + ' \u2014 Receta Ecuatoriana | Biblioteca de Recetas',
     recipe.description || ('Aprende a preparar ' + recipe.title + ', una deliciosa receta ecuatoriana.'),
-    recipe.image_url
+    imageUrl,
+    canonicalUrl
   );
 
   var steps = (recipe.instructions || []).map(function(step, i) {
@@ -226,7 +360,7 @@ function injectSEO(recipe) {
     '@type': 'Recipe',
     'name': recipe.title,
     'description': recipe.description || '',
-    'image': recipe.image_url || '',
+    'image': imageUrl,
     'author': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas' },
     'datePublished': recipe.date_published || new Date().toISOString().split('T')[0],
     'recipeCategory': recipe.category || '',
@@ -239,6 +373,25 @@ function injectSEO(recipe) {
     'recipeInstructions': steps,
     'keywords': (recipe.keywords || []).join(', ')
   };
+
+  // VideoObject para JSON-LD si hay videos
+  if (recipe.youtube_videos && recipe.youtube_videos.length > 0) {
+    var validVideos = recipe.youtube_videos.filter(function(v) { return !!v.videoId; });
+    if (validVideos.length > 0) {
+      schema.video = validVideos.map(function(v) {
+        var obj = {
+          '@type': 'VideoObject',
+          'name': v.title || recipe.title,
+          'embedUrl': 'https://www.youtube-nocookie.com/embed/' + v.videoId,
+          'thumbnailUrl': 'https://img.youtube.com/vi/' + v.videoId + '/hqdefault.jpg',
+          'publisher': { '@type': 'Organization', 'name': v.channel || 'YouTube' }
+        };
+        if (v.uploadDate) obj.uploadDate = v.uploadDate;
+        if (v.description) obj.description = v.description;
+        return obj;
+      });
+    }
+  }
 
   var ld = document.querySelector('script[type="application/ld+json"]');
   if (!ld) {
@@ -253,7 +406,6 @@ function injectSEO(recipe) {
 async function initIndex() {
   var recipes = await loadRecipes();
 
-  // Sección clásicas
   var classicGrid = document.getElementById('classic-grid');
   if (classicGrid) {
     var classics = recipes.filter(function(r) {
@@ -264,16 +416,15 @@ async function initIndex() {
     } else if (recipes.length > 0) {
       classicGrid.innerHTML = recipes.slice(0, 6).map(renderCard).join('');
     } else {
-      renderEmptyState(classicGrid, 'Pronto publicaremos nuestras primeras recetas clásicas.');
+      renderEmptyState(classicGrid, 'Pronto publicaremos nuestras primeras recetas cl\u00e1sicas.');
     }
   }
 
-  // Sección diáspora
   var diasporaSection = document.getElementById('diaspora-section');
   var diasporaGrid = document.getElementById('diaspora-grid');
   if (diasporaGrid) {
     var diaspora = recipes.filter(function(r) {
-      return r.target_audience === 'Diáspora' ||
+      return r.target_audience === 'Di\u00e1spora' ||
         (r.international_substitutes && r.international_substitutes.length > 0);
     }).slice(0, 4);
     if (diaspora.length > 0) {
@@ -282,18 +433,18 @@ async function initIndex() {
     }
   }
 
-  // Sección turismo
   var tourismSection = document.getElementById('tourism-section');
   var tourismGrid = document.getElementById('tourism-grid');
   if (tourismGrid) {
-    var tourism = recipes.filter(function(r) { return !!r.tourism_route; }).slice(0, 4);
+    var tourism = recipes.filter(function(r) {
+      return !!r.tourism_route || (r.places && r.places.length > 0);
+    }).slice(0, 4);
     if (tourism.length > 0) {
       tourismGrid.innerHTML = tourism.map(renderCard).join('');
       if (tourismSection) tourismSection.classList.remove('hidden');
     }
   }
 
-  // Search bar en index
   var searchInput = document.getElementById('search-input');
   if (searchInput) {
     searchInput.addEventListener('keydown', function(e) {
@@ -319,7 +470,6 @@ async function initListing() {
   var recipes = await loadRecipes();
   var grid = document.getElementById('recipes-grid');
   var resultsCount = document.getElementById('results-count');
-
   var searchInput = document.getElementById('filter-search');
   var regionSel = document.getElementById('filter-region');
   var difficultySel = document.getElementById('filter-difficulty');
@@ -328,19 +478,16 @@ async function initListing() {
   var sortSel = document.getElementById('filter-sort');
   var clearBtn = document.getElementById('clear-filters');
 
-  // Poblar filtros con valores únicos
   function populate(sel, key) {
     if (!sel) return;
-    var seen = {};
-    var values = [];
+    var seen = {}, values = [];
     recipes.forEach(function(r) {
       if (r[key] && !seen[r[key]]) { seen[r[key]] = true; values.push(r[key]); }
     });
     values.sort(function(a, b) { return a.localeCompare(b, 'es'); });
     values.forEach(function(v) {
       var opt = document.createElement('option');
-      opt.value = v;
-      opt.textContent = v;
+      opt.value = v; opt.textContent = v;
       sel.appendChild(opt);
     });
   }
@@ -348,7 +495,6 @@ async function initListing() {
   populate(difficultySel, 'difficulty');
   populate(categorySel, 'category');
 
-  // Aplicar parámetros URL
   var params = new URLSearchParams(window.location.search);
   if (searchInput && params.get('q')) searchInput.value = params.get('q');
   if (regionSel && params.get('region')) regionSel.value = params.get('region');
@@ -371,10 +517,12 @@ async function initListing() {
       if (difficulty && r.difficulty !== difficulty) return false;
       if (category && r.category !== category) return false;
       if (audience) {
-        if (audience === 'Diáspora') {
-          if (r.target_audience !== 'Diáspora' && !(r.international_substitutes && r.international_substitutes.length > 0)) return false;
+        if (audience === 'Di\u00e1spora') {
+          if (r.target_audience !== 'Di\u00e1spora' &&
+              !(r.international_substitutes && r.international_substitutes.length > 0)) return false;
         } else if (audience === 'Turista') {
-          if (r.target_audience !== 'Turista' && !r.tourism_route) return false;
+          if (r.target_audience !== 'Turista' && !r.tourism_route &&
+              !(r.places && r.places.length > 0)) return false;
         } else {
           if (r.target_audience && r.target_audience !== audience) return false;
         }
@@ -383,18 +531,15 @@ async function initListing() {
     });
 
     filtered = sortRecipes(filtered, sort);
-
     if (resultsCount) {
       resultsCount.textContent = filtered.length === 1
         ? '1 receta encontrada'
         : filtered.length + ' recetas encontradas';
     }
-
     renderGridWithAds(filtered, grid, 9);
     initAds();
   }
 
-  // Listeners
   var debouncedApply = debounce(applyFilters, 300);
   if (searchInput) searchInput.addEventListener('input', debouncedApply);
   if (regionSel) regionSel.addEventListener('change', applyFilters);
@@ -402,7 +547,6 @@ async function initListing() {
   if (categorySel) categorySel.addEventListener('change', applyFilters);
   if (audienceSel) audienceSel.addEventListener('change', applyFilters);
   if (sortSel) sortSel.addEventListener('change', applyFilters);
-
   if (clearBtn) {
     clearBtn.addEventListener('click', function() {
       if (searchInput) searchInput.value = '';
@@ -415,7 +559,6 @@ async function initListing() {
     });
   }
 
-  // Render inicial
   if (grid) grid.innerHTML = renderSkeleton(6);
   applyFilters();
 }
@@ -424,7 +567,6 @@ async function initListing() {
 async function initRecipe() {
   var params = new URLSearchParams(window.location.search);
   var slug = params.get('slug');
-
   var loadingEl = document.getElementById('recipe-loading');
   var errorEl = document.getElementById('recipe-error');
   var contentEl = document.getElementById('recipe-content');
@@ -434,7 +576,7 @@ async function initRecipe() {
     if (errorEl) {
       errorEl.classList.remove('hidden');
       var msgEl = errorEl.querySelector('[data-error-msg]');
-      if (msgEl) msgEl.textContent = 'No se especificó ninguna receta.';
+      if (msgEl) msgEl.textContent = 'No se especific\u00f3 ninguna receta.';
     }
     return;
   }
@@ -458,30 +600,24 @@ async function initRecipe() {
 
   if (contentEl) contentEl.classList.remove('hidden');
 
-  // SEO
   injectSEO(recipe);
 
-  // Breadcrumb
   var bcRecipe = document.getElementById('bc-recipe');
   if (bcRecipe) bcRecipe.textContent = recipe.title;
 
-  // Hero imagen
   var heroImg = document.getElementById('recipe-hero-img');
   if (heroImg) {
-    var imgSrc = recipe.image_url || 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80';
-    heroImg.src = imgSrc;
-    heroImg.alt = recipe.title;
+    heroImg.src = recipe.image_url || 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80';
+    heroImg.alt = recipe.image_alt || recipe.title;
     heroImg.onerror = function() { this.src = 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80'; };
   }
 
-  // Audience chip en héroe
   var heroChip = document.getElementById('recipe-audience-chip');
   if (heroChip) {
     var chip = getAudienceChip(recipe);
     if (chip) { heroChip.innerHTML = chip; heroChip.classList.remove('hidden'); }
   }
 
-  // Campos básicos
   var fields = [
     ['recipe-title', recipe.title],
     ['recipe-description', recipe.description],
@@ -503,7 +639,6 @@ async function initRecipe() {
     }
   });
 
-  // Ingredientes
   var ingList = document.getElementById('ingredients-list');
   if (ingList && recipe.ingredients && recipe.ingredients.length > 0) {
     ingList.innerHTML = recipe.ingredients.map(function(ing) {
@@ -514,7 +649,6 @@ async function initRecipe() {
     }).join('');
   }
 
-  // Instrucciones
   var instrList = document.getElementById('instructions-list');
   if (instrList && recipe.instructions && recipe.instructions.length > 0) {
     instrList.innerHTML = recipe.instructions.map(function(step, i) {
@@ -526,7 +660,6 @@ async function initRecipe() {
     }).join('');
   }
 
-  // Tips
   var tipsList = document.getElementById('tips-list');
   if (tipsList && recipe.tips && recipe.tips.length > 0) {
     tipsList.innerHTML = recipe.tips.map(function(tip) {
@@ -539,17 +672,18 @@ async function initRecipe() {
     if (tipsParent) tipsParent.classList.remove('hidden');
   }
 
-  // Keywords
   var kwEl = document.getElementById('recipe-keywords');
   if (kwEl && recipe.keywords && recipe.keywords.length > 0) {
     kwEl.innerHTML = recipe.keywords.map(function(kw) {
-      return '<a href="recipes.html?q=' + encodeURIComponent(kw) + '" class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:bg-[#006400] hover:text-white transition-colors duration-200">' + escapeHtml(kw) + '</a>';
+      return '<a href="recipes.html?q=' + encodeURIComponent(kw) +
+        '" class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:bg-[#006400] hover:text-white transition-colors duration-200">' +
+        escapeHtml(kw) + '</a>';
     }).join('');
     var kwParent = kwEl.closest('[data-optional]');
     if (kwParent) kwParent.classList.remove('hidden');
   }
 
-  // ── Tarjeta de sustitutos internacionales (Diáspora) ──
+  // Sustitutos internacionales
   var subEl = document.getElementById('substitutes-card');
   if (subEl && recipe.international_substitutes && recipe.international_substitutes.length > 0) {
     var subsRows = recipe.international_substitutes.map(function(s) {
@@ -560,9 +694,7 @@ async function initRecipe() {
         '</tr>';
     }).join('');
     subEl.innerHTML = '<div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/60 rounded-3xl p-5 backdrop-blur-sm">' +
-      '<h3 class="font-bold text-blue-800 text-sm mb-3 flex items-center gap-2">' +
-        '\u2708\uFE0F Ingredientes en el Extranjero' +
-      '</h3>' +
+      '<h3 class="font-bold text-blue-800 text-sm mb-3 flex items-center gap-2">\u2708\uFE0F Ingredientes en el Extranjero</h3>' +
       '<p class="text-blue-600 text-xs mb-4">\u00bfEst\u00e1s fuera de Ecuador? Estos son los equivalentes que puedes encontrar.</p>' +
       '<div class="overflow-x-auto"><table class="w-full text-xs">' +
         '<thead><tr class="text-blue-600 font-semibold border-b border-blue-200/60">' +
@@ -576,17 +708,20 @@ async function initRecipe() {
     subEl.classList.remove('hidden');
   }
 
-  // ── Tarjeta de ruta turística ──
+  // Ruta turística
   var tourEl = document.getElementById('tourism-card');
   if (tourEl && recipe.tourism_route) {
     tourEl.innerHTML = '<div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 rounded-3xl p-5 backdrop-blur-sm">' +
-      '<h3 class="font-bold text-amber-800 text-sm mb-3 flex items-center gap-2">' +
-        '\uD83D\uDDFA\uFE0F Ruta Gastron\u00f3mica 2026' +
-      '</h3>' +
+      '<h3 class="font-bold text-amber-800 text-sm mb-3 flex items-center gap-2">\uD83D\uDDFA\uFE0F Ruta Gastron\u00f3mica 2026</h3>' +
       '<p class="text-amber-700 leading-relaxed text-sm">' + escapeHtml(recipe.tourism_route) + '</p>' +
-      '</div>';
+    '</div>';
     tourEl.classList.remove('hidden');
   }
+
+  // Secciones v3
+  renderPlacesCard(recipe);
+  renderVideosCard(recipe);
+  renderImageCredit(recipe);
 
   initAds();
 }

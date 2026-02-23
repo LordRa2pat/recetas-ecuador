@@ -1,1 +1,68 @@
-[]
+[
+  {
+    "slug": "sopa-de-mani-ecuatoriana",
+    "title": "Sopa de Maní Ecuatoriana",
+    "description": "Deliciosa sopa cremosa de maní, un clásico reconfortante de la Sierra ecuatoriana.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "40 min",
+    "total_time": "60 min",
+    "image_url": "https://images.unsplash.com/photo-1543332164-6e82f355badc?w=800&q=80",
+    "ingredients": [
+      "1 taza de maní crudo (sin sal)",
+      "1 litro de leche entera",
+      "2 papas medianas (peladas y cortadas en cubos)",
+      "1 cebolla blanca pequeña (finamente picada)",
+      "2 dientes de ajo (picados)",
+      "1 cucharada de aceite vegetal",
+      "1 cucharadita de achiote en polvo",
+      "Sal al gusto",
+      "Pimienta al gusto",
+      "1 ramita de cilantro (para decorar)"
+    ],
+    "instructions": [
+      "Tostar el maní en una sartén a fuego medio durante 5 minutos, removiendo constantemente para evitar que se queme. Reservar.",
+      "En una licuadora, procesar el maní tostado con 2 tazas de leche hasta obtener una pasta suave. Reservar.",
+      "En una olla grande, calentar el aceite y sofreír la cebolla y el ajo a fuego medio hasta que estén transparentes, unos 3 minutos.",
+      "Añadir el achiote en polvo al sofrito, mezclar bien y agregar las papas en cubos. Cocinar por 2 minutos.",
+      "Incorporar la pasta de maní y el resto de la leche. Cocinar a fuego bajo, removiendo ocasionalmente, por 25-30 minutos hasta que las papas estén tiernas.",
+      "Ajustar la sal y pimienta al gusto. Servir caliente, decorando con hojas de cilantro fresco."
+    ],
+    "tips": [
+      "Si la sopa queda muy espesa, puedes agregar más leche o agua hasta alcanzar la consistencia deseada.",
+      "Para un sabor más intenso, tuesta el maní hasta que esté ligeramente dorado, pero cuidado con quemarlo.",
+      "Acompaña con una rebanada de pan fresco o tostado para una experiencia más tradicional.",
+      "Puedes agregar un toque de comino molido para realzar los sabores."
+    ],
+    "keywords": [
+      "sopa de mani ecuatoriana",
+      "receta sopa de mani",
+      "sopa de mani sierra",
+      "platos tipicos ecuador",
+      "sopa cremosa de mani",
+      "receta tradicional ecuatoriana",
+      "comida de la sierra ecuador",
+      "sopa de mani facil"
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Diáspora",
+    "international_substitutes": [
+      {
+        "original": "Achiote en polvo",
+        "sustituto_usa": "Mezcla de paprika y cúrcuma (1:1)",
+        "sustituto_europa": "Mezcla de paprika y cúrcuma (1:1)"
+      },
+      {
+        "original": "Maní crudo",
+        "sustituto_usa": "Crema de maní natural sin azúcar (ajustar con 2-3 cucharadas)",
+        "sustituto_europa": "Crema de maní natural sin azúcar (ajustar con 2-3 cucharadas)"
+      }
+    ],
+    "tourism_route": "📍 Quito: Mercado de San Francisco. Prueba esta sopa en los puestos tradicionales del mercado, un lugar icónico para saborear la comida quiteña. Precio: $2-3 USD.",
+    "id": 1,
+    "created_at": "2026-02-23T18:32:21.266Z"
+  }
+]

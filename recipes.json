@@ -1,5 +1,74 @@
 [
   {
+    "slug": "empanadas-de-yuca",
+    "title": "Empanadas de Yuca Ecuatorianas",
+    "description": "Deliciosas empanadas de yuca rellenas de queso, crujientes por fuera y suaves por dentro.",
+    "region": "Costa",
+    "category": "Entradas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "20 min",
+    "total_time": "50 min",
+    "image_url": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&q=80",
+    "ingredients": [
+      "1 kg de yuca fresca, pelada y rallada",
+      "200 g de queso fresco, desmenuzado",
+      "1 huevo, batido",
+      "2 cucharadas de mantequilla",
+      "1 cucharadita de sal",
+      "1/2 cucharadita de pimienta",
+      "1 taza de aceite vegetal, para freír",
+      "1 cucharada de achiote en polvo (opcional, para color)"
+    ],
+    "instructions": [
+      "Pela y ralla la yuca fresca hasta obtener una masa fina. Exprime el exceso de líquido usando un paño limpio.",
+      "En un bol grande, mezcla la yuca rallada con la mantequilla, el huevo, la sal, la pimienta y el achiote si lo deseas.",
+      "Forma pequeñas bolas con la masa de yuca y aplánalas con las manos para hacer discos de unos 8 cm de diámetro.",
+      "Coloca una cucharada de queso fresco desmenuzado en el centro de cada disco y dobla los bordes para sellar, formando una media luna.",
+      "Calienta el aceite en una sartén profunda a fuego medio-alto. Fríe las empanadas por ambos lados hasta que estén doradas y crujientes, unos 3-4 minutos por lado.",
+      "Retira las empanadas del aceite y colócalas sobre papel absorbente para eliminar el exceso de grasa. Sirve caliente."
+    ],
+    "tips": [
+      "Si la masa de yuca está muy húmeda, agrega una cucharada de harina de maíz para compactarla.",
+      "Puedes rellenar las empanadas con carne molida o pollo deshebrado como variante.",
+      "Fríelas a fuego medio para evitar que se quemen por fuera y queden crudas por dentro.",
+      "Acompáñalas con una salsa de ají o una crema de aguacate para un toque extra de sabor."
+    ],
+    "keywords": [
+      "empanadas de yuca",
+      "empanadas ecuatorianas",
+      "receta empanadas de yuca",
+      "comida típica de la costa ecuatoriana",
+      "empanadas de yuca con queso",
+      "cómo hacer empanadas de yuca",
+      "recetas ecuatorianas fáciles",
+      "entradas ecuatorianas"
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Diáspora",
+    "international_substitutes": [
+      {
+        "original": "yuca fresca",
+        "sustituto_usa": "yuca congelada (disponible en supermercados latinos como Goya)",
+        "sustituto_europa": "yuca congelada o en conserva (en tiendas latinas o africanas)"
+      },
+      {
+        "original": "queso fresco",
+        "sustituto_usa": "queso feta o ricotta salada",
+        "sustituto_europa": "queso feta o queso de cabra fresco"
+      },
+      {
+        "original": "achiote en polvo",
+        "sustituto_usa": "pimentón dulce con una pizca de cúrcuma",
+        "sustituto_europa": "pimentón dulce con una pizca de cúrcuma"
+      }
+    ],
+    "tourism_route": "📍 [Guayaquil]: Mercado Caraguay. Prueba las empanadas de yuca frescas preparadas al momento por vendedoras locales. Precio: $1-2 USD.",
+    "id": 2,
+    "created_at": "2026-02-23T18:33:09.337Z"
+  },
+  {
     "slug": "sopa-de-mani-ecuatoriana",
     "title": "Sopa de Maní Ecuatoriana",
     "description": "Deliciosa sopa cremosa de maní, un clásico reconfortante de la Sierra ecuatoriana.",

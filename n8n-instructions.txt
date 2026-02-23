@@ -1,0 +1,429 @@
+═══════════════════════════════════════════════════════════════════════════════
+  BIBLIOTECA DE RECETAS ECUATORIANAS — GUÍA COMPLETA DE CONFIGURACIÓN n8n
+═══════════════════════════════════════════════════════════════════════════════
+
+Fecha:   2026-02-22
+Versión: 1.0
+Proyecto: recetas-ecuador (sitio estático autopublicado con IA + n8n)
+
+───────────────────────────────────────────────────────────────────────────────
+  ARQUITECTURA DEL SISTEMA
+───────────────────────────────────────────────────────────────────────────────
+
+  [Schedule Trigger]
+        │
+        ▼
+  [Nodo 2: Generador de Platos]  ─── OpenAI/Anthropic
+        │  Salida: nombre del plato (texto plano)
+        ▼
+  [Nodo 3: Chef Redactor]        ─── OpenAI/Anthropic
+        │  Salida: JSON completo de la receta (string)
+        ▼
+  [Nodo 4: Execute Command]      ─── node n8n-receiver.js '...'
+        │  Salida: { status, id, slug, title, total_recipes }
+        ▼
+  [Nodo 5: Git Push]             ─── Execute Command (git add + commit + push)
+        │  Resultado: Vercel/Netlify detecta el push y recompila
+
+───────────────────────────────────────────────────────────────────────────────
+  PRERREQUISITOS
+───────────────────────────────────────────────────────────────────────────────
+
+1. Node.js instalado en el servidor donde corre n8n (v18 o superior).
+   Verificar: $ node --version
+
+2. El repositorio del sitio debe estar clonado en el servidor de n8n:
+   $ git clone https://github.com/tu-usuario/recetas-ecuador.git /srv/recetas-ecuador
+
+3. Git configurado con acceso push en ese servidor:
+   $ git config user.email "bot@recetas-ecuador.com"
+   $ git config user.name "RecetasBot"
+
+4. Credenciales de GitHub guardadas (usa SSH key o token HTTPS):
+   Con SSH: $ ssh-keygen -t ed25519 -C "bot@recetas-ecuador.com"
+            Agrega la public key en GitHub → Settings → SSH Keys
+
+5. El proyecto en Vercel/Netlify conectado al repositorio GitHub.
+   Cada push al branch main dispara un rebuild automático.
+
+───────────────────────────────────────────────────────────────────────────────
+  WORKFLOW: CONFIGURACIÓN NODO POR NODO
+───────────────────────────────────────────────────────────────────────────────
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NODO 1 — Schedule Trigger                                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Tipo de nodo : Schedule Trigger (nativo n8n)
+Configuración:
+  - Mode       : "Every X"  (o "Cron Expression" para mayor control)
+  - Interval   : 12 horas  →  genera 2 recetas por día
+  - Cron equivalente: 0 8,20 * * *  (8am y 8pm, hora del servidor)
+
+Recomendación: Empieza con 1 vez al día hasta tener un buen backlog de recetas.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NODO 2 — Generador de Platos (Nombrador)                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Tipo de nodo : OpenAI  ── o ──  @n8n-nodes-langchain/lmOpenAi
+               Anthropic ── o ── @n8n-nodes-langchain/lmAnthropicClaude
+
+Model         : gpt-4o-mini  (barato y suficiente para este task)
+               o claude-haiku-4-5-20251001
+
+Prompt del sistema (System):
+  "Eres un experto en gastronomía ecuatoriana. Solo respondes con nombres de platos."
+
+Prompt del usuario (User / Human):
+  "Dame el nombre de un plato típico ecuatoriano poco conocido o una variación
+  original (ejemplos: Ceviche de Chochos, Empanadas de Morocho, Sopa de Quinua
+  con Pollo, Tigrillo de Verde, Muchines de Yuca). No repitas platos muy
+  comunes como 'Llapingachos' o 'Ceviche de camarón'. Solo responde con el
+  nombre del plato, sin explicaciones, sin puntuación al final."
+
+Temperature   : 1.0  (alta creatividad para variedad)
+Max tokens    : 30
+
+Salida esperada (ejemplo): "Caldo de Pata con Maní"
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NODO 3 — Chef Redactor (Generador de Receta Completa)                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Tipo de nodo : OpenAI  /  Anthropic  (mismo proveedor que Nodo 2)
+Model         : gpt-4o  o  claude-sonnet-4-6  (necesita más capacidad)
+Temperature   : 0.7
+Max tokens    : 2500
+
+Prompt del sistema (System):
+  "Eres un chef ecuatoriano experto y redactor SEO nativo. Respondes ÚNICAMENTE
+  con objetos JSON válidos, sin texto adicional, sin bloques de código markdown."
+
+Prompt del usuario (User / Human) — ⚠️ USA EXPRESIÓN n8n PARA EL NOMBRE:
+
+────────────── INICIO DEL PROMPT ──────────────────────────────────────────────
+
+Eres un chef ecuatoriano experto y un redactor SEO nativo. Genera una receta extensa y detallada para: {{ $json.message.content }}
+
+REGLA DE ORO LOCAL (SUPERMAXI): Para que la receta sea 100% auténtica y útil para el usuario ecuatoriano, DEBES incluir referencias directas a productos, marcas o secciones del Supermaxi o Megamaxi en los ingredientes y en los tips. (Ejemplos: 'Queso fresco Kiosko', 'Atún Real o Isabel', 'Achiote La Favorita', 'Manteca de chancho de la sección de cárnicos del Supermaxi', 'Fideos Oriental', 'Aceite La Favorita', 'Crema de leche Nestlé', 'Salsa de tomate Maggi', etc.).
+
+Debes maximizar la retención del usuario y apuntar a keywords de alto valor (ej. comida saludable, recetas económicas, compras en supermercado).
+
+Tu respuesta DEBE SER ÚNICAMENTE un objeto JSON válido, sin formato markdown alrededor, con esta estructura exacta:
+{
+  "title": "Título SEO atractivo (ej. Auténtico Locro de Papa: Receta Fácil con Ingredientes del Supermaxi)",
+  "slug": "locro-de-papa-quiteno-supermaxi",
+  "category": "Sopas",
+  "region": "Sierra",
+  "prep_time": "15 min",
+  "cook_time": "40 min",
+  "total_time": "55 min",
+  "servings": "4 personas",
+  "difficulty": "Fácil",
+  "ingredients": [
+    "10 papas cholas (compradas de preferencia sueltas en el área de legumbres del Supermaxi)",
+    "1 taza de queso fresco (marca Kiosko o Rey Queso)",
+    "..."
+  ],
+  "instructions": ["Paso 1 detallado...", "Paso 2 detallado...", "..."],
+  "tips": [
+    "Tip 1 sobre historia o cultura del plato para retener al lector.",
+    "Tip 2 de ahorro recomendando comprar cierto ingrediente en los días de descuento o marca Supermaxi.",
+    "Tip 3 de preparación o salud."
+  ],
+  "image": "https://source.unsplash.com/800x600/?ecuadorian,food",
+  "keywords": ["receta fácil", "comida típica", "ingredientes supermaxi", "marcas ecuatorianas", "ahorro"],
+  "description": "Meta descripción de 150 caracteres altamente persuasiva para CTR en Google."
+}
+
+REGLAS ADICIONALES:
+- region debe ser EXACTAMENTE uno de: Sierra, Costa, Amazonía, Galápagos, Nacional
+- difficulty debe ser EXACTAMENTE uno de: Fácil, Media, Difícil
+- El slug debe ser en minúsculas, con guiones, sin caracteres especiales
+- La description debe tener entre 120 y 155 caracteres
+- Incluye mínimo 8 ingredientes y mínimo 5 pasos de preparación
+- Incluye exactamente 3 tips
+
+────────────── FIN DEL PROMPT ──────────────────────────────────────────────────
+
+NOTA IMPORTANTE sobre la expresión n8n:
+  - Si el Nodo 2 es un nodo "OpenAI":
+      {{ $json.message.content }}
+  - Si es un nodo "Chat Model" de LangChain:
+      {{ $json.text }}
+  - Si es un nodo "HTTP Request" a OpenAI API directo:
+      {{ $json.choices[0].message.content }}
+  Ajusta la expresión según tu nodo real.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NODO 4 — Execute Command (Guardar en recipes.json)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Tipo de nodo : Execute Command
+
+Comando:
+  node /srv/recetas-ecuador/n8n-receiver.js '{{ $json.message.content }}'
+
+⚠️ AJUSTA LA RUTA ABSOLUTA según donde tengas el proyecto clonado.
+   Usa siempre ruta absoluta, no relativa.
+
+Si el texto del Nodo 3 puede contener comillas simples ('), necesitas escapar:
+  node /srv/recetas-ecuador/n8n-receiver.js "{{ $json.message.content.replace(/'/g, \"\\'\") }}"
+
+Alternativa más robusta — pasar el JSON por stdin con un script wrapper:
+  echo '{{ $json.message.content }}' | node /srv/recetas-ecuador/n8n-receiver-stdin.js
+
+Salida esperada de este nodo (JSON en stdout):
+  {
+    "status": "success",
+    "id": 42,
+    "slug": "caldo-de-pata-con-mani",
+    "title": "Caldo de Pata con Maní: La Sopa Reconfortante...",
+    "total_recipes": 42,
+    "created_at": "2026-02-22T20:00:00.000Z"
+  }
+
+Si "status" es "skipped", la receta era un duplicado y el workflow puede
+detenerse aquí con un nodo "IF" que verifique {{ $json.status === 'success' }}.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NODO 5 — Execute Command (Git Add + Commit + Push)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Tipo de nodo : Execute Command
+
+Comando (copia y pega como una sola línea o usa bash -c con heredoc):
+
+  bash -c "cd /srv/recetas-ecuador && git add recipes.json && git commit -m 'feat(recetas): agregar {{ $json.slug }} [ID:{{ $json.id }}]' && git push origin main"
+
+Desglose:
+  1. cd /srv/recetas-ecuador    → entrar al directorio del proyecto
+  2. git add recipes.json       → solo agregar el archivo de datos
+  3. git commit -m '...'        → commit con el slug de la receta como mensaje
+  4. git push origin main       → push a GitHub → dispara rebuild en Vercel/Netlify
+
+IMPORTANTE:
+  - Si el commit falla porque no hay cambios (receta duplicada saltada antes),
+    añade || true al final del git commit para que no falle el nodo:
+    git commit -m '...' || true
+  - El full path es crítico. n8n corre en un contexto de directorio diferente.
+
+───────────────────────────────────────────────────────────────────────────────
+  CONFIGURACIÓN COMPLETA DEL WORKFLOW (resumen)
+───────────────────────────────────────────────────────────────────────────────
+
+  Nombre del workflow:  RECETAS-AI-Auto-Publisher
+
+  Nodo 1: Schedule Trigger
+    └── Each: 12 hours  (o cron: 0 8,20 * * *)
+
+  Nodo 2: OpenAI — Generador de Nombres
+    └── Model: gpt-4o-mini
+    └── Temp: 1.0
+    └── Prompt: [ver arriba]
+
+  Nodo 3: OpenAI — Chef Redactor
+    └── Model: gpt-4o
+    └── Temp: 0.7
+    └── Prompt: [ver PROMPT completo arriba]
+
+  Nodo 4: Execute Command — Guardar receta
+    └── Command: node /srv/recetas-ecuador/n8n-receiver.js '{{ $json.message.content }}'
+
+  Nodo 5: Execute Command — Git push
+    └── Command: bash -c "cd /srv/recetas-ecuador && git add recipes.json && git commit -m 'feat: {{ $json.slug }}' && git push origin main"
+
+───────────────────────────────────────────────────────────────────────────────
+  CONFIGURACIÓN DE VERCEL / NETLIFY
+───────────────────────────────────────────────────────────────────────────────
+
+VERCEL:
+  1. Ir a vercel.com → New Project → Import Git Repository
+  2. Seleccionar el repo "recetas-ecuador"
+  3. Framework Preset: "Other" (es HTML estático)
+  4. Build Command: (dejar vacío o "echo done")
+  5. Output Directory: "." (raíz del proyecto)
+  6. Cada push a main → rebuild automático en <30 segundos
+
+NETLIFY:
+  1. Ir a netlify.com → New site from Git
+  2. Seleccionar el repo
+  3. Build command: (vacío)
+  4. Publish directory: "."
+  5. Cada push → rebuild automático
+
+GITHUB PAGES (alternativa gratuita):
+  1. Settings → Pages → Source: "Deploy from branch: main / root"
+  2. La URL será: https://tu-usuario.github.io/recetas-ecuador/
+  3. Sin rebuild automático pero sirve los archivos estáticos directamente
+
+───────────────────────────────────────────────────────────────────────────────
+  PRUEBA MANUAL DEL PIPELINE
+───────────────────────────────────────────────────────────────────────────────
+
+1. Prueba n8n-receiver.js directamente desde terminal:
+
+  node /srv/recetas-ecuador/n8n-receiver.js '{
+    "title": "Auténtico Locro de Papa Quiteño con Ingredientes del Supermaxi",
+    "slug": "locro-de-papa-quiteno",
+    "category": "Sopas",
+    "region": "Sierra",
+    "prep_time": "15 min",
+    "cook_time": "45 min",
+    "total_time": "60 min",
+    "servings": "6 personas",
+    "difficulty": "Fácil",
+    "ingredients": [
+      "12 papas cholas (sección de legumbres del Supermaxi)",
+      "1 taza de queso fresco Kiosko",
+      "1/2 taza de crema de leche Nestlé",
+      "1 cebolla blanca",
+      "2 dientes de ajo",
+      "1 cdta de achiote La Favorita",
+      "Sal y pimienta al gusto",
+      "Cilantro fresco"
+    ],
+    "instructions": [
+      "Pela y corta las papas en cubos medianos.",
+      "Sofríe la cebolla y el ajo con achiote La Favorita a fuego medio por 5 minutos.",
+      "Agrega las papas y cubre con 2 litros de agua. Cocina 30 min hasta que ablanden.",
+      "Aplasta algunas papas contra el lado de la olla para espesar el caldo.",
+      "Añade la crema de leche y el queso Kiosko. Ajusta sal y pimienta.",
+      "Sirve con aguacate y ají al gusto."
+    ],
+    "tips": [
+      "El locro de papa es originario de Quito y se consume especialmente en las mañanas frías de la Sierra. La palabra locro viene del quechua ruqru.",
+      "Para ahorrar: compra las papas cholas sueltas en el área de verduras del Supermaxi, salen más económicas que las empacadas. Los días martes suelen tener descuentos en tubérculos.",
+      "Para una versión más saludable, reemplaza la crema de leche por leche evaporada light. El resultado es igual de cremoso con menos calorías."
+    ],
+    "image": "https://source.unsplash.com/800x600/?potato,soup,ecuador",
+    "keywords": ["locro de papa", "sopa ecuatoriana", "receta fácil", "sierra ecuatoriana", "supermaxi", "comida quiteña"],
+    "description": "Locro de papa auténtico y cremoso, listo en 1 hora con ingredientes del Supermaxi. ¡El sabor de Quito en tu mesa!"
+  }'
+
+2. Verifica que recipes.json tenga ahora 1 elemento con id: 1
+
+3. Abre index.html en un servidor local:
+   npx serve /srv/recetas-ecuador
+   → Abre http://localhost:3000
+
+4. Verifica que la receta aparezca en el grid de inicio
+
+5. Abre recipe.html?slug=locro-de-papa-quiteno
+   → La receta debe cargarse con todos los campos
+   → Inspecciona <head> en DevTools: verás el JSON-LD de Schema.org
+
+───────────────────────────────────────────────────────────────────────────────
+  SERVIR EL SITIO LOCALMENTE (para desarrollo)
+───────────────────────────────────────────────────────────────────────────────
+
+IMPORTANTE: No abras los HTML directamente con file:// en el navegador.
+El fetch() de recipes.json fallará por política CORS de los navegadores.
+
+Usa un servidor HTTP local:
+
+  # Con Node.js (npx):
+  npx serve /srv/recetas-ecuador -p 3000
+
+  # Con Python 3:
+  cd /srv/recetas-ecuador && python3 -m http.server 3000
+
+  # Con PHP:
+  cd /srv/recetas-ecuador && php -S localhost:3000
+
+Luego abre: http://localhost:3000
+
+───────────────────────────────────────────────────────────────────────────────
+  GOOGLE ADSENSE — ACTIVACIÓN DE BLOQUES
+───────────────────────────────────────────────────────────────────────────────
+
+El código HTML tiene comentarios placeholder donde deben ir los bloques AdSense:
+
+  index.html:
+    <!-- AdSense: Bloque Superior Index -->
+    → Reemplazar por tu bloque <script> de AdSense (display / responsive)
+
+  recipe.html (2 bloques):
+    <!-- AdSense: Receta Despues de Ingredientes -->
+    → Colocar después de la lista de ingredientes (alta visibilidad)
+
+    <!-- AdSense: Receta Antes de Tips -->
+    → Colocar antes de la sección de tips (usuario comprometido = mejor CPC)
+
+  recipes.html:
+    <!-- AdSense: Bloque Listado Desktop -->
+    → Solo visible en pantallas >= 1024px (clase lg:block)
+    → Ideal para un anuncio de barra lateral 300x250 o 300x600
+
+Formato de bloque AdSense a pegar (ejemplo):
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
+       data-ad-format="auto"
+       data-full-width-responsive="true">
+  </ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+───────────────────────────────────────────────────────────────────────────────
+  SEO — FRAGMENTOS ENRIQUECIDOS (RICH SNIPPETS)
+───────────────────────────────────────────────────────────────────────────────
+
+El sitio genera automáticamente Schema.org de tipo "Recipe" para cada receta.
+Esto habilita los Rich Snippets en Google (estrellitas, tiempo de prep, imagen).
+
+Para verificar que funciona:
+  1. Publica el sitio en Vercel/Netlify
+  2. Abre una URL de receta, ej: https://tu-sitio.vercel.app/recipe.html?slug=locro-de-papa-quiteno
+  3. Pégala en: https://search.google.com/test/rich-results
+  4. Deberías ver el tipo "Recipe" detectado correctamente
+
+El JSON-LD se inyecta por script.js en tiempo de ejecución. Para que Google
+lo indexe correctamente, el sitio debe ser rastreable con JavaScript habilitado
+(Google Crawler sí ejecuta JS). Alternativamente, considera pre-rendering.
+
+───────────────────────────────────────────────────────────────────────────────
+  TROUBLESHOOTING
+───────────────────────────────────────────────────────────────────────────────
+
+PROBLEMA: n8n-receiver.js falla con "Invalid JSON"
+  → El shell puede estar escapando las comillas del JSON.
+  → Solución: En el nodo Execute Command, usa el campo "Arguments" en lugar
+    de incrustar el JSON directamente en el comando.
+  → O usa una variable de entorno intermedia:
+    JSON_DATA='{{ $json.message.content }}' node /srv/recetas-ecuador/n8n-receiver.js "$JSON_DATA"
+
+PROBLEMA: Git push falla con "Permission denied (publickey)"
+  → El servidor de n8n no tiene la clave SSH configurada para GitHub.
+  → Solución: Configura la clave SSH del usuario que corre n8n:
+    $ sudo -u n8n ssh -T git@github.com
+
+PROBLEMA: Las recetas no aparecen en el navegador (index.html vacío)
+  → Estás abriendo el archivo directamente (file://) sin servidor HTTP.
+  → Solución: Usa npx serve o python3 -m http.server
+
+PROBLEMA: El Rich Snippet no aparece en Google Search Console
+  → Google tarda 1-4 semanas en re-rastrear las páginas.
+  → Solicita re-indexación en Google Search Console → URL Inspection.
+
+PROBLEMA: El slug tiene caracteres especiales (ñ, ü, espacios)
+  → n8n-receiver.js los normaliza automáticamente a guiones ASCII.
+  → Verifica en el JSON de salida del Nodo 4 el campo "slug".
+
+───────────────────────────────────────────────────────────────────────────────
+  ESTRUCTURA FINAL DEL PROYECTO
+───────────────────────────────────────────────────────────────────────────────
+
+/srv/recetas-ecuador/
+├── index.html           ← Homepage: hero + búsqueda + 6 recetas destacadas
+├── recipes.html         ← Listado: filtros + grid + sidebar AdSense
+├── recipe.html          ← Receta individual: SEO dinámico + Schema.org
+├── script.js            ← JS: routing, search, filters, SEO injection
+├── recipes.json         ← Base de datos (array JSON, creciente)
+├── n8n-receiver.js      ← CLI bridge: recibe JSON → actualiza recipes.json
+└── n8n-instructions.txt ← Este archivo
+
+═══════════════════════════════════════════════════════════════════════════════
+  FIN DE LA GUÍA
+═══════════════════════════════════════════════════════════════════════════════

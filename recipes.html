@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todas las Recetas — Biblioteca de Recetas Ecuatorianas</title>
+  <meta name="description" content="Explora todas las recetas de cocina ecuatoriana. Filtra por región, dificultad o categoría y encuentra tu próximo plato favorito." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Todas las Recetas — Biblioteca de Recetas Ecuatorianas" />
+  <meta property="og:description" content="Filtra por región, dificultad o categoría y encuentra tu plato favorito de la cocina ecuatoriana." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_EC" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ec-green':  '#006400',
+            'ec-yellow': '#FFCC00',
+            'ec-red':    '#C8102E',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .flag-stripe {
+      background: linear-gradient(90deg, #FFCC00 0%, #FFCC00 45%, #006400 45%, #006400 72.5%, #C8102E 72.5%, #C8102E 100%);
+    }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+
+<body data-page="listing" class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-[#006400] shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-white text-lg">
+        <span class="text-2xl">🍲</span>
+        <span class="hidden sm:block">Recetas Ecuador</span>
+      </a>
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <a href="index.html"
+           class="text-white font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-white/20 transition-colors">
+          Inicio
+        </a>
+        <a href="recipes.html"
+           class="text-white font-medium text-sm px-3 py-1.5 rounded-lg bg-white/20 hover:bg-white/30 transition-colors">
+          Recetas
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="bg-[#006400]">
+    <div class="h-1 flag-stripe"></div>
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:py-10">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-1">🍽️ Todas las Recetas</h1>
+      <p class="text-green-200 text-sm">Filtra, busca y descubre los mejores platos del Ecuador</p>
+    </div>
+    <div class="h-1 flag-stripe"></div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN LAYOUT ══════════════════════════════════ -->
+  <div class="max-w-6xl mx-auto px-4 py-8 flex gap-8">
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 min-w-0">
+
+      <!-- ── FILTER BAR ── -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-6">
+        <!-- Search row -->
+        <div class="flex gap-2 mb-3">
+          <div class="relative flex-1">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Buscar recetas, ingredientes..."
+              class="w-full pl-9 pr-4 py-2.5 border border-gray-200 rounded-xl text-sm
+                     focus:outline-none focus:ring-2 focus:ring-[#006400]/30 focus:border-[#006400]
+                     transition placeholder-gray-400"
+              autocomplete="off"
+            />
+          </div>
+          <button
+            id="clear-filters"
+            class="flex-shrink-0 text-xs text-gray-500 hover:text-[#C8102E] font-medium px-3 py-2
+                   border border-gray-200 rounded-xl hover:border-red-200 transition-colors"
+          >
+            Limpiar
+          </button>
+        </div>
+
+        <!-- Filter dropdowns -->
+        <div class="grid grid-cols-3 gap-2">
+          <select id="filter-region"
+                  class="w-full py-2 px-3 border border-gray-200 rounded-xl text-sm text-gray-700
+                         focus:outline-none focus:ring-2 focus:ring-[#006400]/30 focus:border-[#006400]
+                         bg-white cursor-pointer">
+            <option value="">🗺️ Región</option>
+          </select>
+
+          <select id="filter-difficulty"
+                  class="w-full py-2 px-3 border border-gray-200 rounded-xl text-sm text-gray-700
+                         focus:outline-none focus:ring-2 focus:ring-[#006400]/30 focus:border-[#006400]
+                         bg-white cursor-pointer">
+            <option value="">⚡ Dificultad</option>
+          </select>
+
+          <select id="filter-category"
+                  class="w-full py-2 px-3 border border-gray-200 rounded-xl text-sm text-gray-700
+                         focus:outline-none focus:ring-2 focus:ring-[#006400]/30 focus:border-[#006400]
+                         bg-white cursor-pointer">
+            <option value="">🍲 Categoría</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results count -->
+      <div class="flex items-center justify-between mb-4">
+        <p class="text-sm text-gray-500">
+          <span id="results-count" class="font-semibold text-gray-800">...</span>
+        </p>
+      </div>
+
+      <!-- Recipe grid -->
+      <div id="recipes-grid"
+           class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        <!-- Skeleton -->
+        <div class="bg-white rounded-2xl shadow animate-pulse h-64"></div>
+        <div class="bg-white rounded-2xl shadow animate-pulse h-64 hidden sm:block"></div>
+        <div class="bg-white rounded-2xl shadow animate-pulse h-64 hidden xl:block"></div>
+      </div>
+    </main>
+
+    <!-- ══ DESKTOP SIDEBAR (AdSense) ══ -->
+    <aside class="hidden lg:flex flex-col gap-6 w-72 flex-shrink-0">
+
+      <!-- AdSense: Bloque Listado Desktop -->
+
+      <!-- Quick tips card -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+        <h3 class="font-bold text-gray-800 text-base mb-3">💡 Tips de Compra</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start gap-2">
+            <span class="text-[#FFCC00] font-bold flex-shrink-0">✦</span>
+            <span>Los miércoles el Supermaxi tiene descuentos en carnes y aves</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#FFCC00] font-bold flex-shrink-0">✦</span>
+            <span>Las legumbres sueltas son más económicas que las empacadas</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#FFCC00] font-bold flex-shrink-0">✦</span>
+            <span>La marca Supermaxi ofrece calidad a menor precio en varios productos</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Region quick links -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
+        <h3 class="font-bold text-gray-800 text-base mb-3">🗺️ Por Región</h3>
+        <div class="flex flex-col gap-1.5">
+          <a href="recipes.html?region=Sierra"
+             class="flex items-center gap-2 text-sm text-gray-700 hover:text-[#006400]
+                    hover:bg-green-50 px-3 py-2 rounded-lg transition-colors">
+            🏔️ Sierra
+          </a>
+          <a href="recipes.html?region=Costa"
+             class="flex items-center gap-2 text-sm text-gray-700 hover:text-[#006400]
+                    hover:bg-green-50 px-3 py-2 rounded-lg transition-colors">
+            🌊 Costa
+          </a>
+          <a href="recipes.html?region=Amazonía"
+             class="flex items-center gap-2 text-sm text-gray-700 hover:text-[#006400]
+                    hover:bg-green-50 px-3 py-2 rounded-lg transition-colors">
+            🌿 Amazonía
+          </a>
+          <a href="recipes.html?region=Galápagos"
+             class="flex items-center gap-2 text-sm text-gray-700 hover:text-[#006400]
+                    hover:bg-green-50 px-3 py-2 rounded-lg transition-colors">
+            🐢 Galápagos
+          </a>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /main layout -->
+
+  <!-- FOOTER -->
+  <footer class="bg-[#006400] text-green-100 mt-6">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <div class="font-bold text-white text-base mb-1">🍲 Recetas Ecuador</div>
+          <div class="text-xs text-green-300">Cocina típica ecuatoriana con amor</div>
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+        </div>
+      </div>
+      <div class="border-t border-green-700 mt-6 pt-4 text-center text-xs text-green-400">
+        © 2026 Biblioteca de Recetas Ecuatorianas. Hecho con ❤️ en Ecuador.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

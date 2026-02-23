@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    SEO tags below are placeholders.
+    script.js replaces them dynamically when the recipe loads.
+  -->
+  <title>Receta | Biblioteca de Recetas Ecuatorianas</title>
+  <meta name="description" content="Receta de cocina ecuatoriana." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph placeholders (updated by JS) -->
+  <meta property="og:title" content="Receta Ecuatoriana" />
+  <meta property="og:description" content="Receta de cocina ecuatoriana." />
+  <meta property="og:image" content="" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_EC" />
+  <meta property="og:site_name" content="Biblioteca de Recetas Ecuatorianas" />
+
+  <!-- Twitter Card placeholders -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Receta Ecuatoriana" />
+  <meta name="twitter:description" content="Receta de cocina ecuatoriana." />
+  <meta name="twitter:image" content="" />
+
+  <!-- JSON-LD injected by script.js as <script id="json-ld-recipe"> -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ec-green':  '#006400',
+            'ec-yellow': '#FFCC00',
+            'ec-red':    '#C8102E',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .flag-stripe {
+      background: linear-gradient(90deg, #FFCC00 0%, #FFCC00 45%, #006400 45%, #006400 72.5%, #C8102E 72.5%, #C8102E 100%);
+    }
+  </style>
+</head>
+
+<body data-page="recipe" class="bg-gray-50 text-gray-800 antialiased">
+
+  <noscript>
+    <div class="bg-yellow-50 border-b border-yellow-200 px-4 py-3 text-sm text-yellow-800 text-center">
+      Esta página requiere JavaScript para mostrar las recetas. Por favor actívalo en tu navegador.
+    </div>
+  </noscript>
+
+  <!-- HEADER -->
+  <header class="bg-[#006400] shadow-md sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-white text-lg">
+        <span class="text-2xl">🍲</span>
+        <span class="hidden sm:block">Recetas Ecuador</span>
+      </a>
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <a href="index.html"
+           class="text-white font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-white/20 transition-colors">
+          Inicio
+        </a>
+        <a href="recipes.html"
+           class="text-white font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-white/20 transition-colors">
+          Recetas
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="h-1 flag-stripe"></div>
+
+  <!-- ─────────────────────── LOADING STATE ─────────────────────── -->
+  <div id="recipe-loader" class="max-w-5xl mx-auto px-4 py-16 text-center">
+    <div class="inline-flex flex-col items-center gap-4">
+      <svg class="w-10 h-10 text-[#006400] animate-spin" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+      </svg>
+      <p class="text-gray-500 text-sm">Cargando receta...</p>
+    </div>
+  </div>
+
+  <!-- ─────────────────────── ERROR STATE ─────────────────────── -->
+  <div id="recipe-error" class="hidden max-w-5xl mx-auto px-4 py-16 text-center">
+    <div class="text-6xl mb-4">😕</div>
+    <h2 class="text-xl font-bold text-gray-800 mb-2">Receta no encontrada</h2>
+    <p class="text-gray-500 mb-6">La receta que buscas no existe o fue movida.</p>
+    <a href="recipes.html"
+       class="inline-block bg-[#006400] text-white font-semibold px-6 py-2.5 rounded-xl
+              hover:bg-green-800 transition-colors text-sm">
+      Ver todas las recetas
+    </a>
+  </div>
+
+  <!-- ─────────────────────── RECIPE CONTENT ─────────────────────── -->
+  <div id="recipe-content" class="hidden">
+
+    <!-- Breadcrumb -->
+    <div class="max-w-5xl mx-auto px-4 pt-4">
+      <nav class="text-xs text-gray-400 flex items-center gap-1.5 flex-wrap">
+        <a href="index.html" class="hover:text-[#006400] transition-colors">Inicio</a>
+        <span>›</span>
+        <a href="recipes.html" class="hover:text-[#006400] transition-colors">Recetas</a>
+        <span>›</span>
+        <span id="breadcrumb-title" class="text-gray-600 line-clamp-1"></span>
+      </nav>
+    </div>
+
+    <!-- Hero image + title -->
+    <section class="max-w-5xl mx-auto px-4 pt-5 pb-6">
+      <div class="relative rounded-2xl overflow-hidden h-52 sm:h-72 md:h-80 shadow-lg mb-6">
+        <img
+          id="recipe-image"
+          src=""
+          alt=""
+          class="w-full h-full object-cover"
+        />
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        <!-- Title overlay -->
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <h1 id="recipe-title"
+              class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white leading-tight drop-shadow-lg">
+          </h1>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <p id="recipe-description" class="text-gray-600 text-sm sm:text-base leading-relaxed mb-5"></p>
+
+      <!-- Meta badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span id="recipe-region"
+              class="text-xs font-semibold px-3 py-1.5 rounded-full">
+        </span>
+        <span id="recipe-category"
+              class="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 text-gray-600">
+        </span>
+        <span id="recipe-difficulty"
+              class="text-xs font-semibold px-3 py-1.5 rounded-full">
+        </span>
+      </div>
+
+      <!-- Time & servings row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="bg-white rounded-xl border border-gray-100 p-3 text-center shadow-sm">
+          <div class="text-lg mb-0.5">⏱</div>
+          <div class="text-xs text-gray-400 mb-0.5">Prep</div>
+          <div id="recipe-prep" class="font-bold text-gray-800 text-sm"></div>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-3 text-center shadow-sm">
+          <div class="text-lg mb-0.5">🔥</div>
+          <div class="text-xs text-gray-400 mb-0.5">Cocción</div>
+          <div id="recipe-cook" class="font-bold text-gray-800 text-sm"></div>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-3 text-center shadow-sm">
+          <div class="text-lg mb-0.5">⌛</div>
+          <div class="text-xs text-gray-400 mb-0.5">Total</div>
+          <div id="recipe-total" class="font-bold text-gray-800 text-sm"></div>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-3 text-center shadow-sm">
+          <div class="text-lg mb-0.5">👥</div>
+          <div class="text-xs text-gray-400 mb-0.5">Porciones</div>
+          <div id="recipe-servings" class="font-bold text-gray-800 text-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Two-column layout (mobile: stacked, desktop: side by side) ─── -->
+    <div class="max-w-5xl mx-auto px-4 pb-12 flex flex-col lg:flex-row gap-8">
+
+      <!-- LEFT: Ingredients -->
+      <div class="lg:w-72 flex-shrink-0">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 lg:sticky lg:top-20">
+          <h2 class="text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
+            🛒 Ingredientes
+          </h2>
+          <ul id="ingredients-list" class="divide-y divide-gray-50"></ul>
+        </div>
+
+        <!-- AdSense: Receta Despues de Ingredientes -->
+
+      </div>
+
+      <!-- RIGHT: Instructions + Tips -->
+      <div class="flex-1 min-w-0">
+
+        <!-- Instructions -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-6">
+          <h2 class="text-lg font-extrabold text-gray-800 mb-5 flex items-center gap-2">
+            👨‍🍳 Preparación
+          </h2>
+          <ol id="instructions-list" class="space-y-0"></ol>
+        </div>
+
+        <!-- AdSense: Receta Antes de Tips -->
+
+        <!-- Tips -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-6">
+          <h2 class="text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
+            💡 Tips y Consejos
+          </h2>
+          <ul id="tips-list" class="space-y-0"></ul>
+        </div>
+
+        <!-- Keywords / tags -->
+        <div class="mb-6">
+          <h3 class="text-sm font-semibold text-gray-500 mb-2">Etiquetas</h3>
+          <div id="recipe-keywords" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Back links -->
+        <div class="flex items-center gap-3">
+          <a href="recipes.html"
+             class="inline-flex items-center gap-2 text-sm font-medium text-[#006400]
+                    hover:underline transition-colors">
+            ← Ver más recetas
+          </a>
+          <span class="text-gray-300">|</span>
+          <a href="index.html"
+             class="inline-flex items-center gap-2 text-sm font-medium text-gray-500
+                    hover:text-[#006400] transition-colors">
+            Ir al inicio
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /two-column -->
+  </div><!-- /recipe-content -->
+
+  <!-- FOOTER -->
+  <footer class="bg-[#006400] text-green-100">
+    <div class="h-1 flag-stripe"></div>
+    <div class="max-w-5xl mx-auto px-4 py-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <div class="font-bold text-white text-base mb-1">🍲 Recetas Ecuador</div>
+          <div class="text-xs text-green-300">Cocina típica ecuatoriana con amor</div>
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+        </div>
+      </div>
+      <div class="border-t border-green-700 mt-6 pt-4 text-center text-xs text-green-400">
+        © 2026 Biblioteca de Recetas Ecuatorianas. Hecho con ❤️ en Ecuador.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

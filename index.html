@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca de Recetas Ecuatorianas — Cocina Típica del Ecuador</title>
+  <meta name="description" content="Descubre las mejores recetas de cocina ecuatoriana. Platos típicos de la Sierra, Costa, Amazonía y Galápagos con ingredientes fáciles de conseguir en el Supermaxi." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Biblioteca de Recetas Ecuatorianas" />
+  <meta property="og:description" content="Cocina típica del Ecuador: recetas auténticas, fáciles y con ingredientes del Supermaxi." />
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?ecuadorian,food,cooking" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_EC" />
+  <meta property="og:site_name" content="Biblioteca de Recetas Ecuatorianas" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Biblioteca de Recetas Ecuatorianas" />
+  <meta name="twitter:description" content="Cocina típica del Ecuador: recetas auténticas, fáciles y con ingredientes del Supermaxi." />
+
+  <!-- Schema.org — WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Biblioteca de Recetas Ecuatorianas",
+    "url": "https://recetas-ecuador.vercel.app",
+    "description": "Recetas auténticas de la cocina ecuatoriana",
+    "inLanguage": "es-EC",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://recetas-ecuador.vercel.app/recipes.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ec-green':  '#006400',
+            'ec-yellow': '#FFCC00',
+            'ec-red':    '#C8102E',
+          },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Flag stripe — top of hero */
+    .flag-stripe {
+      background: linear-gradient(180deg, #FFCC00 0%, #FFCC00 45%, #006400 45%, #006400 72.5%, #C8102E 72.5%, #C8102E 100%);
+    }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+
+<body data-page="index" class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- ══════════════════════════════════ HEADER ══════════════════════════════════ -->
+  <header class="bg-[#006400] shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 font-bold text-white text-lg leading-tight">
+        <span class="text-2xl">🍲</span>
+        <span class="hidden sm:block">Recetas Ecuador</span>
+      </a>
+
+      <!-- Nav -->
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <a href="index.html"
+           class="text-white font-medium text-sm px-3 py-1.5 rounded-lg bg-white/20 hover:bg-white/30 transition-colors">
+          Inicio
+        </a>
+        <a href="recipes.html"
+           class="text-white font-medium text-sm px-3 py-1.5 rounded-lg hover:bg-white/20 transition-colors">
+          Recetas
+        </a>
+        <a href="https://wa.me/593000000000" target="_blank" rel="noopener noreferrer"
+           class="hidden sm:flex items-center gap-1 text-[#006400] bg-white text-xs font-semibold
+                  px-3 py-1.5 rounded-full hover:bg-[#FFCC00] transition-colors ml-2">
+          <span>WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+  <section class="relative bg-[#006400] overflow-hidden">
+
+    <!-- Ecuador flag accent bar -->
+    <div class="h-1.5 flag-stripe w-full"></div>
+
+    <!-- AdSense: Bloque Superior Index -->
+
+    <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16 text-center">
+      <!-- Badge -->
+      <span class="inline-block bg-[#FFCC00] text-[#006400] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">
+        🇪🇨 100% Ecuatoriano
+      </span>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+        La Cocina Ecuatoriana<br />
+        <span class="text-[#FFCC00]">en un solo lugar</span>
+      </h1>
+
+      <p class="text-green-100 text-base sm:text-lg max-w-xl mx-auto mb-8">
+        Recetas auténticas de la Sierra, Costa, Amazonía y Galápagos.
+        Con ingredientes que encuentras en el <strong class="text-[#FFCC00]">Supermaxi</strong>.
+      </p>
+
+      <!-- Stats -->
+      <div class="flex items-center justify-center gap-6 mb-8 text-sm">
+        <div class="text-center">
+          <div class="text-2xl font-extrabold text-[#FFCC00]" id="recipe-count">0</div>
+          <div class="text-green-200 text-xs">Recetas</div>
+        </div>
+        <div class="w-px h-8 bg-green-600"></div>
+        <div class="text-center">
+          <div class="text-2xl font-extrabold text-[#FFCC00]">4</div>
+          <div class="text-green-200 text-xs">Regiones</div>
+        </div>
+        <div class="w-px h-8 bg-green-600"></div>
+        <div class="text-center">
+          <div class="text-2xl font-extrabold text-[#FFCC00]">∞</div>
+          <div class="text-green-200 text-xs">Sabor</div>
+        </div>
+      </div>
+
+      <!-- Search bar -->
+      <div class="flex max-w-lg mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white">
+        <input
+          id="hero-search"
+          type="search"
+          placeholder="Busca una receta... (ej. Seco de pollo)"
+          class="flex-1 px-4 py-3.5 text-gray-800 text-sm outline-none placeholder-gray-400"
+          autocomplete="off"
+          aria-label="Buscar recetas"
+        />
+        <button
+          id="hero-search-btn"
+          class="bg-[#C8102E] hover:bg-red-700 text-white font-semibold px-5 py-3.5 text-sm
+                 transition-colors flex items-center gap-2 flex-shrink-0"
+          aria-label="Buscar"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <span class="hidden sm:inline">Buscar</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="h-1.5 flag-stripe w-full"></div>
+  </section>
+
+  <!-- ══════════════════════════════ FEATURED RECIPES ════════════════════════════ -->
+  <section class="max-w-6xl mx-auto px-4 py-10 sm:py-14">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl sm:text-2xl font-extrabold text-gray-800">
+        🍽️ Recetas Destacadas
+      </h2>
+      <a href="recipes.html"
+         class="text-sm text-[#006400] font-semibold hover:underline flex items-center gap-1">
+        Ver todas
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Recipe grid — populated by script.js -->
+    <div id="featured-grid"
+         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Skeleton loaders -->
+      <div class="bg-white rounded-2xl shadow animate-pulse overflow-hidden h-72"></div>
+      <div class="bg-white rounded-2xl shadow animate-pulse overflow-hidden h-72 hidden sm:block"></div>
+      <div class="bg-white rounded-2xl shadow animate-pulse overflow-hidden h-72 hidden lg:block"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TRUST SECTION ═══════════════════════════════ -->
+  <section class="bg-white border-t border-b border-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl mb-2">🇪🇨</div>
+          <div class="font-bold text-gray-700 text-sm">Sabores Auténticos</div>
+          <div class="text-xs text-gray-400 mt-1">Cocina 100% ecuatoriana</div>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">🛒</div>
+          <div class="font-bold text-gray-700 text-sm">Ingredientes Locales</div>
+          <div class="text-xs text-gray-400 mt-1">Todo en el Supermaxi</div>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">⏱️</div>
+          <div class="font-bold text-gray-700 text-sm">Paso a Paso</div>
+          <div class="text-xs text-gray-400 mt-1">Recetas claras y detalladas</div>
+        </div>
+        <div>
+          <div class="text-3xl mb-2">💰</div>
+          <div class="font-bold text-gray-700 text-sm">Cocina Económica</div>
+          <div class="text-xs text-gray-400 mt-1">Tips de ahorro incluidos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ REGIONS SECTION ═════════════════════════════ -->
+  <section class="max-w-6xl mx-auto px-4 py-10 sm:py-12">
+    <h2 class="text-xl sm:text-2xl font-extrabold text-gray-800 mb-6">
+      🗺️ Explora por Región
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <a href="recipes.html?region=Sierra"
+         class="group relative rounded-2xl overflow-hidden h-32 sm:h-40 shadow hover:shadow-lg transition-shadow">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-600/60 to-blue-900/80"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold">
+          <span class="text-3xl mb-1">🏔️</span>
+          <span class="text-base">Sierra</span>
+        </div>
+      </a>
+      <a href="recipes.html?region=Costa"
+         class="group relative rounded-2xl overflow-hidden h-32 sm:h-40 shadow hover:shadow-lg transition-shadow">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-400/60 to-orange-700/80"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold">
+          <span class="text-3xl mb-1">🌊</span>
+          <span class="text-base">Costa</span>
+        </div>
+      </a>
+      <a href="recipes.html?region=Amazonía"
+         class="group relative rounded-2xl overflow-hidden h-32 sm:h-40 shadow hover:shadow-lg transition-shadow">
+        <div class="absolute inset-0 bg-gradient-to-b from-green-500/60 to-green-800/80"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold">
+          <span class="text-3xl mb-1">🌿</span>
+          <span class="text-base">Amazonía</span>
+        </div>
+      </a>
+      <a href="recipes.html?region=Galápagos"
+         class="group relative rounded-2xl overflow-hidden h-32 sm:h-40 shadow hover:shadow-lg transition-shadow">
+        <div class="absolute inset-0 bg-gradient-to-b from-cyan-400/60 to-cyan-700/80"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white font-bold">
+          <span class="text-3xl mb-1">🐢</span>
+          <span class="text-base">Galápagos</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ════════════════════════════════════ -->
+  <footer class="bg-[#006400] text-green-100 mt-6">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <div class="font-bold text-white text-base mb-1">🍲 Recetas Ecuador</div>
+          <div class="text-xs text-green-300">Cocina típica ecuatoriana con amor</div>
+        </div>
+        <div class="flex gap-4 text-sm">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+        </div>
+      </div>
+      <div class="border-t border-green-700 mt-6 pt-4 text-center text-xs text-green-400">
+        © 2026 Biblioteca de Recetas Ecuatorianas. Hecho con ❤️ en Ecuador.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

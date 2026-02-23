@@ -34,13 +34,15 @@ Flujo: Schedule → Nombrador → Chef Redactor → Parser → GET GitHub → Me
 NODO 1: Schedule Trigger
   - Cron: 0 15 * * 1-5  (10:00 AM EC = 15:00 UTC)
 
-NODO 2: Nombrador de Plato (GPT-4o-mini)
+NODO 2: Nombrador de Plato (Grok — grok-2-mini)
+  - HTTP POST → https://api.x.ai/v1/chat/completions
   - Elige 1 plato ecuatoriano que aún NO esté en recipes.json
-  - Output: texto simple con el nombre del plato
+  - Output: choices[0].message.content = nombre del plato
 
-NODO 3: Chef Redactor (GPT-4o)
+NODO 3: Chef Redactor (Grok — grok-2)
+  - HTTP POST → https://api.x.ai/v1/chat/completions
   - Usa el MASTER PROMPT completo (ver Sección 4)
-  - Output: JSON completo de la receta
+  - Output: choices[0].message.content = JSON de la receta
 
 NODO 4: Parsear Receta JSON (Code Node)
   - Lee la respuesta del LLM y extrae el JSON
@@ -198,11 +200,11 @@ SECCIÓN 5 — CÓDIGO DE LOS CODE NODES
 
 ── NODO 4: Parsear Receta JSON ──────────────────────────────────────────────
 
-// Extrae el JSON de la respuesta del LLM
+// Extrae el JSON de la respuesta de Grok (formato OpenAI-compatible)
 const response = $input.first().json;
-const text = response.message?.content
+const text = response.choices?.[0]?.message?.content
+  || response.message?.content
   || response.text
-  || response.choices?.[0]?.message?.content
   || '';
 
 // Extraer JSON del texto (puede venir con o sin markdown fences)
@@ -261,6 +263,20 @@ return [{
 ───────────────────────────────────────────────────────────────────────────────
 SECCIÓN 6 — CONFIGURACIÓN HTTP REQUEST NODES
 ───────────────────────────────────────────────────────────────────────────────
+
+── NODOS 2 y 3: Grok API (Nombrador + Chef Redactor) ────────────────────────
+  Method:  POST
+  URL:     https://api.x.ai/v1/chat/completions
+  Headers:
+    Authorization:  Bearer xai-TU_API_KEY_AQUI
+    Content-Type:   application/json
+  Body (JSON):
+    { "model": "grok-2-mini",  ← Nombrador (rápido)
+      "model": "grok-2",       ← Chef Redactor (más capaz)
+      "max_tokens": 30 / 2500,
+      "messages": [{ "role": "system", ... }, { "role": "user", ... }] }
+
+  Obtén tu API key en: https://console.x.ai/
 
 ── NODO 5: GET recipes.json ──────────────────────────────────────────────────
   Method:  GET

@@ -18,57 +18,45 @@
     {
       "id": "dish-namer",
       "name": "Nombrador de Plato",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [340, 300],
-      "credentials": {
-        "openAiApi": { "id": "MYbC0Gn7tMjufVtr", "name": "OpenAi account 3" }
-      },
       "parameters": {
-        "resource": "chat",
-        "operation": "complete",
-        "modelId": { "__rl": true, "mode": "list", "value": "gpt-4o-mini" },
-        "prompt": {
-          "messages": [
-            {
-              "role": "system",
-              "content": "Eres un experto en gastronomía ecuatoriana. Solo respondes con nombres de platos."
-            },
-            {
-              "role": "user",
-              "content": "Dame el nombre de un plato típico ecuatoriano poco conocido o una variación original (ejemplos: Ceviche de Chochos, Empanadas de Morocho, Sopa de Quinua con Pollo, Tigrillo de Verde, Muchines de Yuca, Colada Morada de Arroz, Caldo de 31). No repitas platos muy comunes como Llapingachos o Ceviche de camarón. Solo responde con el nombre del plato, sin explicaciones, sin puntuación al final."
-            }
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer xai-TU_API_KEY_DE_GROK_AQUI" },
+            { "name": "Content-Type", "value": "application/json" }
           ]
         },
-        "maxTokens": 30
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'grok-2-mini', max_tokens: 30, messages: [ { role: 'system', content: 'Eres un experto en gastronomía ecuatoriana. Solo respondes con nombres de platos.' }, { role: 'user', content: 'Dame el nombre de un plato típico ecuatoriano poco conocido o una variación original (ejemplos: Ceviche de Chochos, Empanadas de Morocho, Sopa de Quinua con Pollo, Tigrillo de Verde, Muchines de Yuca, Colada Morada de Arroz, Caldo de 31). No repitas platos muy comunes como Llapingachos o Ceviche de camarón. Solo responde con el nombre del plato, sin explicaciones, sin puntuación al final.' } ] }) }}",
+        "options": {}
       }
     },
     {
       "id": "chef-redactor",
       "name": "Chef Redactor",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [580, 300],
-      "credentials": {
-        "openAiApi": { "id": "MYbC0Gn7tMjufVtr", "name": "OpenAi account 3" }
-      },
       "parameters": {
-        "resource": "chat",
-        "operation": "complete",
-        "modelId": { "__rl": true, "mode": "list", "value": "gpt-4o" },
-        "prompt": {
-          "messages": [
-            {
-              "role": "system",
-              "content": "Eres un equipo de tres expertos combinados en un solo prompt:\\n\\n1. CHEF ECUATORIANO PROFESIONAL: Conoces todas las recetas regionales del Ecuador (Sierra, Costa, Amazonía, Galápagos) con profundidad gastronómica, proporciones exactas, técnicas de cocción y variantes regionales.\\n\\n2. GUÍA TURÍSTICO Y CONSULTOR DE DIÁSPORA: Para platos con ingredientes difíciles de conseguir fuera de Ecuador, sabes exactamente qué sustitutos usar en EE.UU. y Europa. También conoces dónde probar cada plato en Ecuador (mercados, restaurantes, ciudades).\\n\\n3. EXPERTO SEO CULINARIO: Escribes títulos y descripciones optimizados para Google Search. Generas keywords long-tail relevantes.\\n\\nRESPONDE ÚNICAMENTE con JSON válido, sin markdown, sin explicaciones."
-            },
-            {
-              "role": "user",
-              "content": "={{ 'Crea la receta completa para: ' + $json.message.content + '\\n\\nResponde con un objeto JSON que siga EXACTAMENTE este esquema (incluye los campos opcionales cuando sean relevantes):\\n{\\n  \"slug\": \"nombre-kebab-case-sin-acentos\",\\n  \"title\": \"Nombre del Plato\",\\n  \"description\": \"Descripción apetitosa de máximo 120 caracteres\",\\n  \"region\": \"Sierra|Costa|Amazonia|Galapagos\",\\n  \"category\": \"Sopas|Platos Fuertes|Entradas|Postres|Bebidas|Desayunos|Mariscos\",\\n  \"difficulty\": \"Fácil|Media|Difícil\",\\n  \"servings\": \"X personas\",\\n  \"prep_time\": \"X min\",\\n  \"cook_time\": \"X min\",\\n  \"total_time\": \"X min\",\\n  \"image_url\": \"https://images.unsplash.com/photo-XXXX?w=800&q=80\",\\n  \"ingredients\": [\"cantidad ingrediente\"],\\n  \"instructions\": [\"Paso 1...\", \"Paso 2...\"],\\n  \"tips\": [\"Tip 1...\", \"Tip 2...\"],\\n  \"keywords\": [\"keyword1\", \"keyword2\"],\\n  \"date_published\": \"2026-02-23\",\\n  \"target_audience\": \"Diáspora\",\\n  \"international_substitutes\": [{\"original\": \"...\", \"sustituto_usa\": \"...\", \"sustituto_europa\": \"...\"}],\\n  \"tourism_route\": \"📍 [Ciudad]: [Lugar]. [Descripción]. Precio: $X-Y USD.\"\\n}\\n\\nREGLAS:\\n- Incluye international_substitutes si el plato usa ingredientes difíciles fuera de Ecuador.\\n- Incluye tourism_route si el plato tiene una ruta gastronómica clara.\\n- Para platos muy locales (fritada, hornado, yaguarlocro), incluye AMBOS campos opcionales.\\n- Mínimo 8 ingredientes con cantidades exactas, 6 pasos de instrucciones, 2-4 tips.\\n- keywords: 5-8 términos incluyendo variantes regionales y long-tail.' }}"
-            }
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer xai-TU_API_KEY_DE_GROK_AQUI" },
+            { "name": "Content-Type", "value": "application/json" }
           ]
         },
-        "maxTokens": 2500
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'grok-2', max_tokens: 2500, messages: [ { role: 'system', content: 'Eres un equipo de tres expertos combinados en un solo prompt:\\n\\n1. CHEF ECUATORIANO PROFESIONAL: Conoces todas las recetas regionales del Ecuador (Sierra, Costa, Amazonía, Galápagos) con profundidad gastronómica, proporciones exactas, técnicas de cocción y variantes regionales.\\n\\n2. GUÍA TURÍSTICO Y CONSULTOR DE DIÁSPORA: Para platos con ingredientes difíciles de conseguir fuera de Ecuador, sabes exactamente qué sustitutos usar en EE.UU. y Europa. También conoces dónde probar cada plato en Ecuador (mercados, restaurantes, ciudades).\\n\\n3. EXPERTO SEO CULINARIO: Escribes títulos y descripciones optimizados para Google Search. Generas keywords long-tail relevantes.\\n\\nRESPONDE ÚNICAMENTE con JSON válido, sin markdown, sin explicaciones.' }, { role: 'user', content: 'Crea la receta completa para: ' + $json.choices[0].message.content + '\\n\\nResponde con un objeto JSON que siga EXACTAMENTE este esquema (incluye los campos opcionales cuando sean relevantes):\\n{\\n  \"slug\": \"nombre-kebab-case-sin-acentos\",\\n  \"title\": \"Nombre del Plato\",\\n  \"description\": \"Descripción apetitosa de máximo 120 caracteres\",\\n  \"region\": \"Sierra|Costa|Amazonia|Galapagos\",\\n  \"category\": \"Sopas|Platos Fuertes|Entradas|Postres|Bebidas|Desayunos|Mariscos\",\\n  \"difficulty\": \"Fácil|Media|Difícil\",\\n  \"servings\": \"X personas\",\\n  \"prep_time\": \"X min\",\\n  \"cook_time\": \"X min\",\\n  \"total_time\": \"X min\",\\n  \"image_url\": \"https://images.unsplash.com/photo-XXXX?w=800&q=80\",\\n  \"ingredients\": [\"cantidad ingrediente\"],\\n  \"instructions\": [\"Paso 1...\", \"Paso 2...\"],\\n  \"tips\": [\"Tip 1...\", \"Tip 2...\"],\\n  \"keywords\": [\"keyword1\", \"keyword2\"],\\n  \"date_published\": \"2026-02-23\",\\n  \"target_audience\": \"Diáspora\",\\n  \"international_substitutes\": [{\"original\": \"...\", \"sustituto_usa\": \"...\", \"sustituto_europa\": \"...\"}],\\n  \"tourism_route\": \"📍 [Ciudad]: [Lugar]. [Descripción]. Precio: $X-Y USD.\"\\n}\\n\\nREGLAS:\\n- Incluye international_substitutes si el plato usa ingredientes difíciles fuera de Ecuador.\\n- Incluye tourism_route si el plato tiene una ruta gastronómica clara.\\n- Para platos muy locales (fritada, hornado, yaguarlocro), incluye AMBOS campos opcionales.\\n- Mínimo 8 ingredientes con cantidades exactas, 6 pasos de instrucciones, 2-4 tips.\\n- keywords: 5-8 términos incluyendo variantes regionales y long-tail.' } ] }) }}",
+        "options": {}
       }
     },
     {
@@ -78,7 +66,7 @@
       "typeVersion": 2,
       "position": [820, 300],
       "parameters": {
-        "jsCode": "const raw = $input.first().json.message?.content || $input.first().json.text || '';\n\nconst cleaned = raw.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n\nlet recipe;\ntry {\n  recipe = JSON.parse(cleaned);\n} catch(e) {\n  throw new Error('JSON inválido de OpenAI: ' + e.message + ' | Inicio: ' + cleaned.slice(0, 200));\n}\n\nif (!recipe.title || !recipe.slug) {\n  throw new Error('Faltan campos requeridos title/slug: ' + JSON.stringify(recipe).slice(0, 200));\n}\n\nrecipe.slug = recipe.slug\n  .toLowerCase().trim()\n  .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e')\n  .replace(/[íìïî]/g, 'i').replace(/[óòöô]/g, 'o')\n  .replace(/[úùüû]/g, 'u').replace(/ñ/g, 'n')\n  .replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\nreturn [{ json: recipe }];"
+        "jsCode": "// Leer respuesta de Grok (formato OpenAI-compatible)\nconst raw = $input.first().json.choices?.[0]?.message?.content || $input.first().json.text || '';\n\nconst cleaned = raw.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n\nlet recipe;\ntry {\n  recipe = JSON.parse(cleaned);\n} catch(e) {\n  throw new Error('JSON inválido de Grok: ' + e.message + ' | Inicio: ' + cleaned.slice(0, 200));\n}\n\nif (!recipe.title || !recipe.slug) {\n  throw new Error('Faltan campos requeridos title/slug: ' + JSON.stringify(recipe).slice(0, 200));\n}\n\nrecipe.slug = recipe.slug\n  .toLowerCase().trim()\n  .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e')\n  .replace(/[íìïî]/g, 'i').replace(/[óòöô]/g, 'o')\n  .replace(/[úùüû]/g, 'u').replace(/ñ/g, 'n')\n  .replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\nreturn [{ json: recipe }];"
       }
     },
     {
@@ -130,7 +118,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ { message: 'feat(recetas): agregar ' + $json.slug + ' [ID:' + $json.id + '] — auto publicado por n8n', content: $json.content, sha: $json.sha } }}",
+        "jsonBody": "={{ { message: 'feat(recetas): agregar ' + $json.slug + ' [ID:' + $json.id + '] — auto publicado por n8n+Grok', content: $json.content, sha: $json.sha } }}",
         "options": {}
       }
     },
@@ -141,7 +129,7 @@
       "typeVersion": 1,
       "position": [100, 120],
       "parameters": {
-        "content": "## RECETAS-AI-Auto-Publisher v2.0 — Multi-nicho\n\n**Flujo:** Schedule (L-V 10AM EC) → Nombrador de Plato (gpt-4o-mini) → Chef Redactor (gpt-4o) → Parsear JSON → GET GitHub → Merge + ID autoincremental → PUT GitHub → Vercel rebuild\n\n**Audiencias:** Local 🇪🇨 + Diáspora ✈️ + Turismo 🗺️\n**Campos opcionales:** target_audience, international_substitutes, tourism_route\n\n**Repo:** LordRa2pat/recetas-ecuador | Site: recetas-ecuador.vercel.app",
+        "content": "## RECETAS-AI-Auto-Publisher v2.0 — Grok (xAI)\n\n**Flujo:** Schedule (12h) → Nombrador de Plato (grok-2-mini) → Chef Redactor (grok-2) → Parsear JSON → GET GitHub → Merge + ID autoincremental → PUT GitHub → Vercel rebuild\n\n**AI:** xAI Grok via https://api.x.ai/v1/chat/completions\n**Audiencias:** Local 🇪🇨 + Diáspora ✈️ + Turismo 🗺️\n\n⚠️ Reemplaza xai-TU_API_KEY_DE_GROK_AQUI y ghp_TU_TOKEN_DE_GITHUB_AQUI antes de activar.",
         "height": 160,
         "width": 1520
       }

@@ -1,5 +1,70 @@
 [
   {
+    "slug": "muchines-de-choclo",
+    "title": "Muchines de Choclo",
+    "description": "Deliciosos pastelitos de maíz tierno rellenos de queso, típicos de la Sierra ecuatoriana.",
+    "region": "Sierra",
+    "category": "Entradas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "25 min",
+    "total_time": "45 min",
+    "image_url": "https://images.unsplash.com/photo-1632742195294-5ecf8b6c1b24?w=800&q=80",
+    "ingredients": [
+      "2 tazas de choclo tierno desgranado (maíz fresco)",
+      "1/2 taza de harina de maíz",
+      "2 huevos",
+      "1/4 taza de leche",
+      "1 cucharadita de polvo de hornear",
+      "1/2 cucharadita de sal",
+      "200 g de queso fresco desmenuzado",
+      "Aceite vegetal para freír (aproximadamente 2 tazas)",
+      "1 cucharada de azúcar (opcional, para un toque dulce)"
+    ],
+    "instructions": [
+      "Desgranar el choclo fresco y molerlo en un procesador o licuadora hasta obtener una pasta suave pero con algo de textura.",
+      "En un bol grande, mezclar el choclo molido con la harina de maíz, los huevos, la leche, el polvo de hornear, la sal y el azúcar (si se usa). Revolver hasta formar una masa homogénea.",
+      "Tomar una porción de masa (aproximadamente 2 cucharadas), aplanarla en la palma de la mano y colocar una cucharadita de queso fresco desmenuzado en el centro.",
+      "Cerrar la masa alrededor del queso, formando una bolita o un óvalo pequeño, asegurándose de que el queso quede completamente cubierto.",
+      "Calentar el aceite en una sartén profunda a fuego medio-alto (unos 170°C). Freír los muchines en pequeñas tandas, girándolos ocasionalmente, hasta que estén dorados por todos lados (aproximadamente 3-4 minutos).",
+      "Retirar los muchines con una espumadera y colocarlos sobre papel absorbente para eliminar el exceso de aceite. Servir caliente."
+    ],
+    "tips": [
+      "Si el choclo no está lo suficientemente jugoso, agregar un poco más de leche para ajustar la consistencia de la masa.",
+      "Usar queso fresco que no sea muy salado para balancear los sabores; también se puede mezclar con queso mozzarella para mayor cremosidad.",
+      "Freír a temperatura media para evitar que se quemen por fuera y queden crudos por dentro.",
+      "Servir con una salsa de ají o una crema de aguacate para un toque extra de sabor."
+    ],
+    "keywords": [
+      "muchines de choclo",
+      "receta muchines ecuatorianos",
+      "pastelitos de maíz ecuatoriano",
+      "comida típica sierra ecuador",
+      "receta tradicional choclo",
+      "entradas ecuatorianas fáciles",
+      "muchines de maíz con queso",
+      "cocina andina recetas"
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Diáspora",
+    "international_substitutes": [
+      {
+        "original": "Choclo tierno fresco",
+        "sustituto_usa": "Maíz dulce congelado (thawed) o enlatado, bien escurrido",
+        "sustituto_europa": "Maíz dulce congelado (descongelado) o enlatado, bien escurrido"
+      },
+      {
+        "original": "Queso fresco ecuatoriano",
+        "sustituto_usa": "Queso feta suave o ricotta salada",
+        "sustituto_europa": "Queso feta suave o queso de cabra fresco"
+      }
+    ],
+    "tourism_route": "📍 [Quito]: Mercado de Santa Clara. Prueba los muchines de choclo recién hechos en los puestos de comida tradicional. Precio: $1-2 USD.",
+    "id": 3,
+    "created_at": "2026-02-23T19:00:48.827Z"
+  },
+  {
     "slug": "empanadas-de-yuca",
     "title": "Empanadas de Yuca Ecuatorianas",
     "description": "Deliciosas empanadas de yuca rellenas de queso, crujientes por fuera y suaves por dentro.",

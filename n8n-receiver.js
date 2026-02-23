@@ -20,10 +20,15 @@
  * NOTA: En producción el workflow n8n usa GitHub API directamente.
  * Este script es solo para desarrollo local y testing de recetas.
  *
- * CAMPOS OPCIONALES v2.0 (multi-nicho):
+ * CAMPOS OPCIONALES v3.0 (multi-nicho + enriquecimiento):
  *   "target_audience":           "Local" | "Diáspora" | "Turista"
  *   "international_substitutes": [ { original, sustituto_usa, sustituto_europa } ]
  *   "tourism_route":             "Descripción de la ruta gastronómica"
+ *   "origin_cities":             [ { city, province, region } ]
+ *   "places":                    [ { name, city, region, place_id, lat, lng, googleMapsUri, rating, userRatingCount, address } ]
+ *   "youtube_videos":            [ { title, videoId, channel, url, embed, uploadDate } ]
+ *   "image_credit":              { source, author, license, url }
+ *   "image_alt":                 "Alt text descriptivo para SEO y accesibilidad"
  * El script guarda todos los campos recibidos sin modificarlos.
  */
 

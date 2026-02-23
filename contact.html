@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Biblioteca de Recetas Ecuatorianas</title>
+  <meta name="description" content="Contáctanos con sugerencias de recetas, colaboraciones o preguntas sobre Biblioteca de Recetas Ecuatorianas." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { 'ec-green': '#006400', 'ec-yellow': '#FFCC00' } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    input, textarea, select {
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #006400;
+      box-shadow: 0 0 0 3px rgba(0,100,0,0.12);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 antialiased">
+
+  <header class="sticky top-0 z-50 bg-[#006400]/90 backdrop-blur-md shadow-lg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg">
+        <span class="text-2xl">🇪🇨</span>
+        <span class="hidden sm:inline leading-tight">Biblioteca de<br><span class="text-ec-yellow">Recetas</span></span>
+        <span class="sm:hidden text-ec-yellow">Recetas EC</span>
+      </a>
+      <a href="index.html" class="bg-white/20 text-white font-semibold text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors border border-white/30">
+        ← Inicio
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+
+    <div class="text-center mb-10">
+      <p class="text-xs font-bold text-[#006400] uppercase tracking-widest mb-2">Escríbenos</p>
+      <h1 class="text-3xl sm:text-4xl font-black text-gray-900 mb-3">Contacto 💬</h1>
+      <p class="text-gray-500 max-w-md mx-auto">¿Tienes una receta para sugerir, una colaboración en mente, o simplemente quieres decir hola? Nos encanta escucharte.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-8">
+
+      <!-- Formulario -->
+      <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-8">
+        <h2 class="font-bold text-gray-800 text-lg mb-6">Envíanos un mensaje</h2>
+
+        <!-- Formspree: reemplaza YOUR_FORM_ID con tu ID real de formspree.io -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="flex flex-col gap-4">
+
+          <div>
+            <label for="contact-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Nombre <span class="text-red-400">*</span>
+            </label>
+            <input id="contact-name" name="name" type="text" required
+              placeholder="Tu nombre"
+              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400" />
+          </div>
+
+          <div>
+            <label for="contact-email" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Email <span class="text-red-400">*</span>
+            </label>
+            <input id="contact-email" name="email" type="email" required
+              placeholder="tu@email.com"
+              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400" />
+          </div>
+
+          <div>
+            <label for="contact-subject" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Asunto
+            </label>
+            <select id="contact-subject" name="subject"
+              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-700 appearance-none">
+              <option value="">Selecciona un asunto</option>
+              <option value="receta">💡 Sugerir una receta</option>
+              <option value="correccion">✏️ Corrección de contenido</option>
+              <option value="colaboracion">🤝 Colaboración / Publicidad</option>
+              <option value="tecnico">🔧 Problema técnico</option>
+              <option value="otro">💬 Otro</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="contact-message" class="block text-sm font-semibold text-gray-700 mb-1.5">
+              Mensaje <span class="text-red-400">*</span>
+            </label>
+            <textarea id="contact-message" name="message" required rows="5"
+              placeholder="Cuéntanos en qué podemos ayudarte..."
+              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400 resize-y"></textarea>
+          </div>
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <button type="submit"
+            class="w-full bg-[#006400] text-white font-bold py-3.5 rounded-xl hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#006400] focus:ring-offset-2">
+            Enviar mensaje 🚀
+          </button>
+
+          <p class="text-xs text-gray-400 text-center">
+            Al enviar aceptas nuestra <a href="privacy.html" class="underline hover:text-[#006400]">Política de Privacidad</a>.
+          </p>
+
+        </form>
+      </div>
+
+      <!-- Info lateral -->
+      <div class="flex flex-col gap-5">
+
+        <!-- Por qué contactar -->
+        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6">
+          <h2 class="font-bold text-gray-800 text-base mb-4">¿Para qué sirve el formulario?</h2>
+          <ul class="space-y-3">
+            <li class="flex gap-3 items-start">
+              <div class="w-8 h-8 rounded-xl bg-green-100 flex items-center justify-center text-sm flex-shrink-0">💡</div>
+              <div>
+                <p class="font-semibold text-gray-700 text-sm">Sugerir recetas</p>
+                <p class="text-gray-400 text-xs">¿Hay un plato que quieres ver? Cuéntanos y lo añadimos.</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center text-sm flex-shrink-0">✏️</div>
+              <div>
+                <p class="font-semibold text-gray-700 text-sm">Corregir información</p>
+                <p class="text-gray-400 text-xs">Si encontraste un error en una receta, avísanos.</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-sm flex-shrink-0">🤝</div>
+              <div>
+                <p class="font-semibold text-gray-700 text-sm">Colaboraciones</p>
+                <p class="text-gray-400 text-xs">¿Eres chef, restaurante o marca? Hablemos.</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="w-8 h-8 rounded-xl bg-purple-100 flex items-center justify-center text-sm flex-shrink-0">🌍</div>
+              <div>
+                <p class="font-semibold text-gray-700 text-sm">Diáspora y turismo</p>
+                <p class="text-gray-400 text-xs">¿Vives fuera y encontraste un sustituto? ¡Compártelo!</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tiempo de respuesta -->
+        <div class="bg-gradient-to-br from-[#006400] to-[#004d00] rounded-3xl p-6 text-white">
+          <h2 class="font-bold text-base mb-2">⏱ Tiempo de respuesta</h2>
+          <p class="text-green-200 text-sm leading-relaxed">Respondemos en un plazo de 2-3 días hábiles. Revisamos todos los mensajes aunque no siempre podamos responder individualmente.</p>
+        </div>
+
+        <!-- Aviso de formulario -->
+        <div class="bg-amber-50 border border-amber-200 rounded-3xl p-5">
+          <p class="text-amber-700 text-xs font-medium">
+            📌 <strong>Nota:</strong> El formulario usa <a href="https://formspree.io" target="_blank" rel="noopener" class="underline">Formspree</a>. Para activarlo, regístrate en formspree.io y reemplaza <code class="bg-amber-100 px-1 py-0.5 rounded text-xs">YOUR_FORM_ID</code> en el código fuente con tu ID de formulario real.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-[#006400] text-white py-8 px-4 sm:px-6 mt-8">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🇪🇨</span>
+        <span class="font-black">Biblioteca de Recetas Ecuatorianas</span>
+      </div>
+      <nav class="flex flex-wrap items-center justify-center gap-4 text-green-200 text-sm">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+        <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
+        <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
+        <a href="contact.html" class="text-white font-bold">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

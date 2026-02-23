@@ -4,17 +4,27 @@
 /**
  * n8n-receiver.js
  * ───────────────
- * CLI bridge between n8n's "Execute Command" node and recipes.json.
+ * CLI bridge para insertar recetas en recipes.json (uso local/testing).
  *
- * Usage:
- *   node /absolute/path/to/n8n-receiver.js '<json_string>'
+ * Uso:
+ *   node n8n-receiver.js '<json_string>'
+ *   node n8n-receiver.js "$(cat test-recipe.json)"
  *
- * The script expects a single JSON string as the first CLI argument.
- * It reads recipes.json, assigns an auto-incremented ID, prepends
- * the new recipe (newest-first), and writes the file back atomically.
+ * Acepta el JSON completo de la receta como primer argumento CLI.
+ * Lee recipes.json, asigna ID auto-incremental, agrega al inicio
+ * (más reciente primero) y escribe atómicamente (previene corrupción).
  *
- * stdout output is JSON — n8n can read it with the "JSON Parse" node.
- * On error, it writes to stderr and exits with code 1.
+ * stdout: JSON con { status, id, slug } — leer con "JSON Parse" en n8n.
+ * En error: escribe en stderr y sale con código 1.
+ *
+ * NOTA: En producción el workflow n8n usa GitHub API directamente.
+ * Este script es solo para desarrollo local y testing de recetas.
+ *
+ * CAMPOS OPCIONALES v2.0 (multi-nicho):
+ *   "target_audience":           "Local" | "Diáspora" | "Turista"
+ *   "international_substitutes": [ { original, sustituto_usa, sustituto_europa } ]
+ *   "tourism_route":             "Descripción de la ruta gastronómica"
+ * El script guarda todos los campos recibidos sin modificarlos.
  */
 
 const fs   = require('fs');

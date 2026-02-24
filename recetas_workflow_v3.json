@@ -11,7 +11,7 @@
         60
       ],
       "parameters": {
-        "content": "## RECETAS-AI-Auto-Publisher v3.7\n\n**Flujo:** Schedule → GET slugs → Extraer → Nombrador → Preparar Prompt → Chef Redactor v3 → Parser → YouTube (búsqueda + validar + procesar) → Wikimedia (imagen libre) → Enriquecer → Quality Gate → GET GitHub → Merge → PUT GitHub\n\n**Imágenes:** 1) Wikimedia Commons (foto del plato, sin personas) 2) Unsplash por categoría (fallback). NUNCA YouTube thumbnails.\n**SEO:** keywords long-tail, description con keyword, FAQs People Also Ask.\n**Supermercados:** ingredientes con donde comprarlos (Supermaxi, Megamaxi, TIA).",
+        "content": "## RECETAS-AI-Auto-Publisher v4.0\n\n**Flujo:** Schedule -> GET slugs -> Extraer -> Nombrador -> Preparar Prompt -> Chef Redactor v3 -> Parser -> YouTube (buscar + validar + procesar) -> Generar Imagen IA (Google Imagen 3) -> Enriquecer -> Quality Gate -> GET GitHub -> Merge -> PUT GitHub\n\n**Imagenes:** 1) Google Imagen 3 Nanobanana Pro (foto del plato, sin personas) 2) Unsplash por categoria (fallback). NUNCA YouTube thumbnails.\n**SEO:** keywords long-tail, description con keyword, FAQs People Also Ask.\n**Supermercados:** ingredientes con donde comprarlos (Supermaxi, Megamaxi, TIA).\n**Costos:** estimated_cost generado por Chef Redactor con precios de referencia.",
         "height": 180,
         "width": 1900
       }
@@ -230,7 +230,7 @@
         500
       ],
       "parameters": {
-        "jsCode": "const recipe      = $('Parsear Receta JSON').first().json;\nconst youtubeData = $('Procesar Videos YouTube').first().json;\nconst wikiData    = $('Procesar Imagen Wikimedia').first().json;\nconst placesData  = $('Procesar Places').first().json;\n\nconst enriched = Object.assign({}, recipe);\n\n// ── YouTube videos: guardar SOLO los datos del video, NUNCA el thumbnail como imagen ──\nif (youtubeData.youtube_videos && youtubeData.youtube_videos.length > 0) {\n  enriched.youtube_videos = youtubeData.youtube_videos;\n  // NO usar thumbnail de YouTube como image_url — pueden mostrar personas\n}\n\n// ── Google Places ──────────────────────────────────────────────────────────────\nif (placesData.places && placesData.places.length > 0) {\n  enriched.places = placesData.places;\n}\n\n// ── Imagen de portada: Wikimedia Commons (foto real del plato, libre de personas) ──\nconst fallbacks = {\n  'Sopas':          'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80',\n  'Platos Fuertes': 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80',\n  'Mariscos':       'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80',\n  'Entradas':       'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',\n  'Postres':        'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',\n  'Bebidas':        'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&q=80',\n  'Desayunos':      'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80',\n};\nconst defaultImg = 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=800&q=80';\nconst cat = enriched.category || 'Platos Fuertes';\n\n// 1. Wikimedia Commons (si disponible y no es YouTube)\nif (wikiData && wikiData.thumburl &&\n    !wikiData.thumburl.includes('ytimg') &&\n    !wikiData.thumburl.includes('youtube') &&\n    wikiData.thumburl.startsWith('http')) {\n  enriched.image_url    = wikiData.thumburl;\n  enriched._image_source = 'wikimedia_commons';\n  if (wikiData.author || wikiData.license) {\n    enriched.image_credit = {\n      source: 'Wikimedia Commons',\n      author: wikiData.author || '',\n      license: wikiData.license || 'CC BY-SA',\n      url: wikiData.descriptionurl || '',\n    };\n  }\n}\n// 2. Si image_url está vacía o es YouTube thumbnail → usar Unsplash por categoría\nelse if (!enriched.image_url ||\n         enriched.image_url.includes('ytimg.com') ||\n         enriched.image_url.includes('youtube.com') ||\n         enriched.image_url.includes('photo-XXXX') ||\n         enriched.image_url.length < 30) {\n  enriched.image_url    = fallbacks[cat] || defaultImg;\n  enriched._image_source = 'unsplash_category';\n}\n// 3. Si el Chef Redactor ya puso una URL de Unsplash válida, mantenerla\nelse {\n  enriched._image_source = enriched._image_source || 'grok_unsplash';\n}\n\n// Asegurar que image_alt describe el plato, no personas\nif (!enriched.image_alt || enriched.image_alt.toLowerCase().includes('chef')) {\n  enriched.image_alt = `Fotografía del plato: ${enriched.title} — comida ecuatoriana tradicional`;\n}\n\ndelete enriched.youtube_query;\n\nreturn [{ json: enriched }];"
+        "jsCode": "const recipe      = $('Parsear Receta JSON').first().json;\nconst youtubeData = $('Procesar Videos YouTube').first().json;\nconst enriched    = Object.assign({}, recipe);\n\n// ── YouTube videos (solo datos del video, NUNCA thumbnail como imagen) ───────\nif (youtubeData.youtube_videos && youtubeData.youtube_videos.length > 0) {\n  enriched.youtube_videos = youtubeData.youtube_videos;\n}\n\n// ── Imagen de portada: Imagen 3 AI > Unsplash ──────────────────────────────\nlet aiData = {};\ntry { aiData = $('Generar Imagen IA').first().json; } catch(e) {}\n\nconst fallbacks = {\n  'Sopas':          'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80',\n  'Platos Fuertes': 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80',\n  'Mariscos':       'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80',\n  'Entradas':       'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',\n  'Postres':        'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',\n  'Bebidas':        'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&q=80',\n  'Desayunos':      'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80',\n};\nconst defaultImg = 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=800&q=80';\nconst cat = enriched.category || 'Platos Fuertes';\n\n// 1. Imagen generada por IA (Imagen 3 — sin personas, sin YouTube)\nif (aiData.ai_image_url && aiData._imagen3_status === 'ok') {\n  enriched.image_url    = aiData.ai_image_url;\n  enriched._image_source = 'imagen3_ai';\n}\n// 2. Si no hay IA → Unsplash por categoría (NUNCA YouTube thumbnail)\nelse if (!enriched.image_url ||\n         enriched.image_url.includes('ytimg.com') ||\n         enriched.image_url.includes('youtube.com') ||\n         enriched.image_url.length < 30) {\n  enriched.image_url    = fallbacks[cat] || defaultImg;\n  enriched._image_source = 'unsplash_category';\n}\n// 3. Si ya tiene URL válida, mantener\nelse {\n  enriched._image_source = enriched._image_source || 'existing';\n}\n\n// Asegurar que image_alt describe el plato, no personas\nif (!enriched.image_alt || enriched.image_alt.toLowerCase().includes('chef')) {\n  enriched.image_alt = `Fotografía del plato: ${enriched.title} — comida ecuatoriana tradicional`;\n}\n\ndelete enriched.youtube_query;\nreturn [{ json: enriched }];"
       }
     },
     {
@@ -324,6 +324,20 @@
         "specifyBody": "json",
         "jsonBody": "={{ { message: 'feat(recetas): agregar ' + $json.slug + ' [ID:' + $json.id + '] ' + $json.extras + ' — auto v3', content: $json.content, sha: $json.sha } }}",
         "options": {}
+      }
+    },
+    {
+      "id": "generar-imagen-ia",
+      "name": "Generar Imagen IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        220
+      ],
+      "parameters": {
+        "jsCode": "// ─── Generar imagen del plato con Google Imagen 3 (Nanobanana Pro) ──\nconst recipe   = $('Parsear Receta JSON').first().json;\nconst GAPI_KEY = '{{env.IMAGEN_API_KEY}}';\nconst GH_TOKEN = '{{env.GITHUB_TOKEN}}';\nconst REPO     = 'LordRa2pat/recetas-ecuador';\n\n// Verificar soporte de fetch\nif (typeof fetch === 'undefined') {\n  return [{ json: { ...recipe, _imagen3_status: 'no_fetch' } }];\n}\n\n// ── Prompt profesional para el plato ───────────────────────────\nconst regionText = recipe.region ? ` de ${recipe.region}` : '';\nconst prompt = [\n  `Fotografía profesional del plato tradicional ecuatoriano \"${recipe.title}\"${regionText}`,\n  'vista superior o plano tres cuartos alto',\n  'colores vibrantes y naturales, sin personas, sin texto, sin logos, sin manos',\n  'fondo madera rústica o tela andina, vajilla artesanal ecuatoriana',\n  'iluminación natural lateral, calidad editorial gastronómica, 4K'\n].join(', ');\n\n// ── 1. Llamar a Imagen 3 ───────────────────────────────────────\nlet b64Image = null;\ntry {\n  const resp = await fetch(\n    `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=${GAPI_KEY}`,\n    {\n      method: 'POST',\n      headers: { 'Content-Type': 'application/json' },\n      body: JSON.stringify({\n        instances: [{ prompt }],\n        parameters: {\n          sampleCount: 1,\n          aspectRatio: '16:9',\n          safetyFilterLevel: 'BLOCK_ONLY_HIGH',\n          personGeneration: 'DONT_ALLOW'\n        }\n      })\n    }\n  );\n  const data = await resp.json();\n  b64Image = data?.predictions?.[0]?.bytesBase64Encoded || null;\n  if (!b64Image) console.error('Imagen 3 sin resultado:', JSON.stringify(data).slice(0, 300));\n} catch (e) {\n  console.error('Imagen 3 fetch error:', e.message);\n}\n\nif (!b64Image) {\n  return [{ json: { ...recipe, _imagen3_status: 'failed' } }];\n}\n\n// ── 2. Normalizar slug para nombre de archivo ─────────────────\nconst slug = (recipe.slug || recipe.title)\n  .toLowerCase()\n  .replace(/[áàä]/g, 'a').replace(/[éèë]/g, 'e')\n  .replace(/[íìï]/g, 'i').replace(/[óòö]/g, 'o')\n  .replace(/[úùü]/g, 'u').replace(/[ñ]/g, 'n')\n  .replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\nconst ghPath = `images/${slug}.jpg`;\n\n// ── 3. Verificar si el archivo ya existe (para obtener SHA) ───\nlet existingSha = null;\ntry {\n  const checkResp = await fetch(\n    `https://api.github.com/repos/${REPO}/contents/${ghPath}`,\n    { headers: { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' } }\n  );\n  if (checkResp.ok) existingSha = (await checkResp.json()).sha;\n} catch (e) { /* no existe, OK */ }\n\n// ── 4. Subir imagen a GitHub ───────────────────────────────────\nconst uploadBody = {\n  message: `feat(img-ai): Imagen 3 para \"${recipe.title}\"`,\n  content: b64Image,\n  ...(existingSha ? { sha: existingSha } : {})\n};\n\nconst uploadResp = await fetch(\n  `https://api.github.com/repos/${REPO}/contents/${ghPath}`,\n  {\n    method: 'PUT',\n    headers: {\n      Authorization: `token ${GH_TOKEN}`,\n      'Content-Type': 'application/json',\n      Accept: 'application/vnd.github.v3+json'\n    },\n    body: JSON.stringify(uploadBody)\n  }\n);\n\nif (!uploadResp.ok) {\n  const errText = await uploadResp.text();\n  console.error('GitHub upload error:', errText.slice(0, 300));\n  return [{ json: { ...recipe, _imagen3_status: 'upload_failed' } }];\n}\n\nconst imageUrl = `https://raw.githubusercontent.com/${REPO}/main/${ghPath}`;\nreturn [{ json: { ...recipe, ai_image_url: imageUrl, _imagen3_status: 'ok', _image_source: 'imagen3_ai' } }];\n",
+        "language": "javaScript"
       }
     }
   ],
@@ -420,7 +434,7 @@
       "main": [
         [
           {
-            "node": "Enriquecer Receta",
+            "node": "Generar Imagen IA",
             "type": "main",
             "index": 0
           }
@@ -476,6 +490,17 @@
         [
           {
             "node": "Chef Redactor v3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Imagen IA": {
+      "main": [
+        [
+          {
+            "node": "Enriquecer Receta",
             "type": "main",
             "index": 0
           }

@@ -10,4 +10,5 @@ fix_images_v2.py
 deploy_blog_v2.py
 scrape_prices.py
 update_costs.py
+deploy_imagen.py
 *_payload.json

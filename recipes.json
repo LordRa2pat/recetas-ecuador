@@ -1,5 +1,150 @@
 [
   {
+    "slug": "seco-de-chivo-manabita-receta",
+    "title": "Seco de Chivo Manabita Receta Tradicional Ecuatoriana",
+    "description": "Seco de Chivo Manabita, un plato emblemático de la costa ecuatoriana, especialmente de Manabí. Descubre esta receta tradicional con sabores intensos de chicha de jora y especias, ideal para compartir en familia. Aprende a prepararlo paso a paso con ingredientes auténticos.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "image_url": null,
+    "image_alt": "Plato de seco de chivo manabita con arroz y patacones, comida tradicional ecuatoriana",
+    "ingredients": [
+      "1.5 kg de carne de chivo (costilla o pierna, disponible en mercados locales o Supermaxi)",
+      "2 tazas de chicha de jora (mercados locales o TIA - sección bebidas tradicionales)",
+      "1 cebolla colorada grande, finamente picada",
+      "2 tomates maduros, triturados",
+      "3 dientes de ajo, machacados",
+      "1 pimiento verde, picado",
+      "1 cucharada de comino molido",
+      "1 cucharadita de achiote en polvo (Supermaxi, sección especias)",
+      "2 hojas de laurel",
+      "1 rama de cilantro, picada fina",
+      "Sal y pimienta al gusto",
+      "3 cucharadas de aceite vegetal"
+    ],
+    "instructions": [
+      "Lava bien la carne de chivo y córtala en trozos medianos. Sazona con sal, pimienta y comino, y déjala reposar por 15 minutos.",
+      "En una olla grande, calienta el aceite a fuego medio y sofríe la cebolla, el ajo y el pimiento hasta que estén transparentes, unos 5 minutos.",
+      "Añade el tomate triturado y el achiote. Cocina por 3 minutos más, removiendo constantemente.",
+      "Incorpora la carne de chivo y mezcla bien con el sofrito. Cocina por 5 minutos para sellar los jugos.",
+      "Vierte la chicha de jora y las hojas de laurel. Reduce el fuego a bajo, tapa la olla y deja cocinar por 1.5 a 2 horas, removiendo ocasionalmente.",
+      "Ajusta la sal y pimienta al gusto. Si la salsa está muy líquida, destapa y cocina 10 minutos más para espesar. Sirve caliente espolvoreado con cilantro.",
+      "Acompaña con arroz amarillo, patacones o yuca cocida para un plato completo al estilo manabita."
+    ],
+    "tips": [
+      "Si la carne de chivo tiene un olor fuerte, remójala en leche con limón por 30 minutos antes de cocinar.",
+      "La chicha de jora es esencial para el sabor auténtico; no la reemplaces por cerveza si buscas tradición.",
+      "Cocina a fuego lento para que la carne quede tierna y absorba todos los sabores.",
+      "Puedes preparar el seco un día antes; los sabores se intensifican con el reposo."
+    ],
+    "keywords": [
+      "seco de chivo manabita",
+      "receta seco de chivo ecuatoriano",
+      "seco de chivo tradicional",
+      "comida manabita receta",
+      "platos tipicos de manabi",
+      "seco de chivo con chicha de jora",
+      "receta tradicional costa ecuatoriana",
+      "como hacer seco de chivo",
+      "seco de chivo facil",
+      "comida ecuatoriana tradicional",
+      "plato fuerte manabita",
+      "recetas de manabi ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el seco de chivo manabita?",
+        "a": "Se sirve tradicionalmente con arroz amarillo, patacones o yuca cocida, y a veces con una ensalada fresca."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el seco de chivo?",
+        "a": "En el refrigerador, puede durar hasta 3 días en un recipiente hermético. Recalentar a fuego bajo para mantener la textura."
+      },
+      {
+        "q": "¿Es difícil hacer seco de chivo manabita?",
+        "a": "No es complicado, pero requiere tiempo para cocinar a fuego lento y lograr que la carne quede tierna."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Portoviejo",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Chone",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Manta",
+        "province": "Manabí",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian food",
+      "traditional ecuadorian dish",
+      "seco de chivo",
+      "manabita cuisine",
+      "stew with goat",
+      "latin american food",
+      "coastal ecuador food",
+      "hearty meat dish"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Chicha de jora",
+        "sustituto_usa": "Mezcla de vinagre de manzana (1/4 taza) con agua (1.75 tazas) y un toque de azúcar",
+        "sustituto_europa": "Mezcla de vinagre de sidra (1/4 taza) con agua (1.75 tazas) y una pizca de azúcar"
+      },
+      {
+        "original": "Carne de chivo",
+        "sustituto_usa": "Carne de cordero o cabrito, disponible en carnicerías latinas o mercados especializados",
+        "sustituto_europa": "Carne de cordero, común en supermercados o carnicerías halal"
+      }
+    ],
+    "tourism_route": "Explora la ruta gastronómica de Manabí, comenzando en Portoviejo, donde el seco de chivo es un ícono en restaurantes como 'El Rincón de Tono' (precio promedio: $8-10 por plato). Continúa hacia Chone para probar variantes locales en mercados, y finaliza en Manta con vistas al mar y sabores costeros.",
+    "youtube_videos": [
+      {
+        "title": "SECO DE CHIVO",
+        "videoId": "nalrrzDx6ok",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=nalrrzDx6ok",
+        "embed": "https://www.youtube-nocookie.com/embed/nalrrzDx6ok",
+        "uploadDate": "2019-07-19",
+        "description": "Ingredientes:\nCarne de Chivo ............. 2 lb\nCebolla Colorada ......... 1 taza\nPimiento Verde ............. 3/4 taza \nPasta de Ajo .................. 1 cucharada\nCilantro .........................."
+      },
+      {
+        "title": "SECO DE CHIVO ECUATORIANO   #secodechivo #secodecarne #secodecabrito",
+        "videoId": "quc5AVfbVPA",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=quc5AVfbVPA",
+        "embed": "https://www.youtube-nocookie.com/embed/quc5AVfbVPA",
+        "uploadDate": "2022-02-15",
+        "description": "Seco de Chivo ecuatoriano con naranjilla y cerveza plato tipico de la gastronomia Ecuatoriana."
+      },
+      {
+        "title": "Seco de chivo - Mujeres365",
+        "videoId": "qkcDXnaxkps",
+        "channel": "Mujeres 365",
+        "url": "https://www.youtube.com/watch?v=qkcDXnaxkps",
+        "embed": "https://www.youtube-nocookie.com/embed/qkcDXnaxkps",
+        "uploadDate": "2012-04-13",
+        "description": "Chef Carmen Nieto\r\nSeco de Chivo\r\nMujeres 365"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 15,
+    "created_at": "2026-02-24T21:44:17.264Z"
+  },
+  {
     "slug": "quimbolitos-ecuatorianos-receta-tradicional",
     "title": "Quimbolitos Ecuatorianos Receta Tradicional de la Sierra",
     "description": "Quimbolitos ecuatorianos, un postre tradicional de la Sierra, hecho con harina de maíz, queso y pasas, envuelto en hojas de achira. Aprende a prepararlos con esta receta auténtica y fácil, perfecta para disfrutar en familia o compartir en festividades típicas del Ecuador.",

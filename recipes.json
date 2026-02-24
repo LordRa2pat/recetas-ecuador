@@ -132,7 +132,10 @@
     ],
     "_image_source": "youtube_thumbnail",
     "id": 12,
-    "created_at": "2026-02-24T15:41:37.199Z"
+    "created_at": "2026-02-24T15:41:37.199Z",
+    "meta_title": "Fritada Ecuatoriana de la Sierra... | Ecuador a la Carta",
+    "meta_description": "Fritada Ecuatoriana de la Sierra Oriental, un plato típico lleno de sabor con cerdo frito crujiente, acompañado de mote, maíz tostado y llapingachos....",
+    "og_image": "https://i.ytimg.com/vi/dS129uXVOQU/hqdefault.jpg"
   },
   {
     "slug": "chugchucara-receta-tradicional-ecuatoriana",
@@ -267,7 +270,10 @@
     "_image_source": "unsplash_corrected",
     "id": 11,
     "created_at": "2026-02-24T15:00:44.802Z",
-    "estimated_cost": "Aprox. $14.76 - $26.92 USD (para 4 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $14.76 - $26.92 USD (para 4 personas) · Tuti / Supermaxi",
+    "meta_title": "Chugchucara Ecuatoriana Receta... | Ecuador a la Carta",
+    "meta_description": "Chugchucara, el plato típico de Latacunga, es una deliciosa combinación de fritada de cerdo, mote, papas, tostado, plátano frito y más. Descubre cómo...",
+    "og_image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
   },
   {
     "slug": "fanesca-de-la-costa-ecuatoriana-receta",
@@ -411,7 +417,10 @@
     "_image_source": "unsplash_corrected",
     "id": 10,
     "created_at": "2026-02-24T14:36:19.246Z",
-    "estimated_cost": "Aprox. $12.96 - $24.98 USD (para 8 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $12.96 - $24.98 USD (para 8 personas) · Tuti / Supermaxi",
+    "meta_title": "Fanesca de la Costa Ecuatoriana... | Ecuador a la Carta",
+    "meta_description": "Fanesca de la Costa Ecuatoriana, un plato tradicional de Semana Santa lleno de sabor y simbolismo. Descubre cómo preparar esta sopa única con granos,...",
+    "og_image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80"
   },
   {
     "slug": "hornado-quiteno-receta-tradicional",
@@ -547,7 +556,10 @@
     "_image_source": "unsplash_corrected",
     "id": 9,
     "created_at": "2026-02-24T05:39:04.309Z",
-    "estimated_cost": "Aprox. $28.53 - $52.39 USD (para 6 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $28.53 - $52.39 USD (para 6 personas) · Tuti / Supermaxi",
+    "meta_title": "Hornado Quiteño Receta Tradicional... | Ecuador a la Carta",
+    "meta_description": "Hornado Quiteño, el plato icónico de la Sierra ecuatoriana, es un cerdo asado jugoso y crujiente, sazonado con especias tradicionales. Descubre cómo...",
+    "og_image": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&q=80"
   },
   {
     "slug": "caldo-de-mondongo-ecuatoriano",
@@ -681,7 +693,10 @@
     "id": 8,
     "created_at": "2026-02-24T05:01:57.588Z",
     "_image_source": "unsplash_corrected",
-    "estimated_cost": "Aprox. $10.80 - $19.90 USD (para 6 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $10.80 - $19.90 USD (para 6 personas) · Tuti / Supermaxi",
+    "meta_title": "Caldo de Mondongo Ecuatoriano Receta... | Ecuador a la Carta",
+    "meta_description": "Caldo de Mondongo Ecuatoriano, una sopa reconfortante y tradicional de la Sierra. Descubre cómo preparar este plato típico con tripa de res, mote y...",
+    "og_image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80"
   },
   {
     "slug": "maito-de-pescado-ecuatoriano",
@@ -802,7 +817,10 @@
     "id": 7,
     "created_at": "2026-02-24T03:01:21.599Z",
     "_image_source": "unsplash_corrected",
-    "estimated_cost": "Aprox. $10.76 - $19.90 USD (para 4 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $10.76 - $19.90 USD (para 4 personas) · Tuti / Supermaxi",
+    "meta_title": "Maito de Pescado | Ecuador a la Carta",
+    "meta_description": "Descubre el auténtico Maito de Pescado, un plato tradicional de la Amazonía ecuatoriana. Pescado fresco envuelto en hojas de bijao, cocido a la brasa...",
+    "og_image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
   },
   {
     "slug": "tigrillo-de-platano-verde-y-huevo-costeno",
@@ -916,7 +934,10 @@
     "id": 6,
     "created_at": "2026-02-24T01:01:19.274Z",
     "_image_source": "unsplash_corrected",
-    "estimated_cost": "Aprox. $1.87 - $3.44 USD (para 4 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $1.87 - $3.44 USD (para 4 personas) · Tuti / Supermaxi",
+    "meta_title": "Tigrillo de Plátano Verde y Huevo... | Ecuador a la Carta",
+    "meta_description": "Descubre el auténtico tigrillo, un desayuno costeño ecuatoriano irresistible. Hecho con plátano verde machacado, queso fresco y huevo frito, este plato...",
+    "og_image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80"
   },
   {
     "slug": "caldo-de-bolas-ecuatoriano",
@@ -1034,7 +1055,10 @@
     "id": 5,
     "created_at": "2026-02-23T23:40:41.477Z",
     "_image_source": "unsplash_corrected",
-    "estimated_cost": "Aprox. $15.04 - $28.45 USD (para 6 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $15.04 - $28.45 USD (para 6 personas) · Tuti / Supermaxi",
+    "meta_title": "Caldo de Bolas Ecuatoriano | Ecuador a la Carta",
+    "meta_description": "Disfruta del tradicional caldo de bolas ecuatoriano, una sopa reconfortante de la Sierra, con bolas de plátano verde rellenas de carne y un caldo lleno...",
+    "og_image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80"
   },
   {
     "slug": "yahuarlocro-receta-ecuatoriana",
@@ -1166,7 +1190,10 @@
     "id": 4,
     "created_at": "2026-02-23T23:29:00.817Z",
     "_image_source": "unsplash_corrected",
-    "estimated_cost": "Aprox. $8.46 - $15.90 USD (para 6 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $8.46 - $15.90 USD (para 6 personas) · Tuti / Supermaxi",
+    "meta_title": "Yahuarlocro | Ecuador a la Carta",
+    "meta_description": "Descubre el auténtico Yahuarlocro, una sopa tradicional de la Sierra ecuatoriana hecha con borrego, sangre y papas. Este plato reconfortante combina...",
+    "og_image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80"
   },
   {
     "slug": "muchines-de-choclo",
@@ -1234,7 +1261,10 @@
     "created_at": "2026-02-23T19:00:48.827Z",
     "_image_source": "unsplash_corrected",
     "image_alt": "Fotografía del plato: Muchines de Choclo — comida ecuatoriana tradicional",
-    "estimated_cost": "Aprox. $1.12 - $2.23 USD (para 4 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $1.12 - $2.23 USD (para 4 personas) · Tuti / Supermaxi",
+    "meta_title": "Muchines de Choclo | Ecuador a la Carta",
+    "meta_description": "Deliciosos pastelitos de maíz tierno rellenos de queso, típicos de la Sierra ecuatoriana.",
+    "og_image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
   },
   {
     "slug": "empanadas-de-yuca",
@@ -1306,7 +1336,10 @@
     "created_at": "2026-02-23T18:33:09.337Z",
     "_image_source": "unsplash_corrected",
     "image_alt": "Fotografía del plato: Empanadas de Yuca Ecuatorianas — comida ecuatoriana tradicional",
-    "estimated_cost": "Aprox. $1.53 - $2.96 USD (para 4 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $1.53 - $2.96 USD (para 4 personas) · Tuti / Supermaxi",
+    "meta_title": "Empanadas de Yuca Ecuatorianas | Ecuador a la Carta",
+    "meta_description": "Deliciosas empanadas de yuca rellenas de queso, crujientes por fuera y suaves por dentro.",
+    "og_image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
   },
   {
     "slug": "sopa-de-mani-ecuatoriana",
@@ -1375,6 +1408,9 @@
     "created_at": "2026-02-23T18:32:21.266Z",
     "_image_source": "unsplash_corrected",
     "image_alt": "Fotografía del plato: Sopa de Maní Ecuatoriana — comida ecuatoriana tradicional",
-    "estimated_cost": "Aprox. $8.89 - $16.15 USD (para 4 personas) · Tuti / Supermaxi"
+    "estimated_cost": "Aprox. $8.89 - $16.15 USD (para 4 personas) · Tuti / Supermaxi",
+    "meta_title": "Sopa de Maní Ecuatoriana | Ecuador a la Carta",
+    "meta_description": "Deliciosa sopa cremosa de maní, un clásico reconfortante de la Sierra ecuatoriana.",
+    "og_image": "https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&q=80"
   }
 ]

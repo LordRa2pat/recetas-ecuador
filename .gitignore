@@ -17,3 +17,6 @@ fix_posts_images.py
 _imagen3_req.json
 _gh_upload_req.json
 _posts_commit.json
+_hf_req.json
+*.bak
+gen_images_local.py

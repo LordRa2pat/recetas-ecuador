@@ -1,6 +1,6 @@
 // ============================================================
-// Ecuador a la Carta — script.js v6
-// v6: Star rating (localStorage) + precio Tuti/Supermaxi por ingrediente
+// Ecuador a la Carta — script.js v7
+// v7: trackEvent (dataLayer) + meta_title/meta_description override + v6
 // ============================================================
 
 'use strict';
@@ -10,6 +10,43 @@ const POSTS_URL = 'posts.json';
 const PRICES_URL = 'price_db.json';
 let allRecipes = [];
 let priceDbCache = null;
+
+// ─── Tracking: helper defensivo (GA4 / GTM dataLayer) ───────
+// Instrumenta eventos sin depender de que GA/GTM estén cargados.
+// Para activar modo debug: window._debugTracking = true en consola.
+function trackEvent(eventName, params) {
+  try {
+    params = params || {};
+    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+      window.dataLayer.push(Object.assign({ event: eventName }, params));
+    } else if (window._debugTracking) {
+      console.debug('[Track]', eventName, params);
+    }
+  } catch (_) {}
+}
+
+// Delegación global para clicks en tarjetas de receta/post
+document.addEventListener('click', function(e) {
+  var anchor = e.target.closest('a[data-track-type]');
+  if (!anchor) return;
+  var type = anchor.dataset.trackType;
+  if (type === 'recipe') {
+    trackEvent('recipe_click', {
+      slug: anchor.dataset.trackSlug,
+      title: anchor.dataset.trackTitle,
+      region: anchor.dataset.trackRegion,
+      category: anchor.dataset.trackCategory,
+      page: window.location.pathname.split('/').pop() || 'index'
+    });
+  } else if (type === 'post') {
+    trackEvent('post_click', {
+      slug: anchor.dataset.trackSlug,
+      title: anchor.dataset.trackTitle,
+      category: anchor.dataset.trackCategory,
+      page: window.location.pathname.split('/').pop() || 'index'
+    });
+  }
+});
 
 // ─── Utilidades ──────────────────────────────────────────────
 function escapeHtml(str) {
@@ -162,7 +199,8 @@ function renderCard(recipe) {
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#0033A0] focus-within:ring-offset-2">' +
-    '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '">' +
+    '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '"' +
+    ' data-track-type="recipe" data-track-slug="' + escapeHtml(recipe.slug) + '" data-track-title="' + escapeHtml(recipe.title) + '" data-track-region="' + escapeHtml(recipe.region || '') + '" data-track-category="' + escapeHtml(recipe.category || '') + '">' +
       '<div class="relative h-52 overflow-hidden">' +
         '<img src="' + img + '" alt="' + imgAlt + '"' +
           ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
@@ -372,9 +410,9 @@ function injectSEO(recipe) {
   var allKeywords = keywords.concat(['recetas ecuatorianas', 'cocina ecuatoriana', 'gastronomia ecuatoriana', 'Ecuador a la Carta']).join(', ');
 
   setMeta(
-    recipe.title + ' \u2014 Receta Ecuatoriana Aut\u00e9ntica | Cocina Ecuador \uD83C\uDDEA\uD83C\uDDE8',
-    recipe.description || ('Aprende a preparar ' + recipe.title + ', una deliciosa receta ecuatoriana tradicional.'),
-    imageUrl,
+    recipe.meta_title || (recipe.title + ' \u2014 Receta Ecuatoriana Aut\u00e9ntica | Cocina Ecuador \uD83C\uDDEA\uD83C\uDDE8'),
+    recipe.meta_description || recipe.description || ('Aprende a preparar ' + recipe.title + ', una deliciosa receta ecuatoriana tradicional.'),
+    recipe.og_image || imageUrl,
     canonicalUrl
   );
   upsertMeta('name', 'keywords', allKeywords);
@@ -530,14 +568,20 @@ async function initIndex() {
     searchInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') {
         var q = searchInput.value.trim();
-        if (q) window.location.href = 'recipes.html?q=' + encodeURIComponent(q);
+        if (q) {
+          trackEvent('search_use', { query: q, page: 'index', destination: 'recipes' });
+          window.location.href = 'recipes.html?q=' + encodeURIComponent(q);
+        }
       }
     });
     var searchBtn = document.getElementById('search-btn');
     if (searchBtn) {
       searchBtn.addEventListener('click', function() {
         var q = searchInput.value.trim();
-        if (q) window.location.href = 'recipes.html?q=' + encodeURIComponent(q);
+        if (q) {
+          trackEvent('search_use', { query: q, page: 'index', destination: 'recipes' });
+          window.location.href = 'recipes.html?q=' + encodeURIComponent(q);
+        }
       });
     }
   }
@@ -620,13 +664,32 @@ async function initListing() {
     initAds();
   }
 
-  var debouncedApply = debounce(applyFilters, 300);
+  var debouncedApply = debounce(function() {
+    applyFilters();
+    var q = searchInput ? searchInput.value.trim() : '';
+    if (q) trackEvent('search_use', { query: q, page: 'recipes' });
+  }, 300);
   if (searchInput) searchInput.addEventListener('input', debouncedApply);
-  if (regionSel) regionSel.addEventListener('change', applyFilters);
-  if (difficultySel) difficultySel.addEventListener('change', applyFilters);
-  if (categorySel) categorySel.addEventListener('change', applyFilters);
-  if (audienceSel) audienceSel.addEventListener('change', applyFilters);
-  if (sortSel) sortSel.addEventListener('change', applyFilters);
+  if (regionSel) regionSel.addEventListener('change', function() {
+    applyFilters();
+    if (regionSel.value) trackEvent('filter_use', { filter_type: 'region', value: regionSel.value, page: 'recipes' });
+  });
+  if (difficultySel) difficultySel.addEventListener('change', function() {
+    applyFilters();
+    if (difficultySel.value) trackEvent('filter_use', { filter_type: 'difficulty', value: difficultySel.value, page: 'recipes' });
+  });
+  if (categorySel) categorySel.addEventListener('change', function() {
+    applyFilters();
+    if (categorySel.value) trackEvent('filter_use', { filter_type: 'category', value: categorySel.value, page: 'recipes' });
+  });
+  if (audienceSel) audienceSel.addEventListener('change', function() {
+    applyFilters();
+    if (audienceSel.value) trackEvent('filter_use', { filter_type: 'audience', value: audienceSel.value, page: 'recipes' });
+  });
+  if (sortSel) sortSel.addEventListener('change', function() {
+    applyFilters();
+    trackEvent('filter_use', { filter_type: 'sort', value: sortSel.value, page: 'recipes' });
+  });
   if (clearBtn) {
     clearBtn.addEventListener('click', function() {
       if (searchInput) searchInput.value = '';
@@ -828,10 +891,22 @@ async function initRecipe() {
     var fbShare = document.getElementById('share-facebook');
     var xShare = document.getElementById('share-x');
     var pinShare = document.getElementById('share-pinterest');
-    if (waShare) waShare.href = 'https://wa.me/?text=' + shareText + '%20' + pageUrl;
-    if (fbShare) fbShare.href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
-    if (xShare) xShare.href = 'https://x.com/intent/tweet?text=' + shareText + '&url=' + pageUrl;
-    if (pinShare) pinShare.href = 'https://pinterest.com/pin/create/button/?url=' + pageUrl + '&media=' + encodeURIComponent(recipe.image_url || '') + '&description=' + shareText;
+    if (waShare) {
+      waShare.href = 'https://wa.me/?text=' + shareText + '%20' + pageUrl;
+      waShare.addEventListener('click', function() { trackEvent('social_share', { platform: 'whatsapp', slug: recipe.slug }); });
+    }
+    if (fbShare) {
+      fbShare.href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+      fbShare.addEventListener('click', function() { trackEvent('social_share', { platform: 'facebook', slug: recipe.slug }); });
+    }
+    if (xShare) {
+      xShare.href = 'https://x.com/intent/tweet?text=' + shareText + '&url=' + pageUrl;
+      xShare.addEventListener('click', function() { trackEvent('social_share', { platform: 'x', slug: recipe.slug }); });
+    }
+    if (pinShare) {
+      pinShare.href = 'https://pinterest.com/pin/create/button/?url=' + pageUrl + '&media=' + encodeURIComponent(recipe.image_url || '') + '&description=' + shareText;
+      pinShare.addEventListener('click', function() { trackEvent('social_share', { platform: 'pinterest', slug: recipe.slug }); });
+    }
     socialShare.classList.remove('hidden');
   }
 
@@ -883,7 +958,8 @@ function renderBlogCard(post) {
   var catClass = categoryColors[post.category] || 'bg-gray-100 text-gray-600 border-gray-200';
 
   return '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#C8102E] focus-within:ring-offset-2">' +
-    '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="block" aria-label="' + escapeHtml(post.title) + '">' +
+    '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="block" aria-label="' + escapeHtml(post.title) + '"' +
+    ' data-track-type="post" data-track-slug="' + escapeHtml(post.slug) + '" data-track-title="' + escapeHtml(post.title) + '" data-track-category="' + escapeHtml(post.category || '') + '">' +
       '<div class="relative h-52 overflow-hidden">' +
         '<img src="' + img + '" alt="' + imgAlt + '"' +
           ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
@@ -912,9 +988,9 @@ function injectPostSEO(post) {
   var keywords = (post.keywords || []).concat(['turismo ecuador', 'viaje ecuador', 'destinos ecuador']).join(', ');
 
   setMeta(
-    post.title + ' | Turismo Ecuador \uD83C\uDDEA\uD83C\uDDE8',
-    post.description || post.title,
-    imageUrl,
+    post.meta_title || (post.title + ' | Turismo Ecuador \uD83C\uDDEA\uD83C\uDDE8'),
+    post.meta_description || post.description || post.title,
+    post.og_image || imageUrl,
     canonicalUrl
   );
   upsertMeta('name', 'keywords', keywords);
@@ -1041,9 +1117,19 @@ async function initBlog() {
   if (categorySel && params.get('category')) categorySel.value = params.get('category');
   if (regionSel && params.get('region')) regionSel.value = params.get('region');
 
-  if (searchInput) searchInput.addEventListener('input', debounce(applyBlogFilters, 300));
-  if (categorySel) categorySel.addEventListener('change', applyBlogFilters);
-  if (regionSel) regionSel.addEventListener('change', applyBlogFilters);
+  if (searchInput) searchInput.addEventListener('input', debounce(function() {
+    applyBlogFilters();
+    var q = searchInput.value.trim();
+    if (q) trackEvent('search_use', { query: q, page: 'blog' });
+  }, 300));
+  if (categorySel) categorySel.addEventListener('change', function() {
+    applyBlogFilters();
+    if (categorySel.value) trackEvent('filter_use', { filter_type: 'category', value: categorySel.value, page: 'blog' });
+  });
+  if (regionSel) regionSel.addEventListener('change', function() {
+    applyBlogFilters();
+    if (regionSel.value) trackEvent('filter_use', { filter_type: 'region', value: regionSel.value, page: 'blog' });
+  });
   if (clearBtn) {
     clearBtn.addEventListener('click', function() {
       if (searchInput) searchInput.value = '';
@@ -1363,6 +1449,7 @@ function initRating(slug) {
     btn.addEventListener('click', function() {
       localStorage.setItem(storageKey, v);
       setDisplay(v);
+      trackEvent('recipe_rating', { slug: slug, stars: v });
     });
   });
 }

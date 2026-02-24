@@ -1,5 +1,124 @@
 [
   {
+    "slug": "maito-de-pescado-ecuatoriano",
+    "title": "Maito de Pescado",
+    "description": "Descubre el auténtico Maito de Pescado, un plato tradicional de la Amazonía ecuatoriana. Pescado fresco envuelto en hojas de bijao, cocido a la brasa con especias y hierbas que resaltan su sabor único. ¡Una experiencia gastronómica de la selva en tu mesa!",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "image_url": "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=80",
+    "image_alt": "Plato típico ecuatoriano de pescado envuelto en hojas cocido a la brasa",
+    "ingredients": [
+      "4 filetes de pescado fresco (tilapia o cachama, 200 g cada uno)",
+      "4 hojas de bijao (o papel aluminio como sustituto)",
+      "2 limones (jugo exprimido)",
+      "3 dientes de ajo (picados finamente)",
+      "1 cebolla colorada (cortada en juliana)",
+      "1 pimiento verde (cortado en tiras)",
+      "2 tomates (cortados en rodajas)",
+      "1 cucharadita de comino molido",
+      "1 cucharadita de achiote en pasta",
+      "Sal y pimienta al gusto",
+      "2 cucharadas de aceite vegetal"
+    ],
+    "instructions": [
+      "Lava bien los filetes de pescado y sécalos con papel absorbente. Sazona con sal, pimienta, jugo de limón, comino y achiote. Deja reposar por 10 minutos.",
+      "En un bol, mezcla la cebolla, el pimiento, el tomate y el ajo. Agrega un poco de sal y pimienta para realzar los sabores.",
+      "Coloca una hoja de bijao sobre una superficie plana. En el centro, pon un filete de pescado y cubre con una porción de la mezcla de vegetales.",
+      "Envuelve el pescado con la hoja de bijao, asegurándote de que quede bien sellado para que no se escape el vapor. Repite con los demás filetes.",
+      "Cocina los paquetes a la brasa o en una parrilla a fuego medio por 15-20 minutos, volteándolos a mitad de tiempo para una cocción uniforme.",
+      "Sirve caliente, acompañado de yuca cocida o plátano asado, y disfruta de los aromas de la Amazonía."
+    ],
+    "tips": [
+      "Si no encuentras hojas de bijao, puedes usar papel aluminio, aunque el sabor será ligeramente diferente.",
+      "Asegúrate de que el fuego no sea muy fuerte para evitar que las hojas se quemen antes de que el pescado esté cocido.",
+      "Puedes agregar hierbas frescas como cilantro o albahaca dentro del paquete para un toque extra de sabor.",
+      "Si prefieres un sabor más intenso, marina el pescado por 30 minutos antes de envolverlo."
+    ],
+    "keywords": [
+      "maito de pescado",
+      "receta maito ecuatoriano",
+      "plato típico amazonía ecuador",
+      "pescado envuelto en hojas",
+      "cocina tradicional ecuatoriana",
+      "maito de tilapia amazonía",
+      "recetas de la selva ecuatoriana",
+      "comida amazónica ecuador"
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diáspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Tena",
+        "province": "Napo",
+        "region": "Amazonia"
+      },
+      {
+        "city": "Puyo",
+        "province": "Pastaza",
+        "region": "Amazonia"
+      },
+      {
+        "city": "Macas",
+        "province": "Morona Santiago",
+        "region": "Amazonia"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "Hojas de bijao",
+        "sustituto_usa": "Papel aluminio o hojas de plátano (disponibles en tiendas latinas)",
+        "sustituto_europa": "Papel aluminio o hojas de plátano (en mercados latinos o asiáticos)"
+      },
+      {
+        "original": "Pescado cachama",
+        "sustituto_usa": "Tilapia o bagre (catfish)",
+        "sustituto_europa": "Tilapia o perca (perch)"
+      },
+      {
+        "original": "Achiote en pasta",
+        "sustituto_usa": "Mezcla de paprika y cúrcuma (1:1)",
+        "sustituto_europa": "Mezcla de paprika y cúrcuma (1:1)"
+      }
+    ],
+    "tourism_route": "📍 Tena: Mercado Central y restaurantes tradicionales. Prueba el Maito de Pescado recién hecho con ingredientes locales de la Amazonía. Precio: $5-8 USD.",
+    "youtube_videos": [
+      {
+        "title": "Viche de Pescado: Delicioso Plato Típico del Ecuador | KWA",
+        "videoId": "Vg-T6WDc8WI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Vg-T6WDc8WI",
+        "embed": "https://www.youtube-nocookie.com/embed/Vg-T6WDc8WI",
+        "uploadDate": "2025-10-02",
+        "description": "Ingredientes:  https://recetaskwa.com/2024/02/23/viche-de-pescado/\n\nEl Viche de pescado es una de las sopas más representativas de la gastronomía ecuatoriana, especialmente de la provincia de Manabí. "
+      },
+      {
+        "title": "Así el SUDADO DE PESCADO siempre te quedará JUGOSO | KWA",
+        "videoId": "9EeeJeIQN7Q",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=9EeeJeIQN7Q",
+        "embed": "https://www.youtube-nocookie.com/embed/9EeeJeIQN7Q",
+        "uploadDate": "2023-08-11",
+        "description": "Te vas a sorprender de su #Sabor #SudadoDePescado #kwaec \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/20/sudado-de-pescado/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG:"
+      },
+      {
+        "title": "Manizado de Pescado 🇪🇨 Rápido y Súper CREMOSO 🐟 | KWA",
+        "videoId": "erVkQvk1PWw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=erVkQvk1PWw",
+        "embed": "https://www.youtube-nocookie.com/embed/erVkQvk1PWw",
+        "uploadDate": "2025-08-02",
+        "description": "Hoy te enseñamos cómo preparar el tradicional #ManizadoDePescado, un guiso ecuatoriano lleno de sabor hecho con pescado en una cremosa salsa de maní.\nPerfecto para almuerzos caseros o para sorprender "
+      }
+    ],
+    "id": 7,
+    "created_at": "2026-02-24T03:01:21.599Z"
+  },
+  {
     "slug": "tigrillo-de-platano-verde-y-huevo-costeno",
     "title": "Tigrillo de Plátano Verde y Huevo Costeño",
     "description": "Descubre el auténtico tigrillo, un desayuno costeño ecuatoriano irresistible. Hecho con plátano verde machacado, queso fresco y huevo frito, este plato combina texturas cremosas y sabores intensos. Perfecto para empezar el día con energía y tradición.",

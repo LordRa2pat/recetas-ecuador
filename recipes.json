@@ -1,5 +1,155 @@
 [
   {
+    "slug": "encebollado-ecuatoriano-receta",
+    "title": "Encebollado Ecuatoriano Receta Tradicional de la Costa",
+    "description": "Encebollado ecuatoriano, la sopa de pescado más famosa de la costa de Ecuador. Descubre cómo preparar esta receta tradicional con atún, yuca y cebolla encurtida, ideal para un almuerzo reconfortante. ¡Sigue nuestro paso a paso y disfruta de auténtico sabor ecuatoriano!",
+    "region": "Costa",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "20 min",
+    "cook_time": "40 min",
+    "total_time": "60 min",
+    "image_url": null,
+    "image_alt": "Sopa de encebollado ecuatoriano con pescado, yuca y cebolla encurtida en un plato tradicional",
+    "ingredients": [
+      "2 libras de atún fresco o enlatado (Supermaxi, Megamaxi, TIA - sección pescados o conservas)",
+      "2 yucas medianas, peladas y cortadas en trozos",
+      "1 cebolla roja grande, finamente picada para encurtido",
+      "2 tomates medianos, picados",
+      "1 pimiento verde, picado",
+      "3 dientes de ajo, triturados",
+      "2 cucharadas de aceite de achiote (Supermaxi, Megamaxi, TIA - sección condimentos)",
+      "1 ramo de cilantro, finamente picado",
+      "1 cucharadita de comino molido",
+      "Sal y pimienta al gusto",
+      "Jugo de 2 limones para el encurtido",
+      "2 litros de agua o caldo de pescado"
+    ],
+    "instructions": [
+      "Pela y corta la yuca en trozos medianos. En una olla grande, pon a hervir los 2 litros de agua o caldo de pescado y cocina la yuca hasta que esté tierna, unos 15 minutos. Reserva el agua de cocción.",
+      "Mientras la yuca hierve, prepara el encurtido de cebolla: corta la cebolla roja en juliana fina, colócala en un recipiente, añade el jugo de limón, una pizca de sal y deja reposar por 10 minutos.",
+      "En otra olla, calienta el aceite de achiote a fuego medio. Sofríe el ajo, el tomate y el pimiento verde por 5 minutos hasta que estén suaves.",
+      "Añade el comino, sal y pimienta al sofrito. Luego, incorpora el atún (si es fresco, córtalo en trozos; si es enlatado, desmenuza). Cocina por 5-7 minutos.",
+      "Vierte el agua de cocción de la yuca en la olla con el sofrito y el atún. Cocina a fuego medio-bajo por 20 minutos para que los sabores se integren.",
+      "Agrega la yuca cocida a la sopa y ajusta la sal. Cocina por 5 minutos más. Al final, espolvorea cilantro picado.",
+      "Sirve caliente en platos hondos, coronando cada porción con el encurtido de cebolla roja. Acompaña con tostado o chifles si deseas."
+    ],
+    "tips": [
+      "Si no tienes aceite de achiote, puedes usar una pizca de cúrcuma para dar color, aunque el sabor no será idéntico.",
+      "El encurtido de cebolla es clave; asegúrate de dejarlo reposar lo suficiente para que pierda su picor.",
+      "Puedes usar otros pescados como albacora o bonito si el atún fresco no está disponible.",
+      "Sirve con un toque de ají picante para un extra de sabor típico costeño."
+    ],
+    "keywords": [
+      "encebollado ecuatoriano",
+      "receta encebollado",
+      "sopa de pescado ecuatoriana",
+      "encebollado de la costa",
+      "como hacer encebollado",
+      "receta tradicional ecuatoriana",
+      "sopa encebollado atun",
+      "encebollado guayaquil",
+      "platos tipicos costa ecuador",
+      "receta sopa ecuatoriana",
+      "encebollado facil",
+      "comida ecuatoriana tradicional"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el encebollado?",
+        "a": "El encebollado se acompaña tradicionalmente con chifles, tostado o pan. También puedes agregar unas gotas de ají para un toque picante."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el encebollado?",
+        "a": "Se puede conservar en la nevera por 1-2 días en un recipiente hermético, pero es mejor consumirlo fresco para disfrutar de su sabor óptimo."
+      },
+      {
+        "q": "¿Es difícil hacer encebollado?",
+        "a": "No es muy difícil, pero requiere tiempo para preparar el encurtido y el caldo. Con esta receta, es accesible para cocineros de nivel medio."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Guayaquil",
+        "province": "Guayas",
+        "region": "Costa"
+      },
+      {
+        "city": "Manta",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian encebollado",
+      "fish soup ecuador",
+      "traditional ecuadorian food",
+      "coastal ecuador dish",
+      "encebollado soup",
+      "ecuadorian cuisine",
+      "latin american soup",
+      "seafood recipe"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Atún fresco",
+        "sustituto_usa": "Atún enlatado en agua o aceite (disponible en Walmart, Target)",
+        "sustituto_europa": "Atún enlatado en agua o aceite (disponible en Carrefour, Lidl)"
+      },
+      {
+        "original": "Aceite de achiote",
+        "sustituto_usa": "Mezcla de aceite vegetal con paprika (para color, disponible en cualquier supermercado)",
+        "sustituto_europa": "Aceite vegetal con cúrcuma o paprika (disponible en Tesco, Aldi)"
+      },
+      {
+        "original": "Yuca",
+        "sustituto_usa": "Yuca congelada (disponible en tiendas latinas o Walmart)",
+        "sustituto_europa": "Yuca congelada (disponible en tiendas latinas o mercados africanos)"
+      }
+    ],
+    "tourism_route": "Disfruta del auténtico encebollado en la costa ecuatoriana. Comienza en Guayaquil, en mercados como el Caraguay, donde un plato cuesta alrededor de $3-4. Luego, visita Manta y prueba versiones locales en restaurantes frente al mar por $4-5. Termina en Esmeraldas, cuna del encebollado, en pequeños comedores por $3.",
+    "youtube_videos": [
+      {
+        "title": "Encebollado ECUATORIANO | KWA 🇪🇨",
+        "videoId": "Eac1dI_SpeQ",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Eac1dI_SpeQ",
+        "embed": "https://www.youtube-nocookie.com/embed/Eac1dI_SpeQ",
+        "uploadDate": "2025-01-31",
+        "description": "Considerado unas de las mejores sopas del mundo!  El #Encebollado #Ecuatoriano se ganó el corazón de muchos! Un platillo que seguro debes probar 🌎🇪🇨 #KWAEC\n\nEncuentra todos los ingredientes aquí:\nh"
+      },
+      {
+        "title": "Como hacer Encebollado Ecuatoriano facil y delicioso.",
+        "videoId": "CR14d7aiY60",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=CR14d7aiY60",
+        "embed": "https://www.youtube-nocookie.com/embed/CR14d7aiY60",
+        "uploadDate": "2023-09-01",
+        "description": "Como hacer Encebollado Ecuatoriano facil y delicioso. Encebollado Ecuatoriano"
+      },
+      {
+        "title": "ENCEBOLLADO",
+        "videoId": "AhJpRnQqcVs",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=AhJpRnQqcVs",
+        "embed": "https://www.youtube-nocookie.com/embed/AhJpRnQqcVs",
+        "uploadDate": "2022-01-07",
+        "description": "Alfin llego! el más esperado. #Encebollado #KWAEC\n\nEncebollado (8 porciones)\nIngredientes:\nhttps://recetaskwa.com/2023/09/19/encebollado-2/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 17,
+    "created_at": "2026-02-24T22:19:02.140Z"
+  },
+  {
     "slug": "llapingachos-ecuatorianos-receta",
     "title": "Llapingachos Ecuatorianos Receta Tradicional de la Sierra",
     "description": "Llapingachos ecuatorianos, un plato típico de la Sierra, son tortitas de papa rellenas de queso, perfectas como acompañamiento o plato principal. Descubre cómo preparar esta receta tradicional con pasos fáciles y consejos auténticos para un sabor único.",

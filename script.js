@@ -1,13 +1,15 @@
 // ============================================================
-// Ecuador a la Carta — script.js v5
-// Rebranding #0033A0 + Ticket Ingredients + Social Share + EN/ES + Menú Semanal
+// Ecuador a la Carta — script.js v6
+// v6: Star rating (localStorage) + precio Tuti/Supermaxi por ingrediente
 // ============================================================
 
 'use strict';
 
 const DATA_URL = 'recipes.json';
 const POSTS_URL = 'posts.json';
+const PRICES_URL = 'price_db.json';
 let allRecipes = [];
+let priceDbCache = null;
 
 // ─── Utilidades ──────────────────────────────────────────────
 function escapeHtml(str) {
@@ -66,6 +68,18 @@ async function loadRecipes() {
   } catch (err) {
     console.error('Error cargando recetas:', err);
     return [];
+  }
+}
+
+async function loadPriceDb() {
+  if (priceDbCache) return priceDbCache;
+  try {
+    var res = await fetch(PRICES_URL + '?t=' + Date.now());
+    if (!res.ok) return {};
+    priceDbCache = await res.json();
+    return priceDbCache;
+  } catch (err) {
+    return {};
   }
 }
 
@@ -648,6 +662,7 @@ async function initRecipe() {
   }
 
   var recipes = await loadRecipes();
+  var priceDb = await loadPriceDb();
   var recipe = null;
   for (var i = 0; i < recipes.length; i++) {
     if (recipes[i].slug === slug) { recipe = recipes[i]; break; }
@@ -707,7 +722,9 @@ async function initRecipe() {
 
   var ingList = document.getElementById('ingredients-list');
   if (ingList && recipe.ingredients && recipe.ingredients.length > 0) {
-    ingList.innerHTML = recipe.ingredients.map(renderIngredient).join('');
+    ingList.innerHTML = recipe.ingredients.map(function(ing) {
+      return renderIngredient(ing, priceDb);
+    }).join('');
   }
 
   var instrList = document.getElementById('instructions-list');
@@ -844,6 +861,7 @@ async function initRecipe() {
     }
   }
 
+  initRating(slug);
   initAds();
 }
 
@@ -1164,22 +1182,79 @@ async function loadBlogPreview() {
   grid.innerHTML = posts.slice(0, 3).map(renderBlogCard).join('');
 }
 
-// ─── renderIngredient (ticket-style con badges de tienda) ────
-function renderIngredient(ing) {
-  var STORES = ['supermaxi', 'megamaxi', 'tuti', 'tia', 'santa mar\u00eda', 'coral'];
+// ─── Precio de ingredientes — helpers ────────────────────────
+function normText(t) {
+  return String(t).toLowerCase()
+    .replace(/[áàâä]/g, 'a').replace(/[éèêë]/g, 'e')
+    .replace(/[íìîï]/g, 'i').replace(/[óòôö]/g, 'o')
+    .replace(/[úùûü]/g, 'u').replace(/[ñ]/g, 'n').trim();
+}
+
+function extractIngBase(ing) {
+  var t = String(ing).replace(/\([^)]*\)/g, '');      // quitar paréntesis
+  t = t.replace(/^\d+[\d/.,]*\s*/, '');                // quitar cantidades
+  t = t.replace(/^(tazas?|cucharadas?|cucharitas?|cucharaditas?|kg|g\b|gr\b|lb|litros?|ml|cc|unidades?|dientes?|atados?|trozos?|pedazos?|lonjas?|filetes?|pizcas?|ramitas?|manojos?)\s+de\s+/i, '');
+  t = t.replace(/^de\s+/i, '');
+  return normText(t.split(',')[0].split(';')[0]);       // solo el nombre principal
+}
+
+function findPriceEntry(ing, priceDb) {
+  if (!priceDb) return null;
+  var name = extractIngBase(ing);
+  if (priceDb[name]) return priceDb[name];
+  for (var key in priceDb) {
+    var nk = normText(key);
+    if (nk === name || nk.indexOf(name) !== -1 || name.indexOf(nk) !== -1) return priceDb[key];
+  }
+  var words = name.split(/\s+/).filter(function(w) { return w.length > 4; });
+  for (var k in priceDb) {
+    var kWords = normText(k).split(/\s+/).filter(function(w) { return w.length > 4; });
+    for (var i = 0; i < words.length; i++) {
+      if (kWords.indexOf(words[i]) !== -1) return priceDb[k];
+    }
+  }
+  return null;
+}
+
+// ─── renderIngredient (ticket-style + comparativa de precios) ────
+function renderIngredient(ing, priceDb) {
   var lowerIng = String(ing).toLowerCase();
   var badge = '';
   if (lowerIng.indexOf('supermaxi') !== -1 || lowerIng.indexOf('megamaxi') !== -1) {
     badge = '<span class="ml-auto text-xs font-bold text-blue-600 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full flex-shrink-0">Supermaxi</span>';
   } else if (lowerIng.indexOf('tuti') !== -1) {
     badge = '<span class="ml-auto text-xs font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded-full flex-shrink-0">Tuti</span>';
-  } else if (lowerIng.indexOf('tia') !== -1 || lowerIng.indexOf('t\u00eda') !== -1) {
+  } else if (lowerIng.indexOf('t\u00eda') !== -1 || (lowerIng.indexOf('tia') !== -1 && lowerIng.indexOf('tia ') !== -1)) {
     badge = '<span class="ml-auto text-xs font-bold text-orange-600 bg-orange-50 border border-orange-200 px-1.5 py-0.5 rounded-full flex-shrink-0">TIA</span>';
   }
-  return '<li class="flex items-start gap-2 py-2 border-b border-dashed border-gray-100 last:border-0">' +
+
+  // ── Comparativa de precios Tuti vs Supermaxi ──────────────
+  var priceRow = '';
+  if (priceDb) {
+    var entry = findPriceEntry(ing, priceDb);
+    if (entry && entry.reference_price_min) {
+      var unit = entry.unit || 'kg';
+      var tMin = '$' + entry.reference_price_min.toFixed(2);
+      var sMax = '$' + (entry.reference_price_max || entry.reference_price_min).toFixed(2);
+      // Tuti generalmente más barato (min), Supermaxi más alto (max)
+      priceRow = '<div class="ml-5 mt-1 flex flex-wrap gap-1.5">' +
+        '<span title="Precio referencia Tuti" class="inline-flex items-center gap-1 text-xs text-red-600 bg-red-50 border border-red-100 px-2 py-0.5 rounded-full">' +
+        '<span class="font-bold">Tuti</span> ' + tMin + '/' + unit +
+        '</span>' +
+        '<span title="Precio referencia Supermaxi" class="inline-flex items-center gap-1 text-xs text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full">' +
+        '<span class="font-bold">Supermaxi</span> ' + sMax + '/' + unit +
+        '</span>' +
+        '</div>';
+    }
+  }
+
+  return '<li class="flex flex-col py-2 border-b border-dashed border-gray-100 last:border-0">' +
+    '<div class="flex items-start gap-2">' +
     '<span class="text-[#0033A0] mt-0.5 flex-shrink-0 font-bold">\u2713</span>' +
     '<span class="text-gray-700 font-mono text-sm flex-1">' + escapeHtml(ing) + '</span>' +
     badge +
+    '</div>' +
+    priceRow +
     '</li>';
 }
 
@@ -1255,6 +1330,41 @@ async function initMenuSemanal() {
       setTimeout(renderMenu, 300);
     });
   }
+}
+
+// ─── Valoración con estrellas (localStorage) ──────────────────
+var RATING_LABELS = ['', 'Mala \u2639\uFE0F', 'Regular \uD83D\uDE10', 'Buena \uD83D\uDE42', '\u00A1Muy buena! \uD83D\uDE04', '\u00A1Excelente! \uD83E\uDD29'];
+
+function initRating(slug) {
+  var picker = document.getElementById('star-picker');
+  var label = document.getElementById('rating-label');
+  if (!picker || !slug) return;
+
+  var storageKey = 'rating_' + slug;
+  var saved = parseInt(localStorage.getItem(storageKey) || '0', 10);
+  var stars = picker.querySelectorAll('.star-btn');
+
+  function setDisplay(val) {
+    stars.forEach(function(btn, i) {
+      btn.innerHTML = i < val ? '\u2605' : '\u2606';   // ★ / ☆
+      btn.style.color = i < val ? '#FBBF24' : '#9CA3AF';
+    });
+    if (label) label.textContent = val > 0 ? RATING_LABELS[val] : '';
+  }
+
+  setDisplay(saved);
+
+  stars.forEach(function(btn) {
+    var v = parseInt(btn.dataset.star, 10);
+    btn.addEventListener('mouseenter', function() { setDisplay(v); });
+    btn.addEventListener('mouseleave', function() {
+      setDisplay(parseInt(localStorage.getItem(storageKey) || '0', 10));
+    });
+    btn.addEventListener('click', function() {
+      localStorage.setItem(storageKey, v);
+      setDisplay(v);
+    });
+  });
 }
 
 // ─── Router ───────────────────────────────────────────────────

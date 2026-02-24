@@ -6,4 +6,8 @@ deploy_v6.py
 deploy_v7.py
 deploy_v8.py
 fix_images.py
+fix_images_v2.py
 deploy_blog_v2.py
+scrape_prices.py
+update_costs.py
+*_payload.json

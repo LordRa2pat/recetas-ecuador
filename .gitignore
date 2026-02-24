@@ -11,4 +11,5 @@ deploy_blog_v2.py
 scrape_prices.py
 update_costs.py
 deploy_imagen.py
+deploy_imagen_turismo.py
 *_payload.json

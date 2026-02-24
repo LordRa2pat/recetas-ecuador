@@ -1,5 +1,139 @@
 [
   {
+    "slug": "chugchucara-receta-tradicional-ecuatoriana",
+    "title": "Chugchucara Ecuatoriana Receta Tradicional de Latacunga",
+    "description": "Chugchucara, el plato típico de Latacunga, es una deliciosa combinación de fritada de cerdo, mote, papas, tostado, plátano frito y más. Descubre cómo preparar esta receta tradicional ecuatoriana con pasos detallados y consejos auténticos para disfrutar en casa.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "60 min",
+    "total_time": "90 min",
+    "image_url": "https://i.ytimg.com/vi/oAnuV4rVuN8/hqdefault.jpg",
+    "image_alt": "Plato de chugchucara ecuatoriana con fritada de cerdo, mote y papas",
+    "ingredients": [
+      "1 kg de carne de cerdo (costilla o lomo, Supermaxi, Megamaxi - sección carnes)",
+      "2 tazas de mote cocido (Supermaxi, TIA - sección granos)",
+      "4 papas medianas cocidas y fritas",
+      "1 taza de maíz tostado (Supermaxi, TIA - sección granos)",
+      "2 plátanos maduros (para freír como maduro frito)",
+      "1/2 taza de chicharrón crujiente",
+      "1 cebolla blanca (para curtido)",
+      "2 tomates (para curtido)",
+      "Aceite vegetal para freír (aproximadamente 2 tazas)",
+      "Sal y pimienta al gusto",
+      "1 cucharadita de comino molido",
+      "2 dientes de ajo (picados finamente)"
+    ],
+    "instructions": [
+      "Corta la carne de cerdo en trozos medianos y sazona con sal, pimienta, comino y ajo. Deja reposar por 15 minutos para que absorba los sabores.",
+      "En una olla grande, cocina la carne de cerdo en su propia grasa a fuego medio-bajo hasta que esté dorada y crujiente (aproximadamente 40 minutos). Remueve ocasionalmente para evitar que se pegue.",
+      "Mientras se cocina la carne, pela las papas cocidas y fríelas en aceite caliente hasta que estén doradas. Reserva en papel absorbente.",
+      "Corta los plátanos maduros en rodajas diagonales y fríelos en el mismo aceite hasta que estén caramelizados y dorados. Reserva.",
+      "Prepara un curtido básico mezclando la cebolla y el tomate finamente picados con jugo de limón, sal y un poco de cilantro picado.",
+      "Sirve en un plato grande colocando la fritada de cerdo en el centro, rodeada de mote, papas fritas, plátano frito, maíz tostado y chicharrón. Acompaña con el curtido al lado."
+    ],
+    "tips": [
+      "Para una fritada más crujiente, usa una sartén de hierro fundido y no tapes la carne mientras se cocina.",
+      "El mote debe estar bien cocido pero firme; si lo compras seco, remójalo desde la noche anterior.",
+      "Ajusta el nivel de sal en el curtido según tu gusto, ya que puede realzar el sabor del plato.",
+      "Si deseas un toque picante, añade ají casero o salsa de ají al curtido."
+    ],
+    "keywords": [
+      "chugchucara ecuatoriana",
+      "receta chugchucara latacunga",
+      "plato tipico latacunga",
+      "fritada de cerdo ecuatoriana",
+      "chugchucara receta tradicional",
+      "comida tipica sierra ecuador",
+      "como hacer chugchucara",
+      "receta ecuatoriana facil",
+      "plato fuerte ecuatoriano",
+      "comida tradicional ecuador",
+      "chugchucara ingredientes",
+      "preparar chugchucara casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña la chugchucara?",
+        "a": "La chugchucara se acompaña tradicionalmente con curtido de cebolla y tomate, y a veces con ají casero para un toque picante."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva la chugchucara?",
+        "a": "La fritada de cerdo puede conservarse en el refrigerador por 2-3 días en un recipiente hermético, pero los acompañamientos como papas y plátano deben consumirse frescos."
+      },
+      {
+        "q": "¿Es difícil hacer chugchucara en casa?",
+        "a": "No es muy difícil, pero requiere tiempo para cocinar la fritada de cerdo hasta que quede crujiente. Los pasos son sencillos si sigues la receta."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Latacunga",
+        "province": "Cotopaxi",
+        "region": "Sierra"
+      },
+      {
+        "city": "Ambato",
+        "province": "Tungurahua",
+        "region": "Sierra"
+      },
+      {
+        "city": "Salcedo",
+        "province": "Cotopaxi",
+        "region": "Sierra"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "mote",
+        "sustituto_usa": "hominy (disponible en supermercados latinos o Walmart)",
+        "sustituto_europa": "maíz blanco cocido (disponible en tiendas latinas o sustituye por garbanzos cocidos)"
+      },
+      {
+        "original": "maíz tostado",
+        "sustituto_usa": "corn nuts (disponible en supermercados)",
+        "sustituto_europa": "maíz frito (en tiendas latinas o usa cacahuetes tostados)"
+      }
+    ],
+    "tourism_route": "Disfruta de la auténtica chugchucara en Latacunga, Cotopaxi, durante la fiesta de la Mama Negra. Visita el mercado La Merced o restaurantes como 'Chugchucaras de la Mama Negra' con precios desde $5-8 por plato.",
+    "youtube_videos": [
+      {
+        "title": "✔️🔴Como Elaborar Chugchucara",
+        "videoId": "oAnuV4rVuN8",
+        "channel": "MARGARITA MÉNDEZ",
+        "url": "https://www.youtube.com/watch?v=oAnuV4rVuN8",
+        "embed": "https://www.youtube-nocookie.com/embed/oAnuV4rVuN8",
+        "uploadDate": "2020-09-25",
+        "description": "En tu canal Cocinando con Chulla Vidita Hay que Comer, tu canal de cocina nacional ecuatoriana y cocina internacional, te presentamos el video de la preparación muy sencilla y sabrosa de \n \n✔️🔴Como E"
+      },
+      {
+        "title": "CHUCULA",
+        "videoId": "k40ZvPvLpF4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=k40ZvPvLpF4",
+        "embed": "https://www.youtube-nocookie.com/embed/k40ZvPvLpF4",
+        "uploadDate": "2020-03-20",
+        "description": "Dulcemente deliciosa! ¿Cual es tu opción favorita? #Chucula #KWAEC\nPlátano maduro...... 6 ud\nAgua..................... 500 ml\nRamas de Canela..... 3 ud\nClavos de olor.......... 10 ud\nPimienta de Olor."
+      },
+      {
+        "title": "FRITADA",
+        "videoId": "dS129uXVOQU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=dS129uXVOQU",
+        "embed": "https://www.youtube-nocookie.com/embed/dS129uXVOQU",
+        "uploadDate": "2020-03-13",
+        "description": "GRASA = SABOR #Fritada #KWAEC\n\nCarne de Cerdo……………….. 2 kilos\nGrasa de cerdo………………… ½ kilo\nPasta de ajo…………………….. 30 gramos\nCebolla Blanca………………… 80 gr\nCerveza…………………………… 1 taza\nAgua……………………………….. 1 ½"
+      }
+    ],
+    "_image_source": "youtube_thumbnail",
+    "id": 11,
+    "created_at": "2026-02-24T15:00:44.802Z"
+  },
+  {
     "slug": "fanesca-de-la-costa-ecuatoriana-receta",
     "title": "Fanesca de la Costa Ecuatoriana Receta Tradicional",
     "description": "Fanesca de la Costa Ecuatoriana, un plato tradicional de Semana Santa lleno de sabor y simbolismo. Descubre cómo preparar esta sopa única con granos, pescado y especias típicas de la región costera de Ecuador. Perfecta para compartir en familia.",

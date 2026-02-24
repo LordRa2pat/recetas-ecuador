@@ -21,7 +21,7 @@
         extend: {
           colors: {
             'ec-green': '#006400',
-            'ec-yellow': '#FFCC00',
+            'ec-yellow': '#FFD700',
             'ec-red': '#C8102E',
           },
           fontFamily: {
@@ -62,14 +62,34 @@
     }
     .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .hero-bg {
-      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.65) 100%),
+      background-image: linear-gradient(to bottom, rgba(0,50,0,0.72) 0%, rgba(0,80,0,0.45) 45%, rgba(0,50,0,0.78) 100%),
         url('https://images.unsplash.com/photo-1567337710282-00832b415979?w=1600&q=80');
       background-size: cover;
       background-position: center;
     }
+    /* Ecuador vibrante */
+    .ec-stripe {
+      background: linear-gradient(90deg, #FFD700 0% 50%, #007A00 50% 75%, #C8102E 75% 100%);
+      height: 4px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .ec-title-bar {
+      display: block;
+      width: 56px;
+      height: 4px;
+      margin-top: 8px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #FFD700 0% 38%, #007A00 38% 70%, #C8102E 70% 100%);
+    }
+    .ec-card-shadow { box-shadow: 0 4px 24px rgba(0,122,0,0.10), 0 1px 4px rgba(0,0,0,0.06); }
+    .ec-card-shadow:hover { box-shadow: 0 8px 40px rgba(0,122,0,0.22), 0 4px 16px rgba(200,16,46,0.08); }
   </style>
 </head>
-<body class="bg-slate-50 font-sans text-gray-900 antialiased">
+<body class="bg-[#FFFBF2] font-sans text-gray-900 antialiased">
+
+  <!-- Franja tricolor bandera Ecuador -->
+  <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
   <header class="sticky top-0 z-50 bg-[#006400]/90 backdrop-blur-md shadow-lg">
@@ -80,10 +100,10 @@
         <span class="sm:hidden text-ec-yellow">Recetas EC</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-white/90" aria-label="Navegación principal">
-        <a href="index.html" class="hover:text-ec-yellow transition-colors">Inicio</a>
+        <a href="index.html" class="text-ec-yellow font-bold" aria-current="page">Inicio</a>
         <a href="recipes.html" class="hover:text-ec-yellow transition-colors">Recetas</a>
         <a href="recipes.html?audience=Diáspora" class="hover:text-ec-yellow transition-colors">Diáspora</a>
-        <a href="recipes.html?audience=Turista" class="hover:text-ec-yellow transition-colors">Turismo</a>
+        <a href="blog.html" class="hover:text-ec-yellow transition-colors">Blog Turismo</a>
       </nav>
       <a href="recipes.html" class="bg-ec-yellow text-[#006400] font-bold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#006400]">
         Ver todas
@@ -94,7 +114,7 @@
   <!-- ═══ HERO ═══ -->
   <section class="hero-bg min-h-[75vh] flex flex-col" aria-label="Portada">
     <!-- Franja bandera superior -->
-    <div class="h-1.5 bg-gradient-to-r from-ec-yellow via-ec-red to-ec-yellow flex-shrink-0"></div>
+    <div class="h-1.5 bg-gradient-to-r from-[#FFD700] via-[#007A00] to-[#C8102E] flex-shrink-0"></div>
 
     <div class="flex-1 flex items-center justify-center px-4 py-16 text-center">
       <div class="max-w-3xl mx-auto">
@@ -141,16 +161,17 @@
     </div>
 
     <!-- Franja bandera inferior -->
-    <div class="h-1.5 bg-gradient-to-r from-ec-yellow via-ec-red to-ec-yellow flex-shrink-0"></div>
+    <div class="h-1.5 bg-gradient-to-r from-[#C8102E] via-[#007A00] to-[#FFD700] flex-shrink-0"></div>
   </section>
 
   <!-- ═══ SECCIÓN: RECETAS CLÁSICAS ═══ -->
   <section class="py-16 px-4 sm:px-6 max-w-7xl mx-auto" aria-labelledby="classics-heading">
     <div class="flex items-end justify-between mb-8">
       <div>
-        <p class="text-xs font-bold text-[#006400] uppercase tracking-widest mb-1">Patrimonio Culinario</p>
+        <p class="text-xs font-bold text-[#007A00] uppercase tracking-widest mb-1">Patrimonio Culinario</p>
         <h2 id="classics-heading" class="text-3xl font-black text-gray-900">Recetas Clásicas 🇪🇨</h2>
-        <p class="text-gray-500 mt-1">Los sabores que nos definen como ecuatorianos</p>
+        <span class="ec-title-bar"></span>
+        <p class="text-gray-500 mt-2">Los sabores que nos definen como ecuatorianos</p>
       </div>
       <a href="recipes.html" class="hidden sm:inline-flex items-center gap-1 text-[#006400] font-semibold text-sm hover:underline">
         Ver todas →
@@ -241,7 +262,7 @@
   </div>
 
   <!-- ═══ SECCIÓN: TRUST ═══ -->
-  <section class="py-16 px-4 sm:px-6 bg-white" aria-labelledby="trust-heading">
+  <section class="py-16 px-4 sm:px-6 bg-[#FFFBF2]" aria-labelledby="trust-heading">
     <div class="max-w-5xl mx-auto text-center">
       <h2 id="trust-heading" class="text-2xl font-black text-gray-900 mb-2">¿Por qué Biblioteca de Recetas?</h2>
       <p class="text-gray-500 mb-10">Somos la referencia gastronómica de Ecuador para el mundo</p>
@@ -271,10 +292,11 @@
   </section>
 
   <!-- ═══ SECCIÓN: REGIONES ═══ -->
-  <section class="py-16 px-4 sm:px-6 bg-slate-50" aria-labelledby="regions-heading">
+  <section class="py-16 px-4 sm:px-6 bg-white" aria-labelledby="regions-heading">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10">
-        <h2 id="regions-heading" class="text-2xl font-black text-gray-900 mb-2">Explora por Región</h2>
+        <h2 id="regions-heading" class="text-2xl font-black text-gray-900 mb-1">Explora por Región</h2>
+        <span class="ec-title-bar mx-auto mb-3"></span>
         <p class="text-gray-500">Cada región tiene su propia identidad culinaria</p>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -314,6 +336,42 @@
     </div>
   </section>
 
+  <!-- ═══ SECCIÓN: BLOG TURISMO ═══ -->
+  <section class="py-16 px-4 sm:px-6 bg-[#FFFBF2]" aria-labelledby="blog-preview-heading">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <p class="text-xs font-bold text-[#C8102E] uppercase tracking-widest mb-1">Noticias y Guías</p>
+          <h2 id="blog-preview-heading" class="text-3xl font-black text-gray-900">📰 Turismo Ecuador</h2>
+          <span class="ec-title-bar"></span>
+          <p class="text-gray-500 mt-2">Destinos, rutas y cultura ecuatoriana — actualizado automáticamente</p>
+        </div>
+        <a href="blog.html" class="hidden sm:inline-flex items-center gap-1 text-[#C8102E] font-semibold text-sm hover:underline">
+          Ver todo el blog →
+        </a>
+      </div>
+      <div id="blog-preview-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
+          <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
+          <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
+          <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
+          <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
+          <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
+          <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
+        </div>
+      </div>
+      <div class="mt-8 text-center sm:hidden">
+        <a href="blog.html" class="inline-flex items-center gap-1 text-[#C8102E] font-semibold text-sm bg-red-50 border border-red-200 px-5 py-2.5 rounded-full hover:bg-red-100 transition-colors">
+          Ver todo el blog →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ FOOTER ═══ -->
   <footer class="bg-[#006400] text-white py-10 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto">
@@ -332,6 +390,7 @@
             <li><a href="recipes.html" class="hover:text-white transition-colors">Todas las recetas</a></li>
             <li><a href="recipes.html?audience=Di%C3%A1spora" class="hover:text-white transition-colors">Recetas Diáspora</a></li>
             <li><a href="recipes.html?audience=Turista" class="hover:text-white transition-colors">Rutas Turísticas</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a></li>
           </ul>
         </div>
         <div>
@@ -346,13 +405,14 @@
       <div class="border-t border-green-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-green-300 text-xs">
         <p>&copy; 2026 Biblioteca de Recetas Ecuatorianas. Hecho con ❤️ para Ecuador y el mundo.</p>
         <div class="flex items-center gap-2">
-          <span class="h-2 w-6 bg-ec-yellow rounded-full"></span>
-          <span class="h-2 w-2 bg-ec-red rounded-full"></span>
-          <span class="h-2 w-6 bg-ec-yellow rounded-full"></span>
+          <span class="h-2 w-6 rounded-full" style="background:#FFD700"></span>
+          <span class="h-2 w-3 rounded-full" style="background:#007A00"></span>
+          <span class="h-2 w-3 rounded-full" style="background:#C8102E"></span>
         </div>
       </div>
     </div>
   </footer>
+  <div class="ec-stripe" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>

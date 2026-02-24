@@ -17,7 +17,7 @@
         extend: {
           colors: {
             'ec-green': '#006400',
-            'ec-yellow': '#FFCC00',
+            'ec-yellow': '#FFD700',
             'ec-red': '#C8102E',
           }
         }
@@ -29,6 +29,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
+    .ec-stripe { background: linear-gradient(90deg, #FFD700 0% 50%, #007A00 50% 75%, #C8102E 75% 100%); height: 4px; width: 100%; }
+    .ec-title-bar { display: block; width: 56px; height: 4px; margin-top: 8px; border-radius: 2px; background: linear-gradient(90deg, #FFD700 0% 38%, #007A00 38% 70%, #C8102E 70% 100%); }
     .ad-slot {
       min-height: 120px;
       background: rgba(255,255,255,0.6);
@@ -52,7 +54,9 @@
     select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
   </style>
 </head>
-<body class="bg-slate-50 font-sans text-gray-900 antialiased">
+<body class="bg-[#FFFBF2] font-sans text-gray-900 antialiased">
+
+  <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
   <header class="sticky top-0 z-50 bg-[#006400]/90 backdrop-blur-md shadow-lg">
@@ -66,7 +70,7 @@
         <a href="index.html" class="hover:text-ec-yellow transition-colors">Inicio</a>
         <a href="recipes.html" class="text-ec-yellow font-bold" aria-current="page">Recetas</a>
         <a href="recipes.html?audience=Di%C3%A1spora" class="hover:text-ec-yellow transition-colors">Diáspora</a>
-        <a href="recipes.html?audience=Turista" class="hover:text-ec-yellow transition-colors">Turismo</a>
+        <a href="blog.html" class="hover:text-ec-yellow transition-colors">Blog Turismo</a>
       </nav>
       <a href="index.html" class="bg-white/20 text-white font-semibold text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors border border-white/30">
         ← Inicio
@@ -75,7 +79,7 @@
   </header>
 
   <!-- ═══ PAGE HERO ═══ -->
-  <div class="bg-gradient-to-r from-[#006400] to-[#004d00] py-10 px-4 sm:px-6">
+  <div class="bg-gradient-to-r from-[#004d00] via-[#006400] to-[#003d00] py-10 px-4 sm:px-6" style="border-bottom: 4px solid #FFD700;">
     <div class="max-w-7xl mx-auto">
       <p class="text-green-300 text-xs font-bold uppercase tracking-widest mb-1">Catálogo Completo</p>
       <h1 class="text-3xl sm:text-4xl font-black text-white mb-2">Todas las Recetas 🍽️</h1>
@@ -229,6 +233,7 @@
         <nav class="flex flex-wrap items-center justify-center gap-4 text-green-200 text-sm" aria-label="Pie de página">
           <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
           <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+          <a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a>
           <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
           <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
           <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
@@ -237,6 +242,7 @@
       <p class="text-center text-green-300 text-xs mt-6">&copy; 2026 Biblioteca de Recetas Ecuatorianas</p>
     </div>
   </footer>
+  <div class="ec-stripe" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>

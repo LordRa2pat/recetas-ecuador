@@ -1,2 +1,4 @@
 .vercel
 deploy_v4.py
+deploy_v5.py
+deploy_blog.py

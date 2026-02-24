@@ -1,11 +1,12 @@
 // ============================================================
-// Biblioteca de Recetas Ecuatorianas — script.js v3
-// Revista Premium — Places, YouTube, Image Credits, SEO mejorado
+// Biblioteca de Recetas Ecuatorianas — script.js v4
+// Revista Premium — Blog Turismo, SEO máximo (FAQs + keywords), Places, YouTube
 // ============================================================
 
 'use strict';
 
 const DATA_URL = 'recipes.json';
+const POSTS_URL = 'posts.json';
 let allRecipes = [];
 
 // ─── Utilidades ──────────────────────────────────────────────
@@ -64,6 +65,16 @@ async function loadRecipes() {
     return allRecipes;
   } catch (err) {
     console.error('Error cargando recetas:', err);
+    return [];
+  }
+}
+
+async function loadPosts() {
+  try {
+    var res = await fetch(POSTS_URL + '?t=' + Date.now());
+    if (!res.ok) return [];
+    return await res.json();
+  } catch (err) {
     return [];
   }
 }
@@ -343,12 +354,16 @@ function setMeta(title, description, imageUrl, canonicalUrl) {
 function injectSEO(recipe) {
   var canonicalUrl = 'https://recetas-ecuador.vercel.app/recipe.html?slug=' + encodeURIComponent(recipe.slug);
   var imageUrl = recipe.image_url || '';
+  var keywords = (recipe.keywords || []);
+  var allKeywords = keywords.concat(['recetas ecuatorianas', 'cocina ecuatoriana', 'gastronomia ecuatoriana', 'Ecuador']).join(', ');
+
   setMeta(
-    recipe.title + ' \u2014 Receta Ecuatoriana | Biblioteca de Recetas',
-    recipe.description || ('Aprende a preparar ' + recipe.title + ', una deliciosa receta ecuatoriana.'),
+    recipe.title + ' \u2014 Receta Ecuatoriana Aut\u00e9ntica | Cocina Ecuador \uD83C\uDDEA\uD83C\uDDE8',
+    recipe.description || ('Aprende a preparar ' + recipe.title + ', una deliciosa receta ecuatoriana tradicional.'),
     imageUrl,
     canonicalUrl
   );
+  upsertMeta('name', 'keywords', allKeywords);
 
   var steps = (recipe.instructions || []).map(function(step, i) {
     var text = typeof step === 'string' ? step : (step.text || step);
@@ -361,20 +376,22 @@ function injectSEO(recipe) {
     'name': recipe.title,
     'description': recipe.description || '',
     'image': imageUrl,
-    'author': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas' },
+    'author': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas', 'url': 'https://recetas-ecuador.vercel.app' },
+    'publisher': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas' },
     'datePublished': recipe.date_published || new Date().toISOString().split('T')[0],
     'recipeCategory': recipe.category || '',
-    'recipeCuisine': 'Ecuadoriana',
+    'recipeCuisine': 'Ecuadorian',
     'recipeYield': recipe.servings || '',
     'prepTime': timeToISO8601(recipe.prep_time),
     'cookTime': timeToISO8601(recipe.cook_time),
     'totalTime': timeToISO8601(recipe.total_time),
     'recipeIngredient': recipe.ingredients || [],
     'recipeInstructions': steps,
-    'keywords': (recipe.keywords || []).join(', ')
+    'keywords': allKeywords,
+    'countryOfOrigin': { '@type': 'Country', 'name': 'Ecuador' }
   };
 
-  // VideoObject para JSON-LD si hay videos
+  // VideoObject
   if (recipe.youtube_videos && recipe.youtube_videos.length > 0) {
     var validVideos = recipe.youtube_videos.filter(function(v) { return !!v.videoId; });
     if (validVideos.length > 0) {
@@ -393,13 +410,62 @@ function injectSEO(recipe) {
     }
   }
 
+  // BreadcrumbList
+  var breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': 'https://recetas-ecuador.vercel.app/' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Recetas', 'item': 'https://recetas-ecuador.vercel.app/recipes.html' },
+      { '@type': 'ListItem', 'position': 3, 'name': recipe.title, 'item': canonicalUrl }
+    ]
+  };
+
+  // FAQPage si hay faqs
+  var schemas = [schema, breadcrumb];
+  if (recipe.faqs && recipe.faqs.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': recipe.faqs.map(function(faq) {
+        return {
+          '@type': 'Question',
+          'name': faq.q,
+          'acceptedAnswer': { '@type': 'Answer', 'text': faq.a }
+        };
+      })
+    });
+  }
+
   var ld = document.querySelector('script[type="application/ld+json"]');
   if (!ld) {
     ld = document.createElement('script');
     ld.type = 'application/ld+json';
     document.head.appendChild(ld);
   }
-  ld.textContent = JSON.stringify(schema);
+  ld.textContent = JSON.stringify(schemas);
+}
+
+// ─── FAQs de receta ───────────────────────────────────────────
+function renderFaqsSection(recipe) {
+  var el = document.getElementById('faqs-section');
+  if (!el || !recipe.faqs || recipe.faqs.length === 0) return;
+  el.innerHTML = '<div class="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden">' +
+    '<div class="bg-gradient-to-r from-[#006400] to-[#004d00] px-5 py-4">' +
+      '<h2 class="text-white font-bold text-base flex items-center gap-2">❓ Preguntas Frecuentes</h2>' +
+    '</div>' +
+    '<div class="divide-y divide-gray-100">' +
+    recipe.faqs.map(function(faq) {
+      return '<details class="group px-5 py-4 cursor-pointer">' +
+        '<summary class="font-semibold text-gray-800 text-sm list-none flex items-center justify-between gap-2">' +
+          '<span>' + escapeHtml(faq.q) + '</span>' +
+          '<span class="text-[#007A00] font-bold text-lg group-open:rotate-45 transition-transform duration-200 flex-shrink-0">+</span>' +
+        '</summary>' +
+        '<p class="text-gray-600 text-sm mt-2 leading-relaxed">' + escapeHtml(faq.a) + '</p>' +
+      '</details>';
+    }).join('') +
+    '</div></div>';
+  el.classList.remove('hidden');
 }
 
 // ─── Página: INDEX ────────────────────────────────────────────
@@ -722,8 +788,326 @@ async function initRecipe() {
   renderPlacesCard(recipe);
   renderVideosCard(recipe);
   renderImageCredit(recipe);
+  renderFaqsSection(recipe);
 
   initAds();
+}
+
+// ─── Blog: renderBlogCard ─────────────────────────────────────
+function renderBlogCard(post) {
+  var img = post.image_url
+    ? escapeHtml(post.image_url)
+    : 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80';
+  var imgAlt = escapeHtml(post.image_alt || post.title);
+  var categoryColors = {
+    'Rutas': 'bg-green-100 text-green-700 border-green-200',
+    'Destinos': 'bg-blue-100 text-blue-700 border-blue-200',
+    'Cultura': 'bg-purple-100 text-purple-700 border-purple-200',
+    'Festividades': 'bg-yellow-100 text-yellow-700 border-yellow-200',
+    'Naturaleza': 'bg-emerald-100 text-emerald-700 border-emerald-200',
+    'Aventura': 'bg-orange-100 text-orange-700 border-orange-200',
+    'Gastronom\u00eda': 'bg-amber-100 text-amber-700 border-amber-200'
+  };
+  var catClass = categoryColors[post.category] || 'bg-gray-100 text-gray-600 border-gray-200';
+
+  return '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#C8102E] focus-within:ring-offset-2">' +
+    '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="block" aria-label="' + escapeHtml(post.title) + '">' +
+      '<div class="relative h-52 overflow-hidden">' +
+        '<img src="' + img + '" alt="' + imgAlt + '"' +
+          ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
+          ' loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80\'">' +
+        '<div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>' +
+        (post.featured ? '<div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-[#FFD700]/90 text-[#004d00] backdrop-blur-sm">⭐ Destacado</span></div>' : '') +
+        (post.region ? '<div class="absolute bottom-3 left-3"><span class="text-white text-xs font-medium bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">' + escapeHtml(post.region) + '</span></div>' : '') +
+      '</div>' +
+      '<div class="p-5">' +
+        '<div class="flex flex-wrap gap-2 mb-2">' +
+          (post.category ? '<span class="text-xs font-medium border px-2.5 py-0.5 rounded-full ' + catClass + '">' + escapeHtml(post.category) + '</span>' : '') +
+          (post.reading_time ? '<span class="text-xs font-medium text-gray-400 bg-gray-50 border border-gray-200 px-2.5 py-0.5 rounded-full">\u23f1 ' + escapeHtml(post.reading_time) + '</span>' : '') +
+        '</div>' +
+        '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 line-clamp-2 group-hover:text-[#C8102E] transition-colors duration-200">' + escapeHtml(post.title) + '</h3>' +
+        '<p class="text-gray-500 text-sm line-clamp-2 mb-2">' + escapeHtml(post.description || '') + '</p>' +
+        (post.date_published ? '<p class="text-xs text-gray-400">' + post.date_published + '</p>' : '') +
+      '</div>' +
+    '</a>' +
+  '</article>';
+}
+
+// ─── Blog: injectPostSEO ──────────────────────────────────────
+function injectPostSEO(post) {
+  var canonicalUrl = 'https://recetas-ecuador.vercel.app/post.html?slug=' + encodeURIComponent(post.slug);
+  var imageUrl = post.image_url || '';
+  var keywords = (post.keywords || []).concat(['turismo ecuador', 'viaje ecuador', 'destinos ecuador']).join(', ');
+
+  setMeta(
+    post.title + ' | Turismo Ecuador \uD83C\uDDEA\uD83C\uDDE8',
+    post.description || post.title,
+    imageUrl,
+    canonicalUrl
+  );
+  upsertMeta('name', 'keywords', keywords);
+
+  var article = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': post.title,
+    'description': post.description || '',
+    'image': imageUrl,
+    'author': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas' },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Biblioteca de Recetas Ecuatorianas',
+      'logo': { '@type': 'ImageObject', 'url': 'https://recetas-ecuador.vercel.app/favicon.ico' }
+    },
+    'datePublished': post.date_published || post.created_at || new Date().toISOString(),
+    'dateModified': post.created_at || new Date().toISOString(),
+    'keywords': keywords,
+    'inLanguage': 'es',
+    'about': { '@type': 'Country', 'name': 'Ecuador' }
+  };
+
+  var breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': 'https://recetas-ecuador.vercel.app/' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Blog Turismo', 'item': 'https://recetas-ecuador.vercel.app/blog.html' },
+      { '@type': 'ListItem', 'position': 3, 'name': post.title, 'item': canonicalUrl }
+    ]
+  };
+
+  var schemas = [article, breadcrumb];
+
+  if (post.faqs && post.faqs.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': post.faqs.map(function(faq) {
+        return { '@type': 'Question', 'name': faq.q, 'acceptedAnswer': { '@type': 'Answer', 'text': faq.a } };
+      })
+    });
+  }
+
+  var ld = document.querySelector('script[type="application/ld+json"]');
+  if (!ld) {
+    ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    document.head.appendChild(ld);
+  }
+  ld.textContent = JSON.stringify(schemas);
+}
+
+// ─── Página: BLOG ─────────────────────────────────────────────
+async function initBlog() {
+  var posts = await loadPosts();
+  var grid = document.getElementById('blog-grid');
+  var resultsCount = document.getElementById('blog-results-count');
+  var searchInput = document.getElementById('blog-search');
+  var categorySel = document.getElementById('blog-category');
+  var regionSel = document.getElementById('blog-region');
+  var clearBtn = document.getElementById('blog-clear');
+
+  // Poblar categorías
+  if (categorySel) {
+    var seenCats = {}, cats = [];
+    posts.forEach(function(p) { if (p.category && !seenCats[p.category]) { seenCats[p.category] = 1; cats.push(p.category); } });
+    cats.sort().forEach(function(c) {
+      var opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      categorySel.appendChild(opt);
+    });
+  }
+  if (regionSel) {
+    var seenRegs = {}, regs = [];
+    posts.forEach(function(p) { if (p.region && !seenRegs[p.region]) { seenRegs[p.region] = 1; regs.push(p.region); } });
+    regs.sort().forEach(function(r) {
+      var opt = document.createElement('option');
+      opt.value = r; opt.textContent = r;
+      regionSel.appendChild(opt);
+    });
+  }
+
+  function applyBlogFilters() {
+    var q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    var cat = categorySel ? categorySel.value : '';
+    var reg = regionSel ? regionSel.value : '';
+
+    var filtered = posts.filter(function(p) {
+      if (q) {
+        var hay = (p.title + ' ' + (p.description || '') + ' ' + (p.keywords || []).join(' ')).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      if (cat && p.category !== cat) return false;
+      if (reg && p.region !== reg) return false;
+      return true;
+    });
+
+    if (resultsCount) {
+      resultsCount.textContent = filtered.length === 1 ? '1 artículo' : filtered.length + ' artículos';
+    }
+
+    if (!grid) return;
+    if (filtered.length === 0) {
+      if (posts.length === 0) {
+        grid.innerHTML = '<div class="col-span-full text-center py-20 text-gray-400">' +
+          '<div class="text-6xl mb-4">📰</div>' +
+          '<p class="text-lg font-medium text-gray-500">El blog de turismo se está preparando</p>' +
+          '<p class="text-sm mt-1">En breve publicaremos nuestros primeros artículos sobre destinos y cultura ecuatoriana.</p>' +
+          '</div>';
+      } else {
+        grid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-400">' +
+          '<p class="text-lg font-medium">Sin artículos con esos filtros</p>' +
+          '</div>';
+      }
+      return;
+    }
+    grid.innerHTML = filtered.map(renderBlogCard).join('');
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  if (searchInput && params.get('q')) searchInput.value = params.get('q');
+  if (categorySel && params.get('category')) categorySel.value = params.get('category');
+  if (regionSel && params.get('region')) regionSel.value = params.get('region');
+
+  if (searchInput) searchInput.addEventListener('input', debounce(applyBlogFilters, 300));
+  if (categorySel) categorySel.addEventListener('change', applyBlogFilters);
+  if (regionSel) regionSel.addEventListener('change', applyBlogFilters);
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      if (searchInput) searchInput.value = '';
+      if (categorySel) categorySel.value = '';
+      if (regionSel) regionSel.value = '';
+      applyBlogFilters();
+    });
+  }
+
+  if (grid) grid.innerHTML = renderSkeleton(3);
+  applyBlogFilters();
+}
+
+// ─── Página: POST ─────────────────────────────────────────────
+async function initPost() {
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('slug');
+  var loadingEl = document.getElementById('post-loading');
+  var errorEl = document.getElementById('post-error');
+  var contentEl = document.getElementById('post-content');
+
+  if (!slug) {
+    if (loadingEl) loadingEl.classList.add('hidden');
+    if (errorEl) errorEl.classList.remove('hidden');
+    return;
+  }
+
+  var posts = await loadPosts();
+  var post = null;
+  for (var i = 0; i < posts.length; i++) {
+    if (posts[i].slug === slug) { post = posts[i]; break; }
+  }
+
+  if (loadingEl) loadingEl.classList.add('hidden');
+
+  if (!post) {
+    if (errorEl) {
+      errorEl.classList.remove('hidden');
+      var msgEl = errorEl.querySelector('[data-error-msg]');
+      if (msgEl) msgEl.textContent = 'No encontramos el artículo "' + escapeHtml(slug) + '".';
+    }
+    return;
+  }
+
+  if (contentEl) contentEl.classList.remove('hidden');
+
+  injectPostSEO(post);
+
+  // Breadcrumb
+  var bcPost = document.getElementById('bc-post');
+  if (bcPost) bcPost.textContent = post.title;
+
+  // Hero imagen
+  var heroImg = document.getElementById('post-hero-img');
+  if (heroImg) {
+    heroImg.src = post.image_url || 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80';
+    heroImg.alt = post.image_alt || post.title;
+    heroImg.onerror = function() { this.src = 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80'; };
+  }
+
+  // Meta fields
+  var tf = [
+    ['post-title', post.title],
+    ['post-subtitle', post.subtitle],
+    ['post-description-text', post.description],
+    ['post-category', post.category],
+    ['post-region', post.region],
+    ['post-reading-time', post.reading_time],
+    ['post-date', post.date_published],
+    ['post-source', post.source]
+  ];
+  tf.forEach(function(pair) {
+    var el = document.getElementById(pair[0]);
+    if (el && pair[1]) {
+      el.textContent = pair[1];
+      var parent = el.closest('[data-optional]');
+      if (parent) parent.classList.remove('hidden');
+    }
+  });
+
+  // Contenido HTML
+  var contentBody = document.getElementById('post-content-body');
+  if (contentBody && post.content) {
+    contentBody.innerHTML = post.content;
+  }
+
+  // FAQs accordion
+  var faqsEl = document.getElementById('post-faqs');
+  if (faqsEl && post.faqs && post.faqs.length > 0) {
+    faqsEl.innerHTML = '<div class="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden mt-6">' +
+      '<div class="bg-gradient-to-r from-[#006400] to-[#004d00] px-5 py-4">' +
+        '<h2 class="text-white font-bold text-base">❓ Preguntas Frecuentes</h2>' +
+      '</div>' +
+      '<div class="divide-y divide-gray-100">' +
+      post.faqs.map(function(faq) {
+        return '<details class="group px-5 py-4 cursor-pointer">' +
+          '<summary class="font-semibold text-gray-800 text-sm list-none flex items-center justify-between gap-2">' +
+            '<span>' + escapeHtml(faq.q) + '</span>' +
+            '<span class="text-[#007A00] font-bold text-lg flex-shrink-0">+</span>' +
+          '</summary>' +
+          '<p class="text-gray-600 text-sm mt-2 leading-relaxed">' + escapeHtml(faq.a) + '</p>' +
+        '</details>';
+      }).join('') +
+      '</div></div>';
+    faqsEl.classList.remove('hidden');
+  }
+
+  // Related recipes (same region)
+  var relatedEl = document.getElementById('post-related-recipes');
+  if (relatedEl && post.region) {
+    var recipes = await loadRecipes();
+    var related = recipes.filter(function(r) { return r.region === post.region; }).slice(0, 3);
+    if (related.length > 0) {
+      relatedEl.innerHTML = '<div class="mt-8">' +
+        '<h3 class="font-bold text-gray-800 text-base mb-4">🍽️ Recetas de ' + escapeHtml(post.region) + '</h3>' +
+        '<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">' +
+        related.map(renderCard).join('') +
+        '</div></div>';
+      relatedEl.classList.remove('hidden');
+    }
+  }
+
+  initAds();
+}
+
+// ─── Blog preview en index ─────────────────────────────────────
+async function loadBlogPreview() {
+  var grid = document.getElementById('blog-preview-grid');
+  if (!grid) return;
+  var posts = await loadPosts();
+  if (posts.length === 0) {
+    grid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-400">' +
+      '<p class="font-medium">Próximamente: artículos de turismo</p></div>';
+    return;
+  }
+  grid.innerHTML = posts.slice(0, 3).map(renderBlogCard).join('');
 }
 
 // ─── Router ───────────────────────────────────────────────────
@@ -731,9 +1115,14 @@ async function initRecipe() {
   var path = window.location.pathname.split('/').pop() || 'index.html';
   if (path === 'index.html' || path === '' || path === '/') {
     initIndex();
+    loadBlogPreview();
   } else if (path === 'recipes.html') {
     initListing();
   } else if (path === 'recipe.html') {
     initRecipe();
+  } else if (path === 'blog.html') {
+    initBlog();
+  } else if (path === 'post.html') {
+    initPost();
   }
 })();

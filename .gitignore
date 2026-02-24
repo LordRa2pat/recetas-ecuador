@@ -2,3 +2,8 @@
 deploy_v4.py
 deploy_v5.py
 deploy_blog.py
+deploy_v6.py
+deploy_v7.py
+deploy_v8.py
+fix_images.py
+deploy_blog_v2.py

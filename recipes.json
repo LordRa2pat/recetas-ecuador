@@ -1,5 +1,151 @@
 [
   {
+    "slug": "guatita-ecuatoriana-sierra-central",
+    "title": "Guatita Ecuatoriana de la Sierra Central Receta Tradicional",
+    "description": "Guatita Ecuatoriana de la Sierra Central, un plato típico lleno de sabor con mondongo y maní. Descubre cómo preparar esta receta tradicional paso a paso con ingredientes fáciles de encontrar y consejos para un resultado perfecto. Ideal para compartir en familia.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "image_url": null,
+    "image_alt": "Plato de guatita ecuatoriana con mondongo y salsa de maní, receta tradicional de la Sierra Central",
+    "ingredients": [
+      "1 kg de mondongo (tripa de res) limpio (Supermaxi, Megamaxi - sección carnes)",
+      "1 taza de maní crudo (Supermaxi, Megamaxi, TIA - sección granos)",
+      "2 papas medianas, peladas y cortadas en cubos",
+      "1 cebolla blanca grande, finamente picada",
+      "2 dientes de ajo, triturados",
+      "1 pimiento verde, picado",
+      "1 tomate maduro, pelado y picado",
+      "1 cucharada de achiote en pasta (Supermaxi, TIA - sección condimentos)",
+      "1 litro de leche",
+      "Sal y pimienta al gusto",
+      "1 cucharadita de comino molido",
+      "2 cucharadas de aceite vegetal"
+    ],
+    "instructions": [
+      "Limpia bien el mondongo bajo agua fría, retirando cualquier residuo. Luego, hiérvelo en una olla con abundante agua y una pizca de sal durante 1 hora o hasta que esté tierno. Escurre y corta en trozos pequeños.",
+      "En una licuadora, procesa el maní crudo con un poco de agua hasta obtener una pasta suave. Reserva.",
+      "En una olla grande, calienta el aceite y sofríe la cebolla, el ajo, el pimiento y el tomate hasta que estén blandos, aproximadamente 5 minutos.",
+      "Añade el achiote, el comino, sal y pimienta al sofrito. Revuelve bien para integrar los sabores durante 2 minutos.",
+      "Incorpora el mondongo troceado y mezcla con el sofrito. Cocina por 5 minutos a fuego medio.",
+      "Agrega la pasta de maní y la leche, removiendo constantemente para evitar que se pegue. Cocina a fuego bajo por 30 minutos hasta que la salsa espese.",
+      "Añade las papas en cubos y cocina por 15-20 minutos más, o hasta que estén tiernas. Ajusta la sal si es necesario.",
+      "Sirve caliente acompañado de arroz blanco y una rodaja de aguacate si deseas."
+    ],
+    "tips": [
+      "Para un sabor más intenso, tuesta ligeramente el maní antes de licuarlo.",
+      "Si el mondongo no está bien limpio, hiérvelo con hojas de laurel para reducir el olor fuerte.",
+      "Puedes añadir un toque de cilantro picado al final para un aroma fresco.",
+      "Controla la cantidad de leche para ajustar la textura de la salsa según tu preferencia."
+    ],
+    "keywords": [
+      "guatita ecuatoriana",
+      "guatita sierra central",
+      "receta guatita tradicional",
+      "mondongo ecuatoriano",
+      "plato tipico ecuador sierra",
+      "guatita con mani",
+      "comida ecuatoriana tradicional",
+      "receta guatita facil",
+      "guatita receta quito",
+      "platos fuertes ecuador",
+      "guatita con papas",
+      "cocina ecuatoriana sierra"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña la guatita ecuatoriana?",
+        "a": "Se acompaña tradicionalmente con arroz blanco y aguacate. En algunas zonas también se sirve con curtido de cebolla y tomate."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva la guatita?",
+        "a": "Puede conservarse en el refrigerador por 2-3 días en un recipiente hermético. Recalentar a fuego bajo para evitar que la salsa se corte."
+      },
+      {
+        "q": "¿Es difícil hacer guatita ecuatoriana?",
+        "a": "No es muy difícil, pero requiere tiempo para limpiar y cocer el mondongo. Siguiendo los pasos, es accesible para cocineros intermedios."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Latacunga",
+        "province": "Cotopaxi",
+        "region": "Sierra"
+      },
+      {
+        "city": "Ambato",
+        "province": "Tungurahua",
+        "region": "Sierra"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian food",
+      "traditional dish",
+      "guatita ecuatoriana",
+      "mondongo stew",
+      "peanut sauce",
+      "sierra cuisine",
+      "ecuadorian stew",
+      "latin food"
+    ],
+    "international_substitutes": [
+      {
+        "original": "mondongo (tripa de res)",
+        "sustituto_usa": "beef tripe (disponible en mercados latinos o carnicerías especializadas)",
+        "sustituto_europa": "beef tripe (en mercados latinos o carnicerías halal)"
+      },
+      {
+        "original": "achiote en pasta",
+        "sustituto_usa": "annatto powder o turmeric (para color, en supermercados internacionales)",
+        "sustituto_europa": "annatto powder o turmeric (en tiendas latinas o asiáticas)"
+      }
+    ],
+    "tourism_route": "Disfruta de la guatita en la Sierra Central visitando Quito, Latacunga y Ambato. En Quito, prueba en mercados como Santa Clara por $3-5 por plato. En Latacunga, durante la Mama Negra, los restaurantes locales ofrecen guatita auténtica por $4-6.",
+    "youtube_videos": [
+      {
+        "title": "Guatita | KWA",
+        "videoId": "0TkRzV5mZtE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=0TkRzV5mZtE",
+        "embed": "https://www.youtube-nocookie.com/embed/0TkRzV5mZtE",
+        "uploadDate": "2022-01-28",
+        "description": "Guatita (4 Porciones)\n\nPara el caldo:\n1.5 Libras de Mondongo\n1/2 Atado de Perejil \n1/2 Atado Cilantro \n5 Dientes de Ajo \n3 litros de Agua\nSal - Orégano Seco \n\nPara la Guatita:\n3 Cucharadas de Achiote "
+      },
+      {
+        "title": "GUATITA",
+        "videoId": "k_rbpkZ6aDc",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=k_rbpkZ6aDc",
+        "embed": "https://www.youtube-nocookie.com/embed/k_rbpkZ6aDc",
+        "uploadDate": "2021-08-21",
+        "description": "LA GUATITA es un delicios plato del Ecuador, que mezcla los sabores de la papa y el maní con el exótico sabor y textura del mondongo o panza de res, se lo disfruta en la Costa y en la Sierra con  vari"
+      },
+      {
+        "title": "Guatita de Pollo RECETA SUPER FÁCIL | KWA",
+        "videoId": "rI_BSFc9jTE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=rI_BSFc9jTE",
+        "embed": "https://www.youtube-nocookie.com/embed/rI_BSFc9jTE",
+        "uploadDate": "2025-09-12",
+        "description": "Ingredientes:\nhttps://recetaskwa.com/2025/09/16/guatita-de-pollo/\n\n✨ Aprende a preparar una deliciosa Guatita de Pollo, una receta casera tradicional llena de sabor y muy fácil de hacer. En este video"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 18,
+    "created_at": "2026-02-24T23:22:23.646Z"
+  },
+  {
     "slug": "encebollado-ecuatoriano-receta",
     "title": "Encebollado Ecuatoriano Receta Tradicional de la Costa",
     "description": "Encebollado ecuatoriano, la sopa de pescado más famosa de la costa de Ecuador. Descubre cómo preparar esta receta tradicional con atún, yuca y cebolla encurtida, ideal para un almuerzo reconfortante. ¡Sigue nuestro paso a paso y disfruta de auténtico sabor ecuatoriano!",

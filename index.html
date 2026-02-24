@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biblioteca de Recetas Ecuatorianas — Gastronomía y Turismo</title>
+  <title>Ecuador a la Carta — Gastronomía y Turismo Ecuatoriano</title>
   <meta name="description" content="La revista premium de gastronomía ecuatoriana. Recetas auténticas, guías para la diáspora y rutas turísticas gastronómicas del Ecuador." />
-  <meta property="og:title" content="Biblioteca de Recetas Ecuatorianas" />
+  <meta property="og:title" content="Ecuador a la Carta" />
   <meta property="og:description" content="Gastronomía, diáspora y turismo — Ecuador en cada plato." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80" />
+  <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://recetas-ecuador.vercel.app/" />
+  <link rel="canonical" href="https://ecuadoralacarta.com/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>" />
 
-  <!-- AdSense: Bloque Superior Index -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,13 +21,12 @@
       theme: {
         extend: {
           colors: {
+            'ec-gold':  '#FFD100',
+            'ec-blue':  '#0033A0',
+            'ec-red':   '#EF3340',
             'ec-green': '#006400',
-            'ec-yellow': '#FFD700',
-            'ec-red': '#C8102E',
           },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
         }
       }
     }
@@ -35,112 +35,123 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* AdSense CLS-safe */
-    .ad-slot {
-      min-height: 120px;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .ad-slot--square { min-height: 280px; }
-    .ad-slot--tall { min-height: 600px; }
-    .ad-label { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; font-weight: 500; }
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .hero-bg {
-      background-image: linear-gradient(to bottom, rgba(0,50,0,0.72) 0%, rgba(0,80,0,0.45) 45%, rgba(0,50,0,0.78) 100%),
-        url('https://images.unsplash.com/photo-1567337710282-00832b415979?w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-    /* Ecuador vibrante */
-    .ec-stripe {
-      background: linear-gradient(90deg, #FFD700 0% 50%, #007A00 50% 75%, #C8102E 75% 100%);
-      height: 4px;
-      width: 100%;
-      flex-shrink: 0;
-    }
-    .ec-title-bar {
-      display: block;
-      width: 56px;
-      height: 4px;
-      margin-top: 8px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #FFD700 0% 38%, #007A00 38% 70%, #C8102E 70% 100%);
-    }
-    .ec-card-shadow { box-shadow: 0 4px 24px rgba(0,122,0,0.10), 0 1px 4px rgba(0,0,0,0.06); }
-    .ec-card-shadow:hover { box-shadow: 0 8px 40px rgba(0,122,0,0.22), 0 4px 16px rgba(200,16,46,0.08); }
+    .ad-slot { min-height:120px; background:rgba(255,255,255,0.6); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-radius:16px; border:1px solid rgba(0,0,0,0.06); display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; }
+    .ad-slot--square { min-height:280px; }
+    .ad-slot--tall { min-height:600px; }
+    .ad-label { font-size:10px; color:#9ca3af; text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; font-weight:500; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
+    .line-clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    /* Brand stripe */
+    .ec-stripe { background:linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; flex-shrink:0; }
+    .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px; background:linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
+    /* 3D cards */
+    .ec-card-3d { box-shadow:0 4px 24px rgba(0,51,160,.10),0 1px 4px rgba(0,0,0,.06); transition:transform .3s ease,box-shadow .3s ease; }
+    .ec-card-3d:hover { box-shadow:0 8px 40px rgba(0,51,160,.22),0 4px 16px rgba(239,51,64,.10); transform:translateY(-8px) scale(1.02); }
+    /* Dropdown menus */
+    .nav-dropdown { display:none; position:absolute; top:calc(100% + 4px); left:0; min-width:200px; background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,.15); border:1px solid rgba(0,51,160,.1); z-index:200; padding:8px 0; }
+    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
+    .nav-dropdown a { display:block; padding:8px 16px; font-size:.875rem; color:#374151; text-decoration:none; transition:background .15s; }
+    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
+    .hero-bg { background-image:linear-gradient(to bottom,rgba(0,0,50,.75) 0%,rgba(0,30,100,.45) 45%,rgba(0,0,50,.80) 100%),url('https://images.unsplash.com/photo-1567337710282-00832b415979?w=1600&q=80'); background-size:cover; background-position:center; }
   </style>
 </head>
-<body class="bg-[#FFFBF2] font-sans text-gray-900 antialiased">
+<body class="bg-slate-50 font-sans text-gray-900 antialiased">
 
-  <!-- Franja tricolor bandera Ecuador -->
   <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#006400]/90 backdrop-blur-md shadow-lg">
+  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
         <span class="text-2xl">🇪🇨</span>
-        <span class="hidden sm:inline leading-tight">Biblioteca de<br><span class="text-ec-yellow">Recetas</span></span>
-        <span class="sm:hidden text-ec-yellow">Recetas EC</span>
+        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
+        <span class="sm:hidden text-ec-gold">EC a la Carta</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-white/90" aria-label="Navegación principal">
-        <a href="index.html" class="text-ec-yellow font-bold" aria-current="page">Inicio</a>
-        <a href="recipes.html" class="hover:text-ec-yellow transition-colors">Recetas</a>
-        <a href="recipes.html?audience=Diáspora" class="hover:text-ec-yellow transition-colors">Diáspora</a>
-        <a href="blog.html" class="hover:text-ec-yellow transition-colors">Blog Turismo</a>
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90" aria-label="Navegación principal">
+        <a href="index.html" class="px-3 py-2 text-ec-gold font-bold" aria-current="page">Inicio</a>
+
+        <div class="nav-item relative px-3 py-2 cursor-default hover:text-ec-gold transition-colors">
+          <span class="flex items-center gap-1">Regiones <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?region=Sierra">🏔️ Sierra</a>
+            <a href="recipes.html?region=Costa">🌊 Costa</a>
+            <a href="recipes.html?region=Amazonia">🌿 Amazonía</a>
+            <a href="recipes.html?region=Galapagos">🐢 Galápagos</a>
+          </div>
+        </div>
+
+        <div class="nav-item relative px-3 py-2 cursor-default hover:text-ec-gold transition-colors">
+          <span class="flex items-center gap-1">Categorías <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?category=Sopas">🍲 Sopas</a>
+            <a href="recipes.html?category=Platos%20Fuertes">🍽️ Platos Fuertes</a>
+            <a href="recipes.html?category=Mariscos">🦐 Mariscos</a>
+            <a href="recipes.html?category=Postres">🍮 Postres</a>
+            <a href="recipes.html?category=Bebidas">🥤 Bebidas</a>
+            <a href="recipes.html?category=Desayunos">☕ Desayunos</a>
+            <a href="recipes.html?category=Entradas">🥗 Entradas</a>
+          </div>
+        </div>
+
+        <a href="menu-semanal.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Menú Semanal</a>
+
+        <div class="nav-item relative px-3 py-2 cursor-default hover:text-ec-gold transition-colors">
+          <span class="flex items-center gap-1">Sobre Nosotros <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+          <div class="nav-dropdown">
+            <a href="nosotros.html">🏡 Nuestra Historia</a>
+            <a href="blog.html">📰 Blog Turismo</a>
+            <a href="contact.html">✉️ Contacto</a>
+          </div>
+        </div>
       </nav>
-      <a href="recipes.html" class="bg-ec-yellow text-[#006400] font-bold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#006400]">
-        Ver todas
-      </a>
+      <div class="flex items-center gap-2">
+        <a href="recipes.html" class="bg-ec-gold text-[#0033A0] font-bold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0033A0]">
+          Ver recetas
+        </a>
+        <button id="nav-toggle" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10" aria-label="Abrir menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="nav-mobile" class="hidden md:hidden bg-[#002280] border-t border-blue-700 py-3 px-4">
+      <a href="index.html" class="block py-2 text-white text-sm font-medium border-b border-blue-700/50">Inicio</a>
+      <a href="recipes.html" class="block py-2 text-white/80 text-sm hover:text-white">Todas las recetas</a>
+      <a href="recipes.html?region=Sierra" class="block py-2 text-white/80 text-sm hover:text-white">🏔️ Sierra</a>
+      <a href="recipes.html?region=Costa" class="block py-2 text-white/80 text-sm hover:text-white">🌊 Costa</a>
+      <a href="recipes.html?region=Amazonia" class="block py-2 text-white/80 text-sm hover:text-white">🌿 Amazonía</a>
+      <a href="recipes.html?region=Galapagos" class="block py-2 text-white/80 text-sm hover:text-white">🐢 Galápagos</a>
+      <a href="menu-semanal.html" class="block py-2 text-white/80 text-sm hover:text-white border-t border-blue-700/50 mt-1">📅 Menú Semanal</a>
+      <a href="blog.html" class="block py-2 text-white/80 text-sm hover:text-white">📰 Blog Turismo</a>
+      <a href="nosotros.html" class="block py-2 text-white/80 text-sm hover:text-white">🏡 Sobre Nosotros</a>
+      <a href="contact.html" class="block py-2 text-white/80 text-sm hover:text-white">✉️ Contacto</a>
     </div>
   </header>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero-bg min-h-[75vh] flex flex-col" aria-label="Portada">
-    <!-- Franja bandera superior -->
-    <div class="h-1.5 bg-gradient-to-r from-[#FFD700] via-[#007A00] to-[#C8102E] flex-shrink-0"></div>
-
+    <div class="h-1.5 bg-gradient-to-r from-[#FFD100] via-[#0033A0] to-[#EF3340] flex-shrink-0"></div>
     <div class="flex-1 flex items-center justify-center px-4 py-16 text-center">
       <div class="max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
           🍽️ Revista Premium · Gastronomía y Turismo Ecuatoriano
         </div>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
-          La cocina del<br><span class="text-ec-yellow">Ecuador</span> para el mundo
+          La cocina del<br><span class="text-ec-gold">Ecuador</span> para el mundo
         </h1>
         <p class="text-white/80 text-lg sm:text-xl mb-8 max-w-xl mx-auto">
           Recetas auténticas, guías para vivir en el extranjero y rutas gastronómicas que cuentan nuestra historia.
         </p>
-
-        <!-- Search bar -->
         <div class="flex max-w-lg mx-auto bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-white/20">
           <input id="search-input" type="search" placeholder="Busca locro, seco, ceviche..."
             class="flex-1 px-5 py-4 text-gray-800 bg-transparent outline-none text-sm placeholder-gray-400"
             aria-label="Buscar recetas" />
           <button id="search-btn"
-            class="bg-[#006400] text-white px-6 py-4 font-semibold text-sm hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#006400] focus:ring-offset-2"
+            class="bg-[#0033A0] text-white px-6 py-4 font-semibold text-sm hover:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:ring-offset-2"
             aria-label="Buscar">
             Buscar
           </button>
         </div>
-
-        <!-- Stats -->
         <div class="flex items-center justify-center gap-6 mt-8 text-white/70 text-xs font-medium">
           <span>🌿 Sierra · Costa · Amazonía</span>
           <span class="hidden sm:inline">|</span>
@@ -150,8 +161,6 @@
         </div>
       </div>
     </div>
-
-    <!-- AdSense: Bloque Superior Index -->
     <div class="px-4 pb-6 max-w-3xl mx-auto w-full">
       <div class="ad-slot w-full">
         <p class="ad-label">Publicidad</p>
@@ -159,47 +168,30 @@
              data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </div>
-
-    <!-- Franja bandera inferior -->
-    <div class="h-1.5 bg-gradient-to-r from-[#C8102E] via-[#007A00] to-[#FFD700] flex-shrink-0"></div>
+    <div class="h-1.5 bg-gradient-to-r from-[#EF3340] via-[#0033A0] to-[#FFD100] flex-shrink-0"></div>
   </section>
 
-  <!-- ═══ SECCIÓN: RECETAS CLÁSICAS ═══ -->
+  <!-- ═══ RECETAS CLÁSICAS ═══ -->
   <section class="py-16 px-4 sm:px-6 max-w-7xl mx-auto" aria-labelledby="classics-heading">
     <div class="flex items-end justify-between mb-8">
       <div>
-        <p class="text-xs font-bold text-[#007A00] uppercase tracking-widest mb-1">Patrimonio Culinario</p>
+        <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-1">Patrimonio Culinario</p>
         <h2 id="classics-heading" class="text-3xl font-black text-gray-900">Recetas Clásicas 🇪🇨</h2>
         <span class="ec-title-bar"></span>
         <p class="text-gray-500 mt-2">Los sabores que nos definen como ecuatorianos</p>
       </div>
-      <a href="recipes.html" class="hidden sm:inline-flex items-center gap-1 text-[#006400] font-semibold text-sm hover:underline">
-        Ver todas →
-      </a>
+      <a href="recipes.html" class="hidden sm:inline-flex items-center gap-1 text-[#0033A0] font-semibold text-sm hover:underline">Ver todas →</a>
     </div>
     <div id="classic-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Skeleton placeholder -->
-      <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
-        <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-        <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
-      </div>
-      <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
-        <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-        <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
-      </div>
-      <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
-        <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-        <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
-      </div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse" aria-hidden="true"><div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div><div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div></div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true"><div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div><div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div></div>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true"><div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div><div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div></div>
     </div>
     <div class="mt-8 text-center sm:hidden">
-      <a href="recipes.html" class="inline-flex items-center gap-1 text-[#006400] font-semibold text-sm bg-green-50 border border-green-200 px-5 py-2.5 rounded-full hover:bg-green-100 transition-colors">
-        Ver todas las recetas →
-      </a>
+      <a href="recipes.html" class="inline-flex items-center gap-1 text-[#0033A0] font-semibold text-sm bg-blue-50 border border-blue-200 px-5 py-2.5 rounded-full hover:bg-blue-100 transition-colors">Ver todas las recetas →</a>
     </div>
   </section>
 
-  <!-- AdSense: Receta Despues de Ingredientes (In-Feed entre secciones) -->
   <div class="py-4 px-4 sm:px-6 max-w-3xl mx-auto w-full">
     <div class="ad-slot ad-slot--square w-full">
       <p class="ad-label">Publicidad</p>
@@ -208,8 +200,8 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN: DIÁSPORA ═══ -->
-  <section id="diaspora-section" class="hidden py-16 px-4 sm:px-6" style="background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);" aria-labelledby="diaspora-heading">
+  <!-- ═══ DIÁSPORA ═══ -->
+  <section id="diaspora-section" class="hidden py-16 px-4 sm:px-6" style="background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 100%);" aria-labelledby="diaspora-heading">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-end justify-between mb-8">
         <div>
@@ -217,21 +209,14 @@
           <h2 id="diaspora-heading" class="text-3xl font-black text-gray-900">✈️ Sabores en el Extranjero</h2>
           <p class="text-gray-500 mt-1">Recetas con sustitutos de ingredientes para EE.UU. y Europa</p>
         </div>
-        <a href="recipes.html?audience=Di%C3%A1spora" class="hidden sm:inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">
-          Ver todas →
-        </a>
+        <a href="recipes.html?audience=Di%C3%A1spora" class="hidden sm:inline-flex items-center gap-1 text-blue-600 font-semibold text-sm hover:underline">Ver todas →</a>
       </div>
       <div id="diaspora-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-      <div class="mt-6 text-center sm:hidden">
-        <a href="recipes.html?audience=Di%C3%A1spora" class="inline-flex items-center gap-1 text-blue-600 font-semibold text-sm bg-blue-50 border border-blue-200 px-5 py-2.5 rounded-full hover:bg-blue-100 transition-colors">
-          Ver todas →
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- ═══ SECCIÓN: RUTAS TURÍSTICAS ═══ -->
-  <section id="tourism-section" class="hidden py-16 px-4 sm:px-6" style="background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);" aria-labelledby="tourism-heading">
+  <!-- ═══ RUTAS TURÍSTICAS ═══ -->
+  <section id="tourism-section" class="hidden py-16 px-4 sm:px-6" style="background:linear-gradient(135deg,#fffbeb 0%,#fff7ed 100%);" aria-labelledby="tourism-heading">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-end justify-between mb-8">
         <div>
@@ -239,20 +224,12 @@
           <h2 id="tourism-heading" class="text-3xl font-black text-gray-900">🗺️ Rutas Gastronómicas 2026</h2>
           <p class="text-gray-500 mt-1">Descubre dónde probar estas delicias en Ecuador</p>
         </div>
-        <a href="recipes.html?audience=Turista" class="hidden sm:inline-flex items-center gap-1 text-amber-600 font-semibold text-sm hover:underline">
-          Ver todas →
-        </a>
+        <a href="recipes.html?audience=Turista" class="hidden sm:inline-flex items-center gap-1 text-amber-600 font-semibold text-sm hover:underline">Ver todas →</a>
       </div>
       <div id="tourism-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-      <div class="mt-6 text-center sm:hidden">
-        <a href="recipes.html?audience=Turista" class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm bg-amber-50 border border-amber-200 px-5 py-2.5 rounded-full hover:bg-amber-100 transition-colors">
-          Ver todas →
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- AdSense: Receta Antes de Tips (Footer Ad) -->
   <div class="py-6 px-4 sm:px-6 max-w-3xl mx-auto w-full">
     <div class="ad-slot w-full">
       <p class="ad-label">Publicidad</p>
@@ -261,28 +238,28 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN: TRUST ═══ -->
-  <section class="py-16 px-4 sm:px-6 bg-[#FFFBF2]" aria-labelledby="trust-heading">
+  <!-- ═══ TRUST ═══ -->
+  <section class="py-16 px-4 sm:px-6 bg-slate-50" aria-labelledby="trust-heading">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 id="trust-heading" class="text-2xl font-black text-gray-900 mb-2">¿Por qué Biblioteca de Recetas?</h2>
-      <p class="text-gray-500 mb-10">Somos la referencia gastronómica de Ecuador para el mundo</p>
+      <h2 id="trust-heading" class="text-2xl font-black text-gray-900 mb-2">¿Por qué Ecuador a la Carta?</h2>
+      <p class="text-gray-500 mb-10">La referencia gastronómica de Ecuador para el mundo</p>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center gap-3 p-5 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
-          <div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center text-2xl">🥘</div>
+        <div class="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-slate-100 ec-card-3d">
+          <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">🥘</div>
           <p class="font-bold text-gray-800 text-sm">Recetas Auténticas</p>
           <p class="text-gray-500 text-xs text-center">Transmitidas de generación en generación</p>
         </div>
-        <div class="flex flex-col items-center gap-3 p-5 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+        <div class="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-slate-100 ec-card-3d">
           <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">✈️</div>
           <p class="font-bold text-gray-800 text-sm">Para la Diáspora</p>
           <p class="text-gray-500 text-xs text-center">Sustitutos de ingredientes en EE.UU. y Europa</p>
         </div>
-        <div class="flex flex-col items-center gap-3 p-5 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+        <div class="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-slate-100 ec-card-3d">
           <div class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl">🗺️</div>
           <p class="font-bold text-gray-800 text-sm">Rutas Turísticas</p>
           <p class="text-gray-500 text-xs text-center">Descubre dónde probar cada plato en Ecuador</p>
         </div>
-        <div class="flex flex-col items-center gap-3 p-5 bg-slate-50 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+        <div class="flex flex-col items-center gap-3 p-5 bg-white rounded-2xl border border-slate-100 ec-card-3d">
           <div class="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl">🌿</div>
           <p class="font-bold text-gray-800 text-sm">Las 4 Regiones</p>
           <p class="text-gray-500 text-xs text-center">Sierra, Costa, Amazonía y Galápagos</p>
@@ -291,7 +268,7 @@
     </div>
   </section>
 
-  <!-- ═══ SECCIÓN: REGIONES ═══ -->
+  <!-- ═══ REGIONES ═══ -->
   <section class="py-16 px-4 sm:px-6 bg-white" aria-labelledby="regions-heading">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10">
@@ -300,120 +277,121 @@
         <p class="text-gray-500">Cada región tiene su propia identidad culinaria</p>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <a href="recipes.html?region=Sierra" class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" aria-label="Recetas de la Sierra">
-          <div class="h-36 bg-gradient-to-br from-green-700 to-green-900 flex items-end p-4">
-            <div>
-              <p class="text-white font-black text-lg leading-tight">Sierra</p>
-              <p class="text-green-200 text-xs">Locro, hornado, fritada</p>
-            </div>
+        <a href="recipes.html?region=Sierra" class="group relative rounded-2xl overflow-hidden shadow-md ec-card-3d" aria-label="Recetas de la Sierra">
+          <div class="h-36 bg-gradient-to-br from-blue-700 to-blue-900 flex items-end p-4">
+            <div><p class="text-white font-black text-lg leading-tight">Sierra</p><p class="text-blue-200 text-xs">Locro, hornado, fritada</p></div>
           </div>
         </a>
-        <a href="recipes.html?region=Costa" class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" aria-label="Recetas de la Costa">
-          <div class="h-36 bg-gradient-to-br from-blue-500 to-cyan-700 flex items-end p-4">
-            <div>
-              <p class="text-white font-black text-lg leading-tight">Costa</p>
-              <p class="text-blue-200 text-xs">Ceviche, encebollado, patacones</p>
-            </div>
+        <a href="recipes.html?region=Costa" class="group relative rounded-2xl overflow-hidden shadow-md ec-card-3d" aria-label="Recetas de la Costa">
+          <div class="h-36 bg-gradient-to-br from-cyan-500 to-cyan-800 flex items-end p-4">
+            <div><p class="text-white font-black text-lg leading-tight">Costa</p><p class="text-cyan-200 text-xs">Ceviche, encebollado, patacones</p></div>
           </div>
         </a>
-        <a href="recipes.html?region=Amazonia" class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" aria-label="Recetas de la Amazonía">
+        <a href="recipes.html?region=Amazonia" class="group relative rounded-2xl overflow-hidden shadow-md ec-card-3d" aria-label="Recetas de la Amazonía">
           <div class="h-36 bg-gradient-to-br from-emerald-500 to-teal-700 flex items-end p-4">
-            <div>
-              <p class="text-white font-black text-lg leading-tight">Amazonía</p>
-              <p class="text-emerald-200 text-xs">Maito, chicha, ayampaco</p>
-            </div>
+            <div><p class="text-white font-black text-lg leading-tight">Amazonía</p><p class="text-emerald-200 text-xs">Maito, chicha, ayampaco</p></div>
           </div>
         </a>
-        <a href="recipes.html?region=Galapagos" class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1" aria-label="Recetas de Galápagos">
+        <a href="recipes.html?region=Galapagos" class="group relative rounded-2xl overflow-hidden shadow-md ec-card-3d" aria-label="Recetas de Galápagos">
           <div class="h-36 bg-gradient-to-br from-orange-500 to-amber-700 flex items-end p-4">
-            <div>
-              <p class="text-white font-black text-lg leading-tight">Galápagos</p>
-              <p class="text-orange-200 text-xs">Mariscos, langosta, pepino de mar</p>
-            </div>
+            <div><p class="text-white font-black text-lg leading-tight">Galápagos</p><p class="text-orange-200 text-xs">Mariscos, langosta, pepino de mar</p></div>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SECCIÓN: BLOG TURISMO ═══ -->
-  <section class="py-16 px-4 sm:px-6 bg-[#FFFBF2]" aria-labelledby="blog-preview-heading">
+  <!-- ═══ BLOG TURISMO ═══ -->
+  <section class="py-16 px-4 sm:px-6 bg-slate-50" aria-labelledby="blog-preview-heading">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-end justify-between mb-8">
         <div>
-          <p class="text-xs font-bold text-[#C8102E] uppercase tracking-widest mb-1">Noticias y Guías</p>
+          <p class="text-xs font-bold text-[#EF3340] uppercase tracking-widest mb-1">Noticias y Guías</p>
           <h2 id="blog-preview-heading" class="text-3xl font-black text-gray-900">📰 Turismo Ecuador</h2>
           <span class="ec-title-bar"></span>
           <p class="text-gray-500 mt-2">Destinos, rutas y cultura ecuatoriana — actualizado automáticamente</p>
         </div>
-        <a href="blog.html" class="hidden sm:inline-flex items-center gap-1 text-[#C8102E] font-semibold text-sm hover:underline">
-          Ver todo el blog →
-        </a>
+        <a href="blog.html" class="hidden sm:inline-flex items-center gap-1 text-[#EF3340] font-semibold text-sm hover:underline">Ver todo el blog →</a>
       </div>
       <div id="blog-preview-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
-          <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-          <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
-        </div>
-        <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
-          <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-          <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
-        </div>
-        <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
-          <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-          <div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div>
-        </div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse" aria-hidden="true"><div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div><div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div></div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true"><div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div><div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div></div>
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true"><div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div><div class="p-5"><div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div><div class="bg-gray-200 h-4 rounded-full w-4/5"></div></div></div>
       </div>
       <div class="mt-8 text-center sm:hidden">
-        <a href="blog.html" class="inline-flex items-center gap-1 text-[#C8102E] font-semibold text-sm bg-red-50 border border-red-200 px-5 py-2.5 rounded-full hover:bg-red-100 transition-colors">
-          Ver todo el blog →
-        </a>
+        <a href="blog.html" class="inline-flex items-center gap-1 text-[#EF3340] font-semibold text-sm bg-red-50 border border-red-200 px-5 py-2.5 rounded-full hover:bg-red-100 transition-colors">Ver todo el blog →</a>
       </div>
     </div>
   </section>
 
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="bg-[#0033A0] py-10 px-4 sm:px-6" aria-labelledby="newsletter-heading">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+      <h2 id="newsletter-heading" class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+        <input type="email" name="email" placeholder="tu@email.com" required
+               class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+               aria-label="Email para newsletter" />
+        <button type="submit"
+                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+          Suscribirme →
+        </button>
+      </form>
+    </div>
+  </section>
+
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#006400] text-white py-10 px-4 sm:px-6">
+  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto">
       <div class="grid sm:grid-cols-3 gap-8 mb-8">
         <div>
           <div class="flex items-center gap-2 mb-3">
             <span class="text-2xl">🇪🇨</span>
-            <span class="font-black text-lg">Biblioteca de Recetas</span>
+            <span class="font-black text-lg">Ecuador a la Carta</span>
           </div>
-          <p class="text-green-200 text-sm">Revista premium de gastronomía y turismo ecuatoriano para el mundo.</p>
+          <p class="text-blue-200 text-sm">Revista premium de gastronomía y turismo ecuatoriano para el mundo.</p>
         </div>
         <div>
-          <p class="font-bold text-sm mb-3 text-ec-yellow uppercase tracking-wide">Explorar</p>
-          <ul class="space-y-2 text-green-200 text-sm">
+          <p class="font-bold text-sm mb-3 text-ec-gold uppercase tracking-wide">Explorar</p>
+          <ul class="space-y-2 text-blue-200 text-sm">
             <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
             <li><a href="recipes.html" class="hover:text-white transition-colors">Todas las recetas</a></li>
             <li><a href="recipes.html?audience=Di%C3%A1spora" class="hover:text-white transition-colors">Recetas Diáspora</a></li>
-            <li><a href="recipes.html?audience=Turista" class="hover:text-white transition-colors">Rutas Turísticas</a></li>
+            <li><a href="menu-semanal.html" class="hover:text-white transition-colors">Menú Semanal</a></li>
             <li><a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a></li>
           </ul>
         </div>
         <div>
-          <p class="font-bold text-sm mb-3 text-ec-yellow uppercase tracking-wide">Legal</p>
-          <ul class="space-y-2 text-green-200 text-sm">
+          <p class="font-bold text-sm mb-3 text-ec-gold uppercase tracking-wide">Legal</p>
+          <ul class="space-y-2 text-blue-200 text-sm">
             <li><a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a></li>
             <li><a href="terms.html" class="hover:text-white transition-colors">Términos de Uso</a></li>
+            <li><a href="nosotros.html" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
             <li><a href="contact.html" class="hover:text-white transition-colors">Contacto</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-green-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-green-300 text-xs">
-        <p>&copy; 2026 Biblioteca de Recetas Ecuatorianas. Hecho con ❤️ para Ecuador y el mundo.</p>
+      <div class="border-t border-blue-700 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-blue-300 text-xs">
+        <p>&copy; 2026 Ecuador a la Carta. Hecho con ❤️ para Ecuador y el mundo.</p>
         <div class="flex items-center gap-2">
-          <span class="h-2 w-6 rounded-full" style="background:#FFD700"></span>
-          <span class="h-2 w-3 rounded-full" style="background:#007A00"></span>
-          <span class="h-2 w-3 rounded-full" style="background:#C8102E"></span>
+          <span class="h-2 w-6 rounded-full" style="background:#FFD100"></span>
+          <span class="h-2 w-3 rounded-full" style="background:#0033A0"></span>
+          <span class="h-2 w-3 rounded-full" style="background:#EF3340"></span>
         </div>
       </div>
     </div>
   </footer>
   <div class="ec-stripe" aria-hidden="true"></div>
 
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function(){
+      document.getElementById('nav-mobile')?.classList.toggle('hidden');
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

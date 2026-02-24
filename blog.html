@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog de Turismo Ecuador — Destinos, Rutas y Cultura | Biblioteca de Recetas</title>
+  <title>Blog de Turismo Ecuador — Destinos, Rutas y Cultura | Ecuador a la Carta</title>
   <meta name="description" content="Descubre los mejores destinos turísticos de Ecuador. Guías de viaje, rutas, festividades, naturaleza y cultura ecuatoriana actualizadas." />
   <meta name="keywords" content="turismo ecuador, destinos ecuador, viaje ecuador, lugares ecuador, guia turistica ecuador, rutas ecuador" />
-  <link rel="canonical" href="https://recetas-ecuador.vercel.app/blog.html" />
-  <meta property="og:title" content="Blog de Turismo Ecuador — Destinos, Rutas y Cultura" />
+  <link rel="canonical" href="https://ecuadoralacarta.com/blog.html" />
+  <meta property="og:title" content="Blog de Turismo Ecuador — Destinos, Rutas y Cultura | Ecuador a la Carta" />
   <meta property="og:description" content="Guías de viaje, rutas turísticas y cultura ecuatoriana actualizadas automáticamente." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
 
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
@@ -21,9 +22,10 @@
       theme: {
         extend: {
           colors: {
+            'ec-gold':  '#FFD100',
+            'ec-blue':  '#0033A0',
+            'ec-red':   '#EF3340',
             'ec-green': '#006400',
-            'ec-yellow': '#FFD700',
-            'ec-red': '#C8102E',
           }
         }
       }
@@ -34,8 +36,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg, #FFD700 0% 50%, #007A00 50% 75%, #C8102E 75% 100%); height: 4px; width: 100%; }
-    .ec-title-bar { display: block; width: 56px; height: 4px; margin-top: 8px; border-radius: 2px; background: linear-gradient(90deg, #FFD700 0% 38%, #007A00 38% 70%, #C8102E 70% 100%); }
+    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
+    .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px;
+      background: linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
+    .ec-card-3d { box-shadow:0 4px 24px rgba(0,51,160,0.10),0 1px 4px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .ec-card-3d:hover { box-shadow:0 8px 40px rgba(0,51,160,0.22),0 4px 16px rgba(239,51,64,0.10);
+      transform: translateY(-8px) scale(1.02); }
+    .nav-dropdown { display:none; position:absolute; top:100%; left:0; min-width:200px;
+      background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,51,160,0.1); z-index:100; padding:8px 0; }
+    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
+    .nav-dropdown a { display:block; padding:8px 16px; font-size:0.875rem; color:#374151;
+      transition: background 0.15s; }
+    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
     .ad-slot {
       min-height: 120px;
       background: rgba(255,255,255,0.6);
@@ -58,32 +72,87 @@
     }
   </style>
 </head>
-<body class="bg-[#FFFBF2] font-sans text-gray-900 antialiased">
+<body class="bg-slate-50 font-sans text-gray-900 antialiased">
 
   <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#006400]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
-        <span class="text-2xl">🇪🇨</span>
-        <span class="hidden sm:inline leading-tight">Biblioteca de<br><span class="text-ec-yellow">Recetas</span></span>
-        <span class="sm:hidden text-ec-yellow">Recetas EC</span>
+        <span class="text-2xl">🍲</span>
+        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
+        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-white/90" aria-label="Navegación principal">
-        <a href="index.html" class="hover:text-ec-yellow transition-colors">Inicio</a>
-        <a href="recipes.html" class="hover:text-ec-yellow transition-colors">Recetas</a>
-        <a href="recipes.html?audience=Di%C3%A1spora" class="hover:text-ec-yellow transition-colors">Diáspora</a>
-        <a href="blog.html" class="text-ec-yellow font-bold" aria-current="page">Blog Turismo</a>
+
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90" aria-label="Navegación principal">
+        <a href="index.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Inicio</a>
+
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span>Regiones ▾</span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?region=Sierra">🏔️ Sierra</a>
+            <a href="recipes.html?region=Costa">🌊 Costa</a>
+            <a href="recipes.html?region=Amazonia">🌿 Amazonía</a>
+            <a href="recipes.html?region=Galapagos">🐢 Galápagos</a>
+          </div>
+        </div>
+
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span>Categorías ▾</span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?category=Sopas">🍲 Sopas</a>
+            <a href="recipes.html?category=Platos%20Fuertes">🍽️ Platos Fuertes</a>
+            <a href="recipes.html?category=Mariscos">🦐 Mariscos</a>
+            <a href="recipes.html?category=Postres">🍮 Postres</a>
+            <a href="recipes.html?category=Bebidas">🥤 Bebidas</a>
+            <a href="recipes.html?category=Desayunos">☕ Desayunos</a>
+            <a href="recipes.html?category=Entradas">🥗 Entradas</a>
+          </div>
+        </div>
+
+        <a href="menu-semanal.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Menú Semanal</a>
+
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span class="text-ec-gold font-bold">Sobre Nosotros ▾</span>
+          <div class="nav-dropdown">
+            <a href="nosotros.html">🏡 Nuestra Historia</a>
+            <a href="blog.html">📰 Blog Turismo</a>
+            <a href="contact.html">✉️ Contacto</a>
+          </div>
+        </div>
       </nav>
-      <a href="index.html" class="bg-white/20 text-white font-semibold text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors border border-white/30">
-        ← Inicio
-      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+          ← Inicio
+        </a>
+        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="nav-mobile" class="hidden md:hidden border-t border-blue-700 py-3 px-4 space-y-1 bg-[#0033A0]">
+      <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
+      <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Todas las Recetas</a>
+      <a href="recipes.html?region=Sierra" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🏔️ Sierra</a>
+      <a href="recipes.html?region=Costa" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🌊 Costa</a>
+      <a href="recipes.html?region=Amazonia" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🌿 Amazonía</a>
+      <a href="recipes.html?region=Galapagos" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🐢 Galápagos</a>
+      <a href="menu-semanal.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📅 Menú Semanal</a>
+      <a href="blog.html" class="block px-3 py-2 text-ec-gold font-bold text-sm" aria-current="page">📰 Blog Turismo</a>
+      <a href="nosotros.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">🏡 Nosotros</a>
+      <a href="contact.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">✉️ Contacto</a>
     </div>
   </header>
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function(){
+      document.getElementById('nav-mobile')?.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- ═══ PAGE HERO ═══ -->
-  <div class="bg-gradient-to-r from-[#1a0000] via-[#5c0010] to-[#8b0015] py-12 px-4 sm:px-6" style="border-bottom: 4px solid #FFD700;">
+  <div class="bg-gradient-to-r from-[#1a0000] via-[#5c0010] to-[#8b0015] py-12 px-4 sm:px-6" style="border-bottom: 4px solid #FFD100;">
     <div class="max-w-7xl mx-auto">
       <p class="text-red-200 text-xs font-bold uppercase tracking-widest mb-1">Noticias & Guías de Viaje</p>
       <h1 class="text-3xl sm:text-4xl font-black text-white mb-2">Blog de Turismo Ecuador 📰</h1>
@@ -100,7 +169,7 @@
           <div class="relative flex-1">
             <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">🔍</span>
             <input id="blog-search" type="search" placeholder="Buscar destinos, rutas, festividades..."
-              class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#C8102E] focus:border-transparent placeholder-gray-400"
+              class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#EF3340] focus:border-transparent placeholder-gray-400"
               aria-label="Buscar artículos" />
           </div>
           <button id="blog-clear"
@@ -111,12 +180,12 @@
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
           <select id="blog-category"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#C8102E] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#EF3340] text-gray-700"
             aria-label="Filtrar por categoría">
             <option value="">Categoría</option>
           </select>
           <select id="blog-region"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#C8102E] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#EF3340] text-gray-700"
             aria-label="Filtrar por región">
             <option value="">Región</option>
           </select>
@@ -173,12 +242,12 @@
           <div class="bg-white rounded-3xl shadow-md p-5 border border-gray-100 mb-5">
             <p class="font-bold text-gray-800 text-sm mb-3">🗂️ Categorías</p>
             <div class="flex flex-col gap-1.5 text-sm">
-              <a href="blog.html?category=Destinos" class="flex items-center gap-2 text-gray-600 hover:text-[#C8102E] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🏙️ <span>Destinos</span></a>
-              <a href="blog.html?category=Rutas" class="flex items-center gap-2 text-gray-600 hover:text-[#C8102E] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🛤️ <span>Rutas</span></a>
-              <a href="blog.html?category=Naturaleza" class="flex items-center gap-2 text-gray-600 hover:text-[#C8102E] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🌿 <span>Naturaleza</span></a>
-              <a href="blog.html?category=Cultura" class="flex items-center gap-2 text-gray-600 hover:text-[#C8102E] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🎭 <span>Cultura</span></a>
-              <a href="blog.html?category=Festividades" class="flex items-center gap-2 text-gray-600 hover:text-[#C8102E] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🎉 <span>Festividades</span></a>
-              <a href="blog.html?category=Aventura" class="flex items-center gap-2 text-gray-600 hover:text-[#C8102E] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🏔️ <span>Aventura</span></a>
+              <a href="blog.html?category=Destinos" class="flex items-center gap-2 text-gray-600 hover:text-[#EF3340] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🏙️ <span>Destinos</span></a>
+              <a href="blog.html?category=Rutas" class="flex items-center gap-2 text-gray-600 hover:text-[#EF3340] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🛤️ <span>Rutas</span></a>
+              <a href="blog.html?category=Naturaleza" class="flex items-center gap-2 text-gray-600 hover:text-[#EF3340] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🌿 <span>Naturaleza</span></a>
+              <a href="blog.html?category=Cultura" class="flex items-center gap-2 text-gray-600 hover:text-[#EF3340] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🎭 <span>Cultura</span></a>
+              <a href="blog.html?category=Festividades" class="flex items-center gap-2 text-gray-600 hover:text-[#EF3340] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🎉 <span>Festividades</span></a>
+              <a href="blog.html?category=Aventura" class="flex items-center gap-2 text-gray-600 hover:text-[#EF3340] hover:bg-red-50 px-3 py-1.5 rounded-xl transition-colors">🏔️ <span>Aventura</span></a>
             </div>
           </div>
 
@@ -186,18 +255,18 @@
           <div class="bg-white rounded-3xl shadow-md p-5 border border-gray-100 mb-5">
             <p class="font-bold text-gray-800 text-sm mb-3">🗺️ Por Región</p>
             <div class="flex flex-col gap-1.5 text-sm">
-              <a href="blog.html?region=Sierra" class="flex items-center gap-2 text-gray-600 hover:text-[#007A00] hover:bg-green-50 px-3 py-1.5 rounded-xl transition-colors">🏔️ <span>Sierra</span></a>
-              <a href="blog.html?region=Costa" class="flex items-center gap-2 text-gray-600 hover:text-[#007A00] hover:bg-green-50 px-3 py-1.5 rounded-xl transition-colors">🌊 <span>Costa</span></a>
-              <a href="blog.html?region=Amazonia" class="flex items-center gap-2 text-gray-600 hover:text-[#007A00] hover:bg-green-50 px-3 py-1.5 rounded-xl transition-colors">🌿 <span>Amazonía</span></a>
-              <a href="blog.html?region=Galapagos" class="flex items-center gap-2 text-gray-600 hover:text-[#007A00] hover:bg-green-50 px-3 py-1.5 rounded-xl transition-colors">🐢 <span>Galápagos</span></a>
+              <a href="blog.html?region=Sierra" class="flex items-center gap-2 text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🏔️ <span>Sierra</span></a>
+              <a href="blog.html?region=Costa" class="flex items-center gap-2 text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🌊 <span>Costa</span></a>
+              <a href="blog.html?region=Amazonia" class="flex items-center gap-2 text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🌿 <span>Amazonía</span></a>
+              <a href="blog.html?region=Galapagos" class="flex items-center gap-2 text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🐢 <span>Galápagos</span></a>
             </div>
           </div>
 
           <!-- Link a recetas -->
-          <div class="bg-gradient-to-br from-[#006400] to-[#004d00] rounded-3xl p-5 text-white">
+          <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-5 text-white">
             <p class="font-bold text-sm mb-2">🍽️ Recetas Ecuatorianas</p>
-            <p class="text-green-200 text-xs mb-3">Descubre los sabores tradicionales del Ecuador</p>
-            <a href="recipes.html" class="inline-block bg-[#FFD700] text-[#004d00] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+            <p class="text-blue-200 text-xs mb-3">Descubre los sabores tradicionales del Ecuador</p>
+            <a href="recipes.html" class="inline-block bg-ec-gold text-[#0033A0] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
               Ver recetas →
             </a>
           </div>
@@ -207,24 +276,46 @@
     </div>
   </div>
 
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="bg-[#0033A0] py-10 px-4 sm:px-6 mt-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+      <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+        <input type="email" name="email" placeholder="tu@email.com" required
+               class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+               aria-label="Email para newsletter">
+        <button type="submit"
+                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+          Suscribirme →
+        </button>
+      </form>
+    </div>
+  </section>
+
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#006400] text-white py-10 px-4 sm:px-6 mt-10">
+  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6 border-t border-blue-700">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">
-          <span class="text-2xl">🇪🇨</span>
-          <span class="font-black">Biblioteca de Recetas Ecuatorianas</span>
+          <span class="text-2xl">🍲</span>
+          <span class="font-black">Ecuador a la Carta</span>
         </div>
-        <nav class="flex flex-wrap items-center justify-center gap-4 text-green-200 text-sm" aria-label="Pie de página">
+        <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm" aria-label="Pie de página">
           <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
           <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+          <a href="menu-semanal.html" class="hover:text-white transition-colors">Menú Semanal</a>
           <a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a>
+          <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
           <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
           <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
           <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
         </nav>
       </div>
-      <p class="text-center text-green-300 text-xs mt-6">&copy; 2026 Biblioteca de Recetas Ecuatorianas</p>
+      <p class="text-center text-blue-300 text-xs mt-6">&copy; 2026 Ecuador a la Carta</p>
     </div>
   </footer>
   <div class="ec-stripe" aria-hidden="true"></div>

@@ -1,5 +1,140 @@
 [
   {
+    "slug": "fritada-ecuatoriana-sierra-oriental",
+    "title": "Fritada Ecuatoriana de la Sierra Oriental Receta Tradicional",
+    "description": "Fritada Ecuatoriana de la Sierra Oriental, un plato típico lleno de sabor con cerdo frito crujiente, acompañado de mote, maíz tostado y llapingachos. Descubre esta receta auténtica de la región andina, ideal para compartir en familia con ingredientes fáciles de encontrar.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "image_url": "https://i.ytimg.com/vi/dS129uXVOQU/hqdefault.jpg",
+    "image_alt": "Plato de fritada ecuatoriana con cerdo dorado, mote y maíz tostado",
+    "ingredients": [
+      "2 kg de carne de cerdo (costilla o lomo, cortada en trozos medianos) - Supermaxi, Megamaxi, TIA - sección carnes",
+      "1 cabeza de ajo (pelada y machacada)",
+      "1 cucharada de comino molido",
+      "1 cucharadita de achiote en polvo - Supermaxi, Megamaxi, TIA - sección especias",
+      "2 cebollas blancas (finamente picadas)",
+      "1 litro de agua",
+      "Sal al gusto",
+      "Pimienta al gusto",
+      "2 tazas de mote cocido - Supermaxi, Megamaxi, TIA - sección granos",
+      "1 taza de maíz tostado (tostón) - Supermaxi, Megamaxi, TIA - sección snacks",
+      "4 papas medianas (para llapingachos)",
+      "Aceite vegetal para freír"
+    ],
+    "instructions": [
+      "En un recipiente grande, mezcla la carne de cerdo con el ajo machacado, comino, achiote, sal y pimienta. Deja marinar por al menos 1 hora en el refrigerador.",
+      "En una olla grande, coloca la carne marinada y las cebollas picadas. Cocina a fuego medio sin añadir agua aún, revolviendo ocasionalmente por 15 minutos para que la carne suelte sus jugos.",
+      "Añade 1 litro de agua, tapa la olla y cocina a fuego bajo durante 1 hora y media o hasta que la carne esté tierna y el agua se haya reducido casi por completo.",
+      "Retira la carne de la olla y resérvala. En una sartén grande, calienta aceite vegetal y fríe los trozos de cerdo a fuego medio-alto hasta que estén dorados y crujientes por fuera (aproximadamente 5-7 minutos por lado).",
+      "Mientras fríes la carne, prepara los acompañamientos. Cocina el mote si no está listo (remojado previamente por 12 horas y hervido por 1 hora).",
+      "Para los llapingachos, hierve las papas, machácalas y forma tortitas. Fríelas en aceite caliente hasta que estén doradas por ambos lados.",
+      "Sirve la fritada caliente acompañada de mote, maíz tostado, llapingachos y una salsa de ají al gusto."
+    ],
+    "tips": [
+      "Para un sabor más intenso, marina la carne desde la noche anterior.",
+      "Si la carne no queda crujiente al freír, asegúrate de que el aceite esté bien caliente antes de añadirla.",
+      "Puedes agregar un poco de chicha de jora al marinado para un toque tradicional de la sierra oriental.",
+      "Acompaña con una ensalada fresca de tomate y cebolla para balancear los sabores."
+    ],
+    "keywords": [
+      "fritada ecuatoriana",
+      "fritada sierra oriental",
+      "receta fritada tradicional",
+      "cerdo frito ecuatoriano",
+      "plato tipico sierra ecuador",
+      "fritada con mote",
+      "receta fritada andina",
+      "comida tipica ecuatoriana",
+      "fritada con llapingachos",
+      "preparar fritada casera",
+      "fritada ecuatoriana ingredientes",
+      "comida andina ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña la fritada ecuatoriana?",
+        "a": "Se acompaña tradicionalmente con mote, maíz tostado, llapingachos, curtido de cebolla y tomate, y salsa de ají."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva la fritada?",
+        "a": "Puede conservarse en el refrigerador por 2-3 días en un recipiente hermético, pero es mejor consumirla recién hecha para disfrutar de su textura crujiente."
+      },
+      {
+        "q": "¿Es difícil de hacer la fritada ecuatoriana?",
+        "a": "No es difícil, pero requiere tiempo para marinar y cocinar la carne. Con paciencia, cualquier persona puede prepararla en casa."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Ambato",
+        "province": "Tungurahua",
+        "region": "Sierra"
+      },
+      {
+        "city": "Riobamba",
+        "province": "Chimborazo",
+        "region": "Sierra"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "Achiote en polvo",
+        "sustituto_usa": "Paprika con una pizca de cúrcuma (disponible en Walmart o Whole Foods)",
+        "sustituto_europa": "Paprika con una pizca de cúrcuma (disponible en Carrefour o Lidl)"
+      },
+      {
+        "original": "Mote",
+        "sustituto_usa": "Hominy (maíz blanco seco, disponible en tiendas latinas o Walmart)",
+        "sustituto_europa": "Hominy o maíz blanco seco (disponible en tiendas latinas o mercados especializados)"
+      }
+    ],
+    "tourism_route": "Descubre la fritada en la ruta gastronómica de la Sierra Oriental, comenzando en Quito (Mercado de Santa Clara, precio promedio $5 por plato), pasando por Ambato durante la Fiesta de la Fruta y las Flores (restaurantes locales, $4-6), y finalizando en Riobamba en comedores tradicionales ($3-5).",
+    "youtube_videos": [
+      {
+        "title": "FRITADA",
+        "videoId": "dS129uXVOQU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=dS129uXVOQU",
+        "embed": "https://www.youtube-nocookie.com/embed/dS129uXVOQU",
+        "uploadDate": "2020-03-13",
+        "description": "GRASA = SABOR #Fritada #KWAEC\n\nCarne de Cerdo……………….. 2 kilos\nGrasa de cerdo………………… ½ kilo\nPasta de ajo…………………….. 30 gramos\nCebolla Blanca………………… 80 gr\nCerveza…………………………… 1 taza\nAgua……………………………….. 1 ½"
+      },
+      {
+        "title": "FRITADA … Sabroso y Festivo!",
+        "videoId": "R8y4UqcAe5A",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=R8y4UqcAe5A",
+        "embed": "https://www.youtube-nocookie.com/embed/R8y4UqcAe5A",
+        "uploadDate": "2021-06-18",
+        "description": "La Fritada de cerdo es un Plato Típico de la sierra del Ecuador que combina sabores como el cerdo cocinado en su propia grasa con acompañantes autóctonos como el mote, choclo , papa y  Maíz Tostado . "
+      },
+      {
+        "title": "Fritada",
+        "videoId": "IS1gxg6hYQk",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=IS1gxg6hYQk",
+        "embed": "https://www.youtube-nocookie.com/embed/IS1gxg6hYQk",
+        "uploadDate": "2023-02-28",
+        "description": "FRITADA DE CERDO como hacer fritada\n FRITADA, CHICHARRON DE CERDO"
+      }
+    ],
+    "_image_source": "youtube_thumbnail",
+    "id": 12,
+    "created_at": "2026-02-24T15:41:37.199Z"
+  },
+  {
     "slug": "chugchucara-receta-tradicional-ecuatoriana",
     "title": "Chugchucara Ecuatoriana Receta Tradicional de Latacunga",
     "description": "Chugchucara, el plato típico de Latacunga, es una deliciosa combinación de fritada de cerdo, mote, papas, tostado, plátano frito y más. Descubre cómo preparar esta receta tradicional ecuatoriana con pasos detallados y consejos auténticos para disfrutar en casa.",

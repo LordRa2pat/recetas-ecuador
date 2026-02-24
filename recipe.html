@@ -236,6 +236,19 @@
           <span>👥</span> <span id="recipe-servings"></span>
         </span>
       </div>
+
+      <!-- Valoración por estrellas -->
+      <div class="mt-4 flex items-center gap-2 flex-wrap">
+        <span class="text-sm text-gray-500 font-medium">Valora esta receta:</span>
+        <div id="star-picker" class="flex gap-0.5" role="group" aria-label="Valoración">
+          <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="1" aria-label="1 estrella">&#9734;</button>
+          <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="2" aria-label="2 estrellas">&#9734;</button>
+          <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="3" aria-label="3 estrellas">&#9734;</button>
+          <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="4" aria-label="4 estrellas">&#9734;</button>
+          <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="5" aria-label="5 estrellas">&#9734;</button>
+        </div>
+        <span id="rating-label" class="text-sm text-gray-500 italic"></span>
+      </div>
     </div>
 
     <!-- Tiempos (grid) -->
@@ -296,8 +309,12 @@
                 <span class="text-gray-300 animate-pulse">Cargando ingredientes...</span>
               </li>
             </ul>
-            <div class="px-5 pb-4 pt-2 border-t-2 border-dashed border-gray-200 text-center">
-              <p class="text-xs text-gray-400">Disponible en Supermaxi · Megamaxi · Tuti</p>
+            <div class="px-5 pb-4 pt-2 border-t-2 border-dashed border-gray-200 text-center space-y-1">
+              <p class="text-xs text-gray-400">Precios de referencia · Feb 2026</p>
+              <div class="flex items-center justify-center gap-3 text-xs">
+                <span class="text-red-500 font-medium">&#9632; Tuti</span>
+                <span class="text-blue-500 font-medium">&#9632; Supermaxi</span>
+              </div>
             </div>
           </div>
 

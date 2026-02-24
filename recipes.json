@@ -1,5 +1,146 @@
 [
   {
+    "slug": "quimbolitos-ecuatorianos-receta-tradicional",
+    "title": "Quimbolitos Ecuatorianos Receta Tradicional de la Sierra",
+    "description": "Quimbolitos ecuatorianos, un postre tradicional de la Sierra, hecho con harina de maíz, queso y pasas, envuelto en hojas de achira. Aprende a prepararlos con esta receta auténtica y fácil, perfecta para disfrutar en familia o compartir en festividades típicas del Ecuador.",
+    "region": "Sierra",
+    "category": "Postres",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "40 min",
+    "total_time": "70 min",
+    "image_url": null,
+    "image_alt": "Quimbolitos ecuatorianos tradicionales en hojas de achira listos para servir",
+    "ingredients": [
+      "1 taza de harina de maíz (Supermaxi, Megamaxi, TIA - sección granos)",
+      "1/2 taza de azúcar",
+      "1/2 taza de mantequilla derretida",
+      "2 huevos",
+      "1 taza de leche",
+      "1 cucharadita de polvo de hornear",
+      "1/2 taza de queso fresco rallado (Supermaxi, Megamaxi - sección lácteos)",
+      "1/4 taza de pasas",
+      "Hojas de achira o papel aluminio para envolver (mercados locales o TIA - sección hierbas)"
+    ],
+    "instructions": [
+      "En un bol grande, mezcla la harina de maíz con el polvo de hornear y el azúcar hasta que estén bien combinados.",
+      "Añade la mantequilla derretida y los huevos, batiendo con una cuchara de madera o batidor hasta obtener una mezcla homogénea.",
+      "Incorpora la leche poco a poco, mezclando constantemente para evitar grumos en la masa.",
+      "Agrega el queso fresco rallado y las pasas, distribuyéndolos de manera uniforme en la mezcla.",
+      "Limpia las hojas de achira (o corta trozos de papel aluminio si no tienes hojas) y coloca una porción de la mezcla en el centro de cada hoja, formando un paquetito rectangular. Dobla bien los bordes para evitar que se salga el contenido.",
+      "Coloca los quimbolitos en una olla vaporera con agua hirviendo y cocina a fuego medio durante 35-40 minutos. Retira con cuidado y deja enfriar ligeramente antes de servir."
+    ],
+    "tips": [
+      "Si no encuentras hojas de achira, el papel aluminio funciona bien, aunque el sabor tradicional se logra con las hojas.",
+      "Puedes añadir un toque de canela en polvo a la mezcla para un aroma extra.",
+      "Sirve los quimbolitos calientes con una taza de chocolate caliente para una experiencia típica de la Sierra.",
+      "Guarda los quimbolitos sobrantes en el refrigerador y recaliéntalos al vapor para mantener su textura."
+    ],
+    "keywords": [
+      "quimbolitos ecuatorianos",
+      "receta quimbolitos tradicionales",
+      "quimbolitos de la sierra",
+      "postre ecuatoriano quimbolitos",
+      "cómo hacer quimbolitos",
+      "quimbolitos con queso y pasas",
+      "receta fácil quimbolitos",
+      "comida típica ecuatoriana sierra",
+      "quimbolitos en hojas de achira",
+      "postres tradicionales ecuador",
+      "quimbolitos receta casera",
+      "comida ecuatoriana dulce"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompañan los quimbolitos?",
+        "a": "Los quimbolitos se suelen acompañar con una taza de chocolate caliente o café, especialmente en la Sierra ecuatoriana."
+      },
+      {
+        "q": "¿Cuánto tiempo se conservan los quimbolitos?",
+        "a": "Se pueden conservar en el refrigerador hasta por 5 días. Recaliéntalos al vapor para mantener su textura suave."
+      },
+      {
+        "q": "¿Es difícil hacer quimbolitos en casa?",
+        "a": "No es muy difícil, aunque requiere práctica para envolverlos correctamente. La receta es sencilla con ingredientes básicos."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Cuenca",
+        "province": "Azuay",
+        "region": "Sierra"
+      },
+      {
+        "city": "Loja",
+        "province": "Loja",
+        "region": "Sierra"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian dessert",
+      "quimbolitos traditional",
+      "ecuadorian food",
+      "sierra cuisine",
+      "sweet corn dish",
+      "achira leaf dessert",
+      "latin american sweets",
+      "traditional ecuadorian pastry"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Hojas de achira",
+        "sustituto_usa": "Papel aluminio o papel pergamino",
+        "sustituto_europa": "Papel aluminio o papel de hornear"
+      },
+      {
+        "original": "Queso fresco",
+        "sustituto_usa": "Ricotta o queso cottage",
+        "sustituto_europa": "Ricotta o queso fresco tipo quark"
+      }
+    ],
+    "tourism_route": "Disfruta de los quimbolitos en un recorrido gastronómico por la Sierra ecuatoriana. En Quito, visita mercados como el de La Floresta (precio aprox. $1 por unidad). En Cuenca, prueba en el Mercado 10 de Agosto, ideal para saborear este postre tradicional junto a otras delicias locales.",
+    "youtube_videos": [
+      {
+        "title": "QUIMBOLITO … Un dulce encantador !",
+        "videoId": "QcIyzmiPO4Y",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=QcIyzmiPO4Y",
+        "embed": "https://www.youtube-nocookie.com/embed/QcIyzmiPO4Y",
+        "uploadDate": "2021-03-04",
+        "description": "Los #Quimbolitos son unos delicados pastelitos que van envueltos en hoja de Achira , dandole un sabor exótico único en el mundo! Debes probarlos y quedaras enamorado para siempre de ellos!! \n\n#Recetad"
+      },
+      {
+        "title": "Como HACER QUIMBOLITOS ECUATORIANOS",
+        "videoId": "FHLPpr0yXmQ",
+        "channel": "Cocinando con Manu",
+        "url": "https://www.youtube.com/watch?v=FHLPpr0yXmQ",
+        "embed": "https://www.youtube-nocookie.com/embed/FHLPpr0yXmQ",
+        "uploadDate": "2019-04-17",
+        "description": "hola amigos..\nesta semana les traugo una receta deliciosa tipico de nuestro pais..\nQuimbolitos Ecuatorianos delicioso rapido y facil.. \ncontinua con nossotros...\n\n\nsi te gusto suscribete subo videos t"
+      },
+      {
+        "title": "HAYACAS DE POLLO",
+        "videoId": "XAq3-dqgRAQ",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=XAq3-dqgRAQ",
+        "embed": "https://www.youtube-nocookie.com/embed/XAq3-dqgRAQ",
+        "uploadDate": "2020-09-18",
+        "description": "Las puedes rellenar con lo que más te guste! #HayacasDePollo #KWAEC\n\nRelleno:\nPollo 300 gr\nMantequilla 50 gr\nCebolla perla 80 gr\n\nMasa:\nHarina de maíz 500 gr\nCaldo de pollo 1,5 L\nMantequilla 100 gr\nAz"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 14,
+    "created_at": "2026-02-24T21:43:31.198Z"
+  },
+  {
     "slug": "mote-pillo-sierra-central-ecuador",
     "title": "Mote Pillo de la Sierra Central Receta Tradicional Ecuatoriana",
     "description": "Mote Pillo de la Sierra Central, un desayuno típico ecuatoriano lleno de sabor. Aprende a preparar esta receta tradicional con mote y huevos, ideal para compartir en familia. Descubre ingredientes, pasos y tips para un resultado auténtico.",

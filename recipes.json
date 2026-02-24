@@ -1,5 +1,149 @@
 [
   {
+    "slug": "mote-pillo-sierra-central-ecuador",
+    "title": "Mote Pillo de la Sierra Central Receta Tradicional Ecuatoriana",
+    "description": "Mote Pillo de la Sierra Central, un desayuno típico ecuatoriano lleno de sabor. Aprende a preparar esta receta tradicional con mote y huevos, ideal para compartir en familia. Descubre ingredientes, pasos y tips para un resultado auténtico.",
+    "region": "Sierra",
+    "category": "Desayunos",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "image_url": null,
+    "image_alt": "Desayuno tradicional ecuatoriano con mote pillo y café",
+    "ingredients": [
+      "2 tazas de mote cocido (Supermaxi, Megamaxi, TIA - sección granos)",
+      "4 huevos grandes",
+      "1 cebolla blanca mediana, finamente picada",
+      "2 dientes de ajo, triturados",
+      "2 cucharadas de mantequilla o aceite vegetal",
+      "1/2 taza de leche entera",
+      "1 cucharadita de achiote en polvo (Supermaxi, TIA - sección especias)",
+      "Sal al gusto",
+      "Pimienta al gusto",
+      "2 cucharadas de cilantro fresco, picado"
+    ],
+    "instructions": [
+      "Si no tienes mote cocido, remoja el mote seco durante la noche y hiérvelo en agua con sal hasta que esté tierno (aproximadamente 1 hora). Escurre y reserva.",
+      "En una sartén grande, calienta la mantequilla o el aceite a fuego medio.",
+      "Añade la cebolla y el ajo, sofríelos hasta que estén transparentes y fragantes, unos 2-3 minutos.",
+      "Incorpora el achiote en polvo y mezcla bien para que el sofrito tome un color rojizo característico.",
+      "Agrega el mote cocido a la sartén, revuelve para que se impregne del sofrito durante 5 minutos.",
+      "Bate los huevos con la leche, sal y pimienta en un bowl aparte, luego viértelos en la sartén con el mote.",
+      "Cocina a fuego bajo, removiendo constantemente hasta que los huevos estén cocidos pero suaves, unos 3-5 minutos.",
+      "Apaga el fuego, espolvorea el cilantro fresco y sirve caliente acompañado de café o jugo."
+    ],
+    "tips": [
+      "Si el mote está muy seco, puedes añadir un poco más de leche durante la cocción para que quede más cremoso.",
+      "Acompaña el mote pillo con aguacate en rodajas o queso fresco para un desayuno completo.",
+      "El achiote puede ser opcional si prefieres un color más natural, aunque es típico en la Sierra Central.",
+      "Puedes preparar el mote con anticipación y guardarlo en la nevera para ahorrar tiempo."
+    ],
+    "keywords": [
+      "mote pillo receta",
+      "mote pillo ecuatoriano",
+      "mote pillo sierra central",
+      "desayuno tipico ecuatoriano",
+      "receta tradicional ecuador",
+      "como hacer mote pillo",
+      "mote con huevo ecuador",
+      "platos tipicos sierra ecuador",
+      "comida ecuatoriana desayuno",
+      "mote pillo facil",
+      "recetas ecuatorianas sierra",
+      "mote pillo quito"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el mote pillo?",
+        "a": "Se acompaña tradicionalmente con café, jugo, aguacate en rodajas o queso fresco para un desayuno balanceado."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el mote pillo?",
+        "a": "Puede conservarse en la nevera por 1-2 días en un recipiente hermético, pero es mejor consumirlo fresco."
+      },
+      {
+        "q": "¿Es difícil hacer mote pillo?",
+        "a": "No, es una receta fácil y rápida, ideal para principiantes en la cocina ecuatoriana."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Latacunga",
+        "province": "Cotopaxi",
+        "region": "Sierra"
+      },
+      {
+        "city": "Ambato",
+        "province": "Tungurahua",
+        "region": "Sierra"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian breakfast",
+      "mote pillo dish",
+      "traditional ecuadorian food",
+      "sierra central cuisine",
+      "mote and eggs",
+      "latin american breakfast",
+      "hominy recipes",
+      "ecuadorian recipes"
+    ],
+    "international_substitutes": [
+      {
+        "original": "mote (maíz pelado)",
+        "sustituto_usa": "hominy enlatado (disponible en supermercados latinos o Walmart)",
+        "sustituto_europa": "hominy enlatado (en tiendas latinas o Amazon)"
+      },
+      {
+        "original": "achiote en polvo",
+        "sustituto_usa": "pimentón dulce con una pizca de cúrcuma",
+        "sustituto_europa": "pimentón dulce con una pizca de cúrcuma"
+      }
+    ],
+    "tourism_route": "Prueba el auténtico mote pillo en los mercados de Quito como el Mercado Central, o en pequeños comedores de Latacunga y Ambato. Precio aproximado: $2-3 por plato. Ideal para un recorrido gastronómico por la Sierra Central.",
+    "youtube_videos": [
+      {
+        "title": "MEGA Motepillo | KWA",
+        "videoId": "Fp3BHzntw-k",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Fp3BHzntw-k",
+        "embed": "https://www.youtube-nocookie.com/embed/Fp3BHzntw-k",
+        "uploadDate": "2023-11-03",
+        "description": "Delicioso y facil de hacer! No te quedes con las ganas de probar este MEGA #Motepillo #KWAEC \n\nEncuentra los ingredientes:\nhttps://recetaskwa.com/2023/11/03/motepillo/\n\nSIGUENOS:\r\nFB: https://tinyurl."
+      },
+      {
+        "title": "MOTE PILLO",
+        "videoId": "cNa5j5wglgA",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=cNa5j5wglgA",
+        "embed": "https://www.youtube-nocookie.com/embed/cNa5j5wglgA",
+        "uploadDate": "2020-03-06",
+        "description": "Fácil, rápido y delicioso con @bonella.ec\n¿Lo han probado?\n#DescubreBonella\n\nEncuentras más recetas aquí:\nhttps://www.youtube.com/user/BonellaEcuador\n\n\nMote cocido………………….. 500 gr\nMargarina……………………. 4"
+      },
+      {
+        "title": "Motepillo FACIL DE HACER",
+        "videoId": "piLGoEy2224",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=piLGoEy2224",
+        "embed": "https://www.youtube-nocookie.com/embed/piLGoEy2224",
+        "uploadDate": "2023-11-06",
+        "description": "No te quedes sin probar este MEGA MOTEPILLO! Etiqueta con quien lo compartirías #kwaec \n\nIngredientes:\nhttps://recetaskwa.com/2023/11/03/motepillo/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @K"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 13,
+    "created_at": "2026-02-24T21:37:35.136Z"
+  },
+  {
     "slug": "fritada-ecuatoriana-sierra-oriental",
     "title": "Fritada Ecuatoriana de la Sierra Oriental Receta Tradicional",
     "description": "Fritada Ecuatoriana de la Sierra Oriental, un plato típico lleno de sabor con cerdo frito crujiente, acompañado de mote, maíz tostado y llapingachos. Descubre esta receta auténtica de la región andina, ideal para compartir en familia con ingredientes fáciles de encontrar.",

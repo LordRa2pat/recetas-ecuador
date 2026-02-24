@@ -1,5 +1,117 @@
 [
   {
+    "slug": "tigrillo-de-platano-verde-y-huevo-costeno",
+    "title": "Tigrillo de Plátano Verde y Huevo Costeño",
+    "description": "Descubre el auténtico tigrillo, un desayuno costeño ecuatoriano irresistible. Hecho con plátano verde machacado, queso fresco y huevo frito, este plato combina texturas cremosas y sabores intensos. Perfecto para empezar el día con energía y tradición.",
+    "region": "Costa",
+    "category": "Desayunos",
+    "difficulty": "Fácil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "20 min",
+    "total_time": "35 min",
+    "image_url": "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=800&q=80",
+    "image_alt": "Desayuno ecuatoriano con plátano verde machacado y huevo frito en un plato rústico",
+    "ingredients": [
+      "2 plátanos verdes grandes",
+      "200 g de queso fresco costeño (o queso blanco)",
+      "4 huevos",
+      "1/2 taza de leche entera",
+      "2 cucharadas de mantequilla",
+      "1 cucharadita de sal (al gusto)",
+      "1/2 cucharadita de pimienta negra",
+      "1 cebolla perla pequeña (finamente picada)",
+      "2 cucharadas de aceite vegetal (para freír los huevos)"
+    ],
+    "instructions": [
+      "Pela los plátanos verdes y córtalos en trozos medianos. Cocínalos en agua con una pizca de sal hasta que estén tiernos (unos 10-12 minutos).",
+      "Una vez cocidos, escúrrelos y machácalos en un recipiente hasta obtener una textura grumosa, similar a un puré rústico.",
+      "En una sartén grande, derrite la mantequilla a fuego medio y sofríe la cebolla picada hasta que esté transparente (2-3 minutos).",
+      "Añade el plátano machacado a la sartén, mezcla bien con la cebolla y agrega la leche poco a poco mientras revuelves para lograr una textura cremosa.",
+      "Incorpora el queso fresco desmenuzado, sal y pimienta. Cocina por 3-5 minutos más, removiendo ocasionalmente, hasta que el queso se integre.",
+      "En otra sartén, fríe los huevos con el aceite vegetal al gusto (soleados o revueltos). Sirve el tigrillo caliente y coloca un huevo encima de cada porción."
+    ],
+    "tips": [
+      "Si prefieres un tigrillo más cremoso, ajusta la cantidad de leche según tu gusto, pero no excedas para evitar que quede líquido.",
+      "Acompaña con un café negro fuerte o un jugo de naranjilla para un desayuno costeño completo.",
+      "Puedes añadir un toque de achiote al sofreír la cebolla para darle un color y sabor más tradicional.",
+      "Si el queso fresco no está disponible, prueba con queso ricotta como sustituto rápido."
+    ],
+    "keywords": [
+      "tigrillo ecuatoriano",
+      "tigrillo de plátano verde",
+      "desayuno costeño ecuatoriano",
+      "receta tigrillo fácil",
+      "plátano verde con huevo",
+      "comida típica costa ecuador",
+      "tigrillo tradicional",
+      "desayuno ecuatoriano recetas"
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diáspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Guayaquil",
+        "province": "Guayas",
+        "region": "Costa"
+      },
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      },
+      {
+        "city": "Portoviejo",
+        "province": "Manabí",
+        "region": "Costa"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "Queso fresco costeño",
+        "sustituto_usa": "Queso ricotta o feta suave",
+        "sustituto_europa": "Queso fresco tipo cottage o feta suave"
+      },
+      {
+        "original": "Plátano verde",
+        "sustituto_usa": "Plátano verde congelado (en supermercados latinos)",
+        "sustituto_europa": "Plátano verde congelado o yuca (como última opción)"
+      }
+    ],
+    "tourism_route": "📍 Guayaquil: Mercado Caraguay. Prueba el tigrillo en los puestos de desayunos tradicionales, un lugar lleno de sabor costeño. Precio: $2-3 USD.",
+    "youtube_videos": [
+      {
+        "title": "TIGRILLO ECUATORIANO CON PLATANO COCIDO🤩😋(RECETA FÁCIL)",
+        "videoId": "TAZllBiDLEo",
+        "channel": "Any Delicias",
+        "url": "https://www.youtube.com/watch?v=TAZllBiDLEo",
+        "embed": "https://www.youtube-nocookie.com/embed/TAZllBiDLEo",
+        "uploadDate": "2021-09-10",
+        "description": "Miren lo que prepare el día de hoy, un delicioso tigrillo ecuatoriano a mi estilo. De seguro les encantara.\n\n🎯Suscribete ¡YA!!!! Es Gratis\n https://youtube.com/channel/UCmbevclu... \n🎯 FACEBOOK https"
+      },
+      {
+        "title": "TIGRILLO",
+        "videoId": "mbZETORPR2c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=mbZETORPR2c",
+        "embed": "https://www.youtube-nocookie.com/embed/mbZETORPR2c",
+        "uploadDate": "2018-10-13",
+        "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nTODOS LOS DERECHOS RESERVADOS."
+      },
+      {
+        "title": "Como preparar TIGRILLO ECUATORIANO  #cocinaconsabor #cocina #recetas",
+        "videoId": "moafVO24Yio",
+        "channel": "La Sazon de Majo Ec",
+        "url": "https://www.youtube.com/watch?v=moafVO24Yio",
+        "embed": "https://www.youtube-nocookie.com/embed/moafVO24Yio",
+        "uploadDate": "2025-05-14",
+        "description": "Si no has probado tigrillo con queso… ¡no sabes lo que te estás perdiendo! 🇪🇨🍌\nUn desayuno clásico de la costa ecuatoriana, lleno de sabor, sencillo y contundente.\nPerfecto para arrancar el día con"
+      }
+    ],
+    "id": 6,
+    "created_at": "2026-02-24T01:01:19.274Z"
+  },
+  {
     "slug": "caldo-de-bolas-ecuatoriano",
     "title": "Caldo de Bolas Ecuatoriano",
     "description": "Disfruta del tradicional caldo de bolas ecuatoriano, una sopa reconfortante de la Sierra, con bolas de plátano verde rellenas de carne y un caldo lleno de sabor con maíz y hierbas frescas. Perfecto para días fríos o reuniones familiares.",

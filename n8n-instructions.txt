@@ -118,6 +118,7 @@ SCHEMA JSON COMPLETO A GENERAR:
     "total_time": "X min",
     "image_url": "https://images.unsplash.com/photo-XXXX?w=800&q=80",
     "image_alt": "Descripcion detallada de la imagen para SEO y accesibilidad",
+    "estimated_cost": "Aprox. $X.XX - $Y.YY USD (para N personas) · Tuti / Supermaxi",
     "ingredients": ["cantidad ingrediente"],
     "instructions": ["Paso 1...", "Paso 2..."],
     "tips": ["Tip 1..."],
@@ -149,6 +150,47 @@ SCHEMA JSON COMPLETO A GENERAR:
     - URLs de Unsplash (images.unsplash.com) con foto del plato
     - Descripciones en image_alt del plato, NO de personas
   ============================================================
+
+  PRECIOS DE REFERENCIA MERCADO ECUATORIANO (Tuti / Supermaxi) — Feb 2026:
+  Usa estos precios para calcular el campo estimated_cost:
+    Cebolla:          $0.80 - $1.20 /kg
+    Ajo:              $2.50 - $4.00 /kg
+    Tomate riñon:     $0.70 - $1.10 /kg
+    Papa:             $0.55 - $0.90 /kg
+    Yuca:             $0.60 - $0.90 /kg
+    Platano verde:    $0.30 - $0.60 /unidad
+    Arroz:            $0.55 - $0.80 /kg
+    Maiz/Choclo:      $0.30 - $0.60 /unidad
+    Frejol:           $1.20 - $1.80 /kg
+    Haba pelada:      $1.50 - $2.50 /kg
+    Arveja:           $1.20 - $1.80 /kg
+    Pechuga de pollo: $3.50 - $5.00 /kg
+    Pollo entero:     $2.80 - $4.00 /kg
+    Carne de res:     $4.50 - $7.00 /kg
+    Cerdo/chuleta:    $3.00 - $5.50 /kg
+    Pescado:          $3.00 - $6.00 /kg
+    Camaron:          $7.00 - $12.00 /kg
+    Bacalao:          $5.00 - $9.00 /kg
+    Mondongo:         $2.50 - $4.00 /kg
+    Leche:            $0.80 - $1.00 /litro
+    Queso fresco:     $2.00 - $4.00 /unidad
+    Huevo:            $0.12 - $0.18 /unidad
+    Mantequilla:      $1.50 - $2.50 /250g
+    Crema de leche:   $1.20 - $2.00 /250ml
+    Achiote:          $0.50 - $1.00 /100g
+    Comino:           $0.40 - $0.80 /50g
+    Cilantro:         $0.30 - $0.60 /atado
+    Pimiento:         $0.80 - $1.20 /kg
+    Zanahoria:        $0.60 - $0.90 /kg
+    Mani:             $1.50 - $2.50 /250g
+    Aceite vegetal:   $1.50 - $2.50 /litro
+    Sal:              $0.50 - $0.80 /kg
+
+  REGLA estimated_cost:
+  - Suma los ingredientes principales usando precios de referencia arriba.
+  - Usar rango min-max para reflejar variacion Tuti vs Supermaxi.
+  - Formato obligatorio: "Aprox. $X.XX - $Y.YY USD (para N personas) · Tuti / Supermaxi"
+  - Ejemplo: "Aprox. $4.50 - $7.20 USD (para 6 personas) · Tuti / Supermaxi"
 
   REGLAS:
   - origin_cities: 2-4 ciudades donde el plato es tipico.

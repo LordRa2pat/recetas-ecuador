@@ -1,0 +1,657 @@
+{
+  "cebolla": {
+    "ingredient": "cebolla",
+    "tuti": {
+      "name": "Papas crema y cebolla tubo",
+      "price": 1.69,
+      "unit": "unidad",
+      "brand": "PATIPAMI",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=cebolla&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.69,
+    "price_max": 1.69,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.8,
+    "reference_price_max": 1.2,
+    "updated": "2026-02-24"
+  },
+  "ajo": {
+    "ingredient": "ajo",
+    "tuti": {
+      "name": "Estropajo inoxidable dorada",
+      "price": 0.39,
+      "unit": "unidad",
+      "brand": "LIMPEX",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=ajo&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.39,
+    "price_max": 0.39,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 2.5,
+    "reference_price_max": 4.0,
+    "updated": "2026-02-24"
+  },
+  "tomate": {
+    "ingredient": "tomate",
+    "tuti": {
+      "name": "Sardina en salsa de tomate",
+      "price": 0.59,
+      "unit": "unidad",
+      "brand": "KING OF THE SEA",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=tomate&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.59,
+    "price_max": 0.59,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.7,
+    "reference_price_max": 1.1,
+    "updated": "2026-02-24"
+  },
+  "papa": {
+    "ingredient": "papa",
+    "tuti": {
+      "name": "Papas congeladas",
+      "price": 1.48,
+      "unit": "unidad",
+      "brand": "VOILÀ",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=papa&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.48,
+    "price_max": 1.48,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.55,
+    "reference_price_max": 0.9,
+    "updated": "2026-02-24"
+  },
+  "yuca": {
+    "ingredient": "yuca",
+    "tuti": {
+      "name": "Rosquitas de almidón de yuca y queso",
+      "price": 0.45,
+      "unit": "unidad",
+      "brand": "INALECSA",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=yuca&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.45,
+    "price_max": 0.45,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.6,
+    "reference_price_max": 0.9,
+    "updated": "2026-02-24"
+  },
+  "platano verde": {
+    "ingredient": "platano verde",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.3,
+    "price_max": 0.6,
+    "unit": "unidad",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.3,
+    "reference_price_max": 0.6,
+    "updated": "2026-02-24"
+  },
+  "arroz": {
+    "ingredient": "arroz",
+    "tuti": {
+      "name": "Arroz blanco",
+      "price": 7.89,
+      "unit": "unidad",
+      "brand": "LA QUINTA BONITA",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=arroz&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 7.89,
+    "price_max": 7.89,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.55,
+    "reference_price_max": 0.8,
+    "updated": "2026-02-24"
+  },
+  "maiz": {
+    "ingredient": "maiz",
+    "tuti": {
+      "name": "Bocaditos de maíz picante",
+      "price": 0.64,
+      "unit": "unidad",
+      "brand": "TAKIS",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=maiz&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.64,
+    "price_max": 0.64,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.6,
+    "reference_price_max": 1.0,
+    "updated": "2026-02-24"
+  },
+  "frejol": {
+    "ingredient": "frejol",
+    "tuti": {
+      "name": "Fréjol panamito",
+      "price": 0.9,
+      "unit": "unidad",
+      "brand": "LA QUINTA BONITA",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=frejol&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.9,
+    "price_max": 0.9,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 1.2,
+    "reference_price_max": 1.8,
+    "updated": "2026-02-24"
+  },
+  "lenteja": {
+    "ingredient": "lenteja",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 1.0,
+    "price_max": 1.5,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 1.0,
+    "reference_price_max": 1.5,
+    "updated": "2026-02-24"
+  },
+  "haba": {
+    "ingredient": "haba",
+    "tuti": {
+      "name": "Papas fritas sabor habanero picante",
+      "price": 1.29,
+      "unit": "unidad",
+      "brand": "PATIPAMI",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=haba&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.29,
+    "price_max": 1.29,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 1.5,
+    "reference_price_max": 2.5,
+    "updated": "2026-02-24"
+  },
+  "arveja": {
+    "ingredient": "arveja",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 1.2,
+    "price_max": 1.8,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 1.2,
+    "reference_price_max": 1.8,
+    "updated": "2026-02-24"
+  },
+  "pechuga de pollo": {
+    "ingredient": "pechuga de pollo",
+    "tuti": {
+      "name": "Pechuga de pollo",
+      "price": 4.15,
+      "unit": "unidad",
+      "brand": "ORO",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=pechuga%20de%20pollo&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 4.15,
+    "price_max": 4.15,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 3.5,
+    "reference_price_max": 5.0,
+    "updated": "2026-02-24"
+  },
+  "carne de res": {
+    "ingredient": "carne de res",
+    "tuti": {
+      "name": "Alimento húmedo perro carne de res",
+      "price": 0.89,
+      "unit": "unidad",
+      "brand": "THEO",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=carne%20de%20res&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.89,
+    "price_max": 0.89,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 4.5,
+    "reference_price_max": 7.0,
+    "updated": "2026-02-24"
+  },
+  "lomo de res": {
+    "ingredient": "lomo de res",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 6.0,
+    "price_max": 9.0,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 6.0,
+    "reference_price_max": 9.0,
+    "updated": "2026-02-24"
+  },
+  "chuleta de cerdo": {
+    "ingredient": "chuleta de cerdo",
+    "tuti": {
+      "name": "Chuleta lomo de cerdo",
+      "price": 3.09,
+      "unit": "unidad",
+      "brand": "SANTO CORTE",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=chuleta%20de%20cerdo&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 3.09,
+    "price_max": 3.09,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 3.5,
+    "reference_price_max": 5.5,
+    "updated": "2026-02-24"
+  },
+  "pescado": {
+    "ingredient": "pescado",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 3.0,
+    "price_max": 6.0,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 3.0,
+    "reference_price_max": 6.0,
+    "updated": "2026-02-24"
+  },
+  "camaron": {
+    "ingredient": "camaron",
+    "tuti": {
+      "name": "Camarón grande",
+      "price": 4.49,
+      "unit": "unidad",
+      "brand": "DEL MUELLE",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=camaron&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 4.49,
+    "price_max": 4.49,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 7.0,
+    "reference_price_max": 12.0,
+    "updated": "2026-02-24"
+  },
+  "leche": {
+    "ingredient": "leche",
+    "tuti": {
+      "name": "Cereal con trigo y leche",
+      "price": 2.69,
+      "unit": "unidad",
+      "brand": "CERELAC",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=leche&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 2.69,
+    "price_max": 2.69,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.8,
+    "reference_price_max": 1.0,
+    "updated": "2026-02-24"
+  },
+  "queso": {
+    "ingredient": "queso",
+    "tuti": {
+      "name": "Galletas rellenas de queso",
+      "price": 2.15,
+      "unit": "unidad",
+      "brand": "DUCALES",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=queso&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 2.15,
+    "price_max": 2.15,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 2.0,
+    "reference_price_max": 4.0,
+    "updated": "2026-02-24"
+  },
+  "huevo": {
+    "ingredient": "huevo",
+    "tuti": {
+      "name": "Huevos de codorniz",
+      "price": 1.49,
+      "unit": "unidad",
+      "brand": "LA QUINTA BONITA",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=huevo&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.49,
+    "price_max": 1.49,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.12,
+    "reference_price_max": 0.18,
+    "updated": "2026-02-24"
+  },
+  "mantequilla": {
+    "ingredient": "mantequilla",
+    "tuti": {
+      "name": "Popcorn mantequilla",
+      "price": 0.35,
+      "unit": "unidad",
+      "brand": "PATIPAMI",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=mantequilla&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.35,
+    "price_max": 0.35,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 1.5,
+    "reference_price_max": 2.5,
+    "updated": "2026-02-24"
+  },
+  "crema de leche": {
+    "ingredient": "crema de leche",
+    "tuti": {
+      "name": "Crema de leche",
+      "price": 1.85,
+      "unit": "unidad",
+      "brand": "EL HACENDADO",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=crema%20de%20leche&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.85,
+    "price_max": 1.85,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 1.2,
+    "reference_price_max": 2.0,
+    "updated": "2026-02-24"
+  },
+  "achiote": {
+    "ingredient": "achiote",
+    "tuti": {
+      "name": "Achiote",
+      "price": 1.19,
+      "unit": "unidad",
+      "brand": "GUTTI",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=achiote&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.19,
+    "price_max": 1.19,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.5,
+    "reference_price_max": 1.0,
+    "updated": "2026-02-24"
+  },
+  "comino": {
+    "ingredient": "comino",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.4,
+    "price_max": 0.8,
+    "unit": "50g",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.4,
+    "reference_price_max": 0.8,
+    "updated": "2026-02-24"
+  },
+  "cilantro": {
+    "ingredient": "cilantro",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.3,
+    "price_max": 0.6,
+    "unit": "atado",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.3,
+    "reference_price_max": 0.6,
+    "updated": "2026-02-24"
+  },
+  "perejil": {
+    "ingredient": "perejil",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.3,
+    "price_max": 0.5,
+    "unit": "atado",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.3,
+    "reference_price_max": 0.5,
+    "updated": "2026-02-24"
+  },
+  "limon": {
+    "ingredient": "limon",
+    "tuti": {
+      "name": "Té negro, sabor a limón",
+      "price": 0.89,
+      "unit": "unidad",
+      "brand": "SOYUMY",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=limon&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.89,
+    "price_max": 0.89,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.1,
+    "reference_price_max": 0.2,
+    "updated": "2026-02-24"
+  },
+  "naranja": {
+    "ingredient": "naranja",
+    "tuti": {
+      "name": "Néctar naranja",
+      "price": 0.29,
+      "unit": "unidad",
+      "brand": "YIUSS",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=naranja&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.29,
+    "price_max": 0.29,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.15,
+    "reference_price_max": 0.25,
+    "updated": "2026-02-24"
+  },
+  "mani": {
+    "ingredient": "mani",
+    "tuti": {
+      "name": "Pasta de maní",
+      "price": 1.25,
+      "unit": "unidad",
+      "brand": "CAJAPE",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=mani&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.25,
+    "price_max": 1.25,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 1.5,
+    "reference_price_max": 2.5,
+    "updated": "2026-02-24"
+  },
+  "bacalao": {
+    "ingredient": "bacalao",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 5.0,
+    "price_max": 9.0,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 5.0,
+    "reference_price_max": 9.0,
+    "updated": "2026-02-24"
+  },
+  "mondongo": {
+    "ingredient": "mondongo",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 2.5,
+    "price_max": 4.0,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 2.5,
+    "reference_price_max": 4.0,
+    "updated": "2026-02-24"
+  },
+  "verde": {
+    "ingredient": "verde",
+    "tuti": {
+      "name": "Aceitunas verdes",
+      "price": 1.18,
+      "unit": "unidad",
+      "brand": "MONTEVERDE",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=verde&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.18,
+    "price_max": 1.18,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.3,
+    "reference_price_max": 0.6,
+    "updated": "2026-02-24"
+  },
+  "choclo": {
+    "ingredient": "choclo",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.3,
+    "price_max": 0.6,
+    "unit": "unidad",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.3,
+    "reference_price_max": 0.6,
+    "updated": "2026-02-24"
+  },
+  "pimiento": {
+    "ingredient": "pimiento",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.8,
+    "price_max": 1.2,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.8,
+    "reference_price_max": 1.2,
+    "updated": "2026-02-24"
+  },
+  "zanahoria": {
+    "ingredient": "zanahoria",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.6,
+    "price_max": 0.9,
+    "unit": "kg",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.6,
+    "reference_price_max": 0.9,
+    "updated": "2026-02-24"
+  },
+  "apio": {
+    "ingredient": "apio",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.5,
+    "price_max": 0.8,
+    "unit": "atado",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.5,
+    "reference_price_max": 0.8,
+    "updated": "2026-02-24"
+  },
+  "caldo de pollo": {
+    "ingredient": "caldo de pollo",
+    "tuti": null,
+    "supermaxi": null,
+    "price_min": 0.3,
+    "price_max": 0.6,
+    "unit": "cubo",
+    "source": "referencia_mercado",
+    "reference_price_min": 0.3,
+    "reference_price_max": 0.6,
+    "updated": "2026-02-24"
+  },
+  "sal": {
+    "ingredient": "sal",
+    "tuti": {
+      "name": "Palitos salados de harina de trigo",
+      "price": 0.99,
+      "unit": "unidad",
+      "brand": "TOSTIQUESO",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=sal&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 0.99,
+    "price_max": 0.99,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 0.5,
+    "reference_price_max": 0.8,
+    "updated": "2026-02-24"
+  },
+  "aceite vegetal": {
+    "ingredient": "aceite vegetal",
+    "tuti": {
+      "name": "Aceite vegetal",
+      "price": 1.75,
+      "unit": "unidad",
+      "brand": "GUTTI",
+      "store": "Tuti",
+      "url": "https://tuti.com.ec/?s=aceite%20vegetal&post_type=product"
+    },
+    "supermaxi": null,
+    "price_min": 1.75,
+    "price_max": 1.75,
+    "unit": "unidad",
+    "source": "scraping",
+    "reference_price_min": 1.5,
+    "reference_price_max": 2.5,
+    "updated": "2026-02-24"
+  }
+}

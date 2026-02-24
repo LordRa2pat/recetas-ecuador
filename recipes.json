@@ -1,5 +1,137 @@
 [
   {
+    "slug": "caldo-de-mondongo-ecuatoriano",
+    "title": "Caldo de Mondongo Ecuatoriano Receta Tradicional",
+    "description": "Caldo de Mondongo Ecuatoriano, una sopa reconfortante y tradicional de la Sierra. Descubre cómo preparar este plato típico con tripa de res, mote y especias auténticas. Perfecto para un almuerzo familiar, sigue nuestra receta paso a paso para un sabor inigualable.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "180 min",
+    "total_time": "210 min",
+    "image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80",
+    "image_alt": "Caldo de mondongo ecuatoriano en un tazón rústico con hierbas frescas",
+    "ingredients": [
+      "1 kg de mondongo (tripa de res, limpio y cortado en trozos pequeños) - disponible en carnicerías locales o Supermaxi",
+      "1 taza de mote (maíz pelado, remojado por 12 horas) - Supermaxi, Megamaxi, TIA - sección granos",
+      "2 papas medianas (peladas y cortadas en cubos)",
+      "1 zanahoria (cortada en rodajas)",
+      "1 cebolla blanca (finamente picada)",
+      "2 dientes de ajo (picados)",
+      "1 ramita de cilantro (para decorar y sabor)",
+      "1 cucharadita de achiote en polvo - Supermaxi, Megamaxi, TIA - sección especias",
+      "1 cucharadita de comino molido",
+      "Sal y pimienta al gusto"
+    ],
+    "instructions": [
+      "Limpia el mondongo a fondo con agua y jugo de limón para eliminar cualquier olor. Luego, hiérvelo en una olla grande con agua por 2 horas o hasta que esté tierno. Escurre y reserva el caldo.",
+      "En una olla grande, sofríe la cebolla y el ajo con una cucharadita de achiote hasta que estén dorados.",
+      "Añade el mondongo cocido al sofrito y mezcla bien para que absorba los sabores, durante unos 5 minutos.",
+      "Incorpora el mote remojado, la zanahoria y las papas. Cubre con el caldo reservado del mondongo (aproximadamente 2 litros).",
+      "Sazona con comino, sal y pimienta. Cocina a fuego medio-bajo por 1 hora, o hasta que el mote y las verduras estén suaves.",
+      "Rectifica la sazón y sirve caliente en tazones, decorando con cilantro fresco picado.",
+      "Acompaña con aguacate y ají si deseas un toque adicional de sabor."
+    ],
+    "tips": [
+      "Para un mondongo más tierno, usa olla a presión y reduce el tiempo de cocción inicial a 40 minutos.",
+      "Si no tienes mote, puedes usar maíz blanco cocido, aunque el sabor variará ligeramente.",
+      "El caldo mejora su sabor si lo dejas reposar unas horas antes de servir.",
+      "Añade un toque de leche al final para un caldo más cremoso, típico de algunas zonas de la Sierra."
+    ],
+    "keywords": [
+      "caldo de mondongo ecuatoriano",
+      "receta caldo de mondongo",
+      "sopa de mondongo tradicional",
+      "caldo de tripa ecuador",
+      "receta sopa ecuatoriana",
+      "platos típicos sierra ecuador",
+      "cómo hacer caldo de mondongo",
+      "sopa de mondongo fácil",
+      "receta tradicional ecuatoriana",
+      "caldo de mondongo quito",
+      "comida típica ecuatoriana",
+      "sopa de tripa receta"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el caldo de mondongo?",
+        "a": "Se suele acompañar con aguacate, ají y pan. En algunas regiones, también con arroz blanco."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el caldo de mondongo?",
+        "a": "Puede conservarse en la nevera hasta 3 días en un recipiente hermético. Recalentar antes de servir."
+      },
+      {
+        "q": "¿Es difícil hacer caldo de mondongo?",
+        "a": "No es complicado, pero requiere tiempo para limpiar y cocer el mondongo. Sigue los pasos y será fácil."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Cuenca",
+        "province": "Azuay",
+        "region": "Sierra"
+      },
+      {
+        "city": "Riobamba",
+        "province": "Chimborazo",
+        "region": "Sierra"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "mote (maíz pelado)",
+        "sustituto_usa": "hominy (maíz procesado, disponible en supermercados latinos)",
+        "sustituto_europa": "maíz blanco cocido o en conserva"
+      },
+      {
+        "original": "achiote en polvo",
+        "sustituto_usa": "mezcla de paprika y cúrcuma (1:1)",
+        "sustituto_europa": "mezcla de paprika y cúrcuma (1:1)"
+      }
+    ],
+    "tourism_route": "Disfruta del auténtico caldo de mondongo en la ruta gastronómica de Quito, visitando mercados como el de San Roque o restaurantes tradicionales en el Centro Histórico. Precio promedio: $3-5 por plato.",
+    "youtube_videos": [
+      {
+        "title": "CALDO DE MONDONGO",
+        "videoId": "dP7sqojco2g",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=dP7sqojco2g",
+        "embed": "https://www.youtube-nocookie.com/embed/dP7sqojco2g",
+        "uploadDate": "2020-06-19",
+        "description": "Un delicioso caldo que todos deben probar! #CaldoDeMondongo #KWAEC\n\nIngredientes:\nMondongo 450 gr\nAgua 3 litros\nCebolla blanca 200 gr\nDientes de ajo 4 unidades\nCilantro 50 gr\nYuca 200 gr\nChoclos 2 uni"
+      },
+      {
+        "title": "Guatita | KWA",
+        "videoId": "0TkRzV5mZtE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=0TkRzV5mZtE",
+        "embed": "https://www.youtube-nocookie.com/embed/0TkRzV5mZtE",
+        "uploadDate": "2022-01-28",
+        "description": "Guatita (4 Porciones)\n\nPara el caldo:\n1.5 Libras de Mondongo\n1/2 Atado de Perejil \n1/2 Atado Cilantro \n5 Dientes de Ajo \n3 litros de Agua\nSal - Orégano Seco \n\nPara la Guatita:\n3 Cucharadas de Achiote "
+      },
+      {
+        "title": "Caldo de Mondongo | Molinari tv Cocina Fácil",
+        "videoId": "QEcoUQvRXjc",
+        "channel": "Molinaritv Tv",
+        "url": "https://www.youtube.com/watch?v=QEcoUQvRXjc",
+        "embed": "https://www.youtube-nocookie.com/embed/QEcoUQvRXjc",
+        "uploadDate": "2017-03-28",
+        "description": "caldo de mondongo es uno de los platos mas populares  que hay en Ecuador. Se toma un poco de tiempo en hacerla, pero ya verás lo fácil y delicioso que es.\n\nsuscribete\ninstagram:  https://www.instagram"
+      }
+    ],
+    "id": 8,
+    "created_at": "2026-02-24T05:01:57.588Z"
+  },
+  {
     "slug": "maito-de-pescado-ecuatoriano",
     "title": "Maito de Pescado",
     "description": "Descubre el auténtico Maito de Pescado, un plato tradicional de la Amazonía ecuatoriana. Pescado fresco envuelto en hojas de bijao, cocido a la brasa con especias y hierbas que resaltan su sabor único. ¡Una experiencia gastronómica de la selva en tu mesa!",

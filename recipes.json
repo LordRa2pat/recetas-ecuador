@@ -1,5 +1,140 @@
 [
   {
+    "slug": "llapingachos-ecuatorianos-receta",
+    "title": "Llapingachos Ecuatorianos Receta Tradicional de la Sierra",
+    "description": "Llapingachos ecuatorianos, un plato típico de la Sierra, son tortitas de papa rellenas de queso, perfectas como acompañamiento o plato principal. Descubre cómo preparar esta receta tradicional con pasos fáciles y consejos auténticos para un sabor único.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "30 min",
+    "total_time": "60 min",
+    "image_url": null,
+    "image_alt": "Deliciosos llapingachos ecuatorianos de papa y queso en un plato tradicional",
+    "ingredients": [
+      "1 kg de papas (Supermaxi, Megamaxi, TIA - sección verduras)",
+      "200 g de queso fresco o mozzarella rallado",
+      "1 cebolla blanca finamente picada",
+      "2 cucharadas de aceite de achiote (Supermaxi, Megamaxi - sección condimentos)",
+      "1 huevo",
+      "1/2 taza de harina de maíz o maicena (para consistencia)",
+      "Sal al gusto",
+      "Pimienta al gusto",
+      "Aceite vegetal para freír"
+    ],
+    "instructions": [
+      "Pela las papas y córtalas en trozos medianos. Cocínalas en agua con sal hasta que estén suaves, aproximadamente 20 minutos.",
+      "Escurre las papas y machácalas en un recipiente grande hasta obtener un puré sin grumos. Deja enfriar ligeramente.",
+      "En una sartén pequeña, calienta el aceite de achiote y sofríe la cebolla picada hasta que esté transparente. Añade esta mezcla al puré de papa.",
+      "Incorpora el huevo, sal y pimienta al puré. Mezcla bien y ajusta la consistencia con harina de maíz si es necesario.",
+      "Toma porciones de la masa, forma bolas y aplánalas. Coloca un poco de queso rallado en el centro y cierra formando una tortita redonda u ovalada.",
+      "Calienta aceite vegetal en una sartén a fuego medio. Fríe los llapingachos por ambos lados hasta que estén dorados, unos 3-4 minutos por lado.",
+      "Retira del fuego y colócalos sobre papel absorbente para eliminar el exceso de aceite. Sirve caliente."
+    ],
+    "tips": [
+      "Si la masa está muy pegajosa, enfríala en el refrigerador por 15 minutos antes de formar las tortitas.",
+      "Acompaña los llapingachos con salsa de maní, chorizo, huevo frito y ensalada para un plato completo.",
+      "Usa papas amarillas o cholas para un sabor más auténtico y una textura ideal.",
+      "Puedes hornearlos en lugar de freírlos para una versión más ligera; colócalos a 200°C por 20 minutos."
+    ],
+    "keywords": [
+      "llapingachos ecuatorianos",
+      "receta llapingachos",
+      "llapingachos de papa",
+      "comida típica sierra ecuador",
+      "tortitas de papa ecuatorianas",
+      "llapingachos con queso",
+      "plato tradicional ecuatoriano",
+      "cómo hacer llapingachos",
+      "receta ecuatoriana fácil",
+      "comida ecuatoriana sierra",
+      "llapingachos receta auténtica"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompañan los llapingachos?",
+        "a": "Se acompañan tradicionalmente con salsa de maní, chorizo, huevo frito y una ensalada fresca de tomate y cebolla."
+      },
+      {
+        "q": "¿Cuánto tiempo se conservan los llapingachos?",
+        "a": "Pueden conservarse en el refrigerador por 2-3 días en un recipiente hermético. Recaliéntalos en sartén para mantener su textura."
+      },
+      {
+        "q": "¿Es difícil hacer llapingachos?",
+        "a": "No es muy difícil, pero requiere paciencia para formar las tortitas y evitar que se rompan al freír."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Ambato",
+        "province": "Tungurahua",
+        "region": "Sierra"
+      },
+      {
+        "city": "Riobamba",
+        "province": "Chimborazo",
+        "region": "Sierra"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian food",
+      "traditional dish",
+      "llapingachos",
+      "potato cakes",
+      "cheese stuffed potatoes",
+      "ecuadorian cuisine",
+      "sierra food"
+    ],
+    "international_substitutes": [
+      {
+        "original": "aceite de achiote",
+        "sustituto_usa": "mezcla de aceite vegetal con pimentón en polvo",
+        "sustituto_europa": "mezcla de aceite vegetal con cúrcuma y pimentón"
+      }
+    ],
+    "tourism_route": "Prueba los llapingachos en la ruta gastronómica de la Sierra, especialmente en mercados de Quito como el Mercado de Santa Clara, o en restaurantes tradicionales de Ambato durante la Fiesta de la Fruta y de las Flores. Precio promedio: $3-5 por plato.",
+    "youtube_videos": [
+      {
+        "title": "LLAPINGACHO",
+        "videoId": "S9HdmW8FHFU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=S9HdmW8FHFU",
+        "embed": "https://www.youtube-nocookie.com/embed/S9HdmW8FHFU",
+        "uploadDate": "2018-09-07",
+        "description": "Después de ver esta receta, la dieta tiene que esperar.\n\nSIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nJoakim Karud - Love mode\nhttp://twitt"
+      },
+      {
+        "title": "Llapingachos de papa con SALSA DE MANÍ | KWA",
+        "videoId": "Un7WxYDq_4c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Un7WxYDq_4c",
+        "embed": "https://www.youtube-nocookie.com/embed/Un7WxYDq_4c",
+        "uploadDate": "2024-06-14",
+        "description": "Aprende a preparar estos deliciosos #Llapingachos de papa de una manera super fácil y rápida. Acompáñalos con una #SalsaDeManí #Deliciosa #KWAEC\n\nEncuentra todos los ingredientes aquí:\nhttps://recetas"
+      },
+      {
+        "title": "LLAPINGACHOS O TORTILLAS DE PAPA (ECUADOR)",
+        "videoId": "iaM2sdXW2Ik",
+        "channel": "Cocina con Sabor a Ecuador 🇪🇨 ",
+        "url": "https://www.youtube.com/watch?v=iaM2sdXW2Ik",
+        "embed": "https://www.youtube-nocookie.com/embed/iaM2sdXW2Ik",
+        "uploadDate": "2018-06-26",
+        "description": "MÚSICA INTRO: \nLife of Riley de Kevin MacLeod está sujeta a una licencia de Creative Commons Attribution (https://creativecommons.org/licenses/by/4.0/)\nFuente: http://incompetech.com/music/royalty-fre"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 16,
+    "created_at": "2026-02-24T22:17:54.051Z"
+  },
+  {
     "slug": "seco-de-chivo-manabita-receta",
     "title": "Seco de Chivo Manabita Receta Tradicional Ecuatoriana",
     "description": "Seco de Chivo Manabita, un plato emblemático de la costa ecuatoriana, especialmente de Manabí. Descubre esta receta tradicional con sabores intensos de chicha de jora y especias, ideal para compartir en familia. Aprende a prepararlo paso a paso con ingredientes auténticos.",

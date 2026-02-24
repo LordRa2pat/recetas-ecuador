@@ -1,5 +1,148 @@
 [
   {
+    "slug": "fanesca-de-la-costa-ecuatoriana-receta",
+    "title": "Fanesca de la Costa Ecuatoriana Receta Tradicional",
+    "description": "Fanesca de la Costa Ecuatoriana, un plato tradicional de Semana Santa lleno de sabor y simbolismo. Descubre cómo preparar esta sopa única con granos, pescado y especias típicas de la región costera de Ecuador. Perfecta para compartir en familia.",
+    "region": "Costa",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "8 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "image_url": "https://i.ytimg.com/vi/WSlDzsVy2io/hqdefault.jpg",
+    "image_alt": "Sopa tradicional ecuatoriana Fanesca de la Costa en un plato blanco con ingredientes frescos",
+    "ingredients": [
+      "1 taza de habas peladas (Supermaxi, Megamaxi, TIA - sección granos)",
+      "1 taza de chochos (Supermaxi, Megamaxi, TIA - sección granos)",
+      "1 taza de lentejas cocidas",
+      "1 taza de maíz blanco (mote) cocido (Supermaxi, TIA - sección granos)",
+      "1 taza de garbanzos cocidos",
+      "1/2 taza de arroz cocido",
+      "1 kg de bacalao seco o pescado blanco fresco",
+      "2 tazas de leche",
+      "1 taza de crema de leche",
+      "1 cebolla blanca finamente picada",
+      "3 dientes de ajo triturados",
+      "2 cucharadas de pasta de achiote (Supermaxi, TIA - sección condimentos)",
+      "1/2 taza de maní tostado y molido",
+      "1 ramita de hierbabuena",
+      "Sal y pimienta al gusto"
+    ],
+    "instructions": [
+      "Remoja el bacalao seco en agua fría durante 24 horas, cambiando el agua cada 6 horas para desalarlo. Si usas pescado fresco, lava bien y corta en trozos medianos.",
+      "Cocina por separado las habas, chochos, lentejas, maíz y garbanzos en agua con un poco de sal hasta que estén tiernos. Reserva el agua de cocción de cada grano.",
+      "En una olla grande, sofríe la cebolla y el ajo con la pasta de achiote hasta que estén dorados y fragantes.",
+      "Añade el maní molido y mezcla bien. Incorpora poco a poco la leche y la crema, removiendo para evitar grumos.",
+      "Agrega los granos cocidos y un poco del agua de cocción reservada para ajustar la consistencia. Cocina a fuego bajo por 20 minutos, revolviendo ocasionalmente.",
+      "Incorpora el bacalao o pescado fresco y cocina por 10-15 minutos más hasta que el pescado esté cocido. Ajusta la sal y pimienta al gusto.",
+      "Antes de servir, añade la hierbabuena y deja reposar por 5 minutos. Sirve caliente acompañado de decoraciones tradicionales como huevo duro y plátano frito si deseas."
+    ],
+    "tips": [
+      "Si no tienes tiempo para remojar el bacalao, puedes hervirlo varias veces cambiando el agua para acelerar el desalado.",
+      "Ajusta la cantidad de leche y crema según prefieras una fanesca más espesa o líquida.",
+      "En la Costa, se suele decorar con plátano maduro frito o empanaditas de queso para un toque especial.",
+      "Preparar los granos con anticipación reduce significativamente el tiempo de cocción el día de la preparación."
+    ],
+    "keywords": [
+      "fanesca costa ecuatoriana",
+      "receta fanesca tradicional",
+      "fanesca semana santa",
+      "sopa fanesca ecuador",
+      "fanesca con pescado",
+      "plato tipico costa ecuador",
+      "receta fanesca facil",
+      "como hacer fanesca costena",
+      "ingredientes fanesca ecuatoriana",
+      "fanesca receta paso a paso",
+      "comida tradicional ecuatoriana",
+      "sopa de granos ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña la fanesca?",
+        "a": "La fanesca de la Costa se acompaña tradicionalmente con plátano maduro frito, empanaditas de queso o huevo duro como decoración."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva la fanesca?",
+        "a": "Se puede conservar en el refrigerador por 2-3 días en un recipiente hermético, pero es mejor consumirla fresca para disfrutar su sabor."
+      },
+      {
+        "q": "¿Es difícil hacer la fanesca?",
+        "a": "No es muy difícil, pero requiere tiempo para preparar los granos y el pescado. Con organización, es un plato accesible."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Guayaquil",
+        "province": "Guayas",
+        "region": "Costa"
+      },
+      {
+        "city": "Manta",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "bacalao seco",
+        "sustituto_usa": "cod fish (available at Walmart or seafood markets)",
+        "sustituto_europa": "dried cod or fresh white fish (available at local fish markets)"
+      },
+      {
+        "original": "chochos",
+        "sustituto_usa": "lupini beans (available at Latin stores or Amazon)",
+        "sustituto_europa": "lupin beans (available at Mediterranean stores)"
+      },
+      {
+        "original": "pasta de achiote",
+        "sustituto_usa": "annatto powder mixed with oil (available at Latin markets)",
+        "sustituto_europa": "annatto seeds or powder (available at specialty stores)"
+      }
+    ],
+    "tourism_route": "Descubre la Fanesca de la Costa en Guayaquil, visitando mercados como el Mercado Caraguay para probar versiones auténticas por $5-8 por plato. En Manta, restaurantes familiares ofrecen fanesca en Semana Santa por $6-10. Termina en Esmeraldas, donde el toque local incluye más pescado fresco, disponible en comedores por $5-7.",
+    "youtube_videos": [
+      {
+        "title": "La Fanesca de SEMANA SANTA | KWA",
+        "videoId": "WSlDzsVy2io",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=WSlDzsVy2io",
+        "embed": "https://www.youtube-nocookie.com/embed/WSlDzsVy2io",
+        "uploadDate": "2022-04-13",
+        "description": "No comerla es imperdonable #Fanesca #KWAEC\n\nIngredientes: \nPescado Salado 500 gr\n\nAchiote 4 cucharadas\nPasta de Ajo  3 cucharadas \nCebolla Blanca 1 taza\nCebolla Colorada  1 taza\nPimiento Verde   1/2 t"
+      },
+      {
+        "title": "Fanesca Ecuatoriana | Receta Fácil y Tradicional | KWA",
+        "videoId": "d7YSNovvwwM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=d7YSNovvwwM",
+        "embed": "https://www.youtube-nocookie.com/embed/d7YSNovvwwM",
+        "uploadDate": "2025-04-11",
+        "description": "🍲 Aprende a preparar #Fanesca ecuatoriana de forma fácil y deliciosa. Una receta tradicional de #SemanaSanta con todos los ingredientes y pasos que necesitas. ¡Ideal para compartir en familia!\n\nEncue"
+      },
+      {
+        "title": "La Fanesca …Sopa Divina!",
+        "videoId": "xY1gS8rj_-o",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=xY1gS8rj_-o",
+        "embed": "https://www.youtube-nocookie.com/embed/xY1gS8rj_-o",
+        "uploadDate": "2023-03-23",
+        "description": "La Fanesca, es un verdadero ícono de las sopas del Ecuador , se la realiza por la temporada de #SemanaSanta y #Cuaresma celebraciones religiosas que ahora son parte de nuestra cultura popular. Compart"
+      }
+    ],
+    "_image_source": "youtube_thumbnail",
+    "id": 10,
+    "created_at": "2026-02-24T14:36:19.246Z"
+  },
+  {
     "slug": "hornado-quiteno-receta-tradicional",
     "title": "Hornado Quiteño Receta Tradicional Ecuatoriana",
     "description": "Hornado Quiteño, el plato icónico de la Sierra ecuatoriana, es un cerdo asado jugoso y crujiente, sazonado con especias tradicionales. Descubre cómo preparar esta receta auténtica en casa con pasos detallados y consejos para lograr el sabor de Quito.",

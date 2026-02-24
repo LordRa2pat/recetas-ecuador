@@ -20,3 +20,7 @@ _posts_commit.json
 _hf_req.json
 *.bak
 gen_images_local.py
+gen_recipes_images.py
+n8n_deploy_all.py
+_n8n_put_*.json
+_n8n_post.json

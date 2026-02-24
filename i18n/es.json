@@ -1,0 +1,44 @@
+{
+  "nav_home": "Inicio",
+  "nav_regions": "Regiones ▾",
+  "nav_categories": "Categorías ▾",
+  "nav_weekly": "Menú Semanal",
+  "nav_about": "Sobre Nosotros ▾",
+  "nav_btn_recipes": "Ver Recetas",
+  "nav_mobile_recipes": "Todas las Recetas",
+  "nav_mobile_weekly": "📅 Menú Semanal",
+  "nav_mobile_blog": "📰 Blog Turismo",
+  "nav_mobile_about": "🏡 Nosotros",
+  "nav_mobile_contact": "✉️ Contacto",
+
+  "search_placeholder_index": "Busca recetas, ingredientes o regiones...",
+  "search_placeholder_listing": "Buscar recetas...",
+  "search_placeholder_blog": "Buscar artículos...",
+
+  "filter_all_regions": "Todas las regiones",
+  "filter_all_difficulties": "Todas las dificultades",
+  "filter_all_categories": "Todas las categorías",
+  "filter_all_audiences": "Todos los públicos",
+  "filter_sort_recent": "Más recientes",
+  "filter_sort_alpha": "A-Z",
+  "filter_sort_fast": "Más rápidas",
+  "filter_clear": "Limpiar filtros",
+
+  "btn_regen_menu": "🔀 Regenerar Menú",
+  "btn_subscribe": "Suscribirme →",
+  "newsletter_title": "📬 Recibe el Menú Semanal por Email",
+  "newsletter_subtitle": "Cada lunes te enviamos 7 recetas ecuatorianas seleccionadas para toda la semana.",
+  "newsletter_cta": "Gratis · Sin spam",
+
+  "footer_copyright": "© 2026 Ecuador a la Carta",
+  "footer_privacy": "Privacidad",
+  "footer_terms": "Términos",
+  "footer_contact": "Contacto",
+  "footer_blog": "Blog Turismo",
+
+  "error_recipes": "No pudimos cargar las recetas. Revisa tu conexión.",
+  "error_posts": "No pudimos cargar los artículos. Revisa tu conexión.",
+  "error_retry": "Intentar de nuevo",
+
+  "lang_switch": "EN"
+}

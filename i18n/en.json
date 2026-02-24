@@ -1,0 +1,44 @@
+{
+  "nav_home": "Home",
+  "nav_regions": "Regions ▾",
+  "nav_categories": "Categories ▾",
+  "nav_weekly": "Weekly Menu",
+  "nav_about": "About Us ▾",
+  "nav_btn_recipes": "See Recipes",
+  "nav_mobile_recipes": "All Recipes",
+  "nav_mobile_weekly": "📅 Weekly Menu",
+  "nav_mobile_blog": "📰 Tourism Blog",
+  "nav_mobile_about": "🏡 About Us",
+  "nav_mobile_contact": "✉️ Contact",
+
+  "search_placeholder_index": "Search recipes, ingredients or regions...",
+  "search_placeholder_listing": "Search recipes...",
+  "search_placeholder_blog": "Search articles...",
+
+  "filter_all_regions": "All regions",
+  "filter_all_difficulties": "All difficulties",
+  "filter_all_categories": "All categories",
+  "filter_all_audiences": "All audiences",
+  "filter_sort_recent": "Most recent",
+  "filter_sort_alpha": "A-Z",
+  "filter_sort_fast": "Fastest to cook",
+  "filter_clear": "Clear filters",
+
+  "btn_regen_menu": "🔀 Regenerate Menu",
+  "btn_subscribe": "Subscribe →",
+  "newsletter_title": "📬 Get the Weekly Menu by Email",
+  "newsletter_subtitle": "Every Monday we send you 7 selected Ecuadorian recipes for the whole week.",
+  "newsletter_cta": "Free · No spam",
+
+  "footer_copyright": "© 2026 Ecuador a la Carta",
+  "footer_privacy": "Privacy",
+  "footer_terms": "Terms",
+  "footer_contact": "Contact",
+  "footer_blog": "Tourism Blog",
+
+  "error_recipes": "We couldn't load the recipes. Check your connection.",
+  "error_posts": "We couldn't load the articles. Check your connection.",
+  "error_retry": "Try again",
+
+  "lang_switch": "ES"
+}

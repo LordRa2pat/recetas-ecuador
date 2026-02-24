@@ -1,5 +1,140 @@
 [
   {
+    "slug": "hornado-quiteno-receta-tradicional",
+    "title": "Hornado Quiteño Receta Tradicional Ecuatoriana",
+    "description": "Hornado Quiteño, el plato icónico de la Sierra ecuatoriana, es un cerdo asado jugoso y crujiente, sazonado con especias tradicionales. Descubre cómo preparar esta receta auténtica en casa con pasos detallados y consejos para lograr el sabor de Quito.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "6-8 personas",
+    "prep_time": "30 min",
+    "cook_time": "240 min",
+    "total_time": "270 min",
+    "image_url": "https://i.ytimg.com/vi/G-BVfbHNWMI/hqdefault.jpg",
+    "image_alt": "Plato de hornado quiteño con cerdo asado crujiente, papas y ensalada, comida tradicional ecuatoriana",
+    "ingredients": [
+      "1 pierna de cerdo (4-5 kg, disponible en Supermaxi o mercados locales)",
+      "10 dientes de ajo",
+      "2 cucharadas de comino molido",
+      "2 cucharadas de achiote en pasta (Supermaxi, Megamaxi, TIA - sección especias)",
+      "1 taza de cerveza clara",
+      "2 cucharadas de orégano seco",
+      "1 cucharada de pimienta negra molida",
+      "2 cucharadas de sal gruesa",
+      "1/2 taza de jugo de limón",
+      "4 papas grandes para acompañar",
+      "2 tazas de mote cocido para acompañar"
+    ],
+    "instructions": [
+      "En un mortero o licuadora, triturar el ajo, comino, achiote, orégano, pimienta y sal hasta formar una pasta uniforme.",
+      "Agregar el jugo de limón y la cerveza a la mezcla de especias, removiendo bien para integrar todos los sabores.",
+      "Limpiar la pierna de cerdo, hacer cortes profundos en la carne y untar la marinada por todos lados, asegurándose de que penetre en los cortes.",
+      "Dejar marinar el cerdo en el refrigerador durante al menos 12 horas, idealmente 24 horas, para intensificar el sabor.",
+      "Precalentar el horno a 180°C. Colocar el cerdo en una bandeja para hornear con la piel hacia arriba y cubrir con papel aluminio.",
+      "Hornear durante 3 horas, retirando el papel aluminio en la última hora para dorar la piel. Rociar con los jugos cada 30 minutos.",
+      "Cocinar las papas en agua con sal hasta que estén tiernas, y calentar el mote cocido como acompañamiento.",
+      "Retirar el cerdo del horno, dejar reposar 10 minutos, cortar en porciones y servir caliente con papas, mote y ensalada."
+    ],
+    "tips": [
+      "Para una piel más crujiente, sube la temperatura del horno a 220°C en los últimos 15 minutos.",
+      "Usa una bandeja con rejilla para que la grasa escurra y no remoje la carne.",
+      "Si no tienes achiote, puedes mezclarlo con paprika para un color similar, aunque el sabor será ligeramente diferente.",
+      "Acompaña con llapingachos y curtido de cebolla para un toque tradicional quiteño."
+    ],
+    "keywords": [
+      "hornado quiteño",
+      "receta hornado ecuatoriano",
+      "hornado tradicional",
+      "cerdo asado ecuatoriano",
+      "comida típica de Quito",
+      "hornado receta fácil",
+      "platos típicos Sierra Ecuador",
+      "cómo hacer hornado",
+      "hornado de cerdo quiteño",
+      "receta tradicional ecuatoriana",
+      "comida ecuatoriana Sierra",
+      "hornado casero"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el hornado quiteño?",
+        "a": "Se acompaña tradicionalmente con papas cocidas, mote, llapingachos, ensalada fresca y curtido de cebolla."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el hornado?",
+        "a": "En el refrigerador, puede conservarse hasta 5 días en un recipiente hermético. Recalentar en el horno para mantener la textura."
+      },
+      {
+        "q": "¿Es difícil hacer hornado en casa?",
+        "a": "No es muy difícil, pero requiere tiempo para marinar y hornear. Con paciencia, cualquiera puede lograr un buen resultado."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Quito",
+        "province": "Pichincha",
+        "region": "Sierra"
+      },
+      {
+        "city": "Latacunga",
+        "province": "Cotopaxi",
+        "region": "Sierra"
+      },
+      {
+        "city": "Riobamba",
+        "province": "Chimborazo",
+        "region": "Sierra"
+      }
+    ],
+    "international_substitutes": [
+      {
+        "original": "achiote en pasta",
+        "sustituto_usa": "mezcla de paprika y cúrcuma (1:1)",
+        "sustituto_europa": "mezcla de paprika y cúrcuma (1:1)"
+      },
+      {
+        "original": "mote",
+        "sustituto_usa": "maíz blanco cocido o garbanzos",
+        "sustituto_europa": "maíz blanco cocido o garbanzos"
+      }
+    ],
+    "tourism_route": "Disfruta del auténtico hornado quiteño en el mercado de San Francisco en Quito, Pichincha, donde los precios por plato oscilan entre $3 y $5. También puedes probarlo en ferias gastronómicas de Latacunga durante la Mama Negra, o en Riobamba en restaurantes tradicionales de la ciudad.",
+    "youtube_videos": [
+      {
+        "title": "Hornado Ecuatoriano",
+        "videoId": "G-BVfbHNWMI",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=G-BVfbHNWMI",
+        "embed": "https://www.youtube-nocookie.com/embed/G-BVfbHNWMI",
+        "uploadDate": "2024-01-30",
+        "description": "Hoy vamos a preparar Hornado Ecuatoriano delicioso con un sabor incomparable"
+      },
+      {
+        "title": "PIERNA DE CHANCHO",
+        "videoId": "02X2sBA-eHI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=02X2sBA-eHI",
+        "embed": "https://www.youtube-nocookie.com/embed/02X2sBA-eHI",
+        "uploadDate": "2018-12-21",
+        "description": "INGREDIENTES:\n\nPierna de cerdo\nPasta de ajo .......... 1 taza\nComino molido ..... 3/4 taza\nSal gruesa. ............. 3/4 taza\nPimienta molida .... 1 cucharada\nOrégano molido ..... 1 cucharada\nCerveza "
+      },
+      {
+        "title": "HORNADO ECUATORIANO  Crujiente y Jugosito",
+        "videoId": "wWzDb8uB6wo",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=wWzDb8uB6wo",
+        "embed": "https://www.youtube-nocookie.com/embed/wWzDb8uB6wo",
+        "uploadDate": "2021-04-01",
+        "description": "HORNADO ECUATORIANO\nCerdo al horno\ncerdo horneado"
+      }
+    ],
+    "_image_source": "youtube_thumbnail",
+    "id": 9,
+    "created_at": "2026-02-24T05:39:04.309Z"
+  },
+  {
     "slug": "caldo-de-mondongo-ecuatoriano",
     "title": "Caldo de Mondongo Ecuatoriano Receta Tradicional",
     "description": "Caldo de Mondongo Ecuatoriano, una sopa reconfortante y tradicional de la Sierra. Descubre cómo preparar este plato típico con tripa de res, mote y especias auténticas. Perfecto para un almuerzo familiar, sigue nuestra receta paso a paso para un sabor inigualable.",

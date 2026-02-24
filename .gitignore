@@ -12,4 +12,8 @@ scrape_prices.py
 update_costs.py
 deploy_imagen.py
 deploy_imagen_turismo.py
+fix_posts_images.py
 *_payload.json
+_imagen3_req.json
+_gh_upload_req.json
+_posts_commit.json

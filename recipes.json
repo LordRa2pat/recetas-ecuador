@@ -131,7 +131,8 @@
     ],
     "_image_source": "unsplash_corrected",
     "id": 11,
-    "created_at": "2026-02-24T15:00:44.802Z"
+    "created_at": "2026-02-24T15:00:44.802Z",
+    "estimated_cost": "Aprox. $14.76 - $26.92 USD (para 4 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "fanesca-de-la-costa-ecuatoriana-receta",
@@ -274,7 +275,8 @@
     ],
     "_image_source": "unsplash_corrected",
     "id": 10,
-    "created_at": "2026-02-24T14:36:19.246Z"
+    "created_at": "2026-02-24T14:36:19.246Z",
+    "estimated_cost": "Aprox. $12.96 - $24.98 USD (para 8 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "hornado-quiteno-receta-tradicional",
@@ -409,7 +411,8 @@
     ],
     "_image_source": "unsplash_corrected",
     "id": 9,
-    "created_at": "2026-02-24T05:39:04.309Z"
+    "created_at": "2026-02-24T05:39:04.309Z",
+    "estimated_cost": "Aprox. $28.53 - $52.39 USD (para 6 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "caldo-de-mondongo-ecuatoriano",
@@ -542,7 +545,8 @@
     ],
     "id": 8,
     "created_at": "2026-02-24T05:01:57.588Z",
-    "_image_source": "unsplash_corrected"
+    "_image_source": "unsplash_corrected",
+    "estimated_cost": "Aprox. $10.80 - $19.90 USD (para 6 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "maito-de-pescado-ecuatoriano",
@@ -662,7 +666,8 @@
     ],
     "id": 7,
     "created_at": "2026-02-24T03:01:21.599Z",
-    "_image_source": "unsplash_corrected"
+    "_image_source": "unsplash_corrected",
+    "estimated_cost": "Aprox. $10.76 - $19.90 USD (para 4 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "tigrillo-de-platano-verde-y-huevo-costeno",
@@ -775,7 +780,8 @@
     ],
     "id": 6,
     "created_at": "2026-02-24T01:01:19.274Z",
-    "_image_source": "unsplash_corrected"
+    "_image_source": "unsplash_corrected",
+    "estimated_cost": "Aprox. $1.87 - $3.44 USD (para 4 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "caldo-de-bolas-ecuatoriano",
@@ -892,7 +898,8 @@
     ],
     "id": 5,
     "created_at": "2026-02-23T23:40:41.477Z",
-    "_image_source": "unsplash_corrected"
+    "_image_source": "unsplash_corrected",
+    "estimated_cost": "Aprox. $15.04 - $28.45 USD (para 6 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "yahuarlocro-receta-ecuatoriana",
@@ -1023,7 +1030,8 @@
     ],
     "id": 4,
     "created_at": "2026-02-23T23:29:00.817Z",
-    "_image_source": "unsplash_corrected"
+    "_image_source": "unsplash_corrected",
+    "estimated_cost": "Aprox. $8.46 - $15.90 USD (para 6 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "muchines-de-choclo",
@@ -1090,7 +1098,8 @@
     "id": 3,
     "created_at": "2026-02-23T19:00:48.827Z",
     "_image_source": "unsplash_corrected",
-    "image_alt": "Fotografía del plato: Muchines de Choclo — comida ecuatoriana tradicional"
+    "image_alt": "Fotografía del plato: Muchines de Choclo — comida ecuatoriana tradicional",
+    "estimated_cost": "Aprox. $1.12 - $2.23 USD (para 4 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "empanadas-de-yuca",
@@ -1161,7 +1170,8 @@
     "id": 2,
     "created_at": "2026-02-23T18:33:09.337Z",
     "_image_source": "unsplash_corrected",
-    "image_alt": "Fotografía del plato: Empanadas de Yuca Ecuatorianas — comida ecuatoriana tradicional"
+    "image_alt": "Fotografía del plato: Empanadas de Yuca Ecuatorianas — comida ecuatoriana tradicional",
+    "estimated_cost": "Aprox. $1.53 - $2.96 USD (para 4 personas) · Tuti / Supermaxi"
   },
   {
     "slug": "sopa-de-mani-ecuatoriana",
@@ -1229,6 +1239,7 @@
     "id": 1,
     "created_at": "2026-02-23T18:32:21.266Z",
     "_image_source": "unsplash_corrected",
-    "image_alt": "Fotografía del plato: Sopa de Maní Ecuatoriana — comida ecuatoriana tradicional"
+    "image_alt": "Fotografía del plato: Sopa de Maní Ecuatoriana — comida ecuatoriana tradicional",
+    "estimated_cost": "Aprox. $8.89 - $16.15 USD (para 4 personas) · Tuti / Supermaxi"
   }
 ]

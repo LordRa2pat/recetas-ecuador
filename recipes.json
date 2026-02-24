@@ -10,7 +10,7 @@
     "prep_time": "30 min",
     "cook_time": "60 min",
     "total_time": "90 min",
-    "image_url": "https://i.ytimg.com/vi/oAnuV4rVuN8/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
     "image_alt": "Plato de chugchucara ecuatoriana con fritada de cerdo, mote y papas",
     "ingredients": [
       "1 kg de carne de cerdo (costilla o lomo, Supermaxi, Megamaxi - sección carnes)",
@@ -129,7 +129,7 @@
         "description": "GRASA = SABOR #Fritada #KWAEC\n\nCarne de Cerdo……………….. 2 kilos\nGrasa de cerdo………………… ½ kilo\nPasta de ajo…………………….. 30 gramos\nCebolla Blanca………………… 80 gr\nCerveza…………………………… 1 taza\nAgua……………………………….. 1 ½"
       }
     ],
-    "_image_source": "youtube_thumbnail",
+    "_image_source": "unsplash_corrected",
     "id": 11,
     "created_at": "2026-02-24T15:00:44.802Z"
   },
@@ -144,7 +144,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": "https://i.ytimg.com/vi/WSlDzsVy2io/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
     "image_alt": "Sopa tradicional ecuatoriana Fanesca de la Costa en un plato blanco con ingredientes frescos",
     "ingredients": [
       "1 taza de habas peladas (Supermaxi, Megamaxi, TIA - sección granos)",
@@ -272,7 +272,7 @@
         "description": "La Fanesca, es un verdadero ícono de las sopas del Ecuador , se la realiza por la temporada de #SemanaSanta y #Cuaresma celebraciones religiosas que ahora son parte de nuestra cultura popular. Compart"
       }
     ],
-    "_image_source": "youtube_thumbnail",
+    "_image_source": "unsplash_corrected",
     "id": 10,
     "created_at": "2026-02-24T14:36:19.246Z"
   },
@@ -287,7 +287,7 @@
     "prep_time": "30 min",
     "cook_time": "240 min",
     "total_time": "270 min",
-    "image_url": "https://i.ytimg.com/vi/G-BVfbHNWMI/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&q=80",
     "image_alt": "Plato de hornado quiteño con cerdo asado crujiente, papas y ensalada, comida tradicional ecuatoriana",
     "ingredients": [
       "1 pierna de cerdo (4-5 kg, disponible en Supermaxi o mercados locales)",
@@ -407,7 +407,7 @@
         "description": "HORNADO ECUATORIANO\nCerdo al horno\ncerdo horneado"
       }
     ],
-    "_image_source": "youtube_thumbnail",
+    "_image_source": "unsplash_corrected",
     "id": 9,
     "created_at": "2026-02-24T05:39:04.309Z"
   },
@@ -422,7 +422,7 @@
     "prep_time": "30 min",
     "cook_time": "180 min",
     "total_time": "210 min",
-    "image_url": "https://i.ytimg.com/vi/dP7sqojco2g/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80",
     "image_alt": "Caldo de mondongo ecuatoriano en un tazón rústico con hierbas frescas",
     "ingredients": [
       "1 kg de mondongo (tripa de res, limpio y cortado en trozos pequeños) - disponible en carnicerías locales o Supermaxi",
@@ -541,7 +541,8 @@
       }
     ],
     "id": 8,
-    "created_at": "2026-02-24T05:01:57.588Z"
+    "created_at": "2026-02-24T05:01:57.588Z",
+    "_image_source": "unsplash_corrected"
   },
   {
     "slug": "maito-de-pescado-ecuatoriano",
@@ -554,7 +555,7 @@
     "prep_time": "20 min",
     "cook_time": "30 min",
     "total_time": "50 min",
-    "image_url": "https://i.ytimg.com/vi/Vg-T6WDc8WI/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80",
     "image_alt": "Plato típico ecuatoriano de pescado envuelto en hojas cocido a la brasa",
     "ingredients": [
       "4 filetes de pescado fresco (tilapia o cachama, 200 g cada uno)",
@@ -660,7 +661,8 @@
       }
     ],
     "id": 7,
-    "created_at": "2026-02-24T03:01:21.599Z"
+    "created_at": "2026-02-24T03:01:21.599Z",
+    "_image_source": "unsplash_corrected"
   },
   {
     "slug": "tigrillo-de-platano-verde-y-huevo-costeno",
@@ -673,7 +675,7 @@
     "prep_time": "15 min",
     "cook_time": "20 min",
     "total_time": "35 min",
-    "image_url": "https://i.ytimg.com/vi/TAZllBiDLEo/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80",
     "image_alt": "Desayuno ecuatoriano con plátano verde machacado y huevo frito en un plato rústico",
     "ingredients": [
       "2 plátanos verdes grandes",
@@ -772,7 +774,8 @@
       }
     ],
     "id": 6,
-    "created_at": "2026-02-24T01:01:19.274Z"
+    "created_at": "2026-02-24T01:01:19.274Z",
+    "_image_source": "unsplash_corrected"
   },
   {
     "slug": "caldo-de-bolas-ecuatoriano",
@@ -785,7 +788,7 @@
     "prep_time": "30 min",
     "cook_time": "60 min",
     "total_time": "90 min",
-    "image_url": "https://i.ytimg.com/vi/9GhS9PsKPhM/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
     "image_alt": "Tazón de caldo de bolas ecuatoriano con bolas de plátano y maíz en un caldo aromático",
     "ingredients": [
       "4 plátanos verdes (para las bolas)",
@@ -888,7 +891,8 @@
       }
     ],
     "id": 5,
-    "created_at": "2026-02-23T23:40:41.477Z"
+    "created_at": "2026-02-23T23:40:41.477Z",
+    "_image_source": "unsplash_corrected"
   },
   {
     "slug": "yahuarlocro-receta-ecuatoriana",
@@ -901,7 +905,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": "https://i.ytimg.com/vi/XJXvm5kZkbk/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
     "image_alt": "Sopa tradicional ecuatoriana Yahuarlocro con papas y borrego en un tazón rústico",
     "ingredients": [
       "1 kg de borrego (carne y menudencias, como hígado y corazón)",
@@ -1018,7 +1022,8 @@
       }
     ],
     "id": 4,
-    "created_at": "2026-02-23T23:29:00.817Z"
+    "created_at": "2026-02-23T23:29:00.817Z",
+    "_image_source": "unsplash_corrected"
   },
   {
     "slug": "muchines-de-choclo",
@@ -1031,7 +1036,7 @@
     "prep_time": "20 min",
     "cook_time": "25 min",
     "total_time": "45 min",
-    "image_url": "https://i.ytimg.com/vi/u8JEE6yvKmc/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80",
     "ingredients": [
       "2 tazas de choclo tierno desgranado (maíz fresco)",
       "1/2 taza de harina de maíz",
@@ -1083,7 +1088,9 @@
     ],
     "tourism_route": "📍 [Quito]: Mercado de Santa Clara. Prueba los muchines de choclo recién hechos en los puestos de comida tradicional. Precio: $1-2 USD.",
     "id": 3,
-    "created_at": "2026-02-23T19:00:48.827Z"
+    "created_at": "2026-02-23T19:00:48.827Z",
+    "_image_source": "unsplash_corrected",
+    "image_alt": "Fotografía del plato: Muchines de Choclo — comida ecuatoriana tradicional"
   },
   {
     "slug": "empanadas-de-yuca",
@@ -1096,7 +1103,7 @@
     "prep_time": "30 min",
     "cook_time": "20 min",
     "total_time": "50 min",
-    "image_url": "https://i.ytimg.com/vi/uBYQXIKpvQM/hqdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80",
     "ingredients": [
       "1 kg de yuca fresca, pelada y rallada",
       "200 g de queso fresco, desmenuzado",
@@ -1152,7 +1159,9 @@
     ],
     "tourism_route": "📍 [Guayaquil]: Mercado Caraguay. Prueba las empanadas de yuca frescas preparadas al momento por vendedoras locales. Precio: $1-2 USD.",
     "id": 2,
-    "created_at": "2026-02-23T18:33:09.337Z"
+    "created_at": "2026-02-23T18:33:09.337Z",
+    "_image_source": "unsplash_corrected",
+    "image_alt": "Fotografía del plato: Empanadas de Yuca Ecuatorianas — comida ecuatoriana tradicional"
   },
   {
     "slug": "sopa-de-mani-ecuatoriana",
@@ -1165,7 +1174,7 @@
     "prep_time": "20 min",
     "cook_time": "40 min",
     "total_time": "60 min",
-    "image_url": "https://i.ytimg.com/vi/h5UMaa5hlHQ/maxresdefault.jpg",
+    "image_url": "https://images.unsplash.com/photo-1574484284002-952d92456975?w=800&q=80",
     "ingredients": [
       "1 taza de maní crudo (sin sal)",
       "1 litro de leche entera",
@@ -1218,6 +1227,8 @@
     ],
     "tourism_route": "📍 Quito: Mercado de San Francisco. Prueba esta sopa en los puestos tradicionales del mercado, un lugar icónico para saborear la comida quiteña. Precio: $2-3 USD.",
     "id": 1,
-    "created_at": "2026-02-23T18:32:21.266Z"
+    "created_at": "2026-02-23T18:32:21.266Z",
+    "_image_source": "unsplash_corrected",
+    "image_alt": "Fotografía del plato: Sopa de Maní Ecuatoriana — comida ecuatoriana tradicional"
   }
 ]

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nosotros — Ecuador a la Carta | Recetas Ecuatorianas Auténticas</title>
+  <meta name="description" content="Conoce la historia de Ecuador a la Carta: un proyecto de IA y amor por la gastronomía ecuatoriana. Descubre nuestra misión, equipo y cómo funcionamos." />
+  <link rel="canonical" href="https://ecuadoralacarta.com/nosotros.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ec-gold':  '#FFD100',
+            'ec-blue':  '#0033A0',
+            'ec-red':   '#EF3340',
+            'ec-green': '#006400',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
+    .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px;
+      background: linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
+    .nav-dropdown { display:none; position:absolute; top:100%; left:0; min-width:200px;
+      background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,51,160,0.1); z-index:100; padding:8px 0; }
+    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
+    .nav-dropdown a { display:block; padding:8px 16px; font-size:0.875rem; color:#374151; transition: background 0.15s; }
+    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans text-gray-900 antialiased">
+  <div class="ec-stripe" aria-hidden="true"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
+      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
+        <span class="text-2xl">🍲</span>
+        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
+        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90" aria-label="Navegación principal">
+        <a href="index.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Inicio</a>
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span>Regiones ▾</span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?region=Sierra">🏔️ Sierra</a>
+            <a href="recipes.html?region=Costa">🌊 Costa</a>
+            <a href="recipes.html?region=Amazonia">🌿 Amazonía</a>
+            <a href="recipes.html?region=Galapagos">🐢 Galápagos</a>
+          </div>
+        </div>
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span>Categorías ▾</span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?category=Sopas">🍲 Sopas</a>
+            <a href="recipes.html?category=Platos%20Fuertes">🍽️ Platos Fuertes</a>
+            <a href="recipes.html?category=Mariscos">🦐 Mariscos</a>
+            <a href="recipes.html?category=Postres">🍮 Postres</a>
+            <a href="recipes.html?category=Bebidas">🥤 Bebidas</a>
+            <a href="recipes.html?category=Desayunos">☕ Desayunos</a>
+          </div>
+        </div>
+        <a href="menu-semanal.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Menú Semanal</a>
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span class="text-ec-gold font-bold">Sobre Nosotros ▾</span>
+          <div class="nav-dropdown">
+            <a href="nosotros.html">🏡 Nuestra Historia</a>
+            <a href="blog.html">📰 Blog Turismo</a>
+            <a href="contact.html">✉️ Contacto</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="recipes.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+          Ver Recetas →
+        </a>
+        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
+      </div>
+    </div>
+    <div id="nav-mobile" class="hidden md:hidden border-t border-blue-700 py-3 px-4 space-y-1 bg-[#0033A0]">
+      <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
+      <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Recetas</a>
+      <a href="menu-semanal.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📅 Menú Semanal</a>
+      <a href="blog.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📰 Blog Turismo</a>
+      <a href="nosotros.html" class="block px-3 py-2 text-ec-gold font-bold text-sm" aria-current="page">🏡 Nosotros</a>
+      <a href="contact.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">✉️ Contacto</a>
+    </div>
+  </header>
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function(){
+      document.getElementById('nav-mobile')?.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <div class="bg-gradient-to-r from-[#001f6e] via-[#0033A0] to-[#00277a] py-16 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Quiénes somos</p>
+      <h1 class="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
+        Ecuador a la Carta 🍲
+      </h1>
+      <span class="ec-title-bar mx-auto mb-6"></span>
+      <p class="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+        La biblioteca digital más completa de recetas ecuatorianas auténticas, generadas con inteligencia artificial y revisadas con amor por la gastronomía del Ecuador.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-14">
+
+    <!-- Historia -->
+    <section class="mb-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-3">Nuestra Historia</p>
+          <h2 class="text-3xl font-black text-gray-900 mb-4">De la abuela al algoritmo</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Ecuador a la Carta nació de una pregunta simple: ¿por qué la gastronomía ecuatoriana — una de las más ricas y diversas de América Latina — tiene tan poca presencia digital de calidad?
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Mientras las cocinas italiana, mexicana o peruana tienen miles de sitios dedicados, el ceviche de camarón costeño, el seco de gallina serrano o el maito amazónico siguen siendo desconocidos para el mundo.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Decidimos cambiar eso. Combinando inteligencia artificial de última generación con la sabiduría gastronómica ecuatoriana, publicamos recetas auténticas, detalladas y accesibles para cocineros en Ecuador, en la diáspora y en cualquier rincón del mundo.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-8 text-white text-center">
+            <div class="text-6xl mb-4">🇪🇨</div>
+            <p class="text-4xl font-black text-ec-gold mb-1">4 Regiones</p>
+            <p class="text-blue-200 text-sm mb-6">Sierra · Costa · Amazonía · Galápagos</p>
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div class="bg-white/10 rounded-2xl p-3">
+                <p class="text-2xl font-black">100+</p>
+                <p class="text-blue-200 text-xs">Recetas</p>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-3">
+                <p class="text-2xl font-black">7</p>
+                <p class="text-blue-200 text-xs">Días a la semana</p>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-3">
+                <p class="text-2xl font-black">2</p>
+                <p class="text-blue-200 text-xs">Idiomas (ES/EN)</p>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-3">
+                <p class="text-2xl font-black">∞</p>
+                <p class="text-blue-200 text-xs">Amor por Ecuador</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Misión -->
+    <section class="mb-16">
+      <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-8 sm:p-10">
+        <p class="text-xs font-bold text-[#EF3340] uppercase tracking-widest mb-3">Nuestra Misión</p>
+        <h2 class="text-2xl font-black text-gray-900 mb-6">Preservar la gastronomía ecuatoriana para el mundo</h2>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl mx-auto mb-3">📚</div>
+            <h3 class="font-bold text-gray-800 mb-2">Documentar</h3>
+            <p class="text-gray-500 text-sm">Preservar recetas regionales que se transmiten oralmente, antes de que se pierdan.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-2xl bg-yellow-100 flex items-center justify-center text-2xl mx-auto mb-3">🌍</div>
+            <h3 class="font-bold text-gray-800 mb-2">Conectar</h3>
+            <p class="text-gray-500 text-sm">Unir a ecuatorianos en la diáspora con sus raíces a través de la comida.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl mx-auto mb-3">✨</div>
+            <h3 class="font-bold text-gray-800 mb-2">Inspirar</h3>
+            <p class="text-gray-500 text-sm">Mostrarle al mundo la riqueza gastronómica del Ecuador, región por región.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="mb-16">
+      <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-3">Tecnología + Tradición</p>
+      <h2 class="text-2xl font-black text-gray-900 mb-8">¿Cómo creamos las recetas?</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6 flex gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-[#0033A0] text-white flex items-center justify-center font-black text-base flex-shrink-0">1</div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-1">IA Culinaria (Grok)</h3>
+            <p class="text-gray-500 text-sm">Nuestro sistema de IA, entrenado en gastronomía ecuatoriana, genera recetas detalladas con ingredientes, pasos y tips auténticos.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6 flex gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-[#FFD100] text-[#0033A0] flex items-center justify-center font-black text-base flex-shrink-0">2</div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-1">Validación Cultural</h3>
+            <p class="text-gray-500 text-sm">Cada receta pasa por un Quality Gate que verifica autenticidad, proporciones correctas y representatividad regional.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6 flex gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-[#EF3340] text-white flex items-center justify-center font-black text-base flex-shrink-0">3</div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-1">Enriquecimiento SEO</h3>
+            <p class="text-gray-500 text-sm">Añadimos keywords, imágenes de comida, videos de YouTube y rutas gastronómicas para cada plato.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6 flex gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-[#006400] text-white flex items-center justify-center font-black text-base flex-shrink-0">4</div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-1">Publicación Automática</h3>
+            <p class="text-gray-500 text-sm">El sistema n8n publica automáticamente cada 12 horas. Siempre hay contenido fresco para explorar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Las 4 regiones -->
+    <section class="mb-16">
+      <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-3">Gastronomía Regional</p>
+      <h2 class="text-2xl font-black text-gray-900 mb-8">Un país, cuatro mundos culinarios</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="recipes.html?region=Sierra" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="text-4xl mb-3">🏔️</div>
+          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Sierra</h3>
+          <p class="text-gray-500 text-xs">Llapingachos, caldo de patas, hornado, colada morada, cuy con papas...</p>
+        </a>
+        <a href="recipes.html?region=Costa" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="text-4xl mb-3">🌊</div>
+          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Costa</h3>
+          <p class="text-gray-500 text-xs">Ceviche de camarón, encebollado, sopa marinera, bolón de verde, encocado...</p>
+        </a>
+        <a href="recipes.html?region=Amazonia" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="text-4xl mb-3">🌿</div>
+          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Amazonía</h3>
+          <p class="text-gray-500 text-xs">Maito de tilapia, chicha de yuca, pincho de mayón, casado amazónico...</p>
+        </a>
+        <a href="recipes.html?region=Galapagos" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+          <div class="text-4xl mb-3">🐢</div>
+          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Galápagos</h3>
+          <p class="text-gray-500 text-xs">Langosta al ajillo, ceviche de pepino de mar, sopa de caracol...</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTAs finales -->
+    <section class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-10 text-white text-center">
+      <h2 class="text-2xl font-black mb-4">¿Listo para cocinar Ecuador?</h2>
+      <p class="text-blue-200 mb-8 max-w-md mx-auto">Explora el catálogo completo, genera tu menú semanal o contáctanos con tu receta favorita.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="recipes.html" class="bg-ec-gold text-[#0033A0] font-bold px-8 py-3.5 rounded-2xl hover:bg-yellow-300 transition-colors">
+          Ver todas las recetas →
+        </a>
+        <a href="menu-semanal.html" class="bg-white/10 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/20 transition-colors border border-white/20">
+          📅 Menú Semanal
+        </a>
+        <a href="contact.html" class="bg-white/10 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/20 transition-colors border border-white/20">
+          ✉️ Contáctanos
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="bg-[#0033A0] py-10 px-4 sm:px-6 border-t border-blue-700">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+      <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas directo a tu email.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+        <input type="email" name="email" placeholder="tu@email.com" required
+               class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+               aria-label="Email para newsletter">
+        <button type="submit"
+                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
+          Suscribirme →
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6 border-t border-blue-700">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🍲</span>
+          <span class="font-black">Ecuador a la Carta</span>
+        </div>
+        <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm">
+          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+          <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+          <a href="menu-semanal.html" class="hover:text-white transition-colors">Menú Semanal</a>
+          <a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a>
+          <a href="nosotros.html" class="text-white font-bold">Nosotros</a>
+          <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
+          <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
+          <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
+        </nav>
+      </div>
+      <p class="text-center text-blue-300 text-xs mt-6">&copy; 2026 Ecuador a la Carta</p>
+    </div>
+  </footer>
+  <div class="ec-stripe" aria-hidden="true"></div>
+
+</body>
+</html>

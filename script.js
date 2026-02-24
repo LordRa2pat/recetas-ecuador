@@ -1,6 +1,6 @@
 // ============================================================
-// Biblioteca de Recetas Ecuatorianas — script.js v4
-// Revista Premium — Blog Turismo, SEO máximo (FAQs + keywords), Places, YouTube
+// Ecuador a la Carta — script.js v5
+// Rebranding #0033A0 + Ticket Ingredients + Social Share + EN/ES + Menú Semanal
 // ============================================================
 
 'use strict';
@@ -147,7 +147,7 @@ function renderCard(recipe) {
     : 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80';
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
-  return '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#006400] focus-within:ring-offset-2">' +
+  return '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#0033A0] focus-within:ring-offset-2">' +
     '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '">' +
       '<div class="relative h-52 overflow-hidden">' +
         '<img src="' + img + '" alt="' + imgAlt + '"' +
@@ -162,17 +162,17 @@ function renderCard(recipe) {
       '</div>' +
       '<div class="p-5">' +
         '<div class="flex flex-wrap gap-2 mb-2">' +
-          (recipe.region ? '<span class="text-xs font-medium text-[#006400] bg-green-50 border border-green-200 px-2.5 py-0.5 rounded-full">' + escapeHtml(recipe.region) + '</span>' : '') +
+          (recipe.region ? '<span class="text-xs font-medium text-[#0033A0] bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full">' + escapeHtml(recipe.region) + '</span>' : '') +
           (recipe.difficulty ? '<span class="text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 px-2.5 py-0.5 rounded-full">' + escapeHtml(recipe.difficulty) + '</span>' : '') +
         '</div>' +
-        '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 clamp-2 group-hover:text-[#006400] transition-colors duration-200">' +
+        '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 clamp-2 group-hover:text-[#0033A0] transition-colors duration-200">' +
           escapeHtml(recipe.title) +
         '</h3>' +
         '<p class="text-gray-500 text-sm clamp-2 mb-3">' + escapeHtml(recipe.description || '') + '</p>' +
         '<div class="flex items-center gap-3 pt-3 border-t border-gray-100 text-xs text-gray-400">' +
           (recipe.total_time ? '<span>\u23f1 ' + escapeHtml(recipe.total_time) + '</span>' : '') +
           (recipe.servings ? '<span>\uD83D\uDC65 ' + escapeHtml(recipe.servings) + '</span>' : '') +
-          (recipe.category ? '<span class="ml-auto text-[#FFCC00] font-bold">' + escapeHtml(recipe.category) + '</span>' : '') +
+          (recipe.category ? '<span class="ml-auto text-[#FFD100] font-bold">' + escapeHtml(recipe.category) + '</span>' : '') +
         '</div>' +
       '</div>' +
     '</a>' +
@@ -352,10 +352,10 @@ function setMeta(title, description, imageUrl, canonicalUrl) {
 }
 
 function injectSEO(recipe) {
-  var canonicalUrl = 'https://recetas-ecuador.vercel.app/recipe.html?slug=' + encodeURIComponent(recipe.slug);
+  var canonicalUrl = 'https://ecuadoralacarta.com/recipe.html?slug=' + encodeURIComponent(recipe.slug);
   var imageUrl = recipe.image_url || '';
   var keywords = (recipe.keywords || []);
-  var allKeywords = keywords.concat(['recetas ecuatorianas', 'cocina ecuatoriana', 'gastronomia ecuatoriana', 'Ecuador']).join(', ');
+  var allKeywords = keywords.concat(['recetas ecuatorianas', 'cocina ecuatoriana', 'gastronomia ecuatoriana', 'Ecuador a la Carta']).join(', ');
 
   setMeta(
     recipe.title + ' \u2014 Receta Ecuatoriana Aut\u00e9ntica | Cocina Ecuador \uD83C\uDDEA\uD83C\uDDE8',
@@ -376,8 +376,8 @@ function injectSEO(recipe) {
     'name': recipe.title,
     'description': recipe.description || '',
     'image': imageUrl,
-    'author': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas', 'url': 'https://recetas-ecuador.vercel.app' },
-    'publisher': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas' },
+    'author': { '@type': 'Organization', 'name': 'Ecuador a la Carta', 'url': 'https://ecuadoralacarta.com' },
+    'publisher': { '@type': 'Organization', 'name': 'Ecuador a la Carta' },
     'datePublished': recipe.date_published || new Date().toISOString().split('T')[0],
     'recipeCategory': recipe.category || '',
     'recipeCuisine': 'Ecuadorian',
@@ -415,8 +415,8 @@ function injectSEO(recipe) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     'itemListElement': [
-      { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': 'https://recetas-ecuador.vercel.app/' },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Recetas', 'item': 'https://recetas-ecuador.vercel.app/recipes.html' },
+      { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': 'https://ecuadoralacarta.com/' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Recetas', 'item': 'https://ecuadoralacarta.com/recipes.html' },
       { '@type': 'ListItem', 'position': 3, 'name': recipe.title, 'item': canonicalUrl }
     ]
   };
@@ -451,7 +451,7 @@ function renderFaqsSection(recipe) {
   var el = document.getElementById('faqs-section');
   if (!el || !recipe.faqs || recipe.faqs.length === 0) return;
   el.innerHTML = '<div class="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden">' +
-    '<div class="bg-gradient-to-r from-[#006400] to-[#004d00] px-5 py-4">' +
+    '<div class="bg-gradient-to-r from-[#0033A0] to-[#001f6e] px-5 py-4">' +
       '<h2 class="text-white font-bold text-base flex items-center gap-2">❓ Preguntas Frecuentes</h2>' +
     '</div>' +
     '<div class="divide-y divide-gray-100">' +
@@ -459,7 +459,7 @@ function renderFaqsSection(recipe) {
       return '<details class="group px-5 py-4 cursor-pointer">' +
         '<summary class="font-semibold text-gray-800 text-sm list-none flex items-center justify-between gap-2">' +
           '<span>' + escapeHtml(faq.q) + '</span>' +
-          '<span class="text-[#007A00] font-bold text-lg group-open:rotate-45 transition-transform duration-200 flex-shrink-0">+</span>' +
+          '<span class="text-[#0033A0] font-bold text-lg group-open:rotate-45 transition-transform duration-200 flex-shrink-0">+</span>' +
         '</summary>' +
         '<p class="text-gray-600 text-sm mt-2 leading-relaxed">' + escapeHtml(faq.a) + '</p>' +
       '</details>';
@@ -707,12 +707,7 @@ async function initRecipe() {
 
   var ingList = document.getElementById('ingredients-list');
   if (ingList && recipe.ingredients && recipe.ingredients.length > 0) {
-    ingList.innerHTML = recipe.ingredients.map(function(ing) {
-      return '<li class="flex items-start gap-2 py-1.5 border-b border-gray-50 last:border-0">' +
-        '<span class="text-[#006400] mt-0.5 flex-shrink-0">\u2713</span>' +
-        '<span class="text-gray-700">' + escapeHtml(ing) + '</span>' +
-        '</li>';
-    }).join('');
+    ingList.innerHTML = recipe.ingredients.map(renderIngredient).join('');
   }
 
   var instrList = document.getElementById('instructions-list');
@@ -720,7 +715,7 @@ async function initRecipe() {
     instrList.innerHTML = recipe.instructions.map(function(step, i) {
       var text = typeof step === 'string' ? step : (step.text || step);
       return '<li class="flex gap-4 mb-5">' +
-        '<div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#006400] text-white flex items-center justify-center font-bold text-sm">' + (i + 1) + '</div>' +
+        '<div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0033A0] text-white flex items-center justify-center font-bold text-sm">' + (i + 1) + '</div>' +
         '<p class="text-gray-700 leading-relaxed pt-1">' + escapeHtml(text) + '</p>' +
         '</li>';
     }).join('');
@@ -730,7 +725,7 @@ async function initRecipe() {
   if (tipsList && recipe.tips && recipe.tips.length > 0) {
     tipsList.innerHTML = recipe.tips.map(function(tip) {
       return '<li class="flex gap-2 py-1.5">' +
-        '<span class="text-[#FFCC00] flex-shrink-0 mt-0.5">\uD83D\uDCA1</span>' +
+        '<span class="text-[#FFD100] flex-shrink-0 mt-0.5">\uD83D\uDCA1</span>' +
         '<span class="text-gray-700">' + escapeHtml(tip) + '</span>' +
         '</li>';
     }).join('');
@@ -742,7 +737,7 @@ async function initRecipe() {
   if (kwEl && recipe.keywords && recipe.keywords.length > 0) {
     kwEl.innerHTML = recipe.keywords.map(function(kw) {
       return '<a href="recipes.html?q=' + encodeURIComponent(kw) +
-        '" class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:bg-[#006400] hover:text-white transition-colors duration-200">' +
+        '" class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:bg-[#0033A0] hover:text-white transition-colors duration-200">' +
         escapeHtml(kw) + '</a>';
     }).join('');
     var kwParent = kwEl.closest('[data-optional]');
@@ -790,6 +785,65 @@ async function initRecipe() {
   renderImageCredit(recipe);
   renderFaqsSection(recipe);
 
+  // ── Costo estimado ──────────────────────────────────────────
+  var costRow = document.getElementById('estimated-cost-row');
+  var costVal = document.getElementById('estimated-cost-value');
+  if (costRow && costVal && recipe.estimated_cost) {
+    costVal.textContent = recipe.estimated_cost;
+    costRow.classList.remove('hidden');
+  }
+
+  // ── Pinterest button en hero ────────────────────────────────
+  var pinterestBtn = document.getElementById('pinterest-btn');
+  if (pinterestBtn) {
+    var pinImgUrl = encodeURIComponent(recipe.image_url || '');
+    var pinDesc = encodeURIComponent(recipe.title + ' — Ecuador a la Carta | ' + (recipe.description || ''));
+    var pinPageUrl = encodeURIComponent('https://ecuadoralacarta.com/recipe.html?slug=' + (recipe.slug || ''));
+    pinterestBtn.href = 'https://pinterest.com/pin/create/button/?url=' + pinPageUrl + '&media=' + pinImgUrl + '&description=' + pinDesc;
+  }
+
+  // ── Social share flotante ───────────────────────────────────
+  var socialShare = document.getElementById('social-share');
+  if (socialShare) {
+    var pageUrl = encodeURIComponent('https://ecuadoralacarta.com/recipe.html?slug=' + (recipe.slug || ''));
+    var shareText = encodeURIComponent('🍽️ ' + recipe.title + ' — Receta ecuatoriana auténtica | Ecuador a la Carta');
+    var waShare = document.getElementById('share-whatsapp');
+    var fbShare = document.getElementById('share-facebook');
+    var xShare = document.getElementById('share-x');
+    var pinShare = document.getElementById('share-pinterest');
+    if (waShare) waShare.href = 'https://wa.me/?text=' + shareText + '%20' + pageUrl;
+    if (fbShare) fbShare.href = 'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl;
+    if (xShare) xShare.href = 'https://x.com/intent/tweet?text=' + shareText + '&url=' + pageUrl;
+    if (pinShare) pinShare.href = 'https://pinterest.com/pin/create/button/?url=' + pageUrl + '&media=' + encodeURIComponent(recipe.image_url || '') + '&description=' + shareText;
+    socialShare.classList.remove('hidden');
+  }
+
+  // ── Toggle EN / ES ──────────────────────────────────────────
+  if (recipe.en_translation) {
+    var langWrap = document.getElementById('lang-toggle-wrap');
+    var langBtn = document.getElementById('lang-toggle');
+    var langFlag = document.getElementById('lang-flag');
+    var langText = document.getElementById('lang-text');
+    var titleEl = document.getElementById('recipe-title');
+    var descEl = document.getElementById('recipe-description');
+    if (langWrap && langBtn) {
+      langWrap.classList.remove('hidden');
+      var isEnglish = false;
+      var esTitle = recipe.title;
+      var esDesc = recipe.description || '';
+      var enTitle = recipe.en_translation.title || recipe.title;
+      var enDesc = recipe.en_translation.description || recipe.description || '';
+      langBtn.addEventListener('click', function() {
+        isEnglish = !isEnglish;
+        if (titleEl) titleEl.textContent = isEnglish ? enTitle : esTitle;
+        if (descEl) descEl.textContent = isEnglish ? enDesc : esDesc;
+        if (langFlag) langFlag.textContent = isEnglish ? '🇪🇨' : '🇺🇸';
+        if (langText) langText.textContent = isEnglish ? 'Ver en Español' : 'Ver en English';
+        document.documentElement.lang = isEnglish ? 'en' : 'es';
+      });
+    }
+  }
+
   initAds();
 }
 
@@ -835,7 +889,7 @@ function renderBlogCard(post) {
 
 // ─── Blog: injectPostSEO ──────────────────────────────────────
 function injectPostSEO(post) {
-  var canonicalUrl = 'https://recetas-ecuador.vercel.app/post.html?slug=' + encodeURIComponent(post.slug);
+  var canonicalUrl = 'https://ecuadoralacarta.com/post.html?slug=' + encodeURIComponent(post.slug);
   var imageUrl = post.image_url || '';
   var keywords = (post.keywords || []).concat(['turismo ecuador', 'viaje ecuador', 'destinos ecuador']).join(', ');
 
@@ -853,11 +907,11 @@ function injectPostSEO(post) {
     'headline': post.title,
     'description': post.description || '',
     'image': imageUrl,
-    'author': { '@type': 'Organization', 'name': 'Biblioteca de Recetas Ecuatorianas' },
+    'author': { '@type': 'Organization', 'name': 'Ecuador a la Carta' },
     'publisher': {
       '@type': 'Organization',
-      'name': 'Biblioteca de Recetas Ecuatorianas',
-      'logo': { '@type': 'ImageObject', 'url': 'https://recetas-ecuador.vercel.app/favicon.ico' }
+      'name': 'Ecuador a la Carta',
+      'logo': { '@type': 'ImageObject', 'url': 'https://ecuadoralacarta.com/favicon.ico' }
     },
     'datePublished': post.date_published || post.created_at || new Date().toISOString(),
     'dateModified': post.created_at || new Date().toISOString(),
@@ -870,8 +924,8 @@ function injectPostSEO(post) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     'itemListElement': [
-      { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': 'https://recetas-ecuador.vercel.app/' },
-      { '@type': 'ListItem', 'position': 2, 'name': 'Blog Turismo', 'item': 'https://recetas-ecuador.vercel.app/blog.html' },
+      { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': 'https://ecuadoralacarta.com/' },
+      { '@type': 'ListItem', 'position': 2, 'name': 'Blog Turismo', 'item': 'https://ecuadoralacarta.com/blog.html' },
       { '@type': 'ListItem', 'position': 3, 'name': post.title, 'item': canonicalUrl }
     ]
   };
@@ -1062,7 +1116,7 @@ async function initPost() {
   var faqsEl = document.getElementById('post-faqs');
   if (faqsEl && post.faqs && post.faqs.length > 0) {
     faqsEl.innerHTML = '<div class="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden mt-6">' +
-      '<div class="bg-gradient-to-r from-[#006400] to-[#004d00] px-5 py-4">' +
+      '<div class="bg-gradient-to-r from-[#0033A0] to-[#001f6e] px-5 py-4">' +
         '<h2 class="text-white font-bold text-base">❓ Preguntas Frecuentes</h2>' +
       '</div>' +
       '<div class="divide-y divide-gray-100">' +
@@ -1070,7 +1124,7 @@ async function initPost() {
         return '<details class="group px-5 py-4 cursor-pointer">' +
           '<summary class="font-semibold text-gray-800 text-sm list-none flex items-center justify-between gap-2">' +
             '<span>' + escapeHtml(faq.q) + '</span>' +
-            '<span class="text-[#007A00] font-bold text-lg flex-shrink-0">+</span>' +
+            '<span class="text-[#0033A0] font-bold text-lg flex-shrink-0">+</span>' +
           '</summary>' +
           '<p class="text-gray-600 text-sm mt-2 leading-relaxed">' + escapeHtml(faq.a) + '</p>' +
         '</details>';
@@ -1110,6 +1164,99 @@ async function loadBlogPreview() {
   grid.innerHTML = posts.slice(0, 3).map(renderBlogCard).join('');
 }
 
+// ─── renderIngredient (ticket-style con badges de tienda) ────
+function renderIngredient(ing) {
+  var STORES = ['supermaxi', 'megamaxi', 'tuti', 'tia', 'santa mar\u00eda', 'coral'];
+  var lowerIng = String(ing).toLowerCase();
+  var badge = '';
+  if (lowerIng.indexOf('supermaxi') !== -1 || lowerIng.indexOf('megamaxi') !== -1) {
+    badge = '<span class="ml-auto text-xs font-bold text-blue-600 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full flex-shrink-0">Supermaxi</span>';
+  } else if (lowerIng.indexOf('tuti') !== -1) {
+    badge = '<span class="ml-auto text-xs font-bold text-red-600 bg-red-50 border border-red-200 px-1.5 py-0.5 rounded-full flex-shrink-0">Tuti</span>';
+  } else if (lowerIng.indexOf('tia') !== -1 || lowerIng.indexOf('t\u00eda') !== -1) {
+    badge = '<span class="ml-auto text-xs font-bold text-orange-600 bg-orange-50 border border-orange-200 px-1.5 py-0.5 rounded-full flex-shrink-0">TIA</span>';
+  }
+  return '<li class="flex items-start gap-2 py-2 border-b border-dashed border-gray-100 last:border-0">' +
+    '<span class="text-[#0033A0] mt-0.5 flex-shrink-0 font-bold">\u2713</span>' +
+    '<span class="text-gray-700 font-mono text-sm flex-1">' + escapeHtml(ing) + '</span>' +
+    badge +
+    '</li>';
+}
+
+// ─── Página: MENÚ SEMANAL ─────────────────────────────────────
+async function initMenuSemanal() {
+  var recipes = await loadRecipes();
+  var grid = document.getElementById('menu-grid');
+  var regenBtn = document.getElementById('menu-regen');
+  if (!grid) return;
+
+  var DAYS = ['Lunes', 'Martes', 'Mi\u00e9rcoles', 'Jueves', 'Viernes', 'S\u00e1bado', 'Domingo'];
+  var DAY_EMOJIS = ['\uD83C\uDF31', '\uD83C\uDF72', '\uD83C\uDF5B', '\uD83C\uDF7D\uFE0F', '\uD83E\uDD57', '\uD83C\uDF89', '\u2728'];
+
+  function pickMenu() {
+    var mains = recipes.filter(function(r) {
+      return !r.category || ['Platos Fuertes', 'Sopas', 'Mariscos', 'Desayunos', 'Entradas'].indexOf(r.category) !== -1;
+    });
+    var desserts = recipes.filter(function(r) { return r.category === 'Postres'; });
+    var shuffled = mains.slice().sort(function() { return Math.random() - 0.5; });
+    var dessertShuffled = desserts.slice().sort(function() { return Math.random() - 0.5; });
+
+    var result = [];
+    for (var i = 0; i < 7; i++) {
+      if ((i === 5 || i === 6) && dessertShuffled.length > 0) {
+        // Sábado y domingo: postre si hay
+        result.push(dessertShuffled.shift() || shuffled[i % shuffled.length] || null);
+      } else {
+        result.push(shuffled[i % shuffled.length] || null);
+      }
+    }
+    return result;
+  }
+
+  function renderMenu() {
+    var menu = pickMenu();
+    if (recipes.length === 0) {
+      grid.innerHTML = '<div class="col-span-full text-center py-16 text-gray-400">' +
+        '<div class="text-5xl mb-4">\uD83D\uDCC5</div>' +
+        '<p class="text-lg font-medium">Pronto publicaremos el men\u00fa semanal</p>' +
+        '</div>';
+      return;
+    }
+    grid.innerHTML = DAYS.map(function(day, i) {
+      var r = menu[i];
+      if (!r) return '<div class="bg-white rounded-3xl shadow-md p-5 text-center text-gray-400 border border-gray-100">' +
+        '<p class="font-bold">' + DAY_EMOJIS[i] + ' ' + day + '</p>' +
+        '<p class="text-sm mt-2">Sin receta</p></div>';
+      var img = r.image_url || 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&q=70';
+      return '<a href="recipe.html?slug=' + encodeURIComponent(r.slug) + '"' +
+        ' class="group bg-white rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden block">' +
+        '<div class="relative h-36 overflow-hidden">' +
+          '<img src="' + escapeHtml(img) + '" alt="' + escapeHtml(r.title) + '"' +
+            ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">' +
+          '<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>' +
+          '<div class="absolute top-3 left-3 bg-[#0033A0] text-white text-xs font-bold px-2.5 py-1 rounded-full">' +
+            DAY_EMOJIS[i] + ' ' + day +
+          '</div>' +
+        '</div>' +
+        '<div class="p-4">' +
+          '<p class="font-bold text-gray-900 text-sm leading-snug group-hover:text-[#0033A0] transition-colors">' + escapeHtml(r.title) + '</p>' +
+          (r.total_time ? '<p class="text-xs text-gray-400 mt-1">\u23f1 ' + escapeHtml(r.total_time) + '</p>' : '') +
+          (r.region ? '<p class="text-xs text-[#0033A0] mt-1 font-medium">' + escapeHtml(r.region) + '</p>' : '') +
+        '</div>' +
+      '</a>';
+    }).join('');
+    initAds();
+  }
+
+  renderMenu();
+  if (regenBtn) {
+    regenBtn.addEventListener('click', function() {
+      grid.innerHTML = renderSkeleton(7);
+      setTimeout(renderMenu, 300);
+    });
+  }
+}
+
 // ─── Router ───────────────────────────────────────────────────
 (function router() {
   var path = window.location.pathname.split('/').pop() || 'index.html';
@@ -1124,5 +1271,7 @@ async function loadBlogPreview() {
     initBlog();
   } else if (path === 'post.html') {
     initPost();
+  } else if (path === 'menu-semanal.html') {
+    initMenuSemanal();
   }
 })();

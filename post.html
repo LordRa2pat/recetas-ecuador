@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artículo de Turismo Ecuador | Biblioteca de Recetas</title>
+  <title>Artículo de Turismo Ecuador | Ecuador a la Carta</title>
   <meta name="description" content="Artículo de turismo y cultura ecuatoriana." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
 
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
@@ -15,9 +16,10 @@
       theme: {
         extend: {
           colors: {
+            'ec-gold':  '#FFD100',
+            'ec-blue':  '#0033A0',
+            'ec-red':   '#EF3340',
             'ec-green': '#006400',
-            'ec-yellow': '#FFD700',
-            'ec-red': '#C8102E',
           }
         }
       }
@@ -28,7 +30,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg, #FFD700 0% 50%, #007A00 50% 75%, #C8102E 75% 100%); height: 4px; width: 100%; }
+    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
+    .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px;
+      background: linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
+    .nav-dropdown { display:none; position:absolute; top:100%; left:0; min-width:200px;
+      background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
+      border:1px solid rgba(0,51,160,0.1); z-index:100; padding:8px 0; }
+    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
+    .nav-dropdown a { display:block; padding:8px 16px; font-size:0.875rem; color:#374151;
+      transition: background 0.15s; }
+    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
     .ad-slot {
       min-height: 120px;
       background: rgba(255,255,255,0.6);
@@ -42,6 +53,7 @@
       overflow: hidden;
     }
     .ad-slot--square { min-height: 280px; }
+    .ad-slot--tall { min-height: 600px; }
     .ad-label { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; font-weight: 500; }
     /* Post content typography */
     #post-content-body h2 { font-size: 1.25rem; font-weight: 800; color: #111827; margin: 1.5rem 0 0.75rem; }
@@ -51,8 +63,8 @@
     #post-content-body ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; }
     #post-content-body li { margin-bottom: 0.4rem; line-height: 1.65; }
     #post-content-body strong { color: #111827; font-weight: 700; }
-    #post-content-body a { color: #006400; text-decoration: underline; }
-    #post-content-body blockquote { border-left: 4px solid #FFD700; padding: 0.75rem 1rem; background: #fffbf2; margin: 1rem 0; border-radius: 0 0.75rem 0.75rem 0; }
+    #post-content-body a { color: #0033A0; text-decoration: underline; }
+    #post-content-body blockquote { border-left: 4px solid #FFD100; padding: 0.75rem 1rem; background: #fffbf2; margin: 1rem 0; border-radius: 0 0.75rem 0.75rem 0; }
     details > summary { list-style: none; }
     details > summary::-webkit-details-marker { display: none; }
     @media (prefers-reduced-motion: reduce) {
@@ -60,33 +72,85 @@
     }
   </style>
 </head>
-<body class="bg-[#FFFBF2] font-sans text-gray-900 antialiased">
+<body class="bg-slate-50 font-sans text-gray-900 antialiased">
 
   <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#006400]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
-        <span class="text-2xl">🇪🇨</span>
-        <span class="hidden sm:inline leading-tight">Biblioteca de<br><span class="text-ec-yellow">Recetas</span></span>
-        <span class="sm:hidden text-ec-yellow">Recetas EC</span>
+        <span class="text-2xl">🍲</span>
+        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
+        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-white/90" aria-label="Navegación principal">
-        <a href="index.html" class="hover:text-ec-yellow transition-colors">Inicio</a>
-        <a href="recipes.html" class="hover:text-ec-yellow transition-colors">Recetas</a>
-        <a href="blog.html" class="text-ec-yellow font-bold">Blog Turismo</a>
+
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90" aria-label="Navegación principal">
+        <a href="index.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Inicio</a>
+
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span>Regiones ▾</span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?region=Sierra">🏔️ Sierra</a>
+            <a href="recipes.html?region=Costa">🌊 Costa</a>
+            <a href="recipes.html?region=Amazonia">🌿 Amazonía</a>
+            <a href="recipes.html?region=Galapagos">🐢 Galápagos</a>
+          </div>
+        </div>
+
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span>Categorías ▾</span>
+          <div class="nav-dropdown">
+            <a href="recipes.html?category=Sopas">🍲 Sopas</a>
+            <a href="recipes.html?category=Platos%20Fuertes">🍽️ Platos Fuertes</a>
+            <a href="recipes.html?category=Mariscos">🦐 Mariscos</a>
+            <a href="recipes.html?category=Postres">🍮 Postres</a>
+            <a href="recipes.html?category=Bebidas">🥤 Bebidas</a>
+            <a href="recipes.html?category=Desayunos">☕ Desayunos</a>
+            <a href="recipes.html?category=Entradas">🥗 Entradas</a>
+          </div>
+        </div>
+
+        <a href="menu-semanal.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Menú Semanal</a>
+
+        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
+          <span class="text-ec-gold font-bold">Sobre Nosotros ▾</span>
+          <div class="nav-dropdown">
+            <a href="nosotros.html">🏡 Nuestra Historia</a>
+            <a href="blog.html">📰 Blog Turismo</a>
+            <a href="contact.html">✉️ Contacto</a>
+          </div>
+        </div>
       </nav>
-      <a href="blog.html" class="bg-white/20 text-white font-semibold text-sm px-4 py-2 rounded-full hover:bg-white/30 transition-colors border border-white/30">
-        ← Blog
-      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="blog.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+          ← Blog
+        </a>
+        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="nav-mobile" class="hidden md:hidden border-t border-blue-700 py-3 px-4 space-y-1 bg-[#0033A0]">
+      <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
+      <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Todas las Recetas</a>
+      <a href="menu-semanal.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📅 Menú Semanal</a>
+      <a href="blog.html" class="block px-3 py-2 text-ec-gold font-bold text-sm">📰 Blog Turismo</a>
+      <a href="nosotros.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">🏡 Nosotros</a>
+      <a href="contact.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">✉️ Contacto</a>
     </div>
   </header>
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function(){
+      document.getElementById('nav-mobile')?.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- ═══ LOADING ═══ -->
   <div id="post-loading" class="min-h-screen flex items-center justify-center" aria-live="polite">
     <div class="text-center">
-      <div class="w-12 h-12 border-4 border-[#C8102E] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <div class="w-12 h-12 border-4 border-[#EF3340] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
       <p class="text-gray-500 text-sm">Cargando artículo...</p>
     </div>
   </div>
@@ -97,7 +161,7 @@
       <div class="text-6xl mb-4">📰</div>
       <h1 class="text-2xl font-black text-gray-800 mb-2">Artículo no encontrado</h1>
       <p data-error-msg class="text-gray-500 mb-6">No pudimos encontrar este artículo.</p>
-      <a href="blog.html" class="inline-flex items-center gap-2 bg-[#C8102E] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors">
+      <a href="blog.html" class="inline-flex items-center gap-2 bg-[#EF3340] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors">
         ← Ver el blog
       </a>
     </div>
@@ -109,9 +173,9 @@
     <!-- Breadcrumb -->
     <nav class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-2" aria-label="Ruta de navegación">
       <ol class="flex items-center gap-2 text-xs text-gray-400 flex-wrap">
-        <li><a href="index.html" class="hover:text-[#006400] transition-colors">Inicio</a></li>
+        <li><a href="index.html" class="hover:text-[#0033A0] transition-colors">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="blog.html" class="hover:text-[#006400] transition-colors">Blog Turismo</a></li>
+        <li><a href="blog.html" class="hover:text-[#0033A0] transition-colors">Blog Turismo</a></li>
         <li aria-hidden="true">/</li>
         <li id="bc-post" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">Artículo</li>
       </ol>
@@ -124,10 +188,10 @@
           class="w-full h-full object-cover" loading="eager" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
         <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span data-optional id="post-category-badge-hero" class="hidden bg-[#C8102E]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+          <span data-optional id="post-category-badge-hero" class="hidden bg-[#EF3340]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
             <span id="post-category"></span>
           </span>
-          <span data-optional id="post-region-badge-hero" class="hidden bg-white/90 backdrop-blur-sm text-[#006400] text-xs font-bold px-3 py-1 rounded-full">
+          <span data-optional id="post-region-badge-hero" class="hidden bg-white/90 backdrop-blur-sm text-[#0033A0] text-xs font-bold px-3 py-1 rounded-full">
             <span id="post-region"></span>
           </span>
         </div>
@@ -187,7 +251,7 @@
 
           <!-- Navegación volver -->
           <div class="pt-6 border-t border-gray-100 mt-6">
-            <a href="blog.html" class="inline-flex items-center gap-2 bg-[#C8102E] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#C8102E] focus:ring-offset-2">
+            <a href="blog.html" class="inline-flex items-center gap-2 bg-[#EF3340] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#EF3340] focus:ring-offset-2">
               ← Ver más artículos
             </a>
           </div>
@@ -204,11 +268,20 @@
             </div>
 
             <!-- CTA Recetas -->
-            <div class="bg-gradient-to-br from-[#006400] to-[#004d00] rounded-3xl p-5 text-white">
+            <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-5 text-white">
               <p class="font-bold text-sm mb-2">🍽️ Recetas de Ecuador</p>
-              <p class="text-green-200 text-xs mb-3">Cocina los sabores auténticos del Ecuador en casa</p>
-              <a href="recipes.html" class="inline-block bg-[#FFD700] text-[#004d00] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+              <p class="text-blue-200 text-xs mb-3">Cocina los sabores auténticos del Ecuador en casa</p>
+              <a href="recipes.html" class="inline-block bg-ec-gold text-[#001f6e] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
                 Ver recetas →
+              </a>
+            </div>
+
+            <!-- CTA Menú Semanal -->
+            <div class="bg-white rounded-3xl p-5 shadow-md border border-gray-100 mt-4">
+              <p class="font-bold text-gray-800 text-sm mb-2">📅 Menú Semanal</p>
+              <p class="text-gray-500 text-xs mb-3">7 recetas para toda la semana, generadas por IA</p>
+              <a href="menu-semanal.html" class="inline-block bg-[#0033A0] text-white font-bold text-xs px-4 py-2 rounded-full hover:bg-blue-800 transition-colors">
+                Ver menú →
               </a>
             </div>
           </div>
@@ -219,24 +292,46 @@
 
   </div><!-- /post-content -->
 
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="bg-[#0033A0] py-10 px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+      <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+        <input type="email" name="email" placeholder="tu@email.com" required
+               class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+               aria-label="Email para newsletter">
+        <button type="submit"
+                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+          Suscribirme →
+        </button>
+      </form>
+    </div>
+  </section>
+
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#006400] text-white py-10 px-4 sm:px-6">
+  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6 border-t border-blue-700">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">
-          <span class="text-2xl">🇪🇨</span>
-          <span class="font-black">Biblioteca de Recetas Ecuatorianas</span>
+          <span class="text-2xl">🍲</span>
+          <span class="font-black">Ecuador a la Carta</span>
         </div>
-        <nav class="flex flex-wrap items-center justify-center gap-4 text-green-200 text-sm" aria-label="Pie de página">
+        <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm" aria-label="Pie de página">
           <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
           <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
+          <a href="menu-semanal.html" class="hover:text-white transition-colors">Menú Semanal</a>
           <a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a>
+          <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
           <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
           <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
           <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
         </nav>
       </div>
-      <p class="text-center text-green-300 text-xs mt-6">&copy; 2026 Biblioteca de Recetas Ecuatorianas</p>
+      <p class="text-center text-blue-300 text-xs mt-6">&copy; 2026 Ecuador a la Carta</p>
     </div>
   </footer>
   <div class="ec-stripe" aria-hidden="true"></div>

@@ -135,6 +135,21 @@ SCHEMA JSON COMPLETO A GENERAR:
     "tourism_route": "Ciudades: [descripcion]. Precio: $X-Y USD."
   }
 
+  REGLA ESTRICTA DE IMAGENES (OBLIGATORIA):
+  ============================================================
+  BAJO NINGUNA CIRCUNSTANCIA USES MINIATURAS (THUMBNAILS) DE
+  YOUTUBE CON ROSTROS O PERSONAS. EL CAMPO "image_url" DEBE
+  CONTENER UNICAMENTE FOTOS DEL PLATO DE COMIDA SERVIDO,
+  ESTILO PRIMER PLANO PROFESIONAL ("FOOD PHOTOGRAPHY").
+  NUNCA pongas en image_url:
+    - URLs de img.youtube.com (thumbnails de YouTube)
+    - Fotos de personas, chefs o cocineros
+    - Fotos de restaurantes con personas identificables
+  SIEMPRE usa:
+    - URLs de Unsplash (images.unsplash.com) con foto del plato
+    - Descripciones en image_alt del plato, NO de personas
+  ============================================================
+
   REGLAS:
   - origin_cities: 2-4 ciudades donde el plato es tipico.
   - youtube_query: maximo 8 palabras en espanol para buscar en YouTube.

@@ -1,5 +1,154 @@
 [
   {
+    "slug": "viche-manabita-receta-tradicional",
+    "title": "Viche Manabita Receta Tradicional Ecuatoriana",
+    "description": "Viche Manabita, una sopa tradicional de la costa ecuatoriana, llena de sabor a mariscos y maní. Descubre cómo preparar este plato típico de Manabí con ingredientes frescos y pasos detallados para disfrutar en casa. Perfecto para amantes de la comida costeña.",
+    "region": "Costa",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "60 min",
+    "total_time": "90 min",
+    "image_url": null,
+    "image_alt": "Sopa tradicional ecuatoriana Viche Manabita en un plato rústico con mariscos y maní",
+    "ingredients": [
+      "1 taza de maní crudo (Supermaxi, Megamaxi, TIA - sección granos)",
+      "1 libra de pescado blanco fresco (corvina o similar)",
+      "1/2 libra de camarones frescos, pelados y desvenados",
+      "1/2 libra de calamares, limpios y cortados en anillos",
+      "2 mazorcas de maíz tierno, cortadas en trozos",
+      "2 plátanos verdes, pelados y cortados en trozos",
+      "1 yuca mediana, pelada y cortada en trozos",
+      "1 cebolla colorada, finamente picada",
+      "2 dientes de ajo, triturados",
+      "1 pimiento verde, picado",
+      "2 cucharadas de pasta de achiote (Supermaxi, Megamaxi - sección condimentos)",
+      "Sal y pimienta al gusto",
+      "1 manojo de cilantro fresco, picado"
+    ],
+    "instructions": [
+      "Tostar el maní en una sartén a fuego medio por 5-7 minutos, removiendo constantemente para evitar que se queme. Luego, licuarlo con 2 tazas de agua hasta obtener una pasta suave.",
+      "En una olla grande, sofreír la cebolla, el ajo y el pimiento con la pasta de achiote a fuego medio hasta que estén tiernos, aproximadamente 5 minutos.",
+      "Añadir 6 tazas de agua o caldo de pescado a la olla y llevar a ebullición. Incorporar la pasta de maní y mezclar bien para evitar grumos.",
+      "Agregar la yuca, el maíz y los plátanos verdes. Cocinar a fuego medio-bajo por 30 minutos, o hasta que las verduras estén tiernas.",
+      "Incorporar el pescado, los camarones y los calamares. Cocinar por 10-15 minutos adicionales, hasta que los mariscos estén cocidos pero no sobrecocidos.",
+      "Ajustar la sazón con sal y pimienta. Antes de servir, espolvorear cilantro fresco picado para darle un toque de frescura.",
+      "Servir caliente en platos hondos, asegurándose de incluir un poco de cada ingrediente en cada porción."
+    ],
+    "tips": [
+      "Si deseas un sabor más intenso, puedes usar caldo de cabezas de pescado en lugar de agua.",
+      "Acompaña el viche con arroz blanco o una rodaja de limón para resaltar los sabores.",
+      "El maní debe estar bien licuado para evitar una textura granulosa en la sopa.",
+      "Si no encuentras maíz tierno, puedes usar maíz enlatado, aunque el sabor será ligeramente diferente."
+    ],
+    "keywords": [
+      "viche manabita",
+      "receta viche ecuatoriano",
+      "sopa de mariscos manabi",
+      "viche tradicional costeño",
+      "como hacer viche manabita",
+      "plato tipico de manabi",
+      "sopa de mani y mariscos",
+      "comida ecuatoriana costa",
+      "recetas manabitas tradicionales",
+      "viche de pescado y camarón",
+      "cocina costeña ecuatoriana"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el Viche Manabita?",
+        "a": "Se suele acompañar con arroz blanco o una rodaja de limón para realzar el sabor de los mariscos."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el Viche Manabita?",
+        "a": "Puede conservarse en el refrigerador por 1-2 días, pero es mejor consumirlo fresco para disfrutar de la textura de los mariscos."
+      },
+      {
+        "q": "¿Es difícil hacer Viche Manabita?",
+        "a": "No es muy difícil, pero requiere tiempo para preparar los ingredientes y lograr la textura adecuada del maní."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Portoviejo",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Manta",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Chone",
+        "province": "Manabí",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian soup",
+      "viche manabita",
+      "seafood soup",
+      "traditional ecuadorian food",
+      "manabi cuisine",
+      "peanut soup",
+      "coastal dish"
+    ],
+    "international_substitutes": [
+      {
+        "original": "pasta de achiote",
+        "sustituto_usa": "mezcla de paprika y cúrcuma (1:1)",
+        "sustituto_europa": "mezcla de paprika y cúrcuma (1:1)"
+      },
+      {
+        "original": "plátano verde",
+        "sustituto_usa": "plátano macho verde (disponible en mercados latinos)",
+        "sustituto_europa": "plátano macho verde o patata (si no hay plátano)"
+      },
+      {
+        "original": "maíz tierno",
+        "sustituto_usa": "maíz dulce enlatado",
+        "sustituto_europa": "maíz dulce enlatado"
+      }
+    ],
+    "tourism_route": "Explora la ruta gastronómica de Manabí, comenzando en Portoviejo, donde el Viche Manabita es un plato estrella en mercados locales como el Mercado Central (precio aproximado: $3-5 por plato). Continúa hacia Manta para probar versiones con mariscos frescos del puerto.",
+    "youtube_videos": [
+      {
+        "title": "Viche de Pescado IRRESISTIBLE | KWA",
+        "videoId": "PHvTsKlzw5c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=PHvTsKlzw5c",
+        "embed": "https://www.youtube-nocookie.com/embed/PHvTsKlzw5c",
+        "uploadDate": "2024-02-23",
+        "description": "No te quedes con las ganas de probar este #VicheDePescado. Prepáralo y disfruta de esta preciosura. #KWAEC \nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/02/23/viche-de-pescado\n\nS"
+      },
+      {
+        "title": "Viche de Pescado: Delicioso Plato Típico del Ecuador | KWA",
+        "videoId": "Vg-T6WDc8WI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Vg-T6WDc8WI",
+        "embed": "https://www.youtube-nocookie.com/embed/Vg-T6WDc8WI",
+        "uploadDate": "2025-10-02",
+        "description": "Ingredientes:  https://recetaskwa.com/2024/02/23/viche-de-pescado/\n\nEl Viche de pescado es una de las sopas más representativas de la gastronomía ecuatoriana, especialmente de la provincia de Manabí. "
+      },
+      {
+        "title": "VICHE DE CAMARON - Delicia Ecuatoriana #vichedepescado #vichedecamaron #sopadecamaron #camarones",
+        "videoId": "DZZseU95HHs",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=DZZseU95HHs",
+        "embed": "https://www.youtube-nocookie.com/embed/DZZseU95HHs",
+        "uploadDate": "2022-03-05",
+        "description": "@cocinafacilitoconisa VICHE DE CAMARON - Delicia Ecuatoriana muy facil de preparar muy nutritiva y deliciosa."
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 19,
+    "created_at": "2026-02-25T05:22:31.225Z"
+  },
+  {
     "slug": "guatita-ecuatoriana-sierra-central",
     "title": "Guatita Ecuatoriana de la Sierra Central Receta Tradicional",
     "description": "Guatita Ecuatoriana de la Sierra Central, un plato típico lleno de sabor con mondongo y maní. Descubre cómo preparar esta receta tradicional paso a paso con ingredientes fáciles de encontrar y consejos para un resultado perfecto. Ideal para compartir en familia.",

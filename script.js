@@ -147,6 +147,14 @@ async function initListing() {
           if (r.target_audience && r.target_audience !== audience) return false;
         }
       }
+
+      var urlParamsFavorites = new URLSearchParams(window.location.search);
+      if (urlParamsFavorites.get('favorites') === 'true') {
+        var savedFavs = [];
+        try { savedFavs = JSON.parse(localStorage.getItem('ec_favorites')) || []; } catch (e) { }
+        if (savedFavs.indexOf(r.slug) === -1) return false;
+      }
+
       return true;
     });
 
@@ -199,7 +207,98 @@ async function initListing() {
   }
 
   if (grid) grid.innerHTML = renderSkeleton(6);
+
+  var paramsFavs = new URLSearchParams(window.location.search);
+  if (paramsFavs.get('favorites') === 'true') {
+    var pageTitle = document.querySelector('h1');
+    var pageDesc = document.querySelector('h1 + p');
+    if (pageTitle) pageTitle.textContent = '❤️ Mi Recetario';
+    if (pageDesc) pageDesc.textContent = 'Tus recetas guardadas para preparar cuando quieras.';
+    document.title = 'Mi Recetario | Ecuador a la Carta';
+  }
+
   applyFilters();
+}
+
+// ─── Lógica de Favoritos y Sticky Menu ────────────────────────
+function initFavoritesAndSticky(recipe) {
+  var slug = recipe.slug;
+  var btnMain = document.getElementById('btn-favorite');
+  var btnSticky = document.getElementById('sticky-btn-favorite');
+  var stickyBar = document.getElementById('sticky-recipe-bar');
+  var heroImg = document.getElementById('recipe-hero-img');
+
+  // Populate sticky bar text
+  var stickyTitle = document.getElementById('sticky-recipe-title');
+  var stickyTime = document.getElementById('sticky-recipe-time');
+  if (stickyTitle) stickyTitle.textContent = recipe.title;
+  if (stickyTime) stickyTime.textContent = recipe.total_time || '-- min';
+
+  function getFavorites() {
+    try { return JSON.parse(localStorage.getItem('ec_favorites')) || []; }
+    catch (e) { return []; }
+  }
+  function isFavorite(slug) { return getFavorites().indexOf(slug) !== -1; }
+
+  function updateButtonsUI() {
+    var isFav = isFavorite(slug);
+    var svgFilled = '<svg class="w-5 h-5 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
+    var svgEmpty = '<svg class="w-5 h-5 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
+
+    if (btnMain) {
+      btnMain.innerHTML = (isFav ? svgFilled : svgEmpty) + '<span class="btn-text">' + (isFav ? 'Guardado' : 'Guardar') + '</span>';
+      if (isFav) {
+        btnMain.classList.replace('bg-white', 'bg-rose-500');
+        btnMain.classList.replace('text-rose-500', 'text-white');
+        btnMain.classList.replace('hover:bg-rose-50', 'hover:bg-rose-600');
+        btnMain.classList.replace('hover:text-rose-600', 'hover:text-white');
+      } else {
+        btnMain.classList.replace('bg-rose-500', 'bg-white');
+        btnMain.classList.replace('text-white', 'text-rose-500');
+        btnMain.classList.replace('hover:bg-rose-600', 'hover:bg-rose-50');
+        btnMain.classList.replace('hover:text-white', 'hover:text-rose-600');
+      }
+    }
+    if (btnSticky) {
+      btnSticky.innerHTML = (isFav ? svgFilled : svgEmpty);
+      if (isFav) {
+        btnSticky.classList.replace('bg-rose-50', 'bg-rose-500');
+        btnSticky.classList.replace('text-rose-500', 'text-white');
+        btnSticky.classList.replace('hover:bg-rose-100', 'hover:bg-rose-600');
+      } else {
+        btnSticky.classList.replace('bg-rose-500', 'bg-rose-50');
+        btnSticky.classList.replace('text-white', 'text-rose-500');
+        btnSticky.classList.replace('hover:bg-rose-600', 'hover:bg-rose-100');
+      }
+    }
+  }
+
+  function toggleFavorite() {
+    var favs = getFavorites();
+    var idx = favs.indexOf(slug);
+    if (idx !== -1) favs.splice(idx, 1);
+    else favs.push(slug);
+    localStorage.setItem('ec_favorites', JSON.stringify(favs));
+    updateButtonsUI();
+    trackEvent('recipe_favorite_toggle', { slug: slug, action: idx !== -1 ? 'remove' : 'add' });
+  }
+
+  if (btnMain) btnMain.addEventListener('click', toggleFavorite);
+  if (btnSticky) btnSticky.addEventListener('click', toggleFavorite);
+
+  updateButtonsUI();
+
+  // Scroll listener for Sticky Bar
+  if (stickyBar && heroImg) {
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        stickyBar.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+      } else {
+        stickyBar.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+      }
+    }, { threshold: 0 });
+    observer.observe(heroImg);
+  }
 }
 
 // ─── Página: RECETA ───────────────────────────────────────────
@@ -528,7 +627,98 @@ async function initRecipe() {
     }
   }
 
+  // --- Integración Lista de Compras ---
+  var btnGrocery = document.getElementById('btn-grocery-list');
+  if (btnGrocery) {
+    btnGrocery.addEventListener('click', function () {
+      var originalText = this.innerHTML;
+      this.innerHTML = '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="btn-text">¡Añadido a tu lista!</span>';
+      this.classList.replace('bg-[#0033A0]', 'bg-gray-800');
+      trackEvent('grocery_list_add', { slug: slug });
+      setTimeout(function () {
+        btnGrocery.innerHTML = originalText;
+        btnGrocery.classList.replace('bg-gray-800', 'bg-[#0033A0]');
+      }, 3000);
+    });
+  }
+
+  // --- Integración de Reseñas (Mock) ---
+  var reviewForm = document.getElementById('review-form');
+  var starsPicker = document.getElementById('review-stars-picker');
+  var reviewStars = 5;
+
+  if (starsPicker) {
+    var starsBtns = starsPicker.querySelectorAll('button');
+    function updateStars() {
+      starsBtns.forEach(function (b) {
+        if (parseInt(b.getAttribute('data-val')) <= reviewStars) {
+          b.classList.add('text-yellow-400');
+          b.classList.remove('text-gray-300');
+        } else {
+          b.classList.remove('text-yellow-400');
+          b.classList.add('text-gray-300');
+        }
+      });
+    }
+    updateStars();
+    starsBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        reviewStars = parseInt(this.getAttribute('data-val'));
+        updateStars();
+      });
+    });
+  }
+
+  var photoInput = document.getElementById('review-photo');
+  var photoName = document.getElementById('review-photo-name');
+  if (photoInput && photoName) {
+    photoInput.addEventListener('change', function () {
+      if (this.files && this.files[0]) {
+        photoName.textContent = this.files[0].name;
+      }
+    });
+  }
+
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var textInput = document.getElementById('review-text').value;
+      if (!textInput.trim()) return;
+
+      var list = document.getElementById('reviews-list');
+      var fotoHtml = '';
+      if (photoInput && photoInput.files && photoInput.files[0]) {
+        fotoHtml = '<img src="' + URL.createObjectURL(photoInput.files[0]) + '" class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-xl shadow-sm mt-3">';
+      }
+
+      var starsHtml = '';
+      for (var i = 1; i <= 5; i++) {
+        starsHtml += i <= reviewStars ? '★' : '☆';
+      }
+
+      var html = '<div class="flex gap-4 mb-6">' +
+        '<div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold shrink-0">TU</div>' +
+        '<div>' +
+        '<div class="flex items-center gap-2 mb-1">' +
+        '<span class="font-bold text-gray-800">Tú</span>' +
+        '<span class="text-yellow-400 text-sm">' + starsHtml + '</span>' +
+        '<span class="text-xs text-gray-400">Justo ahora</span>' +
+        '</div>' +
+        '<p class="text-gray-600 text-sm">' + escapeHtml(textInput) + '</p>' +
+        fotoHtml +
+        '</div>' +
+        '</div>';
+      list.insertAdjacentHTML('afterbegin', html);
+      reviewForm.reset();
+      if (photoName) photoName.textContent = '';
+      reviewStars = 5;
+      if (typeof updateStars === 'function') updateStars();
+      trackEvent('review_submitted', { slug: slug, stars: reviewStars });
+    });
+  }
+
   initRating(slug);
+  initFavoritesAndSticky(recipe);
   initAds();
 }
 

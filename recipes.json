@@ -441,8 +441,8 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": null,
-    "image_alt": "Plato de seco de chivo manabita con arroz y patacones, comida tradicional ecuatoriana",
+    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/seco-de-chivo-manabita-receta.jpg",
+    "image_alt": "Seco de Chivo Manabita Receta Tradicional Ecuatoriana",
     "ingredients": [
       "1.5 kg de carne de chivo (costilla o pierna, disponible en mercados locales o Supermaxi)",
       "2 tazas de chicha de jora (mercados locales o TIA - sección bebidas tradicionales)",
@@ -571,9 +571,10 @@
         "description": "Chef Carmen Nieto\r\nSeco de Chivo\r\nMujeres 365"
       }
     ],
-    "_image_source": "pending_ai",
+    "_image_source": "flux_ai",
     "id": 15,
-    "created_at": "2026-02-24T21:44:17.264Z"
+    "created_at": "2026-02-24T21:44:17.264Z",
+    "og_image": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/seco-de-chivo-manabita-receta.jpg"
   },
   {
     "slug": "quimbolitos-ecuatorianos-receta-tradicional",
@@ -586,8 +587,8 @@
     "prep_time": "30 min",
     "cook_time": "40 min",
     "total_time": "70 min",
-    "image_url": null,
-    "image_alt": "Quimbolitos ecuatorianos tradicionales en hojas de achira listos para servir",
+    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/quimbolitos-ecuatorianos-receta-tradicional.jpg",
+    "image_alt": "Quimbolitos Ecuatorianos Receta Tradicional de la Sierra",
     "ingredients": [
       "1 taza de harina de maíz (Supermaxi, Megamaxi, TIA - sección granos)",
       "1/2 taza de azúcar",
@@ -712,9 +713,10 @@
         "description": "Las puedes rellenar con lo que más te guste! #HayacasDePollo #KWAEC\n\nRelleno:\nPollo 300 gr\nMantequilla 50 gr\nCebolla perla 80 gr\n\nMasa:\nHarina de maíz 500 gr\nCaldo de pollo 1,5 L\nMantequilla 100 gr\nAz"
       }
     ],
-    "_image_source": "pending_ai",
+    "_image_source": "flux_ai",
     "id": 14,
-    "created_at": "2026-02-24T21:43:31.198Z"
+    "created_at": "2026-02-24T21:43:31.198Z",
+    "og_image": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/quimbolitos-ecuatorianos-receta-tradicional.jpg"
   },
   {
     "slug": "mote-pillo-sierra-central-ecuador",
@@ -727,8 +729,8 @@
     "prep_time": "15 min",
     "cook_time": "30 min",
     "total_time": "45 min",
-    "image_url": null,
-    "image_alt": "Desayuno tradicional ecuatoriano con mote pillo y café",
+    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/mote-pillo-sierra-central-ecuador.jpg",
+    "image_alt": "Mote Pillo de la Sierra Central Receta Tradicional Ecuatoriana",
     "ingredients": [
       "2 tazas de mote cocido (Supermaxi, Megamaxi, TIA - sección granos)",
       "4 huevos grandes",
@@ -856,9 +858,10 @@
         "description": "No te quedes sin probar este MEGA MOTEPILLO! Etiqueta con quien lo compartirías #kwaec \n\nIngredientes:\nhttps://recetaskwa.com/2023/11/03/motepillo/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @K"
       }
     ],
-    "_image_source": "pending_ai",
+    "_image_source": "flux_ai",
     "id": 13,
-    "created_at": "2026-02-24T21:37:35.136Z"
+    "created_at": "2026-02-24T21:37:35.136Z",
+    "og_image": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/mote-pillo-sierra-central-ecuador.jpg"
   },
   {
     "slug": "fritada-ecuatoriana-sierra-oriental",

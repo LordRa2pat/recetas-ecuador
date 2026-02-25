@@ -160,7 +160,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": null,
+    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/guatita-ecuatoriana-sierra-central.jpg",
     "image_alt": "Plato de guatita ecuatoriana con mondongo y salsa de maní, receta tradicional de la Sierra Central",
     "ingredients": [
       "1 kg de mondongo (tripa de res) limpio (Supermaxi, Megamaxi - sección carnes)",
@@ -293,7 +293,8 @@
     ],
     "_image_source": "pending_ai",
     "id": 18,
-    "created_at": "2026-02-24T23:22:23.646Z"
+    "created_at": "2026-02-24T23:22:23.646Z",
+    "og_image": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/guatita-ecuatoriana-sierra-central.jpg"
   },
   {
     "slug": "encebollado-ecuatoriano-receta",

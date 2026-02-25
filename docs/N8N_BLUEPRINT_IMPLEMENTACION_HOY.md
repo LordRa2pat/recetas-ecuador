@@ -18,7 +18,7 @@
 [3. Enrich SEO — node scripts/enrich-seo.mjs]
          │
          ▼
-[4. Generar Imagen — HuggingFace FLUX.1-schnell]
+[4. Extraer Imagen de la Web (Google Custom Search API)]
          │
          ▼
 [5. Quality Gate v2 — imagen válida]
@@ -85,34 +85,26 @@ cd /app/recetas-ecuador && node scripts/enrich-seo.mjs
 
 ---
 
-## Nodo 4 — Generar Imagen (HuggingFace FLUX.1-schnell)
+## Nodo 4 — Extraer Imagen de la Web (Google Custom Search API)
 
 **Tipo**: HTTP Request
 **Endpoint**:
 ```
-POST https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell
-Authorization: Bearer {{$env.HUGGINGFACE_API_KEY}}
-Content-Type: application/json
-
-Body: { "inputs": "<prompt>" }
+GET https://customsearch.googleapis.com/customsearch/v1
 ```
 
-**Prompt para recetas**:
+**Parámetros GET**:
 ```
-Fotografía profesional del plato tradicional ecuatoriano "{title}" de {region},
-vista superior o plano tres cuartos alto, colores vibrantes y naturales,
-sin personas, sin texto, sin logos, fondo madera rústica o tela andina,
-vajilla artesanal ecuatoriana, iluminación natural lateral, 4K
-```
-
-**Prompt para posts de turismo**:
-```
-Fotografía de viaje y turismo profesional de Ecuador, {region}, {categoryStyle},
-tema: "{title}", sin personas, sin texto, sin logos, colores vibrantes,
-hora dorada, calidad editorial National Geographic, 4K
+key: {{$env.GOOGLE_SEARCH_API_KEY}}
+cx: {{$env.GOOGLE_CX}}
+q: "{{title}} receta comida ecuatoriana foto"
+searchType: image
+num: 3
 ```
 
-**Respuesta**: binario JPEG → convertir a base64 → subir a GitHub en `/images/{slug}.jpg`
+**Respuesta**: Array de resultados. Se extrae el primer `link` (URL de la imagen) y su `image.contextLink` para citar la fuente.
+
+**Subida**: Se descarga la imagen temporalmente → convertir a base64 → subir a GitHub en `/images/{slug}.jpg`
 
 ---
 
@@ -120,12 +112,12 @@ hora dorada, calidad editorial National Geographic, 4K
 
 **Tipo**: Code (JavaScript)
 ```javascript
-// Verificar que la imagen fue generada y subida
+// Verificar que la imagen fue extraída y subida
 const aiImageUrl = $input.first().json.ai_image_url;
 if (!aiImageUrl || !aiImageUrl.startsWith('https://raw.githubusercontent.com')) {
   // Warning log — no detener el workflow
-  console.warn('[QG2] Imagen IA no disponible — publicando sin imagen');
-  return [{ json: { ...$input.first().json, _image_source: 'pending_ai' } }];
+  console.warn('[QG2] Imagen web no disponible — publicando con estatus pending');
+  return [{ json: { ...$input.first().json, _image_source: 'pending_web' } }];
 }
 return [{ json: $input.first().json }];
 ```
@@ -189,7 +181,7 @@ GET https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.jso
 | Generar Contenido | 2 | 30s | Abortar + Telegram |
 | Quality Gate v1 | 0 | — | Abortar + Telegram |
 | Enrich SEO | 0 | — | Continuar (no crítico) |
-| Generar Imagen (HF) | 3 | 60s | Publicar sin imagen |
+| Extraer Imagen (Web) | 3 | 10s | Publicar sin imagen |
 | Commit GitHub | 3 | 10s | Abortar + Telegram |
 
 ---
@@ -229,7 +221,8 @@ Configurar en `n8n → Settings → Environment Variables`:
 |----------|-----------|-------------|
 | `XAI_API_KEY` | ✅ | xAI Grok — generación de contenido |
 | `GITHUB_TOKEN` | ✅ | GitHub PAT — push de datos |
-| `HUGGINGFACE_API_KEY` | ✅ | HuggingFace — generación de imágenes FLUX |
+| `GOOGLE_SEARCH_API_KEY` | ✅ | Búsqueda de Imágenes (Custom Search JSON API) |
+| `GOOGLE_CX` | ✅ | ID del Motor de Búsqueda (Google Programmable Search) |
 | `YT_API_KEY` | ⚠️ | YouTube — videos opcionales |
 | `GMAPS_API_KEY` | ⚠️ | Google Places — lugares opcionales |
 

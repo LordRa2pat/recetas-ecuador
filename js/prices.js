@@ -28,9 +28,9 @@ export function findPriceEntry(ing, priceDb) {
     var nk = normText(key);
     if (nk === name || nk.indexOf(name) !== -1 || name.indexOf(nk) !== -1) return priceDb[key];
   }
-  var words = name.split(/\s+/).filter(function(w) { return w.length > 4; });
+  var words = name.split(/\s+/).filter(function (w) { return w.length > 4; });
   for (var k in priceDb) {
-    var kWords = normText(k).split(/\s+/).filter(function(w) { return w.length > 4; });
+    var kWords = normText(k).split(/\s+/).filter(function (w) { return w.length > 4; });
     for (var i = 0; i < words.length; i++) {
       if (kWords.indexOf(words[i]) !== -1) return priceDb[k];
     }
@@ -56,7 +56,7 @@ export function renderIngredient(ing, priceDb) {
       var unit = entry.unit || 'kg';
       var tMin = '$' + entry.reference_price_min.toFixed(2);
       var sMax = '$' + (entry.reference_price_max || entry.reference_price_min).toFixed(2);
-      priceRow = '<div class="ml-5 mt-1 flex flex-wrap gap-1.5">' +
+      priceRow = '<div class="ml-8 mt-1 flex flex-wrap gap-1.5">' +
         '<span title="Precio referencia Tuti" class="inline-flex items-center gap-1 text-xs text-red-600 bg-red-50 border border-red-100 px-2 py-0.5 rounded-full">' +
         '<span class="font-bold">Tuti</span> ' + tMin + '/' + unit +
         '</span>' +
@@ -67,10 +67,13 @@ export function renderIngredient(ing, priceDb) {
     }
   }
 
+  // Escapar HTML base y luego envolver el texto entre paréntesis
+  var formattedIng = escapeHtml(ing).replace(/\(([^)]+)\)/g, '<span class="text-gray-400 font-normal text-xs">($1)</span>');
+
   return '<div class="ing-row flex flex-col py-2 border-b border-dashed border-gray-100 last:border-0">' +
     '<label class="flex items-start gap-3 cursor-pointer group">' +
     '<input type="checkbox" class="ing-checkbox mt-0.5" aria-label="Marcar ingrediente">' +
-    '<span class="ing-text text-gray-700 font-medium text-sm flex-1 transition-colors group-hover:text-[#0033A0]" data-original="' + escapeHtml(ing) + '">' + escapeHtml(ing) + '</span>' +
+    '<span class="ing-text text-gray-700 font-medium text-sm flex-1 transition-colors group-hover:text-[#0033A0]" data-original="' + escapeHtml(ing) + '">' + formattedIng + '</span>' +
     badge +
     '</label>' +
     priceRow +

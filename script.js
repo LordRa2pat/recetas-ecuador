@@ -351,6 +351,20 @@ async function initRecipe() {
     heroImg.onerror = function () { this.src = 'https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80'; };
   }
 
+  var creditEl = document.getElementById('image-credit');
+  if (creditEl) {
+    if (recipe._image_source_url) {
+      try {
+        var host = new URL(recipe._image_source_url).hostname;
+        if (host.startsWith('www.')) host = host.substring(4);
+        creditEl.innerHTML = '<a href="' + escapeHtml(recipe._image_source_url) + '" target="_blank" rel="noopener nofollow" class="bg-black/60 hover:bg-black/80 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm transition-colors cursor-pointer border border-white/20">Fuente: ' + escapeHtml(host) + '</a>';
+        creditEl.classList.remove('hidden');
+      } catch (e) { creditEl.classList.add('hidden'); }
+    } else {
+      creditEl.classList.add('hidden');
+    }
+  }
+
   var heroChip = document.getElementById('recipe-audience-chip');
   if (heroChip) {
     var chip = getAudienceChip(recipe);
@@ -862,6 +876,20 @@ async function initPost() {
     heroImg.src = post.image_url || 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80';
     heroImg.alt = post.image_alt || post.title;
     heroImg.onerror = function () { this.src = 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80'; };
+  }
+
+  var creditEl = document.getElementById('image-credit');
+  if (creditEl) {
+    if (post._image_source_url) {
+      try {
+        var host = new URL(post._image_source_url).hostname;
+        if (host.startsWith('www.')) host = host.substring(4);
+        creditEl.innerHTML = '<a href="' + escapeHtml(post._image_source_url) + '" target="_blank" rel="noopener nofollow" class="bg-black/60 hover:bg-black/80 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm transition-colors cursor-pointer border border-white/20">Fuente: ' + escapeHtml(host) + '</a>';
+        creditEl.classList.remove('hidden');
+      } catch (e) { creditEl.classList.add('hidden'); }
+    } else {
+      creditEl.classList.add('hidden');
+    }
   }
 
   var tf = [

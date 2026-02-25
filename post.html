@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artículo de Turismo Ecuador | Ecuador a la Carta</title>
   <meta name="description" content="Artículo de turismo y cultura ecuatoriana." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
 
   <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"
+    crossorigin="anonymous"></script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,9 +19,9 @@
       theme: {
         extend: {
           colors: {
-            'ec-gold':  '#FFD100',
-            'ec-blue':  '#0033A0',
-            'ec-red':   '#EF3340',
+            'ec-gold': '#FFD100',
+            'ec-blue': '#0033A0',
+            'ec-red': '#EF3340',
             'ec-green': '#006400',
           }
         }
@@ -27,51 +30,169 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
-    .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px;
-      background: linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
-    .nav-dropdown { display:none; position:absolute; top:100%; left:0; min-width:200px;
-      background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
-      border:1px solid rgba(0,51,160,0.1); z-index:100; padding:8px 0; }
-    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
-    .nav-dropdown a { display:block; padding:8px 16px; font-size:0.875rem; color:#374151;
-      transition: background 0.15s; }
-    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .ec-stripe {
+      background: linear-gradient(90deg, #FFD100 0% 50%, #0033A0 50% 75%, #EF3340 75% 100%);
+      height: 4px;
+      width: 100%;
+    }
+
+    .ec-title-bar {
+      display: block;
+      width: 56px;
+      height: 4px;
+      margin-top: 8px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #FFD100 0% 38%, #0033A0 38% 70%, #EF3340 70% 100%);
+    }
+
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0, 51, 160, 0.1);
+      z-index: 100;
+      padding: 8px 0;
+    }
+
+    .nav-item:hover .nav-dropdown,
+    .nav-item:focus-within .nav-dropdown {
+      display: block;
+    }
+
+    .nav-dropdown a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      color: #374151;
+      transition: background 0.15s;
+    }
+
+    .nav-dropdown a:hover {
+      background: #EEF2FF;
+      color: #0033A0;
+    }
+
     .ad-slot {
       min-height: 120px;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(8px);
       border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
-    .ad-slot--square { min-height: 280px; }
-    .ad-slot--tall { min-height: 600px; }
-    .ad-label { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; font-weight: 500; }
+
+    .ad-slot--square {
+      min-height: 280px;
+    }
+
+    .ad-slot--tall {
+      min-height: 600px;
+    }
+
+    .ad-label {
+      font-size: 10px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
     /* Post content typography */
-    #post-content-body h2 { font-size: 1.25rem; font-weight: 800; color: #111827; margin: 1.5rem 0 0.75rem; }
-    #post-content-body h3 { font-size: 1.1rem; font-weight: 700; color: #1f2937; margin: 1.25rem 0 0.5rem; }
-    #post-content-body p { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
-    #post-content-body ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; }
-    #post-content-body ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; }
-    #post-content-body li { margin-bottom: 0.4rem; line-height: 1.65; }
-    #post-content-body strong { color: #111827; font-weight: 700; }
-    #post-content-body a { color: #0033A0; text-decoration: underline; }
-    #post-content-body blockquote { border-left: 4px solid #FFD100; padding: 0.75rem 1rem; background: #fffbf2; margin: 1rem 0; border-radius: 0 0.75rem 0.75rem 0; }
-    details > summary { list-style: none; }
-    details > summary::-webkit-details-marker { display: none; }
+    #post-content-body h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #111827;
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    #post-content-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    #post-content-body p {
+      color: #374151;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    #post-content-body ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: #374151;
+    }
+
+    #post-content-body ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: #374151;
+    }
+
+    #post-content-body li {
+      margin-bottom: 0.4rem;
+      line-height: 1.65;
+    }
+
+    #post-content-body strong {
+      color: #111827;
+      font-weight: 700;
+    }
+
+    #post-content-body a {
+      color: #0033A0;
+      text-decoration: underline;
+    }
+
+    #post-content-body blockquote {
+      border-left: 4px solid #FFD100;
+      padding: 0.75rem 1rem;
+      background: #fffbf2;
+      margin: 1rem 0;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+
+    details>summary {
+      list-style: none;
+    }
+
+    details>summary::-webkit-details-marker {
+      display: none;
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
+
 <body class="bg-slate-50 font-sans text-gray-900 antialiased">
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
@@ -86,7 +207,8 @@
         <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90" aria-label="Navegación principal">
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90"
+        aria-label="Navegación principal">
         <a href="index.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Inicio</a>
 
         <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
@@ -125,7 +247,8 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="blog.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+        <a href="blog.html"
+          class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
           ← Blog
         </a>
         <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
@@ -143,176 +266,185 @@
     </div>
   </header>
   <main id="main-content">
-  <script>
-    document.getElementById('nav-toggle')?.addEventListener('click', function(){
-      document.getElementById('nav-mobile')?.classList.toggle('hidden');
-    });
-  </script>
+    <script>
+      document.getElementById('nav-toggle')?.addEventListener('click', function () {
+        document.getElementById('nav-mobile')?.classList.toggle('hidden');
+      });
+    </script>
 
-  <!-- ═══ LOADING ═══ -->
-  <div id="post-loading" class="min-h-screen flex items-center justify-center" aria-live="polite">
-    <div class="text-center">
-      <div class="w-12 h-12 border-4 border-[#EF3340] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p class="text-gray-500 text-sm">Cargando artículo...</p>
-    </div>
-  </div>
-
-  <!-- ═══ ERROR ═══ -->
-  <div id="post-error" class="hidden min-h-screen flex items-center justify-center px-4" role="alert">
-    <div class="text-center max-w-sm">
-      <div class="text-6xl mb-4">📰</div>
-      <h1 class="text-2xl font-black text-gray-800 mb-2">Artículo no encontrado</h1>
-      <p data-error-msg class="text-gray-500 mb-6">No pudimos encontrar este artículo.</p>
-      <a href="blog.html" class="inline-flex items-center gap-2 bg-[#EF3340] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors">
-        ← Ver el blog
-      </a>
-    </div>
-  </div>
-
-  <!-- ═══ POST CONTENT ═══ -->
-  <div id="post-content" class="hidden">
-
-    <!-- Breadcrumb -->
-    <nav class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-2" aria-label="Ruta de navegación">
-      <ol class="flex items-center gap-2 text-xs text-gray-400 flex-wrap">
-        <li><a href="index.html" class="hover:text-[#0033A0] transition-colors">Inicio</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="blog.html" class="hover:text-[#0033A0] transition-colors">Blog Turismo</a></li>
-        <li aria-hidden="true">/</li>
-        <li id="bc-post" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">Artículo</li>
-      </ol>
-    </nav>
-
-    <!-- Hero imagen -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-      <div class="relative h-64 sm:h-96 rounded-3xl overflow-hidden shadow-2xl">
-        <img id="post-hero-img" src="" alt=""
-          class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
-        <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span data-optional id="post-category-badge-hero" class="hidden bg-[#EF3340]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
-            <span id="post-category"></span>
-          </span>
-          <span data-optional id="post-region-badge-hero" class="hidden bg-white/90 backdrop-blur-sm text-[#0033A0] text-xs font-bold px-3 py-1 rounded-full">
-            <span id="post-region"></span>
-          </span>
+    <!-- ═══ LOADING ═══ -->
+    <div id="post-loading" class="min-h-screen flex items-center justify-center" aria-live="polite">
+      <div class="text-center">
+        <div class="w-12 h-12 border-4 border-[#EF3340] border-t-transparent rounded-full animate-spin mx-auto mb-4">
         </div>
+        <p class="text-gray-500 text-sm">Cargando artículo...</p>
       </div>
     </div>
 
-    <!-- Título, meta y contenido -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
-      <div class="flex flex-col lg:flex-row gap-8">
+    <!-- ═══ ERROR ═══ -->
+    <div id="post-error" class="hidden min-h-screen flex items-center justify-center px-4" role="alert">
+      <div class="text-center max-w-sm">
+        <div class="text-6xl mb-4">📰</div>
+        <h1 class="text-2xl font-black text-gray-800 mb-2">Artículo no encontrado</h1>
+        <p data-error-msg class="text-gray-500 mb-6">No pudimos encontrar este artículo.</p>
+        <a href="blog.html"
+          class="inline-flex items-center gap-2 bg-[#EF3340] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors">
+          ← Ver el blog
+        </a>
+      </div>
+    </div>
 
-        <!-- Artículo principal -->
-        <div class="flex-1 min-w-0">
+    <!-- ═══ POST CONTENT ═══ -->
+    <div id="post-content" class="hidden">
 
-          <!-- Header del artículo -->
-          <div class="mb-6">
-            <h1 id="post-title" class="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-2">Cargando...</h1>
-            <p data-optional id="post-subtitle-wrap" class="hidden text-xl text-gray-500 mb-4 font-medium">
-              <span id="post-subtitle"></span>
-            </p>
-            <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500">
-              <span data-optional id="post-date-wrap" class="hidden flex items-center gap-1">
-                📅 <span id="post-date"></span>
-              </span>
-              <span data-optional id="post-rt-wrap" class="hidden flex items-center gap-1">
-                ⏱ <span id="post-reading-time"></span> de lectura
-              </span>
-              <span data-optional id="post-source-wrap" class="hidden flex items-center gap-1 text-xs">
-                Fuente: <span id="post-source" class="font-medium"></span>
-              </span>
-            </div>
+      <!-- Breadcrumb -->
+      <nav class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-2" aria-label="Ruta de navegación">
+        <ol class="flex items-center gap-2 text-xs text-gray-400 flex-wrap">
+          <li><a href="index.html" class="hover:text-[#0033A0] transition-colors">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="blog.html" class="hover:text-[#0033A0] transition-colors">Blog Turismo</a></li>
+          <li aria-hidden="true">/</li>
+          <li id="bc-post" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">Artículo</li>
+        </ol>
+      </nav>
+
+      <!-- Hero imagen -->
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+        <div class="relative h-64 sm:h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+            <span data-optional id="post-category-badge-hero"
+              class="hidden bg-[#EF3340]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+              <span id="post-category"></span>
+            </span>
+            <span data-optional id="post-region-badge-hero"
+              class="hidden bg-white/90 backdrop-blur-sm text-[#0033A0] text-xs font-bold px-3 py-1 rounded-full">
+              <span id="post-region"></span>
+            </span>
           </div>
-
-          <!-- AdSense in-article #1 -->
-          <div class="ad-slot w-full mb-6">
-            <p class="ad-label">Publicidad</p>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX"
-                 data-ad-slot="2020202020" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          </div>
-
-          <!-- Contenido del artículo -->
-          <div id="post-content-body" class="prose max-w-none text-gray-700 leading-relaxed mb-6">
-            <p class="text-gray-300 animate-pulse">Cargando contenido...</p>
-          </div>
-
-          <!-- AdSense in-article #2 -->
-          <div class="ad-slot w-full mb-6">
-            <p class="ad-label">Publicidad</p>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX"
-                 data-ad-slot="3030303030" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          </div>
-
-          <!-- FAQs accordion -->
-          <div id="post-faqs" class="hidden"></div>
-
-          <!-- Recetas relacionadas de la misma región -->
-          <div id="post-related-recipes" class="hidden"></div>
-
-          <!-- Navegación volver -->
-          <div class="pt-6 border-t border-gray-100 mt-6">
-            <a href="blog.html" class="inline-flex items-center gap-2 bg-[#EF3340] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#EF3340] focus:ring-offset-2">
-              ← Ver más artículos
-            </a>
-          </div>
-
+          <!-- Crédito de imagen -->
+          <div id="image-credit" class="hidden absolute bottom-3 right-4 z-10"></div>
         </div>
+      </div>
 
-        <!-- Sidebar sticky desktop -->
-        <aside class="hidden lg:flex flex-col gap-5 w-64 flex-shrink-0" aria-label="Barra lateral del artículo">
-          <div class="sticky top-24">
-            <div class="ad-slot ad-slot--tall w-full mb-5">
+      <!-- Título, meta y contenido -->
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
+        <div class="flex flex-col lg:flex-row gap-8">
+
+          <!-- Artículo principal -->
+          <div class="flex-1 min-w-0">
+
+            <!-- Header del artículo -->
+            <div class="mb-6">
+              <h1 id="post-title" class="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-2">Cargando...
+              </h1>
+              <p data-optional id="post-subtitle-wrap" class="hidden text-xl text-gray-500 mb-4 font-medium">
+                <span id="post-subtitle"></span>
+              </p>
+              <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500">
+                <span data-optional id="post-date-wrap" class="hidden flex items-center gap-1">
+                  📅 <span id="post-date"></span>
+                </span>
+                <span data-optional id="post-rt-wrap" class="hidden flex items-center gap-1">
+                  ⏱ <span id="post-reading-time"></span> de lectura
+                </span>
+                <span data-optional id="post-source-wrap" class="hidden flex items-center gap-1 text-xs">
+                  Fuente: <span id="post-source" class="font-medium"></span>
+                </span>
+              </div>
+            </div>
+
+            <!-- AdSense in-article #1 -->
+            <div class="ad-slot w-full mb-6">
               <p class="ad-label">Publicidad</p>
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX"
-                   data-ad-slot="4040404040" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="2020202020"
+                data-ad-format="auto" data-full-width-responsive="true"></ins>
             </div>
 
-            <!-- CTA Recetas -->
-            <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-5 text-white">
-              <p class="font-bold text-sm mb-2">🍽️ Recetas de Ecuador</p>
-              <p class="text-blue-200 text-xs mb-3">Cocina los sabores auténticos del Ecuador en casa</p>
-              <a href="recipes.html" class="inline-block bg-ec-gold text-[#001f6e] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-                Ver recetas →
+            <!-- Contenido del artículo -->
+            <div id="post-content-body" class="prose max-w-none text-gray-700 leading-relaxed mb-6">
+              <p class="text-gray-300 animate-pulse">Cargando contenido...</p>
+            </div>
+
+            <!-- AdSense in-article #2 -->
+            <div class="ad-slot w-full mb-6">
+              <p class="ad-label">Publicidad</p>
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="3030303030"
+                data-ad-format="auto" data-full-width-responsive="true"></ins>
+            </div>
+
+            <!-- FAQs accordion -->
+            <div id="post-faqs" class="hidden"></div>
+
+            <!-- Recetas relacionadas de la misma región -->
+            <div id="post-related-recipes" class="hidden"></div>
+
+            <!-- Navegación volver -->
+            <div class="pt-6 border-t border-gray-100 mt-6">
+              <a href="blog.html"
+                class="inline-flex items-center gap-2 bg-[#EF3340] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#EF3340] focus:ring-offset-2">
+                ← Ver más artículos
               </a>
             </div>
 
-            <!-- CTA Menú Semanal -->
-            <div class="bg-white rounded-3xl p-5 shadow-md border border-gray-100 mt-4">
-              <p class="font-bold text-gray-800 text-sm mb-2">📅 Menú Semanal</p>
-              <p class="text-gray-500 text-xs mb-3">7 recetas para toda la semana, generadas por IA</p>
-              <a href="menu-semanal.html" class="inline-block bg-[#0033A0] text-white font-bold text-xs px-4 py-2 rounded-full hover:bg-blue-800 transition-colors">
-                Ver menú →
-              </a>
-            </div>
           </div>
-        </aside>
 
+          <!-- Sidebar sticky desktop -->
+          <aside class="hidden lg:flex flex-col gap-5 w-64 flex-shrink-0" aria-label="Barra lateral del artículo">
+            <div class="sticky top-24">
+              <div class="ad-slot ad-slot--tall w-full mb-5">
+                <p class="ad-label">Publicidad</p>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="4040404040"
+                  data-ad-format="auto" data-full-width-responsive="true"></ins>
+              </div>
+
+              <!-- CTA Recetas -->
+              <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-5 text-white">
+                <p class="font-bold text-sm mb-2">🍽️ Recetas de Ecuador</p>
+                <p class="text-blue-200 text-xs mb-3">Cocina los sabores auténticos del Ecuador en casa</p>
+                <a href="recipes.html"
+                  class="inline-block bg-ec-gold text-[#001f6e] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+                  Ver recetas →
+                </a>
+              </div>
+
+              <!-- CTA Menú Semanal -->
+              <div class="bg-white rounded-3xl p-5 shadow-md border border-gray-100 mt-4">
+                <p class="font-bold text-gray-800 text-sm mb-2">📅 Menú Semanal</p>
+                <p class="text-gray-500 text-xs mb-3">7 recetas para toda la semana, generadas por IA</p>
+                <a href="menu-semanal.html"
+                  class="inline-block bg-[#0033A0] text-white font-bold text-xs px-4 py-2 rounded-full hover:bg-blue-800 transition-colors">
+                  Ver menú →
+                </a>
+              </div>
+            </div>
+          </aside>
+
+        </div>
       </div>
-    </div>
 
-  </div><!-- /post-content -->
+    </div><!-- /post-content -->
 
-  <!-- ═══ NEWSLETTER ═══ -->
-  <section class="bg-[#0033A0] py-10 px-4 sm:px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-      <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
-      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
-      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
-        <input type="email" name="email" placeholder="tu@email.com" required
-               class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-               aria-label="Email para newsletter">
-        <button type="submit"
-                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
-          Suscribirme →
-        </button>
-      </form>
-    </div>
-  </section>
+    <!-- ═══ NEWSLETTER ═══ -->
+    <section class="bg-[#0033A0] py-10 px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+        <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+        <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+        <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+          class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+          <input type="email" name="email" placeholder="tu@email.com" required
+            class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+            aria-label="Email para newsletter">
+          <button type="submit"
+            class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+            Suscribirme →
+          </button>
+        </form>
+      </div>
+    </section>
 
   </main><!-- /#main-content -->
 
@@ -342,4 +474,5 @@
 
   <script type="module" src="script.js"></script>
 </body>
+
 </html>

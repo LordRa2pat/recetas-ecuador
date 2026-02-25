@@ -1,5 +1,147 @@
 [
   {
+    "slug": "bolon-de-verde-con-chorizo-regional",
+    "title": "Bolón de Verde con Chorizo Ecuatoriano Receta Tradicional",
+    "description": "Bolón de Verde con Chorizo, un desayuno típico ecuatoriano de la Costa, combina plátano verde machacado con chorizo regional frito. Aprende a prepararlo con esta receta auténtica y fácil, ideal para disfrutar en familia o sorprender a tus invitados.",
+    "region": "Costa",
+    "category": "Desayunos",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "25 min",
+    "total_time": "40 min",
+    "image_url": null,
+    "image_alt": "Desayuno ecuatoriano con bolón de verde y chorizo en un plato rústico",
+    "ingredients": [
+      "4 plátanos verdes grandes (Supermaxi, Megamaxi, TIA - sección frutas)",
+      "200 g de chorizo ecuatoriano artesanal (Supermaxi, mercados locales)",
+      "1/2 taza de chicharrón triturado (opcional, mercados locales)",
+      "2 cucharadas de mantequilla",
+      "1 cucharadita de sal",
+      "1/2 cucharadita de pimienta",
+      "1 huevo (para acompañar, opcional)",
+      "1 taza de queso fresco rallado (Supermaxi, TIA - sección lácteos)",
+      "Aceite vegetal para freír (cantidad necesaria)"
+    ],
+    "instructions": [
+      "Pela los plátanos verdes y córtalos en trozos medianos. Colócalos en una olla con agua y una pizca de sal, y hiérvelos hasta que estén tiernos (unos 10-12 minutos).",
+      "Mientras los plátanos se cocinan, corta el chorizo en rodajas finas o desmenúzalo, según prefieras. Fríelo en una sartén sin aceite hasta que esté dorado y crujiente. Reserva.",
+      "Una vez cocidos los plátanos, escúrrelos y colócalos en un bol grande. Machácalos con un tenedor o un machacador hasta obtener una masa homogénea.",
+      "Añade la mantequilla, sal, pimienta y el chorizo frito (con un poco de su grasa para dar sabor) a la masa de plátano. Si usas chicharrón, incorpóralo ahora. Mezcla bien.",
+      "Forma bolas medianas con la mezcla, presionando con las manos. Puedes rellenarlas con queso fresco si deseas un toque extra de sabor.",
+      "Calienta aceite en una sartén a fuego medio y fríe los bolones hasta que estén dorados por fuera (unos 2-3 minutos por lado). Retira y coloca sobre papel absorbente.",
+      "Sirve caliente, acompañado de un huevo frito o queso fresco, y una taza de café ecuatoriano para un desayuno completo."
+    ],
+    "tips": [
+      "Si los plátanos están muy duros, hiérvelos un poco más para facilitar el machacado.",
+      "Usa chorizo artesanal de la Costa para un sabor más auténtico; los de Manabí o Esmeraldas son ideales.",
+      "Puedes preparar los bolones con anticipación y recalentarlos en una sartén para mantener la textura crujiente.",
+      "Acompaña con una salsa de ají ecuatoriano para un toque picante."
+    ],
+    "keywords": [
+      "bolon de verde con chorizo",
+      "receta bolon de verde ecuatoriano",
+      "desayuno tipico ecuatoriano",
+      "bolon de verde costa",
+      "como hacer bolon de verde",
+      "plato tipico costa ecuatoriana",
+      "bolon con chorizo receta",
+      "comida ecuatoriana tradicional",
+      "bolon de verde facil",
+      "receta tradicional ecuatoriana",
+      "desayuno costa ecuatoriana",
+      "platanos verdes recetas"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el bolón de verde?",
+        "a": "Se suele acompañar con huevo frito, queso fresco o una taza de café caliente para un desayuno completo."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el bolón de verde?",
+        "a": "Puede conservarse en el refrigerador hasta 2 días. Recalienta en una sartén para mantener su textura crujiente."
+      },
+      {
+        "q": "¿Es difícil hacer bolón de verde?",
+        "a": "No, es una receta fácil que solo requiere machacar plátanos cocidos y mezclar con ingredientes básicos."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Guayaquil",
+        "province": "Guayas",
+        "region": "Costa"
+      },
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      },
+      {
+        "city": "Portoviejo",
+        "province": "Manabí",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian breakfast",
+      "bolon de verde",
+      "green plantain dish",
+      "traditional ecuadorian food",
+      "chorizo breakfast",
+      "latin american cuisine",
+      "coastal ecuador food",
+      "plantain balls"
+    ],
+    "international_substitutes": [
+      {
+        "original": "chorizo ecuatoriano artesanal",
+        "sustituto_usa": "chorizo mexicano o salchicha italiana picante (disponible en Walmart o mercados latinos)",
+        "sustituto_europa": "chorizo español o salchicha picante (disponible en supermercados como Carrefour)"
+      },
+      {
+        "original": "plátano verde",
+        "sustituto_usa": "plátano verde congelado (en tiendas latinas como Goya)",
+        "sustituto_europa": "plátano verde fresco o congelado (en mercados africanos o latinos)"
+      }
+    ],
+    "tourism_route": "Disfruta del auténtico bolón de verde con chorizo en Guayaquil, visitando mercados como el Mercado Caraguay, donde encontrarás desayunos típicos por $2-3 USD. También en Esmeraldas, en comedores locales cerca de la playa, con precios similares.",
+    "youtube_videos": [
+      {
+        "title": "EL BOLÓN de tus sueños | KWA",
+        "videoId": "UaCEH8cRzpI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=UaCEH8cRzpI",
+        "embed": "https://www.youtube-nocookie.com/embed/UaCEH8cRzpI",
+        "uploadDate": "2023-07-14",
+        "description": "Un Bolón irresistible que no te puedes perder! #BolónMixto #KWAEC \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/13/bolon-de-verde-mixto/\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/y"
+      },
+      {
+        "title": "BOLON DE VERDE ...LA BOLA DEL SABOR!",
+        "videoId": "JqneshX8JSI",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=JqneshX8JSI",
+        "embed": "https://www.youtube-nocookie.com/embed/JqneshX8JSI",
+        "uploadDate": "2021-02-03",
+        "description": "Hoy preparamos BOLON DE VERDE con Chicharrón y con Queso, esta es una receta que nos trae toda la tradición de la costa Ecuatoriana, preparada con nuestros deliciosos plátanos verdes y acompañados de "
+      },
+      {
+        "title": "BOLONES DE VERDE muy CROCANTES YOUTUBE",
+        "videoId": "_-rAwOVobFU",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=_-rAwOVobFU",
+        "embed": "https://www.youtube-nocookie.com/embed/_-rAwOVobFU",
+        "uploadDate": "2022-01-31",
+        "description": "Siguenos en Facebook: https://www.facebook.com/100048743916416/\nInstagram: COCINAFACILITOCONISA\nBolones de Verde"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 22,
+    "created_at": "2026-02-25T23:21:46.511Z"
+  },
+  {
     "slug": "ayampaco-receta-tradicional-ecuatoriana",
     "title": "Ayampaco Ecuatoriano Receta Tradicional de la Amazonía",
     "description": "Ayampaco, un plato tradicional de la Amazonía ecuatoriana, es una deliciosa preparación a base de pescado envuelto en hojas de bijao, con sabores únicos de la selva. Descubre cómo hacerlo en casa con esta receta auténtica y fácil de seguir, ideal para sorprender a tu familia.",

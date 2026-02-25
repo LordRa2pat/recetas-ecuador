@@ -1,5 +1,149 @@
 [
   {
+    "slug": "ayampaco-receta-tradicional-ecuatoriana",
+    "title": "Ayampaco Ecuatoriano Receta Tradicional de la Amazonía",
+    "description": "Ayampaco, un plato tradicional de la Amazonía ecuatoriana, es una deliciosa preparación a base de pescado envuelto en hojas de bijao, con sabores únicos de la selva. Descubre cómo hacerlo en casa con esta receta auténtica y fácil de seguir, ideal para sorprender a tu familia.",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "40 min",
+    "total_time": "70 min",
+    "image_url": null,
+    "image_alt": "Plato tradicional ecuatoriano Ayampaco con pescado y hojas de bijao",
+    "ingredients": [
+      "4 filetes de pescado blanco (tilapia o corvina, Supermaxi, Megamaxi - sección pescados)",
+      "4 hojas de bijao grandes (mercados locales como Santa Clara o Iñaquito)",
+      "2 tomates medianos, picados finamente",
+      "1 cebolla colorada pequeña, picada finamente",
+      "1 pimiento verde, picado en cubos pequeños",
+      "2 dientes de ajo, triturados",
+      "1 cucharadita de achiote en pasta (Supermaxi, Megamaxi - sección especias)",
+      "1/2 taza de yuca rallada",
+      "1/4 taza de cilantro fresco, picado",
+      "Sal y pimienta al gusto",
+      "2 cucharadas de aceite vegetal"
+    ],
+    "instructions": [
+      "Lava bien las hojas de bijao con agua tibia para ablandarlas y eliminar impurezas. Sécalas con un paño limpio y resérvalas.",
+      "En un bowl, mezcla los tomates, la cebolla, el pimiento, el ajo, el achiote, el cilantro, la sal y la pimienta para preparar el relleno.",
+      "Coloca un filete de pescado en el centro de cada hoja de bijao. Encima, agrega una porción de la mezcla de vegetales y una cucharada de yuca rallada.",
+      "Envuelve el pescado con la hoja de bijao, asegurándote de que quede bien sellado para que no se escape el contenido. Ata con hilo de cocina si es necesario.",
+      "Calienta una sartén grande o plancha a fuego medio con el aceite vegetal. Coloca los paquetes de ayampaco y cocina por 15-20 minutos por cada lado.",
+      "Retira del fuego, deja reposar por 5 minutos y sirve caliente, acompañado de yuca cocida o arroz blanco.",
+      "Opcional: Puedes cocinarlos al vapor si prefieres una textura más suave, usando una vaporera por 30-40 minutos."
+    ],
+    "tips": [
+      "Si las hojas de bijao no están disponibles, puedes usar papel aluminio, aunque el sabor no será el mismo.",
+      "Asegúrate de no sobrecocinar el pescado para que quede jugoso.",
+      "El achiote le da un color y sabor característico; no lo omitas si es posible.",
+      "Puedes añadir un toque de ají fresco picado si deseas un sabor más picante."
+    ],
+    "keywords": [
+      "ayampaco ecuatoriano",
+      "receta ayampaco tradicional",
+      "plato típico amazonía ecuador",
+      "ayampaco de pescado",
+      "comida ecuatoriana amazonía",
+      "receta con hojas de bijao",
+      "ayampaco receta fácil",
+      "comida tradicional ecuatoriana",
+      "plato típico de puyo",
+      "ayampaco amazonía preparación",
+      "pescado envuelto en hojas",
+      "gastronomía ecuatoriana selva"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el ayampaco?",
+        "a": "El ayampaco se suele acompañar con yuca cocida, arroz blanco o patacones, complementos típicos de la Amazonía."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el ayampaco?",
+        "a": "Puede conservarse en el refrigerador por 1-2 días, pero es mejor consumirlo fresco para disfrutar de su sabor óptimo."
+      },
+      {
+        "q": "¿Es difícil de hacer el ayampaco?",
+        "a": "No es muy difícil, pero requiere práctica para envolver bien las hojas de bijao y lograr un buen sellado."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Diaspora",
+    "origin_cities": [
+      {
+        "city": "Puyo",
+        "province": "Pastaza",
+        "region": "Amazonia"
+      },
+      {
+        "city": "Tena",
+        "province": "Napo",
+        "region": "Amazonia"
+      },
+      {
+        "city": "Macas",
+        "province": "Morona Santiago",
+        "region": "Amazonia"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian food",
+      "traditional dish",
+      "amazonian cuisine",
+      "fish wrapped in leaves",
+      "ayampaco ecuador",
+      "bijao leaves dish",
+      "ecuadorian amazon food",
+      "authentic ecuadorian recipe"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Hojas de bijao",
+        "sustituto_usa": "Hojas de plátano (disponibles en mercados latinos o asiáticos) o papel aluminio",
+        "sustituto_europa": "Hojas de plátano (en tiendas latinas o africanas) o papel pergamino"
+      },
+      {
+        "original": "Achiote en pasta",
+        "sustituto_usa": "Polvo de achiote o paprika con una pizca de cúrcuma (Walmart, tiendas latinas)",
+        "sustituto_europa": "Polvo de achiote o mezcla de paprika y cúrcuma (tiendas latinas o especias)"
+      }
+    ],
+    "tourism_route": "Disfruta del auténtico ayampaco en la ruta gastronómica de la Amazonía ecuatoriana, visitando Puyo en Pastaza, donde puedes probarlo en mercados locales o pequeños comedores por un precio aproximado de $3-5 por porción. Combina tu experiencia con un tour por la selva y cascadas cercanas.",
+    "youtube_videos": [
+      {
+        "title": "AYAMPACO tipico para los AMANTES de lo EXÓTICO 👀✅",
+        "videoId": "yktOujf-PnE",
+        "channel": "Recetas de la abuela",
+        "url": "https://www.youtube.com/watch?v=yktOujf-PnE",
+        "embed": "https://www.youtube-nocookie.com/embed/yktOujf-PnE",
+        "uploadDate": "2023-10-09",
+        "description": "🤩De visita donde mi ABUELITA, preparamos una receta solo para amantes de la gastronomia  EXÓTICA 🐸🐸  una receta de AYAMPACOS con un ingredinetes diferente. \n\nEn las tarjetas y al final del video ha"
+      },
+      {
+        "title": "Bollo de Pescado SUPER FÁCIL | KWA",
+        "videoId": "0eyjo-igI54",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=0eyjo-igI54",
+        "embed": "https://www.youtube-nocookie.com/embed/0eyjo-igI54",
+        "uploadDate": "2023-06-02",
+        "description": "Ingredientes:\nhttps://recetaskwa.com/2023/09/19/bollo-de-pescad/\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r\nMás recetas aquí: https://tinyurl.com/RecetasKWA\r\n\r\nCONTACTO/BUSINESS: KWA"
+      },
+      {
+        "title": "Preparando ayampacos de pollo y pescado | recetas de la abuela",
+        "videoId": "RcqWUpH5tog",
+        "channel": "Recetas de la abuela",
+        "url": "https://www.youtube.com/watch?v=RcqWUpH5tog",
+        "embed": "https://www.youtube-nocookie.com/embed/RcqWUpH5tog",
+        "uploadDate": "2025-05-19",
+        "description": "Si quieres preparar un almuerzo en la selva  con un SABOR diferente les invito a preparar  esta sabrosa receta de la abuela shuar \n\n😍 Te gusto la receta de TAMALES de guineo al estilo de recetas de l"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 21,
+    "created_at": "2026-02-25T17:21:56.751Z"
+  },
+  {
     "slug": "humitas-ecuatorianas-costa-norte",
     "title": "Humitas Ecuatorianas de la Costa Norte Receta Tradicional",
     "description": "Humitas Ecuatorianas de la Costa Norte, un plato tradicional lleno de sabor a maíz fresco y queso. Aprende a preparar esta receta típica de la región costera con pasos fáciles y consejos prácticos para disfrutar en casa de un auténtico manjar ecuatoriano.",

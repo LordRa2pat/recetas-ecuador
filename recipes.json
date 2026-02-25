@@ -1,5 +1,146 @@
 [
   {
+    "slug": "humitas-ecuatorianas-costa-norte",
+    "title": "Humitas Ecuatorianas de la Costa Norte Receta Tradicional",
+    "description": "Humitas Ecuatorianas de la Costa Norte, un plato tradicional lleno de sabor a maíz fresco y queso. Aprende a preparar esta receta típica de la región costera con pasos fáciles y consejos prácticos para disfrutar en casa de un auténtico manjar ecuatoriano.",
+    "region": "Costa",
+    "category": "Entradas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "40 min",
+    "total_time": "70 min",
+    "image_url": null,
+    "image_alt": "Plato tradicional de humitas ecuatorianas de la Costa Norte con maíz y queso",
+    "ingredients": [
+      "6 mazorcas de maíz fresco tierno (Mercado local, Supermaxi - sección verduras)",
+      "1 taza de queso fresco desmenuzado (Supermaxi, Megamaxi - sección lácteos)",
+      "2 huevos",
+      "1/2 taza de mantequilla derretida",
+      "1/4 taza de azúcar",
+      "1 cucharadita de sal",
+      "1 cucharadita de polvo de hornear",
+      "Hojas de maíz para envolver (Mercado local o TIA - sección verduras)"
+    ],
+    "instructions": [
+      "Retira las hojas de las mazorcas con cuidado, reservándolas para envolver las humitas. Limpia bien las hojas y ponlas a remojar en agua tibia para que sean más flexibles.",
+      "Desgrana el maíz fresco con un cuchillo afilado, asegurándote de obtener todos los granos. Reserva los granos en un recipiente grande.",
+      "En una licuadora o procesador, muele los granos de maíz hasta obtener una pasta suave. Si es necesario, añade 2-3 cucharadas de agua para facilitar el proceso.",
+      "En un bol, mezcla la pasta de maíz con el queso fresco desmenuzado, los huevos, la mantequilla derretida, el azúcar, la sal y el polvo de hornear. Revuelve hasta que todo esté bien integrado.",
+      "Coloca 2-3 cucharadas de la mezcla en el centro de una hoja de maíz. Dobla los lados de la hoja hacia el centro y luego dobla los extremos para formar un paquetito. Repite con el resto de la mezcla.",
+      "En una olla grande, coloca una rejilla o base de hojas de maíz en el fondo y llena con agua hasta justo debajo de la rejilla. Acomoda las humitas de pie y cocina al vapor a fuego medio durante 30-40 minutos.",
+      "Retira las humitas del vapor, deja enfriar ligeramente y sirve caliente. ¡Disfruta de este delicioso plato tradicional!"
+    ],
+    "tips": [
+      "Si el maíz no está lo suficientemente tierno, puedes añadir un poco de leche al molerlo para obtener una textura más suave.",
+      "Asegúrate de que las hojas estén bien cerradas para evitar que la mezcla se salga durante la cocción.",
+      "Puedes acompañar las humitas con una taza de café o chocolate caliente para un desayuno o merienda típica.",
+      "Si deseas un sabor más intenso, añade un poco de ralladura de limón a la mezcla."
+    ],
+    "keywords": [
+      "humitas ecuatorianas",
+      "humitas costa norte",
+      "receta humitas ecuatorianas",
+      "humitas tradicionales ecuador",
+      "como hacer humitas",
+      "humitas de maiz fresco",
+      "platos tipicos costa ecuatoriana",
+      "receta tradicional humitas",
+      "humitas con queso",
+      "comida ecuatoriana costa",
+      "preparar humitas faciles",
+      "humitas receta casera"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompañan las humitas?",
+        "a": "Las humitas se acompañan tradicionalmente con café, chocolate caliente o una bebida tibia, ideal para desayunos o meriendas."
+      },
+      {
+        "q": "¿Cuánto tiempo se conservan las humitas?",
+        "a": "Las humitas frescas se conservan en el refrigerador por 2-3 días. También puedes congelarlas por hasta un mes."
+      },
+      {
+        "q": "¿Es difícil hacer humitas ecuatorianas?",
+        "a": "No es muy difícil, aunque requiere tiempo para preparar las hojas y moler el maíz. Con paciencia, cualquiera puede lograrlo."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      },
+      {
+        "city": "Manta",
+        "province": "Manabí",
+        "region": "Costa"
+      },
+      {
+        "city": "Portoviejo",
+        "province": "Manabí",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian humitas",
+      "traditional ecuadorian food",
+      "corn humitas",
+      "ecuadorian cuisine",
+      "coastal ecuador dishes",
+      "humitas recipe",
+      "latin american food",
+      "corn and cheese dish"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Maíz fresco tierno",
+        "sustituto_usa": "Maíz congelado o en lata (drainado y procesado)",
+        "sustituto_europa": "Maíz congelado o en conserva (procesado para obtener pasta)"
+      },
+      {
+        "original": "Queso fresco",
+        "sustituto_usa": "Queso feta suave o ricotta",
+        "sustituto_europa": "Queso fresco latino o ricotta"
+      }
+    ],
+    "tourism_route": "Disfruta de las auténticas humitas de la Costa Norte en un recorrido gastronómico por Esmeraldas y Manta. En Esmeraldas, visita mercados locales como el Mercado Municipal (precios desde $1 por humita). En Manta, prueba en comedores tradicionales cerca de la playa Tarqui (aproximadamente $1.50 por porción).",
+    "youtube_videos": [
+      {
+        "title": "HUMITAS",
+        "videoId": "aLtGdXLbQNg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=aLtGdXLbQNg",
+        "embed": "https://www.youtube-nocookie.com/embed/aLtGdXLbQNg",
+        "uploadDate": "2021-04-09",
+        "description": "Lleve lleve! Humitas calientes! #Humitas #KWAEC\n\nIngredientes:\nChoclo 8 unidades \nMantequilla derretida (fria) 150 gr\nHuevos 4 unidades \nSal 10 gr\nAzúcar 50 gr\nQueso\n\nSIGUENOS:\r\nFB: https://tinyurl.co"
+      },
+      {
+        "title": "Choclotanda o Humita, cual te gusta más?",
+        "videoId": "Pu_w6W7N0ec",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=Pu_w6W7N0ec",
+        "embed": "https://www.youtube-nocookie.com/embed/Pu_w6W7N0ec",
+        "uploadDate": "2024-01-16",
+        "description": "La CHOCLOTANDA o HUMITA ha sido el envuelto que ha acompañado por años las tardes de los ecuatorianos junto a un buen café , es un delicioso pastelito de maíz fácil de preparar y muy tradicional en la"
+      },
+      {
+        "title": "Humitas Ecuatorianas",
+        "videoId": "GRed_NSmNAc",
+        "channel": "Cocina De Rosita (CocinadeRosita)",
+        "url": "https://www.youtube.com/watch?v=GRed_NSmNAc",
+        "embed": "https://www.youtube-nocookie.com/embed/GRed_NSmNAc",
+        "uploadDate": "2019-05-05",
+        "description": "30 choclos \nAnis Chiquito\nCebolla blanca\n4 Huevos\n1 Taza De Azucar \n¼ de Sal\nI taza de Mantequilla no muy llena\nQueso Rallado \nQueso Cortado en cubitos para el relleno\nMasarepa"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 20,
+    "created_at": "2026-02-25T15:21:07.926Z"
+  },
+  {
     "slug": "viche-manabita-receta-tradicional",
     "title": "Viche Manabita Receta Tradicional Ecuatoriana",
     "description": "Viche Manabita, una sopa tradicional de la costa ecuatoriana, llena de sabor a mariscos y maní. Descubre cómo preparar este plato típico de Manabí con ingredientes frescos y pasos detallados para disfrutar en casa. Perfecto para amantes de la comida costeña.",

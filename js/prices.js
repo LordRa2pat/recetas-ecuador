@@ -67,12 +67,12 @@ export function renderIngredient(ing, priceDb) {
     }
   }
 
-  return '<li class="flex flex-col py-2 border-b border-dashed border-gray-100 last:border-0">' +
-    '<div class="flex items-start gap-2">' +
-    '<span class="text-[#0033A0] mt-0.5 flex-shrink-0 font-bold">\u2713</span>' +
-    '<span class="text-gray-700 font-mono text-sm flex-1">' + escapeHtml(ing) + '</span>' +
+  return '<div class="ing-row flex flex-col py-2 border-b border-dashed border-gray-100 last:border-0">' +
+    '<label class="flex items-start gap-3 cursor-pointer group">' +
+    '<input type="checkbox" class="ing-checkbox mt-0.5" aria-label="Marcar ingrediente">' +
+    '<span class="ing-text text-gray-700 font-medium text-sm flex-1 transition-colors group-hover:text-[#0033A0]" data-original="' + escapeHtml(ing) + '">' + escapeHtml(ing) + '</span>' +
     badge +
-    '</div>' +
+    '</label>' +
     priceRow +
-    '</li>';
+    '</div>';
 }

@@ -65,6 +65,87 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     }
+    
+    /* Cook Mode Styles */
+    body.cook-mode-active {
+      background-color: #0f172a; /* bg-slate-900 */
+      color: #f8fafc; /* text-slate-50 */
+    }
+    body.cook-mode-active #instructions-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      margin: 0;
+      border-radius: 0;
+      background: #0f172a;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    body.cook-mode-active .bg-gradient-to-r.from-\[\#0033A0\].to-\[\#001f6e\] {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #1e293b; /* slate-800 */
+      border-bottom: 2px solid #0033A0;
+    }
+    body.cook-mode-active #instructions-list {
+      font-size: 1.25rem; /* text-xl */
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+    body.cook-mode-active #instructions-list li p {
+      color: #e2e8f0; /* text-slate-200 */
+      line-height: 1.8;
+    }
+    body.cook-mode-active #instructions-list li .bg-\[\#0033A0\] {
+      background-color: #3b82f6; /* bg-blue-500 - matches dark mode better */
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.125rem;
+    }
+    /* Checkbox Styles */
+    .ing-checkbox {
+      appearance: none;
+      background-color: #fff;
+      margin: 0;
+      font: inherit;
+      color: currentColor;
+      width: 1.25em;
+      height: 1.25em;
+      border: 2px solid #cbd5e1; /* slate-300 */
+      border-radius: 0.25em;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    .ing-checkbox::before {
+      content: "";
+      width: 0.65em;
+      height: 0.65em;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em white;
+      background-color: transform;
+      transform-origin: bottom left;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    .ing-checkbox:checked {
+      background-color: #10b981; /* emerald-500 */
+      border-color: #10b981;
+    }
+    .ing-checkbox:checked::before {
+      transform: scale(1);
+    }
+    .ing-row:has(input:checked) span.ing-text {
+      text-decoration: line-through;
+      color: #9ca3af; /* gray-400 */
+    }
   </style>
 </head>
 <body class="bg-slate-50 font-sans text-gray-900 antialiased">
@@ -218,6 +299,12 @@
     <!-- Título y descripción -->
     <div class="max-w-5xl mx-auto px-4 sm:px-6 mb-4">
       <h1 id="recipe-title" class="text-3xl sm:text-4xl font-black text-gray-900 mb-3 leading-tight">Cargando...</h1>
+      
+      <!-- Botón Saltar a la Receta -->
+      <a href="#instructions-section" class="inline-flex items-center gap-2 bg-[#FFD100] text-[#0033A0] font-bold text-sm px-4 py-2 rounded-full hover:bg-yellow-400 transition-colors mb-4 shadow-sm">
+        ⏬ Saltar a la Receta
+      </a>
+
       <p id="recipe-description" class="text-lg text-gray-600 leading-relaxed mb-4"></p>
 
       <!-- Toggle ESP / ENG -->
@@ -297,20 +384,26 @@
         <div class="lg:w-80 flex-shrink-0 flex flex-col gap-5">
 
           <!-- Card Ingredientes — Ticket de Compra -->
-          <div class="bg-white rounded-3xl overflow-hidden ec-card-3d">
+          <div class="bg-white rounded-3xl overflow-hidden ec-card-3d" id="ingredients-section">
             <div class="bg-[#0033A0] px-5 py-4 flex items-center justify-between">
-              <h2 class="text-white font-bold text-base">🛒 Lista de Compras</h2>
-              <span class="text-blue-200 text-xs font-medium">Ecuador a la Carta</span>
+              <h2 class="text-white font-bold text-base">🛒 Ingredientes</h2>
+              <div class="flex items-center gap-1 bg-white/20 rounded-full px-2 py-1 backdrop-blur-sm">
+                <button id="btn-servings-minus" class="w-6 h-6 flex justify-center items-center text-white hover:bg-white/30 rounded-full transition-colors font-bold" aria-label="Reducir porciones">-</button>
+                <span id="servings-counter" class="text-white font-bold text-sm mx-1 min-w-[1.5rem] text-center" aria-live="polite">2</span>
+                <button id="btn-servings-plus" class="w-6 h-6 flex justify-center items-center text-white hover:bg-white/30 rounded-full transition-colors font-bold" aria-label="Aumentar porciones">+</button>
+              </div>
             </div>
-            <div class="px-5 pt-4 pb-1 border-b-2 border-dashed border-gray-200">
-              <p class="text-xs text-gray-400 uppercase tracking-widest text-center">— lista de ingredientes —</p>
+            <div class="px-5 pt-4 pb-1 border-b-2 border-dashed border-gray-200 flex justify-between items-center">
+              <p class="text-xs text-gray-400 uppercase tracking-widest">— lista de compras —</p>
+              <button id="btn-metric-toggle" class="text-xs font-semibold text-[#0033A0] hover:underline" style="display:none;">Convertir a tazas</button>
             </div>
-            <ul id="ingredients-list" class="p-5 space-y-0 text-sm font-mono">
-              <li class="flex items-start gap-2 py-2 border-b border-dashed border-gray-100">
-                <span class="text-gray-300">✓</span>
-                <span class="text-gray-300 animate-pulse">Cargando ingredientes...</span>
-              </li>
-            </ul>
+            <!-- Se reemplazó el ul por div para organizar mejor los checkboxes -->
+            <div id="ingredients-list" class="p-5 space-y-2 text-sm font-medium text-gray-800">
+              <div class="flex items-start gap-3 py-1">
+                <div class="animate-pulse bg-gray-200 h-4 w-4 rounded mt-0.5 border border-gray-300"></div>
+                <div class="animate-pulse bg-gray-200 h-4 w-3/4 rounded mt-0.5"></div>
+              </div>
+            </div>
             <div class="px-5 pb-4 pt-2 border-t-2 border-dashed border-gray-200 text-center space-y-1">
               <p class="text-xs text-gray-400">Precios de referencia · Feb 2026</p>
               <div class="flex items-center justify-center gap-3 text-xs">
@@ -338,13 +431,17 @@
         <div class="flex-1 min-w-0 flex flex-col gap-5">
 
           <!-- Card Instrucciones -->
-          <div class="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden">
-            <div class="bg-gradient-to-r from-[#0033A0] to-[#001f6e] px-5 py-4">
+          <div id="instructions-section" class="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden relative">
+            <div class="bg-gradient-to-r from-[#0033A0] to-[#001f6e] px-5 py-4 flex items-center justify-between">
               <h2 class="text-white font-bold text-base flex items-center gap-2">
                 👨‍🍳 Preparación paso a paso
               </h2>
+              <button id="btn-cook-mode" class="flex items-center gap-1.5 bg-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-white/30 backdrop-blur-sm transition-colors border border-white/20 shadow-sm" aria-pressed="false">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line><line x1="12" y1="8" x2="12" y2="16"></line></svg>
+                <span>Modo Cocinar</span>
+              </button>
             </div>
-            <ol id="instructions-list" class="p-5 text-sm space-y-0">
+            <ol id="instructions-list" class="p-5 text-sm space-y-0 relative z-10 transition-all duration-300">
               <li class="flex gap-4 mb-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200 animate-pulse"></div>
                 <p class="text-gray-300 animate-pulse pt-1">Cargando instrucciones...</p>

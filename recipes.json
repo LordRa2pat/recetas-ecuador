@@ -1,5 +1,154 @@
 [
   {
+    "slug": "tapado-ecuatoriano-esmeraldas-coco-mariscos-selvaticos",
+    "title": "Tapado Ecuatoriano de Esmeraldas con Coco y Mariscos Receta Tradicional",
+    "description": "Tapado Ecuatoriano de Esmeraldas, un plato típico de la costa con coco y mariscos selváticos. Descubre esta receta tradicional llena de sabor, ideal para sorprender con ingredientes frescos y técnicas auténticas de la gastronomía afroecuatoriana.",
+    "region": "Costa",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "45 min",
+    "total_time": "75 min",
+    "image_url": null,
+    "image_alt": "Delicioso tapado ecuatoriano de mariscos con coco en un plato tradicional",
+    "ingredients": [
+      "1 kg de pescado fresco (corvina o robalo, disponible en mercados locales o Supermaxi - sección pescadería)",
+      "500 g de camarones frescos (Supermaxi, Megamaxi - sección congelados)",
+      "500 g de cangrejo o jaiba (mercados locales o TIA - sección mariscos)",
+      "2 tazas de leche de coco fresca (o enlatada, Supermaxi - sección internacional)",
+      "3 plátanos verdes (mercados o TIA - sección frutas)",
+      "1 cebolla colorada mediana, finamente picada",
+      "2 tomates maduros, rallados",
+      "1 pimiento verde, picado",
+      "3 dientes de ajo, triturados",
+      "1 manojo de cilantro fresco, picado (Supermaxi - sección verduras)",
+      "2 cucharadas de aceite de achiote (o pasta de achiote, TIA - sección especias)",
+      "Sal y pimienta al gusto"
+    ],
+    "instructions": [
+      "Pela los plátanos verdes, córtalos en trozos medianos y resérvalos en agua con sal para evitar que se oxiden.",
+      "En una olla grande, calienta el aceite de achiote a fuego medio y sofríe la cebolla, el ajo y el pimiento verde hasta que estén transparentes, aproximadamente 3 minutos.",
+      "Añade los tomates rallados y cocina por 5 minutos, removiendo ocasionalmente, hasta formar una salsa base.",
+      "Incorpora la leche de coco, mezcla bien y deja hervir a fuego bajo por 10 minutos para integrar los sabores.",
+      "Agrega los trozos de plátano verde y cocina por 15 minutos hasta que estén tiernos pero firmes.",
+      "Añade el pescado, los camarones y el cangrejo o jaiba. Cocina por 8-10 minutos más, cuidando que los mariscos no se sobrecocinen.",
+      "Rectifica la sal y pimienta, y espolvorea el cilantro fresco justo antes de servir caliente."
+    ],
+    "tips": [
+      "Si prefieres un tapado más espeso, machaca un trozo de plátano cocido y devuélvelo a la olla.",
+      "Acompaña con arroz blanco o patacones para una experiencia completa de la costa ecuatoriana.",
+      "Usa mariscos frescos para un sabor más auténtico; si no encuentras jaiba, puedes omitirla o usar más camarón."
+    ],
+    "keywords": [
+      "tapado ecuatoriano",
+      "tapado de esmeraldas",
+      "receta tapado coco mariscos",
+      "tapado afroecuatoriano",
+      "plato tipico esmeraldas",
+      "mariscos con coco ecuador",
+      "comida costa ecuatoriana",
+      "receta tradicional esmeraldas",
+      "tapado selvatico",
+      "gastronomia ecuatoriana mariscos",
+      "como hacer tapado ecuatoriano",
+      "tapado de pescado y mariscos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el tapado ecuatoriano?",
+        "a": "Se suele acompañar con arroz blanco o patacones, que complementan el sabor cremoso del coco y los mariscos."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el tapado?",
+        "a": "Se conserva en la nevera por 1-2 días en un recipiente hermético, pero es mejor consumirlo fresco para disfrutar de los mariscos."
+      },
+      {
+        "q": "¿Es difícil de hacer el tapado de Esmeraldas?",
+        "a": "No es muy difícil, pero requiere atención al tiempo de cocción de los mariscos para evitar que se endurezcan."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      },
+      {
+        "city": "Atacames",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      },
+      {
+        "city": "Muisne",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian seafood dish",
+      "traditional tapado",
+      "coconut seafood stew",
+      "esmeraldas cuisine",
+      "afro ecuadorian food",
+      "seafood with coconut",
+      "ecuadorian coastal food",
+      "tapado recipe"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Leche de coco fresca",
+        "sustituto_usa": "Leche de coco enlatada (disponible en Walmart o Whole Foods - sección internacional)",
+        "sustituto_europa": "Leche de coco enlatada (disponible en Carrefour o Tesco - sección asiática)"
+      },
+      {
+        "original": "Plátano verde",
+        "sustituto_usa": "Plátano verde congelado (Goya, en supermercados latinos)",
+        "sustituto_europa": "Plátano verde congelado (en tiendas latinas o africanas)"
+      },
+      {
+        "original": "Aceite de achiote",
+        "sustituto_usa": "Pasta de achiote (Goya, en supermercados latinos)",
+        "sustituto_europa": "Pasta de achiote (en tiendas latinas) o pimentón dulce con aceite"
+      }
+    ],
+    "tourism_route": "Explora la ruta gastronómica de Esmeraldas, comenzando en la ciudad de Esmeraldas y visitando Atacames y Tonsupa. Prueba el tapado en restaurantes locales como 'El Encocado' por un precio promedio de $8-12 por plato.",
+    "youtube_videos": [
+      {
+        "title": "TAPAO ARRECHO",
+        "videoId": "xgw0oODsvdk",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=xgw0oODsvdk",
+        "embed": "https://www.youtube-nocookie.com/embed/xgw0oODsvdk",
+        "uploadDate": "2021-05-21",
+        "description": "De la linda tierrita verde para todo el mundo! #TapaoArrecho #KWAEC\n\nIngredientes:\n\nTapao Arrecho (4 - 5 Porciones)\n\nAchiote 40 ml\nPasta de ajo 30 gr\nCebolla Colorada 150 gr\nPimiento 60 gr\nTomate Pica"
+      },
+      {
+        "title": "ENCOCADO DE CAMARÓN",
+        "videoId": "kLV6TW33xHg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=kLV6TW33xHg",
+        "embed": "https://www.youtube-nocookie.com/embed/kLV6TW33xHg",
+        "uploadDate": "2020-11-06",
+        "description": "Desde la provincia verde hasta tu mesa! #EncocadoDeCamarón #KWAEC\n\nIngredientes:\nCamarones 500 gr\nCoco Rayado 200 gr\nAgua de coco 350 gr\nAchiote 30 ml\nPasta de ajo 30 gr\nCebolla colorada 100 gr\nCeboll"
+      },
+      {
+        "title": "Encocado de Pescado",
+        "videoId": "rZMIyuW77S0",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=rZMIyuW77S0",
+        "embed": "https://www.youtube-nocookie.com/embed/rZMIyuW77S0",
+        "uploadDate": "2022-04-08",
+        "description": "Delicia de mar! #EncocadoDePescado #KWAEC\n\nIngredientes:\nPara las Leches de Coco:\n1/2 Litro de agua de Coco\n1 Libra de Coco Rallado\n1/2 Litro de Agua\n\nPara el Encocado:\n2 Libras de Pescado\n3 Cucharada"
+      }
+    ],
+    "_image_source": "pending_ai",
+    "id": 23,
+    "created_at": "2026-02-26T01:39:32.245Z"
+  },
+  {
     "slug": "bolon-de-verde-con-chorizo-regional",
     "title": "Bolón de Verde con Chorizo Ecuatoriano Receta Tradicional",
     "description": "Bolón de Verde con Chorizo, un desayuno típico ecuatoriano de la Costa, combina plátano verde machacado con chorizo regional frito. Aprende a prepararlo con esta receta auténtica y fácil, ideal para disfrutar en familia o sorprender a tus invitados.",

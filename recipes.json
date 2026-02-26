@@ -1,5 +1,184 @@
 [
   {
+    "slug": "seco-de-gallina",
+    "title": "Seco de Gallina Ecuatoriana Receta Tradicional",
+    "description": "Seco de Gallina es un guiso ecuatoriano clásico de la Costa, preparado con gallina tierna y cerveza para un sabor rico y aromático. Esta receta detallada te guía paso a paso para recrear este plato en casa, ideal para reuniones familiares, con ingredientes frescos y técnicas auténticas.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "60 min",
+    "total_time": "80 min",
+    "ingredients": [
+      {
+        "name": "Gallina entera o en piezas",
+        "quantity": "1 kg",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Cebolla blanca picada",
+        "quantity": "2 unidades medianas",
+        "where_to_buy": "Megamaxi"
+      },
+      {
+        "name": "Ajo picado",
+        "quantity": "4 dientes",
+        "where_to_buy": "Mercado local"
+      },
+      {
+        "name": "Tomate maduro picado",
+        "quantity": "3 unidades medianas",
+        "where_to_buy": "TIA"
+      },
+      {
+        "name": "Pimiento rojo picado",
+        "quantity": "1 unidad mediana",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Cilantro fresco picado",
+        "quantity": "1/2 taza",
+        "where_to_buy": "Mercado local"
+      },
+      {
+        "name": "Cerveza clara",
+        "quantity": "500 ml",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Achiote en polvo",
+        "quantity": "1 cucharadita",
+        "where_to_buy": "Mercado local"
+      },
+      {
+        "name": "Sal fina",
+        "quantity": "1 cucharadita al gusto",
+        "where_to_buy": "Megamaxi"
+      },
+      {
+        "name": "Aceite vegetal",
+        "quantity": "2 cucharadas",
+        "where_to_buy": "TIA"
+      }
+    ],
+    "instructions": [
+      "Paso 1: Limpia y corta la gallina en piezas de tamaño uniforme, removiéndola de grasa extra, y marina con sal y ajo picado durante 15 minutos a temperatura ambiente para realzar los sabores.",
+      "Paso 2: En una olla grande a fuego medio-alto (alrededor de 180°C), calienta 2 cucharadas de aceite vegetal y dora las piezas de gallina durante 5-7 minutos por lado hasta que adquieran un color dorado.",
+      "Paso 3: Agrega la cebolla picada y el pimiento rojo, revolviendo constantemente durante 3-4 minutos hasta que se ablanden y liberen sus aromas, manteniendo el fuego en medio.",
+      "Paso 4: Incorpora el tomate picado y el achiote en polvo, cocinando por 2-3 minutos más para que se integren y formen una salsa base, ajustando el fuego a medio-bajo para evitar que se queme.",
+      "Paso 5: Vierte la cerveza clara y el cilantro picado, lleva a ebullición y luego reduce a fuego bajo, tapando la olla y cocinando por 45-50 minutos hasta que la gallina esté tierna y el líquido se reduzca.",
+      "Paso 6: Prueba y ajusta la sal si es necesario, luego retira del fuego y deja reposar por 5 minutos antes de servir caliente con arroz, asegurándote de que la temperatura interna de la gallina supere los 75°C.",
+      "Paso 7: Sirve inmediatamente en platos individuales, decorando con cilantro fresco para un acabado tradicional y disfruta del aroma y sabor auténtico."
+    ],
+    "tips": [
+      "Usa gallina fresca en lugar de congelada para un sabor más auténtico y textura jugosa, como se hace en la Costa ecuatoriana.",
+      "Agrega un poco de achiote extra si quieres intensificar el color anaranjado característico, pero no excedas para evitar amargura."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Quito"
+    ],
+    "image_keywords": [
+      "seco de gallina ecuatoriano",
+      "ecuadorian food",
+      "traditional dish"
+    ],
+    "image_alt": "Fotografía del plato terminado de Seco de Gallina ecuatoriano, mostrando piezas de gallina en una salsa rojiza con verduras y cilantro",
+    "seo_keywords": [
+      "receta tradicional de seco de gallina ecuatoriana paso a paso",
+      "como preparar seco de gallina autentico en casa",
+      "ingredientes para seco de gallina de la costa ecuatoriana",
+      "seco de gallina con cerveza receta facil",
+      "platos ecuatorianos de gallina guayaquil estilo"
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué es Seco de Gallina y de dónde viene?",
+        "answer": "Seco de Gallina es un guiso tradicional ecuatoriano originario de la Costa, hecho con gallina cocida en cerveza y hierbas, que representa la cocina criolla con influencias indígenas y españolas, comúnmente servido en celebraciones familiares."
+      },
+      {
+        "question": "¿Puedo usar pollo en lugar de gallina en esta receta?",
+        "answer": "Sí, puedes sustituir gallina por pollo para un sabor más suave y tiempo de cocción más corto, pero la gallina ofrece una textura más rica y jugosa; ajusta el tiempo a 30-40 minutos para evitar que se seque."
+      },
+      {
+        "question": "¿Cuánto dura el Seco de Gallina refrigerado?",
+        "answer": "El Seco de Gallina puede durar hasta 3 días en el refrigerador si se guarda en un contenedor hermético; recálcialo a 70°C antes de consumir para mantener la seguridad alimentaria y el sabor óptimo."
+      },
+      {
+        "question": "¿Es Seco de Gallina picante?",
+        "answer": "No necesariamente, ya que su nivel de picante depende de los ingredientes añadidos como el pimiento, pero en su versión tradicional es más sabroso que picante; ajusta con ají si deseas más calor."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Famoso por su Seco de Gallina casero con ingredientes frescos, ubicado en el centro histórico, ideal para turistas que buscan autenticidad."
+      },
+      {
+        "name": "Mercado Central",
+        "city": "Quito",
+        "description": "Ofrece Seco de Gallina en puestos tradicionales con recetas familiares, perfecto para probar variedades locales en un ambiente vibrante."
+      },
+      {
+        "name": "Restaurante Lo Nuestro",
+        "city": "Guayaquil",
+        "description": "Especializado en platos costeros como Seco de Gallina, con toques modernos pero fieles a la tradición, recomendado para comidas grupales."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Gallina",
+        "substitute": "Pollo entero o piezas",
+        "notes": "Fácilmente disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para un sabor similar pero más accesible."
+      },
+      {
+        "original": "Cerveza clara",
+        "substitute": "Caldo de pollo bajo en sodio",
+        "notes": "Encuéntralo en tiendas como Target en EE.UU. o Lidl en Europa, para una versión sin alcohol que mantiene la humedad sin alterar el sabor principal."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Disponible en especias de marcas como McCormick en EE.UU. o supermercados locales en Europa, para un color y sabor similar aunque menos tradicional."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "SECO DE POLLO",
+        "videoId": "CJFdqk2HP4A",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=CJFdqk2HP4A",
+        "embed": "https://www.youtube-nocookie.com/embed/CJFdqk2HP4A",
+        "uploadDate": "2021-10-08",
+        "description": "El favorito de muchos. #SecoDePollo #KWAEC\n\nIngredientes:\nPresas de Pollo 8 unidades\nAchiote 30 ml\nPasta de Ajo 30 gr\nCebolla Colorada 60 gr\nPimiento Verde 50 gr\nTomate 80 gr\nPasta de Tomate 40 gr\nCer"
+      },
+      {
+        "title": "Seco de pollo o gallina - Receta",
+        "videoId": "nikVVXydbv8",
+        "channel": "Laylita.com: Recetas y Cocina",
+        "url": "https://www.youtube.com/watch?v=nikVVXydbv8",
+        "embed": "https://www.youtube-nocookie.com/embed/nikVVXydbv8",
+        "uploadDate": "2016-11-23",
+        "description": "Receta completa en https://www.laylita.com/recetas/seco-de-pollo-ecuatoriano/\n\nIngredientes\n\n4 a 5 libras de pollo o gallina (una combinación de presas diferentes)\n2 cucharaditas de comino molido\n2 cu"
+      },
+      {
+        "title": "SECO DE POLLO",
+        "videoId": "N9qANYSWEhU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=N9qANYSWEhU",
+        "embed": "https://www.youtube-nocookie.com/embed/N9qANYSWEhU",
+        "uploadDate": "2018-08-17",
+        "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nRiza Penjoel - 90 s Boombap beat\n\ntwiter : https://twitter.com/RizaPenjoel_\nSoundclick : http:"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 28,
+    "created_at": "2026-02-26T05:35:01.799Z"
+  },
+  {
     "slug": "seco-de-pato-lojano",
     "title": "Seco de Pato Lojano Receta Tradicional Ecuatoriana",
     "description": "Seco de Pato Lojano es un estofado icónico de la Sierra ecuatoriana, preparado con pato tierno en chicha y especias aromáticas. Esta receta detallada te permite recrear este plato casero, ideal para cenas familiares y amantes de la gastronomía andina.",

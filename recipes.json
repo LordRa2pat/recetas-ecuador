@@ -1,5 +1,146 @@
 [
   {
+    "slug": "carne-colorada-ecuatoriana-receta",
+    "title": "Carne Colorada Ecuatoriana Receta Tradicional",
+    "description": "Carne Colorada, un plato típico de la Sierra ecuatoriana, combina cerdo marinado con achiote y especias, ofreciendo un sabor único y vibrante. Descubre cómo preparar esta receta tradicional con pasos fáciles y disfruta de la gastronomía andina en casa.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "image_url": "https://images.pexels.com/photos/8696499/pexels-photo-8696499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image_alt": "Plato de carne colorada ecuatoriana con cerdo marinado en achiote y especias",
+    "ingredients": [
+      "1 kg de carne de cerdo (costilla o lomo, cortado en trozos medianos)",
+      "2 cucharadas de pasta de achiote (Supermaxi, Megamaxi, TIA - sección condimentos)",
+      "4 dientes de ajo (machacados)",
+      "1 cucharadita de comino molido",
+      "1 cucharadita de orégano seco",
+      "1 cebolla blanca (finamente picada)",
+      "1 pimiento verde (picado en cubos pequeños)",
+      "2 tomates maduros (pelados y picados)",
+      "1 taza de chicha de jora o cerveza clara (Supermaxi, Megamaxi - sección bebidas)",
+      "2 cucharadas de aceite vegetal",
+      "Sal y pimienta al gusto"
+    ],
+    "instructions": [
+      "En un recipiente grande, mezcla la pasta de achiote, ajo machacado, comino, orégano, sal y pimienta para formar una marinada.",
+      "Cubre la carne de cerdo con esta mezcla, asegurándote de que quede bien impregnada. Deja reposar en la refrigeradora por al menos 2 horas, idealmente toda la noche.",
+      "En una olla grande, calienta el aceite vegetal a fuego medio y sofríe la cebolla y el pimiento hasta que estén tiernos, unos 3-4 minutos.",
+      "Añade los tomates picados y cocina por 5 minutos más, removiendo ocasionalmente hasta formar una salsa base.",
+      "Incorpora la carne marinada junto con el líquido de la marinada y mezcla bien con el sofrito. Cocina por 5 minutos para sellar los sabores.",
+      "Vierte la chicha de jora o cerveza, reduce el fuego a bajo, tapa la olla y deja cocinar por 1.5 a 2 horas, removiendo ocasionalmente, hasta que la carne esté tierna y el color rojo del achiote se intensifique.",
+      "Prueba y ajusta la sal si es necesario. Sirve caliente acompañado de mote, papas cocidas o arroz blanco."
+    ],
+    "tips": [
+      "Para un sabor más intenso, marina la carne durante 24 horas en el refrigerador.",
+      "Si la salsa se reduce mucho durante la cocción, añade un poco de agua o más chicha para mantener la textura jugosa.",
+      "Acompaña con una ensalada fresca de cebolla y tomate curtido para equilibrar los sabores.",
+      "Usa una olla de hierro o barro si tienes, ya que realza el sabor tradicional."
+    ],
+    "keywords": [
+      "carne colorada ecuatoriana",
+      "receta carne colorada",
+      "carne colorada sierra",
+      "plato tipico ecuador",
+      "receta tradicional ecuatoriana",
+      "carne con achiote",
+      "comida andina ecuador",
+      "como hacer carne colorada",
+      "receta ecuatoriana facil",
+      "platos fuertes ecuador",
+      "gastronomia sierra ecuatoriana"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña la carne colorada?",
+        "a": "Se suele acompañar con mote, papas cocidas, arroz blanco y una ensalada de cebolla curtida."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva la carne colorada?",
+        "a": "En el refrigerador, se conserva hasta 3 días en un recipiente hermético. También se puede congelar por hasta un mes."
+      },
+      {
+        "q": "¿Es difícil hacer carne colorada?",
+        "a": "No es muy difícil, pero requiere tiempo para marinar y cocinar a fuego lento para lograr la textura y sabor ideales."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Loja",
+        "province": "Loja",
+        "region": "Sierra"
+      },
+      {
+        "city": "Cuenca",
+        "province": "Azuay",
+        "region": "Sierra"
+      },
+      {
+        "city": "Riobamba",
+        "province": "Chimborazo",
+        "region": "Sierra"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian food",
+      "traditional dish",
+      "pork dish",
+      "achiote marinade",
+      "andean cuisine",
+      "carne colorada",
+      "ecuadorian pork"
+    ],
+    "international_substitutes": [
+      {
+        "original": "pasta de achiote",
+        "sustituto_usa": "mezcla de paprika y cúrcuma (1:1) con una pizca de comino",
+        "sustituto_europa": "mezcla de paprika y cúrcuma (1:1) con una pizca de comino"
+      },
+      {
+        "original": "chicha de jora",
+        "sustituto_usa": "cerveza clara o sidra de manzana sin alcohol",
+        "sustituto_europa": "cerveza clara o sidra de manzana sin alcohol"
+      }
+    ],
+    "tourism_route": "Disfruta de la auténtica carne colorada en la ruta gastronómica de la Sierra ecuatoriana. Visita Loja y degusta este plato en mercados locales como el Mercado Central por aproximadamente $3-5 por porción. Luego, explora Cuenca y sus restaurantes tradicionales en el centro histórico.",
+    "youtube_videos": [
+      {
+        "title": "Salón de Res Guisado ¡Súper Tierno y Jugos ! | KWA",
+        "videoId": "KiIqYnPK2uk",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=KiIqYnPK2uk",
+        "embed": "https://www.youtube-nocookie.com/embed/KiIqYnPK2uk",
+        "uploadDate": "2025-06-14",
+        "description": "¿Antojo de una receta casera, sabrosa y tradicional? Hoy te enseñamos cómo preparar salón de res guisado, un clásico de la cocina latinoamericana que conquista por su sabor profundo y carne jugosa. \n\n"
+      },
+      {
+        "title": "Seco de carne SUPER JUGOSO",
+        "videoId": "jvLGE8V3Qa4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=jvLGE8V3Qa4",
+        "embed": "https://www.youtube-nocookie.com/embed/jvLGE8V3Qa4",
+        "uploadDate": "2022-11-21",
+        "description": ""
+      },
+      {
+        "title": "Un SECO de Carne FÁCIL | KWA",
+        "videoId": "d-PhS71NVYE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=d-PhS71NVYE",
+        "embed": "https://www.youtube-nocookie.com/embed/d-PhS71NVYE",
+        "uploadDate": "2022-10-08",
+        "description": "Encuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/13/seco-de-carne/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r\nMás recetas aquí: https://tinyurl.com/RecetasKWA\r\n\r"
+      }
+    ],
+    "id": 25,
+    "created_at": "2026-02-26T03:22:10.572Z"
+  },
+  {
     "slug": "seco-de-conejo-amazonia-ecuatoriana",
     "title": "Seco de Conejo Amazónico Ecuatoriano Receta Tradicional",
     "description": "Seco de Conejo Amazónico, un plato tradicional de la Amazonía ecuatoriana, lleno de sabores intensos con hierbas y especias locales. Aprende a prepararlo paso a paso con esta receta auténtica que resalta la riqueza gastronómica de la región oriental del Ecuador.",

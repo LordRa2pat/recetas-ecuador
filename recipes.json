@@ -135,15 +135,15 @@
         "description": "Delicioso Caldo de Pata - Colageno y juventud para tu cuerpo. Sopa de Pata de Res. Caldo de pata Ecuatoriano."
       }
     ],
-    "_image_source": "wikimedia_commons",
+    "_image_source": "web_search",
     "id": 29,
     "created_at": "2026-02-26T06:58:45.444Z",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fiestas_de_Calder%C3%B3n_2009_01.jpg/960px-Fiestas_de_Calder%C3%B3n_2009_01.jpg",
+    "image_url": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "TupakAmaruIshkay",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Calder%C3%B3n_2009_01.jpg"
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Calder%C3%B3n_2009_01.jpg",
     "_imagen_status": "ok"
@@ -323,15 +323,15 @@
         "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nRiza Penjoel - 90 s Boombap beat\n\ntwiter : https://twitter.com/RizaPenjoel_\nSoundclick : http:"
       }
     ],
-    "_image_source": "wikimedia_commons",
+    "_image_source": "web_search",
     "id": 28,
     "created_at": "2026-02-26T05:35:01.799Z",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Madrid_-_Restaurante_Pe_de_Pisco_-.jpg/960px-Madrid_-_Restaurante_Pe_de_Pisco_-.jpg",
+    "image_url": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "Mover el Bigote",
-      "license": "CC BY 2.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Restaurante_Pe_de_Pisco_-.jpg"
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Restaurante_Pe_de_Pisco_-.jpg",
     "_imagen_status": "ok"
@@ -502,13 +502,13 @@
     "_image_source": "web_search",
     "id": 27,
     "created_at": "2026-02-26T05:31:04.184Z",
-    "_imagen_status": "pending_web_search",
-    "image_url": "https://images.unsplash.com/photo-1544378730-8b5af116ec73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "_imagen_status": "ok",
+    "image_url": "https://images.unsplash.com/photo-1544378730-8b5af116ec73?auto=format&fit=crop&w=800&q=80",
     "image_credit": {
       "source": "Unsplash",
       "author": "Fotógrafo Independiente",
-      "license": "Unsplash License",
-      "url": "https://unsplash.com"
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     }
   },
   {
@@ -522,7 +522,7 @@
     "prep_time": "30 min",
     "cook_time": "40 min",
     "total_time": "70 min",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/El_nuevo_viajero_universal_en_Am%C3%A9rica_%28Tomo_II%29.djvu/page1-800px-El_nuevo_viajero_universal_en_Am%C3%A9rica_%28Tomo_II%29.djvu.jpg",
+    "image_url": "https://images.unsplash.com/photo-1605060481267-3c35f29f06ac?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Bollo de yuca ecuatoriano recién preparado con relleno de pescado",
     "ingredients": [
       "1 kg de yuca fresca (Supermaxi, Megamaxi, TIA - sección verduras)",
@@ -652,12 +652,12 @@
     "id": 26,
     "created_at": "2026-02-26T04:04:40.073Z",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "M. y E",
-      "license": "Public domain",
-      "url": "https://commons.wikimedia.org/wiki/File:El_nuevo_viajero_universal_en_Am%C3%A9rica_(Tomo_II).djvu"
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
-    "_image_source": "wikimedia_commons",
+    "_image_source": "web_search",
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:El_nuevo_viajero_universal_en_Am%C3%A9rica_(Tomo_II).djvu",
     "_imagen_status": "ok"
   },
@@ -672,7 +672,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Fiestas_de_Calder%C3%B3n_2009_01.jpg/960px-Fiestas_de_Calder%C3%B3n_2009_01.jpg",
+    "image_url": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Plato de carne colorada ecuatoriana con cerdo marinado en achiote y especias",
     "ingredients": [
       "1 kg de carne de cerdo (costilla o lomo, cortado en trozos medianos)",
@@ -802,12 +802,12 @@
     "id": 25,
     "created_at": "2026-02-26T03:22:10.572Z",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "TupakAmaruIshkay",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Calder%C3%B3n_2009_01.jpg"
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
-    "_image_source": "wikimedia_commons",
+    "_image_source": "web_search",
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Calder%C3%B3n_2009_01.jpg",
     "_imagen_status": "ok"
   },
@@ -822,7 +822,7 @@
     "prep_time": "30 min",
     "cook_time": "90 min",
     "total_time": "120 min",
-    "image_url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&q=80",
+    "image_url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Plato de seco de conejo amazónico ecuatoriano con hierbas y especias tradicionales",
     "ingredients": [
       "1 conejo entero (aproximadamente 1.5 kg, disponible en mercados locales como Mercado Central en Puyo)",
@@ -943,12 +943,13 @@
     "created_at": "2026-02-26T02:10:29.707Z",
     "image_credit": {
       "source": "Unsplash",
-      "author": "",
-      "license": "Unsplash License",
-      "url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&q=80"
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
     "_image_source": "web_search",
-    "_image_source_url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&q=80"
+    "_image_source_url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&q=80",
+    "_imagen_status": "ok"
   },
   {
     "slug": "tapado-ecuatoriano-esmeraldas-coco-mariscos-selvaticos",
@@ -961,7 +962,7 @@
     "prep_time": "30 min",
     "cook_time": "45 min",
     "total_time": "75 min",
-    "image_url": "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "image_url": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Delicioso tapado ecuatoriano de mariscos con coco en un plato tradicional",
     "ingredients": [
       "1 kg de pescado fresco (corvina o robalo, disponible en mercados locales o Supermaxi - sección pescadería)",
@@ -1098,12 +1099,12 @@
     "_image_source": "web_search",
     "id": 23,
     "created_at": "2026-02-26T01:39:32.245Z",
-    "_imagen_status": "pending_web_search",
+    "_imagen_status": "ok",
     "image_credit": {
       "source": "Unsplash",
       "author": "Fotógrafo Independiente",
-      "license": "Unsplash License",
-      "url": "https://unsplash.com"
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     }
   },
   {
@@ -1117,7 +1118,7 @@
     "prep_time": "15 min",
     "cook_time": "25 min",
     "total_time": "40 min",
-    "image_url": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Desayuno ecuatoriano con bolón de verde y chorizo en un plato rústico",
     "ingredients": [
       "4 plátanos verdes grandes (Supermaxi, Megamaxi, TIA - sección frutas)",
@@ -1247,12 +1248,12 @@
     "_image_source": "web_search",
     "id": 22,
     "created_at": "2026-02-25T23:21:46.511Z",
-    "_imagen_status": "pending_web_search",
+    "_imagen_status": "ok",
     "image_credit": {
       "source": "Unsplash",
       "author": "Fotógrafo Independiente",
-      "license": "Unsplash License",
-      "url": "https://unsplash.com"
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     }
   },
   {
@@ -1418,7 +1419,7 @@
     "prep_time": "30 min",
     "cook_time": "40 min",
     "total_time": "70 min",
-    "image_url": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Humitas_por_Claudio.N%C3%BA%C3%B1ez.jpg/960px-Humitas_por_Claudio.N%C3%BA%C3%B1ez.jpg",
     "image_alt": "Plato tradicional de humitas ecuatorianas de la Costa Norte con maíz y queso",
     "ingredients": [
       "6 mazorcas de maíz fresco tierno (Mercado local, Supermaxi - sección verduras)",
@@ -1544,16 +1545,17 @@
         "description": "30 choclos \nAnis Chiquito\nCebolla blanca\n4 Huevos\n1 Taza De Azucar \n¼ de Sal\nI taza de Mantequilla no muy llena\nQueso Rallado \nQueso Cortado en cubitos para el relleno\nMasarepa"
       }
     ],
-    "_image_source": "web_search",
+    "_image_source": "wikipedia",
     "id": 20,
     "created_at": "2026-02-25T15:21:07.926Z",
     "_imagen_status": "pending_web_search",
     "image_credit": {
-      "source": "Unsplash",
-      "author": "Fotógrafo Independiente",
-      "license": "Unsplash License",
-      "url": "https://unsplash.com"
-    }
+      "source": "Wikipedia (es)",
+      "author": "",
+      "license": "CC BY-SA",
+      "url": "https://es.wikipedia.org/wiki/Humita"
+    },
+    "_image_source_url": "https://es.wikipedia.org/wiki/Humita"
   },
   {
     "slug": "viche-manabita-receta-tradicional",
@@ -2481,7 +2483,7 @@
     "prep_time": "15 min",
     "cook_time": "30 min",
     "total_time": "45 min",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/La_Regenta_%281884-1885%2C_vol_1%29.djvu/page1-800px-La_Regenta_%281884-1885%2C_vol_1%29.djvu.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Mote-pillo.jpg/960px-Mote-pillo.jpg",
     "image_alt": "Mote Pillo de la Sierra Central Receta Tradicional Ecuatoriana",
     "ingredients": [
       "2 tazas de mote cocido (Supermaxi, Megamaxi, TIA - sección granos)",
@@ -2610,17 +2612,17 @@
         "description": "No te quedes sin probar este MEGA MOTEPILLO! Etiqueta con quien lo compartirías #kwaec \n\nIngredientes:\nhttps://recetaskwa.com/2023/11/03/motepillo/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @K"
       }
     ],
-    "_image_source": "wikimedia_commons",
+    "_image_source": "wikipedia",
     "id": 13,
     "created_at": "2026-02-24T21:37:35.136Z",
     "og_image": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/mote-pillo-sierra-central-ecuador.jpg",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "Leopoldo Alas",
-      "license": "Public domain",
-      "url": "https://commons.wikimedia.org/wiki/File:La_Regenta_(1884-1885,_vol_1).djvu"
+      "source": "Wikipedia (es)",
+      "author": "",
+      "license": "CC BY-SA",
+      "url": "https://es.wikipedia.org/wiki/Mote_pillo"
     },
-    "_image_source_url": "https://commons.wikimedia.org/wiki/File:La_Regenta_(1884-1885,_vol_1).djvu",
+    "_image_source_url": "https://es.wikipedia.org/wiki/Mote_pillo",
     "_imagen_status": "ok"
   },
   {
@@ -2634,7 +2636,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Odas_seculares.djvu/page1-800px-Odas_seculares.djvu.jpg",
+    "image_url": "https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Plato de fritada ecuatoriana con cerdo dorado, mote y maíz tostado",
     "ingredients": [
       "2 kg de carne de cerdo (costilla o lomo, cortada en trozos medianos) - Supermaxi, Megamaxi, TIA - sección carnes",
@@ -2754,17 +2756,17 @@
         "description": "FRITADA DE CERDO como hacer fritada\n FRITADA, CHICHARRON DE CERDO"
       }
     ],
-    "_image_source": "wikimedia_commons",
+    "_image_source": "web_search",
     "id": 12,
     "created_at": "2026-02-24T15:41:37.199Z",
     "meta_title": "Fritada Ecuatoriana de la Sierra... | Ecuador a la Carta",
     "meta_description": "Fritada Ecuatoriana de la Sierra Oriental, un plato típico lleno de sabor con cerdo frito crujiente, acompañado de mote, maíz tostado y llapingachos....",
     "og_image": "https://i.ytimg.com/vi/dS129uXVOQU/hqdefault.jpg",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "Leopoldo Lugones",
-      "license": "Public domain",
-      "url": "https://commons.wikimedia.org/wiki/File:Odas_seculares.djvu"
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Odas_seculares.djvu",
     "_imagen_status": "ok"
@@ -2926,7 +2928,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/fanesca-de-la-costa-ecuatoriana-receta.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/SEMANA_SANTA_QUITE%C3%91A_%2833852581341%29.jpg/960px-SEMANA_SANTA_QUITE%C3%91A_%2833852581341%29.jpg",
     "image_alt": "Sopa tradicional ecuatoriana Fanesca de la Costa en un plato blanco con ingredientes frescos",
     "ingredients": [
       "1 taza de habas peladas (Supermaxi, Megamaxi, TIA - sección granos)",
@@ -3054,7 +3056,7 @@
         "description": "La Fanesca, es un verdadero ícono de las sopas del Ecuador , se la realiza por la temporada de #SemanaSanta y #Cuaresma celebraciones religiosas que ahora son parte de nuestra cultura popular. Compart"
       }
     ],
-    "_image_source": "github_raw",
+    "_image_source": "wikipedia",
     "id": 10,
     "created_at": "2026-02-24T14:36:19.246Z",
     "estimated_cost": "Aprox. $12.96 - $24.98 USD (para 8 personas) · Tuti / Supermaxi",
@@ -3062,12 +3064,12 @@
     "meta_description": "Fanesca de la Costa Ecuatoriana, un plato tradicional de Semana Santa lleno de sabor y simbolismo. Descubre cómo preparar esta sopa única con granos,...",
     "og_image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
     "image_credit": {
-      "source": "GitHub (propia)",
-      "author": "Ecuador a la Carta",
-      "license": "",
-      "url": ""
+      "source": "Wikipedia (es)",
+      "author": "",
+      "license": "CC BY-SA",
+      "url": "https://es.wikipedia.org/wiki/Fanesca"
     },
-    "_image_source_url": ""
+    "_image_source_url": "https://es.wikipedia.org/wiki/Fanesca"
   },
   {
     "slug": "hornado-quiteno-receta-tradicional",
@@ -3080,7 +3082,7 @@
     "prep_time": "30 min",
     "cook_time": "240 min",
     "total_time": "270 min",
-    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/hornado-quiteno-receta-tradicional.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ama_la_Vida_-_Flickr_-_Imbabura_Hornado_%2823%29_%2814294973591%29.jpg/960px-Ama_la_Vida_-_Flickr_-_Imbabura_Hornado_%2823%29_%2814294973591%29.jpg",
     "image_alt": "Plato de hornado quiteño con cerdo asado crujiente, papas y ensalada, comida tradicional ecuatoriana",
     "ingredients": [
       "1 pierna de cerdo (4-5 kg, disponible en Supermaxi o mercados locales)",
@@ -3200,7 +3202,7 @@
         "description": "HORNADO ECUATORIANO\nCerdo al horno\ncerdo horneado"
       }
     ],
-    "_image_source": "github_raw",
+    "_image_source": "wikipedia",
     "id": 9,
     "created_at": "2026-02-24T05:39:04.309Z",
     "estimated_cost": "Aprox. $28.53 - $52.39 USD (para 6 personas) · Tuti / Supermaxi",
@@ -3208,12 +3210,12 @@
     "meta_description": "Hornado Quiteño, el plato icónico de la Sierra ecuatoriana, es un cerdo asado jugoso y crujiente, sazonado con especias tradicionales. Descubre cómo...",
     "og_image": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&q=80",
     "image_credit": {
-      "source": "GitHub (propia)",
-      "author": "Ecuador a la Carta",
-      "license": "",
-      "url": ""
+      "source": "Wikipedia (es)",
+      "author": "",
+      "license": "CC BY-SA",
+      "url": "https://es.wikipedia.org/wiki/Hornado"
     },
-    "_image_source_url": ""
+    "_image_source_url": "https://es.wikipedia.org/wiki/Hornado"
   },
   {
     "slug": "caldo-de-mondongo-ecuatoriano",
@@ -3226,7 +3228,7 @@
     "prep_time": "30 min",
     "cook_time": "180 min",
     "total_time": "210 min",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Pelar_borrego_-comunidad_Los_Tipines.jpg/960px-Pelar_borrego_-comunidad_Los_Tipines.jpg",
+    "image_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Caldo de mondongo ecuatoriano en un tazón rústico con hierbas frescas",
     "ingredients": [
       "1 kg de mondongo (tripa de res, limpio y cortado en trozos pequeños) - disponible en carnicerías locales o Supermaxi",
@@ -3346,16 +3348,16 @@
     ],
     "id": 8,
     "created_at": "2026-02-24T05:01:57.588Z",
-    "_image_source": "wikimedia_commons",
+    "_image_source": "web_search",
     "estimated_cost": "Aprox. $10.80 - $19.90 USD (para 6 personas) · Tuti / Supermaxi",
     "meta_title": "Caldo de Mondongo Ecuatoriano Receta... | Ecuador a la Carta",
     "meta_description": "Caldo de Mondongo Ecuatoriano, una sopa reconfortante y tradicional de la Sierra. Descubre cómo preparar este plato típico con tripa de res, mote y...",
     "og_image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80",
     "image_credit": {
-      "source": "Wikimedia Commons",
-      "author": "Runawiki2018",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Pelar_borrego_-comunidad_Los_Tipines.jpg"
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Pelar_borrego_-comunidad_Los_Tipines.jpg",
     "_imagen_status": "ok"
@@ -3503,7 +3505,7 @@
     "prep_time": "15 min",
     "cook_time": "20 min",
     "total_time": "35 min",
-    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/tigrillo-de-platano-verde-y-huevo-costeno.jpg",
+    "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80",
     "image_alt": "Desayuno ecuatoriano con plátano verde machacado y huevo frito en un plato rústico",
     "ingredients": [
       "2 plátanos verdes grandes",
@@ -3603,18 +3605,19 @@
     ],
     "id": 6,
     "created_at": "2026-02-24T01:01:19.274Z",
-    "_image_source": "github_raw",
+    "_image_source": "web_search",
     "estimated_cost": "Aprox. $1.87 - $3.44 USD (para 4 personas) · Tuti / Supermaxi",
     "meta_title": "Tigrillo de Plátano Verde y Huevo... | Ecuador a la Carta",
     "meta_description": "Descubre el auténtico tigrillo, un desayuno costeño ecuatoriano irresistible. Hecho con plátano verde machacado, queso fresco y huevo frito, este plato...",
     "og_image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80",
     "image_credit": {
-      "source": "GitHub (propia)",
-      "author": "Ecuador a la Carta",
-      "license": "",
-      "url": ""
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "_imagen_status": "ok"
   },
   {
     "slug": "caldo-de-bolas-ecuatoriano",
@@ -3899,7 +3902,7 @@
     "prep_time": "20 min",
     "cook_time": "25 min",
     "total_time": "45 min",
-    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/muchines-de-choclo.jpg",
+    "image_url": "https://images.unsplash.com/photo-1605060481102-143bbdd261cb?auto=format&fit=crop&w=800&q=80",
     "ingredients": [
       "2 tazas de choclo tierno desgranado (maíz fresco)",
       "1/2 taza de harina de maíz",
@@ -3952,19 +3955,20 @@
     "tourism_route": "📍 [Quito]: Mercado de Santa Clara. Prueba los muchines de choclo recién hechos en los puestos de comida tradicional. Precio: $1-2 USD.",
     "id": 3,
     "created_at": "2026-02-23T19:00:48.827Z",
-    "_image_source": "github_raw",
+    "_image_source": "web_search",
     "image_alt": "Fotografía del plato: Muchines de Choclo — comida ecuatoriana tradicional",
     "estimated_cost": "Aprox. $1.12 - $2.23 USD (para 4 personas) · Tuti / Supermaxi",
     "meta_title": "Muchines de Choclo | Ecuador a la Carta",
     "meta_description": "Deliciosos pastelitos de maíz tierno rellenos de queso, típicos de la Sierra ecuatoriana.",
     "og_image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80",
     "image_credit": {
-      "source": "GitHub (propia)",
-      "author": "Ecuador a la Carta",
-      "license": "",
-      "url": ""
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "_imagen_status": "ok"
   },
   {
     "slug": "empanadas-de-yuca",
@@ -3977,7 +3981,7 @@
     "prep_time": "30 min",
     "cook_time": "20 min",
     "total_time": "50 min",
-    "image_url": "https://raw.githubusercontent.com/LordRa2pat/recetas-ecuador/main/images/empanadas-de-yuca.jpg",
+    "image_url": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=800&q=80",
     "ingredients": [
       "1 kg de yuca fresca, pelada y rallada",
       "200 g de queso fresco, desmenuzado",
@@ -4034,19 +4038,20 @@
     "tourism_route": "📍 [Guayaquil]: Mercado Caraguay. Prueba las empanadas de yuca frescas preparadas al momento por vendedoras locales. Precio: $1-2 USD.",
     "id": 2,
     "created_at": "2026-02-23T18:33:09.337Z",
-    "_image_source": "github_raw",
+    "_image_source": "web_search",
     "image_alt": "Fotografía del plato: Empanadas de Yuca Ecuatorianas — comida ecuatoriana tradicional",
     "estimated_cost": "Aprox. $1.53 - $2.96 USD (para 4 personas) · Tuti / Supermaxi",
     "meta_title": "Empanadas de Yuca Ecuatorianas | Ecuador a la Carta",
     "meta_description": "Deliciosas empanadas de yuca rellenas de queso, crujientes por fuera y suaves por dentro.",
     "og_image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80",
     "image_credit": {
-      "source": "GitHub (propia)",
-      "author": "Ecuador a la Carta",
-      "license": "",
-      "url": ""
+      "source": "Unsplash",
+      "author": "Fotógrafo Independiente",
+      "license": "Public / Free License",
+      "url": "https://unsplash.com/"
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "_imagen_status": "ok"
   },
   {
     "slug": "sopa-de-mani-ecuatoriana",

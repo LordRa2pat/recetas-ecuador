@@ -1,5 +1,172 @@
 [
   {
+    "slug": "seco-de-pato-lojano",
+    "title": "Seco de Pato Lojano Receta Tradicional Ecuatoriana",
+    "description": "Seco de Pato Lojano es un estofado icónico de la Sierra ecuatoriana, preparado con pato tierno en chicha y especias aromáticas. Esta receta detallada te permite recrear este plato casero, ideal para cenas familiares y amantes de la gastronomía andina.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "60 min",
+    "total_time": "80 min",
+    "ingredients": [
+      {
+        "name": "Pato",
+        "quantity": "1 entero (aprox. 1.5 kg)",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Chicha de maíz",
+        "quantity": "2 tazas",
+        "where_to_buy": "Mercado local"
+      },
+      {
+        "name": "Cebolla",
+        "quantity": "2 unidades medianas picadas",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Ajo",
+        "quantity": "4 dientes finamente picados",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Tomate",
+        "quantity": "3 unidades medianas cortadas",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Cilantro fresco",
+        "quantity": "1 manojo picado",
+        "where_to_buy": "Mercado local"
+      },
+      {
+        "name": "Comino molido",
+        "quantity": "1 cucharadita",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Sal",
+        "quantity": "1 cucharadita al gusto",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Pimienta negra",
+        "quantity": "1/2 cucharadita",
+        "where_to_buy": "Supermaxi"
+      },
+      {
+        "name": "Aceite vegetal",
+        "quantity": "2 cucharadas",
+        "where_to_buy": "TIA"
+      }
+    ],
+    "instructions": [
+      "1. Limpiar el pato: Enjuaga el pato entero bajo agua fría, remueve cualquier pluma restante y córtalo en piezas de aproximadamente 5 cm. Esto toma unos 10 minutos para asegurar que esté libre de impurezas.",
+      "2. Marinar el pato: En un bowl grande, mezcla las piezas de pato con 1 taza de chicha, sal y pimienta. Deja marinar durante 30 minutos a temperatura ambiente para que absorba los sabores.",
+      "3. Preparar el sofrito: En una olla grande a fuego medio (alrededor de 150°C), calienta el aceite y sofríe la cebolla, ajo y tomate picados durante 5 minutos hasta que estén suaves y aromáticos.",
+      "4. Dorar el pato: Agrega las piezas de pato marinado al sofrito y cocina a fuego alto por 10 minutos, revolviendo ocasionalmente, hasta que el pato dore por fuera y libere sus jugos naturales.",
+      "5. Cocinar el estofado: Incorpora el resto de la chicha, comino, cilantro picado y ajusta la sal. Baja el fuego a bajo, tapa la olla y cocina por 45 minutos, revolviendo cada 10 minutos, hasta que el pato esté tierno.",
+      "6. Finalizar y servir: Retira la olla del fuego y deja reposar por 5 minutos. Sirve el Seco de Pato Lojano caliente, acompañado de arroz, yuca o plátano maduro para una experiencia auténtica."
+    ],
+    "tips": [
+      "Para un sabor más auténtico, usa chicha de maíz fresca de mercados locales en Ecuador, ya que añade acidez natural.",
+      "Si el pato es muy graso, quita parte de la piel antes de cocinar para reducir el exceso de grasa en el plato."
+    ],
+    "origin_cities": [
+      "Loja"
+    ],
+    "image_keywords": [
+      "seco de pato lojano",
+      "comida ecuatoriana tradicional",
+      "plato de pato de la sierra"
+    ],
+    "image_alt": "Fotografía del Seco de Pato Lojano con pato estofado en salsa espesa y hierbas frescas",
+    "seo_keywords": [
+      "receta tradicional de seco de pato lojano ecuatoriano",
+      "como preparar seco de pato en casa paso a paso",
+      "ingredientes para seco de pato de la region de loja",
+      "platos fuertes ecuatorianos con pato",
+      "seco de pato lojano autentico y facil de hacer"
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué es Seco de Pato Lojano y de dónde proviene?",
+        "answer": "Seco de Pato Lojano es un estofado tradicional de la ciudad de Loja en la Sierra ecuatoriana, hecho con pato cocinado en chicha, cebolla y especias, representando la rica herencia culinaria andina."
+      },
+      {
+        "question": "¿Puedo sustituir ingredientes en Seco de Pato Lojano?",
+        "answer": "Sí, puedes sustituir la chicha por cerveza y el pato por pollo, pero esto alterará ligeramente el sabor; el pato aporta un toque graso y único que define el plato original."
+      },
+      {
+        "question": "¿Con qué se sirve tradicionalmente Seco de Pato Lojano?",
+        "answer": "Se sirve con arroz blanco, yuca hervida, plátano maduro frito o una ensalada fresca, lo que equilibra los sabores intensos del estofado y lo hace una comida completa."
+      },
+      {
+        "question": "¿Es Seco de Pato Lojano adecuado para principiantes en la cocina?",
+        "answer": "Es de dificultad media, por lo que es ideal para cocineros con algo de experiencia, ya que involucra marinado y estofado, pero los pasos son directos con práctica."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Jugo de Naranjas",
+        "city": "Loja",
+        "description": "Un lugar icónico en Loja donde se sirve Seco de Pato Lojano con ingredientes frescos y recetas familiares."
+      },
+      {
+        "name": "Mercado San Francisco",
+        "city": "Loja",
+        "description": "En este vibrante mercado de Loja, puedes probar versiones caseras de Seco de Pato hechas por vendedores locales con productos de la región."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Chicha de maíz",
+        "substitute": "Cerveza rubia",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Tesco en Europa, proporciona un sabor ácido similar."
+      },
+      {
+        "original": "Pato",
+        "substitute": "Pollo",
+        "notes": "Disponible en tiendas como Target en EE.UU. o Carrefour en Europa; usa muslos de pollo para mantener la textura jugosa y el sabor carnoso."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Así se hace el SECO DE CHANCHO PERFECTO 🇪🇨 | KWA",
+        "videoId": "bWzri7iBMIw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=bWzri7iBMIw",
+        "embed": "https://www.youtube-nocookie.com/embed/bWzri7iBMIw",
+        "uploadDate": "2025-07-05",
+        "description": "En este video te enseño paso a paso cómo preparar un seco de chancho tradicional, lleno de sabor, jugoso y con todos los secretos que lo hacen inolvidable. Si te gusta la comida criolla, esta receta e"
+      },
+      {
+        "title": "SECO DE CHIVO",
+        "videoId": "nalrrzDx6ok",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=nalrrzDx6ok",
+        "embed": "https://www.youtube-nocookie.com/embed/nalrrzDx6ok",
+        "uploadDate": "2019-07-19",
+        "description": "Ingredientes:\nCarne de Chivo ............. 2 lb\nCebolla Colorada ......... 1 taza\nPimiento Verde ............. 3/4 taza \nPasta de Ajo .................. 1 cucharada\nCilantro .........................."
+      },
+      {
+        "title": "HAYACAS DE POLLO",
+        "videoId": "XAq3-dqgRAQ",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=XAq3-dqgRAQ",
+        "embed": "https://www.youtube-nocookie.com/embed/XAq3-dqgRAQ",
+        "uploadDate": "2020-09-18",
+        "description": "Las puedes rellenar con lo que más te guste! #HayacasDePollo #KWAEC\n\nRelleno:\nPollo 300 gr\nMantequilla 50 gr\nCebolla perla 80 gr\n\nMasa:\nHarina de maíz 500 gr\nCaldo de pollo 1,5 L\nMantequilla 100 gr\nAz"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 27,
+    "created_at": "2026-02-26T05:31:04.184Z"
+  },
+  {
     "slug": "bollo-de-yuca-ecuatoriano",
     "title": "Bollo de Yuca Ecuatoriano Receta Tradicional",
     "description": "Bollo de Yuca Ecuatoriano, un plato típico de la Costa ecuatoriana, hecho con yuca fresca y relleno de sabores únicos como pescado o queso. Aprende a prepararlo con esta receta fácil y auténtica, ideal para compartir en familia o sorprender a tus invitados.",

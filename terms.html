@@ -9,45 +9,45 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { 'ec-gold': '#FFD100', 'ec-blue': '#0033A0', 'ec-red': '#EF3340' } } } }
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: { 'ec-gold': '#DCA011', 'ec-blue': '#14213D', 'ec-red': '#9A1B22' } } } }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
+    .ec-stripe { background: linear-gradient(90deg,#DCA011 0% 50%,#14213D 50% 75%,#9A1B22 75% 100%); height:4px; width:100%; }
     .prose h2 { font-size: 1.25rem; font-weight: 700; color: #111827; margin-top: 2rem; margin-bottom: 0.75rem; }
     .prose p, .prose li { color: #374151; line-height: 1.7; margin-bottom: 0.75rem; font-size: 0.9375rem; }
     .prose ul { list-style-type: disc; padding-left: 1.5rem; }
-    .prose a { color: #0033A0; text-decoration: underline; }
+    .prose a { color: #14213D; text-decoration: underline; }
     .prose a:hover { color: #001f6e; }
     .prose strong { color: #111827; }
-    .lopdp-box { border: 2px solid #0033A0; border-radius: 1rem; padding: 1.25rem 1.5rem;
+    .lopdp-box { border: 2px solid #14213D; border-radius: 1rem; padding: 1.25rem 1.5rem;
       background: #EEF2FF; margin: 1.5rem 0; }
-    .lopdp-box h3 { font-weight: 700; color: #0033A0; margin-bottom: 0.5rem; }
+    .lopdp-box h3 { font-weight: 700; color: #14213D; margin-bottom: 0.5rem; }
   </style>
 </head>
-<body class="bg-slate-50 antialiased">
+<body class="bg-[#FDFBF7] antialiased">
   <div class="ec-stripe" aria-hidden="true"></div>
 
-  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg">
         <span class="text-2xl">🍲</span>
         <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
         <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
       </a>
-      <a href="index.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+      <a href="index.html" class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
         ← Inicio
       </a>
     </div>
   </header>
 
   <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-    <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-8 sm:p-12 prose">
+    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 sm:p-12 prose">
 
       <div class="mb-8">
-        <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-2">Legal</p>
-        <h1 class="text-3xl font-black text-gray-900 mb-2">Términos de Uso</h1>
+        <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-2">Legal</p>
+        <h1 class="text-3xl font-bold font-serif text-[#14213D] mb-2">Términos de Uso</h1>
         <p class="text-gray-400 text-sm">Última actualización: 24 de febrero de 2026</p>
       </div>
 
@@ -110,7 +110,7 @@
           Las imágenes se obtienen de fuentes con licencias libres (Unsplash, Wikimedia Commons, Pexels) o son generadas por inteligencia artificial. El crédito correspondiente se indica en cada receta cuando aplica.
         </p>
         <p style="color:#374151;font-size:0.9375rem;line-height:1.7;">
-          Si eres titular de derechos sobre alguna imagen publicada en el Sitio y deseas que sea retirada, contáctanos en nuestra <a href="contact.html" style="color:#0033A0;">página de contacto</a> y la retiraremos en un plazo máximo de 72 horas.
+          Si eres titular de derechos sobre alguna imagen publicada en el Sitio y deseas que sea retirada, contáctanos en nuestra <a href="contact.html" style="color:#14213D;">página de contacto</a> y la retiraremos en un plazo máximo de 72 horas.
         </p>
       </div>
 
@@ -131,14 +131,14 @@
           <li>Presentar una reclamación ante la Autoridad de Protección de Datos Personales del Ecuador.</li>
         </ul>
         <p style="color:#374151;font-size:0.9375rem;line-height:1.7;">
-          Para ejercer cualquiera de estos derechos, contáctanos a través de nuestra <a href="contact.html" style="color:#0033A0;">página de contacto</a>. Responderemos en el plazo establecido por la LOPDP.
+          Para ejercer cualquiera de estos derechos, contáctanos a través de nuestra <a href="contact.html" style="color:#14213D;">página de contacto</a>. Responderemos en el plazo establecido por la LOPDP.
         </p>
       </div>
 
     </div>
   </main>
 
-  <footer class="bg-[#0033A0] text-white py-8 px-4 sm:px-6 border-t border-blue-700">
+  <footer class="bg-[#14213D] text-white py-8 px-4 sm:px-6 border-t border-[#14213D]">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <span class="text-2xl">🍲</span>

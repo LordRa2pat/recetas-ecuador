@@ -13,7 +13,7 @@ import {
   renderPlacesCard, renderVideosCard, renderImageCredit,
   renderEmptyState, renderGridWithAds, renderBlogCard, renderFaqsSection
 } from './js/render.js';
-import { injectSEO, injectPostSEO } from './js/seo.js';
+import { injectSEO, injectPostSEO, setMeta, injectIndexSEO } from './js/seo.js';
 import { renderIngredient } from './js/prices.js';
 
 // ─── Página: INDEX ────────────────────────────────────────────
@@ -83,6 +83,7 @@ async function initIndex() {
   }
 
   initAds();
+  injectIndexSEO();
 }
 
 // ─── Página: LISTADO ──────────────────────────────────────────
@@ -166,6 +167,48 @@ async function initListing() {
     }
     renderGridWithAds(filtered, grid, 9);
     initAds();
+
+    // Promgrammatic SEO Hub Update
+    updateHubSEO(q, region, category, audience);
+  }
+
+  function updateHubSEO(q, region, category, audience) {
+    var eyebrowEl = document.getElementById('hub-eyebrow');
+    var titleEl = document.getElementById('hub-title');
+    var descEl = document.getElementById('hub-description');
+
+    // Configuración estructural para SEO programático (Local Content Curation)
+    var hubConfig = {
+      default: { eyebrow: 'Catálogo Completo', title: 'Todas las Recetas 🍽️', desc: 'Filtra, ordena y descubre la gastronomía ecuatoriana. El recetario más completo para locales, migrantes y turistas.', metaTitle: 'Recetas Ecuatorianas \u2014 Cat\u00e1logo Completo | Ecuador a la Carta' },
+      search: { eyebrow: 'Resultados de Búsqueda', title: 'Buscando: "' + q + '" 🔍', desc: 'Encontramos estas recetas ecuatorianas coincidentes con tu búsqueda.', metaTitle: 'Resultados para "' + q + '" | Ecuador a la Carta' },
+      region_Sierra: { eyebrow: 'Región Andina', title: 'Comida de la Sierra Ecuatoriana ⛰️', desc: 'Sopas espesas, maíz, cerdo y papas. Descubre el Locro, el Hornado, la Fritada y los secretos del clima frío andino.', metaTitle: 'Platos y Recetas de la Sierra de Ecuador | Ecuador a la Carta' },
+      region_Costa: { eyebrow: 'Región Litoral', title: 'Comida de la Costa Ecuatoriana 🌊', desc: 'Mariscos frescos, plátano verde y maní. Aprende a preparar un Encebollado perfecto, Ceviches y Tigrillo.', metaTitle: 'Recetas y Platos de la Costa de Ecuador | Ecuador a la Carta' },
+      region_Amazonia: { eyebrow: 'Región Amazónica', title: 'Comida de la Amazonía Ecuatoriana 🌿', desc: 'Sabores exóticos de la selva: cocciones en hojas de bijao, yuca, ayampacos y maito de pescado salvaje.', metaTitle: 'Recetas y Comida de la Amazonía del Ecuador | Ecuador a la Carta' },
+      region_Galapagos: { eyebrow: 'Región Insular', title: 'Comida de Galápagos 🐢', desc: 'Langosta, pescado brujo y delicias del mar en las Islas Encantadas de Ecuador.', metaTitle: 'Recetas y Platos Típicos de Galápagos | Ecuador a la Carta' },
+      category_Sopas: { eyebrow: 'Platos de Cuchara', title: 'Sopas y Locros Ecuatorianos 🍲', desc: 'Ecuador es el país de las sopas. Desde caldos ligeros hasta chupes y locros cremosos para el alma.', metaTitle: 'Recetas de Sopas Ecuatorianas tradicionales | Ecuador a la Carta' },
+      category_Platos_Fuertes: { eyebrow: 'Plato Principal', title: 'Platos Fuertes Ecuatorianos 🍽️', desc: 'Secos, guatita, encocados y churrascos. Los platos principales que definen el almuerzo ecuatoriano.', metaTitle: 'Recetas de Platos Fuertes y Almuerzos de Ecuador | Ecuador a la Carta' },
+      category_Mariscos: { eyebrow: 'Delicias del Mar', title: 'Recetas con Mariscos 🦐', desc: 'Cangrejos, camarones, conchas y pescado fresco. Las mejores recetas costeñas con frutos del mar.', metaTitle: 'Recetas Ecuatorianas con Mariscos y Pescado | Ecuador a la Carta' },
+      category_Postres: { eyebrow: 'Dulces Tradicionales', title: 'Postres Ecuatorianos 🍮', desc: 'Higos con queso, melcochas, pristiños y espumillas. Los dulces históricos del Ecuador.', metaTitle: 'Postres y Dulces Típicos del Ecuador | Ecuador a la Carta' },
+      category_Bebidas: { eyebrow: 'Refrescos y Tradición', title: 'Bebidas Ecuatorianas 🥤', desc: 'Colada Morada, chicha, canelazo y jugos tropicales únicos de nuestras frutas autóctonas.', metaTitle: 'Recetas de Bebidas, Zumos y Licores Ecuatorianos | Ecuador a la Carta' },
+      audience_Diaspora: { eyebrow: 'Para Migrantes', title: 'Recetas para la Diáspora ✈️', desc: 'Adaptamos nuestras recetas a los ingredientes disponibles en mercados de Estados Unidos y Europa. Reemplazos inteligentes para que sepa a casa.', metaTitle: 'Recetas Ecuatorianas con Sustitutos para el Extranjero | Ecuador a la Carta' },
+      audience_Turista: { eyebrow: 'Turismo Gastronómico', title: 'Rutas Gastronómicas 🗺️', desc: 'Platos emblemáticos y dónde probarlos en tu viaje a Ecuador. Glosario culinario para extranjeros.', metaTitle: 'Turismo Gastronómico: Comida Típica de Ecuador | Ecuador a la Carta' }
+    };
+
+    var current = hubConfig['default'];
+    var currentUrlPath = window.location.pathname + window.location.search;
+
+    if (q) current = hubConfig['search'];
+    else if (region) current = hubConfig['region_' + region] || current;
+    else if (category) current = hubConfig['category_' + category.replace(' ', '_')] || current;
+    else if (audience) current = hubConfig['audience_' + audience.replace('á', 'a')] || current;
+
+    if (titleEl) titleEl.textContent = current.title;
+    if (eyebrowEl) eyebrowEl.textContent = current.eyebrow;
+    if (descEl) descEl.textContent = current.desc;
+
+    // Inject SEO Meta Tags natively
+    var canonical = 'https://ecuadoralacarta.com' + currentUrlPath;
+    setMeta(current.metaTitle, current.desc, '', canonical);
   }
 
   var debouncedApply = debounce(function () {

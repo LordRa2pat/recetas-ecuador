@@ -12,35 +12,35 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            'ec-gold':  '#FFD100',
-            'ec-blue':  '#0033A0',
-            'ec-red':   '#EF3340',
-            'ec-green': '#006400',
+          fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: {
+            'ec-gold':  '#DCA011',
+            'ec-blue':  '#14213D',
+            'ec-red':   '#9A1B22',
+            'ec-green': '#284B34',
           }
         }
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
+    .ec-stripe { background: linear-gradient(90deg,#DCA011 0% 50%,#14213D 50% 75%,#9A1B22 75% 100%); height:4px; width:100%; }
     .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px;
-      background: linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
+      background: linear-gradient(90deg,#DCA011 0% 38%,#14213D 38% 70%,#9A1B22 70% 100%); }
     .nav-dropdown { display:none; position:absolute; top:100%; left:0; min-width:200px;
       background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
       border:1px solid rgba(0,51,160,0.1); z-index:100; padding:8px 0; }
     .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
     .nav-dropdown a { display:block; padding:8px 16px; font-size:0.875rem; color:#374151; transition: background 0.15s; }
-    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
+    .nav-dropdown a:hover { background:#EEF2FF; color:#14213D; }
   </style>
 </head>
-<body class="bg-slate-50 font-sans text-gray-900 antialiased">
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased">
   <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
         <span class="text-2xl">🍲</span>
@@ -82,13 +82,13 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="recipes.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+        <a href="recipes.html" class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
           Ver Recetas →
         </a>
         <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
       </div>
     </div>
-    <div id="nav-mobile" class="hidden md:hidden border-t border-blue-700 py-3 px-4 space-y-1 bg-[#0033A0]">
+    <div id="nav-mobile" class="hidden md:hidden border-t border-[#14213D] py-3 px-4 space-y-1 bg-[#14213D]">
       <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
       <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Recetas</a>
       <a href="menu-semanal.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📅 Menú Semanal</a>
@@ -104,10 +104,10 @@
   </script>
 
   <!-- ═══ PAGE HERO ═══ -->
-  <div class="bg-gradient-to-r from-[#001f6e] via-[#0033A0] to-[#00277a] py-16 px-4 sm:px-6">
+  <div class="bg-gradient-to-r from-[#001f6e] via-[#14213D] to-[#00277a] py-16 px-4 sm:px-6">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Quiénes somos</p>
-      <h1 class="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
+      <h1 class="text-4xl sm:text-5xl font-bold font-serif text-[#FDFBF7] mb-4 leading-tight">
         Ecuador a la Carta 🍲
       </h1>
       <span class="ec-title-bar mx-auto mb-6"></span>
@@ -124,8 +124,8 @@
     <section class="mb-16">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-3">Nuestra Historia</p>
-          <h2 class="text-3xl font-black text-gray-900 mb-4">De la abuela al algoritmo</h2>
+          <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-3">Nuestra Historia</p>
+          <h2 class="text-3xl font-bold font-serif text-[#14213D] mb-4">De la abuela al algoritmo</h2>
           <p class="text-gray-600 leading-relaxed mb-4">
             Ecuador a la Carta nació de una pregunta simple: ¿por qué la gastronomía ecuatoriana — una de las más ricas y diversas de América Latina — tiene tan poca presencia digital de calidad?
           </p>
@@ -137,7 +137,7 @@
           </p>
         </div>
         <div class="relative">
-          <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-8 text-white text-center">
+          <div class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-8 text-white text-center">
             <div class="text-6xl mb-4">🇪🇨</div>
             <p class="text-4xl font-black text-ec-gold mb-1">4 Regiones</p>
             <p class="text-blue-200 text-sm mb-6">Sierra · Costa · Amazonía · Galápagos</p>
@@ -166,9 +166,9 @@
 
     <!-- Misión -->
     <section class="mb-16">
-      <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-8 sm:p-10">
-        <p class="text-xs font-bold text-[#EF3340] uppercase tracking-widest mb-3">Nuestra Misión</p>
-        <h2 class="text-2xl font-black text-gray-900 mb-6">Preservar la gastronomía ecuatoriana para el mundo</h2>
+      <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 sm:p-10">
+        <p class="text-xs font-bold text-[#9A1B22] uppercase tracking-widest mb-3">Nuestra Misión</p>
+        <h2 class="text-2xl font-bold font-serif text-[#14213D] mb-6">Preservar la gastronomía ecuatoriana para el mundo</h2>
         <div class="grid sm:grid-cols-3 gap-6">
           <div class="text-center">
             <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl mx-auto mb-3">📚</div>
@@ -181,7 +181,7 @@
             <p class="text-gray-500 text-sm">Unir a ecuatorianos en la diáspora con sus raíces a través de la comida.</p>
           </div>
           <div class="text-center">
-            <div class="w-14 h-14 rounded-2xl bg-red-100 flex items-center justify-center text-2xl mx-auto mb-3">✨</div>
+            <div class="w-14 h-14 rounded-2xl bg-[#F1DEE0] flex items-center justify-center text-2xl mx-auto mb-3">✨</div>
             <h3 class="font-bold text-gray-800 mb-2">Inspirar</h3>
             <p class="text-gray-500 text-sm">Mostrarle al mundo la riqueza gastronómica del Ecuador, región por región.</p>
           </div>
@@ -191,28 +191,28 @@
 
     <!-- Alma de la gastronomía -->
     <section class="mb-16">
-      <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-3">El alma de nuestra cocina</p>
-      <h2 class="text-2xl font-black text-gray-900 mb-4">La comida ecuatoriana: más que un plato</h2>
+      <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-3">El alma de nuestra cocina</p>
+      <h2 class="text-2xl font-bold font-serif text-[#14213D] mb-4">La comida ecuatoriana: más que un plato</h2>
       <p class="text-gray-600 leading-relaxed mb-8 max-w-3xl">
         En Ecuador, cocinar es un acto de identidad. Cada plato lleva siglos de historia: el achiote que los pueblos indígenas usaban antes de la colonia, el bacalao que los barcos españoles trajeron a Semana Santa, el plátano verde que África regaló a la Costa. La gastronomía ecuatoriana es, literalmente, la historia del país en un tazón.
       </p>
       <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6">
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
           <div class="text-3xl mb-3">🌽</div>
           <h3 class="font-bold text-gray-800 mb-2">El maíz: 5.000 años de historia</h3>
           <p class="text-gray-500 text-sm leading-relaxed">El maíz es sagrado en Ecuador. Los pueblos Kichwa lo cultivaban en los Andes desde mucho antes de los Incas. La chicha, la mazamorra, el mote, el choclo con queso: todo parte del mismo grano que sostuvo civilizaciones enteras.</p>
         </div>
-        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6">
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
           <div class="text-3xl mb-3">🍲</div>
           <h3 class="font-bold text-gray-800 mb-2">La sopa: ritual de cada mañana</h3>
           <p class="text-gray-500 text-sm leading-relaxed">En la Sierra ecuatoriana, el día no empieza con café sino con sopa. El caldo de patas, el caldo de gallina criolla, la colada de maíz: las sopas son el abrazo caliente que la cocina serrana regala cada amanecer, desde Quito hasta Cuenca.</p>
         </div>
-        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6">
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
           <div class="text-3xl mb-3">🦐</div>
           <h3 class="font-bold text-gray-800 mb-2">La Costa: el mar en cada mordida</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Guayaquil, Manta, Esmeraldas: la Costa ecuatoriana convierte el Pacífico en gastronomía. El ceviche de camarón con chifles, el encebollado que cura todo mal, el encocado de pescado con leche de coco: aquí el mar no se mira, se come.</p>
         </div>
-        <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6">
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
           <div class="text-3xl mb-3">🌿</div>
           <h3 class="font-bold text-gray-800 mb-2">La Amazonía: sabores que el mundo no conoce</h3>
           <p class="text-gray-500 text-sm leading-relaxed">El maito de tilapia envuelto en hoja de bijao, la chicha de yuca fermentada en la boca de las abuelas Shuar, el pincho de chontacuro: la cocina amazónica es la más desconocida y la más ancestral. Un tesoro culinario que merece ser descubierto.</p>
@@ -222,9 +222,9 @@
 
     <!-- Tradiciones culinarias -->
     <section class="mb-16">
-      <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl border border-amber-100 p-8 sm:p-10">
+      <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl border border-amber-100 p-8 sm:p-10">
         <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-3">Tradiciones que perduran</p>
-        <h2 class="text-2xl font-black text-gray-900 mb-6">Los platos que nos definen</h2>
+        <h2 class="text-2xl font-bold font-serif text-[#14213D] mb-6">Los platos que nos definen</h2>
         <div class="grid sm:grid-cols-3 gap-6">
           <div>
             <div class="text-3xl mb-2">🎊</div>
@@ -247,38 +247,38 @@
 
     <!-- Las 4 regiones -->
     <section class="mb-16">
-      <p class="text-xs font-bold text-[#0033A0] uppercase tracking-widest mb-3">Gastronomía Regional</p>
-      <h2 class="text-2xl font-black text-gray-900 mb-8">Un país, cuatro mundos culinarios</h2>
+      <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-3">Gastronomía Regional</p>
+      <h2 class="text-2xl font-bold font-serif text-[#14213D] mb-8">Un país, cuatro mundos culinarios</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="recipes.html?region=Sierra" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+        <a href="recipes.html?region=Sierra" class="group bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
           <div class="text-4xl mb-3">🏔️</div>
-          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Sierra</h3>
+          <h3 class="font-bold font-serif text-[#14213D] text-lg mb-2 group-hover:text-[#14213D] transition-colors">Sierra</h3>
           <p class="text-gray-500 text-xs">Llapingachos, caldo de patas, hornado, colada morada, cuy con papas...</p>
         </a>
-        <a href="recipes.html?region=Costa" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+        <a href="recipes.html?region=Costa" class="group bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
           <div class="text-4xl mb-3">🌊</div>
-          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Costa</h3>
+          <h3 class="font-bold font-serif text-[#14213D] text-lg mb-2 group-hover:text-[#14213D] transition-colors">Costa</h3>
           <p class="text-gray-500 text-xs">Ceviche de camarón, encebollado, sopa marinera, bolón de verde, encocado...</p>
         </a>
-        <a href="recipes.html?region=Amazonia" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+        <a href="recipes.html?region=Amazonia" class="group bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
           <div class="text-4xl mb-3">🌿</div>
-          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Amazonía</h3>
+          <h3 class="font-bold font-serif text-[#14213D] text-lg mb-2 group-hover:text-[#14213D] transition-colors">Amazonía</h3>
           <p class="text-gray-500 text-xs">Maito de tilapia, chicha de yuca, pincho de mayón, casado amazónico...</p>
         </a>
-        <a href="recipes.html?region=Galapagos" class="group bg-white rounded-3xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+        <a href="recipes.html?region=Galapagos" class="group bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
           <div class="text-4xl mb-3">🐢</div>
-          <h3 class="font-black text-gray-900 text-lg mb-2 group-hover:text-[#0033A0] transition-colors">Galápagos</h3>
+          <h3 class="font-bold font-serif text-[#14213D] text-lg mb-2 group-hover:text-[#14213D] transition-colors">Galápagos</h3>
           <p class="text-gray-500 text-xs">Langosta al ajillo, ceviche de pepino de mar, sopa de caracol...</p>
         </a>
       </div>
     </section>
 
     <!-- CTAs finales -->
-    <section class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-10 text-white text-center">
+    <section class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-10 text-white text-center">
       <h2 class="text-2xl font-black mb-4">¿Listo para cocinar Ecuador?</h2>
       <p class="text-blue-200 mb-8 max-w-md mx-auto">Explora el catálogo completo, genera tu menú semanal o contáctanos con tu receta favorita.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="recipes.html" class="bg-ec-gold text-[#0033A0] font-bold px-8 py-3.5 rounded-2xl hover:bg-yellow-300 transition-colors">
+        <a href="recipes.html" class="bg-ec-gold text-[#14213D] font-bold px-8 py-3.5 rounded-2xl hover:bg-yellow-300 transition-colors">
           Ver todas las recetas →
         </a>
         <a href="menu-semanal.html" class="bg-white/10 text-white font-bold px-8 py-3.5 rounded-2xl hover:bg-white/20 transition-colors border border-white/20">
@@ -293,10 +293,10 @@
   </main>
 
   <!-- ═══ NEWSLETTER ═══ -->
-  <section class="bg-[#0033A0] py-10 px-4 sm:px-6 border-t border-blue-700">
+  <section class="bg-[#14213D] py-10 px-4 sm:px-6 border-t border-[#14213D]">
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-      <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
       <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas directo a tu email.</p>
       <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
             class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -305,7 +305,7 @@
                class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
                aria-label="Email para newsletter">
         <button type="submit"
-                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
+                class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
           Suscribirme →
         </button>
       </form>
@@ -313,7 +313,7 @@
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6 border-t border-blue-700">
+  <footer class="bg-[#14213D] text-white py-10 px-4 sm:px-6 border-t border-[#14213D]">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">

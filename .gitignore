@@ -54,3 +54,7 @@ fix_image_nodes.py
 gen_backfill_images.py
 remote_workflows.json
 workflows*.json
+
+# n8n-as-code AI helpers
+n8nac-skills
+n8nac-skills.cmd

@@ -17,28 +17,28 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            'ec-gold':  '#FFD100',
-            'ec-blue':  '#0033A0',
-            'ec-red':   '#EF3340',
-            'ec-green': '#006400',
+          fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: {
+            'ec-gold':  '#DCA011',
+            'ec-blue':  '#14213D',
+            'ec-red':   '#9A1B22',
+            'ec-green': '#284B34',
           }
         }
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg,#FFD100 0% 50%,#0033A0 50% 75%,#EF3340 75% 100%); height:4px; width:100%; }
+    .ec-stripe { background: linear-gradient(90deg,#DCA011 0% 50%,#14213D 50% 75%,#9A1B22 75% 100%); height:4px; width:100%; }
     .ec-title-bar { display:block; width:56px; height:4px; margin-top:8px; border-radius:2px;
-      background: linear-gradient(90deg,#FFD100 0% 38%,#0033A0 38% 70%,#EF3340 70% 100%); }
+      background: linear-gradient(90deg,#DCA011 0% 38%,#14213D 38% 70%,#9A1B22 70% 100%); }
     .nav-dropdown { display:none; position:absolute; top:100%; left:0; min-width:200px;
       background:#fff; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
       border:1px solid rgba(0,51,160,0.1); z-index:100; padding:8px 0; }
     .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { display:block; }
     .nav-dropdown a { display:block; padding:8px 16px; font-size:0.875rem; color:#374151; transition: background 0.15s; }
-    .nav-dropdown a:hover { background:#EEF2FF; color:#0033A0; }
+    .nav-dropdown a:hover { background:#EEF2FF; color:#14213D; }
     .ad-slot {
       min-height: 120px;
       background: rgba(255,255,255,0.6);
@@ -54,12 +54,12 @@
     .ad-label { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; font-weight: 500; }
   </style>
 </head>
-<body class="bg-slate-50 font-sans text-gray-900 antialiased">
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased">
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
         <span class="text-2xl">🍲</span>
@@ -101,13 +101,13 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="recipes.html" class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+        <a href="recipes.html" class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
           Ver Recetas
         </a>
         <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
       </div>
     </div>
-    <div id="nav-mobile" class="hidden md:hidden border-t border-blue-700 py-3 px-4 space-y-1 bg-[#0033A0]">
+    <div id="nav-mobile" class="hidden md:hidden border-t border-[#14213D] py-3 px-4 space-y-1 bg-[#14213D]">
       <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
       <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Todas las Recetas</a>
       <a href="menu-semanal.html" class="block px-3 py-2 text-ec-gold font-bold text-sm" aria-current="page">📅 Menú Semanal</a>
@@ -124,14 +124,14 @@
   </script>
 
   <!-- ═══ PAGE HERO ═══ -->
-  <div class="bg-gradient-to-r from-[#001f6e] via-[#0033A0] to-[#00277a] py-12 px-4 sm:px-6" style="border-bottom: 4px solid #FFD100;">
+  <div class="bg-gradient-to-r from-[#001f6e] via-[#14213D] to-[#00277a] py-12 px-4 sm:px-6" style="border-bottom: 4px solid #DCA011;">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Generado por IA · Actualizable</p>
-      <h1 class="text-3xl sm:text-4xl font-black text-white mb-3">📅 Menú Semanal Ecuatoriano</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold font-serif text-[#FDFBF7] mb-3">📅 Menú Semanal Ecuatoriano</h1>
       <span class="ec-title-bar mx-auto mb-4"></span>
       <p class="text-blue-200 max-w-xl mx-auto mb-6">7 recetas auténticas seleccionadas para toda la semana. Haz clic en cualquier día para ver la receta completa.</p>
       <button id="menu-regen"
-        class="inline-flex items-center gap-2 bg-ec-gold text-[#0033A0] font-bold px-8 py-3.5 rounded-2xl hover:bg-yellow-300 transition-colors shadow-lg text-base focus:outline-none focus:ring-2 focus:ring-white">
+        class="inline-flex items-center gap-2 bg-ec-gold text-[#14213D] font-bold px-8 py-3.5 rounded-2xl hover:bg-yellow-300 transition-colors shadow-lg text-base focus:outline-none focus:ring-2 focus:ring-white">
         🔀 Regenerar Menú
       </button>
     </div>
@@ -150,15 +150,15 @@
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
     <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" role="list" aria-label="Menú semanal">
       <!-- Skeletons while loading -->
-      <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
         <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-36"></div>
         <div class="p-4"><div class="bg-gray-200 h-4 rounded-full mb-2"></div><div class="bg-gray-200 h-3 rounded-full w-2/3"></div></div>
       </div>
-      <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
         <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-36"></div>
         <div class="p-4"><div class="bg-gray-200 h-4 rounded-full mb-2"></div><div class="bg-gray-200 h-3 rounded-full w-2/3"></div></div>
       </div>
-      <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
         <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-36"></div>
         <div class="p-4"><div class="bg-gray-200 h-4 rounded-full mb-2"></div><div class="bg-gray-200 h-3 rounded-full w-2/3"></div></div>
       </div>
@@ -167,8 +167,8 @@
 
   <!-- Tips sección -->
   <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
-    <div class="bg-white rounded-3xl shadow-md border border-gray-100 p-6 sm:p-8">
-      <h2 class="font-black text-gray-900 text-lg mb-5">💡 Tips para tu semana culinaria</h2>
+    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6 sm:p-8">
+      <h2 class="font-bold font-serif text-[#14213D] text-lg mb-5">💡 Tips para tu semana culinaria</h2>
       <div class="grid sm:grid-cols-3 gap-5">
         <div class="flex gap-3">
           <span class="text-2xl flex-shrink-0">🛒</span>
@@ -196,10 +196,10 @@
   </div>
 
   <!-- ═══ NEWSLETTER ═══ -->
-  <section class="bg-[#0033A0] py-10 px-4 sm:px-6">
+  <section class="bg-[#14213D] py-10 px-4 sm:px-6">
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-      <h2 class="text-2xl font-black text-white mb-2">📬 Recibe el Menú Semanal por Email</h2>
+      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Recibe el Menú Semanal por Email</h2>
       <p class="text-blue-200 mb-6">Cada lunes te enviamos 7 recetas ecuatorianas seleccionadas para toda la semana.</p>
       <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
             class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -208,7 +208,7 @@
                class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
                aria-label="Email para newsletter">
         <button type="submit"
-                class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
+                class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
           Suscribirme →
         </button>
       </form>
@@ -218,7 +218,7 @@
   </main><!-- /#main-content -->
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6 border-t border-blue-700">
+  <footer class="bg-[#14213D] text-white py-10 px-4 sm:px-6 border-t border-[#14213D]">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">

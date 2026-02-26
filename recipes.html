@@ -21,11 +21,11 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            'ec-gold': '#FFD100',
-            'ec-blue': '#0033A0',
-            'ec-red': '#EF3340',
-            'ec-green': '#006400',
+          fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: {
+            'ec-gold': '#DCA011',
+            'ec-blue': '#14213D',
+            'ec-red': '#9A1B22',
+            'ec-green': '#284B34',
           }
         }
       }
@@ -41,7 +41,7 @@
     }
 
     .ec-stripe {
-      background: linear-gradient(90deg, #FFD100 0% 50%, #0033A0 50% 75%, #EF3340 75% 100%);
+      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
       height: 4px;
       width: 100%;
     }
@@ -52,7 +52,7 @@
       height: 4px;
       margin-top: 8px;
       border-radius: 2px;
-      background: linear-gradient(90deg, #FFD100 0% 38%, #0033A0 38% 70%, #EF3340 70% 100%);
+      background: linear-gradient(90deg, #DCA011 0% 38%, #14213D 38% 70%, #9A1B22 70% 100%);
     }
 
     .ec-card-3d {
@@ -94,7 +94,7 @@
 
     .nav-dropdown a:hover {
       background: #EEF2FF;
-      color: #0033A0;
+      color: #14213D;
     }
 
     .ad-slot {
@@ -157,13 +157,13 @@
   </style>
 </head>
 
-<body class="bg-slate-50 font-sans text-gray-900 antialiased">
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased">
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <div class="ec-stripe" aria-hidden="true"></div>
 
   <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#0033A0]/90 backdrop-blur-md shadow-lg">
+  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
         <span class="text-2xl">🍲</span>
@@ -214,7 +214,7 @@
 
       <div class="flex items-center gap-3">
         <a href="index.html"
-          class="bg-ec-gold text-[#0033A0] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+          class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
           ← Inicio
         </a>
         <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
@@ -222,7 +222,7 @@
     </div>
 
     <!-- Mobile menu -->
-    <div id="nav-mobile" class="hidden md:hidden border-t border-blue-700 py-3 px-4 space-y-1 bg-[#0033A0]">
+    <div id="nav-mobile" class="hidden md:hidden border-t border-[#14213D] py-3 px-4 space-y-1 bg-[#14213D]">
       <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
       <a href="recipes.html" class="block px-3 py-2 text-ec-gold font-bold text-sm" aria-current="page">Todas las
         Recetas</a>
@@ -249,13 +249,14 @@
   </script>
 
   <!-- ═══ PAGE HERO ═══ -->
-  <div class="bg-gradient-to-r from-[#001f6e] via-[#0033A0] to-[#00277a] py-10 px-4 sm:px-6"
-    style="border-bottom: 4px solid #FFD100;">
+  <div class="bg-gradient-to-r from-[#001f6e] via-[#14213D] to-[#00277a] py-10 px-4 sm:px-6"
+    style="border-bottom: 4px solid #DCA011;">
     <div class="max-w-7xl mx-auto">
-      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-1">Catálogo Completo</p>
-      <h1 class="text-3xl sm:text-4xl font-black text-white mb-2">Todas las Recetas 🍽️</h1>
+      <p id="hub-eyebrow" class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-1">Catálogo Completo</p>
+      <h1 id="hub-title" class="text-3xl sm:text-4xl font-bold font-serif text-[#FDFBF7] mb-2">Todas las Recetas 🍽️
+      </h1>
       <span class="ec-title-bar mb-3"></span>
-      <p class="text-blue-200">Filtra, ordena y descubre la gastronomía ecuatoriana</p>
+      <p id="hub-description" class="text-blue-200">Filtra, ordena y descubre la gastronomía ecuatoriana</p>
     </div>
   </div>
 
@@ -268,7 +269,7 @@
           <div class="relative flex-1">
             <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">🔍</span>
             <input id="filter-search" type="search" placeholder="Buscar por nombre, descripción, keywords..."
-              class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#0033A0] focus:border-transparent placeholder-gray-400"
+              class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#14213D] focus:border-transparent placeholder-gray-400"
               aria-label="Buscar recetas" />
           </div>
           <button id="clear-filters"
@@ -280,22 +281,22 @@
         <!-- Dropdowns de filtro -->
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
           <select id="filter-region"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#0033A0] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#14213D] text-gray-700"
             aria-label="Filtrar por región">
             <option value="">Región</option>
           </select>
           <select id="filter-difficulty"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#0033A0] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#14213D] text-gray-700"
             aria-label="Filtrar por dificultad">
             <option value="">Dificultad</option>
           </select>
           <select id="filter-category"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#0033A0] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#14213D] text-gray-700"
             aria-label="Filtrar por categoría">
             <option value="">Categoría</option>
           </select>
           <select id="filter-audience"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#0033A0] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#14213D] text-gray-700"
             aria-label="Filtrar por audiencia">
             <option value="">Audiencia</option>
             <option value="Local">🇪🇨 Local</option>
@@ -303,7 +304,7 @@
             <option value="Turista">🗺️ Turista</option>
           </select>
           <select id="filter-sort"
-            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#0033A0] text-gray-700"
+            class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#14213D] text-gray-700"
             aria-label="Ordenar recetas">
             <option value="recent">Más recientes</option>
             <option value="alpha">A-Z</option>
@@ -335,21 +336,21 @@
         <div id="recipes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list"
           aria-live="polite" aria-label="Listado de recetas">
           <!-- Skeletons -->
-          <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
             <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
             <div class="p-5">
               <div class="bg-gray-200 h-4 rounded-full mb-3"></div>
               <div class="bg-gray-200 h-4 rounded-full w-4/5"></div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden sm:block" aria-hidden="true">
             <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
             <div class="p-5">
               <div class="bg-gray-200 h-4 rounded-full mb-3"></div>
               <div class="bg-gray-200 h-4 rounded-full w-4/5"></div>
             </div>
           </div>
-          <div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden lg:block" aria-hidden="true">
             <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
             <div class="p-5">
               <div class="bg-gray-200 h-4 rounded-full mb-3"></div>
@@ -369,46 +370,46 @@
           </div>
 
           <!-- Quick tips -->
-          <div class="bg-white rounded-3xl shadow-md p-5 border border-gray-100">
+          <div class="bg-white rounded-2xl shadow-md p-5 border border-gray-100">
             <p class="font-bold text-gray-800 text-sm mb-3">💡 Tips de Cocina</p>
             <ul class="space-y-2.5 text-sm text-gray-600">
-              <li class="flex gap-2"><span class="text-[#0033A0]">✓</span> Sofríe el ajo y cebolla a fuego medio</li>
-              <li class="flex gap-2"><span class="text-[#0033A0]">✓</span> El achiote da el color dorado característico
+              <li class="flex gap-2"><span class="text-[#14213D]">✓</span> Sofríe el ajo y cebolla a fuego medio</li>
+              <li class="flex gap-2"><span class="text-[#14213D]">✓</span> El achiote da el color dorado característico
               </li>
-              <li class="flex gap-2"><span class="text-[#0033A0]">✓</span> El maní tostado intensifica el sabor</li>
-              <li class="flex gap-2"><span class="text-[#0033A0]">✓</span> Las hierbas frescas siempre al final</li>
+              <li class="flex gap-2"><span class="text-[#14213D]">✓</span> El maní tostado intensifica el sabor</li>
+              <li class="flex gap-2"><span class="text-[#14213D]">✓</span> Las hierbas frescas siempre al final</li>
             </ul>
           </div>
 
           <!-- Regiones -->
-          <div class="bg-white rounded-3xl shadow-md p-5 border border-gray-100 mt-5">
+          <div class="bg-white rounded-2xl shadow-md p-5 border border-gray-100 mt-5">
             <p class="font-bold text-gray-800 text-sm mb-3">🗺️ Por Región</p>
             <div class="flex flex-col gap-2">
               <a href="recipes.html?region=Sierra"
-                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
+                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
                 🏔️ <span>Sierra</span>
               </a>
               <a href="recipes.html?region=Costa"
-                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
+                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
                 🌊 <span>Costa</span>
               </a>
               <a href="recipes.html?region=Amazonia"
-                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
+                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
                 🌿 <span>Amazonía</span>
               </a>
               <a href="recipes.html?region=Galapagos"
-                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#0033A0] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
+                class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-2 rounded-xl transition-colors">
                 🐢 <span>Galápagos</span>
               </a>
             </div>
           </div>
 
           <!-- Menú Semanal CTA -->
-          <div class="bg-gradient-to-br from-[#0033A0] to-[#001f6e] rounded-3xl p-5 text-white mt-5">
+          <div class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-5 text-white mt-5">
             <p class="font-bold text-sm mb-2">📅 Menú Semanal</p>
             <p class="text-blue-200 text-xs mb-3">7 recetas seleccionadas para toda la semana</p>
             <a href="menu-semanal.html"
-              class="inline-block bg-ec-gold text-[#0033A0] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+              class="inline-block bg-ec-gold text-[#14213D] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
               Ver menú →
             </a>
           </div>
@@ -419,10 +420,10 @@
   </div>
 
   <!-- ═══ NEWSLETTER ═══ -->
-  <section class="bg-[#0033A0] py-10 px-4 sm:px-6 mt-10">
+  <section class="bg-[#14213D] py-10 px-4 sm:px-6 mt-10">
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-      <h2 class="text-2xl font-black text-white mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
       <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
       <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
         class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -431,7 +432,7 @@
           class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
           aria-label="Email para newsletter">
         <button type="submit"
-          class="bg-ec-gold text-[#0033A0] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+          class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
           Suscribirme →
         </button>
       </form>
@@ -439,7 +440,7 @@
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#0033A0] text-white py-10 px-4 sm:px-6 border-t border-blue-700">
+  <footer class="bg-[#14213D] text-white py-10 px-4 sm:px-6 border-t border-[#14213D]">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">

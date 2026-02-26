@@ -9,7 +9,7 @@ import { escapeHtml, timeToISO8601 } from './utils.js';
 export function upsertMeta(attrName, attrValue, content) {
   var sel = 'meta[' + attrName + '="' + CSS.escape(attrValue) + '"]';
   var el;
-  try { el = document.querySelector(sel); } catch(e) { el = null; }
+  try { el = document.querySelector(sel); } catch (e) { el = null; }
   if (!el) {
     el = document.createElement('meta');
     el.setAttribute(attrName, attrValue);
@@ -56,7 +56,7 @@ export function injectSEO(recipe) {
   );
   upsertMeta('name', 'keywords', allKeywords);
 
-  var steps = (recipe.instructions || []).map(function(step, i) {
+  var steps = (recipe.instructions || []).map(function (step, i) {
     var text = typeof step === 'string' ? step : (step.text || step);
     return { '@type': 'HowToStep', 'position': i + 1, 'text': text };
   });
@@ -83,9 +83,9 @@ export function injectSEO(recipe) {
   };
 
   if (recipe.youtube_videos && recipe.youtube_videos.length > 0) {
-    var validVideos = recipe.youtube_videos.filter(function(v) { return !!v.videoId; });
+    var validVideos = recipe.youtube_videos.filter(function (v) { return !!v.videoId; });
     if (validVideos.length > 0) {
-      schema.video = validVideos.map(function(v) {
+      schema.video = validVideos.map(function (v) {
         var obj = {
           '@type': 'VideoObject',
           'name': v.title || recipe.title,
@@ -115,7 +115,7 @@ export function injectSEO(recipe) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      'mainEntity': recipe.faqs.map(function(faq) {
+      'mainEntity': recipe.faqs.map(function (faq) {
         return {
           '@type': 'Question',
           'name': faq.q,
@@ -183,7 +183,7 @@ export function injectPostSEO(post) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      'mainEntity': post.faqs.map(function(faq) {
+      'mainEntity': post.faqs.map(function (faq) {
         return { '@type': 'Question', 'name': faq.q, 'acceptedAnswer': { '@type': 'Answer', 'text': faq.a } };
       })
     });
@@ -197,3 +197,47 @@ export function injectPostSEO(post) {
   }
   ld.textContent = JSON.stringify(schemas);
 }
+
+// ─── SEO para página principal (Index) ────────────────────────
+export function injectIndexSEO() {
+  var orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'Ecuador a la Carta',
+    'url': 'https://ecuadoralacarta.com',
+    'logo': 'https://ecuadoralacarta.com/favicon.ico',
+    'sameAs': []
+  };
+
+  var webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'url': 'https://ecuadoralacarta.com',
+    'name': 'Ecuador a la Carta',
+    'description': 'La enciclopedia digital premium de gastronomía y rutas culinarias del Ecuador.',
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': {
+        '@type': 'EntryPoint',
+        'urlTemplate': 'https://ecuadoralacarta.com/recipes.html?q={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    }
+  };
+
+  var schemas = [orgSchema, webSiteSchema];
+
+  var ld = document.querySelector('script[type="application/ld+json"]');
+  if (!ld) {
+    ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    document.head.appendChild(ld);
+  }
+
+  // Only inject if it's the home page and not overriding an existing specific schema
+  if (!ld.getAttribute('data-seo-injected')) {
+    ld.textContent = JSON.stringify(schemas);
+    ld.setAttribute('data-seo-injected', 'true');
+  }
+}
+

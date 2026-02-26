@@ -39,7 +39,13 @@ export function findPriceEntry(ing, priceDb) {
 }
 
 export function renderIngredient(ing, priceDb) {
-  var lowerIng = String(ing).toLowerCase();
+  // Normalize: new n8n schema uses {name, quantity, where_to_buy} objects
+  var ingText = typeof ing === 'object' && ing !== null
+    ? (ing.quantity ? ing.quantity + ' de ' : '') + (ing.name || '') +
+    (ing.where_to_buy ? ' (' + ing.where_to_buy + ')' : '')
+    : String(ing);
+
+  var lowerIng = ingText.toLowerCase();
   var badge = '';
   if (lowerIng.indexOf('supermaxi') !== -1 || lowerIng.indexOf('megamaxi') !== -1) {
     badge = '<span class="ml-auto text-xs font-bold text-blue-600 bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded-full flex-shrink-0">Supermaxi</span>';
@@ -51,7 +57,7 @@ export function renderIngredient(ing, priceDb) {
 
   var priceRow = '';
   if (priceDb) {
-    var entry = findPriceEntry(ing, priceDb);
+    var entry = findPriceEntry(ingText, priceDb);
     if (entry && entry.reference_price_min) {
       var unit = entry.unit || 'kg';
       var tMin = '$' + entry.reference_price_min.toFixed(2);
@@ -68,12 +74,12 @@ export function renderIngredient(ing, priceDb) {
   }
 
   // Escapar HTML base y luego envolver el texto entre paréntesis
-  var formattedIng = escapeHtml(ing).replace(/\(([^)]+)\)/g, '<span class="text-gray-400 font-normal text-xs">($1)</span>');
+  var formattedIng = escapeHtml(ingText).replace(/\(([^)]+)\)/g, '<span class="text-gray-400 font-normal text-xs">($1)</span>');
 
   return '<div class="ing-row flex flex-col py-2 border-b border-dashed border-gray-100 last:border-0">' +
     '<label class="flex items-start gap-3 cursor-pointer group">' +
     '<input type="checkbox" class="ing-checkbox mt-0.5" aria-label="Marcar ingrediente">' +
-    '<span class="ing-text text-gray-700 font-medium text-sm flex-1 transition-colors group-hover:text-[#0033A0]" data-original="' + escapeHtml(ing) + '">' + formattedIng + '</span>' +
+    '<span class="ing-text text-gray-700 font-medium text-sm flex-1 transition-colors group-hover:text-[#0033A0]" data-original="' + escapeHtml(ingText) + '">' + formattedIng + '</span>' +
     badge +
     '</label>' +
     priceRow +

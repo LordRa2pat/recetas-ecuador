@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto | Ecuador a la Carta</title>
-  <meta name="description" content="Contáctanos con sugerencias de recetas, colaboraciones o preguntas sobre Ecuador a la Carta." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+  <meta name="description"
+    content="Contáctanos con sugerencias de recetas, colaboraciones o preguntas sobre Ecuador a la Carta." />
+  <link rel="canonical" href="https://ecuadoralacarta.com/contact.html" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: { 'ec-gold': '#DCA011', 'ec-blue': '#14213D', 'ec-red': '#9A1B22' } } } }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .ec-stripe { background: linear-gradient(90deg,#DCA011 0% 50%,#14213D 50% 75%,#9A1B22 75% 100%); height:4px; width:100%; }
-    input, textarea, select { outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-    input:focus, textarea:focus, select:focus {
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .ec-stripe {
+      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
+      height: 4px;
+      width: 100%;
+    }
+
+    input,
+    textarea,
+    select {
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
       border-color: #14213D;
-      box-shadow: 0 0 0 3px rgba(0,51,160,0.12);
+      box-shadow: 0 0 0 3px rgba(0, 51, 160, 0.12);
     }
   </style>
 </head>
+
 <body class="bg-[#FDFBF7] antialiased">
   <div class="ec-stripe" aria-hidden="true"></div>
 
@@ -31,7 +54,8 @@
         <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
         <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
       </a>
-      <a href="index.html" class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
+      <a href="index.html"
+        class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
         ← Inicio
       </a>
     </div>
@@ -42,7 +66,8 @@
     <div class="text-center mb-10">
       <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-2">Escríbenos</p>
       <h1 class="text-3xl sm:text-4xl font-bold font-serif text-[#14213D] mb-3">Contacto 💬</h1>
-      <p class="text-gray-500 max-w-md mx-auto">¿Tienes una receta para sugerir, una colaboración en mente, o simplemente quieres decir hola? Nos encanta escucharte.</p>
+      <p class="text-gray-500 max-w-md mx-auto">¿Tienes una receta para sugerir, una colaboración en mente, o
+        simplemente quieres decir hola? Nos encanta escucharte.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-8">
@@ -57,8 +82,7 @@
             <label for="contact-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
               Nombre <span class="text-red-400">*</span>
             </label>
-            <input id="contact-name" name="name" type="text" required
-              placeholder="Tu nombre"
+            <input id="contact-name" name="name" type="text" required placeholder="Tu nombre"
               class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400" />
           </div>
 
@@ -66,8 +90,7 @@
             <label for="contact-email" class="block text-sm font-semibold text-gray-700 mb-1.5">
               Email <span class="text-red-400">*</span>
             </label>
-            <input id="contact-email" name="email" type="email" required
-              placeholder="tu@email.com"
+            <input id="contact-email" name="email" type="email" required placeholder="tu@email.com"
               class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400" />
           </div>
 
@@ -105,7 +128,8 @@
           </button>
 
           <p class="text-xs text-gray-400 text-center">
-            Al enviar aceptas nuestra <a href="privacy.html" class="underline hover:text-[#14213D]">Política de Privacidad</a>.
+            Al enviar aceptas nuestra <a href="privacy.html" class="underline hover:text-[#14213D]">Política de
+              Privacidad</a>.
           </p>
 
         </form>
@@ -118,28 +142,32 @@
           <h2 class="font-bold text-gray-800 text-base mb-4">¿Para qué sirve el formulario?</h2>
           <ul class="space-y-3">
             <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center text-sm flex-shrink-0">💡</div>
+              <div class="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center text-sm flex-shrink-0">💡
+              </div>
               <div>
                 <p class="font-semibold text-gray-700 text-sm">Sugerir recetas</p>
                 <p class="text-gray-400 text-xs">¿Hay un plato que quieres ver? Cuéntanos y lo añadimos.</p>
               </div>
             </li>
             <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-yellow-100 flex items-center justify-center text-sm flex-shrink-0">✏️</div>
+              <div class="w-8 h-8 rounded-xl bg-yellow-100 flex items-center justify-center text-sm flex-shrink-0">✏️
+              </div>
               <div>
                 <p class="font-semibold text-gray-700 text-sm">Corregir información</p>
                 <p class="text-gray-400 text-xs">Si encontraste un error en una receta, avísanos.</p>
               </div>
             </li>
             <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-sm flex-shrink-0">🤝</div>
+              <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-sm flex-shrink-0">🤝
+              </div>
               <div>
                 <p class="font-semibold text-gray-700 text-sm">Colaboraciones</p>
                 <p class="text-gray-400 text-xs">¿Eres chef, restaurante o marca? Hablemos.</p>
               </div>
             </li>
             <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-[#F1DEE0] flex items-center justify-center text-sm flex-shrink-0">🛡️</div>
+              <div class="w-8 h-8 rounded-xl bg-[#F1DEE0] flex items-center justify-center text-sm flex-shrink-0">🛡️
+              </div>
               <div>
                 <p class="font-semibold text-gray-700 text-sm">Solicitudes LOPDP</p>
                 <p class="text-gray-400 text-xs">Acceso, rectificación o supresión de datos personales.</p>
@@ -150,7 +178,8 @@
 
         <div class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-6 text-white">
           <h2 class="font-bold text-base mb-2">⏱ Tiempo de respuesta</h2>
-          <p class="text-blue-200 text-sm leading-relaxed">Respondemos en un plazo de 2-3 días hábiles. Para solicitudes LOPDP, respondemos en máximo 15 días hábiles según lo establecido por la ley ecuatoriana.</p>
+          <p class="text-blue-200 text-sm leading-relaxed">Respondemos en un plazo de 2-3 días hábiles. Para solicitudes
+            LOPDP, respondemos en máximo 15 días hábiles según lo establecido por la ley ecuatoriana.</p>
         </div>
 
       </div>
@@ -164,13 +193,13 @@
       <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
       <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas directo a tu email.</p>
       <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
         <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
         <input type="email" name="email" placeholder="tu@email.com" required
-               class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-               aria-label="Email para newsletter">
+          class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+          aria-label="Email para newsletter">
         <button type="submit"
-                class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
+          class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
           Suscribirme →
         </button>
       </form>
@@ -197,4 +226,5 @@
   <div class="ec-stripe" aria-hidden="true"></div>
 
 </body>
+
 </html>

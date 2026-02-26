@@ -76,7 +76,11 @@ export function injectSEO(recipe) {
     'prepTime': timeToISO8601(recipe.prep_time),
     'cookTime': timeToISO8601(recipe.cook_time),
     'totalTime': timeToISO8601(recipe.total_time),
-    'recipeIngredient': recipe.ingredients || [],
+    'recipeIngredient': (recipe.ingredients || []).map(function (ing) {
+      return typeof ing === 'object' && ing !== null
+        ? (ing.quantity ? ing.quantity + ' ' : '') + (ing.name || '')
+        : String(ing);
+    }),
     'recipeInstructions': steps,
     'keywords': allKeywords,
     'countryOfOrigin': { '@type': 'Country', 'name': 'Ecuador' }
@@ -118,8 +122,8 @@ export function injectSEO(recipe) {
       'mainEntity': recipe.faqs.map(function (faq) {
         return {
           '@type': 'Question',
-          'name': faq.q,
-          'acceptedAnswer': { '@type': 'Answer', 'text': faq.a }
+          'name': faq.q || faq.question || '',
+          'acceptedAnswer': { '@type': 'Answer', 'text': faq.a || faq.answer || '' }
         };
       })
     });
@@ -184,7 +188,7 @@ export function injectPostSEO(post) {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       'mainEntity': post.faqs.map(function (faq) {
-        return { '@type': 'Question', 'name': faq.q, 'acceptedAnswer': { '@type': 'Answer', 'text': faq.a } };
+        return { '@type': 'Question', 'name': faq.q || faq.question || '', 'acceptedAnswer': { '@type': 'Answer', 'text': faq.a || faq.answer || '' } };
       })
     });
   }

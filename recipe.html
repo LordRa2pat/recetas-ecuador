@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
@@ -7,8 +7,9 @@
   <title>Receta Ecuatoriana | Ecuador a la Carta</title>
   <meta name="description"
     content="Receta de gastronomía ecuatoriana con instrucciones paso a paso, ingredientes y tips." />
+  <link rel="canonical" href="https://ecuadoralacarta.com/recipe.html" />
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>" />
 
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"
@@ -19,15 +20,19 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: {
-            'ec-gold': '#DCA011',
-            'ec-blue': '#14213D',
-            'ec-red': '#9A1B22',
-            'ec-green': '#284B34',
-          }
-        }
-      }
-    }
+          fontFamily: {
+            sans: ['"DM Sans"', "system-ui", "sans-serif"],
+            serif: ['"Playfair Display"', "Georgia", "serif"],
+          },
+          colors: {
+            "ec-gold": "#DCA011",
+            "ec-blue": "#14213D",
+            "ec-red": "#9A1B22",
+            "ec-green": "#284B34",
+          },
+        },
+      },
+    };
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +40,7 @@
     rel="stylesheet" />
   <style>
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: "Inter", system-ui, sans-serif;
     }
 
     .line-clamp-2 {
@@ -46,7 +51,10 @@
     }
 
     .ec-stripe {
-      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
+      background: linear-gradient(90deg,
+          #dca011 0% 50%,
+          #14213d 50% 75%,
+          #9a1b22 75% 100%);
       height: 4px;
       width: 100%;
     }
@@ -57,16 +65,25 @@
       height: 4px;
       margin-top: 8px;
       border-radius: 2px;
-      background: linear-gradient(90deg, #DCA011 0% 38%, #14213D 38% 70%, #9A1B22 70% 100%);
+      background: linear-gradient(90deg,
+          #dca011 0% 38%,
+          #14213d 38% 70%,
+          #9a1b22 70% 100%);
     }
 
     .ec-card-3d {
-      box-shadow: 0 4px 24px rgba(0, 51, 160, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow:
+        0 4px 24px rgba(0, 51, 160, 0.1),
+        0 1px 4px rgba(0, 0, 0, 0.06);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     .ec-card-3d:hover {
-      box-shadow: 0 8px 40px rgba(0, 51, 160, 0.22), 0 4px 16px rgba(239, 51, 64, 0.10);
+      box-shadow:
+        0 8px 40px rgba(0, 51, 160, 0.22),
+        0 4px 16px rgba(239, 51, 64, 0.1);
       transform: translateY(-8px) scale(1.02);
     }
 
@@ -99,8 +116,8 @@
     }
 
     .nav-dropdown a:hover {
-      background: #EEF2FF;
-      color: #14213D;
+      background: #eef2ff;
+      color: #14213d;
     }
 
     .ad-slot {
@@ -174,7 +191,7 @@
       z-index: 50;
       background: #1e293b;
       /* slate-800 */
-      border-bottom: 2px solid #14213D;
+      border-bottom: 2px solid #14213d;
     }
 
     body.cook-mode-active #instructions-list {
@@ -257,7 +274,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
       <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
         <span class="text-2xl">🍲</span>
-        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
+        <span class="hidden sm:inline leading-tight">Ecuador a la<br /><span class="text-ec-gold">Carta</span></span>
         <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
       </a>
 
@@ -307,7 +324,9 @@
           class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
           ← Recetas
         </a>
-        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
+        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">
+          ☰
+        </button>
       </div>
     </div>
 
@@ -333,9 +352,11 @@
   </header>
   <main id="main-content">
     <script>
-      document.getElementById('nav-toggle')?.addEventListener('click', function () {
-        document.getElementById('nav-mobile')?.classList.toggle('hidden');
-      });
+      document
+        .getElementById("nav-toggle")
+        ?.addEventListener("click", function () {
+          document.getElementById("nav-mobile")?.classList.toggle("hidden");
+        });
     </script>
 
     <!-- ═══ LOADING ═══ -->
@@ -352,8 +373,12 @@
     <div id="recipe-error" class="hidden min-h-screen flex items-center justify-center px-4" role="alert">
       <div class="text-center max-w-sm">
         <div class="text-6xl mb-4">🍽️</div>
-        <h1 class="text-2xl font-black text-gray-800 mb-2">Receta no encontrada</h1>
-        <p data-error-msg class="text-gray-500 mb-6">No pudimos encontrar esta receta.</p>
+        <h1 class="text-2xl font-black text-gray-800 mb-2">
+          Receta no encontrada
+        </h1>
+        <p data-error-msg class="text-gray-500 mb-6">
+          No pudimos encontrar esta receta.
+        </p>
         <a href="recipes.html"
           class="inline-flex items-center gap-2 bg-[#14213D] text-white font-bold px-6 py-3 rounded-2xl hover:bg-[#0b1324] transition-colors">
           ← Ver todas las recetas
@@ -363,15 +388,20 @@
 
     <!-- ═══ RECIPE CONTENT ═══ -->
     <div id="recipe-content" class="hidden">
-
       <!-- Breadcrumb -->
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-2" aria-label="Ruta de navegación">
         <ol class="flex items-center gap-2 text-xs text-gray-400 flex-wrap">
-          <li><a href="index.html" class="hover:text-[#14213D] transition-colors">Inicio</a></li>
+          <li>
+            <a href="index.html" class="hover:text-[#14213D] transition-colors">Inicio</a>
+          </li>
           <li aria-hidden="true">/</li>
-          <li><a href="recipes.html" class="hover:text-[#14213D] transition-colors">Recetas</a></li>
+          <li>
+            <a href="recipes.html" class="hover:text-[#14213D] transition-colors">Recetas</a>
+          </li>
           <li aria-hidden="true">/</li>
-          <li id="bc-recipe" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">Receta</li>
+          <li id="bc-recipe" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">
+            Receta
+          </li>
         </ol>
       </nav>
 
@@ -402,7 +432,8 @@
       <!-- Título y descripción -->
       <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-4">
         <h1 id="recipe-title" class="text-3xl sm:text-4xl font-bold font-serif text-[#14213D] mb-3 leading-tight">
-          Cargando...</h1>
+          Cargando...
+        </h1>
 
         <!-- Botón Saltar a la Receta -->
         <a href="#instructions-section"
@@ -436,7 +467,8 @@
           </button>
           <span data-optional
             class="flex items-center gap-1.5 bg-white border border-gray-200 rounded-full px-4 py-1.5 text-sm font-medium text-gray-700 shadow-sm">
-            <span class="text-red-500">⚡</span> <span id="recipe-difficulty"></span>
+            <span class="text-red-500">⚡</span>
+            <span id="recipe-difficulty"></span>
           </span>
           <span data-optional
             class="flex items-center gap-1.5 bg-white border border-gray-200 rounded-full px-4 py-1.5 text-sm font-medium text-gray-700 shadow-sm">
@@ -449,15 +481,25 @@
           <span class="text-sm text-gray-500 font-medium">Valora esta receta:</span>
           <div id="star-picker" class="flex gap-0.5" role="group" aria-label="Valoración">
             <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="1"
-              aria-label="1 estrella">&#9734;</button>
+              aria-label="1 estrella">
+              &#9734;
+            </button>
             <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="2"
-              aria-label="2 estrellas">&#9734;</button>
+              aria-label="2 estrellas">
+              &#9734;
+            </button>
             <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="3"
-              aria-label="3 estrellas">&#9734;</button>
+              aria-label="3 estrellas">
+              &#9734;
+            </button>
             <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="4"
-              aria-label="4 estrellas">&#9734;</button>
+              aria-label="4 estrellas">
+              &#9734;
+            </button>
             <button class="star-btn text-2xl leading-none transition-colors focus:outline-none" data-star="5"
-              aria-label="5 estrellas">&#9734;</button>
+              aria-label="5 estrellas">
+              &#9734;
+            </button>
           </div>
           <span id="rating-label" class="text-sm text-gray-500 italic"></span>
         </div>
@@ -467,16 +509,22 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-4">
         <div class="grid grid-cols-3 gap-3">
           <div data-optional class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 text-center">
-            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Preparación</p>
+            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">
+              Preparación
+            </p>
             <p id="recipe-prep-time" class="font-bold text-gray-800 text-sm"></p>
           </div>
           <div data-optional class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 text-center">
-            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Cocción</p>
+            <p class="text-xs text-gray-400 uppercase tracking-wide mb-1">
+              Cocción
+            </p>
             <p id="recipe-cook-time" class="font-bold text-gray-800 text-sm"></p>
           </div>
           <div data-optional
             class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 text-center bg-[#14213D]/5 border-[#14213D]/20">
-            <p class="text-xs text-[#14213D] uppercase tracking-wide mb-1 font-semibold">Total</p>
+            <p class="text-xs text-[#14213D] uppercase tracking-wide mb-1 font-semibold">
+              Total
+            </p>
             <p id="recipe-total-time" class="font-bold text-[#14213D] text-sm"></p>
           </div>
         </div>
@@ -495,7 +543,7 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-6">
         <div class="ad-slot w-full">
           <p class="ad-label">Publicidad</p>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="7777777777"
+          <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-XXXX" data-ad-slot="7777777777"
             data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
       </div>
@@ -503,29 +551,37 @@
       <!-- ═══ LAYOUT DOS COLUMNAS ═══ -->
       <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12">
         <div class="flex flex-col lg:flex-row gap-8">
-
           <!-- COLUMNA IZQUIERDA: Ingredientes (estilo ticket) + extras -->
-          <div class="lg:w-80 flex-shrink-0 flex flex-col gap-5">
-
+          <div class="lg:w-80 flex-shrink-0 flex flex-col gap-5 lg:self-start lg:sticky lg:top-20">
             <!-- Card Ingredientes — Ticket de Compra -->
             <div class="bg-white rounded-2xl overflow-hidden ec-card-3d" id="ingredients-section">
               <div class="bg-[#14213D] px-5 py-4 flex items-center justify-between">
-                <h2 class="text-white font-bold text-base">🛒 Ingredientes</h2>
+                <h2 class="text-white font-bold text-base">
+                  🛒 Ingredientes
+                </h2>
                 <div class="flex items-center gap-1 bg-white/20 rounded-full px-2 py-1 backdrop-blur-sm">
                   <button id="btn-servings-minus"
                     class="w-6 h-6 flex justify-center items-center text-white hover:bg-white/30 rounded-full transition-colors font-bold"
-                    aria-label="Reducir porciones">-</button>
+                    aria-label="Reducir porciones">
+                    -
+                  </button>
                   <span id="servings-counter" class="text-white font-bold text-sm mx-1 min-w-[1.5rem] text-center"
                     aria-live="polite">2</span>
                   <button id="btn-servings-plus"
                     class="w-6 h-6 flex justify-center items-center text-white hover:bg-white/30 rounded-full transition-colors font-bold"
-                    aria-label="Aumentar porciones">+</button>
+                    aria-label="Aumentar porciones">
+                    +
+                  </button>
                 </div>
               </div>
               <div class="px-5 pt-4 pb-1 border-b-2 border-dashed border-gray-200 flex justify-between items-center">
-                <p class="text-xs text-gray-400 uppercase tracking-widest">— lista de compras —</p>
+                <p class="text-xs text-gray-400 uppercase tracking-widest">
+                  — lista de compras —
+                </p>
                 <button id="btn-metric-toggle" class="text-xs font-semibold text-[#14213D] hover:underline"
-                  style="display:none;">Convertir a tazas</button>
+                  style="display: none">
+                  Convertir a tazas
+                </button>
               </div>
               <!-- Se reemplazó el ul por div para organizar mejor los checkboxes -->
               <div id="ingredients-list" class="p-5 space-y-2 text-sm font-medium text-gray-800">
@@ -545,33 +601,36 @@
                   <span class="btn-text">Añadir a lista de compras</span>
                 </button>
                 <div class="space-y-1">
-                  <p class="text-xs text-gray-400">Precios de referencia · Feb 2026</p>
+                  <p class="text-xs text-gray-400">
+                    Precios de referencia · Feb 2026
+                  </p>
                   <div class="flex items-center justify-center gap-3 text-xs">
                     <span class="text-red-500 font-medium">&#9632; Tuti</span>
                     <span class="text-blue-500 font-medium">&#9632; Supermaxi</span>
                   </div>
                 </div>
               </div>
+            </div>
+            <!-- Cierre de ingredients-section -->
 
-              <!-- Tarjeta Sustitutos (Diáspora) — inyectada por JS -->
-              <div id="substitutes-card" class="hidden"></div>
+            <!-- Tarjeta Sustitutos (Diáspora) — inyectada por JS -->
+            <div id="substitutes-card" class="hidden"></div>
 
-              <!-- Sección "Dónde comerlo" — inyectada por JS si hay places -->
-              <div id="places-card" class="hidden"></div>
+            <!-- Sección "Dónde comerlo" — inyectada por JS si hay places -->
+            <div id="places-card" class="hidden"></div>
 
-              <!-- AdSense desktop sidebar -->
-              <div
-                class="ad-slot ad-slot--square w-full hidden lg:flex mt-5 rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
-                <p class="ad-label">Publicidad</p>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="8888888888"
-                  data-ad-format="auto" data-full-width-responsive="true"></ins>
-              </div>
-            </div> <!-- Cierre de ingredients-section -->
-          </div> <!-- Cierre MAESTRO de COLUMNA IZQUIERDA (lg:w-80) -->
+            <!-- AdSense desktop sidebar -->
+            <div
+              class="ad-slot ad-slot--square w-full hidden lg:flex mt-5 rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+              <p class="ad-label">Publicidad</p>
+              <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-XXXX" data-ad-slot="8888888888"
+                data-ad-format="auto" data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+          <!-- Cierre MAESTRO de COLUMNA IZQUIERDA (lg:w-80) -->
 
           <!-- COLUMNA DERECHA: Instrucciones + tips + turismo -->
           <div class="flex-1 min-w-0 flex flex-col gap-8">
-
             <!-- Card Instrucciones -->
             <div id="instructions-section"
               class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-[#14213D]/10 overflow-hidden relative">
@@ -595,7 +654,9 @@
               <ol id="instructions-list" class="p-5 text-sm space-y-0 relative z-10 transition-all duration-300">
                 <li class="flex gap-4 mb-5">
                   <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200 animate-pulse"></div>
-                  <p class="text-gray-300 animate-pulse pt-1">Cargando instrucciones...</p>
+                  <p class="text-gray-300 animate-pulse pt-1">
+                    Cargando instrucciones...
+                  </p>
                 </li>
               </ol>
             </div>
@@ -603,7 +664,7 @@
             <!-- AdSense in-article #3 (after steps) -->
             <div class="ad-slot w-full">
               <p class="ad-label">Publicidad</p>
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="9999999999"
+              <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-XXXX" data-ad-slot="9999999999"
                 data-ad-format="auto" data-full-width-responsive="true"></ins>
             </div>
 
@@ -627,21 +688,25 @@
             <!-- Tutoriales YouTube — inyectada por JS si hay videos -->
             <div id="videos-card" class="hidden"></div>
 
-            <!-- Keywords -->
-            <div data-optional id="keywords-section" class="hidden">
-              <p class="text-xs text-gray-400 uppercase tracking-widest mb-3 font-medium">Explora más</p>
-              <div id="recipe-keywords" class="flex flex-wrap gap-2"></div>
-            </div>
-
-            <!-- Navegación volver -->
-            <div class="pt-4 border-t border-gray-100">
-              <a href="recipes.html"
-                class="inline-flex items-center gap-2 bg-[#14213D] text-white font-bold px-6 py-3 rounded-2xl hover:bg-[#0b1324] transition-colors focus:outline-none focus:ring-2 focus:ring-[#14213D] focus:ring-offset-2">
-                ← Ver todas las recetas
-              </a>
-            </div>
           </div>
+          <!-- Cierre COLUMNA DERECHA -->
+        </div>
+        <!-- Cierre flex row -->
 
+        <!-- Keywords (full width below columns) -->
+        <div data-optional id="keywords-section" class="hidden mt-8">
+          <p class="text-xs text-gray-400 uppercase tracking-widest mb-3 font-medium">
+            Explora más
+          </p>
+          <div id="recipe-keywords" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Navegación volver (centered) -->
+        <div class="pt-6 border-t border-gray-100 mt-4 text-center">
+          <a href="recipes.html"
+            class="inline-flex items-center gap-2 bg-[#14213D] text-white font-bold px-6 py-3 rounded-2xl hover:bg-[#0b1324] transition-colors focus:outline-none focus:ring-2 focus:ring-[#14213D] focus:ring-offset-2">
+            ← Ver todas las recetas
+          </a>
         </div>
       </div>
 
@@ -649,28 +714,42 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12">
         <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
           <div class="bg-gradient-to-r from-[#14213D] to-[#001f6e] px-5 py-4">
-            <h2 class="text-white font-bold text-base">💬 Reseñas y Comentarios</h2>
+            <h2 class="text-white font-bold text-base">
+              💬 Reseñas y Comentarios
+            </h2>
           </div>
           <div class="p-6" id="comments-section">
             <div class="mb-8 max-w-2xl">
-              <h3 class="text-lg font-bold text-gray-800 mb-4">Deja tu reseña</h3>
+              <h3 class="text-lg font-bold text-gray-800 mb-4">
+                Deja tu reseña
+              </h3>
               <form id="review-form" class="space-y-4">
                 <div class="flex gap-2 mb-2" id="review-stars-picker">
                   <button type="button"
                     class="text-3xl text-gray-300 hover:text-yellow-400 focus:outline-none transition-colors"
-                    data-val="1">★</button>
+                    data-val="1">
+                    ★
+                  </button>
                   <button type="button"
                     class="text-3xl text-gray-300 hover:text-yellow-400 focus:outline-none transition-colors"
-                    data-val="2">★</button>
+                    data-val="2">
+                    ★
+                  </button>
                   <button type="button"
                     class="text-3xl text-gray-300 hover:text-yellow-400 focus:outline-none transition-colors"
-                    data-val="3">★</button>
+                    data-val="3">
+                    ★
+                  </button>
                   <button type="button"
                     class="text-3xl text-gray-300 hover:text-yellow-400 focus:outline-none transition-colors"
-                    data-val="4">★</button>
+                    data-val="4">
+                    ★
+                  </button>
                   <button type="button"
                     class="text-3xl text-gray-300 hover:text-yellow-400 focus:outline-none transition-colors"
-                    data-val="5">★</button>
+                    data-val="5">
+                    ★
+                  </button>
                 </div>
                 <textarea id="review-text" rows="3"
                   class="w-full border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[#14213D]"
@@ -685,13 +764,14 @@
                         </path>
                       </svg>
                       Subir foto de tu plato
-                      <input type="file" id="review-photo" class="hidden" accept="image/*">
+                      <input type="file" id="review-photo" class="hidden" accept="image/*" />
                     </label>
                     <span id="review-photo-name" class="text-xs text-gray-500 truncate max-w-[200px]"></span>
                   </div>
                   <button type="submit"
-                    class="w-full sm:w-auto bg-ec-gold text-[#14213D] font-bold px-6 py-2.5 rounded-xl hover:bg-yellow-400 transition-colors">Publicar
-                    Reseña</button>
+                    class="w-full sm:w-auto bg-ec-gold text-[#14213D] font-bold px-6 py-2.5 rounded-xl hover:bg-yellow-400 transition-colors">
+                    Publicar Reseña
+                  </button>
                 </div>
               </form>
             </div>
@@ -701,26 +781,30 @@
               <div class="flex gap-4">
                 <div
                   class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-[#14213D] font-bold shrink-0">
-                  MJ</div>
+                  MJ
+                </div>
                 <div>
                   <div class="flex items-center gap-2 mb-1">
                     <span class="font-bold text-gray-800">María José</span>
                     <span class="text-yellow-400 text-sm">★★★★★</span>
                     <span class="text-xs text-gray-400">Hace 2 días</span>
                   </div>
-                  <p class="text-gray-600 text-sm mb-3">¡Quedó espectacular! Le cambié el maní por almendras porque
-                    soy alérgica y el sabor sigue siendo increíble. Muy recomendada para el fin de semana.</p>
+                  <p class="text-gray-600 text-sm mb-3">
+                    ¡Quedó espectacular! Le cambié el maní por almendras
+                    porque soy alérgica y el sabor sigue siendo increíble. Muy
+                    recomendada para el fin de semana.
+                  </p>
                   <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4859?w=300&q=80"
                     alt="Foto del plato de María José"
-                    class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-xl shadow-sm">
+                    class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-xl shadow-sm" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-    </div><!-- /recipe-content -->
+    </div>
+    <!-- /recipe-content -->
 
     <!-- Botonera flotante de redes sociales (desktop) -->
     <div id="social-share" class="hidden fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2">
@@ -791,15 +875,22 @@
     <!-- ═══ NEWSLETTER ═══ -->
     <section class="bg-[#14213D] py-10 px-4 sm:px-6">
       <div class="max-w-2xl mx-auto text-center">
-        <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-        <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
-        <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+        <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">
+          Gratis · Sin spam
+        </p>
+        <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">
+          📬 Suscríbete al Menú Semanal
+        </h2>
+        <p class="text-blue-200 mb-6">
+          Recibe cada lunes 7 recetas seleccionadas para la semana directo a
+          tu email.
+        </p>
         <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
           class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+          <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta" />
           <input type="email" name="email" placeholder="tu@email.com" required
             class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-            aria-label="Email para newsletter">
+            aria-label="Email para newsletter" />
           <button type="submit"
             class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
             Suscribirme →
@@ -807,8 +898,8 @@
         </form>
       </div>
     </section>
-
-  </main><!-- /#main-content -->
+  </main>
+  <!-- /#main-content -->
 
   <!-- ═══ FOOTER ═══ -->
   <footer class="bg-[#14213D] text-white py-10 px-4 sm:px-6 border-t border-[#14213D]">
@@ -829,7 +920,9 @@
           <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
         </nav>
       </div>
-      <p class="text-center text-blue-300 text-xs mt-6">&copy; 2026 Ecuador a la Carta</p>
+      <p class="text-center text-blue-300 text-xs mt-6">
+        &copy; 2026 Ecuador a la Carta
+      </p>
     </div>
   </footer>
   <div class="ec-stripe" aria-hidden="true"></div>

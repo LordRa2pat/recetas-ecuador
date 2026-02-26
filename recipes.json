@@ -1,5 +1,145 @@
 [
   {
+    "slug": "caldo-de-pata",
+    "title": "Caldo de Pata Ecuatoriano Receta Tradicional",
+    "description": "Caldo de pata es un plato reconfortante de la cocina ecuatoriana, hecho con pata de vaca, yuca y hierbas aromáticas, ideal para días fríos. Aprende esta receta paso a paso para disfrutar de sabores auténticos en casa, con ingredientes accesibles y consejos para adaptarla.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "120 min",
+    "total_time": "140 min",
+    "ingredients": [
+      "1 kg de Pata de vaca (Mercado local)",
+      "500 g de Yuca (Supermaxi)",
+      "2 unidades de Plátano verde (TIA)",
+      "1 unidad mediana de Cebolla blanca (Megamaxi)",
+      "4 dientes de Ajo (Supermaxi)",
+      "1 manojo de Cilantro fresco (Mercado local)",
+      "1 cucharadita de Achiote en polvo (TIA)",
+      "al gusto de Sal (Megamaxi)",
+      "2 litros de Agua (Cualquier supermercado)",
+      "2 unidades de Zanahoria (Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia la pata de vaca bajo agua fría durante 5 minutos para eliminar impurezas, luego coloca en una olla grande con 2 litros de agua y lleva a ebullición a fuego alto durante 10 minutos.",
+      "Paso 2: Reduce el fuego a medio-bajo y cocina la pata durante 60 minutos, retirando la espuma que se forma en la superficie para mantener el caldo claro.",
+      "Paso 3: Agrega la yuca pelada y cortada en trozos de 5 cm, el plátano verde en rodajas y la zanahoria picada, luego cocina por otros 30 minutos a fuego medio, verificando que los vegetales se ablanden.",
+      "Paso 4: Incorpora la cebolla picada finamente, el ajo machacado y el achiote, revolviendo bien y cocinando por 10 minutos más para que los sabores se integren, manteniendo la temperatura en 80°C.",
+      "Paso 5: Añade sal al gusto y el cilantro picado, cocina por 10 minutos adicionales a fuego bajo para infusionar los aromas, asegurándote de que el caldo no hierva para preservar los nutrientes.",
+      "Paso 6: Retira del fuego y deja reposar por 5 minutos antes de servir caliente, acompañando con arroz o plátano maduro para una experiencia completa.",
+      "Paso 7: Sirve en bowls individuales, decorando con cilantro fresco para realzar el sabor y la presentación."
+    ],
+    "tips": [
+      "Usa patas de vaca frescas para un caldo más gelatinoso y nutritivo, siempre verifica la frescura en el mercado local.",
+      "Añade un poco de limón al final para equilibrar los sabores y hacer el plato más digestivo, una variante común en la sierra."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "caldo de pata ecuatoriano",
+      "ecuadorian food",
+      "traditional soup"
+    ],
+    "image_alt": "Fotografía de un bowl humeante de caldo de pata ecuatoriano con yuca, plátano y hierbas frescas",
+    "faqs": [
+      {
+        "q": "¿Qué es el caldo de pata y de dónde proviene?",
+        "a": "El caldo de pata es una sopa nutritiva hecha con pata de vaca, yuca y verduras, originaria de la sierra ecuatoriana, específicamente en ciudades como Quito y Cuenca, y se consume como un plato reconfortante en climas fríos."
+      },
+      {
+        "q": "¿Es el caldo de pata saludable?",
+        "a": "Sí, es saludable debido a su alto contenido de colágeno de la pata de vaca, que beneficia las articulaciones, y las verduras como yuca aportan vitaminas, aunque se debe consumir con moderación por su contenido calórico."
+      },
+      {
+        "q": "¿Cómo almacenar el caldo de pata sobrante?",
+        "a": "Almacena el caldo de pata en un contenedor hermético en el refrigerador por hasta 3 días; para congelar, divide en porciones y congela por hasta 2 meses, recalentando a fuego bajo para mantener la textura."
+      },
+      {
+        "q": "¿Puedo hacer caldo de pata en una olla a presión?",
+        "a": "Sí, en una olla a presión reduce el tiempo de cocción a 40 minutos, pero asegúrate de liberar la presión lentamente para evitar que el caldo se enturbie."
+      }
+    ],
+    "places": [
+      {
+        "name": "Mercado San Francisco",
+        "city": "Quito",
+        "description": "Un mercado tradicional donde puedes probar caldo de pata fresco en puestos locales, acompañado de música y ambiente cultural."
+      },
+      {
+        "name": "Restaurante El Colonial",
+        "city": "Cuenca",
+        "description": "Un restaurante familiar que sirve caldo de pata con ingredientes orgánicos, ofreciendo una experiencia auténtica de la sierra ecuatoriana."
+      },
+      {
+        "name": "Plaza de las Flores",
+        "city": "Quito",
+        "description": "En este mercado, varios vendedores ofrecen caldo de pata casero, ideal para turistas que buscan sabores locales."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Pata de vaca",
+        "substitute": "Pata de cerdo o huesos de res",
+        "notes": "Disponible en supermercados como Walmart en EE.UU., para un sabor similar pero más fácil de encontrar."
+      },
+      {
+        "original": "Yuca",
+        "substitute": "Papa o yuca congelada",
+        "notes": "En Europa, usa papa en tiendas como Lidl, ya que la yuca fresca puede ser escasa, manteniendo la textura esponjosa."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Encuéntralo en secciones de especias en tiendas como Whole Foods en EE.UU., para un color y sabor aproximado."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "keywords": [
+      "receta de caldo de pata ecuatoriano paso a paso",
+      "como hacer caldo de pata tradicional en casa",
+      "ingredientes para caldo de pata sierra ecuatoriana",
+      "caldo de pata beneficios y variaciones",
+      "mejor receta de caldo de pata para principiantes",
+      "caldo de pata ecuatoriano en EE.UU."
+    ],
+    "youtube_videos": [
+      {
+        "title": "Caldo de Pata DELICIOSO | KWA",
+        "videoId": "VFlivqMHZIk",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=VFlivqMHZIk",
+        "embed": "https://www.youtube-nocookie.com/embed/VFlivqMHZIk",
+        "uploadDate": "2025-02-14",
+        "description": "Tienes que probar este #Delicioso #CaldoDePata #KWAEC\nEncuentra los ingredientes aquí:\nhttps://recetaskwa.com/2025/02/14/caldo-de-pata/\n\n\nSIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nMás re"
+      },
+      {
+        "title": "CALDO DE PATA",
+        "videoId": "o0I8X6lX2Pw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=o0I8X6lX2Pw",
+        "embed": "https://www.youtube-nocookie.com/embed/o0I8X6lX2Pw",
+        "uploadDate": "2020-07-31",
+        "description": "Un deliciosa receta cargada de sabor!#CaldoDePata #KWAEC\n\nIngredientes:\n\nPata de Res……600 gr\nCebolla Blanca…..2 ud\nDientes de ajo……4 ud\nCilantro…………1 atado\nAgua …………4 lt\n\nRefrito:\nAchiote ………20 ml\nPas"
+      },
+      {
+        "title": "Caldo de Pata Ecuatoriano - Colageno y juventud para tu cuerpo",
+        "videoId": "T-zJr4HMetw",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=T-zJr4HMetw",
+        "embed": "https://www.youtube-nocookie.com/embed/T-zJr4HMetw",
+        "uploadDate": "2023-06-08",
+        "description": "Delicioso Caldo de Pata - Colageno y juventud para tu cuerpo. Sopa de Pata de Res. Caldo de pata Ecuatoriano."
+      }
+    ],
+    "_image_source": "pending",
+    "id": 29,
+    "created_at": "2026-02-26T06:58:45.444Z"
+  },
+  {
     "slug": "seco-de-gallina",
     "title": "Seco de Gallina Ecuatoriana Receta Tradicional",
     "description": "Seco de Gallina es un guiso ecuatoriano clásico de la Costa, preparado con gallina tierna y cerveza para un sabor rico y aromático. Esta receta detallada te guía paso a paso para recrear este plato en casa, ideal para reuniones familiares, con ingredientes frescos y técnicas auténticas.",

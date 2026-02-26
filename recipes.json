@@ -1,5 +1,145 @@
 [
   {
+    "slug": "locro-de-zapallo",
+    "title": "Locro de Zapallo Ecuatoriano Receta Tradicional",
+    "description": "Locro de Zapallo es una sopa espesa y reconfortante de la cocina ecuatoriana, perfecta para días fríos, hecha con zapallo, papas y queso fresco. Esta receta tradicional de la Sierra ofrece un balance de sabores cremosos y nutritivos, ideal para familias, con variantes regionales que la hacen única.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "45 min",
+    "total_time": "65 min",
+    "ingredients": [
+      "1 kg, pelado y cortado en cubos de Zapallo (Supermaxi)",
+      "500 g, peladas y cortadas en cubos de Papas (Megamaxi)",
+      "1 unidad mediana, picada finamente de Cebolla (TIA)",
+      "3 dientes, picados de Ajo (Mercado local)",
+      "200 g, desmenuzado de Queso fresco (Supermaxi)",
+      "500 ml de Leche (Megamaxi)",
+      "2 cucharadas de Aceite vegetal (TIA)",
+      "al gusto, aproximadamente 1 cucharadita de Sal (Mercado local)",
+      "1/2 taza, picado de Cilantro fresco (Supermaxi)",
+      "1 cucharadita de Comino molido (Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En una olla grande, calienta 2 cucharadas de aceite a fuego medio durante 2 minutos y sofríe la cebolla picada hasta que esté transparente, aproximadamente 5 minutos.",
+      "Paso 2: Agrega los 3 dientes de ajo picados al sofrito y cocina por 1 minuto más para liberar los aromas, evitando que se quemen.",
+      "Paso 3: Incorpora el zapallo y las papas cortadas en cubos, revolviendo bien con el sofrito durante 3 minutos para que absorban los sabores.",
+      "Paso 4: Añade 1 litro de agua o caldo de verduras, sal al gusto y comino molido; lleva a ebullición a fuego alto y luego reduce a fuego medio-bajo, cocinando por 30 minutos hasta que los vegetales estén tiernos.",
+      "Paso 5: Una vez cocidos, vierte la leche y el queso fresco desmenuzado, removiendo constantemente a fuego bajo durante 5 minutos para lograr una consistencia cremosa.",
+      "Paso 6: Retira del fuego, agrega cilantro picado fresco y deja reposar por 5 minutos antes de servir caliente en bowls.",
+      "Paso 7: Sirve inmediatamente para mantener la textura óptima, acompañado de pan o arroz si se desea."
+    ],
+    "tips": [
+      "El chef ecuatoriano recomienda usar zapallo fresco para un sabor más auténtico, evitando variedades enlatadas que alteran la textura.",
+      "Para una variante regional de la Sierra, añade achiote al sofrito para un color y sabor más vibrante."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "locro de zapallo",
+      "ecuadorian food",
+      "traditional soup"
+    ],
+    "image_alt": "Fotografía del plato terminado de Locro de Zapallo ecuatoriano, mostrando una sopa cremosa con zapallo, papas y queso fresco en un bowl",
+    "faqs": [
+      {
+        "q": "¿Qué es el Locro de Zapallo y de dónde proviene?",
+        "a": "El Locro de Zapallo es una sopa espesa tradicional de la Sierra ecuatoriana, originaria de ciudades como Quito y Cuenca, hecha principalmente con zapallo, papas y queso, y se consume como plato principal en climas fríos."
+      },
+      {
+        "q": "¿Puedo hacer Locro de Zapallo vegano?",
+        "a": "Sí, puedes hacer una versión vegana sustituyendo el queso fresco y la leche por alternativas a base de plantas como leche de almendras y queso vegano, manteniendo el sabor cremoso característico."
+      },
+      {
+        "q": "¿Cuánto dura el Locro de Zapallo en la nevera?",
+        "a": "El Locro de Zapallo refrigerado puede durar hasta 3 días en un contenedor hermético; caliéntalo a fuego bajo para evitar que se separe, y congélalo por hasta un mes para conservarlo más."
+      },
+      {
+        "q": "¿Es el Locro de Zapallo nutritivo?",
+        "a": "Absolutamente, es rico en vitaminas A y C del zapallo, potasio de las papas y proteínas del queso, convirtiéndolo en una opción saludable y reconfortante para toda la familia."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en Quito para probar Locro de Zapallo con ingredientes frescos de la región Sierra."
+      },
+      {
+        "name": "Mercado 10 de Agosto",
+        "city": "Cuenca",
+        "description": "En este mercado local de Cuenca, puedes encontrar vendedores que ofrecen Locro de Zapallo casero y auténtico."
+      },
+      {
+        "name": "Casa de la Abuela",
+        "city": "Quito",
+        "description": "Un restaurante tradicional en Quito que sirve Locro de Zapallo con variantes familiares heredadas de generaciones."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Zapallo",
+        "substitute": "Butternut squash",
+        "notes": "Fácilmente disponible en supermercados como Walmart en EE.UU. o Tesco en Europa, ofreciendo un sabor similar y textura cremosa."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Feta cheese",
+        "notes": "Encuéntralo en tiendas como Whole Foods en EE.UU. o Sainsbury's en Europa; proporciona un toque salado comparable."
+      },
+      {
+        "original": "Leche",
+        "substitute": "Coconut milk",
+        "notes": "Ideal para versiones veganas, disponible en la sección de lácteos alternativos en mercados como Aldi en Europa o Target en EE.UU."
+      }
+    ],
+    "estimated_cost": "$10.00 USD",
+    "keywords": [
+      "receta tradicional de locro de zapallo ecuatoriano",
+      "como hacer locro de zapallo en casa",
+      "ingredientes para locro de zapallo sierra ecuador",
+      "variantes regionales de locro de zapallo",
+      "locro de zapallo facil y rapido para principiantes",
+      "pasos detallados para preparar locro de zapallo autentico"
+    ],
+    "youtube_videos": [
+      {
+        "title": "LOCRO DE VEGETALES",
+        "videoId": "viS0GK2UUE0",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=viS0GK2UUE0",
+        "embed": "https://www.youtube-nocookie.com/embed/viS0GK2UUE0",
+        "uploadDate": "2020-06-05",
+        "description": "Una deliciosa receta y bien consistente! Junto a nuestros amigos de #Bonella #DescubreBonella #KWAEC\n\nMargarina Bonella 40 gr\nCebolla blanca 60 gr\nPasta de ajo 20 gr\nPapa 200 gr\nZapallo 100 gr\nZanahor"
+      },
+      {
+        "title": "Cocina Locro de Zapallo en un Toque y muy Saludable | Cocina Fácil",
+        "videoId": "io0oeAMRxMc",
+        "channel": "Abelca",
+        "url": "https://www.youtube.com/watch?v=io0oeAMRxMc",
+        "embed": "https://www.youtube-nocookie.com/embed/io0oeAMRxMc",
+        "uploadDate": "2020-10-09",
+        "description": "Prepare Locro de Zapallo super cremoso y muy saludable.\nSi te gusto el video no olvides dejarme tu Like, Suscribirte y Compartir \n—————————————————————————————\nTienda de Cocina👇\nhttps://www.facebook."
+      },
+      {
+        "title": "EL LOCRO de papa 🇪🇨 de las MEJORES SOPAS de Latinoamérica | KWA",
+        "videoId": "ofDwbA5sP7k",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=ofDwbA5sP7k",
+        "embed": "https://www.youtube-nocookie.com/embed/ofDwbA5sP7k",
+        "uploadDate": "2024-01-26",
+        "description": "Prueba este delicioso #LocroDePapas, con la textura perfecta. Seguro vas a repetir! #KWAEC\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nI"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 30,
+    "created_at": "2026-02-26T20:18:08.509Z"
+  },
+  {
     "slug": "caldo-de-pata",
     "title": "Caldo de Pata Ecuatoriano Receta Tradicional",
     "description": "Caldo de pata es un plato reconfortante de la cocina ecuatoriana, hecho con pata de vaca, yuca y hierbas aromáticas, ideal para días fríos. Aprende esta receta paso a paso para disfrutar de sabores auténticos en casa, con ingredientes accesibles y consejos para adaptarla.",

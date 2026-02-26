@@ -1,5 +1,146 @@
 [
   {
+    "slug": "bollo-de-yuca-ecuatoriano",
+    "title": "Bollo de Yuca Ecuatoriano Receta Tradicional",
+    "description": "Bollo de Yuca Ecuatoriano, un plato típico de la Costa ecuatoriana, hecho con yuca fresca y relleno de sabores únicos como pescado o queso. Aprende a prepararlo con esta receta fácil y auténtica, ideal para compartir en familia o sorprender a tus invitados.",
+    "region": "Costa",
+    "category": "Entradas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "40 min",
+    "total_time": "70 min",
+    "image_url": "https://cdn.pixabay.com/photo/2021/05/14/20/20/bollo-de-yuca-6254441_1280.jpg",
+    "image_alt": "Bollo de yuca ecuatoriano recién preparado con relleno de pescado",
+    "ingredients": [
+      "1 kg de yuca fresca (Supermaxi, Megamaxi, TIA - sección verduras)",
+      "2 cucharadas de mantequilla",
+      "1 cebolla blanca mediana, finamente picada",
+      "2 dientes de ajo, triturados",
+      "200 g de pescado blanco desmenuzado (o queso fresco como alternativa)",
+      "1 cucharadita de achiote en polvo (Supermaxi, Megamaxi, TIA - sección especias)",
+      "Sal al gusto",
+      "Pimienta al gusto",
+      "Hojas de plátano para envolver (Supermaxi, mercados locales)"
+    ],
+    "instructions": [
+      "Pela la yuca, córtala en trozos y hiérvela en agua con sal hasta que esté blanda, aproximadamente 20 minutos.",
+      "Escurre la yuca y machácala con un tenedor o prensa hasta obtener un puré suave. Reserva.",
+      "En una sartén, calienta la mantequilla y sofríe la cebolla y el ajo hasta que estén transparentes, unos 3 minutos.",
+      "Añade el pescado desmenuzado (o queso fresco) y el achiote. Cocina por 5 minutos, sazonando con sal y pimienta. Este será el relleno.",
+      "Toma una porción del puré de yuca, forma una bola y haz un hueco en el centro para colocar una cucharada del relleno. Cierra formando un bollo.",
+      "Envuelve cada bollo en una hoja de plátano, asegurándote de que quede bien sellado. Cocina al vapor por 15-20 minutos.",
+      "Retira del vapor, deja reposar unos minutos y sirve caliente acompañado de café o una salsa de tu elección."
+    ],
+    "tips": [
+      "Si no encuentras hojas de plátano, puedes usar papel aluminio, aunque el sabor no será tan auténtico.",
+      "El pescado puede ser reemplazado por pollo desmenuzado o carne molida para variar el relleno.",
+      "Asegúrate de que la yuca esté bien cocida para que el puré sea fácil de manejar.",
+      "Puedes preparar los bollos con antelación y recalentarlos al vapor antes de servir."
+    ],
+    "keywords": [
+      "bollo de yuca ecuatoriano",
+      "receta bollo de yuca",
+      "bollo de yuca costeño",
+      "comida típica ecuatoriana",
+      "yuca rellena ecuador",
+      "receta tradicional costa ecuatoriana",
+      "cómo hacer bollo de yuca",
+      "platos típicos de la costa",
+      "yuca ecuatoriana receta",
+      "comida costeña ecuador",
+      "bollo de yuca con pescado",
+      "receta fácil bollo de yuca"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el bollo de yuca?",
+        "a": "Se suele acompañar con café caliente o una salsa de ají. También combina bien con ensaladas frescas."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el bollo de yuca?",
+        "a": "Puede conservarse en el refrigerador por 2-3 días si está bien envuelto. Recalienta al vapor para mantener su textura."
+      },
+      {
+        "q": "¿Es difícil hacer bollo de yuca?",
+        "a": "No es muy difícil, pero requiere práctica para moldear los bollos y envolverlos correctamente."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local",
+    "origin_cities": [
+      {
+        "city": "Guayaquil",
+        "province": "Guayas",
+        "region": "Costa"
+      },
+      {
+        "city": "Esmeraldas",
+        "province": "Esmeraldas",
+        "region": "Costa"
+      },
+      {
+        "city": "Portoviejo",
+        "province": "Manabí",
+        "region": "Costa"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian bollo de yuca",
+      "traditional ecuadorian food",
+      "yuca dish ecuador",
+      "coastal ecuadorian cuisine",
+      "bollo de yuca with fish",
+      "ecuadorian street food",
+      "authentic yuca recipe",
+      "latin american food"
+    ],
+    "international_substitutes": [
+      {
+        "original": "Hojas de plátano",
+        "sustituto_usa": "Papel aluminio o papel pergamino",
+        "sustituto_europa": "Papel aluminio o papel de hornear"
+      },
+      {
+        "original": "Achiote en polvo",
+        "sustituto_usa": "Pimentón dulce con una pizca de cúrcuma",
+        "sustituto_europa": "Pimentón dulce con una pizca de cúrcuma"
+      }
+    ],
+    "tourism_route": "Disfruta del auténtico bollo de yuca en Guayaquil, visitando mercados como el Mercado Caraguay, donde los encuentras por $1-2 por unidad. También en Esmeraldas, en pequeños comedores locales cerca de la playa, a precios similares.",
+    "youtube_videos": [
+      {
+        "title": "PAN DE YUCA",
+        "videoId": "n4qv3G2alsg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=n4qv3G2alsg",
+        "embed": "https://www.youtube-nocookie.com/embed/n4qv3G2alsg",
+        "uploadDate": "2021-04-02",
+        "description": "Seguro te comes más de uno!#PanDeYuca #KWAEC\n\nAlmidón de yuca 500 gr\nQueso Rallado 500 gr\nHuevos 2 ud \nMantequilla 40 gr\nLeche 400 ml o C/N \nPolvo de hornear 1 Cucharadita\n\nSIGUENOS:\r\nFB: https://tiny"
+      },
+      {
+        "title": "Bollitos de yuca rellenos de queso muy fácil de hacer",
+        "videoId": "kFZpdb54LZk",
+        "channel": "Gustillos Recetas",
+        "url": "https://www.youtube.com/watch?v=kFZpdb54LZk",
+        "embed": "https://www.youtube-nocookie.com/embed/kFZpdb54LZk",
+        "uploadDate": "2023-03-08",
+        "description": "La manera mas fácil de hacer bollitos de yuca o Carimañolas \n\nContacto directo: gustillosrecetas@gmail.com\n\nInstagram: https://www.instagram.com/GustillosRecetas/\nFacebook: https://www.facebook.com/mi"
+      },
+      {
+        "title": "Bollo de Pescado SUPER FÁCIL | KWA",
+        "videoId": "0eyjo-igI54",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=0eyjo-igI54",
+        "embed": "https://www.youtube-nocookie.com/embed/0eyjo-igI54",
+        "uploadDate": "2023-06-02",
+        "description": "Ingredientes:\nhttps://recetaskwa.com/2023/09/19/bollo-de-pescad/\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r\nMás recetas aquí: https://tinyurl.com/RecetasKWA\r\n\r\nCONTACTO/BUSINESS: KWA"
+      }
+    ],
+    "id": 26,
+    "created_at": "2026-02-26T04:04:40.073Z"
+  },
+  {
     "slug": "carne-colorada-ecuatoriana-receta",
     "title": "Carne Colorada Ecuatoriana Receta Tradicional",
     "description": "Carne Colorada, un plato típico de la Sierra ecuatoriana, combina cerdo marinado con achiote y especias, ofreciendo un sabor único y vibrante. Descubre cómo preparar esta receta tradicional con pasos fáciles y disfruta de la gastronomía andina en casa.",

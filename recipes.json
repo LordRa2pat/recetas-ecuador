@@ -1,5 +1,136 @@
 [
   {
+    "slug": "seco-de-conejo-amazonia-ecuatoriana",
+    "title": "Seco de Conejo Amazónico Ecuatoriano Receta Tradicional",
+    "description": "Seco de Conejo Amazónico, un plato tradicional de la Amazonía ecuatoriana, lleno de sabores intensos con hierbas y especias locales. Aprende a prepararlo paso a paso con esta receta auténtica que resalta la riqueza gastronómica de la región oriental del Ecuador.",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "90 min",
+    "total_time": "120 min",
+    "image_url": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&q=80",
+    "image_alt": "Plato de seco de conejo amazónico ecuatoriano con hierbas y especias tradicionales",
+    "ingredients": [
+      "1 conejo entero (aproximadamente 1.5 kg, disponible en mercados locales como Mercado Central en Puyo)",
+      "2 cebollas rojas medianas (finamente picadas)",
+      "3 dientes de ajo (machacados)",
+      "2 tomates maduros (pelados y rallados)",
+      "1 pimiento verde (picado fino)",
+      "1 taza de chicha de yuca (sustituible, ver sección de sustitutos internacionales)",
+      "2 cucharadas de pasta de achiote (Supermaxi, sección condimentos)",
+      "1 ramita de ishpingo (canela amazónica, opcional, disponible en mercados locales)",
+      "1 taza de cilantro fresco (picado)",
+      "Sal y pimienta al gusto",
+      "2 cucharadas de aceite vegetal"
+    ],
+    "instructions": [
+      "Limpia y corta el conejo en trozos medianos. Sazona con sal y pimienta al gusto y reserva.",
+      "En una olla grande, calienta el aceite a fuego medio y sofríe la cebolla, el ajo y el pimiento hasta que estén transparentes, aproximadamente 5 minutos.",
+      "Añade la pasta de achiote y mezcla bien para que libere su color y aroma, unos 2 minutos.",
+      "Incorpora los tomates rallados y cocina por 5 minutos hasta formar una salsa espesa.",
+      "Agrega los trozos de conejo y mezcla para que se cubran con la salsa. Cocina por 10 minutos, removiendo ocasionalmente.",
+      "Vierte la chicha de yuca (o sustituto) y el ishpingo. Reduce el fuego a bajo, tapa la olla y deja cocinar por 60-70 minutos, hasta que la carne esté tierna.",
+      "Rectifica la sal y pimienta, añade el cilantro fresco picado y cocina por 2 minutos más antes de servir.",
+      "Sirve caliente acompañado de arroz blanco y yuca cocida o patacones."
+    ],
+    "tips": [
+      "Si el conejo está muy duro, puedes marinarlo previamente con jugo de naranja agria por 2 horas.",
+      "Ajusta la cantidad de chicha según el nivel de acidez que prefieras en el guiso.",
+      "Para un sabor más auténtico, utiliza leña en lugar de cocina a gas si es posible.",
+      "Acompaña con una salsa de ají amazónico para un toque picante tradicional."
+    ],
+    "keywords": [
+      "seco de conejo amazonia",
+      "receta seco de conejo ecuatoriano",
+      "plato tipico amazonia ecuador",
+      "seco de conejo tradicional",
+      "comida amazonica ecuatoriana",
+      "recetas amazonia ecuador",
+      "seco de conejo puyo",
+      "gastronomia amazonica ecuador",
+      "como preparar seco de conejo",
+      "platos tipicos amazonia",
+      "receta tradicional amazonica",
+      "seco de conejo facil"
+    ],
+    "faqs": [
+      {
+        "q": "¿Con qué se acompaña el seco de conejo?",
+        "a": "Se acompaña tradicionalmente con arroz blanco, yuca cocida o patacones, y a veces con una ensalada fresca."
+      },
+      {
+        "q": "¿Cuánto tiempo se conserva el seco de conejo?",
+        "a": "Puede conservarse en la nevera por 2-3 días en un recipiente hermético. Recalentar a fuego bajo para evitar que se seque."
+      },
+      {
+        "q": "¿Es difícil hacer seco de conejo?",
+        "a": "No es muy difícil, pero requiere tiempo para cocinar la carne hasta que esté tierna. Sigue los pasos y tendrás un resultado delicioso."
+      }
+    ],
+    "date_published": "2026-02-23",
+    "target_audience": "Local|Diaspora|Turista",
+    "origin_cities": [
+      {
+        "city": "Puyo",
+        "province": "Pastaza",
+        "region": "Amazonia"
+      },
+      {
+        "city": "Tena",
+        "province": "Napo",
+        "region": "Amazonia"
+      },
+      {
+        "city": "Macas",
+        "province": "Morona Santiago",
+        "region": "Amazonia"
+      }
+    ],
+    "image_keywords": [
+      "ecuadorian amazonian food",
+      "seco de conejo dish",
+      "traditional ecuadorian stew",
+      "rabbit stew ecuador",
+      "amazonian cuisine",
+      "ecuadorian rabbit recipe",
+      "latin american food",
+      "traditional stew dish"
+    ],
+    "international_substitutes": [
+      {
+        "original": "chicha de yuca",
+        "sustituto_usa": "cerveza clara o jugo de manzana sin azúcar",
+        "sustituto_europa": "cerveza clara o sidra sin azúcar"
+      },
+      {
+        "original": "ishpingo (canela amazónica)",
+        "sustituto_usa": "canela en rama común",
+        "sustituto_europa": "canela en rama común"
+      },
+      {
+        "original": "conejo",
+        "sustituto_usa": "pollo o codorniz (disponible en supermercados como Whole Foods)",
+        "sustituto_europa": "pollo o codorniz (disponible en carnicerías locales)"
+      }
+    ],
+    "tourism_route": "Explora la ruta gastronómica de la Amazonía ecuatoriana visitando Puyo, Tena y Macas. Prueba el seco de conejo en restaurantes locales como 'El Fogón Amazónico' en Puyo, con precios aproximados de $8-12 por plato. Disfruta de la cultura y selva mientras degustas este manjar.",
+    "youtube_videos": [
+      {
+        "title": "Guanta a la naranjilla | Receta Ecuatoriana",
+        "videoId": "LT3m1WJq1NQ",
+        "channel": "Recetas de la abuela",
+        "url": "https://www.youtube.com/watch?v=LT3m1WJq1NQ",
+        "embed": "https://www.youtube-nocookie.com/embed/LT3m1WJq1NQ",
+        "uploadDate": "2023-09-17",
+        "description": ""
+      }
+    ],
+    "id": 24,
+    "created_at": "2026-02-26T02:10:29.707Z"
+  },
+  {
     "slug": "tapado-ecuatoriano-esmeraldas-coco-mariscos-selvaticos",
     "title": "Tapado Ecuatoriano de Esmeraldas con Coco y Mariscos Receta Tradicional",
     "description": "Tapado Ecuatoriano de Esmeraldas, un plato típico de la costa con coco y mariscos selváticos. Descubre esta receta tradicional llena de sabor, ideal para sorprender con ingredientes frescos y técnicas auténticas de la gastronomía afroecuatoriana.",

@@ -1,5 +1,147 @@
 [
   {
+    "slug": "cuy-asado",
+    "title": "Cuy Asado Receta Ecuatoriana Tradicional",
+    "description": "Cuy asado es un plato icónico de la cocina ecuatoriana de la sierra, preparado con conejillo de indias marinado y asado a la perfección. Esta receta detallada incluye ingredientes auténticos, pasos simples y consejos para lograr un sabor irresistible en tu hogar, ideal para fiestas familiares.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "60 min",
+    "total_time": "90 min",
+    "ingredients": [
+      "2 unidades enteras, limpias de Cuy (conejillo de indias) (Mercado local)",
+      "6 dientes, picados de Ajo (Supermaxi)",
+      "2 unidades medianas, cortadas en rodajas de Cebolla (Megamaxi)",
+      "1 cucharadita de Comino molido (TIA)",
+      "2 cucharadas de Achiote en pasta (Mercado local)",
+      "4 unidades, jugo de Limón (Supermaxi)",
+      "2 cucharaditas de Sal (Megamaxi)",
+      "1/2 taza para marinar de Aceite vegetal (TIA)",
+      "1 cucharadita de Orégano seco (Supermaxi)",
+      "4 unidades medianas, para acompañar de Papas (Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia los cuyes eliminando cualquier resto de pelo o vísceras, enjuágalos con agua fría y sécalos con toallas de papel; esto toma aproximadamente 10 minutos.",
+      "Paso 2: En un bowl grande, prepara la marinada mezclando el ajo picado, cebolla en rodajas, comino, achiote, jugo de limón, sal, orégano y aceite; deja marinar los cuyes en esta mezcla durante 20 minutos a temperatura ambiente.",
+      "Paso 3: Precalienta el horno a 180°C (350°F) y coloca los cuyes en una bandeja de hornear untada con aceite, asegurándote de que queden extendidos para una cocción uniforme.",
+      "Paso 4: Asa los cuyes en el horno durante 30 minutos, volteándolos una vez a la mitad del tiempo para que se doren por ambos lados; verifica con un termómetro que lleguen a 75°C internamente.",
+      "Paso 5: Mientras tanto, hierve las papas durante 15 minutos hasta que estén tiernas, luego fríelas en una sartén con un poco de aceite hasta que queden doradas, como acompañamiento.",
+      "Paso 6: Retira los cuyes del horno y déjalos reposar por 10 minutos antes de servir, para que los jugos se redistribuyan; sirve caliente con las papas y la marinada restante como salsa.",
+      "Paso 7: Opcionalmente, gratina los cuyes por 5 minutos adicionales si deseas un exterior más crujiente, vigilando para evitar que se quemen.",
+      "Paso 8: Presenta el plato en un plato grande, decorando con rodajas de limón para realzar el sabor ácido."
+    ],
+    "tips": [
+      "El chef profesional recomienda usar achiote fresco para un color y sabor más auténtico en la marinada.",
+      "Asegúrate de que el cuy esté completamente descongelado si lo compras congelado, para una cocción uniforme."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "cuy asado",
+      "plato ecuatoriano",
+      "comida tradicional ecuador"
+    ],
+    "image_alt": "Fotografía de cuy asado ecuatoriano terminado, con piel dorada y acompañado de papas y verduras frescas",
+    "faqs": [
+      {
+        "q": "¿Qué es el cuy asado y de dónde proviene?",
+        "a": "El cuy asado es un plato tradicional ecuatoriano de la región de la sierra, hecho con conejillo de indias marinado y asado, originario de ciudades como Quito y Cuenca, y forma parte de la dieta andina desde tiempos precolombinos."
+      },
+      {
+        "q": "¿Es el cuy asado saludable?",
+        "a": "Sí, el cuy asado es una fuente rica en proteínas y baja en grasa si se cocina adecuadamente, pero debe consumirse con moderación ya que es alto en colesterol; combina con verduras para un balance nutricional."
+      },
+      {
+        "q": "¿Cómo almacenar sobras de cuy asado?",
+        "a": "Almacena las sobras en un contenedor hermético en el refrigerador por hasta 2 días; para recalentar, usa el horno a 150°C por 10 minutos para mantener la textura crujiente, evitando el microondas que lo deja blando."
+      },
+      {
+        "q": "¿Puedo hacer cuy asado en una parrilla en lugar de horno?",
+        "a": "Sí, puedes asar en una parrilla a fuego medio por 20-30 minutos por lado, pero vigila para evitar que se seque; usa la marinada para bastar durante la cocción por un sabor ahumado."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Famoso por su cuy asado tradicional con ingredientes locales, ubicado en el centro histórico, ideal para turistas que buscan autenticidad."
+      },
+      {
+        "name": "Mercado de Otavalo",
+        "city": "Otavalo",
+        "description": "Ofrece cuy asado fresco en puestos callejeros, con opciones para probarlo con chicha; es un mercado vibrante y cultural para experimentar la gastronomía andina."
+      },
+      {
+        "name": "Restaurante Tierras Andinas",
+        "city": "Cuenca",
+        "description": "Especializado en platos serranos como cuy asado, con variaciones modernas; perfecto para una comida familiar en un ambiente colonial."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Cuy",
+        "substitute": "Conejo o pollo",
+        "notes": "En EE.UU., encuentra conejo en supermercados como Whole Foods o pollo en cualquier tienda; ajusta el tiempo de cocción para mantener la textura similar."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "En Europa, usa pimentón ahumado disponible en mercados como Lidl; proporciona un color y sabor similar, aunque menos tradicional."
+      },
+      {
+        "original": "Comino molido",
+        "substitute": "Coriandro molido",
+        "notes": "En EE.UU., el coriandro se vende en Walmart; es un buen sustituto para un sabor aromático, pero reduce la cantidad para evitar dominar el plato."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "keywords": [
+      "receta de cuy asado ecuatoriano tradicional paso a paso",
+      "como preparar cuy asado en casa",
+      "plato tipico de ecuador sierra conejillo de indias",
+      "cuy asado autentico receta familiar",
+      "ingredientes y coccion de cuy asado ecuatoriano",
+      "donde encontrar cuy para asado en eeuu",
+      "variantes regionales de cuy asado en quito"
+    ],
+    "youtube_videos": [
+      {
+        "title": "CUY AL HORNO PERUANO, CUSQUEÑO RECETA PREPARACION CASERO, un plato ancestral DE LOS ANDES EN PERU",
+        "videoId": "p_q9H4DHYYk",
+        "channel": "Sal de Maras by InfoCusco",
+        "url": "https://www.youtube.com/watch?v=p_q9H4DHYYk",
+        "embed": "https://www.youtube-nocookie.com/embed/p_q9H4DHYYk",
+        "uploadDate": "2020-05-31",
+        "description": "Amigos y amigas gracias por seguirme en mi canal y ver mis videos, ahora que di un cambio de mi canal, subiré videos sobre Machu Picchu y  les invito a que puedan contactarme si desean un Paquete de V"
+      },
+      {
+        "title": "Cuy Asado con Papas Y Salsa de Mani",
+        "videoId": "ORrK__RA_vg",
+        "channel": "Gaby's Kitchen",
+        "url": "https://www.youtube.com/watch?v=ORrK__RA_vg",
+        "embed": "https://www.youtube-nocookie.com/embed/ORrK__RA_vg",
+        "uploadDate": "2023-05-09",
+        "description": "Hola amigos. Espero que les guste este video. Hace mucho tiempo mis amigos de Ecuador me hablaban del Cuy pero nunca lo habia probado. Hace poco me re galaron uno y decidi asarlo.\nNo olviden Suscribir"
+      },
+      {
+        "title": "Cuy a la Parrilla en Arequipa #shorts",
+        "videoId": "k3a78pxk__s",
+        "channel": "Entre Carne y Fuego BBQ",
+        "url": "https://www.youtube.com/watch?v=k3a78pxk__s",
+        "embed": "https://www.youtube-nocookie.com/embed/k3a78pxk__s",
+        "uploadDate": "2023-05-24",
+        "description": ""
+      }
+    ],
+    "_image_source": "pending",
+    "id": 31,
+    "created_at": "2026-02-26T22:36:38.243Z"
+  },
+  {
     "slug": "locro-de-zapallo",
     "title": "Locro de Zapallo Ecuatoriano Receta Tradicional",
     "description": "Locro de Zapallo es una sopa espesa y reconfortante de la cocina ecuatoriana, perfecta para días fríos, hecha con zapallo, papas y queso fresco. Esta receta tradicional de la Sierra ofrece un balance de sabores cremosos y nutritivos, ideal para familias, con variantes regionales que la hacen única.",

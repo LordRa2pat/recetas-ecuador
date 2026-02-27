@@ -1,5 +1,145 @@
 [
   {
+    "slug": "seco-de-tilapia-amazonica",
+    "title": "Seco de Tilapia Amazónica Receta Tradicional Ecuatoriana",
+    "description": "Seco de Tilapia es un estofado amazónico ecuatoriano con pescado fresco cocinado en chicha y hierbas, ideal para quienes aman la cocina tropical. Esta receta detallada incluye ingredientes y pasos para recrear el sabor auténtico en casa, perfecto para cenas familiares.",
+    "region": "Amazonia",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "500 g Tilapia fresca (comprar en Mercado local)",
+      "2 unidades medianas Cebolla blanca (comprar en Supermaxi)",
+      "4 dientes Ajo (comprar en Megamaxi)",
+      "3 unidades Tomate maduro (comprar en TIA)",
+      "1 unidad Pimiento rojo (comprar en Mercado local)",
+      "500 ml Chicha de yuca (comprar en Mercado local)",
+      "1 manojo Cilantro fresco (comprar en Supermaxi)",
+      "2 cucharadas Aceite de cocina (comprar en Megamaxi)",
+      "Al gusto Sal y pimienta (comprar en TIA)",
+      "1 cucharadita Comino molido (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia y corta la tilapia en filetes de 2-3 cm, retira las escamas y lava bajo agua fría durante 5 minutos para eliminar olores, luego sazona con sal y pimienta y deja reposar por 10 minutos a temperatura ambiente.",
+      "Paso 2: Pica finamente la cebolla, el ajo, el tomate y el pimiento rojo, asegurándote de que estén listos en un bowl para una preparación eficiente, lo que toma aproximadamente 5 minutos.",
+      "Paso 3: Calienta el aceite en una olla grande a fuego medio (alrededor de 150°C) durante 2 minutos, luego agrega la cebolla y el ajo, y sofríe por 3-4 minutos hasta que estén transparentes y aromáticos.",
+      "Paso 4: Incorpora el tomate, pimiento y comino a la olla, cocina a fuego medio por 5 minutos hasta que los vegetales suelten jugos y formen una salsa base, revolviendo ocasionalmente para evitar que se pegue.",
+      "Paso 5: Agrega la tilapia sazonada y la chicha de yuca a la olla, baja el fuego a bajo (alrededor de 120°C), tapa y cocina por 15-20 minutos hasta que el pescado esté tierno y la salsa espese, revolviendo cada 5 minutos.",
+      "Paso 6: Añade el cilantro fresco picado al final, cocina por 2 minutos más para infusionar sabores, luego retira del fuego y deja reposar por 5 minutos antes de servir caliente con arroz.",
+      "Paso 7: Sirve inmediatamente en platos individuales, acompañando con yuca hervida para un toque auténtico amazónico, asegurando que el plato se mantenga caliente."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa tilapia fresca de ríos amazónicos para un sabor auténtico; si es congelada, descongela lentamente en el refrigerador para mantener la textura.",
+      "Consejo 2: Ajusta la cantidad de chicha para controlar la acidez; si prefieres un plato menos ácido, agrega un poco de azúcar al final."
+    ],
+    "origin_cities": [
+      "Coca",
+      "Puerto Francisco de Orellana"
+    ],
+    "image_keywords": [
+      "seco de tilapia amazónica",
+      "ecuadorian food",
+      "traditional dish"
+    ],
+    "image_alt": "Fotografía del plato terminado de Seco de Tilapia Amazónica con pescado estofado en salsa y verduras frescas",
+    "seo_keywords": [
+      "receta de seco de tilapia amazónica ecuatoriana tradicional",
+      "cómo preparar seco de tilapia en casa paso a paso",
+      "platos de mariscos ecuatorianos de la amazonía",
+      "sustitutos para ingredientes en seco de tilapia fuera de ecuador",
+      "mejor receta auténtica de seco de tilapia amazónica",
+      "comida tradicional ecuatoriana con pescado y chicha"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Seco de Tilapia y de dónde proviene?",
+        "a": "Seco de Tilapia es un estofado tradicional de la Amazonía ecuatoriana, hecho con tilapia cocida en chicha y hierbas, originario de ciudades como Coca, y representa la fusión de ingredientes locales con técnicas indígenas."
+      },
+      {
+        "q": "¿Puedo usar otro tipo de pescado si no tengo tilapia?",
+        "a": "Sí, puedes sustituir la tilapia por otro pescado blanco como el bagre o la corvina, pero ajusta el tiempo de cocción para evitar que se deshaga, manteniendo el sabor amazónico auténtico."
+      },
+      {
+        "q": "¿Cuánto dura el Seco de Tilapia refrigerado?",
+        "a": "El Seco de Tilapia puede durar hasta 2-3 días en el refrigerador si se guarda en un contenedor hermético; recálentelo a fuego bajo para preservar los sabores y la textura del pescado."
+      },
+      {
+        "q": "¿Es Seco de Tilapia apto para dietas específicas?",
+        "a": "Es bajo en carbohidratos y rico en proteínas, ideal para dietas bajas en calorías, pero verifica los ingredientes si sigues una dieta sin gluten, ya que la chicha podría contener almidones."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Bambú",
+        "city": "Coca",
+        "description": "Un lugar icónico en la Amazonía donde probar Seco de Tilapia con ingredientes frescos del río, ofreciendo una experiencia inmersiva en la cultura local."
+      },
+      {
+        "name": "Mercado de Puerto Francisco de Orellana",
+        "city": "Puerto Francisco de Orellana",
+        "description": "Aquí puedes encontrar vendedores que preparan Seco de Tilapia al momento con pescado capturado localmente, ideal para saborear la autenticidad amazónica."
+      },
+      {
+        "name": "Restaurante Zungaro en Quito",
+        "city": "Quito",
+        "description": "Ofrece una versión adaptada de Seco de Tilapia con toques modernos, perfecto para turistas que quieren probar platos amazónicos sin viajar."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Chicha de yuca",
+        "substitute": "Cerveza clara",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Carrefour en Europa, manteniendo el sabor ácido similar."
+      },
+      {
+        "original": "Tilapia fresca",
+        "substitute": "Filete de bacalao",
+        "notes": "Disponible en tiendas como Whole Foods en EE.UU. o pescaderías en Europa, con una textura similar que no altera mucho el plato."
+      },
+      {
+        "original": "Pimiento rojo",
+        "substitute": "Pimiento verde o morrón",
+        "notes": "Común en mercados europeos como Lidl, para mantener el color y dulzura en la receta."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Así el SUDADO DE PESCADO siempre te quedará JUGOSO | KWA",
+        "videoId": "9EeeJeIQN7Q",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=9EeeJeIQN7Q",
+        "embed": "https://www.youtube-nocookie.com/embed/9EeeJeIQN7Q",
+        "uploadDate": "2023-08-11",
+        "description": "Te vas a sorprender de su #Sabor #SudadoDePescado #kwaec \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/20/sudado-de-pescado/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG:"
+      },
+      {
+        "title": "Manizado de Pescado 🇪🇨 Rápido y Súper CREMOSO 🐟 | KWA",
+        "videoId": "erVkQvk1PWw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=erVkQvk1PWw",
+        "embed": "https://www.youtube-nocookie.com/embed/erVkQvk1PWw",
+        "uploadDate": "2025-08-02",
+        "description": "Hoy te enseñamos cómo preparar el tradicional #ManizadoDePescado, un guiso ecuatoriano lleno de sabor hecho con pescado en una cremosa salsa de maní.\nPerfecto para almuerzos caseros o para sorprender "
+      },
+      {
+        "title": "ESTOFADO DE PESCADO",
+        "videoId": "7dwk5Fg3uXA",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=7dwk5Fg3uXA",
+        "embed": "https://www.youtube-nocookie.com/embed/7dwk5Fg3uXA",
+        "uploadDate": "2020-07-17",
+        "description": "Una deliciosa receta que no te puedes perder! #EstofadoDePescado #KWAEC\n\nPescado... 500 gr\nAchiote ...20 ml\nPasta de ajo...30 gr\nCebolla colorada.... 100 gr\nPimiento Verde.... 80 gr\nTomate.... 200 gr\n"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 34,
+    "created_at": "2026-02-27T03:15:08.464Z"
+  },
+  {
     "slug": "bollo-de-elote-ecuatoriano",
     "title": "Bollo de Elote Ecuatoriano Receta Tradicional",
     "description": "Bollo de Elote Ecuatoriano es un postre dulce y esponjoso hecho con maíz fresco, típico de la costa ecuatoriana. Esta receta fácil incluye pasos detallados para lograr el sabor auténtico con ingredientes accesibles, ideal para principiantes en la cocina ecuatoriana.",

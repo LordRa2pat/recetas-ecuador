@@ -13,219 +13,326 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: { 'ec-gold': '#DCA011', 'ec-blue': '#14213D', 'ec-red': '#9A1B22' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            'ec-gold': '#DCA011',
+            'ec-blue': '#14213D',
+            'ec-red': '#9A1B22',
+            'luxury-dark': '#0a0f1a',
+            'luxury-gold': '#C5A059'
+          }
+        }
+      }
+    }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;600&display=swap"
     rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
+    :root {
+      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0a0f1a 100%);
+      --gold-gradient: linear-gradient(135deg, #DCA011 0%, #ffc107 100%);
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Outfit', sans-serif;
+      background-color: #f8f9fa;
     }
 
-    .ec-stripe {
-      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
-      height: 4px;
-      width: 100%;
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Playfair Display', serif;
     }
 
-    .prose h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #111827;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .prose p,
-    .prose li {
-      color: #374151;
-      line-height: 1.7;
-      margin-bottom: 0.75rem;
-      font-size: 0.9375rem;
+    .glass-dark {
+      background: rgba(20, 33, 61, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .prose ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
+    .btn-luxury {
+      background: var(--luxury-gradient);
+      color: white;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(20, 33, 61, 0.2);
+      position: relative;
+      overflow: hidden;
     }
 
-    .prose a {
+    .btn-luxury:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(20, 33, 61, 0.3);
+    }
+
+    .ec-title-bar-luxury {
+      width: 80px;
+      height: 3px;
+      background: var(--gold-gradient);
+      border-radius: 2px;
+    }
+
+    .legal-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
       color: #14213D;
-      text-decoration: underline;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #DCA011;
+      padding-left: 1rem;
     }
 
-    .prose a:hover {
-      color: #001f6e;
+    .legal-content p {
+      color: #14213D/70;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      font-size: 0.95rem;
     }
 
-    .prose strong {
-      color: #111827;
+    .legal-content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 2rem;
     }
 
-    .lopdp-box {
-      border: 2px solid #14213D;
-      border-radius: 1rem;
-      padding: 1.25rem 1.5rem;
-      background: #EEF2FF;
-      margin: 1.5rem 0;
+    .legal-content li {
+      position: relative;
+      padding-left: 2rem;
+      color: #14213D/70;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
     }
 
-    .lopdp-box h3 {
-      font-weight: 700;
+    .legal-content li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #DCA011;
+      font-weight: bold;
+    }
+
+    .legal-content strong {
       color: #14213D;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] antialiased">
-  <div class="ec-stripe" aria-hidden="true"></div>
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased overflow-x-hidden">
 
-  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg">
-        <span class="text-2xl">🍲</span>
-        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
-        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
+  <header class="fixed w-full z-50 transition-all duration-500 py-4 px-6">
+    <div class="max-w-7xl mx-auto glass shadow-sm rounded-2xl px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-ec-blue flex items-center justify-center text-xl transition-transform group-hover:rotate-12">
+          🇪🇨</div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-xl tracking-tighter text-ec-blue leading-none">ECUADOR</span>
+          <span class="text-[10px] font-black tracking-[0.2em] text-ec-gold uppercase">A LA CARTA</span>
+        </div>
       </a>
-      <a href="index.html"
-        class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-        ← Inicio
-      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Inicio</a>
+        <a href="/recipes"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Recetas</a>
+        <a href="/blog"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Turismo</a>
+        <a href="/nosotros"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Nosotros</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button id="nav-toggle"
+          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+        </button>
+        <a href="/privacy"
+          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest border-b-2 border-ec-gold uppercase">Legal</a>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 sm:p-12 prose">
+  <!-- Mobile Nav Overlay -->
+  <div id="nav-mobile" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
+      <button id="nav-close"
+        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
+      <nav class="flex flex-col gap-8">
+        <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
+        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
+        <a href="/blog" class="font-display font-black text-4xl text-ec-blue">Turismo</a>
+        <a href="/privacy" class="font-display font-black text-4xl text-ec-gold">Legal</a>
+        <hr class="border-ec-blue/5">
+      </nav>
+    </div>
+  </div>
 
-      <div class="mb-8">
-        <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-2">Legal</p>
-        <h1 class="text-3xl font-bold font-serif text-[#14213D] mb-2">Política de Privacidad</h1>
-        <p class="text-gray-400 text-sm">Última actualización: 24 de febrero de 2026</p>
-      </div>
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.remove('hidden');
+      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
+    });
+    document.getElementById('nav-close')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.add('opacity-0');
+      setTimeout(() => navMobile?.classList.add('hidden'), 500);
+    });
+  </script>
 
-      <p>En <strong>Ecuador a la Carta</strong> (en adelante "el Sitio"), accesible desde <a
-          href="https://ecuadoralacarta.com">ecuadoralacarta.com</a>, nos tomamos en serio la privacidad de nuestros
-        visitantes. Esta política describe qué información recopilamos, cómo la usamos y qué derechos tienes sobre ella,
-        de conformidad con la <strong>Ley Orgánica de Protección de Datos Personales del Ecuador (LOPDP)</strong> y el
-        Reglamento General de Protección de Datos (RGPD) de la UE.</p>
+  <section class="relative pt-40 pb-20 overflow-hidden bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+      <p class="text-ec-gold text-[10px] font-black uppercase tracking-[0.3em] mb-4">Gobierno de Datos</p>
+      <h1 class="text-5xl md:text-6xl font-display font-black text-ec-blue leading-none mb-6">Política de Privacidad
+      </h1>
+      <p class="text-ec-blue/40 text-[10px] font-black uppercase tracking-widest leading-none">Última actualización: 24
+        de febrero de 2026</p>
+    </div>
+  </section>
 
-      <h2>1. Información que recopilamos</h2>
-      <p>El Sitio es un sitio web estático de contenido informativo. <strong>No recopilamos información personal
-          identificable</strong> directamente, ni necesitas crear una cuenta para usar el Sitio.</p>
-      <p>Sin embargo, los terceros descritos a continuación pueden recopilar datos automáticamente al usar el Sitio:</p>
-
-      <h2>2. Google AdSense</h2>
-      <p>El Sitio participa en el programa <strong>Google AdSense</strong>, que sirve anuncios publicitarios relevantes.
-        Google puede usar cookies y tecnologías similares para mostrar anuncios basados en tus visitas previas a este y
-        otros sitios web.</p>
-      <ul>
-        <li>Google puede usar cookies de DoubleClick para servir anuncios personalizados.</li>
-        <li>Puedes optar por no recibir publicidad personalizada en <a href="https://www.google.com/settings/ads"
-            target="_blank" rel="noopener">Configuración de anuncios de Google</a>.</li>
-        <li>También puedes deshabilitar las cookies de publicidad en <a href="https://www.aboutads.info" target="_blank"
-            rel="noopener">aboutads.info</a>.</li>
-      </ul>
-
-      <h2>3. Google Analytics (si aplica)</h2>
-      <p>El Sitio puede usar Google Analytics para entender cómo los visitantes interactúan con el contenido. Recopila
-        información de forma anónima y agrupada, incluyendo páginas visitadas, dispositivo, navegador y fuente de
-        tráfico.</p>
-      <p>Puedes optar por no ser rastreado instalando el <a href="https://tools.google.com/dlpage/gaoptout"
-          target="_blank" rel="noopener">complemento de inhabilitación de Google Analytics</a>.</p>
-
-      <h2>4. Formulario de Contacto y Newsletter</h2>
-      <p>Cuando envías el formulario de contacto o te suscribes al newsletter, recopilamos tu <strong>nombre y
-          email</strong> a través de <strong>Formspree</strong>. Estos datos se usan únicamente para responder tu
-        mensaje o enviarte el menú semanal. No compartimos tu email con terceros ni enviamos spam. Puedes darte de baja
-        en cualquier momento respondiendo con "baja" a cualquier email nuestro.</p>
-
-      <h2>5. Cookies</h2>
-      <p>Las cookies son pequeños archivos de texto almacenados en tu dispositivo. El Sitio utiliza:</p>
-      <ul>
-        <li><strong>Cookies esenciales:</strong> necesarias para el funcionamiento básico del sitio.</li>
-        <li><strong>Cookies de publicidad:</strong> gestionadas por Google AdSense.</li>
-        <li><strong>Cookies de análisis:</strong> gestionadas por Google Analytics (si está activo).</li>
-      </ul>
-
-      <h2>6. Videos de YouTube (Privacy Enhanced Mode)</h2>
-      <p>Algunas páginas incluyen videos embebidos usando <strong>youtube-nocookie.com</strong> (Privacy Enhanced Mode).
-        YouTube no almacena cookies hasta que reproduces el video activamente.</p>
-
-      <h2>7. Google Maps</h2>
-      <p>Algunas páginas incluyen mapas embebidos de Google Maps. Al cargar un mapa, Google puede recopilar datos de
-        acuerdo con su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de
-          privacidad</a>.</p>
-
-      <h2>8. Servicios de terceros</h2>
-      <ul>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google (Fonts, AdSense,
-            Analytics, Maps, YouTube)</a></li>
-        <li><a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Formspree
-            (formularios)</a></li>
-        <li><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel (hosting)</a></li>
-      </ul>
-
-      <h2>9. Cambios a esta política</h2>
-      <p>Podemos actualizar esta política periódicamente. La fecha de "Última actualización" indica cuándo se realizó el
-        último cambio.</p>
-
-      <h2>10. Contacto</h2>
-      <p>Si tienes preguntas sobre esta política, puedes contactarnos a través de nuestra <a href="contact.html">página
-          de contacto</a>.</p>
-
-      <h2>11. Derechos LOPDP Ecuador</h2>
-      <div class="lopdp-box not-prose">
-        <h3>🛡️ Tus derechos bajo la LOPDP</h3>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;margin-bottom:0.75rem;">
-          De conformidad con la <strong>Ley Orgánica de Protección de Datos Personales del Ecuador</strong> (LOPDP, Art.
-          11), si eres residente en Ecuador o has proporcionado datos personales al Sitio, tienes los siguientes
-          derechos:
+  <main class="max-w-4xl mx-auto px-6 pb-32">
+    <div class="bento-card p-12 md:p-20 shadow-2xl relative overflow-hidden" data-aos="fade-up">
+      <div class="absolute top-0 left-0 w-2 h-full bg-ec-gold"></div>
+      <div class="legal-content">
+        <p class="text-lg font-medium italic text-ec-blue mb-12">
+          En <strong>Ecuador a la Carta</strong>, nos tomamos en serio la privacidad de nuestros visitantes. Esta
+          política describe qué información recopilamos, cómo la usamos y qué derechos tienes sobre ella, de conformidad
+          con la <strong>Ley Orgánica de Protección de Datos Personales del Ecuador (LOPDP)</strong>.
         </p>
-        <ul style="list-style:disc;padding-left:1.5rem;color:#374151;font-size:0.9375rem;margin-bottom:0.75rem;">
-          <li><strong>Acceso:</strong> Solicitar una copia de los datos personales que tenemos sobre ti.</li>
-          <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos.</li>
-          <li><strong>Supresión ("derecho al olvido"):</strong> Solicitar que eliminemos tus datos cuando ya no sean
-            necesarios para el fin con el que fueron recabados.</li>
-          <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos para fines de marketing directo.</li>
-          <li><strong>Portabilidad:</strong> Recibir tus datos en un formato estructurado y legible.</li>
-          <li><strong>Reclamación:</strong> Presentar una queja ante la <strong>Autoridad de Protección de Datos
-              Personales del Ecuador</strong>.</li>
+
+        <h2>1. Información que recopilamos</h2>
+        <p>El Sitio es una plataforma informativa de acceso público. <strong>No recopilamos información personal
+            identificable</strong> de forma masiva, ni requerimos registro previo para navegar por nuestras recetas.</p>
+        <p>Sin embargo, herramientas de terceros pueden recopilar datos técnicos necesarios para la funcionalidad y
+          monetización del sitio.</p>
+
+        <h2>2. Google AdSense & Monetización</h2>
+        <p>Este sitio utiliza <strong>Google AdSense</strong> para servir anuncios. Google utiliza cookies para mostrar
+          publicidad basada en tus intereses y visitas previas.</p>
+        <ul>
+          <li>Uso de cookies de DoubleClick para personalización.</li>
+          <li>Puedes gestionar tus preferencias en la configuración de anuncios de Google.</li>
         </ul>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;margin-bottom:0.5rem;">
-          Para ejercer cualquiera de estos derechos, contáctanos a través de nuestra <a href="contact.html"
-            style="color:#14213D;">página de contacto</a>. Responderemos en el plazo máximo establecido por la LOPDP (15
-          días hábiles).
-        </p>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;">
-          Si eres residente en la Unión Europea, también tienes los derechos establecidos en el <strong>Reglamento
-            General de Protección de Datos (RGPD)</strong> y puedes presentar una reclamación ante la autoridad
-          supervisora de tu país.
-        </p>
-      </div>
 
+        <h2>3. Cookies y Tecnologías de Seguimiento</h2>
+        <p>Utilizamos cookies esenciales para el rendimiento del sitio y cookies de terceros para métricas (Google
+          Analytics) y publicidad.</p>
+        <ul>
+          <li><strong>Cookies Técnicas:</strong> Para la navegación fluida.</li>
+          <li><strong>Cookies de Análisis:</strong> Para entender qué recetas son tus favoritas.</li>
+          <li><strong>Cookies Publicitarias:</strong> Gestionadas por nuestros socios de anuncios.</li>
+        </ul>
+
+        <h2>4. Derechos LOPDP — Residentes en Ecuador</h2>
+        <div class="bg-ec-blue/5 border border-ec-blue/10 p-8 rounded-3xl mb-8">
+          <h3 class="font-display font-black text-xl text-ec-blue mb-4 leading-none">🛡️ Tus Derechos Digitales</h3>
+          <p class="text-sm leading-relaxed mb-6">Según la Ley Orgánica de Protección de Datos Personales del Ecuador,
+            tienes derecho a:</p>
+          <ul class="grid md:grid-cols-2 gap-4">
+            <li class="font-bold text-xs">Acceso y Consulta</li>
+            <li class="font-bold text-xs">Rectificación y Actualización</li>
+            <li class="font-bold text-xs">Eliminación (Derecho al Olvido)</li>
+            <li class="font-bold text-xs">Oposición al Tratamiento</li>
+          </ul>
+        </div>
+        <p>Para ejercer estos derechos, utiliza nuestro <a href="/contact"
+            class="text-ec-gold font-bold underline">Formulario de Contacto</a>. Atenderemos tu solicitud en el plazo
+          legal de 15 días hábiles.</p>
+      </div>
     </div>
   </main>
 
-  <footer class="bg-[#14213D] text-white py-8 px-4 sm:px-6 border-t border-[#14213D]">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🍲</span>
-        <span class="font-black">Ecuador a la Carta</span>
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-ec-blue text-white pt-24 pb-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div class="lg:col-span-1">
+          <a href="/" class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🇪🇨</div>
+            <span class="font-display font-black text-xl tracking-tighter">ECUADOR <span class="text-ec-gold">A LA
+                CARTA</span></span>
+          </a>
+          <p class="text-white/50 text-sm leading-relaxed mb-8">
+            Guía culinaria premium comprometida con la transparencia y el respeto a tus datos personales.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Compañía</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="/nosotros" class="text-white/60 hover:text-white transition-colors">Nuestra Historia</a></li>
+            <li><a href="/contact" class="text-white/60 hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Legal</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/privacy" class="text-white border-b border-ec-gold">Privacidad</a></li>
+            <li><a href="/terms" class="text-white/60 hover:text-white transition-colors">Términos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Sistema</h4>
+          <p class="text-white/40 text-[10px] leading-relaxed italic">
+            Este sitio utiliza tecnologías de Google para la personalización de anuncios y análisis de tráfico.
+          </p>
+        </div>
       </div>
-      <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm">
-        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-        <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
-        <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-        <a href="privacy.html" class="text-white font-bold">Privacidad</a>
-        <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
-        <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
-      </nav>
+      <div class="pt-12 border-t border-white/5 text-center">
+        <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 Ecuador a la Carta — Legal
+          Framework V2</p>
+      </div>
     </div>
-    <p class="text-center text-blue-300 text-xs mt-4">&copy; 2026 Ecuador a la Carta</p>
   </footer>
-  <div class="ec-stripe" aria-hidden="true"></div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header?.classList.add('py-2', 'shadow-xl');
+        header?.classList.remove('py-4', 'shadow-sm');
+      } else {
+        header?.classList.add('py-4', 'shadow-sm');
+        header?.classList.remove('py-2', 'shadow-xl');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true, offset: 100 });
+      }
+    });
+  </script>
+</body>
+
+</html>
 
 </body>
 

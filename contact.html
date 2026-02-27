@@ -12,218 +12,357 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: { 'ec-gold': '#DCA011', 'ec-blue': '#14213D', 'ec-red': '#9A1B22' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            'ec-gold': '#DCA011',
+            'ec-blue': '#14213D',
+            'ec-red': '#9A1B22',
+            'luxury-dark': '#0a0f1a',
+            'luxury-gold': '#C5A059'
+          }
+        }
+      }
+    }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;600&display=swap"
     rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
+    :root {
+      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0a0f1a 100%);
+      --gold-gradient: linear-gradient(135deg, #DCA011 0%, #ffc107 100%);
     }
 
-    .ec-stripe {
-      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
-      height: 4px;
-      width: 100%;
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-dark {
+      background: rgba(20, 33, 61, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-luxury {
+      background: var(--luxury-gradient);
+      color: white;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(20, 33, 61, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-luxury:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(20, 33, 61, 0.3);
+    }
+
+    .ec-title-bar-luxury {
+      width: 80px;
+      height: 3px;
+      background: var(--gold-gradient);
+      border-radius: 2px;
+    }
+
+    .bento-card {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.4s ease;
     }
 
     input,
     textarea,
     select {
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.3s ease;
     }
 
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: #14213D;
-      box-shadow: 0 0 0 3px rgba(0, 51, 160, 0.12);
+      border-color: #DCA011;
+      box-shadow: 0 0 0 4px rgba(220, 160, 17, 0.1);
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] antialiased">
-  <div class="ec-stripe" aria-hidden="true"></div>
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased overflow-x-hidden">
 
-  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg">
-        <span class="text-2xl">🍲</span>
-        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
-        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
+  <header class="fixed w-full z-50 transition-all duration-500 py-4 px-6">
+    <div class="max-w-7xl mx-auto glass shadow-sm rounded-2xl px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-ec-blue flex items-center justify-center text-xl transition-transform group-hover:rotate-12">
+          🇪🇨</div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-xl tracking-tighter text-ec-blue leading-none">ECUADOR</span>
+          <span class="text-[10px] font-black tracking-[0.2em] text-ec-gold uppercase">A LA CARTA</span>
+        </div>
       </a>
-      <a href="index.html"
-        class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-        ← Inicio
-      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Inicio</a>
+        <a href="/recipes"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Recetas</a>
+        <a href="/blog"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Turismo</a>
+        <a href="/nosotros"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Nosotros</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button id="nav-toggle"
+          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+        </button>
+        <a href="/contact"
+          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest border-b-2 border-ec-gold uppercase">Contacto</a>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-
-    <div class="text-center mb-10">
-      <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-2">Escríbenos</p>
-      <h1 class="text-3xl sm:text-4xl font-bold font-serif text-[#14213D] mb-3">Contacto 💬</h1>
-      <p class="text-gray-500 max-w-md mx-auto">¿Tienes una receta para sugerir, una colaboración en mente, o
-        simplemente quieres decir hola? Nos encanta escucharte.</p>
+  <!-- Mobile Nav Overlay -->
+  <div id="nav-mobile" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
+      <button id="nav-close"
+        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
+      <nav class="flex flex-col gap-8">
+        <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
+        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
+        <a href="/blog" class="font-display font-black text-4xl text-ec-blue">Turismo</a>
+        <a href="/contact" class="font-display font-black text-4xl text-ec-gold">Contacto</a>
+        <hr class="border-ec-blue/5">
+      </nav>
     </div>
+  </div>
 
-    <div class="grid sm:grid-cols-2 gap-8">
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.remove('hidden');
+      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
+    });
+    document.getElementById('nav-close')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.add('opacity-0');
+      setTimeout(() => navMobile?.classList.add('hidden'), 500);
+    });
+  </script>
 
-      <!-- Formulario -->
-      <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8">
-        <h2 class="font-bold text-gray-800 text-lg mb-6">Envíanos un mensaje</h2>
+  <section class="relative pt-40 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-ec-blue -z-20"></div>
+    <div
+      class="absolute inset-0 opacity-10 -z-10 bg-[url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=1200&q=80')] bg-cover bg-center">
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-up">
+      <p class="text-ec-gold text-[10px] font-black uppercase tracking-[0.3em] mb-4">Escríbenos</p>
+      <h1 class="text-5xl md:text-7xl font-display font-black text-white leading-none mb-6">Concierge Culinario</h1>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto font-medium">¿Tienes una receta ancestral, una sugerencia o una
+        propuesta de colaboración? Estamos aquí para escucharte.</p>
+    </div>
+  </section>
 
-        <form action="https://formspree.io/f/xnjbokvk" method="POST" class="flex flex-col gap-4">
+  <main class="max-w-7xl mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-3 gap-8">
 
-          <div>
-            <label for="contact-name" class="block text-sm font-semibold text-gray-700 mb-1.5">
-              Nombre <span class="text-red-400">*</span>
-            </label>
-            <input id="contact-name" name="name" type="text" required placeholder="Tu nombre"
-              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400" />
-          </div>
-
-          <div>
-            <label for="contact-email" class="block text-sm font-semibold text-gray-700 mb-1.5">
-              Email <span class="text-red-400">*</span>
-            </label>
-            <input id="contact-email" name="email" type="email" required placeholder="tu@email.com"
-              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400" />
-          </div>
-
-          <div>
-            <label for="contact-subject" class="block text-sm font-semibold text-gray-700 mb-1.5">
-              Asunto
-            </label>
-            <select id="contact-subject" name="subject"
-              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-700 appearance-none">
-              <option value="">Selecciona un asunto</option>
-              <option value="receta">💡 Sugerir una receta</option>
-              <option value="correccion">✏️ Corrección de contenido</option>
-              <option value="colaboracion">🤝 Colaboración / Publicidad</option>
-              <option value="tecnico">🔧 Problema técnico</option>
-              <option value="privacidad">🛡️ Solicitud LOPDP / Privacidad</option>
-              <option value="otro">💬 Otro</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="contact-message" class="block text-sm font-semibold text-gray-700 mb-1.5">
-              Mensaje <span class="text-red-400">*</span>
-            </label>
-            <textarea id="contact-message" name="message" required rows="5"
-              placeholder="Cuéntanos en qué podemos ayudarte..."
-              class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400 resize-y"></textarea>
-          </div>
-
-          <!-- Honeypot anti-spam -->
-          <input type="text" name="_gotcha" style="display:none" />
-
-          <button type="submit"
-            class="w-full bg-[#14213D] text-white font-bold py-3.5 rounded-xl hover:bg-[#0b1324] transition-colors focus:outline-none focus:ring-2 focus:ring-[#14213D] focus:ring-offset-2">
-            Enviar mensaje 🚀
-          </button>
-
-          <p class="text-xs text-gray-400 text-center">
-            Al enviar aceptas nuestra <a href="privacy.html" class="underline hover:text-[#14213D]">Política de
-              Privacidad</a>.
-          </p>
-
-        </form>
+      <!-- FORM BENTO -->
+      <div class="lg:col-span-2" data-aos="fade-right">
+        <div class="bento-card p-10 h-full">
+          <h2 class="font-display font-black text-3xl text-ec-blue mb-8">Envíanos un mensaje</h2>
+          <form action="https://formspree.io/f/xnjbokvk" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-[10px] font-black uppercase tracking-widest text-ec-blue/40">Nombre Completo</label>
+              <input type="text" name="name" required placeholder="Ej. Juan Pérez"
+                class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[10px] font-black uppercase tracking-widest text-ec-blue/40">Email de Contacto</label>
+              <input type="email" name="email" required placeholder="juan@ejemplo.com"
+                class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white">
+            </div>
+            <div class="md:col-span-2 flex flex-col gap-2">
+              <label class="text-[10px] font-black uppercase tracking-widest text-ec-blue/40">Asunto del Mensaje</label>
+              <select name="subject"
+                class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white appearance-none">
+                <option value="receta">💡 Sugerir una receta ancestral</option>
+                <option value="colaboracion">🤝 Alianzas y Colaboraciones</option>
+                <option value="error">✏️ Error o Corrección en contenido</option>
+                <option value="soporte">🔧 Soporte Técnico</option>
+                <option value="otro">💬 Otras consultas</option>
+              </select>
+            </div>
+            <div class="md:col-span-2 flex flex-col gap-2">
+              <label class="text-[10px] font-black uppercase tracking-widest text-ec-blue/40">Tu Mensaje</label>
+              <textarea name="message" required rows="6" placeholder="Cuéntanos con detalle..."
+                class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white resize-none"></textarea>
+            </div>
+            <div class="md:col-span-2">
+              <button type="submit"
+                class="btn-luxury w-full py-5 rounded-2xl text-[10px] font-black tracking-[0.2em] shadow-lg">ENVIAR
+                MENSAJE →</button>
+            </div>
+            <p class="md:col-span-2 text-center text-ec-blue/40 text-[10px] font-medium italic">Generalmente respondemos
+              en menos de 48 horas hábiles.</p>
+          </form>
+        </div>
       </div>
 
-      <!-- Info lateral -->
-      <div class="flex flex-col gap-5">
+      <!-- INFO SIDEBAR BENTO -->
+      <div class="flex flex-col gap-8" data-aos="fade-left">
+        <div class="bento-card p-10 bg-ec-blue text-white relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-ec-gold/20 blur-3xl rounded-full -mr-16 -mt-16"></div>
+          <h3 class="font-display font-black text-xl mb-6 relative z-10">Contacto Directo</h3>
+          <div class="space-y-6 relative z-10">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl">📧</div>
+              <div>
+                <p class="text-[10px] font-black uppercase tracking-widest text-white/40">Escríbenos a</p>
+                <p class="font-bold">hola@ecuadoralacarta.com</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl">💬</div>
+              <div>
+                <p class="text-[10px] font-black uppercase tracking-widest text-white/40">WhatsApp</p>
+                <p class="font-bold">+593 99 999 9999</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
-          <h2 class="font-bold text-gray-800 text-base mb-4">¿Para qué sirve el formulario?</h2>
-          <ul class="space-y-3">
-            <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center text-sm flex-shrink-0">💡
-              </div>
-              <div>
-                <p class="font-semibold text-gray-700 text-sm">Sugerir recetas</p>
-                <p class="text-gray-400 text-xs">¿Hay un plato que quieres ver? Cuéntanos y lo añadimos.</p>
-              </div>
+        <div class="bento-card p-10">
+          <h3 class="font-display font-black text-xl text-ec-blue mb-6">¿Por qué contactarnos?</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3 text-sm font-medium text-ec-blue/60 italic">
+              <span>✔</span>
+              <span>Si tienes una receta familiar secreta.</span>
             </li>
-            <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-yellow-100 flex items-center justify-center text-sm flex-shrink-0">✏️
-              </div>
-              <div>
-                <p class="font-semibold text-gray-700 text-sm">Corregir información</p>
-                <p class="text-gray-400 text-xs">Si encontraste un error en una receta, avísanos.</p>
-              </div>
+            <li class="flex gap-3 text-sm font-medium text-ec-blue/60 italic">
+              <span>✔</span>
+              <span>Si quieres ser patrocinador oficial.</span>
             </li>
-            <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-sm flex-shrink-0">🤝
-              </div>
-              <div>
-                <p class="font-semibold text-gray-700 text-sm">Colaboraciones</p>
-                <p class="text-gray-400 text-xs">¿Eres chef, restaurante o marca? Hablemos.</p>
-              </div>
-            </li>
-            <li class="flex gap-3 items-start">
-              <div class="w-8 h-8 rounded-xl bg-[#F1DEE0] flex items-center justify-center text-sm flex-shrink-0">🛡️
-              </div>
-              <div>
-                <p class="font-semibold text-gray-700 text-sm">Solicitudes LOPDP</p>
-                <p class="text-gray-400 text-xs">Acceso, rectificación o supresión de datos personales.</p>
-              </div>
+            <li class="flex gap-3 text-sm font-medium text-ec-blue/60 italic">
+              <span>✔</span>
+              <span>Si encontraste algo que podemos mejorar.</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-6 text-white">
-          <h2 class="font-bold text-base mb-2">⏱ Tiempo de respuesta</h2>
-          <p class="text-blue-200 text-sm leading-relaxed">Respondemos en un plazo de 2-3 días hábiles. Para solicitudes
-            LOPDP, respondemos en máximo 15 días hábiles según lo establecido por la ley ecuatoriana.</p>
+        <div class="bento-card p-10 bg-ec-gold/5 border-ec-gold/20">
+          <p class="text-[10px] font-black uppercase tracking-widest text-ec-gold mb-2">LOPDP Ecuador</p>
+          <p class="text-[10px] font-medium text-ec-blue/60 leading-relaxed italic">
+            Cumplimos con la Ley Orgánica de Protección de Datos Personales. Tus mensajes son privados y seguros.
+          </p>
         </div>
-
       </div>
+
     </div>
   </main>
 
-  <!-- Newsletter -->
-  <section class="bg-[#14213D] py-10 px-4 sm:px-6 mt-10">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
-      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas directo a tu email.</p>
-      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-        class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
-        <input type="email" name="email" placeholder="tu@email.com" required
-          class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-          aria-label="Email para newsletter">
-        <button type="submit"
-          class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap">
-          Suscribirme →
-        </button>
-      </form>
-    </div>
-  </section>
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-ec-blue text-white pt-24 pb-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div class="lg:col-span-1">
+          <a href="/" class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🇪🇨</div>
+            <span class="font-display font-black text-xl tracking-tighter">ECUADOR <span class="text-ec-gold">A LA
+                CARTA</span></span>
+          </a>
+          <p class="text-white/50 text-sm leading-relaxed mb-8">
+            La biblioteca digital definitiva de las tradiciones culinarias del Ecuador. Recetas revisadas con amor y
+            precisión.
+          </p>
+        </div>
 
-  <footer class="bg-[#14213D] text-white py-8 px-4 sm:px-6 border-t border-[#14213D]">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🍲</span>
-        <span class="font-black">Ecuador a la Carta</span>
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Navegación</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="/recipes" class="text-white/60 hover:text-white transition-colors">Recetas</a></li>
+            <li><a href="/blog" class="text-white/60 hover:text-white transition-colors">Turismo</a></li>
+            <li><a href="/nosotros" class="text-white/60 hover:text-white transition-colors">Nosotros</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Explora</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/recipes?category=Sopas" class="text-white/60 hover:text-white transition-colors">🍲 Sopas</a>
+            </li>
+            <li><a href="/recipes?category=Mariscos" class="text-white/60 hover:text-white transition-colors">🦐
+                Mariscos</a></li>
+            <li><a href="/menu-semanal" class="text-white/60 hover:text-white transition-colors">📅 Menú Semanal</a>
+            </li>
+            <li><a href="/contact" class="text-white border-b border-ec-gold">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Legal</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/privacy" class="text-white/60 hover:text-white transition-colors">Privacidad</a></li>
+            <li><a href="/terms" class="text-white/60 hover:text-white transition-colors">Términos</a></li>
+          </ul>
+        </div>
       </div>
-      <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm">
-        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-        <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
-        <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-        <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
-        <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
-        <a href="contact.html" class="text-white font-bold">Contacto</a>
-      </nav>
+      <div class="pt-12 border-t border-white/5 text-center">
+        <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 Ecuador a la Carta — Premium
+          Culinary Guide</p>
+      </div>
     </div>
-    <p class="text-center text-blue-300 text-xs mt-4">&copy; 2026 Ecuador a la Carta</p>
   </footer>
-  <div class="ec-stripe" aria-hidden="true"></div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header?.classList.add('py-2', 'shadow-xl');
+        header?.classList.remove('py-4', 'shadow-sm');
+      } else {
+        header?.classList.add('py-4', 'shadow-sm');
+        header?.classList.remove('py-2', 'shadow-xl');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true, offset: 100 });
+      }
+    });
+  </script>
+</body>
+
+</html>
 
 </body>
 

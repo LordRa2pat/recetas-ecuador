@@ -37,18 +37,17 @@ export function renderSkeleton(count) {
   var html = "";
   for (var i = 0; i < count; i++) {
     html +=
-      '<div class="bg-white rounded-3xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">' +
-      '<div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>' +
-      '<div class="p-5">' +
-      '<div class="flex gap-2 mb-3">' +
-      '<div class="bg-gray-200 h-5 w-16 rounded-full"></div>' +
-      '<div class="bg-gray-200 h-4 w-12 rounded-full"></div>' +
+      '<div class="bg-white rounded-[40px] shadow-sm overflow-hidden animate-pulse border border-black/5" aria-hidden="true">' +
+      '<div class="bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 h-64"></div>' +
+      '<div class="p-8">' +
+      '<div class="flex gap-2 mb-4">' +
+      '<div class="bg-gray-100 h-5 w-20 rounded-full"></div>' +
       "</div>" +
-      '<div class="bg-gray-200 h-4 rounded-full mb-2.5 w-full"></div>' +
-      '<div class="bg-gray-200 h-4 rounded-full mb-4 w-4/5"></div>' +
-      '<div class="flex gap-3 pt-3 border-t border-gray-100">' +
-      '<div class="bg-gray-200 h-3 w-16 rounded-full"></div>' +
-      '<div class="bg-gray-200 h-3 w-12 rounded-full"></div>' +
+      '<div class="bg-gray-100 h-6 rounded-full mb-3 w-full"></div>' +
+      '<div class="bg-gray-100 h-6 rounded-full mb-6 w-2/3"></div>' +
+      '<div class="flex gap-4 pt-6 border-t border-gray-50">' +
+      '<div class="bg-gray-100 h-3 w-16 rounded-full"></div>' +
+      '<div class="bg-gray-100 h-3 w-16 rounded-full"></div>' +
       "</div>" +
       "</div>" +
       "</div>";
@@ -68,7 +67,7 @@ export function renderCard(recipe) {
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return (
-    '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#0033A0] focus-within:ring-offset-2">' +
+    '<article class="group relative bg-white rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-700 overflow-hidden cursor-pointer border border-black/5 ec-card-premium">' +
     '<a href="recipe.html?slug=' +
     encodeURIComponent(recipe.slug) +
     '" class="block" aria-label="' +
@@ -83,53 +82,56 @@ export function renderCard(recipe) {
     '" data-track-category="' +
     escapeHtml(recipe.category || "") +
     '">' +
-    '<div class="relative h-52 overflow-hidden">' +
+    '<div class="relative h-64 overflow-hidden">' +
     '<img src="' +
     img +
     '" alt="' +
     imgAlt +
     '"' +
-    ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
+    ' class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"' +
     ' loading="lazy" onerror="this.src=\'images/default-recipe.jpg\'">' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>' +
-    (chip ? '<div class="absolute top-3 left-3">' + chip + "</div>" : "") +
-    '<div class="absolute bottom-3 right-3 flex gap-1.5">' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>' +
+    (chip ? '<div class="absolute top-6 left-6">' + chip + "</div>" : "") +
+    '<div class="absolute bottom-6 right-6 flex gap-2">' +
     (hasTourism
-      ? '<span class="text-white text-base drop-shadow-md" title="Ruta Gastron\u00f3mica">\uD83D\uDDFA\uFE0F</span>'
+      ? '<span class="w-8 h-8 rounded-full glass flex items-center justify-center text-sm shadow-lg" title="Ruta Gastron\u00f3mica">\uD83D\uDDFA\uFE0F</span>'
       : "") +
     (hasVideos
-      ? '<span class="text-white text-base drop-shadow-md" title="Video tutorial">\u25B6\uFE0F</span>'
+      ? '<span class="w-8 h-8 rounded-full glass flex items-center justify-center text-sm shadow-lg" title="Video tutorial">\u25B6\uFE0F</span>'
       : "") +
     "</div>" +
     "</div>" +
-    '<div class="p-5">' +
-    '<div class="flex flex-wrap gap-2 mb-2">' +
+    '<div class="p-8">' +
+    '<div class="flex items-center gap-3 mb-4">' +
     (recipe.region
-      ? '<span class="text-xs font-medium text-[#0033A0] bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full">' +
+      ? '<span class="text-[10px] font-bold text-ec-gold uppercase tracking-[0.2em]">' +
       escapeHtml(recipe.region) +
       "</span>"
       : "") +
+    '<span class="w-1 h-1 rounded-full bg-gray-200"></span>' +
     (recipe.difficulty
-      ? '<span class="text-xs font-medium text-gray-500 bg-gray-50 border border-gray-200 px-2.5 py-0.5 rounded-full">' +
+      ? '<span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.1em]">' +
       escapeHtml(recipe.difficulty) +
       "</span>"
       : "") +
     "</div>" +
-    '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 clamp-2 group-hover:text-[#0033A0] transition-colors duration-200">' +
+    '<h3 class="font-serif italic text-2xl text-ec-blue leading-tight mb-3 group-hover:text-ec-gold transition-colors duration-500">' +
     escapeHtml(recipe.title) +
     "</h3>" +
-    '<p class="text-gray-500 text-sm clamp-2 mb-3">' +
+    '<p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-8 font-light">' +
     escapeHtml(recipe.description || "") +
     "</p>" +
-    '<div class="flex items-center gap-3 pt-3 border-t border-gray-100 text-xs text-gray-400">' +
+    '<div class="flex items-center justify-between pt-6 border-t border-gray-50">' +
+    '<div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">' +
     (recipe.total_time
-      ? "<span>\u23f1 " + escapeHtml(recipe.total_time) + "</span>"
+      ? '<span class="flex items-center gap-1.5"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>' + escapeHtml(recipe.total_time) + "</span>"
       : "") +
     (recipe.servings
-      ? "<span>\uD83D\uDC65 " + escapeHtml(recipe.servings) + "</span>"
+      ? '<span class="flex items-center gap-1.5"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>' + escapeHtml(recipe.servings) + "</span>"
       : "") +
+    "</div>" +
     (recipe.category
-      ? '<span class="ml-auto text-[#FFD100] font-bold">' +
+      ? '<span class="text-ec-gold font-display font-black text-xs uppercase italic">' +
       escapeHtml(recipe.category) +
       "</span>"
       : "") +
@@ -356,22 +358,10 @@ export function renderBlogCard(post) {
     ? escapeHtml(post.image_url)
     : "images/default-turismo.jpg";
   var imgAlt = escapeHtml(post.image_alt || post.title);
-  var categoryColors = {
-    Rutas: "bg-green-100 text-green-700 border-green-200",
-    Destinos: "bg-blue-100 text-blue-700 border-blue-200",
-    Cultura: "bg-purple-100 text-purple-700 border-purple-200",
-    Festividades: "bg-yellow-100 text-yellow-700 border-yellow-200",
-    Naturaleza: "bg-emerald-100 text-emerald-700 border-emerald-200",
-    Aventura: "bg-orange-100 text-orange-700 border-orange-200",
-    "Gastronom\u00eda": "bg-amber-100 text-amber-700 border-amber-200",
-  };
-  var catClass =
-    categoryColors[post.category] ||
-    "bg-gray-100 text-gray-600 border-gray-200";
 
   return (
-    '<article class="group relative bg-white rounded-3xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-[#C8102E] focus-within:ring-offset-2">' +
-    '<a href="post.html?slug=' +
+    '<article class="group relative bg-white rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-700 overflow-hidden cursor-pointer border border-black/5 ec-card-premium">' +
+    '<a href="post?slug=' +
     encodeURIComponent(post.slug) +
     '" class="block" aria-label="' +
     escapeHtml(post.title) +
@@ -383,48 +373,45 @@ export function renderBlogCard(post) {
     '" data-track-category="' +
     escapeHtml(post.category || "") +
     '">' +
-    '<div class="relative h-52 overflow-hidden">' +
+    '<div class="relative h-64 overflow-hidden">' +
     '<img src="' +
     img +
     '" alt="' +
     imgAlt +
     '"' +
-    ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
+    ' class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"' +
     ' loading="lazy" onerror="this.src=\'images/default-turismo.jpg\'">' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-[#9A1B22]/60 via-transparent to-transparent opacity-60"></div>' +
     (post.featured
-      ? '<div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-[#FFD700]/90 text-[#004d00] backdrop-blur-sm">\u2B50 Destacado</span></div>'
+      ? '<div class="absolute top-6 left-6"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-[#FFD700] text-[#004d00] shadow-lg">\u2B50 DESTACADO</span></div>'
       : "") +
-    (post.region
-      ? '<div class="absolute bottom-3 left-3"><span class="text-white text-xs font-medium bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full">' +
-      escapeHtml(post.region) +
-      "</span></div>"
-      : "") +
-    "</div>" +
-    '<div class="p-5">' +
-    '<div class="flex flex-wrap gap-2 mb-2">' +
+    '</div>' +
+    '<div class="p-8">' +
+    '<div class="flex items-center gap-3 mb-4">' +
     (post.category
-      ? '<span class="text-xs font-medium border px-2.5 py-0.5 rounded-full ' +
-      catClass +
-      '">' +
+      ? '<span class="text-[10px] font-bold text-ec-red uppercase tracking-[0.2em]">' +
       escapeHtml(post.category) +
       "</span>"
       : "") +
+    '<span class="w-1 h-1 rounded-full bg-gray-200"></span>' +
     (post.reading_time
-      ? '<span class="text-xs font-medium text-gray-400 bg-gray-50 border border-gray-200 px-2.5 py-0.5 rounded-full">\u23f1 ' +
+      ? '<span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.1em]">\u23f1 ' +
       escapeHtml(post.reading_time) +
       "</span>"
       : "") +
     "</div>" +
-    '<h3 class="font-bold text-gray-900 text-base leading-snug mb-1 line-clamp-2 group-hover:text-[#C8102E] transition-colors duration-200">' +
+    '<h3 class="font-serif italic text-2xl text-ec-blue leading-tight mb-3 group-hover:text-ec-red transition-colors duration-500">' +
     escapeHtml(post.title) +
     "</h3>" +
-    '<p class="text-gray-500 text-sm line-clamp-2 mb-2">' +
+    '<p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-8 font-light">' +
     escapeHtml(post.description || "") +
     "</p>" +
+    '<div class="flex items-center justify-between pt-6 border-t border-gray-50">' +
     (post.date_published
-      ? '<p class="text-xs text-gray-400">' + post.date_published + "</p>"
+      ? '<span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">' + post.date_published + "</span>"
       : "") +
+    '<span class="text-ec-red font-display font-black text-xs uppercase italic">Leer cr\u00f3nica \u2192</span>' +
+    "</div>" +
     "</div>" +
     "</a>" +
     "</article>"

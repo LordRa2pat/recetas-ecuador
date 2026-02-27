@@ -12,229 +12,327 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: { 'ec-gold': '#DCA011', 'ec-blue': '#14213D', 'ec-red': '#9A1B22' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            'ec-gold': '#DCA011',
+            'ec-blue': '#14213D',
+            'ec-red': '#9A1B22',
+            'luxury-dark': '#0a0f1a',
+            'luxury-gold': '#C5A059'
+          }
+        }
+      }
+    }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;600&display=swap"
     rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
+    :root {
+      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0a0f1a 100%);
+      --gold-gradient: linear-gradient(135deg, #DCA011 0%, #ffc107 100%);
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Outfit', sans-serif;
+      background-color: #f8f9fa;
     }
 
-    .ec-stripe {
-      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
-      height: 4px;
-      width: 100%;
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Playfair Display', serif;
     }
 
-    .prose h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #111827;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .prose p,
-    .prose li {
-      color: #374151;
-      line-height: 1.7;
-      margin-bottom: 0.75rem;
-      font-size: 0.9375rem;
+    .glass-dark {
+      background: rgba(20, 33, 61, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .prose ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
+    .btn-luxury {
+      background: var(--luxury-gradient);
+      color: white;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(20, 33, 61, 0.2);
+      position: relative;
+      overflow: hidden;
     }
 
-    .prose a {
+    .btn-luxury:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(20, 33, 61, 0.3);
+    }
+
+    .ec-title-bar-luxury {
+      width: 80px;
+      height: 3px;
+      background: var(--gold-gradient);
+      border-radius: 2px;
+    }
+
+    .legal-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
       color: #14213D;
-      text-decoration: underline;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #DCA011;
+      padding-left: 1rem;
     }
 
-    .prose a:hover {
-      color: #001f6e;
+    .legal-content p {
+      color: #14213D/70;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      font-size: 0.95rem;
     }
 
-    .prose strong {
-      color: #111827;
+    .legal-content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 2rem;
     }
 
-    .lopdp-box {
-      border: 2px solid #14213D;
-      border-radius: 1rem;
-      padding: 1.25rem 1.5rem;
-      background: #EEF2FF;
-      margin: 1.5rem 0;
+    .legal-content li {
+      position: relative;
+      padding-left: 2rem;
+      color: #14213D/70;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
     }
 
-    .lopdp-box h3 {
-      font-weight: 700;
+    .legal-content li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #DCA011;
+      font-weight: bold;
+    }
+
+    .legal-content strong {
       color: #14213D;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] antialiased">
-  <div class="ec-stripe" aria-hidden="true"></div>
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased overflow-x-hidden">
 
-  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg">
-        <span class="text-2xl">🍲</span>
-        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
-        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
+  <header class="fixed w-full z-50 transition-all duration-500 py-4 px-6">
+    <div class="max-w-7xl mx-auto glass shadow-sm rounded-2xl px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-ec-blue flex items-center justify-center text-xl transition-transform group-hover:rotate-12">
+          🇪🇨</div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-xl tracking-tighter text-ec-blue leading-none">ECUADOR</span>
+          <span class="text-[10px] font-black tracking-[0.2em] text-ec-gold uppercase">A LA CARTA</span>
+        </div>
       </a>
-      <a href="index.html"
-        class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-        ← Inicio
-      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Inicio</a>
+        <a href="/recipes"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Recetas</a>
+        <a href="/blog"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Turismo</a>
+        <a href="/nosotros"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Nosotros</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button id="nav-toggle"
+          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+        </button>
+        <a href="/privacy"
+          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest border-b-2 border-ec-gold uppercase">Legal</a>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8 sm:p-12 prose">
+  <!-- Mobile Nav Overlay -->
+  <div id="nav-mobile" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
+      <button id="nav-close"
+        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
+      <nav class="flex flex-col gap-8">
+        <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
+        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
+        <a href="/blog" class="font-display font-black text-4xl text-ec-blue">Turismo</a>
+        <a href="/privacy" class="font-display font-black text-4xl text-ec-gold">Legal</a>
+        <hr class="border-ec-blue/5">
+      </nav>
+    </div>
+  </div>
 
-      <div class="mb-8">
-        <p class="text-xs font-bold text-[#14213D] uppercase tracking-widest mb-2">Legal</p>
-        <h1 class="text-3xl font-bold font-serif text-[#14213D] mb-2">Términos de Uso</h1>
-        <p class="text-gray-400 text-sm">Última actualización: 24 de febrero de 2026</p>
-      </div>
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.remove('hidden');
+      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
+    });
+    document.getElementById('nav-close')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.add('opacity-0');
+      setTimeout(() => navMobile?.classList.add('hidden'), 500);
+    });
+  </script>
 
-      <p>Al acceder y usar el sitio web <strong>Ecuador a la Carta</strong> (en adelante "el Sitio"), accesible desde <a
-          href="https://ecuadoralacarta.com">ecuadoralacarta.com</a>, aceptas cumplir y quedar vinculado por estos
-        Términos de Uso. Si no estás de acuerdo con alguno de estos términos, te pedimos que no uses el Sitio.</p>
+  <section class="relative pt-40 pb-20 overflow-hidden bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+      <p class="text-ec-gold text-[10px] font-black uppercase tracking-[0.3em] mb-4">Acuerdo de Usuario</p>
+      <h1 class="text-5xl md:text-6xl font-display font-black text-ec-blue leading-none mb-6">Términos de Uso</h1>
+      <p class="text-ec-blue/40 text-[10px] font-black uppercase tracking-widest leading-none">Última actualización: 24
+        de febrero de 2026</p>
+    </div>
+  </section>
 
-      <h2>1. Descripción del Servicio</h2>
-      <p>Ecuador a la Carta es una publicación digital que ofrece recetas de cocina ecuatoriana, artículos de turismo y
-        un blog cultural de forma gratuita. El contenido es generado con apoyo de inteligencia artificial y revisado
-        editorialmente.</p>
-
-      <h2>2. Propiedad Intelectual</h2>
-      <p>Todo el contenido publicado en el Sitio, incluyendo textos, recetas, imágenes y diseño gráfico, está protegido
-        por derechos de autor. Está prohibido:</p>
-      <ul>
-        <li>Copiar o reproducir el contenido para uso comercial sin autorización expresa.</li>
-        <li>Publicar el contenido en otros sitios web sin atribución clara y enlace al original.</li>
-        <li>Usar el contenido para entrenar modelos de inteligencia artificial sin permiso escrito.</li>
-      </ul>
-      <p>Para uso personal, educativo o de investigación no comercial, puedes citar y compartir el contenido con
-        atribución al Sitio.</p>
-
-      <h2>3. Aviso sobre Marcas Registradas</h2>
-      <p>Los nombres de servicios, plataformas digitales, supermercados (Supermaxi, Megamaxi, Tuti, TIA, etc.) y otras
-        marcas comerciales mencionadas en el Sitio son propiedad de sus respectivos titulares. Su mención tiene fines
-        únicamente informativos y no implica afiliación, patrocinio o endorsement.</p>
-
-      <h2>4. Exención de Responsabilidad</h2>
-      <p>El contenido del Sitio se proporciona "tal cual" con fines informativos y educativos. No garantizamos:</p>
-      <ul>
-        <li>Que los resultados de las recetas sean idénticos para todos los usuarios.</li>
-        <li>La exactitud histórica o cultural de toda la información gastronómica.</li>
-        <li>La disponibilidad ininterrumpida del Sitio.</li>
-      </ul>
-      <p>El Sitio no es responsable por alergias u otras reacciones adversas relacionadas con las recetas publicadas.
-        Siempre verifica los ingredientes según tus necesidades dietéticas.</p>
-
-      <h2>5. Publicidad</h2>
-      <p>El Sitio puede mostrar anuncios de terceros a través de Google AdSense. Estos anuncios son seleccionados y
-        servidos por Google según sus propias políticas. El Sitio no controla el contenido de los anuncios.</p>
-
-      <h2>6. Links a Terceros</h2>
-      <p>El Sitio puede contener enlaces a otros sitios web. No somos responsables del contenido, políticas de
-        privacidad o prácticas de ningún sitio de terceros.</p>
-
-      <h2>7. Uso Aceptable</h2>
-      <p>Al usar el Sitio, aceptas no:</p>
-      <ul>
-        <li>Realizar actividades que puedan dañar, deshabilitar o sobrecargar el Sitio.</li>
-        <li>Intentar acceder a áreas no autorizadas del sistema.</li>
-        <li>Usar scrapers o bots automáticos de forma abusiva.</li>
-      </ul>
-
-      <h2>8. Modificaciones</h2>
-      <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento. Los cambios entran en vigor al
-        publicarse en el Sitio. El uso continuado del Sitio tras los cambios implica tu aceptación de los nuevos
-        términos.</p>
-
-      <h2>9. Jurisdicción</h2>
-      <p>Estos Términos se rigen por las leyes de la República del Ecuador. Cualquier disputa se resolverá en los
-        tribunales competentes del Ecuador.</p>
-
-      <h2>10. Contacto</h2>
-      <p>Para preguntas sobre estos Términos, contáctanos en nuestra <a href="contact.html">página de contacto</a>.</p>
-
-      <h2>11. Política de Uso de Imágenes</h2>
-      <div class="lopdp-box not-prose">
-        <h3>📸 Cláusula de Imágenes — Contenido Visual</h3>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;margin-bottom:0.5rem;">
-          Todas las imágenes utilizadas en el Sitio corresponden a fotografías de platos de comida, ingredientes o
-          paisajes gastronómicos del Ecuador. <strong>No publicamos ni usamos fotografías de rostros, personas
-            identificables o miniaturas de videos de YouTube</strong> que muestren personas sin su consentimiento
-          expreso.
+  <main class="max-w-4xl mx-auto px-6 pb-32">
+    <div class="bento-card p-12 md:p-20 shadow-2xl relative overflow-hidden" data-aos="fade-up">
+      <div class="absolute top-0 left-0 w-2 h-full bg-ec-gold"></div>
+      <div class="legal-content">
+        <p class="text-lg font-medium italic text-ec-blue mb-12">
+          Al acceder y usar el sitio web <strong>Ecuador a la Carta</strong>, aceptas cumplir y quedar vinculado por
+          estos Términos de Uso. Este espacio está diseñado para celebrar nuestra cultura culinaria bajo reglas de
+          respeto y legalidad.
         </p>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;margin-bottom:0.5rem;">
-          Las imágenes publicadas son extraídas e indexadas directamente de la web pública (a través de motores de
-          búsqueda como Google) con fines estéticos e ilustrativos para acompañar las recetas. En todos los casos, se
-          proporciona la atribución correspondiente enlazando a la fuente original debajo de la imagen ("Fuente:
-          [Dominio]"). Las imágenes siguen siendo propiedad de sus respectivos autores.
-        </p>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;">
-          Si eres titular de derechos sobre alguna imagen publicada en el Sitio y deseas que sea retirada, contáctanos
-          en nuestra <a href="contact.html" style="color:#14213D;">página de contacto</a> y la retiraremos en un plazo
-          máximo de 72 horas.
-        </p>
-      </div>
 
-      <h2>12. Protección de Datos Personales — LOPDP Ecuador</h2>
-      <div class="lopdp-box not-prose">
-        <h3>🛡️ Ley Orgánica de Protección de Datos Personales (LOPDP)</h3>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;margin-bottom:0.75rem;">
-          De conformidad con la <strong>Ley Orgánica de Protección de Datos Personales del Ecuador</strong> (LOPDP, R.O.
-          Suplemento Nro. 459, 26 de mayo de 2021), el Sitio cumple con los principios de licitud, lealtad,
-          transparencia, limitación de la finalidad, minimización de datos, exactitud, limitación del plazo de
-          conservación e integridad y confidencialidad.
-        </p>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;margin-bottom:0.5rem;">
-          <strong>Artículo 11 LOPDP — Derechos del titular:</strong> Como titular de datos personales tienes derecho a:
-        </p>
-        <ul style="list-style:disc;padding-left:1.5rem;color:#374151;font-size:0.9375rem;margin-bottom:0.75rem;">
-          <li>Acceder a la información que tenemos sobre ti.</li>
-          <li>Rectificar datos inexactos o incompletos.</li>
-          <li>Solicitar la supresión de tus datos personales.</li>
-          <li>Oponerte al tratamiento de tus datos con fines comerciales.</li>
-          <li>Presentar una reclamación ante la Autoridad de Protección de Datos Personales del Ecuador.</li>
+        <h2>1. Propiedad Intelectual</h2>
+        <p>Todo el contenido publicado en este Sitio, incluyendo recetas magistrales, artículos culturales, fotografías
+          de platos y el diseño de la interfaz, es propiedad de <strong>Ecuador a la Carta</strong> o se utiliza con la
+          atribución correspondiente.</p>
+        <ul>
+          <li>Está prohibida la reproducción comercial sin permiso escrito.</li>
+          <li>Se permite compartir contenido para uso personal siempre que se cite la fuente original.</li>
         </ul>
-        <p style="color:#374151;font-size:0.9375rem;line-height:1.7;">
-          Para ejercer cualquiera de estos derechos, contáctanos a través de nuestra <a href="contact.html"
-            style="color:#14213D;">página de contacto</a>. Responderemos en el plazo establecido por la LOPDP.
-        </p>
-      </div>
 
+        <h2>2. Uso del Contenido y Responsabilidad</h2>
+        <p>La información gastronómica se proporciona "tal cual". Las recetas son guías culinarias; los resultados
+          individuales pueden variar según la técnica y los ingredientes locales.</p>
+        <ul>
+          <li>El Sitio no se hace responsable por alergias o reacciones a los ingredientes mencionados.</li>
+          <li>Se recomienda discreción al manejar utensilios de cocina y temperaturas.</li>
+        </ul>
+
+        <h2>3. Marcas Terceras</h2>
+        <p>Las menciones a marcas de productos (harinas, aceites, lácteos) o establecimientos (Supermaxi, Tuti, etc.)
+          tienen fines ilustrativos y no implican una relación comercial o patrocinio, a menos que se indique
+          explícitamente.</p>
+
+        <h2>4. Ética de Contenido Visual</h2>
+        <div class="bg-ec-blue/5 border border-ec-blue/10 p-8 rounded-3xl mb-8">
+          <h3 class="font-display font-black text-xl text-ec-blue mb-4 leading-none">📸 Política de Imágenes</h3>
+          <p class="text-sm leading-relaxed mb-4">Respetamos profundamente el trabajo visual:</p>
+          <ul class="space-y-4">
+            <li class="font-bold text-xs italic">✔ No publicamos rostros de personas ni miniaturas de terceros que
+              identifiquen individuos sin permiso.</li>
+            <li class="font-bold text-xs italic">✔ Las imágenes de platos son indexadas de la web pública con atribución
+              clara al dominio de origen.</li>
+            <li class="font-bold text-xs italic">✔ Si eres dueño de una imagen y deseas que sea retirada, escríbenos a
+              través de nuestro concierge.</li>
+          </ul>
+        </div>
+
+        <h2>5. Modificaciones</h2>
+        <p>Ecuador a la Carta se reserva el derecho de actualizar estos términos para reflejar cambios en la ley o en el
+          servicio. Tu navegación continua constituye la aceptación de estos cambios.</p>
+      </div>
     </div>
   </main>
 
-  <footer class="bg-[#14213D] text-white py-8 px-4 sm:px-6 border-t border-[#14213D]">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🍲</span>
-        <span class="font-black">Ecuador a la Carta</span>
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-ec-blue text-white pt-24 pb-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div class="lg:col-span-1">
+          <a href="/" class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🇪🇨</div>
+            <span class="font-display font-black text-xl tracking-tighter">ECUADOR <span class="text-ec-gold">A LA
+                CARTA</span></span>
+          </a>
+          <p class="text-white/50 text-sm leading-relaxed mb-8">
+            El compromiso de ofrecerte la mejor experiencia culinaria respetando los marcos legales vigentes.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Compañía</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="/nosotros" class="text-white/60 hover:text-white transition-colors">Nosotros</a></li>
+            <li><a href="/contact" class="text-white/60 hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Legal</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/privacy" class="text-white/60 hover:text-white transition-colors">Privacidad</a></li>
+            <li><a href="/terms" class="text-white border-b border-ec-gold">Términos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Jurisdicción</h4>
+          <p class="text-white/40 text-[10px] leading-relaxed italic">
+            Este acuerdo se rige bajo las leyes de la República del Ecuador. Cualquier controversia será resuelta en los
+            tribunales competentes de Pichincha.
+          </p>
+        </div>
       </div>
-      <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm">
-        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-        <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
-        <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-        <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
-        <a href="terms.html" class="text-white font-bold">Términos</a>
-        <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
-      </nav>
+      <div class="pt-12 border-t border-white/5 text-center">
+        <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 Ecuador a la Carta — Editorial
+          Terms V2</p>
+      </div>
     </div>
-    <p class="text-center text-blue-300 text-xs mt-4">&copy; 2026 Ecuador a la Carta</p>
   </footer>
-  <div class="ec-stripe" aria-hidden="true"></div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header?.classList.add('py-2', 'shadow-xl');
+        header?.classList.remove('py-4', 'shadow-sm');
+      } else {
+        header?.classList.add('py-4', 'shadow-sm');
+        header?.classList.remove('py-2', 'shadow-xl');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true, offset: 100 });
+      }
+    });
+  </script>
+</body>
+
+</html>
 
 </body>
 

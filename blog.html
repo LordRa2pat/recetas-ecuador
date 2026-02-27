@@ -27,11 +27,17 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: {
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
             'ec-gold': '#DCA011',
             'ec-blue': '#14213D',
             'ec-red': '#9A1B22',
-            'ec-green': '#284B34',
+            'luxury-dark': '#0a0f1a',
+            'luxury-gold': '#C5A059'
           }
         }
       }
@@ -40,422 +46,367 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;600&display=swap"
     rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
+    :root {
+      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0a0f1a 100%);
+      --gold-gradient: linear-gradient(135deg, #DCA011 0%, #ffc107 100%);
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Outfit', sans-serif;
+      background-color: #f8f9fa;
     }
 
-    .ec-stripe {
-      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
-      height: 4px;
-      width: 100%;
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Playfair Display', serif;
     }
 
-    .ec-title-bar {
-      display: block;
-      width: 56px;
-      height: 4px;
-      margin-top: 8px;
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-dark {
+      background: rgba(20, 33, 61, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-luxury {
+      background: var(--luxury-gradient);
+      color: white;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(20, 33, 61, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-luxury:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(20, 33, 61, 0.3);
+    }
+
+    .ec-title-bar-luxury {
+      width: 80px;
+      height: 3px;
+      background: var(--gold-gradient);
       border-radius: 2px;
-      background: linear-gradient(90deg, #DCA011 0% 38%, #14213D 38% 70%, #9A1B22 70% 100%);
     }
 
-    .ec-card-3d {
-      box-shadow: 0 4px 24px rgba(0, 51, 160, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .bento-card {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.4s ease;
     }
 
-    .ec-card-3d:hover {
-      box-shadow: 0 8px 40px rgba(0, 51, 160, 0.22), 0 4px 16px rgba(239, 51, 64, 0.10);
-      transform: translateY(-8px) scale(1.02);
-    }
-
-    .nav-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(0, 51, 160, 0.1);
-      z-index: 100;
-      padding: 8px 0;
-    }
-
-    .nav-item:hover .nav-dropdown,
-    .nav-item:focus-within .nav-dropdown {
-      display: block;
-    }
-
-    .nav-dropdown a {
-      display: block;
-      padding: 8px 16px;
-      font-size: 0.875rem;
-      color: #374151;
-      transition: background 0.15s;
-    }
-
-    .nav-dropdown a:hover {
-      background: #EEF2FF;
-      color: #14213D;
-    }
-
-    .ad-slot {
-      min-height: 120px;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
-      border-radius: 16px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ad-slot--square {
-      min-height: 280px;
-    }
-
-    .ad-slot--tall {
-      min-height: 600px;
-    }
-
-    .ad-label {
-      font-size: 10px;
-      color: #9ca3af;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    .line-clamp-2 {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    select {
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-      padding-right: 36px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(220, 160, 17, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased">
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased overflow-x-hidden">
 
-  <div class="ec-stripe" aria-hidden="true"></div>
-
-  <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
-      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
-        <span class="text-2xl">🍲</span>
-        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
-        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
+  <header class="fixed w-full z-50 transition-all duration-500 py-4 px-6">
+    <div class="max-w-7xl mx-auto glass shadow-sm rounded-2xl px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-ec-blue flex items-center justify-center text-xl transition-transform group-hover:rotate-12">
+          🇪🇨</div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-xl tracking-tighter text-ec-blue leading-none">ECUADOR</span>
+          <span class="text-[10px] font-black tracking-[0.2em] text-ec-gold uppercase">A LA CARTA</span>
+        </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90"
-        aria-label="Navegación principal">
-        <a href="index.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Inicio</a>
-
-        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
-          <span>Regiones ▾</span>
-          <div class="nav-dropdown">
-            <a href="recipes.html?region=Sierra">🏔️ Sierra</a>
-            <a href="recipes.html?region=Costa">🌊 Costa</a>
-            <a href="recipes.html?region=Amazonia">🌿 Amazonía</a>
-            <a href="recipes.html?region=Galapagos">🐢 Galápagos</a>
-          </div>
-        </div>
-
-        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
-          <span>Categorías ▾</span>
-          <div class="nav-dropdown">
-            <a href="recipes.html?category=Sopas">🍲 Sopas</a>
-            <a href="recipes.html?category=Platos%20Fuertes">🍽️ Platos Fuertes</a>
-            <a href="recipes.html?category=Mariscos">🦐 Mariscos</a>
-            <a href="recipes.html?category=Postres">🍮 Postres</a>
-            <a href="recipes.html?category=Bebidas">🥤 Bebidas</a>
-            <a href="recipes.html?category=Desayunos">☕ Desayunos</a>
-            <a href="recipes.html?category=Entradas">🥗 Entradas</a>
-          </div>
-        </div>
-
-        <a href="menu-semanal.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Menú Semanal</a>
-
-        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
-          <span class="text-ec-gold font-bold">Sobre Nosotros ▾</span>
-          <div class="nav-dropdown">
-            <a href="nosotros.html">🏡 Nuestra Historia</a>
-            <a href="blog.html">📰 Blog Turismo</a>
-            <a href="contact.html">✉️ Contacto</a>
-          </div>
-        </div>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Inicio</a>
+        <a href="/recipes"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Recetas</a>
+        <a href="/blog"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue border-b-2 border-ec-gold">Turismo</a>
+        <a href="/menu-semanal"
+          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Suscripción</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="index.html"
-          class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-          ← Inicio
-        </a>
-        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
+      <div class="flex items-center gap-4">
+        <button id="nav-toggle"
+          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+        </button>
+        <a href="/nosotros"
+          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest">SOBRE
+          NOSOTROS</a>
       </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="nav-mobile" class="hidden md:hidden border-t border-[#14213D] py-3 px-4 space-y-1 bg-[#14213D]">
-      <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
-      <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Todas las Recetas</a>
-      <a href="recipes.html?region=Sierra" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🏔️
-        Sierra</a>
-      <a href="recipes.html?region=Costa" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🌊
-        Costa</a>
-      <a href="recipes.html?region=Amazonia" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🌿
-        Amazonía</a>
-      <a href="recipes.html?region=Galapagos" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm pl-6">🐢
-        Galápagos</a>
-      <a href="menu-semanal.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📅 Menú Semanal</a>
-      <a href="blog.html" class="block px-3 py-2 text-ec-gold font-bold text-sm" aria-current="page">📰 Blog Turismo</a>
-      <a href="nosotros.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">🏡 Nosotros</a>
-      <a href="contact.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">✉️ Contacto</a>
     </div>
   </header>
-  <main id="main-content">
-    <script>
-      document.getElementById('nav-toggle')?.addEventListener('click', function () {
-        document.getElementById('nav-mobile')?.classList.toggle('hidden');
-      });
-    </script>
 
-    <!-- ═══ PAGE HERO ═══ -->
-    <div class="bg-gradient-to-r from-[#1a0000] via-[#5c0010] to-[#8b0015] py-12 px-4 sm:px-6"
-      style="border-bottom: 4px solid #DCA011;">
-      <div class="max-w-7xl mx-auto">
-        <p class="text-red-200 text-xs font-bold uppercase tracking-widest mb-1">Noticias & Guías de Viaje</p>
-        <h1 class="text-3xl sm:text-4xl font-bold font-serif text-[#FDFBF7] mb-2">Blog de Turismo Ecuador 📰</h1>
-        <span class="ec-title-bar mb-3"></span>
-        <p class="text-red-100">Descubre destinos, rutas, cultura y festividades del Ecuador</p>
+  <!-- Mobile Nav Overlay -->
+  <div id="nav-mobile" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
+      <button id="nav-close"
+        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
+      <nav class="flex flex-col gap-8">
+        <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
+        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
+        <a href="/blog" class="font-display font-black text-4xl text-ec-gold">Turismo</a>
+        <a href="/menu-semanal"
+          class="font-display font-black text-4xl text-ec-blue text-sm uppercase tracking-widest">Suscripción
+          Premium</a>
+        <hr class="border-ec-blue/5">
+        <div class="flex flex-col gap-4">
+          <a href="/privacy" class="text-xs font-bold text-ec-blue/40 uppercase tracking-widest">Privacidad</a>
+          <a href="/terms" class="text-xs font-bold text-ec-blue/40 uppercase tracking-widest">Términos</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.remove('hidden');
+      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
+    });
+    document.getElementById('nav-close')?.addEventListener('click', function () {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile?.classList.add('opacity-0');
+      setTimeout(() => navMobile?.classList.add('hidden'), 500);
+    });
+  </script>
+
+  <!-- ═══ CINEMATIC HERO ═══ -->
+  <section class="relative pt-40 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-ec-blue -z-20"></div>
+    <div
+      class="absolute inset-0 opacity-30 -z-10 bg-[url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80')] bg-cover bg-center">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-transparent to-transparent -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-up">
+      <p class="text-ec-gold text-[10px] font-black uppercase tracking-[0.3em] mb-4">Bitácora de Viajes</p>
+      <h1 class="text-5xl md:text-7xl font-display font-black text-white leading-none mb-6">Turismo Ecuador</h1>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto font-medium mb-12">Desde las cumbres de los Andes hasta el
+        misterio de la Amazonía y el paraíso de Galápagos.</p>
+
+      <!-- Premium Search Bar -->
+      <div class="max-w-3xl mx-auto relative group">
+        <div
+          class="absolute inset-0 bg-ec-gold/20 blur-2xl group-hover:bg-ec-gold/30 transition-all duration-500 rounded-full">
+        </div>
+        <div class="relative glass-dark p-2 rounded-2xl flex items-center gap-2">
+          <span class="pl-4 text-white/40">🔍</span>
+          <input id="blog-search" type="search" placeholder="Busca destinos, rutas o festividades..."
+            class="flex-1 bg-transparent border-0 text-white placeholder-white/30 text-lg focus:ring-0 py-4">
+          <button id="blog-clear"
+            class="text-white/40 hover:text-white text-xs font-black uppercase tracking-widest px-4 transition-colors">Limpiar</button>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- ═══ FILTROS ═══ -->
-    <div class="sticky top-14 z-40 bg-white border-b border-gray-100 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-        <div class="flex flex-col gap-3">
-          <div class="flex gap-3">
-            <div class="relative flex-1">
-              <span
-                class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">🔍</span>
-              <input id="blog-search" type="search" placeholder="Buscar destinos, rutas, festividades..."
-                class="w-full pl-10 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-[#9A1B22] focus:border-transparent placeholder-gray-400"
-                aria-label="Buscar artículos" />
-            </div>
-            <button id="blog-clear"
-              class="text-xs text-gray-500 border border-gray-200 rounded-xl px-3 py-2 hover:bg-gray-50 hover:text-red-500 transition-colors whitespace-nowrap"
-              aria-label="Limpiar filtros">
-              Limpiar
-            </button>
+  <!-- ═══ LUXURY FILTERS ═══ -->
+  <div class="sticky top-20 z-40 px-6 -mt-8">
+    <div class="max-w-4xl mx-auto glass p-3 rounded-2xl shadow-xl border border-white/50">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        <div class="relative">
+          <select id="blog-category"
+            class="w-full text-[10px] font-black uppercase tracking-widest bg-white/50 border-0 rounded-xl px-4 py-4 focus:ring-2 focus:ring-ec-gold appearance-none cursor-pointer">
+            <option value="">Categoría</option>
+          </select>
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[8px]">▼</span>
+        </div>
+        <div class="relative">
+          <select id="blog-region"
+            class="w-full text-[10px] font-black uppercase tracking-widest bg-white/50 border-0 rounded-xl px-4 py-4 focus:ring-2 focus:ring-ec-gold appearance-none cursor-pointer">
+            <option value="">Región</option>
+          </select>
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[8px]">▼</span>
+        </div>
+        <div class="md:col-span-2 flex items-center justify-end px-4">
+          <p id="blog-results-count" class="text-[10px] font-black text-ec-blue/40 uppercase tracking-[0.2em]">
+            Cargando...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content" class="max-w-7xl mx-auto px-6 py-12">
+    <div class="flex flex-col lg:flex-row gap-12">
+
+      <!-- MAIN GRID AREA -->
+      <div class="flex-1">
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex flex-col">
+            <h2 class="font-display font-black text-3xl text-ec-blue">Descubre más</h2>
+            <div class="ec-title-bar-luxury mt-2"></div>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            <select id="blog-category"
-              class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#9A1B22] text-gray-700"
-              aria-label="Filtrar por categoría">
-              <option value="">Categoría</option>
-            </select>
-            <select id="blog-region"
-              class="text-sm border border-gray-200 rounded-xl px-3 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#9A1B22] text-gray-700"
-              aria-label="Filtrar por región">
-              <option value="">Región</option>
-            </select>
-            <div class="text-sm text-gray-400 flex items-center px-3 col-span-2 sm:col-span-2" aria-live="polite">
-              <span id="blog-results-count">Cargando...</span>
+        </div>
+
+        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Skeletons -->
+          <div class="bento-card overflow-hidden animate-pulse">
+            <div class="h-64 bg-gray-100"></div>
+            <div class="p-8">
+              <div class="h-4 bg-gray-100 rounded-full w-1/2 mb-4"></div>
+              <div class="h-8 bg-gray-100 rounded-xl w-full"></div>
+            </div>
+          </div>
+          <div class="bento-card overflow-hidden animate-pulse">
+            <div class="h-64 bg-gray-100"></div>
+            <div class="p-8">
+              <div class="h-4 bg-gray-100 rounded-full w-1/2 mb-4"></div>
+              <div class="h-8 bg-gray-100 rounded-xl w-full"></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- AdSense Banner -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
-      <div class="ad-slot w-full">
-        <p class="ad-label">Publicidad</p>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
-          data-ad-slot="1010101010" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      </div>
-    </div>
-
-    <!-- ═══ LAYOUT DOS COLUMNAS ═══ -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <div class="flex gap-8">
-
-        <!-- MAIN -->
-        <main class="flex-1 min-w-0">
-          <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list"
-            aria-live="polite" aria-label="Artículos de turismo">
-            <!-- Skeletons -->
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse" aria-hidden="true">
-              <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-              <div class="p-5">
-                <div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div>
-                <div class="bg-gray-200 h-4 rounded-full w-4/5"></div>
-              </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden sm:block"
-              aria-hidden="true">
-              <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-              <div class="p-5">
-                <div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div>
-                <div class="bg-gray-200 h-4 rounded-full w-4/5"></div>
-              </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse hidden lg:block"
-              aria-hidden="true">
-              <div class="bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 h-52"></div>
-              <div class="p-5">
-                <div class="bg-gray-200 h-4 rounded-full mb-3 w-full"></div>
-                <div class="bg-gray-200 h-4 rounded-full w-4/5"></div>
-              </div>
-            </div>
-          </div>
-        </main>
-
-        <!-- SIDEBAR desktop -->
-        <aside class="hidden lg:flex flex-col gap-5 w-72 flex-shrink-0" aria-label="Barra lateral">
-          <div class="sticky top-40">
-            <div class="ad-slot ad-slot--tall w-full mb-5">
-              <p class="ad-label">Publicidad</p>
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
-                data-ad-slot="1111111112" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            </div>
-
-            <!-- Categorías -->
-            <div class="bg-white rounded-2xl shadow-md p-5 border border-gray-100 mb-5">
-              <p class="font-bold text-gray-800 text-sm mb-3">🗂️ Categorías</p>
-              <div class="flex flex-col gap-1.5 text-sm">
-                <a href="blog.html?category=Destinos"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#9A1B22] hover:bg-[#F9F1F2] px-3 py-1.5 rounded-xl transition-colors">🏙️
-                  <span>Destinos</span></a>
-                <a href="blog.html?category=Rutas"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#9A1B22] hover:bg-[#F9F1F2] px-3 py-1.5 rounded-xl transition-colors">🛤️
-                  <span>Rutas</span></a>
-                <a href="blog.html?category=Naturaleza"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#9A1B22] hover:bg-[#F9F1F2] px-3 py-1.5 rounded-xl transition-colors">🌿
-                  <span>Naturaleza</span></a>
-                <a href="blog.html?category=Cultura"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#9A1B22] hover:bg-[#F9F1F2] px-3 py-1.5 rounded-xl transition-colors">🎭
-                  <span>Cultura</span></a>
-                <a href="blog.html?category=Festividades"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#9A1B22] hover:bg-[#F9F1F2] px-3 py-1.5 rounded-xl transition-colors">🎉
-                  <span>Festividades</span></a>
-                <a href="blog.html?category=Aventura"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#9A1B22] hover:bg-[#F9F1F2] px-3 py-1.5 rounded-xl transition-colors">🏔️
-                  <span>Aventura</span></a>
-              </div>
-            </div>
-
-            <!-- Regiones -->
-            <div class="bg-white rounded-2xl shadow-md p-5 border border-gray-100 mb-5">
-              <p class="font-bold text-gray-800 text-sm mb-3">🗺️ Por Región</p>
-              <div class="flex flex-col gap-1.5 text-sm">
-                <a href="blog.html?region=Sierra"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🏔️
-                  <span>Sierra</span></a>
-                <a href="blog.html?region=Costa"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🌊
-                  <span>Costa</span></a>
-                <a href="blog.html?region=Amazonia"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🌿
-                  <span>Amazonía</span></a>
-                <a href="blog.html?region=Galapagos"
-                  class="flex items-center gap-2 text-gray-600 hover:text-[#14213D] hover:bg-blue-50 px-3 py-1.5 rounded-xl transition-colors">🐢
-                  <span>Galápagos</span></a>
-              </div>
-            </div>
-
-            <!-- Link a recetas -->
-            <div class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-5 text-white">
-              <p class="font-bold text-sm mb-2">🍽️ Recetas Ecuatorianas</p>
-              <p class="text-blue-200 text-xs mb-3">Descubre los sabores tradicionales del Ecuador</p>
-              <a href="recipes.html"
-                class="inline-block bg-ec-gold text-[#14213D] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-                Ver recetas →
-              </a>
-            </div>
-          </div>
-        </aside>
-
-      </div>
-    </div>
-
-    <!-- ═══ NEWSLETTER ═══ -->
-    <section class="bg-[#14213D] py-10 px-4 sm:px-6 mt-10">
-      <div class="max-w-2xl mx-auto text-center">
-        <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-        <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
-        <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
-        <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-          class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
-          <input type="email" name="email" placeholder="tu@email.com" required
-            class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-            aria-label="Email para newsletter">
-          <button type="submit"
-            class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
-            Suscribirme →
-          </button>
-        </form>
-      </div>
-    </section>
-
-  </main><!-- /#main-content -->
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#14213D] text-white py-10 px-4 sm:px-6 border-t border-[#14213D]">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-2">
-          <span class="text-2xl">🍲</span>
-          <span class="font-black">Ecuador a la Carta</span>
+      <!-- SIDEBAR EDITORIAL -->
+      <aside class="lg:w-80 shrink-0 space-y-8">
+        <!-- Ad Slot -->
+        <div
+          class="bento-card p-4 border-dashed border-2 border-ec-blue/10 min-h-[400px] flex flex-col items-center justify-center">
+          <span class="text-[10px] text-ec-blue/20 uppercase tracking-widest mb-4">Publicidad</span>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
+            data-ad-slot="1111111112" data-ad-format="auto" data-full-width-responsive="true"></ins>
         </div>
-        <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm" aria-label="Pie de página">
-          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-          <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
-          <a href="menu-semanal.html" class="hover:text-white transition-colors">Menú Semanal</a>
-          <a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a>
-          <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-          <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
-          <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
-          <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
-        </nav>
+
+        <!-- Destinations List -->
+        <div class="bento-card p-8 bg-white border border-ec-blue/5">
+          <h3 class="text-ec-blue font-display font-black text-xl mb-6">Próximas Festividades</h3>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-orange-50 flex flex-col items-center justify-center shrink-0">
+                <span class="text-[10px] font-black text-orange-600 leading-none">JUN</span>
+                <span class="text-sm font-black text-orange-950">21</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">Inti Raymi</span>
+                <span class="text-[10px] text-ec-blue/40 uppercase font-black">Cultura · Sierra</span>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 flex flex-col items-center justify-center shrink-0">
+                <span class="text-[10px] font-black text-blue-600 leading-none">JUL</span>
+                <span class="text-sm font-black text-blue-950">25</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">Fiestas de Guayaquil</span>
+                <span class="text-[10px] text-ec-blue/40 uppercase font-black">Tradición · Costa</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-ec-blue text-white pt-24 pb-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div class="lg:col-span-1">
+          <a href="/" class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🇪🇨</div>
+            <span class="font-display font-black text-xl tracking-tighter">ECUADOR <span class="text-ec-gold">A LA
+                CARTA</span></span>
+          </a>
+          <p class="text-white/50 text-sm leading-relaxed mb-8">
+            Explorando los secretos mejor guardados de la mitad del mundo. Tu guía definitiva para el turismo consciente
+            en Ecuador.
+          </p>
+          <div class="flex gap-4">
+            <div
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-colors">
+              𝕏</div>
+            <div
+              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-colors">
+              📸</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Explora</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="/recipes" class="text-white/60 hover:text-white transition-colors">Recetas</a></li>
+            <li><a href="/blog" class="text-white/60 hover:text-white transition-colors">Blog Turismo</a></li>
+            <li><a href="/nosotros" class="text-white/60 hover:text-white transition-colors">Sobre Nosotros</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Destinos</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/blog?region=Sierra" class="text-white/60 hover:text-white transition-colors">🏔️ Sierra
+                Magica</a></li>
+            <li><a href="/blog?region=Costa" class="text-white/60 hover:text-white transition-colors">🌊 Costa
+                Tropical</a></li>
+            <li><a href="/blog?region=Amazonia" class="text-white/60 hover:text-white transition-colors">🌿 Selva
+                Amazónica</a></li>
+            <li><a href="/blog?region=Galapagos" class="text-white/60 hover:text-white transition-colors">🐢 Islas
+                Encantadas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Legal</h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li><a href="/privacy" class="text-white/60 hover:text-white transition-colors">Privacidad</a></li>
+            <li><a href="/terms" class="text-white/60 hover:text-white transition-colors">Términos</a></li>
+            <li><a href="/contact" class="text-white/60 hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="text-center text-blue-300 text-xs mt-6">&copy; 2026 Ecuador a la Carta</p>
+      <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 Ecuador a la Carta — Premium
+          Travel Guide</p>
+      </div>
     </div>
   </footer>
-  <div class="ec-stripe" aria-hidden="true"></div>
 
+  <script>
+    // Scroll effect for header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header?.classList.add('py-2', 'shadow-xl');
+        header?.classList.remove('py-4', 'shadow-sm');
+      } else {
+        header?.classList.add('py-4', 'shadow-sm');
+        header?.classList.remove('py-2', 'shadow-xl');
+      }
+    });
+
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          once: true,
+          offset: 100
+        });
+      }
+    });
+  </script>
   <script type="module" src="script.js"></script>
 </body>
 

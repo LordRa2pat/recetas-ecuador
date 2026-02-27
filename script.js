@@ -205,7 +205,7 @@ async function initListing() {
         var savedFavs = [];
         try {
           savedFavs = JSON.parse(localStorage.getItem("ec_favorites")) || [];
-        } catch (e) {}
+        } catch (e) { }
         if (savedFavs.indexOf(r.slug) === -1) return false;
       }
 
@@ -911,8 +911,8 @@ async function initRecipe() {
     );
     var shareText = encodeURIComponent(
       "\uD83C\uDF7D\uFE0F " +
-        recipe.title +
-        " \u2014 Receta ecuatoriana aut\u00e9ntica | Ecuador a la Carta",
+      recipe.title +
+      " \u2014 Receta ecuatoriana aut\u00e9ntica | Ecuador a la Carta",
     );
     var waShare = document.getElementById("share-whatsapp");
     var fbShare = document.getElementById("share-facebook");
@@ -1510,13 +1510,13 @@ async function initMenuSemanal() {
         "</p>" +
         (r.total_time
           ? '<p class="text-xs text-gray-400 mt-1">\u23f1 ' +
-            escapeHtml(r.total_time) +
-            "</p>"
+          escapeHtml(r.total_time) +
+          "</p>"
           : "") +
         (r.region
           ? '<p class="text-xs text-[#0033A0] mt-1 font-medium">' +
-            escapeHtml(r.region) +
-            "</p>"
+          escapeHtml(r.region) +
+          "</p>"
           : "") +
         "</div>" +
         "</a>"
@@ -1581,22 +1581,23 @@ function initRating(slug) {
 
 // ─── Router ───────────────────────────────────────────────────
 (function router() {
-  // i18n: cargar idioma e inyectar switcher (no bloquea el render)
+  // i18n
   initI18n();
 
-  var path = window.location.pathname.split("/").pop() || "index.html";
-  if (path === "index.html" || path === "" || path === "/") {
+  const path = window.location.pathname.replace(/^\/|\.html$/g, '') || 'index';
+
+  if (path === 'index' || path === '') {
     initIndex();
     loadBlogPreview();
-  } else if (path === "recipes.html") {
+  } else if (path === 'recipes') {
     initListing();
-  } else if (path === "recipe.html") {
+  } else if (path === 'recipe') {
     initRecipe();
-  } else if (path === "blog.html") {
+  } else if (path === 'blog') {
     initBlog();
-  } else if (path === "post.html") {
+  } else if (path === 'post') {
     initPost();
-  } else if (path === "menu-semanal.html") {
+  } else if (path === 'menu-semanal') {
     initMenuSemanal();
   }
 })();

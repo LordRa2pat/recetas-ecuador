@@ -276,9 +276,10 @@
         "description": "visita mi canal para ver el procedimiento completo.\n\nIngredientes:\n5 elotes crudos desgranados\n250 ML de crema de leche.\n375 gr de leche condensada\n150 gr de mantequilla\n5 huevos\n1/2 taza harina de tr"
       }
     ],
-    "_image_source": "pending",
+    "_image_source": "youtube_thumbnail",
     "id": 33,
-    "created_at": "2026-02-27T02:55:14.007Z"
+    "created_at": "2026-02-27T02:55:14.007Z",
+    "image_url": "https://i.ytimg.com/vi/BfWhFvT0-F0/hqdefault.jpg"
   },
   {
     "slug": "sopa-de-quinoa-ecuatoriana-variations-de-la-sierra-sur",
@@ -416,9 +417,10 @@
         "description": "Deliciosa Sopa de Quinua con Costilla. Sopa de Quinoa con Carne\nSopita de Costilla de Res con Quinua."
       }
     ],
-    "_image_source": "pending",
+    "_image_source": "youtube_thumbnail",
     "id": 32,
-    "created_at": "2026-02-27T02:32:00.218Z"
+    "created_at": "2026-02-27T02:32:00.218Z",
+    "image_url": "https://i.ytimg.com/vi/T0zgpm4ay78/hqdefault.jpg"
   },
   {
     "slug": "cuy-asado",
@@ -558,9 +560,10 @@
         "description": ""
       }
     ],
-    "_image_source": "pending",
+    "_image_source": "youtube_thumbnail",
     "id": 31,
-    "created_at": "2026-02-26T22:36:38.243Z"
+    "created_at": "2026-02-26T22:36:38.243Z",
+    "image_url": "https://i.ytimg.com/vi/p_q9H4DHYYk/hqdefault.jpg"
   },
   {
     "slug": "locro-de-zapallo",
@@ -698,9 +701,10 @@
         "description": "Prueba este delicioso #LocroDePapas, con la textura perfecta. Seguro vas a repetir! #KWAEC\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nI"
       }
     ],
-    "_image_source": "pending",
+    "_image_source": "youtube_thumbnail",
     "id": 30,
-    "created_at": "2026-02-26T20:18:08.509Z"
+    "created_at": "2026-02-26T20:18:08.509Z",
+    "image_url": "https://i.ytimg.com/vi/io0oeAMRxMc/hqdefault.jpg"
   },
   {
     "slug": "caldo-de-pata",
@@ -838,10 +842,10 @@
         "description": "Delicioso Caldo de Pata - Colageno y juventud para tu cuerpo. Sopa de Pata de Res. Caldo de pata Ecuatoriano."
       }
     ],
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "id": 29,
     "created_at": "2026-02-26T06:58:45.444Z",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/T-zJr4HMetw/hqdefault.jpg",
     "image_credit": {
       "source": "Unsplash",
       "author": "Fotógrafo Independiente",
@@ -1026,10 +1030,10 @@
         "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nRiza Penjoel - 90 s Boombap beat\n\ntwiter : https://twitter.com/RizaPenjoel_\nSoundclick : http:"
       }
     ],
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "id": 28,
     "created_at": "2026-02-26T05:35:01.799Z",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/nikVVXydbv8/hqdefault.jpg",
     "image_credit": {
       "source": "Unsplash",
       "author": "Fotógrafo Independiente",
@@ -1225,7 +1229,7 @@
     "prep_time": "30 min",
     "cook_time": "40 min",
     "total_time": "70 min",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/kFZpdb54LZk/hqdefault.jpg",
     "image_alt": "Bollo de yuca ecuatoriano recién preparado con relleno de pescado",
     "ingredients": [
       "1 kg de yuca fresca (Supermaxi, Megamaxi, TIA - sección verduras)",
@@ -1360,7 +1364,7 @@
       "license": "Public / Free License",
       "url": "https://unsplash.com/"
     },
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:El_nuevo_viajero_universal_en_Am%C3%A9rica_(Tomo_II).djvu",
     "_imagen_status": "ok"
   },
@@ -1525,7 +1529,7 @@
     "prep_time": "30 min",
     "cook_time": "90 min",
     "total_time": "120 min",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/LT3m1WJq1NQ/hqdefault.jpg",
     "image_alt": "Plato de seco de conejo amazónico ecuatoriano con hierbas y especias tradicionales",
     "ingredients": [
       "1 conejo entero (aproximadamente 1.5 kg, disponible en mercados locales como Mercado Central en Puyo)",
@@ -1650,7 +1654,7 @@
       "license": "Public / Free License",
       "url": "https://unsplash.com/"
     },
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "_image_source_url": "images/default-recipe.jpg",
     "_imagen_status": "ok"
   },
@@ -1821,7 +1825,7 @@
     "prep_time": "15 min",
     "cook_time": "25 min",
     "total_time": "40 min",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/JqneshX8JSI/hqdefault.jpg",
     "image_alt": "Desayuno ecuatoriano con bolón de verde y chorizo en un plato rústico",
     "ingredients": [
       "4 plátanos verdes grandes (Supermaxi, Megamaxi, TIA - sección frutas)",
@@ -1948,7 +1952,7 @@
         "description": "Siguenos en Facebook: https://www.facebook.com/100048743916416/\nInstagram: COCINAFACILITOCONISA\nBolones de Verde"
       }
     ],
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "id": 22,
     "created_at": "2026-02-25T23:21:46.511Z",
     "_imagen_status": "ok",
@@ -3339,7 +3343,7 @@
     "prep_time": "30 min",
     "cook_time": "120 min",
     "total_time": "150 min",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/R8y4UqcAe5A/hqdefault.jpg",
     "image_alt": "Plato de fritada ecuatoriana con cerdo dorado, mote y maíz tostado",
     "ingredients": [
       "2 kg de carne de cerdo (costilla o lomo, cortada en trozos medianos) - Supermaxi, Megamaxi, TIA - sección carnes",
@@ -3459,7 +3463,7 @@
         "description": "FRITADA DE CERDO como hacer fritada\n FRITADA, CHICHARRON DE CERDO"
       }
     ],
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "id": 12,
     "created_at": "2026-02-24T15:41:37.199Z",
     "meta_title": "Fritada Ecuatoriana de la Sierra... | Ecuador a la Carta",
@@ -3931,7 +3935,7 @@
     "prep_time": "30 min",
     "cook_time": "180 min",
     "total_time": "210 min",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/QEcoUQvRXjc/hqdefault.jpg",
     "image_alt": "Caldo de mondongo ecuatoriano en un tazón rústico con hierbas frescas",
     "ingredients": [
       "1 kg de mondongo (tripa de res, limpio y cortado en trozos pequeños) - disponible en carnicerías locales o Supermaxi",
@@ -4051,7 +4055,7 @@
     ],
     "id": 8,
     "created_at": "2026-02-24T05:01:57.588Z",
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "estimated_cost": "Aprox. $10.80 - $19.90 USD (para 6 personas) · Tuti / Supermaxi",
     "meta_title": "Caldo de Mondongo Ecuatoriano Receta... | Ecuador a la Carta",
     "meta_description": "Caldo de Mondongo Ecuatoriano, una sopa reconfortante y tradicional de la Sierra. Descubre cómo preparar este plato típico con tripa de res, mote y...",
@@ -4208,7 +4212,7 @@
     "prep_time": "15 min",
     "cook_time": "20 min",
     "total_time": "35 min",
-    "image_url": "images/default-recipe.jpg",
+    "image_url": "https://i.ytimg.com/vi/TAZllBiDLEo/hqdefault.jpg",
     "image_alt": "Desayuno ecuatoriano con plátano verde machacado y huevo frito en un plato rústico",
     "ingredients": [
       "2 plátanos verdes grandes",
@@ -4308,7 +4312,7 @@
     ],
     "id": 6,
     "created_at": "2026-02-24T01:01:19.274Z",
-    "_image_source": "web_search",
+    "_image_source": "youtube_thumbnail",
     "estimated_cost": "Aprox. $1.87 - $3.44 USD (para 4 personas) · Tuti / Supermaxi",
     "meta_title": "Tigrillo de Plátano Verde y Huevo... | Ecuador a la Carta",
     "meta_description": "Descubre el auténtico tigrillo, un desayuno costeño ecuatoriano irresistible. Hecho con plátano verde machacado, queso fresco y huevo frito, este plato...",

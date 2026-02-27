@@ -45,8 +45,11 @@ export function setMeta(title, description, imageUrl, canonicalUrl) {
 export function injectSEO(recipe) {
   var canonicalUrl = 'https://ecuadoralacarta.com/recipe.html?slug=' + encodeURIComponent(recipe.slug);
   var imageUrl = recipe.image_url || '';
-  var keywords = (recipe.keywords || []);
-  var allKeywords = keywords.concat(['recetas ecuatorianas', 'cocina ecuatoriana', 'gastronomia ecuatoriana', 'Ecuador a la Carta']).join(', ');
+  var rawKeywords = recipe.keywords || [];
+  if (typeof rawKeywords === 'string') {
+    rawKeywords = rawKeywords.split(',').map(function (s) { return s.trim(); });
+  }
+  var allKeywords = rawKeywords.concat(['recetas ecuatorianas', 'cocina ecuatoriana', 'gastronomia ecuatoriana', 'Ecuador a la Carta']).join(', ');
 
   setMeta(
     recipe.meta_title || (recipe.title + ' \u2014 Receta Ecuatoriana Aut\u00e9ntica | Cocina Ecuador \uD83C\uDDEA\uD83C\uDDE8'),
@@ -142,7 +145,11 @@ export function injectSEO(recipe) {
 export function injectPostSEO(post) {
   var canonicalUrl = 'https://ecuadoralacarta.com/post.html?slug=' + encodeURIComponent(post.slug);
   var imageUrl = post.image_url || '';
-  var keywords = (post.keywords || []).concat(['turismo ecuador', 'viaje ecuador', 'destinos ecuador']).join(', ');
+  var rawKeywords = post.keywords || [];
+  if (typeof rawKeywords === 'string') {
+    rawKeywords = rawKeywords.split(',').map(function (s) { return s.trim(); });
+  }
+  var keywords = rawKeywords.concat(['turismo ecuador', 'viaje ecuador', 'destinos ecuador']).join(', ');
 
   setMeta(
     post.meta_title || (post.title + ' | Turismo Ecuador \uD83C\uDDEA\uD83C\uDDE8'),

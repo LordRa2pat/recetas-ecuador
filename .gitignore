@@ -61,3 +61,12 @@ n8nac-skills.cmd
 workflows/
 n8nac-instance.json
 exec.json
+
+/generated/prisma/
+node_modules/
+package-lock.json
+*.json
+!package.json
+!prisma.config.ts
+!schema.prisma
+*.log

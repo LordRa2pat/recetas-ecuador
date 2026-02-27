@@ -1,0 +1,146 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  role          Role      @default(USER)
+  favorites     Recipe[]  @relation("UserFavorites")
+  achievements  Achievement[]
+  hasPremium    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+  CHEF
+  PATRON
+}
+
+model Recipe {
+  id                String    @id @default(cuid())
+  slug              String    @unique
+  title             String
+  description       String
+  prepTime          Int       // Minutos
+  cookTime          Int
+  servings          Int
+  difficulty        Difficulty
+  region            Region
+  category          Category
+  ingredients       Ingredient[]
+  instructions      Step[]
+  
+  // Bloque A: Cultura
+  isChuchaqui       Boolean   @default(false)
+  altitudAdjustment Boolean   @default(false) // Activa el Temporizador de Altitud
+  spotifyPlaylistId String?
+  
+  // Bloque C: Monetización
+  isPremium         Boolean   @default(false) // Para paywall de "La Yapa"
+  digitalProductUrl String?   // Enlace ofuscado al PDF
+  
+  // SEO & Media
+  image             String
+  videoUrl          String?   // Para Puntos Exactos (Mini-Loops)
+  schemaMarkup      Json?     // Schema.org precalculado
+  
+  favoritedBy       User[]    @relation("UserFavorites")
+  keywords          Keyword[]
+  faqs              Faq[]
+  relatedBebidas    Recipe[]  @relation("BebidaMaridaje")
+  maridajeWith      Recipe[]  @relation("BebidaMaridaje")
+}
+
+model Ingredient {
+  id                String  @id @default(cuid())
+  recipeId          String
+  name              String
+  baseQuantity      Float
+  unit              String
+  
+  // Bloque A: Diáspora
+  diasporaSubstitute String? 
+  diasporaNotes     String?
+  
+  // Bloque B: Escalamiento
+  isSpice           Boolean @default(false) // Lógica de escalado no lineal
+  
+  // Bloque C: Precios
+  estimatedPrice    Float?
+  
+  recipe            Recipe  @relation(fields: [recipeId], references: [id])
+}
+
+model Step {
+  id          String  @id @default(cuid())
+  recipeId    String
+  order       Int
+  description String
+  gifUrl      String? // Loop de 3 segundos para texturas
+  recipe      Recipe  @relation(fields: [recipeId], references: [id])
+}
+
+model PatronizedPlace {
+  id              String  @id @default(cuid())
+  name            String
+  description     String
+  lat             Float
+  lng             Float
+  isPremiumBanner Boolean @default(false)
+  region          Region
+  address         String
+}
+
+model Achievement {
+  id      String  @id @default(cuid())
+  userId  String
+  type    String  // ej: "CHEK_LIST_MASTER"
+  icon    String  // SVG path
+  user    User    @relation(fields: [userId], references: [id])
+}
+
+enum Difficulty {
+  FACIL
+  INTERMEDIO
+  AVANZADO
+}
+
+enum Region {
+  SIERRA
+  COSTA
+  AMAZONIA
+  GALAPAGOS
+}
+
+enum Category {
+  SOPAS
+  PLATOS_FUERTES
+  MARISCOS
+  POSTRES
+  BEBIDAS
+}
+
+model Keyword {
+  id      String   @id @default(cuid())
+  word    String   @unique
+  recipes Recipe[]
+}
+
+model Faq {
+  id       String @id @default(cuid())
+  recipeId String
+  question String
+  answer   String
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+}

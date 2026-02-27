@@ -1,5 +1,145 @@
 [
   {
+    "slug": "sopa-de-quinoa-ecuatoriana-variations-de-la-sierra-sur",
+    "title": "Sopa de Quinoa Ecuatoriana Receta de la Sierra Sur",
+    "description": "Sopa de Quinoa Ecuatoriana es una sopa nutritiva y reconfortante de la Sierra Sur, con variaciones que incluyen ingredientes locales como papas andinas y hierbas frescas, ideal para un almuerzo saludable y tradicional en Ecuador.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "1 taza Quinoa (comprar en Supermaxi)",
+      "2 unidades medianas, picadas Papas andinas (comprar en Mercado local)",
+      "2 unidades, cortadas en rodajas Zanahorias (comprar en TIA)",
+      "1 unidad grande, picada Cebolla (comprar en Megamaxi)",
+      "3 dientes, machacados Ajo (comprar en Supermaxi)",
+      "1 litro Caldo de pollo (comprar en TIA)",
+      "1/2 taza, picado Cilantro fresco (comprar en Mercado local)",
+      "100 gramos, desmenuzado Queso fresco (comprar en Megamaxi)",
+      "2 cucharadas Aceite de oliva (comprar en Supermaxi)",
+      "al gusto Sal (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Enjuaga 1 taza de quinoa bajo agua fría durante 2 minutos para eliminar el sabor amargo, luego escúrrela y reserva.",
+      "Paso 2: Calienta 2 cucharadas de aceite de oliva en una olla grande a fuego medio durante 1 minuto, agrega 1 cebolla picada y 3 dientes de ajo machacados, y sofríe por 5 minutos hasta que estén transparentes.",
+      "Paso 3: Incorpora 2 papas andinas picadas y 2 zanahorias en rodajas a la olla, revuelve bien y cocina por 3 minutos a fuego medio para que liberen sabores.",
+      "Paso 4: Agrega la quinoa enjuagada y 1 litro de caldo de pollo, lleva a ebullición a fuego alto durante 5 minutos, luego reduce a fuego bajo y cocina por 15 minutos con tapa.",
+      "Paso 5: Añade sal al gusto y 1/2 taza de cilantro fresco picado, cocina por otros 5 minutos a fuego bajo para infusionar los sabores, removiendo ocasionalmente.",
+      "Paso 6: Retira la olla del fuego y sirve inmediatamente en tazones, agregando 100 gramos de queso fresco desmenuzado por encima para derretirse ligeramente.",
+      "Paso 7: Para variaciones de la Sierra Sur, opcionalmente añade hierbas locales como huacatay si disponible, y deja reposar 2 minutos antes de servir para mejorar el sabor."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa quinoa orgánica para un sabor más auténtico y nutriente, común en la Sierra Sur.",
+      "Consejo 2: Ajusta la consistencia agregando más caldo si prefieres una sopa más ligera, típico de variaciones regionales."
+    ],
+    "origin_cities": [
+      "Cuenca",
+      "Loja"
+    ],
+    "image_keywords": [
+      "sopa de quinoa ecuatoriana",
+      "ecuadorian food",
+      "traditional soup sierra sur"
+    ],
+    "image_alt": "Fotografía de una cazuela humeante de sopa de quinoa ecuatoriana con verduras frescas, hierbas y queso derretido",
+    "seo_keywords": [
+      "receta sopa de quinoa ecuatoriana sierra sur variaciones",
+      "como hacer sopa de quinoa tradicional ecuador",
+      "sopa de quinoa nutritiva de la sierra ecuatoriana",
+      "variantes de sopa de quinoa en cuenca y loja",
+      "ingredientes para sopa de quinoa ecuatoriana autentica",
+      "mejor receta sopa de quinoa de la region sierra sur"
+    ],
+    "faqs": [
+      {
+        "q": "Qué ingredientes típicos tiene la Sopa de Quinoa Ecuatoriana?",
+        "a": "La Sopa de Quinoa Ecuatoriana generalmente incluye quinoa, papas, zanahorias, cebolla, ajo y caldo, con variaciones en la Sierra Sur que agregan hierbas locales como cilantro y queso fresco para un sabor más robusto y nutritivo."
+      },
+      {
+        "q": "Es la Sopa de Quinoa Ecuatoriana saludable?",
+        "a": "Sí, es altamente saludable debido a la quinoa, que es una proteína completa rica en fibra y nutrientes; en la Sierra Sur, se combina con verduras frescas para hacerla ideal para dietas balanceadas y energéticas."
+      },
+      {
+        "q": "Cómo se diferencia la Sopa de Quinoa de la Sierra Sur de otras regiones?",
+        "a": "En la Sierra Sur, la sopa incluye variaciones con ingredientes andinos como papas nativas y hierbas aromáticas, haciéndola más espesa y reconfortante comparada con versiones más livianas de la Costa o Amazonia."
+      },
+      {
+        "q": "Dónde puedo encontrar quinoa para esta receta fuera de Ecuador?",
+        "a": "La quinoa se encuentra fácilmente en supermercados como Whole Foods en EE.UU. o Tesco en Europa, y es un sustituto versátil para platos tradicionales ecuatorianos."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Pedregal",
+        "city": "Cuenca",
+        "description": "Famoso por servir sopas tradicionales de la Sierra Sur con ingredientes frescos del mercado local."
+      },
+      {
+        "name": "Mercado 10 de Agosto",
+        "city": "Loja",
+        "description": "Un mercado vibrante donde probar sopa de quinoa preparada al momento por vendedores locales con variaciones auténticas."
+      },
+      {
+        "name": "Restaurante Raymipampa",
+        "city": "Cuenca",
+        "description": "Ofrece variaciones de sopa de quinoa con toques modernos, ideal para turistas interesados en la gastronomía serrana."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Papas andinas",
+        "substitute": "Papas russet",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, manteniendo la textura similar."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso feta",
+        "notes": "Fácil de encontrar en tiendas como Trader Joe's en EE.UU. o Lidl en Europa, para un sabor similar y cremoso."
+      },
+      {
+        "original": "Caldo de pollo",
+        "substitute": "Caldo vegetal en polvo",
+        "notes": "Se vende en paquetes en cadenas como Aldi en Europa o Target en EE.UU., ideal para versiones vegetarianas."
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Sopa de Quinua con Carne NUTRITIVA Y DELICIOSA | KWA",
+        "videoId": "h9zxfVEMKx0",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=h9zxfVEMKx0",
+        "embed": "https://www.youtube-nocookie.com/embed/h9zxfVEMKx0",
+        "uploadDate": "2023-06-30",
+        "description": "Un plato nutritivo y lleno de sabor #SopaDeQuinuaConCarne, perfecta para reconfortar el alma! #KWAEC \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/18/sopa-de-quinua-con-carne"
+      },
+      {
+        "title": "SOPA DE QUINUA  … Tradición que alimenta!",
+        "videoId": "T0zgpm4ay78",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=T0zgpm4ay78",
+        "embed": "https://www.youtube-nocookie.com/embed/T0zgpm4ay78",
+        "uploadDate": "2021-06-05",
+        "description": "Esta tradicional SOPA DE QUINUA utiliza este pseudocereal que se cultiva en tierras andinas desde épocas incaicas, hoy puede estar en tu mesa y deleitar a toda tu familia, es fácil de preparar y sumam"
+      },
+      {
+        "title": "Sopa de Quinua con Costilla",
+        "videoId": "MLa7VO_SJBw",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=MLa7VO_SJBw",
+        "embed": "https://www.youtube-nocookie.com/embed/MLa7VO_SJBw",
+        "uploadDate": "2022-12-27",
+        "description": "Deliciosa Sopa de Quinua con Costilla. Sopa de Quinoa con Carne\nSopita de Costilla de Res con Quinua."
+      }
+    ],
+    "_image_source": "pending",
+    "id": 32,
+    "created_at": "2026-02-27T02:32:00.218Z"
+  },
+  {
     "slug": "cuy-asado",
     "title": "Cuy Asado Receta Ecuatoriana Tradicional",
     "description": "Cuy asado es un plato icónico de la cocina ecuatoriana de la sierra, preparado con conejillo de indias marinado y asado a la perfección. Esta receta detallada incluye ingredientes auténticos, pasos simples y consejos para lograr un sabor irresistible en tu hogar, ideal para fiestas familiares.",

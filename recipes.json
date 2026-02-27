@@ -1,5 +1,146 @@
 [
   {
+    "slug": "caldo-de-bolas",
+    "title": "Caldo de Bolas Ecuatoriano Receta Tradicional",
+    "description": "Caldo de Bolas es una sopa reconfortante de la Sierra ecuatoriana con bolas de yuca y carne, ideal para días fríos. Esta receta paso a paso incluye ingredientes frescos y técnicas auténticas para un sabor casero, perfecto para familias o eventos. Descubre variantes regionales.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "60 min",
+    "total_time": "90 min",
+    "ingredients": [
+      "500g Yuca (comprar en Supermaxi)",
+      "300g Carne de res (molida) (comprar en Megamaxi)",
+      "1 unidad mediana Cebolla blanca (comprar en Mercado local)",
+      "3 dientes Ajo (comprar en Supermaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "1 cucharada Achiote en polvo (comprar en TIA)",
+      "2 unidades medianas Plátano verde (comprar en Mercado local)",
+      "2 litros Agua (comprar en Supermaxi)",
+      "1 cucharadita Sal (comprar en Megamaxi)",
+      "2 cucharadas Aceite vegetal (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Pelar y rallar 500g de yuca, mezclarla con 100g de carne molida, sal y achiote; formar bolas del tamaño de una pelota de golf y reservar, esto toma unos 15 minutos.",
+      "Paso 2: En una olla grande, calentar 2 cucharadas de aceite a temperatura media (alrededor de 150°C) y sofreír 1 cebolla picada y 3 dientes de ajo durante 5 minutos hasta que estén dorados.",
+      "Paso 3: Agregar 300g de carne de res cortada en cubos a la olla y cocinar a fuego medio por 10 minutos, revolviendo ocasionalmente para que se dore uniformemente.",
+      "Paso 4: Incorporar 2 plátanos verdes cortados en rodajas y 1/2 taza de cilantro, luego verter 2 litros de agua y llevar a ebullición a 100°C, cocinando por 20 minutos.",
+      "Paso 5: Añadir las bolas de yuca a la olla y cocinar a fuego bajo por 15 minutos más, asegurándose de que las bolas floten y estén cocidas al centro.",
+      "Paso 6: Rectificar el sazón con sal al gusto y servir caliente en bowls, decorando con cilantro fresco; deja reposar 5 minutos antes de servir para mejorar los sabores.",
+      "Paso 7: Opcionalmente, acompañar con arroz o plátano maduro frito para una comida completa, cocinando el acompañamiento en paralelo."
+    ],
+    "tips": [
+      "Usa yuca fresca para un sabor auténtico y textura suave; si está muy dura, remójala en agua con sal por 10 minutos antes de usar.",
+      "Agrega achiote al final para mantener su color vivo; en regiones altas, ajusta el tiempo de cocción por la altitud para evitar que las bolas se desarmen."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Otavalo"
+    ],
+    "image_keywords": [
+      "caldo de bolas",
+      "sopa ecuatoriana",
+      "traditional ecuadorian dish"
+    ],
+    "image_alt": "Plato de Caldo de Bolas con bolas de yuca, carne y verduras en un bowl humeante",
+    "seo_keywords": [
+      "receta de caldo de bolas ecuatoriano tradicional paso a paso",
+      "como preparar caldo de bolas de la sierra ecuatoriana",
+      "ingredientes y preparacion de caldo de bolas autentico",
+      "caldo de bolas sopa tipica de quito y otavalo",
+      "variantes regionales de caldo de bolas en ecuador",
+      "consejos para hacer caldo de bolas en casa facilmente"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Caldo de Bolas y de dónde proviene?",
+        "a": "Caldo de Bolas es una sopa tradicional de la Sierra ecuatoriana, originaria de ciudades como Quito y Otavalo, hecha con bolas de yuca rellenas de carne, verduras y hierbas, conocida por su sabor reconfortante y nutritivo en climas fríos."
+      },
+      {
+        "q": "¿Cuáles son los ingredientes principales de Caldo de Bolas?",
+        "a": "Los ingredientes principales incluyen yuca para las bolas, carne de res, cebolla, ajo, cilantro, achiote y plátano verde; esta combinación crea un equilibrio de sabores terrosos y frescos, adaptable a variantes regionales."
+      },
+      {
+        "q": "¿Cómo se sirve Caldo de Bolas de manera tradicional?",
+        "a": "Se sirve caliente en bowls individuales, a menudo acompañado de arroz o plátano frito, y se consume como plato principal en almuerzos o cenas; en Ecuador, se disfruta con familia durante festividades o días lluviosos."
+      },
+      {
+        "q": "¿Es Caldo de Bolas adecuado para dietas vegetarianas?",
+        "a": "Aunque tradicionalmente incluye carne, puedes hacer una versión vegetariana sustituyendo la carne por vegetales como zanahorias o setas, manteniendo las bolas de yuca para preservar el sabor auténtico."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en el centro histórico donde sirven Caldo de Bolas con ingredientes frescos de la región, perfecto para turistas explorando la gastronomía quiteña."
+      },
+      {
+        "name": "Mercado de Otavalo",
+        "city": "Otavalo",
+        "description": "En este vibrante mercado, prueba Caldo de Bolas en puestos locales con productos orgánicos, ideal para una experiencia auténtica y cultural durante visitas a la Sierra."
+      },
+      {
+        "name": "Tienda de Comidas Típicas en Imbabura",
+        "city": "Otavalo",
+        "description": "Ofrece versiones caseras de Caldo de Bolas con toques familiares, cerca de atracciones turísticas, para un almuerzo rápido y delicioso."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca",
+        "substitute": "Papa o yuca congelada",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para mantener la textura similar en recetas fuera de Ecuador."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Fácil de encontrar en tiendas de especias como Whole Foods en EE.UU. o Lidl en Europa, para replicar el color y sabor ahumado."
+      },
+      {
+        "original": "Plátano verde",
+        "substitute": "Zanahoria",
+        "notes": "Sustituto común en EE.UU. y Europa, disponible en mercados locales como Aldi, para añadir dulzura y textura en ausencia de plátanos frescos."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Caldo de Bola IRRESISTIBLE | KWA",
+        "videoId": "9GhS9PsKPhM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=9GhS9PsKPhM",
+        "embed": "https://www.youtube-nocookie.com/embed/9GhS9PsKPhM",
+        "uploadDate": "2022-03-10",
+        "description": "Seguro lo vas a querer probar! #CaldoDeBola #KWAEC \n\nIngredientes:\n\nPara el Caldo:\n2 Libras de Osobuco\n1 Libra de Costilla de Res\n3 Cucharadas de Achiote\n3 Cucharadas de Ajo Picado\n1/2 Taza de Cebolla"
+      },
+      {
+        "title": "Cómo hacer CALDO DE BOLA Ecuatoriano 🇪🇨 con Camarón 🦐 Receta paso a paso | KWA",
+        "videoId": "H4zMaS9ypo4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=H4zMaS9ypo4",
+        "embed": "https://www.youtube-nocookie.com/embed/H4zMaS9ypo4",
+        "uploadDate": "2025-07-19",
+        "description": "🦐 ¡Deléitate con esta receta tradicional de Caldo de Bola rellena de camarón! 🇪🇨\n\nEn este video te enseñamos paso a paso cómo preparar un delicioso caldo de bola ecuatoriano, una sopa típica llena "
+      },
+      {
+        "title": "CALDO de BOLA | Receta ecuatoriana súper fácil y deliciosa",
+        "videoId": "GuVY0kwe21I",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=GuVY0kwe21I",
+        "embed": "https://www.youtube-nocookie.com/embed/GuVY0kwe21I",
+        "uploadDate": "2023-11-09",
+        "description": "Definitivamente el tradicional caldo de bolas está en el top5 de los caldos que más me gustan, así que hoy te enseño como yo preparo está delicia.\n#caldodebolas #recetasecuatorianas #gastronomiaecuato"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/GuVY0kwe21I/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 38,
+    "created_at": "2026-02-27T23:22:36.865Z"
+  },
+  {
     "slug": "tigrillo-manabita",
     "title": "Tigrillo Manabita Receta Tradicional Ecuatoriana",
     "description": "Tigrillo Manabita es un plato costero ecuatoriano hecho con plátanos verdes, ideal para desayunos energéticos. Esta receta tradicional incluye ingredientes frescos y pasos simples para recrear el sabor auténtico de Manabí en casa, perfecto para amantes de la cocina latinoamericana.",

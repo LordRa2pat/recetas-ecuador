@@ -1,5 +1,146 @@
 [
   {
+    "slug": "sopa-de-mani",
+    "title": "Sopa de Mani Ecuatoriana Receta Tradicional",
+    "description": "Sopa de Mani es una sopa cremosa y nutritiva de la cocina ecuatoriana. Esta receta tradicional incluye maní tostado, verduras frescas y especias para un sabor auténtico y reconfortante, perfecta para el clima frío de la sierra.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "1 taza Maní (cacahuetes) (comprar en Supermaxi)",
+      "1 unidad mediana Cebolla blanca (comprar en Mercado local)",
+      "2 dientes Ajo (comprar en Supermaxi)",
+      "2 unidades medianas Papas (comprar en TIA)",
+      "1 litro Leche entera (comprar en Megamaxi)",
+      "1 litro Caldo de pollo (comprar en Supermaxi)",
+      "1 cucharadita Comino molido (comprar en Mercado local)",
+      "al gusto Sal (comprar en Supermaxi)",
+      "2 cucharadas Aceite vegetal (comprar en Supermaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: En un sartén a fuego medio durante 5 minutos, tueste 1 taza de maní hasta que suelten aroma, removiendo constantemente para evitar quemar.",
+      "Paso 2: En una olla grande a fuego medio-alto, calienta 2 cucharadas de aceite y sofríe 1 cebolla picada y 2 dientes de ajo durante 3-4 minutos hasta que estén transparentes.",
+      "Paso 3: Agrega 2 papas peladas y cortadas en cubos, 1 cucharadita de comino y sal al gusto; cocina por 2 minutos más para infusionar los sabores.",
+      "Paso 4: Incorpora 1 litro de caldo de pollo y lleva a ebullición a fuego alto; reduce a fuego medio y cocina durante 15 minutos hasta que las papas estén tiernas.",
+      "Paso 5: En una licuadora, procesa el maní tostado con 1/2 taza de leche durante 2 minutos hasta obtener una pasta suave, luego agrega esta mezcla a la olla.",
+      "Paso 6: Vierte el resto de la leche (1/2 litro) en la olla y cocina a fuego bajo durante 10 minutos, removiendo ocasionalmente hasta que la sopa espese.",
+      "Paso 7: Retira del fuego, agrega cilantro picado y deja reposar por 5 minutos antes de servir para realzar los sabores."
+    ],
+    "tips": [
+      "Usa maní fresco y sin sal para un sabor más auténtico y evitar exceso de sodio.",
+      "Para una versión más cremosa, agrega un poco de queso fresco ecuatoriano al final de la cocción."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "sopa de mani ecuatoriana",
+      "ecuadorian food",
+      "traditional peanut soup"
+    ],
+    "image_alt": "Fotografía de una bowl humeante de sopa de mani ecuatoriana con maní tostado y verduras frescas",
+    "seo_keywords": [
+      "receta de sopa de mani ecuatoriana tradicional",
+      "como hacer sopa de mani de la sierra ecuatoriana",
+      "ingredientes para sopa de mani autentica",
+      "sopa de mani paso a paso",
+      "platos ecuatorianos con maní",
+      "variantes regionales de sopa de mani en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es la sopa de mani y de dónde proviene?",
+        "a": "La sopa de mani es un plato tradicional ecuatoriano de la región de la Sierra, hecho principalmente con maní tostado, verduras y caldo, ofreciendo un sabor cremoso y nutritivo que representa la gastronomía andina."
+      },
+      {
+        "q": "¿Es la sopa de mani vegetariana?",
+        "a": "La versión tradicional no lo es por el uso de caldo de pollo, pero puedes hacerla vegetariana sustituyendo por caldo vegetal y evitando productos animales, manteniendo su esencia cremosa."
+      },
+      {
+        "q": "¿Cómo almacenar la sopa de mani sobrante?",
+        "a": "Almacena la sopa en un contenedor hermético en el refrigerador por hasta 3 días; para recalentar, usa fuego bajo para evitar que se separe, y agrega un poco de leche si necesita más cremosidad."
+      },
+      {
+        "q": "¿Cuáles son las variantes regionales de la sopa de mani?",
+        "a": "En la Sierra, como en Quito, es más espesa y con maní entero; en la Costa, podría incluir mariscos, mientras que en la Amazonía se añade yuca para un toque local."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en el centro histórico donde sirven sopa de mani con ingredientes frescos de la región sierra."
+      },
+      {
+        "name": "Mercado 10 de Agosto",
+        "city": "Cuenca",
+        "description": "En este vibrante mercado, puedes probar sopa de mani preparada por vendedores locales con recetas familiares transmitidas por generaciones."
+      },
+      {
+        "name": "Café Cultura",
+        "city": "Quito",
+        "description": "Ofrece una versión moderna de sopa de mani con toques innovadores, ideal para turistas explorando la gastronomía ecuatoriana."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Maní fresco",
+        "substitute": "Mantequilla de maní (peanut butter)",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa; usa 1/2 taza para mantener la cremosidad."
+      },
+      {
+        "original": "Caldo de pollo",
+        "substitute": "Caldo vegetal",
+        "notes": "Fácil de encontrar en tiendas como Whole Foods en EE.UU. o Lidl en Europa; proporciona un sabor similar sin carne para opciones vegetarianas."
+      },
+      {
+        "original": "Papas",
+        "substitute": "Zanahorias",
+        "notes": "Encuéntralas en cualquier supermercado local en EE.UU. o Europa; agregan dulzura y mantienen la textura espesa de la sopa."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "SOPA DE MANI (Receta facil y deliciosa)",
+        "videoId": "h5UMaa5hlHQ",
+        "channel": "CucharitaPower",
+        "url": "https://www.youtube.com/watch?v=h5UMaa5hlHQ",
+        "embed": "https://www.youtube-nocookie.com/embed/h5UMaa5hlHQ",
+        "uploadDate": "2021-11-13",
+        "description": "Oh! Deliciosa Sopa de Mani, el orgullo de la comida boliviana, quiza la sopa mas rica de todas las sopas.\n\nEn este episodio, mi abuela y yo te compartimos una receta facil y sabrosa para preparar esta"
+      },
+      {
+        "title": "¿Cómo hacer Sopa🫕de Maní 🥜? 5 trucos para que te salga rico y Delicioso Comida tradicional Bolivia",
+        "videoId": "ukD1QLKsnto",
+        "channel": "CASE (cocinando y recetas)",
+        "url": "https://www.youtube.com/watch?v=ukD1QLKsnto",
+        "embed": "https://www.youtube-nocookie.com/embed/ukD1QLKsnto",
+        "uploadDate": "2024-03-21",
+        "description": "¿Cómo preparar la tradicional sopa🍜de maní🧃? te comparto 5 trucos esenciales que marcarán la diferencia:\n✅1) Inicia hirviendo la carne🥩 en agua, este paso es crucial para infundir un rico sabor al "
+      },
+      {
+        "title": "CALDO DE CHOCLO",
+        "videoId": "88kpW5sMWvk",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=88kpW5sMWvk",
+        "embed": "https://www.youtube-nocookie.com/embed/88kpW5sMWvk",
+        "uploadDate": "2022-10-14",
+        "description": "Ingredientes:\n(4 Porciones)\n4 Choclos Amarillos \n2 Cucharadas de Mantequilla\n1 Cucharada de Achiote \n2 Ramas de Cebolla Blanca \n2 Litros de Agua \n1 Taza de Leche Caliente \n4 Huevos\n1/2 Libra de Queso "
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/h5UMaa5hlHQ/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 35,
+    "created_at": "2026-02-27T05:22:09.214Z"
+  },
+  {
     "slug": "seco-de-tilapia-amazonica",
     "title": "Seco de Tilapia Amazónica Receta Tradicional Ecuatoriana",
     "description": "Seco de Tilapia es un estofado amazónico ecuatoriano con pescado fresco cocinado en chicha y hierbas, ideal para quienes aman la cocina tropical. Esta receta detallada incluye ingredientes y pasos para recrear el sabor auténtico en casa, perfecto para cenas familiares.",

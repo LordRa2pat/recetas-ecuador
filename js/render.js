@@ -62,9 +62,9 @@ export function renderCard(recipe) {
   var hasTourism =
     !!recipe.tourism_route || (recipe.places && recipe.places.length > 0);
   var hasVideos = !!(recipe.youtube_videos && recipe.youtube_videos.length > 0);
-  var img = recipe.image_url
+  var img = recipe.image_url && recipe.image_url.trim() !== ""
     ? escapeHtml(recipe.image_url)
-    : "https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80";
+    : "images/default-recipe.jpg";
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return (
@@ -90,7 +90,7 @@ export function renderCard(recipe) {
     imgAlt +
     '"' +
     ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
-    ' loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80\'">' +
+    ' loading="lazy" onerror="this.src=\'images/default-recipe.jpg\'">' +
     '<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>' +
     (chip ? '<div class="absolute top-3 left-3">' + chip + "</div>" : "") +
     '<div class="absolute bottom-3 right-3 flex gap-1.5">' +
@@ -352,9 +352,9 @@ export function renderGridWithAds(recipes, gridEl, adsInterval) {
 
 // ─── Blog Card ─────────────────────────────────────────────
 export function renderBlogCard(post) {
-  var img = post.image_url
+  var img = post.image_url && post.image_url.trim() !== ""
     ? escapeHtml(post.image_url)
-    : "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80";
+    : "images/default-turismo.jpg";
   var imgAlt = escapeHtml(post.image_alt || post.title);
   var categoryColors = {
     Rutas: "bg-green-100 text-green-700 border-green-200",
@@ -390,7 +390,7 @@ export function renderBlogCard(post) {
     imgAlt +
     '"' +
     ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"' +
-    ' loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80\'">' +
+    ' loading="lazy" onerror="this.src=\'images/default-turismo.jpg\'">' +
     '<div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent"></div>' +
     (post.featured
       ? '<div class="absolute top-3 left-3"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-[#FFD700]/90 text-[#004d00] backdrop-blur-sm">\u2B50 Destacado</span></div>'

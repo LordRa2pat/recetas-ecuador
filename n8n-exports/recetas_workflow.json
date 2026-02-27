@@ -1,0 +1,570 @@
+{
+  "workflowId": "SHRZnCATkL1FX9jo",
+  "name": "RECETAS-AI-Auto-Publisher-v3",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## RECETAS-AI-Auto-Publisher v4.0\n\n**Flujo:** Schedule -> GET slugs -> Extraer -> Nombrador -> Preparar Prompt -> Chef Redactor v3 -> Parser -> YouTube (buscar + validar + procesar) -> Generar Imagen IA (Google Imagen 3) -> Enriquecer -> Quality Gate -> GET GitHub -> Merge -> PUT GitHub\n\n**Imagenes:** 1) Google Imagen 3 Nanobanana Pro (foto del plato, sin personas) 2) Unsplash por categoria (fallback). NUNCA YouTube thumbnails.\n**SEO:** keywords long-tail, description con keyword, FAQs People Also Ask.\n**Supermercados:** ingredientes con donde comprarlos (Supermaxi, Megamaxi, TIA).\n**Costos:** estimated_cost generado por Chef Redactor con precios de referencia.",
+        "height": 180,
+        "width": 1900
+      },
+      "id": "sticky-note",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        112,
+        64
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6,
+              "triggerAtMinute": 21
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Cada 12 Horas",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        112,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token {{$env.GITHUB_TOKEN}}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-recetas-ecuador-bot"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-existing-slugs",
+      "name": "GET slugs existentes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        352,
+        320
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "ltGQSSEM7dULOCFJ",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const githubData = $input.first().json;\nconst currentContent = Buffer.from(githubData.content, 'base64').toString('utf8');\nlet recipes = [];\ntry { recipes = JSON.parse(currentContent); if (!Array.isArray(recipes)) recipes = []; } catch(e) { recipes = []; }\n\nconst existingSlugs = recipes.map(r => r.slug).filter(Boolean);\nconst existingTitles = recipes.map(r => r.title).filter(Boolean);\n\nreturn [{ json: { existingSlugs, existingTitles, totalExisting: recipes.length } }];"
+      },
+      "id": "extract-slugs",
+      "name": "Extraer slugs existentes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        592,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$env.XAI_API_KEY}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-recetas-bot/3.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'grok-3-mini', max_tokens: 40, messages: [ { role: 'system', content: 'Eres un experto en gastronomía ecuatoriana. Solo respondes con nombres de platos.' }, { role: 'user', content: 'Dame el nombre de un plato típico ecuatoriano poco conocido o una variación original. IMPORTANTE: NO sugieras ninguno de estos platos que ya existen: ' + $('Extraer slugs existentes').first().json.existingTitles.slice(0, 30).join(', ') + '. Elige algo diferente, menos conocido o una variación regional. Solo responde con el nombre del plato, sin explicaciones, sin puntuación al final.' } ] }) }}",
+        "options": {}
+      },
+      "id": "dish-namer",
+      "name": "Nombrador de Plato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        320
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qzVc5dTlSDedHdTH",
+          "name": "Header Auth account 2"
+        },
+        "httpBearerAuth": {
+          "id": "DOfSNzG0PcJpzGUQ",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const dishName = $('Nombrador de Plato').first().json.choices[0].message.content.trim();\n\nconst systemPrompt =\n  'Eres un equipo de tres expertos combinados:\\n\\n' +\n  '1. CHEF ECUATORIANO PROFESIONAL: Conoces todas las recetas regionales del Ecuador ' +\n  'con profundidad gastronómica, proporciones exactas, técnicas de cocción y variantes regionales.\\n\\n' +\n  '2. GUÍA TURÍSTICO Y CONSULTOR DE DIÁSPORA: Para platos con ingredientes difíciles fuera de Ecuador, ' +\n  'sabes exactamente qué sustitutos usar en EE.UU. y Europa. Conoces dónde probar cada plato.\\n\\n' +\n  '3. EXPERTO SEO CULINARIO: Escribes títulos y descripciones optimizados para Google. ' +\n  'Generas keywords long-tail relevantes.\\n\\n' +\n  'RESPONDE ÚNICAMENTE con JSON válido, sin markdown, sin explicaciones.';\n\nconst userPrompt =\n  'Crea la receta completa para: ' + dishName + '\\n\\n' +\n  'Responde con un objeto JSON que siga EXACTAMENTE este esquema:\\n' +\n  '{\\n' +\n  '  \"slug\": \"nombre-kebab-case-sin-acentos\",\\n' +\n  '  \"title\": \"Nombre Exacto Busqueda Popular (ej: Sopa de Mani Ecuatoriana Receta Tradicional)\",\\n' +\n  '  \"description\": \"EMPIEZA con keyword principal del plato. Minimo 90 chars, maximo 155.\",\\n' +\n  '  \"region\": \"Sierra|Costa|Amazonia|Galapagos\",\\n' +\n  '  \"category\": \"Sopas|Platos Fuertes|Entradas|Postres|Bebidas|Desayunos|Mariscos\",\\n' +\n  '  \"difficulty\": \"Facil|Media|Dificil\",\\n' +\n  '  \"servings\": \"X personas\",\\n' +\n  '  \"prep_time\": \"X min\",\\n' +\n  '  \"cook_time\": \"X min\",\\n' +\n  '  \"total_time\": \"X min\",\\n' +\n  '  \"ingredients\": [\\n' +\n  '    { \"name\": \"ingrediente\", \"quantity\": \"cantidad exacta\", \"where_to_buy\": \"Supermaxi|Megamaxi|TIA|Mercado local\" }\\n' +\n  '  ],\\n' +\n  '  \"instructions\": [\"Paso 1 detallado con tiempos y temperaturas\", \"Paso 2...\", \"minimo 6 pasos\"],\\n' +\n  '  \"tips\": [\"Consejo 1 del chef profesional\", \"Consejo 2\"],\\n' +\n  '  \"origin_cities\": [\"Ciudad1\", \"Ciudad2\"],\\n' +\n  '  \"youtube_query\": \"nombre del plato receta ecuatoriana\",\\n' +\n  '  \"image_keywords\": [\"keyword visual 1\", \"ecuadorian food\", \"traditional dish\"],\\n' +\n  '  \"image_alt\": \"Fotografía del plato terminado con descripción\",\\n' +\n  '  \"seo_keywords\": [\"keyword-long-tail-1\", \"keyword-long-tail-2\", \"minimo 5 keywords\"],\\n' +\n  '  \"faqs\": [\\n' +\n  '    { \"question\": \"Pregunta frecuente tipo People Also Ask?\", \"answer\": \"Respuesta detallada y útil\" }\\n' +\n  '  ],\\n' +\n  '  \"places\": [\\n' +\n  '    { \"name\": \"Restaurante o mercado donde probar\", \"city\": \"Ciudad\", \"description\": \"Breve descripción\" }\\n' +\n  '  ],\\n' +\n  '  \"substitutions\": [\\n' +\n  '    { \"original\": \"ingrediente ecuatoriano\", \"substitute\": \"sustituto disponible en EE.UU./Europa\", \"notes\": \"dónde encontrarlo\" }\\n' +\n  '  ],\\n' +\n  '  \"estimated_cost\": \"$X.XX USD\"\\n' +\n  '}\\n\\n' +\n  'IMPORTANTE:\\n' +\n  '- ingredients debe tener MINIMO 8 ingredientes con name, quantity y where_to_buy\\n' +\n  '- instructions debe tener MINIMO 6 pasos detallados\\n' +\n  '- faqs debe tener MINIMO 3 preguntas\\n' +\n  '- seo_keywords debe tener MINIMO 5 keywords long-tail\\n' +\n  '- places debe tener MINIMO 2 lugares\\n' +\n  '- substitutions debe tener MINIMO 2 sustituciones';\n\nconst payload = {\n  model: 'grok-3-mini',\n  max_tokens: 3000,\n  messages: [\n    { role: 'system', content: systemPrompt },\n    { role: 'user', content: userPrompt }\n  ]\n};\n\nreturn [{ json: { payload: payload } }];"
+      },
+      "id": "preparar-prompt-chef",
+      "name": "Preparar Prompt Chef",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        496
+      ],
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-recetas-bot/3.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.payload }}",
+        "options": {}
+      },
+      "id": "chef-redactor",
+      "name": "Chef Redactor v3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        304
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TdFWRkceiolfRm6j",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.choices?.[0]?.message?.content || '';\nconst cleaned = raw.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n\nlet recipe;\ntry {\n    recipe = JSON.parse(cleaned);\n} catch(e) {\n    throw new Error('JSON invalido de Grok: ' + e.message + ' | Inicio: ' + cleaned.slice(0, 200));\n}\n\nif (!recipe.title || !recipe.slug) {\n    throw new Error('Faltan campos requeridos title/slug: ' + JSON.stringify(recipe).slice(0, 200));\n}\n\nif ((recipe.description || '').length < 80) {\n    throw new Error('Description demasiado corta (' + (recipe.description || '').length + ' chars): ' + recipe.description);\n}\n\n// Normalize slug\nrecipe.slug = recipe.slug.toLowerCase().trim()\n  .replace(/[\\u00e1\\u00e0\\u00e4\\u00e2]/g, 'a')\n  .replace(/[\\u00e9\\u00e8\\u00eb\\u00ea]/g, 'e')\n  .replace(/[\\u00ed\\u00ec\\u00ef\\u00ee]/g, 'i')\n  .replace(/[\\u00f3\\u00f2\\u00f6\\u00f4]/g, 'o')\n  .replace(/[\\u00fa\\u00f9\\u00fc\\u00fb]/g, 'u')\n  .replace(/\\u00f1/g, 'n')\n  .replace(/[^a-z0-9-]/g, '-')\n  .replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\n// NORMALIZATION: Convert ingredients from object to string\nif (Array.isArray(recipe.ingredients)) {\n    recipe.ingredients = recipe.ingredients.map(ing => {\n          if (typeof ing === 'object' && ing !== null) {\n                  let str = ing.name || '';\n                  if (ing.quantity) str = `${ing.quantity} ${str}`;\n                  if (ing.where_to_buy) str = `${str} (comprar en ${ing.where_to_buy})`;\n                  return str.trim();\n          }\n          return ing;\n    });\n}\n\n// NORMALIZATION: Convert FAQs from question/answer to q/a\nif (Array.isArray(recipe.faqs)) {\n    recipe.faqs = recipe.faqs.map(faq => {\n          if (faq && (faq.question || faq.answer)) {\n                  return {\n                            q: faq.question || faq.q || '',\n                            a: faq.answer || faq.a || ''\n                  };\n          }\n          return faq;\n    });\n}\n\n// Guarantee v3 fields\nif (!recipe.origin_cities) recipe.origin_cities = [];\nif (!recipe.youtube_query) recipe.youtube_query = recipe.title + ' receta ecuatoriana';\nif (!recipe.image_keywords) recipe.image_keywords = [recipe.title, 'ecuadorian food', 'traditional dish'];\nif (!recipe.image_alt) recipe.image_alt = recipe.title + ', plato tipico ecuatoriano';\n\nreturn {\n    json: recipe\n};"
+      },
+      "id": "parse-recipe",
+      "name": "Parsear Receta JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1312,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/youtube/v3/search?part=snippet&q={{ encodeURIComponent($('Parsear Receta JSON').first().json.youtube_query + ' receta ecuatoriana') }}&type=video&regionCode=EC&relevanceLanguage=es&maxResults=5&videoCategoryId=26&key=AIzaSyCV1lsmfdKIVu0iOn2goSZUGlU7FdnvoFk",
+        "options": {}
+      },
+      "id": "youtube-search",
+      "name": "YouTube: Buscar Videos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1552,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/youtube/v3/videos?part=status,snippet&id={{ $json.items.slice(0,5).map(i => i.id.videoId).filter(Boolean).join(',') }}&key=AIzaSyCV1lsmfdKIVu0iOn2goSZUGlU7FdnvoFk",
+        "options": {}
+      },
+      "id": "youtube-validate",
+      "name": "YouTube: Validar Embeddable",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1792,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const ytValidated = $input.first().json;\nconst items = ytValidated.items || [];\n\n// Filtrar solo embeddable\nconst embeddable = items.filter(item => item.status && item.status.embeddable !== false);\n\nconst youtube_videos = embeddable.slice(0, 3).map(item => ({\n  title: item.snippet?.title || '',\n  videoId: item.id,\n  channel: item.snippet?.channelTitle || '',\n  url: 'https://www.youtube.com/watch?v=' + item.id,\n  embed: 'https://www.youtube-nocookie.com/embed/' + item.id,\n  uploadDate: (item.snippet?.publishedAt || '').split('T')[0] || undefined,\n  description: (item.snippet?.description || '').slice(0, 200)\n}));\n\nreturn [{ json: { youtube_videos } }];"
+      },
+      "id": "process-youtube",
+      "name": "Procesar Videos YouTube",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2032,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// Extrae de Parsear Receta JSON o Parsear Post JSON dependiendo del workflow\nlet recipe = {};\ntry { recipe = $('Parsear Receta JSON').first().json; } catch(e) {}\nif (!recipe.slug) {\n  try { recipe = $('Parsear Post JSON').first().json; } catch(e) {}\n}\n\nlet youtubeData = {};\ntry { youtubeData = $('Procesar Videos YouTube').first().json; } catch(e) {}\n\nconst enriched = Object.assign({}, recipe);\n\n// ── YouTube videos ───────\nif (youtubeData.youtube_videos && youtubeData.youtube_videos.length > 0) {\n  enriched.youtube_videos = youtubeData.youtube_videos;\n}\n\n// ── Imagen Web extraida ──────────────────────\nlet aiData = {};\ntry { aiData = $('Generar Imagen IA').first().json; } catch(e) {}\n\nif (aiData.ai_image_url && aiData._imagen3_status === 'ok') {\n  enriched.image_url = aiData.ai_image_url;\n  enriched._image_source = aiData._image_source || 'web_search';\n  if (aiData._image_source_url) {\n      enriched._image_source_url = aiData._image_source_url;\n  }\n} else {\n  // Si busqueda falló\n  if (!enriched.image_url) {\n    console.warn('Imagen web no disponible. image_url = null');\n    enriched._image_source = 'pending';\n  }\n}\n\n// Asegurar que image_alt es correcto\nif (!enriched.image_alt || enriched.image_alt.toLowerCase().includes('chef')) {\n  enriched.image_alt = `Fotografía de: ${enriched.title} — gastronomía y turismo en Ecuador`;\n}\n\ndelete enriched.youtube_query;\nreturn [{ json: enriched }];\n"
+      },
+      "id": "enrich-recipe",
+      "name": "Enriquecer Receta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2032,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const recipe = $input.first().json;\nconst errors = [];\n\n// Campos obligatorios\nif (!recipe.slug || recipe.slug.length < 3) errors.push('slug inválido: ' + recipe.slug);\nif (!recipe.title || recipe.title.length < 5) errors.push('title muy corto: ' + recipe.title);\nif (!recipe.description || recipe.description.length < 80) errors.push('description < 80 chars: ' + (recipe.description || '').length + ' chars');\n\n// Contenido mínimo\nif (!recipe.ingredients || recipe.ingredients.length < 8) errors.push('ingredientes < 8: ' + (recipe.ingredients || []).length);\nif (!recipe.instructions || recipe.instructions.length < 6) errors.push('instrucciones < 6: ' + (recipe.instructions || []).length);\n\n// Videos (aviso, no bloquea)\nconst hasVideos = recipe.youtube_videos && recipe.youtube_videos.length > 0;\nif (!hasVideos) {\n  console.warn('Receta sin videos YouTube — se publica igual');\n}\n\nif (errors.length > 0) {\n  throw new Error('QUALITY_GATE_FAILED: ' + errors.join(' | '));\n}\n\nconsole.log('Quality Gate OK:', recipe.slug, '| videos:', (recipe.youtube_videos || []).length);\nreturn [{ json: recipe }];"
+      },
+      "id": "quality-gate",
+      "name": "Quality Gate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2272,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token {{$env.GITHUB_TOKEN}}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-recetas-ecuador-bot"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-github",
+      "name": "GET recipes.json (GitHub)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2512,
+        512
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "ltGQSSEM7dULOCFJ",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const newRecipe = $('Quality Gate').first().json;\nconst githubData = $input.first().json;\nconst fileSha = githubData.sha;\n\nconst currentContent = Buffer.from(githubData.content, 'base64').toString('utf8');\nlet recipes = [];\ntry {\n  recipes = JSON.parse(currentContent);\n  if (!Array.isArray(recipes)) recipes = [];\n} catch(e) { recipes = []; }\n\n// Dedup por slug\nif (recipes.some(r => r.slug === newRecipe.slug)) {\n  throw new Error('DUPLICADO_SLUG: ' + newRecipe.slug);\n}\n\n// Auto-increment ID\nconst maxId = recipes.reduce((max, r) => Math.max(max, Number(r.id) || 0), 0);\nnewRecipe.id = maxId + 1;\nnewRecipe.created_at = new Date().toISOString();\n\n// Prepend (más reciente primero)\nrecipes.unshift(newRecipe);\n\nconst newContent = Buffer.from(JSON.stringify(recipes, null, 2), 'utf8').toString('base64');\nconst hasPlaces = (newRecipe.places || []).length;\nconst hasVideos = (newRecipe.youtube_videos || []).length;\nconst extras = [hasPlaces ? hasPlaces + ' lugares' : '', hasVideos ? hasVideos + ' videos' : ''].filter(Boolean).join(', ');\n\nreturn [{ json: {\n  sha: fileSha,\n  content: newContent,\n  slug: newRecipe.slug,\n  title: newRecipe.title,\n  id: newRecipe.id,\n  total: recipes.length,\n  extras: extras || 'sin enriquecimiento'\n} }];"
+      },
+      "id": "merge-commit",
+      "name": "Merge + Preparar Commit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2752,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/recipes.json",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-recetas-ecuador-bot"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { message: 'feat(recetas): agregar ' + $json.slug + ' [ID:' + $json.id + '] ' + $json.extras + ' — auto v3', content: $json.content, sha: $json.sha } }}",
+        "options": {}
+      },
+      "id": "put-github",
+      "name": "PUT recipes.json a GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2992,
+        512
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "ltGQSSEM7dULOCFJ",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// ─── Extraer imagen real vía Google Custom Search (Reemplaza Unsplash / HuggingFace) ───\n// Extrae de Parsear Receta JSON o Parsear Post JSON dependiendo del workflow\nlet recipe = {};\ntry { recipe = $('Parsear Receta JSON').first().json; } catch(e) {}\nif (!recipe.slug) {\n  try { recipe = $('Parsear Post JSON').first().json; } catch(e) {}\n}\n\nconst GH_TOKEN = $env.GITHUB_TOKEN;\nconst REPO     = 'LordRa2pat/recetas-ecuador';\n\nconst GOOGLE_API_KEY = 'AIzaSyB1BT4j23M5rCy5nQLTL0owuTZMgWZRqOo'; \nconst GOOGLE_CX = 'f10191682aba7434b';\n\n// 1. Buscar imagen en Google\nlet queryConcept = recipe.title;\nif (recipe.image_keywords && Array.isArray(recipe.image_keywords) && recipe.image_keywords.length > 0) {\n    queryConcept = recipe.image_keywords[0];\n}\nconst query = encodeURIComponent(`${queryConcept} plato tipico comida ecuatoriana`);\nconst searchUrl = `https://www.googleapis.com/customsearch/v1?q=${query}&searchType=image&cx=${GOOGLE_CX}&key=${GOOGLE_API_KEY}&num=1`;\n\nlet sourceUrl = '';\nlet imageUrl = '';\n\ntry {\n  const searchResp = await fetch(searchUrl);\n  if (searchResp.ok) {\n    const searchData = await searchResp.json();\n    if (searchData.items && searchData.items.length > 0) {\n      imageUrl = searchData.items[0].link;\n      sourceUrl = searchData.items[0].image.contextLink;\n      console.log('Google Image found:', imageUrl, 'Source:', sourceUrl);\n    }\n  } else {\n    console.error('Google Search Error:', await searchResp.text());\n  }\n} catch (e) {\n  console.error('Google Search Exception:', e.message);\n}\n\nif (!imageUrl) {\n  console.warn('Image not found via API, falling back to local flow');\n  return [{ json: { ...recipe, _imagen_status: 'failed' } }];\n}\n\n// 2. Descargar imagen\nlet imageBuffer = null;\ntry {\n  const imgResp = await fetch(imageUrl, { signal: AbortSignal.timeout(30000) });\n  if (imgResp.ok) {\n    imageBuffer = Buffer.from(await imgResp.arrayBuffer());\n  }\n} catch (e) {\n  console.error('Download Image Exception:', e.message);\n  return [{ json: { ...recipe, _imagen_status: 'download_failed' } }];\n}\n\nif (!imageBuffer) {\n  return [{ json: { ...recipe, _imagen_status: 'download_failed' } }];\n}\nconst b64Image = imageBuffer.toString('base64');\n\n// 3. Normalizar slug para archivo\nconst slug = (recipe.slug || recipe.title)\n  .toLowerCase()\n  .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e')\n  .replace(/[íìïî]/g, 'i').replace(/[óòöô]/g, 'o')\n  .replace(/[úùüû]/g, 'u').replace(/[ñ]/g, 'n')\n  .replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\nconst ghPath = `images/${slug}.jpg`;\n\n// 4. Subir a GitHub\nlet existingSha = null;\ntry {\n  const checkResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${ghPath}`, {\n    headers: { 'Authorization': `token ${GH_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }\n  });\n  if (checkResp.ok) existingSha = (await checkResp.json()).sha;\n} catch (e) {}\n\nconst uploadBody = {\n  message: `feat(img-web): source ${sourceUrl}`,\n  content: b64Image,\n  ...(existingSha ? { sha: existingSha } : {})\n};\n\ntry {\n  const uploadResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${ghPath}`, {\n    method: 'PUT',\n    headers: { 'Authorization': `token ${GH_TOKEN}`, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json' },\n    body: JSON.stringify(uploadBody)\n  });\n  if (uploadResp.ok) {\n    const rawUrl = `https://raw.githubusercontent.com/${REPO}/main/${ghPath}`;\n    return [{ json: { ...recipe, ai_image_url: rawUrl, _imagen3_status: 'ok', _image_source_url: sourceUrl, _image_source: 'web_search' } }];\n  }\n} catch (e) {\n  console.error('GH Upload Error:', e.message);\n}\nreturn [{ json: { ...recipe, _imagen_status: 'upload_failed' } }];\n"
+      },
+      "id": "generar-imagen-ia",
+      "name": "Generar Imagen IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        224
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validation Gate — recipes.json\nconst item = $input.first().json;\nconst decoded = Buffer.from(item.content, 'base64').toString('utf8');\nlet arr;\ntry { arr = JSON.parse(decoded); } catch(e) { throw new Error('JSON inválido: ' + e.message); }\nif (!Array.isArray(arr) || arr.length === 0) throw new Error('recipes.json vacío o no es array');\nconst seen = new Set(); const dups = [];\narr.forEach(function(r) { if (seen.has(r.slug)) dups.push(r.slug); seen.add(r.slug); });\nif (dups.length) throw new Error('slugs duplicados: ' + dups.join(', '));\nconst r = arr[0];\nif (!r.slug || !String(r.slug).trim()) throw new Error('slug vacío en nueva receta');\nif (!r.description || r.description.length < 80) throw new Error('description < 80 chars: ' + r.slug);\nif (!Array.isArray(r.ingredients) || r.ingredients.length < 4) throw new Error('ingredients insuficientes: ' + r.slug);\nif (!Array.isArray(r.instructions) || r.instructions.length < 3) throw new Error('instructions insuficientes: ' + r.slug);\nconsole.log('VALIDATE OK: ' + arr.length + ' recetas — nueva: ' + r.slug);\nreturn [{ json: item }];"
+      },
+      "id": "validate-gate-recipes",
+      "name": "Validate Gate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2880,
+        512
+      ]
+    }
+  ],
+  "connections": {
+    "Cada 12 Horas": {
+      "main": [
+        [
+          {
+            "node": "GET slugs existentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET slugs existentes": {
+      "main": [
+        [
+          {
+            "node": "Extraer slugs existentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraer slugs existentes": {
+      "main": [
+        [
+          {
+            "node": "Nombrador de Plato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nombrador de Plato": {
+      "main": [
+        [
+          {
+            "node": "Preparar Prompt Chef",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chef Redactor v3": {
+      "main": [
+        [
+          {
+            "node": "Parsear Receta JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsear Receta JSON": {
+      "main": [
+        [
+          {
+            "node": "YouTube: Buscar Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube: Buscar Videos": {
+      "main": [
+        [
+          {
+            "node": "YouTube: Validar Embeddable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube: Validar Embeddable": {
+      "main": [
+        [
+          {
+            "node": "Procesar Videos YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Videos YouTube": {
+      "main": [
+        [
+          {
+            "node": "Generar Imagen IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enriquecer Receta": {
+      "main": [
+        [
+          {
+            "node": "Quality Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quality Gate": {
+      "main": [
+        [
+          {
+            "node": "GET recipes.json (GitHub)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET recipes.json (GitHub)": {
+      "main": [
+        [
+          {
+            "node": "Merge + Preparar Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge + Preparar Commit": {
+      "main": [
+        [
+          {
+            "node": "Validate Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Prompt Chef": {
+      "main": [
+        [
+          {
+            "node": "Chef Redactor v3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Imagen IA": {
+      "main": [
+        [
+          {
+            "node": "Enriquecer Receta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Gate": {
+      "main": [
+        [
+          {
+            "node": "PUT recipes.json a GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

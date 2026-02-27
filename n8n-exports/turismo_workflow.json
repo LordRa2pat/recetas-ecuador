@@ -1,0 +1,426 @@
+{
+  "workflowId": "grhUOia7e869tqSN",
+  "name": "TURISMO-AI-Auto-Publisher-v2",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## TURISMO-AI-Auto-Publisher v3.0\n\n**Flujo:** Schedule -> GET posts -> Extraer -> Topic Finder -> Preparar Prompt -> Article Writer -> Parsear Post JSON -> Generar Imagen IA (Google Imagen 3) -> Quality Gate -> GET posts.json -> Merge -> PUT posts.json\n\n**Imagenes:** Google Imagen 3 Nanobanana Pro (paisajes Ecuador, sin personas) | Fallback: imagen existente del post\n**Categorias:** Naturaleza, Aventura, Gastronomia, Cultura, Playas, Sierra, Amazonia, Galapagos\n**SEO:** keywords long-tail, description, FAQs People Also Ask.",
+        "height": 260,
+        "width": 500
+      },
+      "id": "sticky-blog",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -208,
+        -304
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "id": "schedule-blog",
+      "name": "Cada 12 Horas (Blog)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/posts.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token {{$env.GITHUB_TOKEN}}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-existing-posts",
+      "name": "GET posts existentes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        448,
+        0
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const ghResp = $('GET posts existentes').first().json;\nlet existingSlugs = [];\nlet existingTitles = [];\ntry {\n  const decoded = Buffer.from(ghResp.content.replace(/\\n/g,''), 'base64').toString('utf-8');\n  const posts = JSON.parse(decoded);\n  existingSlugs  = posts.map(p => p.slug);\n  existingTitles = posts.map(p => p.title);\n} catch(e) {\n  // posts.json vacÃ­o o no existe todavÃ­a\n}\nreturn [{ json: { existingSlugs, existingTitles, total: existingSlugs.length } }];"
+      },
+      "id": "extract-topics",
+      "name": "Extraer temas existentes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        688,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$env.XAI_API_KEY}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { model: 'grok-3-mini', max_tokens: 60, messages: [ { role: 'system', content: 'Eres un experto en turismo ecuatoriano. Sugieres temas Ãºnicos e interesantes para artÃ­culos de blog.' }, { role: 'user', content: 'Dame UN tema especÃ­fico de turismo ecuatoriano para un artÃ­culo de blog (destino, ruta, festividad, aventura). NO uses estos temas ya publicados: ' + $('Extraer temas existentes').first().json.existingTitles.slice(0, 20).join(', ') + '. Responde SOLO el tema, sin explicaciones ni puntos.' } ] } }}",
+        "options": {}
+      },
+      "id": "topic-finder",
+      "name": "Topic Finder",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        928,
+        0
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const topic = $('Topic Finder').first().json.choices[0].message.content.trim();\nconst existingTitles = $('Extraer temas existentes').first().json.existingTitles || [];\n\nconst systemPrompt =\n  'Eres un periodista y escritor de viajes especializado en Ecuador. Combinas el ' +\n  'conocimiento de un guÃ­a de turismo experto, la narrativa de un periodista de viajes ' +\n  'y la optimizaciÃ³n de un experto en SEO para Google. Escribes en espaÃ±ol de Ecuador, ' +\n  'de forma amena, informativa y atractiva.';\n\nconst userPrompt =\n  'Escribe un articulo de blog turistico completo sobre: ' + topic + '\\n\\n' +\n  'Temas YA publicados (NO repetir): ' + existingTitles.slice(0, 20).join(', ') + '\\n\\n' +\n  'INSTRUCCIONES DE CONTENIDO:\\n' +\n  '- Articulo de 600-900 palabras en HTML rico\\n' +\n  '- Usa h2 para secciones principales, h3 para subsecciones\\n' +\n  '- Parrafos con p, listas con ul/li, enfasis con strong\\n' +\n  '- Primer parrafo: menciona la keyword principal del tema, es la mas importante para SEO\\n' +\n  '- Incluye informacion practica: como llegar, que hacer, donde comer, mejor epoca para visitar\\n' +\n  '- Usa informacion actual (2025-2026) obtenida de tu busqueda web\\n' +\n  '- Tono: amigable, informativo, que inspire a visitar Ecuador\\n\\n' +\n  'SEO CRITICO - POSICIONAR #1 EN GOOGLE:\\n' +\n  '- \"title\": max 60 chars, keyword principal al inicio (ej: \"Galapagos Ecuador 2026: Guia Completa\")\\n' +\n  '- \"description\": EMPIEZA con la keyword. 150-155 chars exactos. No copiar el titulo.\\n' +\n  '- \"keywords\": 8-12 terminos que la gente busca: destino, visitar lugar, lugar 2026, que hacer, como llegar\\n' +\n  '- \"content\": HTML del articulo. Primera linea menciona keyword. H2s con keywords naturales.\\n' +\n  '- \"faqs\": EXACTAMENTE 3 preguntas reales de Google sobre el tema:\\n' +\n  '  [{q: \"Cuanto cuesta ir al destino?\", a: \"Respuesta directa 1-2 oraciones\"},\\n' +\n  '   {q: \"Cual es la mejor epoca para visitar?\", a: \"...\"},\\n' +\n  '   {q: \"Que documentos necesito para visitar Ecuador?\", a: \"...\"}]\\n\\n' +\n  'RESPONDE UNICAMENTE con un objeto JSON valido (sin markdown, sin backticks):\\n' +\n  '{\\n' +\n  '  \"title\": \"Titulo SEO max 60 chars\",\\n' +\n  '  \"subtitle\": \"Subtitulo descriptivo corto\",\\n' +\n  '  \"slug\": \"titulo-en-kebab-case-sin-acentos\",\\n' +\n  '  \"description\": \"155 chars max, keyword al inicio\",\\n' +\n  '  \"category\": \"Rutas|Destinos|Cultura|Festividades|Naturaleza|Aventura|Gastronomia\",\\n' +\n  '  \"region\": \"Sierra|Costa|Amazonia|Galapagos|Nacional\"\n' +\n  '}\n';\n\nconst payload = {\n  model: 'grok-3-mini',\n  max_tokens: 4000,\n  messages: [\n    { role: 'system', content: systemPrompt },\n    { role: 'user', content: userPrompt }\n  ]\n};\n\nreturn [{ json: { payload: payload } }];"
+      },
+      "id": "preparar-prompt-turismo",
+      "name": "Preparar Prompt Turismo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.x.ai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$env.XAI_API_KEY}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "n8n-turismo-bot/2.0"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.payload }}",
+        "options": {}
+      },
+      "id": "article-writer",
+      "name": "Article Writer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1408,
+        0
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Manejar el caso en que Article Writer retornÃ³ error\nconst rawResp = $('Article Writer').first().json;\nif (!rawResp.choices || rawResp.error) {\n  throw new Error('Article Writer fallÃ³: ' + JSON.stringify(rawResp).slice(0, 300));\n}\nconst raw = rawResp.choices[0].message.content || '';\n\n// Extraer JSON del contenido\nlet jsonStr = raw.trim();\njsonStr = jsonStr.replace(/^```json\\s*/i, '').replace(/^```\\s*/i, '').replace(/```\\s*$/i, '').trim();\n\n// Buscar el objeto JSON principal\nconst firstBrace = jsonStr.indexOf('{');\nconst lastBrace  = jsonStr.lastIndexOf('}');\nif (firstBrace !== -1 && lastBrace !== -1) {\n  jsonStr = jsonStr.substring(firstBrace, lastBrace + 1);\n}\n\nlet post;\ntry {\n  post = JSON.parse(jsonStr);\n} catch(e) {\n  throw new Error('JSON invalido del Article Writer: ' + e.message + '\\n' + jsonStr.substring(0, 200));\n}\n\nif (!post.title || post.title.length < 10) throw new Error('title demasiado corto: ' + post.title);\nif (!post.description || post.description.length < 80) throw new Error('description < 80 chars');\nif (!post.content || post.content.length < 500) throw new Error('content < 500 chars');\n\n// Normalizar slug\npost.slug = (post.slug || post.title)\n  .toLowerCase()\n  .normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n  .replace(/[^a-z0-9\\s-]/g, '').replace(/\\s+/g, '-')\n  .replace(/-+/g, '-').replace(/^-|-$/g, '');\n\nconst existingSlugs = $('Extraer temas existentes').first().json.existingSlugs || [];\nif (existingSlugs.includes(post.slug)) {\n  throw new Error('Slug duplicado: ' + post.slug);\n}\n\npost.date_published = new Date().toISOString().split('T')[0];\nif (!post.keywords || post.keywords.length < 5) post.keywords = [];\nif (!post.faqs) post.faqs = [];\nif (post.featured === undefined) post.featured = true;\nif (!post.image_url || post.image_url.length < 30) {\n  post.image_url = null;\n}\n\nreturn [{ json: post }];"
+      },
+      "id": "parse-post",
+      "name": "Parsear Post JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1648,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Quality Gate Blog v3 â€” Imagen 3 obligatoria, cero Unsplash\nlet post;\ntry {\n  const aiData = $('Generar Imagen IA').first().json;\n  post = Object.assign({}, aiData);\n  if (aiData.ai_image_url && aiData._imagen3_status === 'ok') {\n    post.image_url    = aiData.ai_image_url;\n    post._image_source = 'imagen3_ai';\n    console.log('Imagen 3 OK:', aiData.ai_image_url.slice(0, 70));\n  } else {\n    // Imagen 3 fallÃ³: eliminar cualquier URL de Unsplash, no publicar con ella\n    if (!post.image_url ||\n        post.image_url.includes('unsplash.com') ||\n        post.image_url.includes('ytimg.com') ||\n        post.image_url.includes('youtube.com') ||\n        post.image_url.length < 30) {\n      post.image_url     = null;\n      post._image_source = 'pending_ai';\n    }\n    console.warn('Imagen 3 no generÃ³ (' + (aiData._imagen3_status || 'sin estado') + '). image_url = null');\n  }\n} catch(e) {\n  post = $('Parsear Post JSON').first().json;\n  // Limpiar Unsplash tambiÃ©n en fallback\n  if (post.image_url && post.image_url.includes('unsplash.com')) {\n    post.image_url = null;\n    post._image_source = 'pending_ai';\n  }\n  console.warn('Generar Imagen IA no disponible:', e.message);\n}\n\n// Validaciones\nif (!post.slug || post.slug.length < 3) throw new Error('QG: slug invalido');\nif (!post.title || post.title.length < 10) throw new Error('QG: title demasiado corto');\nif (!post.description || post.description.length < 80) throw new Error('QG: description < 80 chars');\nif (!post.content || post.content.length < 500) throw new Error('QG: content < 500 chars');\n\nif (!post.keywords || post.keywords.length < 5) console.warn('QG WARNING: keywords < 5');\nif (!post.faqs || post.faqs.length === 0) console.warn('QG WARNING: sin FAQs');\n\nconsole.log('Quality Gate OK:', post.slug, '| img:', post._image_source || 'sin imagen',\n  '| keywords:', (post.keywords||[]).length, '| faqs:', (post.faqs||[]).length);\nreturn [{ json: post }];"
+      },
+      "id": "quality-gate-blog",
+      "name": "Quality Gate Blog",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1952,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/posts.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token {{$env.GITHUB_TOKEN}}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-github-posts",
+      "name": "GET posts.json GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2128,
+        0
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const post   = $('Quality Gate Blog').first().json;\nconst ghResp = $('GET posts.json GitHub').first().json;\n\nlet posts = [];\nlet sha   = '';\ntry {\n  sha = ghResp.sha || '';\n  const decoded = Buffer.from((ghResp.content || '').replace(/\\n/g,''), 'base64').toString('utf-8');\n  posts = JSON.parse(decoded);\n} catch(e) { posts = []; }\n\nif (posts.some(p => p.slug === post.slug)) {\n  throw new Error('Slug ya existe en posts.json: ' + post.slug);\n}\n\nconst maxId = posts.reduce((m, p) => Math.max(m, p.id || 0), 0);\npost.id = maxId + 1;\npost.created_at = new Date().toISOString();\nposts.unshift(post);\n\nconst newContent = Buffer.from(JSON.stringify(posts, null, 2), 'utf-8').toString('base64');\n\nconst extras = [];\nif (post.faqs   && post.faqs.length   > 0) extras.push('FAQs:'  + post.faqs.length);\nif (post.keywords && post.keywords.length > 0) extras.push('KW:' + post.keywords.length);\nconst extrasStr = extras.length ? ' [' + extras.join(' ') + ']' : '';\n\nreturn [{ json: {\n  sha, content: newContent,\n  slug: post.slug, title: post.title, id: post.id, total: posts.length,\n  commitMsg: 'feat(blog): agregar ' + post.slug + ' [ID:' + post.id + ']' + extrasStr + ' â€” turismo auto v2'\n} }];"
+      },
+      "id": "merge-commit-blog",
+      "name": "Merge + Preparar Commit Blog",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2368,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/LordRa2pat/recetas-ecuador/contents/posts.json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "token {{$env.GITHUB_TOKEN}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { message: $('Merge + Preparar Commit Blog').first().json.commitMsg, content: $('Merge + Preparar Commit Blog').first().json.content, sha: $('Merge + Preparar Commit Blog').first().json.sha } }}",
+        "options": {}
+      },
+      "id": "put-github-posts",
+      "name": "PUT posts.json a GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2608,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// ─── Extraer imagen real vía Google Custom Search (Reemplaza HuggingFace) ───\n// Extrae de Parsear Receta JSON o Parsear Post JSON dependiendo del workflow\nlet recipe = {};\ntry { recipe = $('Parsear Receta JSON').first().json; } catch(e) {}\nif (!recipe.slug) {\n  try { recipe = $('Parsear Post JSON').first().json; } catch(e) {}\n}\n\nconst GH_TOKEN = $env.GITHUB_TOKEN;\nconst REPO     = 'LordRa2pat/recetas-ecuador';\n\nconst GOOGLE_API_KEY = 'AIzaSyB1BT4j23M5rCy5nQLTL0owuTZMgWZRqOo'; \nconst GOOGLE_CX = 'f10191682aba7434b';\n\n// 1. Buscar imagen en Google\n// Usa image_keywords si existen, sino usa el titulo\nlet queryConcept = recipe.title;\nif (recipe.keywords && Array.isArray(recipe.keywords) && recipe.keywords.length > 0) {\n    queryConcept = recipe.keywords[0];\n}\nconst query = encodeURIComponent(`${queryConcept} turismo ecuador paisaje viaje hd`);\nconst searchUrl = `https://www.googleapis.com/customsearch/v1?q=${query}&searchType=image&cx=${GOOGLE_CX}&key=${GOOGLE_API_KEY}&num=1`;\n\nlet sourceUrl = '';\nlet imageUrl = '';\n\ntry {\n  const searchResp = await fetch(searchUrl);\n  if (searchResp.ok) {\n    const searchData = await searchResp.json();\n    if (searchData.items && searchData.items.length > 0) {\n      imageUrl = searchData.items[0].link;\n      sourceUrl = searchData.items[0].image.contextLink;\n      console.log('Google Image found:', imageUrl, 'Source:', sourceUrl);\n    }\n  } else {\n    console.error('Google Search Error:', await searchResp.text());\n  }\n} catch (e) {\n  console.error('Google Search Exception:', e.message);\n}\n\nif (!imageUrl) {\n  console.warn('Image not found via API, falling back to local flow');\n  return [{ json: { ...recipe, _imagen_status: 'failed' } }];\n}\n\n// 2. Descargar imagen\nlet imageBuffer = null;\ntry {\n  const imgResp = await fetch(imageUrl, { signal: AbortSignal.timeout(30000) });\n  if (imgResp.ok) {\n    imageBuffer = Buffer.from(await imgResp.arrayBuffer());\n  }\n} catch (e) {\n  console.error('Download Image Exception:', e.message);\n  return [{ json: { ...recipe, _imagen_status: 'download_failed' } }];\n}\n\nif (!imageBuffer) {\n  return [{ json: { ...recipe, _imagen_status: 'download_failed' } }];\n}\nconst b64Image = imageBuffer.toString('base64');\n\n// 3. Normalizar slug para archivo\nconst slug = (recipe.slug || recipe.title)\n  .toLowerCase()\n  .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e')\n  .replace(/[íìïî]/g, 'i').replace(/[óòöô]/g, 'o')\n  .replace(/[úùüû]/g, 'u').replace(/[ñ]/g, 'n')\n  .replace(/\\s+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-')\n  .replace(/^-|-$/g, '');\n\nconst ghPath = `images/${slug}.jpg`;\n\n// 4. Subir a GitHub\nlet existingSha = null;\ntry {\n  const checkResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${ghPath}`, {\n    headers: { 'Authorization': `token ${GH_TOKEN}`, 'Accept': 'application/vnd.github.v3+json' }\n  });\n  if (checkResp.ok) existingSha = (await checkResp.json()).sha;\n} catch (e) {}\n\nconst uploadBody = {\n  message: `feat(img-web): source ${sourceUrl}`,\n  content: b64Image,\n  ...(existingSha ? { sha: existingSha } : {})\n};\n\ntry {\n  const uploadResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${ghPath}`, {\n    method: 'PUT',\n    headers: { 'Authorization': `token ${GH_TOKEN}`, 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json' },\n    body: JSON.stringify(uploadBody)\n  });\n  if (uploadResp.ok) {\n    const rawUrl = `https://raw.githubusercontent.com/${REPO}/main/${ghPath}`;\n    return [{ json: { ...recipe, ai_image_url: rawUrl, _imagen3_status: 'ok', _image_source_url: sourceUrl, _image_source: 'web_search' } }];\n  }\n} catch (e) {\n  console.error('GH Upload Error:', e.message);\n}\nreturn [{ json: { ...recipe, _imagen_status: 'upload_failed' } }];\n"
+      },
+      "id": "generar-imagen-ia-turismo",
+      "name": "Generar Imagen IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1872,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validation Gate â€” posts.json\nconst item = $input.first().json;\nconst decoded = Buffer.from(item.content, 'base64').toString('utf8');\nlet arr;\ntry { arr = JSON.parse(decoded); } catch(e) { throw new Error('JSON invÃ¡lido: ' + e.message); }\nif (!Array.isArray(arr) || arr.length === 0) throw new Error('posts.json vacÃ­o o no es array');\nconst seen = new Set(); const dups = [];\narr.forEach(function(p) { if (seen.has(p.slug)) dups.push(p.slug); seen.add(p.slug); });\nif (dups.length) throw new Error('slugs duplicados: ' + dups.join(', '));\nconst p = arr[0];\nif (!p.slug || !String(p.slug).trim()) throw new Error('slug vacÃ­o en nuevo post');\nif (!p.description || p.description.length < 80) throw new Error('description < 80 chars: ' + p.slug);\nconst contentText = String(p.content || '').replace(/<[^>]+>/g, '').trim();\nif (contentText.length < 100) throw new Error('content demasiado corto (' + contentText.length + ' chars): ' + p.slug);\nconsole.log('VALIDATE_POSTS OK: ' + arr.length + ' posts â€” nuevo: ' + p.slug);\nreturn [{ json: item }];"
+      },
+      "id": "validate-gate-posts",
+      "name": "Validate Gate Posts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2496,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Cada 12 Horas (Blog)": {
+      "main": [
+        [
+          {
+            "node": "GET posts existentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET posts existentes": {
+      "main": [
+        [
+          {
+            "node": "Extraer temas existentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraer temas existentes": {
+      "main": [
+        [
+          {
+            "node": "Topic Finder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Topic Finder": {
+      "main": [
+        [
+          {
+            "node": "Preparar Prompt Turismo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar Prompt Turismo": {
+      "main": [
+        [
+          {
+            "node": "Article Writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Article Writer": {
+      "main": [
+        [
+          {
+            "node": "Parsear Post JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsear Post JSON": {
+      "main": [
+        [
+          {
+            "node": "Generar Imagen IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quality Gate Blog": {
+      "main": [
+        [
+          {
+            "node": "GET posts.json GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET posts.json GitHub": {
+      "main": [
+        [
+          {
+            "node": "Merge + Preparar Commit Blog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge + Preparar Commit Blog": {
+      "main": [
+        [
+          {
+            "node": "Validate Gate Posts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar Imagen IA": {
+      "main": [
+        [
+          {
+            "node": "Quality Gate Blog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Gate Posts": {
+      "main": [
+        [
+          {
+            "node": "PUT posts.json a GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

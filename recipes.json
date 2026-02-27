@@ -1,5 +1,145 @@
 [
   {
+    "slug": "tigrillo-manabita",
+    "title": "Tigrillo Manabita Receta Tradicional Ecuatoriana",
+    "description": "Tigrillo Manabita es un plato costero ecuatoriano hecho con plátanos verdes, ideal para desayunos energéticos. Esta receta tradicional incluye ingredientes frescos y pasos simples para recrear el sabor auténtico de Manabí en casa, perfecto para amantes de la cocina latinoamericana.",
+    "region": "Costa",
+    "category": "Desayunos",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "20 min",
+    "total_time": "35 min",
+    "ingredients": [
+      "4 unidades medianas Plátanos verdes madurados (comprar en Supermaxi)",
+      "1 unidad grande picada Cebolla blanca (comprar en Megamaxi)",
+      "2 unidades medianas picadas Tomates maduros (comprar en TIA)",
+      "200 gramos rallado Queso fresco (comprar en Mercado local)",
+      "2 unidades Huevos (comprar en Supermaxi)",
+      "2 cucharadas Aceite vegetal (comprar en Megamaxi)",
+      "al gusto Sal (comprar en TIA)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "2 dientes picados Ajo (comprar en Supermaxi)",
+      "1/2 cucharadita Pimienta (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Pelar los 4 plátanos verdes y cortarlos en rodajas de 1 cm de grosor, dejándolos reposar durante 10 minutos para que suelten algo de almidón.",
+      "Paso 2: Calentar 2 cucharadas de aceite en una sartén a temperatura media (alrededor de 150°C) durante 2 minutos y freír las rodajas de plátano hasta que estén doradas, aproximadamente 5 minutos por lado.",
+      "Paso 3: Mientras se fríen los plátanos, picar finamente 1 cebolla grande, 2 tomates medianos y 2 dientes de ajo, y reservar en un bowl durante 5 minutos para que los sabores se integren.",
+      "Paso 4: Retirar los plátanos de la sartén y machacarlos con un tenedor en un recipiente, agregando sal al gusto y 1/2 cucharadita de pimienta, mezclando por 2 minutos hasta obtener una pasta.",
+      "Paso 5: En la misma sartén, a fuego medio-bajo (120°C), saltear la mezcla de cebolla, tomate y ajo durante 3 minutos hasta que estén suaves, luego incorporar la pasta de plátano y cocinar por 5 minutos más.",
+      "Paso 6: Agregar 2 huevos batidos y 200 gramos de queso fresco rallado, revolviendo constantemente durante 4 minutos hasta que los huevos se cocinen y el queso se derrita.",
+      "Paso 7: Finalmente, espolvorear 1/2 taza de cilantro fresco picado y retirar del fuego, dejando reposar por 2 minutos antes de servir caliente."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa plátanos ligeramente madurados para un balance perfecto de dulzura y textura, evitando que queden demasiado blandos.",
+      "Consejo 2: Para un sabor más auténtico, añade un toque de achiote si lo tienes disponible, pero no excedas para no dominar los otros ingredientes."
+    ],
+    "origin_cities": [
+      "Portoviejo",
+      "Manta"
+    ],
+    "image_keywords": [
+      "tigrillo manabita plato",
+      "ecuadorian breakfast dish",
+      "traditional ecuadorian food"
+    ],
+    "image_alt": "Fotografía del Tigrillo Manabita terminado, mostrando plátanos machacados con vegetales y queso en un plato tradicional ecuatoriano",
+    "seo_keywords": [
+      "receta de tigrillo manabita autentica ecuatoriana",
+      "como hacer tigrillo manabita en casa",
+      "plato tipico de manabi ecuador",
+      "desayuno ecuatoriano con platanos",
+      "tigrillo manabita ingredientes y pasos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el Tigrillo Manabita y de dónde proviene?",
+        "a": "El Tigrillo Manabita es un plato de desayuno típico de la costa ecuatoriana, originario de Manabí, hecho principalmente con plátanos verdes machacados, cebolla, tomate y queso. Es una comida nutritiva y versátil que refleja la cocina costera."
+      },
+      {
+        "q": "¿Puedo hacer variaciones vegetarianas del Tigrillo Manabita?",
+        "a": "Sí, puedes hacer una versión vegetariana omitiendo los huevos y usando solo plátanos, vegetales y queso. Asegúrate de equilibrar los sabores con hierbas frescas como cilantro para mantener el gusto auténtico."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el Tigrillo Manabita en la nevera?",
+        "a": "El Tigrillo Manabita se debe consumir fresco, pero si lo refrigeras en un contenedor hermético, dura hasta 2 días. Recomendamos recalentarlo en una sartén para restaurar la textura, ya que los plátanos pueden endurecerse."
+      },
+      {
+        "q": "¿Es el Tigrillo Manabita adecuado para niños?",
+        "a": "Sí, es adecuado para niños ya que es suave y nutritivo, pero ajusta el nivel de sal y pimienta. Puedes añadir más queso para hacerlo más atractivo y asegurar que los plátanos estén bien cocidos para evitar cualquier riesgo."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manaba",
+        "city": "Portoviejo",
+        "description": "Un lugar icónico en Portoviejo que sirve Tigrillo Manabita fresco con ingredientes locales, ideal para experimentar la cocina costera auténtica."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "En este vibrante mercado, puedes probar Tigrillo Manabita en puestos callejeros, hecho al momento con productos frescos directamente de los vendedores locales."
+      },
+      {
+        "name": "Cafetería Costa Azul",
+        "city": "Bahía de Caráquez",
+        "description": "Ofrece una versión moderna del Tigrillo Manabita con toques innovadores, perfecto para turistas que quieran combinar tradición con vistas al mar."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Plátanos verdes",
+        "substitute": "Plantains verdes disponibles en EE.UU.",
+        "notes": "Encuéntralos en supermercados como Walmart o mercados latinos en EE.UU., o en Tesco en Europa para mantener el sabor tropical."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso feta o ricotta en Europa/EE.UU.",
+        "notes": "Busca en tiendas como Whole Foods en EE.UU. o Sainsbury's en Europa; proporciona una textura similar aunque con un sabor ligeramente más salado."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil o culantro en EE.UU.",
+        "notes": "Disponible en supermercados generales como Kroger en EE.UU. o Carrefour en Europa, para un sabor herbáceo alternativo si el cilantro no está fresco."
+      }
+    ],
+    "estimated_cost": "$4.50 USD",
+    "youtube_videos": [
+      {
+        "title": "TIGRILLO",
+        "videoId": "mbZETORPR2c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=mbZETORPR2c",
+        "embed": "https://www.youtube-nocookie.com/embed/mbZETORPR2c",
+        "uploadDate": "2018-10-13",
+        "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nTODOS LOS DERECHOS RESERVADOS."
+      },
+      {
+        "title": "Tigrillo ecuatoriano | la mejor receta",
+        "videoId": "UrB1pSwBJiY",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=UrB1pSwBJiY",
+        "embed": "https://www.youtube-nocookie.com/embed/UrB1pSwBJiY",
+        "uploadDate": "2022-01-28",
+        "description": "Que puedes hacer con el plátano verde en casa, pues aquí te traigo una de las mejores opciones Tigrillo Ecuatoriano. 😋👩‍🍳\n¡Prepárate y toma nota!\n\nNecesitaremos:\n• 3 Plátanos Verdes\n• Cebolla color"
+      },
+      {
+        "title": "Cómo hacer TIGRILLO | Receta fácil",
+        "videoId": "9mzxZIgMUiA",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=9mzxZIgMUiA",
+        "embed": "https://www.youtube-nocookie.com/embed/9mzxZIgMUiA",
+        "uploadDate": "2024-03-26",
+        "description": "✨Trigrillo✨\n.\n.\nIngredientes Tigrillo con chicharrón:\n\n• 1 ½ lbs de panceta\n• Condimentamos para la panceta:\n• 3 dientes de ajo\n• 1 cdta de comino\n• 1 cdta de paprika\n• ½ cdta de pimienta\n• 1 cda de s"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/UrB1pSwBJiY/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 37,
+    "created_at": "2026-02-27T17:22:10.370Z"
+  },
+  {
     "slug": "inchicapi",
     "title": "Inchicapi Ecuatoriano Receta Tradicional",
     "description": "Inchicapi una sopa amazónica ecuatoriana con pollo y maní. Esta receta tradicional combina sabores indígenas con ingredientes frescos, perfecta para una comida reconfortante y nutritiva en familia o amigos, ideal para explorar la cocina del Ecuador.",

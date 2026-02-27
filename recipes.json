@@ -1,5 +1,146 @@
 [
   {
+    "slug": "bollo-de-elote-ecuatoriano",
+    "title": "Bollo de Elote Ecuatoriano Receta Tradicional",
+    "description": "Bollo de Elote Ecuatoriano es un postre dulce y esponjoso hecho con maíz fresco, típico de la costa ecuatoriana. Esta receta fácil incluye pasos detallados para lograr el sabor auténtico con ingredientes accesibles, ideal para principiantes en la cocina ecuatoriana.",
+    "region": "Costa",
+    "category": "Postres",
+    "difficulty": "Facil",
+    "servings": "6 personas",
+    "prep_time": "20 min",
+    "cook_time": "45 min",
+    "total_time": "65 min",
+    "ingredients": [
+      "4 tazas molidas Elote fresco (maíz) (comprar en Mercado local)",
+      "1 taza Azúcar blanca (comprar en Supermaxi)",
+      "100 gramos Mantequilla sin sal (comprar en Supermaxi)",
+      "2 unidades Huevos grandes (comprar en Supermaxi)",
+      "1 taza Leche entera (comprar en Megamaxi)",
+      "1 taza Harina de trigo (comprar en TIA)",
+      "1 cucharadita Polvo de hornear (comprar en Supermaxi)",
+      "1/2 cucharadita Sal fina (comprar en Mercado local)",
+      "1 cucharadita Esencia de vainilla (comprar en Supermaxi)",
+      "1/2 cucharadita Canela en polvo (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia y muele 4 tazas de elote fresco en un procesador de alimentos durante 5 minutos hasta obtener una masa suave, asegurándote de que no queden grumos grandes.",
+      "Paso 2: En un tazón grande, mezcla 1 taza de azúcar con 100 gramos de mantequilla derretida a temperatura ambiente durante 2 minutos hasta que quede cremosa.",
+      "Paso 3: Agrega 2 huevos y 1 cucharadita de esencia de vainilla a la mezcla de azúcar y mantequilla, batiendo a velocidad media durante 3 minutos para incorporar aire.",
+      "Paso 4: En otro tazón, combina 1 taza de harina, 1 cucharadita de polvo de hornear, 1/2 cucharadita de sal y 1/2 cucharadita de canela, mezclando bien durante 1 minuto.",
+      "Paso 5: Incorpora la masa de elote y 1 taza de leche a los ingredientes secos, revolviendo suavemente con una espátula durante 4 minutos hasta formar una masa homogénea.",
+      "Paso 6: Vierte la masa en un molde engrasado y hornea a 180°C durante 45 minutos, o hasta que al insertar un palillo salga limpio, verificando cada 15 minutos.",
+      "Paso 7: Retira del horno y deja enfriar durante 10 minutos antes de desmoldar para evitar que se rompa.",
+      "Paso 8: Sirve el bollo de elote tibio, cortado en porciones, acompañado de una bebida caliente para realzar los sabores."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa elote fresco de temporada para un sabor más auténtico y jugoso, evitando variedades genéricas que pueden hacer el bollo seco.",
+      "Consejo 2: Para un bollo más esponjoso, tamiza la harina antes de mezclarla, lo que ayuda a incorporar aire y evita grumos en la masa."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "bollo de elote",
+      "ecuadorian corn cake",
+      "traditional ecuadorian dessert"
+    ],
+    "image_alt": "Delicioso Bollo de Elote Ecuatoriano recién horneado, con textura esponjosa y dorada",
+    "seo_keywords": [
+      "receta de bollo de elote ecuatoriano tradicional paso a paso",
+      "como hacer bollo de elote casero en casa",
+      "postre ecuatoriano con maiz fresco y facil",
+      "bollo de elote de la costa ecuatoriana autentico",
+      "mejor receta de bollo de elote dulce para principiantes",
+      "ingredientes para bollo de elote ecuatoriano clasico"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el Bollo de Elote Ecuatoriano?",
+        "a": "El Bollo de Elote Ecuatoriano es un postre tradicional hecho principalmente de maíz fresco molido, azúcar y otros ingredientes simples, originario de la costa de Ecuador. Se hornea o cocina al vapor para obtener una textura suave y dulce, similar a un pastel de maíz."
+      },
+      {
+        "q": "¿Cómo almacenar el Bollo de Elote para que dure más?",
+        "a": "Envuelve el Bollo de Elote en papel plástico o guarda en un contenedor hermético a temperatura ambiente por hasta 2 días. Para mayor duración, refrigéralo por hasta 5 días o congélalo por un mes; descongela a temperatura ambiente antes de servir para mantener su textura."
+      },
+      {
+        "q": "¿Puedo usar maíz en lata en lugar de fresco?",
+        "a": "Sí, puedes usar maíz en lata, pero el sabor no será tan auténtico. Escurre y muele 4 tazas de maíz en lata, ajustando el azúcar ya que puede ser más dulce; esto es ideal si el elote fresco no está disponible en tu región."
+      },
+      {
+        "q": "¿Es el Bollo de Elote adecuado para dietas veganas?",
+        "a": "El Bollo de Elote tradicional no es vegano debido a los huevos y la leche, pero puedes modificarlo sustituyendo los huevos por puré de plátano y la leche por una versión vegetal, lo que mantiene el sabor mientras se adapta a dietas veganas."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Un restaurante familiar en Guayaquil que sirve Bollo de Elote fresco con recetas heredadas, ideal para probarlo con café tradicional en un ambiente costero auténtico."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "En este vibrante mercado, vendedores locales ofrecen Bollo de Elote recién hecho, perfecto para una experiencia auténtica y asequible con ingredientes frescos de la región."
+      },
+      {
+        "name": "Cafetería La Casa del Maíz",
+        "city": "Quito",
+        "description": "Aunque no es de la costa, esta cafetería en Quito prepara Bollo de Elote con un twist moderno, usando maíz orgánico, ideal para turistas que buscan variedades adaptadas."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Elote fresco",
+        "substitute": "Maíz en lata o congelado",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa; drena bien para evitar exceso de humedad."
+      },
+      {
+        "original": "Mantequilla",
+        "substitute": "Aceite de coco o margarina vegetal",
+        "notes": "Encuéntralo en tiendas como Whole Foods en EE.UU. o Edeka en Europa; usa en la misma cantidad para mantener la textura cremosa."
+      },
+      {
+        "original": "Leche entera",
+        "substitute": "Leche de almendra o soya",
+        "notes": "Fácil de encontrar en cadenas como Tesco en Europa o Target en EE.UU.; es una opción para versiones veganas sin alterar el sabor."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "HUMITAS",
+        "videoId": "aLtGdXLbQNg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=aLtGdXLbQNg",
+        "embed": "https://www.youtube-nocookie.com/embed/aLtGdXLbQNg",
+        "uploadDate": "2021-04-09",
+        "description": "Lleve lleve! Humitas calientes! #Humitas #KWAEC\n\nIngredientes:\nChoclo 8 unidades \nMantequilla derretida (fria) 150 gr\nHuevos 4 unidades \nSal 10 gr\nAzúcar 50 gr\nQueso\n\nSIGUENOS:\r\nFB: https://tinyurl.co"
+      },
+      {
+        "title": "Tienes estos dos ingredientes, te enseño a hacer algo rico",
+        "videoId": "BfWhFvT0-F0",
+        "channel": "Cocinemosjuntos.com",
+        "url": "https://www.youtube.com/watch?v=BfWhFvT0-F0",
+        "embed": "https://www.youtube-nocookie.com/embed/BfWhFvT0-F0",
+        "uploadDate": "2021-11-23",
+        "description": "Tienes estos dos ingredientes, te enseño hacer algo rico. Asi es, con estos dos ingredientes y unos cuantos mas, puedes hacer una deliciosa receta de un pan con mucho queso. Es una receta facil que pu"
+      },
+      {
+        "title": "😋 Deliciosa torta de elote.",
+        "videoId": "W66AxERpS2U",
+        "channel": "Vamos con Anni",
+        "url": "https://www.youtube.com/watch?v=W66AxERpS2U",
+        "embed": "https://www.youtube-nocookie.com/embed/W66AxERpS2U",
+        "uploadDate": "2023-02-25",
+        "description": "visita mi canal para ver el procedimiento completo.\n\nIngredientes:\n5 elotes crudos desgranados\n250 ML de crema de leche.\n375 gr de leche condensada\n150 gr de mantequilla\n5 huevos\n1/2 taza harina de tr"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 33,
+    "created_at": "2026-02-27T02:55:14.007Z"
+  },
+  {
     "slug": "sopa-de-quinoa-ecuatoriana-variations-de-la-sierra-sur",
     "title": "Sopa de Quinoa Ecuatoriana Receta de la Sierra Sur",
     "description": "Sopa de Quinoa Ecuatoriana es una sopa nutritiva y reconfortante de la Sierra Sur, con variaciones que incluyen ingredientes locales como papas andinas y hierbas frescas, ideal para un almuerzo saludable y tradicional en Ecuador.",

@@ -1,5 +1,145 @@
 [
   {
+    "slug": "inchicapi",
+    "title": "Inchicapi Ecuatoriano Receta Tradicional",
+    "description": "Inchicapi una sopa amazónica ecuatoriana con pollo y maní. Esta receta tradicional combina sabores indígenas con ingredientes frescos, perfecta para una comida reconfortante y nutritiva en familia o amigos, ideal para explorar la cocina del Ecuador.",
+    "region": "Amazonia",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "45 min",
+    "total_time": "65 min",
+    "ingredients": [
+      "500 gramos Pollo (comprar en Supermaxi)",
+      "1 taza Maní (comprar en Megamaxi)",
+      "2 unidades medianas Yuca (comprar en Mercado local)",
+      "1 unidad grande Cebolla (comprar en Supermaxi)",
+      "3 dientes Ajo (comprar en TIA)",
+      "1 manojo Cilantro (comprar en Mercado local)",
+      "1 cucharada Achiote (comprar en Megamaxi)",
+      "al gusto Sal (comprar en Supermaxi)",
+      "2 litros Agua (comprar en Cualquiera)",
+      "2 cucharadas Aceite (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Picar finamente la cebolla y el ajo, tardando aproximadamente 5 minutos, y reservar en un bol para infusionar sabores.",
+      "Paso 2: Limpiar y cortar el pollo en trozos de 5 cm, luego sazonar con sal y achiote, dejándolo marinar por 10 minutos a temperatura ambiente.",
+      "Paso 3: Pelar y cortar la yuca en cubos de 2 cm, lavar bien para eliminar el almidón, y cocerla por 10 minutos en agua hirviendo hasta que esté tierna.",
+      "Paso 4: En una olla grande a fuego medio (alrededor de 150°C), calentar el aceite y saltear la cebolla y el ajo por 5 minutos hasta que estén dorados.",
+      "Paso 5: Agregar el pollo marinado y cocinar por 10 minutos, revolviendo ocasionalmente para sellar bien y evitar que se pegue.",
+      "Paso 6: Moler el maní en un procesador hasta obtener una pasta fina, añadirlo a la olla junto con la yuca cocida y el cilantro picado, luego verter el agua y cocinar a fuego lento por 30 minutos.",
+      "Paso 7: Remover la sopa cada 5 minutos para integrar los sabores y asegurar que no se queme, ajustando la sal al final."
+    ],
+    "tips": [
+      "Usa maní fresco y tostado para un sabor más auténtico y evitar amargor en la sopa.",
+      "Agrega cilantro al final para preservar su aroma fresco y verde en el plato terminado."
+    ],
+    "origin_cities": [
+      "Tena",
+      "Puyo"
+    ],
+    "image_keywords": [
+      "inchicapi soup",
+      "ecuadorian food",
+      "traditional amazonian dish"
+    ],
+    "image_alt": "Fotografía del plato terminado de Inchicapi, una sopa espesa con pollo, maní y yuca en un bowl humeante",
+    "seo_keywords": [
+      "receta de inchicapi ecuatoriano tradicional paso a paso",
+      "como hacer sopa inchicapi de la amazonia",
+      "ingredientes para inchicapi autentico en ecuador",
+      "sopa inchicapi con pollo y maní receta facil",
+      "platos tipicos ecuatorianos inchicapi en casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Inchicapi y de dónde proviene?",
+        "a": "Inchicapi es una sopa tradicional de la Amazonia ecuatoriana, hecha principalmente con pollo, maní y yuca. Originaria de pueblos indígenas como los shuar, representa la fusión de ingredientes locales y es común en regiones como Tena y Puyo."
+      },
+      {
+        "q": "¿Es Inchicapi apto para vegetarianos?",
+        "a": "La versión tradicional no lo es por el pollo, pero puedes hacerla vegetariana sustituyendo el pollo por verduras como zapallo o champiñones, manteniendo el sabor con maní y hierbas."
+      },
+      {
+        "q": "¿Cuánto dura Inchicapi refrigerado?",
+        "a": "Inchicapi se conserva hasta 3 días en el refrigerador si se guarda en un contenedor hermético. Recomendamos recalentarla a fuego medio para mantener la textura cremosa del maní."
+      },
+      {
+        "q": "¿Qué sirve como acompañamiento para Inchicapi?",
+        "a": "Se sirve con arroz blanco o yuca frita para un plato completo. En Ecuador, a menudo se acompaña con plátano maduro asado para equilibrar los sabores salados."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Chagra",
+        "city": "Tena",
+        "description": "Un lugar especializado en cocina amazónica donde probar Inchicapi con ingredientes frescos de la región."
+      },
+      {
+        "name": "Mercado de Puyo",
+        "city": "Puyo",
+        "description": "En este mercado local, varios vendedores ofrecen Inchicapi casero, ideal para una experiencia auténtica y económica."
+      },
+      {
+        "name": "Hotel Auca",
+        "city": "Tena",
+        "description": "Ofrece versiones modernas de Inchicapi en su menú, con tours guiados para aprender sobre la gastronomía amazónica."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Maní",
+        "substitute": "Mantequilla de maní",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Tesco en Europa, pero usa una versión natural para evitar azúcares añadidos."
+      },
+      {
+        "original": "Yuca",
+        "substitute": "Patata",
+        "notes": "Disponible en cualquier supermercado en EE.UU. o Europa, como Whole Foods; proporciona una textura similar pero menos fibrosa."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Se vende en tiendas de especias como Amazon o localmente en mercados étnicos en EE.UU. y Europa para un sabor comparable."
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Cómo preparar #pollo al maní",
+        "videoId": "03HORnxFPq8",
+        "channel": "Buenazo",
+        "url": "https://www.youtube.com/watch?v=03HORnxFPq8",
+        "embed": "https://www.youtube-nocookie.com/embed/03HORnxFPq8",
+        "uploadDate": "2024-08-19",
+        "description": "🍗 POLLO AL MANÍ 🥜, una receta FÁCIL y BUENAZA para incluir en tu menú semanal. 🤤\n\nIngredientes:\n• 4 presas de pollo\n• 120 gramos de maní tostado\n• 1 cebolla picada en cuadraditos\n• 5 cucharadas de "
+      },
+      {
+        "title": "Pollo al Maní 🍗 Un clásico de casa extremadamente delicioso ♥️ #Mani #Recetas #RecetasFaciles #Peru",
+        "videoId": "CyzqtUk_CnA",
+        "channel": "Sazón y Corazón",
+        "url": "https://www.youtube.com/watch?v=CyzqtUk_CnA",
+        "embed": "https://www.youtube-nocookie.com/embed/CyzqtUk_CnA",
+        "uploadDate": "2025-08-13",
+        "description": "Ingredientes:\n• 6 piezas de pollo\n• 150 g de maní tostado y molido\n• 1 taza de cebolla roja en cuadritos\n• 1 cda. de aji amarillo molido\n• 2 cdas. de ají panca molido\n• ½ de cdta. de comino\n• 1 cda. d"
+      },
+      {
+        "title": "¡Increíble! Caldo de Gallina con maní (Inchicapi)",
+        "videoId": "lquOQycWURE",
+        "channel": "El Gourmet de Mary",
+        "url": "https://www.youtube.com/watch?v=lquOQycWURE",
+        "embed": "https://www.youtube-nocookie.com/embed/lquOQycWURE",
+        "uploadDate": "2021-05-29",
+        "description": "Un plato típico de la selva Peruana, el Inchicapi\n\nIngredientes:\n-1 gallina\n-500gr de maní crudo\n-3 dientes de ajo\n-orégano\n-cilantro\n-Sal\n- * acompañante * plátanos verdes sancochados o pan\n\nIngredie"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/03HORnxFPq8/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 36,
+    "created_at": "2026-02-27T11:22:12.875Z"
+  },
+  {
     "slug": "sopa-de-mani",
     "title": "Sopa de Mani Ecuatoriana Receta Tradicional",
     "description": "Sopa de Mani es una sopa cremosa y nutritiva de la cocina ecuatoriana. Esta receta tradicional incluye maní tostado, verduras frescas y especias para un sabor auténtico y reconfortante, perfecta para el clima frío de la sierra.",

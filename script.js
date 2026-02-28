@@ -570,14 +570,24 @@ async function initRecipe() {
 
   const instList = document.getElementById("instructions-list");
   if (instList && recipe.instructions) {
-    instList.innerHTML = recipe.instructions.map((inst, i) => `
+    instList.innerHTML = recipe.instructions.map((inst, i) => {
+      const stepVideo = (recipe.step_videos && recipe.step_videos[i]) ? `
+        <div class="mt-8 rounded-3xl overflow-hidden shadow-2xl border border-white/5 aspect-video bg-black/20">
+          <video src="${recipe.step_videos[i]}" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+        </div>` : "";
+
+      return `
         <li class="grid md:grid-cols-[80px_1fr] gap-8 group instruction-line" data-aos="fade-up">
           <div class="flex flex-col items-center">
              <span class="w-12 h-12 rounded-xl border border-ec-gold/20 flex items-center justify-center text-ec-gold font-display font-black italic text-xl group-hover:scale-110 transition-all">${i + 1}</span>
           </div>
-          <p class="text-white/60 text-xl font-light leading-relaxed tracking-tight group-hover:text-white transition-colors text-balance">${escapeHtml(inst)}</p>
+          <div>
+            <p class="text-white/60 text-xl font-light leading-relaxed tracking-tight group-hover:text-white transition-colors text-balance">${escapeHtml(inst)}</p>
+            ${stepVideo}
+          </div>
         </li>
-      `).join("");
+      `;
+    }).join("");
   }
 
   // Extra Cards
@@ -589,6 +599,11 @@ async function initRecipe() {
   initGlossary();
   initSpotifyPlayer(recipe);
   initSpicySlider(recipe);
+  initCalculator(recipe);
+  initMarketChecklist(recipe);
+  initHandsDirtyMode();
+  initAltitudeTimer();
+  calculateEstimatedPrice(recipe);
 
   // Diaspora Mode Reactive Logic
   const diasporaSwitch = document.getElementById("diaspora-switch");
@@ -1240,6 +1255,193 @@ function initCalentadoGenerator(recipes) {
       results.innerHTML = `<p class="text-white/20 text-[10px] font-black uppercase tracking-[0.3em] col-span-2 text-center p-8 border border-dashed border-white/5 rounded-3xl italic">Archivos insuficientes. Prueba con otros ingredientes.</p>`;
     }
   });
+}
+
+// ─── Calculadora Épica de Fanesca (Escalador Inteligente) ──
+function initCalculator(recipe) {
+  const minus = document.getElementById("portion-minus");
+  const plus = document.getElementById("portion-plus");
+  const countDisplay = document.getElementById("portion-count");
+  const ingList = document.getElementById("ingredients-list");
+
+  if (!minus || !plus || !recipe.ingredients) return;
+
+  // Extraer base servings de '6 personas' -> 6
+  const baseServings = parseInt(recipe.servings) || 4;
+  let currentServings = baseServings;
+  countDisplay.textContent = currentServings;
+
+  const updateIngredients = (newServings) => {
+    const ratio = newServings / baseServings;
+
+    const scaledIngredients = recipe.ingredients.map(ing => {
+      // RegEx para detectar números al inicio
+      const match = ing.match(/^([\d.,/]+)\s*(.*)$/);
+      if (match) {
+        let val = parseFloat(match[1].replace(',', '.'));
+        if (isNaN(val)) return ing;
+
+        // LÓGICA NO LINEAL: Las especias y sal crecen más lento
+        // Si el ratio > 2, reducimos el crecimiento de condimentos
+        const condimentos = ['sal', 'pimienta', 'comino', 'especia', 'ajos', 'achiote'];
+        let factor = ratio;
+        if (ratio > 2 && condimentos.some(c => ing.toLowerCase().includes(c))) {
+          factor = 1 + (ratio - 1) * 0.7; // Crecimiento al 70% para especias
+        }
+
+        const newVal = (val * factor).toFixed(2).replace(/\.00$/, '');
+        return `${newVal} ${match[2]}`;
+      }
+      return ing;
+    });
+
+    if (ingList) {
+      ingList.innerHTML = scaledIngredients.map(ing => `
+          <li class="flex items-start gap-4 text-white/40 hover:text-white transition-colors group cursor-default">
+            <span class="w-1.5 h-1.5 rounded-full bg-ec-gold group-hover:scale-150 transition-transform mt-2"></span>
+            <span class="text-sm tracking-[0.05em] font-light italic">${escapeHtml(ing)}</span>
+          </li>
+       `).join("");
+    }
+  };
+
+  minus.addEventListener("click", () => {
+    if (currentServings > 1) {
+      currentServings--;
+      countDisplay.textContent = currentServings;
+      updateIngredients(currentServings);
+    }
+  });
+
+  plus.addEventListener("click", () => {
+    currentServings++;
+    countDisplay.textContent = currentServings;
+    updateIngredients(currentServings);
+  });
+}
+
+// ─── Checklist de Mercado (WhatsApp) ───────────────────────
+function initMarketChecklist(recipe) {
+  const btn = document.getElementById("market-checklist-btn");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    const servings = document.getElementById("portion-count").textContent;
+    const ingredients = Array.from(document.querySelectorAll("#ingredients-list li")).map(li => li.innerText).join('\n- ');
+
+    const text = `🇪🇨 *LISTA DE COMPRA: ${recipe.title.toUpperCase()}*\n\nPara ${servings} personas:\n\n- ${ingredients}\n\n_Vía Ecuador a la Carta_`;
+    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+    trackEvent("market_checklist_shared", { recipe: recipe.slug, servings });
+  });
+}
+
+// ─── Modo Manos Sucias (Wake Lock API) ────────────────────
+async function initHandsDirtyMode() {
+  const switchEl = document.getElementById("hands-dirty-switch");
+  if (!switchEl) return;
+
+  let wakeLock = null;
+
+  switchEl.addEventListener("change", async (e) => {
+    if (e.target.checked) {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+          console.log("Wake Lock Is Active");
+        } else {
+          alert("Tu navegador no soporta Wake Lock. Mantén la pantalla encendida manualmente.");
+        }
+      } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+      }
+    } else {
+      if (wakeLock) {
+        await wakeLock.release();
+        wakeLock = null;
+        console.log("Wake Lock Released");
+      }
+    }
+  });
+}
+
+// ─── Temporizador de Altitud ──────────────────────────────
+function initAltitudeTimer() {
+  const display = document.getElementById("altitude-timer-display");
+  const sierraBtn = document.getElementById("timer-sierra");
+  const costaBtn = document.getElementById("timer-costa");
+  const startBtn = document.getElementById("timer-start");
+
+  if (!display || !startBtn) return;
+
+  let timeLeft = 0;
+  let timerId = null;
+
+  const updateDisplay = () => {
+    const mins = Math.floor(timeLeft / 60);
+    const secs = timeLeft % 60;
+    display.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  sierraBtn?.addEventListener("click", () => {
+    timeLeft = 600; // 10 min (ebullición sierra)
+    updateDisplay();
+    sierraBtn.classList.replace('bg-luxury-dark/20', 'bg-luxury-dark');
+    costaBtn?.classList.replace('bg-luxury-dark', 'bg-luxury-dark/20');
+  });
+
+  costaBtn?.addEventListener("click", () => {
+    timeLeft = 300; // 5 min (ebullición costa)
+    updateDisplay();
+    costaBtn.classList.replace('bg-luxury-dark/20', 'bg-luxury-dark');
+    sierraBtn?.classList.replace('bg-luxury-dark', 'bg-luxury-dark/20');
+  });
+
+  startBtn.addEventListener("click", () => {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+      startBtn.textContent = "ACTIVAR EBULLICIÓN";
+    } else {
+      if (timeLeft <= 0) return alert("Selecciona Sierra o Costa primero");
+      timerId = setInterval(() => {
+        timeLeft--;
+        updateDisplay();
+        if (timeLeft <= 0) {
+          clearInterval(timerId);
+          timerId = null;
+          alert("¡TIEMPO DE EBULLICIÓN CUMPLIDO!");
+        }
+      }, 1000);
+      startBtn.textContent = "DETENER";
+    }
+  });
+}
+
+// ─── API de Precios Estimados (Simulación DB Local) ───────
+async function calculateEstimatedPrice(recipe) {
+  const priceBox = document.getElementById("recipe-price-box");
+  if (!priceBox) return;
+
+  try {
+    const response = await fetch('price_db.json');
+    const db = await response.json();
+    let total = 0;
+
+    recipe.ingredients.forEach(ing => {
+      const lower = ing.toLowerCase();
+      Object.keys(db).forEach(key => {
+        if (lower.includes(key)) {
+          total += db[key].price_min || 0;
+        }
+      });
+    });
+
+    if (total === 0) total = 5.75; // Fallback
+    priceBox.textContent = `$ ${(total / 2).toFixed(2)} - $ ${total.toFixed(2)} USD`;
+  } catch (err) {
+    priceBox.textContent = "$ 4.50 - $ 8.00 USD";
+  }
 }
 
 // ─── Router ───────────────────────────────────────────────────

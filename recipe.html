@@ -237,14 +237,84 @@
                 </div>
               </label>
             </div>
+            <!-- Portion Calculator V3.0 -->
+            <div class="mb-10 p-5 rounded-3xl bg-ec-gold/5 border border-ec-gold/10">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest">Calculadora Maestro</span>
+                <div class="flex items-center gap-3">
+                  <button id="portion-minus"
+                    class="w-6 h-6 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-ec-gold hover:text-luxury-dark transition-all">-</button>
+                  <span id="portion-count" class="text-sm font-black text-white italic">4</span>
+                  <button id="portion-plus"
+                    class="w-6 h-6 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-ec-gold hover:text-luxury-dark transition-all">+</button>
+                </div>
+              </div>
+              <p class="text-[8px] font-bold text-white/20 uppercase tracking-tighter text-center">Escalado Culinario
+                Inteligente Activado</p>
+            </div>
+
             <ul id="ingredients-list" class="space-y-6">
               <!-- JS Render -->
             </ul>
 
-            <div class="mt-16 pt-16 border-t border-white/5">
-              <div class="flex items-center gap-4 text-white/30 text-[9px] font-black uppercase tracking-widest">
-                <span>Origen:</span>
-                <span id="recipe-region" class="text-ec-gold"></span>
+            <div class="mt-12 flex flex-col gap-4">
+              <!-- Market Checklist Button -->
+              <button id="market-checklist-btn"
+                class="w-full py-4 glass-card rounded-2xl flex items-center justify-center gap-4 text-[9px] font-black uppercase tracking-[0.2em] text-white/60 hover:text-ec-gold hover:border-ec-gold/30 transition-all group">
+                <span class="text-lg group-hover:scale-125 transition-transform">🛒</span> COMPARTIR LISTA WHATSAPP
+              </button>
+
+              <!-- Hands Dirty Mode Toggle -->
+              <div
+                class="p-5 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group transition-all hover:bg-white/10">
+                <div class="flex flex-col gap-1">
+                  <span class="text-[9px] font-black text-white/40 uppercase tracking-widest">Modo Manos Sucias</span>
+                  <span class="text-[8px] font-bold text-ec-red/60 uppercase tracking-tight">Pantalla Siempre
+                    Encendida</span>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="hands-dirty-switch" class="sr-only peer">
+                  <div
+                    class="w-10 h-5 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-ec-red">
+                  </div>
+                </label>
+              </div>
+
+              <!-- Altitude Timer V3.0 -->
+              <div class="p-6 rounded-[32px] bg-ec-gold shadow-2xl overflow-hidden relative group">
+                <div
+                  class="absolute -right-4 -bottom-4 text-6xl opacity-20 grayscale group-hover:grayscale-0 transition-all duration-700">
+                  🏔️</div>
+                <div class="relative z-10">
+                  <span class="text-luxury-dark font-black text-[9px] uppercase tracking-widest mb-3 block">Temporizador
+                    de Altitud</span>
+                  <div class="flex items-center justify-between mb-4">
+                    <span id="altitude-timer-display"
+                      class="text-4xl font-display font-black text-luxury-dark italic">00:00</span>
+                    <div class="flex flex-col gap-1">
+                      <button id="timer-sierra"
+                        class="px-3 py-1 bg-luxury-dark text-white text-[8px] font-bold rounded-lg hover:bg-white hover:text-luxury-dark transition-all uppercase">Sierra</button>
+                      <button id="timer-costa"
+                        class="px-3 py-1 bg-luxury-dark/20 text-luxury-dark text-[8px] font-bold rounded-lg hover:bg-luxury-dark hover:text-white transition-all uppercase">Costa</button>
+                    </div>
+                  </div>
+                  <button id="timer-start"
+                    class="w-full py-3 bg-luxury-dark text-white font-black text-[10px] tracking-widest uppercase rounded-xl hover:scale-105 transition-transform">ACTIVAR
+                    EBULLICIÓN</button>
+                </div>
+              </div>
+
+              <!-- Price Estimate V3.0 -->
+              <div class="p-6 rounded-3xl bg-white/5 border border-white/5">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-[9px] font-black text-white/40 uppercase tracking-widest">Costo Estimado</span>
+                  <span class="text-[8px] font-bold text-ec-gold uppercase bg-ec-gold/10 px-2 py-1 rounded-md">Vía
+                    n8n</span>
+                </div>
+                <p id="recipe-price-box" class="text-2xl font-display font-black text-white italic tracking-tighter">$
+                  --.-- USD</p>
+                <p class="text-[7px] font-bold text-white/10 uppercase tracking-tighter mt-1 italic">*Referencia
+                  supermercados locales</p>
               </div>
             </div>
           </div>

@@ -18,14 +18,14 @@ export function getAudienceChip(recipe) {
     (recipe.places && recipe.places.length > 0);
   if (isDiaspora) {
     return (
-      '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100/80 text-blue-700 backdrop-blur-sm border border-blue-200/60">' +
-      "\u2708\uFE0F Di\u00e1spora</span>"
+      '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-ec-gold text-[#0B1221] shadow-xl border border-white/20">' +
+      "Di\u00e1spora</span>"
     );
   }
   if (isTourism) {
     return (
-      '<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100/80 text-amber-700 backdrop-blur-sm border border-amber-200/60">' +
-      "\uD83D\uDDFA\uFE0F Turismo</span>"
+      '<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-white text-[#0B1221] shadow-xl border border-white/20">' +
+      "Explora</span>"
     );
   }
   return "";
@@ -37,18 +37,12 @@ export function renderSkeleton(count) {
   var html = "";
   for (var i = 0; i < count; i++) {
     html +=
-      '<div class="bg-white rounded-[40px] shadow-sm overflow-hidden animate-pulse border border-black/5" aria-hidden="true">' +
-      '<div class="bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 h-64"></div>' +
+      '<div class="rounded-[48px] overflow-hidden bg-white/5 border border-white/5 animate-pulse" aria-hidden="true">' +
+      '<div class="bg-gradient-to-r from-white/5 via-white/10 to-white/5 h-64"></div>' +
       '<div class="p-8">' +
-      '<div class="flex gap-2 mb-4">' +
-      '<div class="bg-gray-100 h-5 w-20 rounded-full"></div>' +
-      "</div>" +
-      '<div class="bg-gray-100 h-6 rounded-full mb-3 w-full"></div>' +
-      '<div class="bg-gray-100 h-6 rounded-full mb-6 w-2/3"></div>' +
-      '<div class="flex gap-4 pt-6 border-t border-gray-50">' +
-      '<div class="bg-gray-100 h-3 w-16 rounded-full"></div>' +
-      '<div class="bg-gray-100 h-3 w-16 rounded-full"></div>' +
-      "</div>" +
+      '<div class="h-2 w-1/4 bg-white/10 rounded-full mb-6"></div>' +
+      '<div class="h-8 w-full bg-white/10 rounded-2xl mb-4"></div>' +
+      '<div class="h-4 w-2/3 bg-white/5 rounded-2xl"></div>' +
       "</div>" +
       "</div>";
   }
@@ -58,83 +52,33 @@ export function renderSkeleton(count) {
 // ─── Card ─────────────────────────────────────────────────────
 export function renderCard(recipe) {
   var chip = getAudienceChip(recipe);
-  var hasTourism =
-    !!recipe.tourism_route || (recipe.places && recipe.places.length > 0);
-  var hasVideos = !!(recipe.youtube_videos && recipe.youtube_videos.length > 0);
   var img = recipe.image_url && recipe.image_url.trim() !== ""
     ? escapeHtml(recipe.image_url)
     : "images/default-recipe.jpg";
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return (
-    '<article class="group relative bg-white rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-700 overflow-hidden cursor-pointer border border-black/5 ec-card-premium">' +
-    '<a href="recipe.html?slug=' +
-    encodeURIComponent(recipe.slug) +
-    '" class="block" aria-label="' +
-    escapeHtml(recipe.title) +
-    '"' +
-    ' data-track-type="recipe" data-track-slug="' +
-    escapeHtml(recipe.slug) +
-    '" data-track-title="' +
-    escapeHtml(recipe.title) +
-    '" data-track-region="' +
-    escapeHtml(recipe.region || "") +
-    '" data-track-category="' +
-    escapeHtml(recipe.category || "") +
-    '">' +
-    '<div class="relative h-64 overflow-hidden">' +
-    '<img src="' +
-    img +
-    '" alt="' +
-    imgAlt +
-    '"' +
-    ' class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"' +
-    ' loading="lazy" onerror="this.src=\'images/default-recipe.jpg\'">' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>' +
-    (chip ? '<div class="absolute top-6 left-6">' + chip + "</div>" : "") +
-    '<div class="absolute bottom-6 right-6 flex gap-2">' +
-    (hasTourism
-      ? '<span class="w-8 h-8 rounded-full glass flex items-center justify-center text-sm shadow-lg" title="Ruta Gastron\u00f3mica">\uD83D\uDDFA\uFE0F</span>'
-      : "") +
-    (hasVideos
-      ? '<span class="w-8 h-8 rounded-full glass flex items-center justify-center text-sm shadow-lg" title="Video tutorial">\u25B6\uFE0F</span>'
-      : "") +
+    '<article class="group relative rounded-[48px] overflow-hidden glass-card transition-all duration-700 hover:-translate-y-2">' +
+    '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '">' +
+    '<div class="relative h-72 overflow-hidden">' +
+    '<img src="' + img + '" alt="' + imgAlt + '" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent opacity-80"></div>' +
+    (chip ? '<div class="absolute top-8 left-8 z-10">' + chip + "</div>" : "") +
     "</div>" +
+    '<div class="p-10">' +
+    '<div class="flex items-center gap-3 mb-6">' +
+    (recipe.region ? '<span class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em]">' + escapeHtml(recipe.region) + "</span>" : "") +
+    '<span class="w-1 h-1 rounded-full bg-white/10"></span>' +
+    '<span class="text-[9px] font-bold text-white/30 uppercase tracking-widest">' + escapeHtml(recipe.difficulty || "Tradicional") + '</span>' +
     "</div>" +
-    '<div class="p-8">' +
-    '<div class="flex items-center gap-3 mb-4">' +
-    (recipe.region
-      ? '<span class="text-[10px] font-bold text-ec-gold uppercase tracking-[0.2em]">' +
-      escapeHtml(recipe.region) +
-      "</span>"
-      : "") +
-    '<span class="w-1 h-1 rounded-full bg-gray-200"></span>' +
-    (recipe.difficulty
-      ? '<span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.1em]">' +
-      escapeHtml(recipe.difficulty) +
-      "</span>"
-      : "") +
+    '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold transition-colors duration-500">' + escapeHtml(recipe.title) + "</h3>" +
+    '<p class="text-white/40 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(recipe.description || "") + "</p>" +
+    '<div class="flex items-center justify-between pt-8 border-t border-white/5">' +
+    '<div class="flex items-center gap-6 text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">' +
+    (recipe.total_time ? '<span class="flex items-center gap-2">⏳ ' + escapeHtml(recipe.total_time) + "</span>" : "") +
+    (recipe.servings ? '<span class="flex items-center gap-2">🍽️ ' + escapeHtml(recipe.servings) + "</span>" : "") +
     "</div>" +
-    '<h3 class="font-serif italic text-2xl text-ec-blue leading-tight mb-3 group-hover:text-ec-gold transition-colors duration-500">' +
-    escapeHtml(recipe.title) +
-    "</h3>" +
-    '<p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-8 font-light">' +
-    escapeHtml(recipe.description || "") +
-    "</p>" +
-    '<div class="flex items-center justify-between pt-6 border-t border-gray-50">' +
-    '<div class="flex items-center gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">' +
-    (recipe.total_time
-      ? '<span class="flex items-center gap-1.5"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>' + escapeHtml(recipe.total_time) + "</span>"
-      : "") +
-    (recipe.servings
-      ? '<span class="flex items-center gap-1.5"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>' + escapeHtml(recipe.servings) + "</span>"
-      : "") +
-    "</div>" +
-    (recipe.category
-      ? '<span class="text-ec-gold font-display font-black text-xs uppercase italic">' +
-      escapeHtml(recipe.category) +
-      "</span>"
-      : "") +
+    '<span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all">→</span>' +
     "</div>" +
     "</div>" +
     "</a>" +
@@ -360,57 +304,24 @@ export function renderBlogCard(post) {
   var imgAlt = escapeHtml(post.image_alt || post.title);
 
   return (
-    '<article class="group relative bg-white rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-700 overflow-hidden cursor-pointer border border-black/5 ec-card-premium">' +
-    '<a href="post?slug=' +
-    encodeURIComponent(post.slug) +
-    '" class="block" aria-label="' +
-    escapeHtml(post.title) +
-    '"' +
-    ' data-track-type="post" data-track-slug="' +
-    escapeHtml(post.slug) +
-    '" data-track-title="' +
-    escapeHtml(post.title) +
-    '" data-track-category="' +
-    escapeHtml(post.category || "") +
-    '">' +
-    '<div class="relative h-64 overflow-hidden">' +
-    '<img src="' +
-    img +
-    '" alt="' +
-    imgAlt +
-    '"' +
-    ' class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"' +
-    ' loading="lazy" onerror="this.src=\'images/default-turismo.jpg\'">' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-[#9A1B22]/60 via-transparent to-transparent opacity-60"></div>' +
-    (post.featured
-      ? '<div class="absolute top-6 left-6"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-[#FFD700] text-[#004d00] shadow-lg">\u2B50 DESTACADO</span></div>'
-      : "") +
-    '</div>' +
-    '<div class="p-8">' +
-    '<div class="flex items-center gap-3 mb-4">' +
-    (post.category
-      ? '<span class="text-[10px] font-bold text-ec-red uppercase tracking-[0.2em]">' +
-      escapeHtml(post.category) +
-      "</span>"
-      : "") +
-    '<span class="w-1 h-1 rounded-full bg-gray-200"></span>' +
-    (post.reading_time
-      ? '<span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.1em]">\u23f1 ' +
-      escapeHtml(post.reading_time) +
-      "</span>"
-      : "") +
+    '<article class="group relative rounded-[48px] overflow-hidden glass-card transition-all duration-700 hover:-translate-y-2">' +
+    '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="block" aria-label="' + escapeHtml(post.title) + '">' +
+    '<div class="relative h-72 overflow-hidden">' +
+    '<img src="' + img + '" alt="' + imgAlt + '" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent opacity-80"></div>' +
+    (post.featured ? '<div class="absolute top-8 left-8 z-10"><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-ec-gold text-[#0B1221] shadow-xl border border-white/20">Destacado</span></div>' : "") +
     "</div>" +
-    '<h3 class="font-serif italic text-2xl text-ec-blue leading-tight mb-3 group-hover:text-ec-red transition-colors duration-500">' +
-    escapeHtml(post.title) +
-    "</h3>" +
-    '<p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-8 font-light">' +
-    escapeHtml(post.description || "") +
-    "</p>" +
-    '<div class="flex items-center justify-between pt-6 border-t border-gray-50">' +
-    (post.date_published
-      ? '<span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">' + post.date_published + "</span>"
-      : "") +
-    '<span class="text-ec-red font-display font-black text-xs uppercase italic">Leer cr\u00f3nica \u2192</span>' +
+    '<div class="p-10">' +
+    '<div class="flex items-center gap-3 mb-6">' +
+    (post.category ? '<span class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em]">' + escapeHtml(post.category) + "</span>" : "") +
+    '<span class="w-1 h-1 rounded-full bg-white/10"></span>' +
+    '<span class="text-[9px] font-bold text-white/30 uppercase tracking-widest">' + escapeHtml(post.reading_time || "4 min") + '</span>' +
+    "</div>" +
+    '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold transition-colors duration-500">' + escapeHtml(post.title) + "</h3>" +
+    '<p class="text-white/40 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(post.description || "") + "</p>" +
+    '<div class="flex items-center justify-between pt-8 border-t border-white/5">' +
+    '<span class="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">' + (post.date_published || "Cr\u00f3nica") + '</span>' +
+    '<span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all">→</span>' +
     "</div>" +
     "</div>" +
     "</a>" +

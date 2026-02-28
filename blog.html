@@ -71,133 +71,104 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     :root {
-      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0a0f1a 100%);
-      --gold-gradient: linear-gradient(135deg, #DCA011 0%, #ffc107 100%);
+      --ec-gold: #DCA011;
+      --ec-blue: #14213D;
+      --luxury-dark: #0B1221;
     }
 
     body {
-      font-family: 'Outfit', sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    h1,
-    h2,
-    h3,
-    .font-display {
-      font-family: 'Playfair Display', serif;
-    }
-
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .glass-dark {
-      background: rgba(20, 33, 61, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .btn-luxury {
-      background: var(--luxury-gradient);
+      background-color: var(--luxury-dark);
       color: white;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(20, 33, 61, 0.2);
-      position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    .btn-luxury:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(20, 33, 61, 0.3);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
-    .ec-title-bar-luxury {
-      width: 80px;
-      height: 3px;
-      background: var(--gold-gradient);
-      border-radius: 2px;
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
     }
 
-    .bento-card {
-      background: white;
-      border-radius: 24px;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      transition: all 0.4s ease;
+    .gold-text-gradient {
+      background: linear-gradient(to right, #DCA011, #F5D17E, #DCA011);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: shine 5s linear infinite;
     }
 
-    .bento-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(220, 160, 17, 0.2);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased overflow-x-hidden">
+<body class="font-sans antialiased text-white selection:bg-ec-gold/30">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9Z6G26N" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="fixed w-full z-50 transition-all duration-500 py-4 px-6">
-    <div class="max-w-7xl mx-auto glass shadow-sm rounded-2xl px-6 py-3 flex items-center justify-between">
+  <!-- ═══ LUXURY NAVIGATION V2 ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
       <a href="/" class="flex items-center gap-3 group">
         <div
-          class="w-10 h-10 rounded-xl bg-ec-blue flex items-center justify-center text-xl transition-transform group-hover:rotate-12">
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-xl shadow-2xl group-hover:rotate-12 transition-transform">
           🇪🇨</div>
         <div class="flex flex-col">
-          <span class="font-display font-black text-xl tracking-tighter text-ec-blue leading-none">ECUADOR</span>
-          <span class="text-[10px] font-black tracking-[0.2em] text-ec-gold uppercase">A LA CARTA</span>
+          <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Ecuador</span>
+          <span class="text-ec-gold font-display font-bold text-[10px] tracking-[0.2em] leading-none">A LA CARTA.</span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="/"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Inicio</a>
-        <a href="/recipes"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Recetas</a>
-        <a href="/blog"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue border-b-2 border-ec-gold">Turismo</a>
-        <a href="/menu-semanal"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Suscripción</a>
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="recipes"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RECETARIO</a>
+        <a href="menu-semanal"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">PLANIFICADOR</a>
+        <a href="blog" class="text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RUTA</a>
       </nav>
 
       <div class="flex items-center gap-4">
-        <button id="nav-toggle"
-          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
-          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
-          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+        <button id="nav-toggle" class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
         </button>
-        <a href="/nosotros"
-          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest">SOBRE
-          NOSOTROS</a>
       </div>
     </div>
   </header>
-
-  <!-- Mobile Nav Overlay -->
-  <div id="nav-mobile" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-500">
-    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
-      <button id="nav-close"
-        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
-      <nav class="flex flex-col gap-8">
-        <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
-        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
-        <a href="/blog" class="font-display font-black text-4xl text-ec-gold">Turismo</a>
-        <a href="/menu-semanal"
-          class="font-display font-black text-4xl text-ec-blue text-sm uppercase tracking-widest">Suscripción
-          Premium</a>
-        <hr class="border-ec-blue/5">
-        <div class="flex flex-col gap-4">
-          <a href="/privacy" class="text-xs font-bold text-ec-blue/40 uppercase tracking-widest">Privacidad</a>
-          <a href="/terms" class="text-xs font-bold text-ec-blue/40 uppercase tracking-widest">Términos</a>
+  <!-- ═══ MOBILE NAV V2 ═══ -->
+  <div id="nav-mobile"
+    class="fixed inset-0 z-[200] translate-x-full transition-transform duration-700 pointer-events-none">
+    <div class="absolute inset-0 bg-[#0B1221]/95 backdrop-blur-2xl pointer-events-auto">
+      <div class="flex flex-col h-full p-12">
+        <div class="flex justify-between items-center mb-24">
+          <span class="text-ec-gold font-black text-[10px] tracking-[0.5em] uppercase">Menú Maestro</span>
+          <button id="nav-close" class="text-white/40 hover:text-white transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-      </nav>
+        <nav class="flex flex-col gap-12">
+          <a href="/" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">INICIO.</a>
+          <a href="blog"
+            class="text-6xl font-display font-black hover:text-ec-gold transition-colors text-ec-gold">DESTINOS.</a>
+          <a href="recipes" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">ARCHIVOS.</a>
+        </nav>
+      </div>
     </div>
   </div>
 
@@ -214,208 +185,176 @@
     });
   </script>
 
-  <!-- ═══ CINEMATIC HERO ═══ -->
-  <section class="relative pt-40 pb-20 overflow-hidden">
-    <div class="absolute inset-0 bg-ec-blue -z-20"></div>
-    <div
-      class="absolute inset-0 opacity-30 -z-10 bg-[url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80')] bg-cover bg-center">
-    </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-transparent to-transparent -z-10"></div>
-
-    <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-up">
-      <p class="text-ec-gold text-[10px] font-black uppercase tracking-[0.3em] mb-4">Bitácora de Viajes</p>
-      <h1 class="text-5xl md:text-7xl font-display font-black text-white leading-none mb-6">Turismo Ecuador</h1>
-      <p class="text-white/60 text-lg max-w-2xl mx-auto font-medium mb-12">Desde las cumbres de los Andes hasta el
-        misterio de la Amazonía y el paraíso de Galápagos.</p>
-
-      <!-- Premium Search Bar -->
-      <div class="max-w-3xl mx-auto relative group">
-        <div
-          class="absolute inset-0 bg-ec-gold/20 blur-2xl group-hover:bg-ec-gold/30 transition-all duration-500 rounded-full">
-        </div>
-        <div class="relative glass-dark p-2 rounded-2xl flex items-center gap-2">
-          <span class="pl-4 text-white/40">🔍</span>
-          <input id="blog-search" type="search" placeholder="Busca destinos, rutas o festividades..."
-            class="flex-1 bg-transparent border-0 text-white placeholder-white/30 text-lg focus:ring-0 py-4">
-          <button id="blog-clear"
-            class="text-white/40 hover:text-white text-xs font-black uppercase tracking-widest px-4 transition-colors">Limpiar</button>
-        </div>
+  <main id="main-content" class="pt-24 lg:pt-32">
+    <!-- ═══ TOP BILLBOARD (RPM BOOSTER) ═══ -->
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="ad-slot--billboard">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702" data-ad-slot="12341234"
+          data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ LUXURY FILTERS ═══ -->
-  <div class="sticky top-20 z-40 px-6 -mt-8">
-    <div class="max-w-4xl mx-auto glass p-3 rounded-2xl shadow-xl border border-white/50">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-        <div class="relative">
-          <select id="blog-category"
-            class="w-full text-[10px] font-black uppercase tracking-widest bg-white/50 border-0 rounded-xl px-4 py-4 focus:ring-2 focus:ring-ec-gold appearance-none cursor-pointer">
-            <option value="">Categoría</option>
-          </select>
-          <span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[8px]">▼</span>
+    <!-- ═══ LUXURY BLOG HERO V2 ═══ -->
+    <section class="relative pt-40 pb-20 overflow-hidden">
+      <div class="absolute inset-0 bg-[#0B1221] -z-20"></div>
+      <div
+        class="absolute inset-0 opacity-20 -z-10 bg-[url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1200&q=80')] bg-cover bg-center grayscale filter contrast-125">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent -z-10"></div>
+
+      <div class="max-w-[1400px] mx-auto px-6 text-center" data-aos="fade-up">
+        <span class="text-ec-gold font-black text-[9px] tracking-[0.5em] uppercase mb-6 block">Crónicas del
+          Territorio</span>
+        <h1 class="hero-title text-5xl md:text-8xl lg:text-9xl text-white tracking-tighter mb-8 uppercase">Ruta del <br>
+          <span class="gold-text-gradient italic font-serif text-6xl md:text-9xl">Sabor.</span></h1>
+        <p class="text-white/40 text-lg max-w-2xl mx-auto font-light mb-16 text-balance tracking-wide">
+          Un viaje narrativo a través de los ecosistemas, las manos y las historias que definen la gastronomía
+          ecuatoriana contemporánea.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ BLOG GRID V2 ═══ -->
+    <section class="max-w-[1400px] mx-auto px-6 py-24">
+      <div class="flex items-center justify-between mb-16 px-4 border-b border-white/5 pb-8">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-white font-black text-[10px] tracking-[0.5em] uppercase">Artículos Recientes</h2>
+          <div class="w-12 h-0.5 bg-ec-gold"></div>
         </div>
-        <div class="relative">
+        <div class="flex gap-4">
           <select id="blog-region"
-            class="w-full text-[10px] font-black uppercase tracking-widest bg-white/50 border-0 rounded-xl px-4 py-4 focus:ring-2 focus:ring-ec-gold appearance-none cursor-pointer">
-            <option value="">Región</option>
+            class="bg-white/5 border border-white/5 text-[9px] font-black uppercase tracking-widest text-white/40 px-6 py-3 rounded-xl focus:ring-1 focus:ring-ec-gold outline-none cursor-pointer">
+            <option value="">Todas las Regiones</option>
           </select>
-          <span class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[8px]">▼</span>
-        </div>
-        <div class="md:col-span-2 flex items-center justify-end px-4">
-          <p id="blog-results-count" class="text-[10px] font-black text-ec-blue/40 uppercase tracking-[0.2em]">
-            Cargando...</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <main id="main-content" class="max-w-7xl mx-auto px-6 py-12">
-    <div class="flex flex-col lg:flex-row gap-12">
-
-      <!-- MAIN GRID AREA -->
-      <div class="flex-1">
-        <div class="flex items-center justify-between mb-8">
-          <div class="flex flex-col">
-            <h2 class="font-display font-black text-3xl text-ec-blue">Descubre más</h2>
-            <div class="ec-title-bar-luxury mt-2"></div>
-          </div>
-        </div>
-
-        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Skeletons -->
-          <div class="bento-card overflow-hidden animate-pulse">
-            <div class="h-64 bg-gray-100"></div>
-            <div class="p-8">
-              <div class="h-4 bg-gray-100 rounded-full w-1/2 mb-4"></div>
-              <div class="h-8 bg-gray-100 rounded-xl w-full"></div>
-            </div>
-          </div>
-          <div class="bento-card overflow-hidden animate-pulse">
-            <div class="h-64 bg-gray-100"></div>
-            <div class="p-8">
-              <div class="h-4 bg-gray-100 rounded-full w-1/2 mb-4"></div>
-              <div class="h-8 bg-gray-100 rounded-xl w-full"></div>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- SIDEBAR EDITORIAL -->
-      <aside class="lg:w-80 shrink-0 space-y-8">
-        <!-- Ad Slot -->
-        <div
-          class="bento-card p-4 border-dashed border-2 border-ec-blue/10 min-h-[400px] flex flex-col items-center justify-center">
-          <span class="text-[10px] text-ec-blue/20 uppercase tracking-widest mb-4">Publicidad</span>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
-            data-ad-slot="1111111112" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Skeleton -->
+        <div class="glass-card rounded-[32px] overflow-hidden animate-pulse">
+          <div class="h-80 bg-white/5"></div>
+          <div class="p-10">
+            <div class="h-4 bg-white/5 rounded-full w-1/3 mb-6"></div>
+            <div class="h-8 bg-white/5 rounded-full w-full mb-4"></div>
+            <div class="h-8 bg-white/5 rounded-full w-2/3"></div>
+          </div>
         </div>
-
-        <!-- Destinations List -->
-        <div class="bento-card p-8 bg-white border border-ec-blue/5">
-          <h3 class="text-ec-blue font-display font-black text-xl mb-6">Próximas Festividades</h3>
-          <ul class="space-y-6">
-            <li class="flex gap-4">
-              <div class="w-12 h-12 rounded-xl bg-orange-50 flex flex-col items-center justify-center shrink-0">
-                <span class="text-[10px] font-black text-orange-600 leading-none">JUN</span>
-                <span class="text-sm font-black text-orange-950">21</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-sm font-bold">Inti Raymi</span>
-                <span class="text-[10px] text-ec-blue/40 uppercase font-black">Cultura · Sierra</span>
-              </div>
-            </li>
-            <li class="flex gap-4">
-              <div class="w-12 h-12 rounded-xl bg-blue-50 flex flex-col items-center justify-center shrink-0">
-                <span class="text-[10px] font-black text-blue-600 leading-none">JUL</span>
-                <span class="text-sm font-black text-blue-950">25</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-sm font-bold">Fiestas de Guayaquil</span>
-                <span class="text-[10px] text-ec-blue/40 uppercase font-black">Tradición · Costa</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
-    </div>
+      </div>
+    </section>
   </main>
 
-  <!-- LUXURY FOOTER -->
-  <footer class="bg-ec-blue text-white pt-24 pb-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-        <div class="lg:col-span-1">
-          <a href="/" class="flex items-center gap-3 mb-8">
-            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🇪🇨</div>
-            <span class="font-display font-black text-xl tracking-tighter">ECUADOR <span class="text-ec-gold">A LA
-                CARTA</span></span>
+  <!-- ═══ LUXURY FOOTER V2 ═══ -->
+  <footer class="bg-[#0B1221] text-white pt-32 pb-16 px-6 border-t border-white/5 relative overflow-hidden">
+    <!-- Ambient Glow -->
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-ec-gold/5 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+
+        <!-- Brand Segment -->
+        <div class="md:col-span-12 lg:col-span-5">
+          <a href="/" class="flex items-center gap-4 mb-10 group">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-2xl shadow-2xl group-hover:rotate-12 transition-transform">
+              🇪🇨</div>
+            <div class="flex flex-col">
+              <span class="text-white font-black uppercase tracking-[-0.05em] text-3xl leading-none">Ecuador</span>
+              <span class="text-ec-gold font-display font-bold text-sm tracking-[0.2em]">A LA CARTA.</span>
+            </div>
           </a>
-          <p class="text-white/50 text-sm leading-relaxed mb-8">
-            Explorando los secretos mejor guardados de la mitad del mundo. Tu guía definitiva para el turismo consciente
-            en Ecuador.
+          <p class="text-white/40 text-xl font-light leading-relaxed max-w-lg text-balance">
+            La enciclopedia digital definitiva que documenta la herencia culinaria y los ecosistemas de sabor del
+            Ecuador con un enfoque cinematográfico.
           </p>
+        </div>
+
+        <!-- Links Grid -->
+        <div class="md:col-span-4 lg:col-span-2">
+          <h4 class="text-white font-black text-[10px] tracking-[0.5em] uppercase mb-10">Explorar</h4>
+          <ul class="space-y-6">
+            <li><a href="recipes" class="text-white/40 hover:text-ec-gold transition-colors font-medium">Recetario
+                Maestro</a></li>
+            <li><a href="menu-semanal"
+                class="text-white/40 hover:text-ec-gold transition-colors font-medium">Planificación Pro</a></li>
+            <li><a href="blog" class="text-white/40 hover:text-ec-gold transition-colors font-medium">Ruta del Sabor</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 lg:col-span-2">
+          <h4 class="text-white font-black text-[10px] tracking-[0.5em] uppercase mb-10">Legal</h4>
+          <ul class="space-y-6">
+            <li><a href="privacy" class="text-white/40 hover:text-ec-gold transition-colors font-medium">Privacidad</a>
+            </li>
+            <li><a href="terms" class="text-white/40 hover:text-ec-gold transition-colors font-medium">Términos</a></li>
+            <li><a href="nosotros" class="text-white/40 hover:text-ec-gold transition-colors font-medium">Estatuto</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 lg:col-span-3">
+          <h4 class="text-white font-black text-[10px] tracking-[0.5em] uppercase mb-10">Network</h4>
           <div class="flex gap-4">
             <div
-              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-              𝕏</div>
+              class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-ec-gold/20 transition-all cursor-pointer">
+              IG</div>
             <div
-              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-              📸</div>
+              class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-ec-gold/20 transition-all cursor-pointer">
+              TK</div>
+            <div
+              class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-ec-gold/20 transition-all cursor-pointer">
+              YT</div>
           </div>
         </div>
-
-        <div>
-          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Explora</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
-            <li><a href="/recipes" class="text-white/60 hover:text-white transition-colors">Recetas</a></li>
-            <li><a href="/blog" class="text-white/60 hover:text-white transition-colors">Blog Turismo</a></li>
-            <li><a href="/nosotros" class="text-white/60 hover:text-white transition-colors">Sobre Nosotros</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Destinos</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li><a href="/blog?region=Sierra" class="text-white/60 hover:text-white transition-colors">🏔️ Sierra
-                Magica</a></li>
-            <li><a href="/blog?region=Costa" class="text-white/60 hover:text-white transition-colors">🌊 Costa
-                Tropical</a></li>
-            <li><a href="/blog?region=Amazonia" class="text-white/60 hover:text-white transition-colors">🌿 Selva
-                Amazónica</a></li>
-            <li><a href="/blog?region=Galapagos" class="text-white/60 hover:text-white transition-colors">🐢 Islas
-                Encantadas</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Legal</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li><a href="/privacy" class="text-white/60 hover:text-white transition-colors">Privacidad</a></li>
-            <li><a href="/terms" class="text-white/60 hover:text-white transition-colors">Términos</a></li>
-            <li><a href="/contact" class="text-white/60 hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
       </div>
-      <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 Ecuador a la Carta — Premium
-          Travel Guide</p>
+
+      <!-- Copyright Area -->
+      <div class="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <p class="text-white/20 text-[9px] font-black uppercase tracking-[0.4em]">
+          © MMXXVI ECUADOR A LA CARTA — PREMIUM GASTRONOMY ECOSYSTEM
+        </p>
+        <div class="flex items-center gap-8">
+          <span class="text-white/20 text-[9px] font-black uppercase tracking-[0.2em]">Crafted For Excellence</span>
+          <div class="w-12 h-px bg-white/10"></div>
+          <div class="flex gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-ec-gold animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-ec-blue opacity-50"></span>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
+    // Navigation Logic
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navMobile = document.getElementById('nav-mobile');
+
+    navToggle?.addEventListener('click', () => {
+      navMobile?.classList.remove('translate-x-full');
+    });
+
+    navClose?.addEventListener('click', () => {
+      navMobile?.classList.add('translate-x-full');
+    });
+
+    // Close on link click
+    navMobile?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile?.classList.add('translate-x-full');
+      });
+    });
+
     // Scroll effect for header
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
       if (window.scrollY > 50) {
-        header?.classList.add('py-2', 'shadow-xl');
-        header?.classList.remove('py-4', 'shadow-sm');
+        header?.classList.add('py-2');
+        header?.querySelector('.glass-card')?.classList.add('shadow-2xl');
       } else {
-        header?.classList.add('py-4', 'shadow-sm');
-        header?.classList.remove('py-2', 'shadow-xl');
+        header?.classList.remove('py-2');
+        header?.querySelector('.glass-card')?.classList.remove('shadow-2xl');
       }
     });
 
@@ -423,7 +362,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof AOS !== 'undefined') {
         AOS.init({
-          duration: 800,
+          duration: 1000,
           once: true,
           offset: 100
         });

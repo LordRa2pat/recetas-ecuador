@@ -60,231 +60,134 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     :root {
-      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0a0f1a 100%);
-      --gold-gradient: linear-gradient(135deg, #DCA011 0%, #ffc107 100%);
+      --ec-gold: #DCA011;
+      --ec-blue: #14213D;
+      --luxury-dark: #0B1221;
     }
 
     body {
-      font-family: 'Outfit', sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    h1,
-    h2,
-    h3,
-    .font-display {
-      font-family: 'Playfair Display', serif;
-    }
-
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .glass-dark {
-      background: rgba(20, 33, 61, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .btn-luxury {
-      background: var(--luxury-gradient);
+      background-color: var(--luxury-dark);
       color: white;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(20, 33, 61, 0.2);
-      position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    .btn-luxury:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(20, 33, 61, 0.3);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
-    .ec-title-bar-luxury {
-      width: 80px;
-      height: 3px;
-      background: var(--gold-gradient);
-      border-radius: 2px;
-    }
-
-    .legal-content h2 {
+    .hero-title {
       font-family: 'Playfair Display', serif;
-      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .legal-prose h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--ec-gold);
       font-size: 1.5rem;
-      color: #14213D;
       margin-top: 3rem;
       margin-bottom: 1.5rem;
-      border-left: 4px solid #DCA011;
-      padding-left: 1rem;
+      font-style: italic;
     }
 
-    .legal-content p {
-      color: #14213D/70;
+    .legal-prose p {
+      color: rgba(255, 255, 255, 0.5);
       line-height: 1.8;
       margin-bottom: 1.5rem;
-      font-weight: 400;
-      font-size: 0.95rem;
-    }
-
-    .legal-content ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-bottom: 2rem;
-    }
-
-    .legal-content li {
-      position: relative;
-      padding-left: 2rem;
-      color: #14213D/70;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    .legal-content li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #DCA011;
-      font-weight: bold;
-    }
-
-    .legal-content strong {
-      color: #14213D;
-      font-weight: 700;
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased overflow-x-hidden">
+<body class="font-sans antialiased text-white selection:bg-ec-gold/30">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9Z6G26N" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="fixed w-full z-50 transition-all duration-500 py-4 px-6">
-    <div class="max-w-7xl mx-auto glass shadow-sm rounded-2xl px-6 py-3 flex items-center justify-between">
+  <!-- ═══ LUXURY NAVIGATION V2 ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
       <a href="/" class="flex items-center gap-3 group">
         <div
-          class="w-10 h-10 rounded-xl bg-ec-blue flex items-center justify-center text-xl transition-transform group-hover:rotate-12">
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-2xl shadow-2xl group-hover:rotate-12 transition-transform">
           🇪🇨</div>
         <div class="flex flex-col">
-          <span class="font-display font-black text-xl tracking-tighter text-ec-blue leading-none">ECUADOR</span>
-          <span class="text-[10px] font-black tracking-[0.2em] text-ec-gold uppercase">A LA CARTA</span>
+          <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Ecuador</span>
+          <span class="text-ec-gold font-display font-bold text-[10px] tracking-[0.2em] leading-none">A LA CARTA.</span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="/"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Inicio</a>
-        <a href="/recipes"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Recetas</a>
-        <a href="/blog"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Turismo</a>
-        <a href="/nosotros"
-          class="text-xs font-black uppercase tracking-widest text-ec-blue/60 hover:text-ec-blue transition-colors">Nosotros</a>
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="recipes"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RECETARIO</a>
+        <a href="menu-semanal"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">PLANIFICADOR</a>
+        <a href="blog"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RUTA</a>
       </nav>
 
       <div class="flex items-center gap-4">
         <button id="nav-toggle"
-          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
-          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
-          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+          class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors focus:outline-none">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
         </button>
-        <a href="/privacy"
-          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest border-b-2 border-ec-gold uppercase">Legal</a>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Nav Overlay -->
-  <div id="nav-mobile" class="fixed inset-0 z-[60] hidden opacity-0 transition-opacity duration-500">
-    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
-      <button id="nav-close"
-        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
-      <nav class="flex flex-col gap-8">
-        <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
-        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
-        <a href="/blog" class="font-display font-black text-4xl text-ec-blue">Turismo</a>
-        <a href="/privacy" class="font-display font-black text-4xl text-ec-gold">Legal</a>
-        <hr class="border-ec-blue/5">
-      </nav>
+  <!-- Mobile Nav V2 -->
+  <div id="nav-mobile"
+    class="fixed inset-0 z-[200] translate-x-full transition-transform duration-700 pointer-events-none">
+    <div class="absolute inset-0 bg-[#0B1221]/95 backdrop-blur-2xl pointer-events-auto">
+      <div class="flex flex-col h-full p-12">
+        <div class="flex justify-between items-center mb-24">
+          <span class="text-ec-gold font-black text-[10px] tracking-[0.5em] uppercase">Menú Maestro</span>
+          <button id="nav-close" class="text-white/40 hover:text-white transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-12">
+          <a href="/" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">INICIO.</a>
+          <a href="blog" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">DESTINOS.</a>
+          <a href="recipes" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">ARCHIVOS.</a>
+        </nav>
+      </div>
     </div>
   </div>
 
-  <script>
-    document.getElementById('nav-toggle')?.addEventListener('click', function () {
-      const navMobile = document.getElementById('nav-mobile');
-      navMobile?.classList.remove('hidden');
-      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
-    });
-    document.getElementById('nav-close')?.addEventListener('click', function () {
-      const navMobile = document.getElementById('nav-mobile');
-      navMobile?.classList.add('opacity-0');
-      setTimeout(() => navMobile?.classList.add('hidden'), 500);
-    });
-  </script>
+  <main class="pt-48 pb-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-20" data-aos="fade-up">
+        <span class="text-ec-gold font-black text-[9px] tracking-[0.5em] uppercase mb-6 block">Gobierno de Datos</span>
+        <h1 class="hero-title text-5xl md:text-7xl text-white mb-6 italic uppercase tracking-tighter">Privacidad.</h1>
+        <p class="text-white/40 text-sm font-light uppercase tracking-widest">Última revisión: 28 de Febrero, 2026</p>
+      </div>
 
-  <section class="relative pt-40 pb-20 overflow-hidden bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
-      <p class="text-ec-gold text-[10px] font-black uppercase tracking-[0.3em] mb-4">Gobierno de Datos</p>
-      <h1 class="text-5xl md:text-6xl font-display font-black text-ec-blue leading-none mb-6">Política de Privacidad
-      </h1>
-      <p class="text-ec-blue/40 text-[10px] font-black uppercase tracking-widest leading-none">Última actualización: 24
-        de febrero de 2026</p>
-    </div>
-  </section>
+      <div class="glass-card p-12 md:p-20 rounded-[48px] legal-prose" data-aos="fade-up">
+        <p class="text-xl italic mb-12">De conformidad con la Ley Orgánica de Protección de Datos Personales del Ecuador
+          (LOPDP), este ecosistema garantiza el uso ético y transparente de la información digital.</p>
 
-  <main class="max-w-4xl mx-auto px-6 pb-32">
-    <div class="bento-card p-12 md:p-20 shadow-2xl relative overflow-hidden" data-aos="fade-up">
-      <div class="absolute top-0 left-0 w-2 h-full bg-ec-gold"></div>
-      <div class="legal-content">
-        <p class="text-lg font-medium italic text-ec-blue mb-12">
-          En <strong>Ecuador a la Carta</strong>, nos tomamos en serio la privacidad de nuestros visitantes. Esta
-          política describe qué información recopilamos, cómo la usamos y qué derechos tienes sobre ella, de conformidad
-          con la <strong>Ley Orgánica de Protección de Datos Personales del Ecuador (LOPDP)</strong>.
-        </p>
+        <h2>Curaduría de Datos</h2>
+        <p>Ecuador a la Carta es una plataforma de acceso público. No requerimos registro obligatorio para la consulta
+          de nuestras crónicas culinarias. Sin embargo, herramientas de terceros operan bajo estrictos estándares de
+          seguridad.</p>
 
-        <h2>1. Información que recopilamos</h2>
-        <p>El Sitio es una plataforma informativa de acceso público. <strong>No recopilamos información personal
-            identificable</strong> de forma masiva, ni requerimos registro previo para navegar por nuestras recetas.</p>
-        <p>Sin embargo, herramientas de terceros pueden recopilar datos técnicos necesarios para la funcionalidad y
-          monetización del sitio.</p>
+        <h2>Google AdSense</h2>
+        <p>Este sitio integra Google AdSense para la sostenibilidad del proyecto. Google utiliza cookies para servir
+          anuncios basados en interacciones previas. Usted puede gestionar sus preferencias en cualquier momento.</p>
 
-        <h2>2. Google AdSense & Monetización</h2>
-        <p>Este sitio utiliza <strong>Google AdSense</strong> para servir anuncios. Google utiliza cookies para mostrar
-          publicidad basada en tus intereses y visitas previas.</p>
-        <ul>
-          <li>Uso de cookies de DoubleClick para personalización.</li>
-          <li>Puedes gestionar tus preferencias en la configuración de anuncios de Google.</li>
-        </ul>
-
-        <h2>3. Cookies y Tecnologías de Seguimiento</h2>
-        <p>Utilizamos cookies esenciales para el rendimiento del sitio y cookies de terceros para métricas (Google
-          Analytics) y publicidad.</p>
-        <ul>
-          <li><strong>Cookies Técnicas:</strong> Para la navegación fluida.</li>
-          <li><strong>Cookies de Análisis:</strong> Para entender qué recetas son tus favoritas.</li>
-          <li><strong>Cookies Publicitarias:</strong> Gestionadas por nuestros socios de anuncios.</li>
-        </ul>
-
-        <h2>4. Derechos LOPDP — Residentes en Ecuador</h2>
-        <div class="bg-ec-blue/5 border border-ec-blue/10 p-8 rounded-3xl mb-8">
-          <h3 class="font-display font-black text-xl text-ec-blue mb-4 leading-none">🛡️ Tus Derechos Digitales</h3>
-          <p class="text-sm leading-relaxed mb-6">Según la Ley Orgánica de Protección de Datos Personales del Ecuador,
-            tienes derecho a:</p>
-          <ul class="grid md:grid-cols-2 gap-4">
-            <li class="font-bold text-xs">Acceso y Consulta</li>
-            <li class="font-bold text-xs">Rectificación y Actualización</li>
-            <li class="font-bold text-xs">Eliminación (Derecho al Olvido)</li>
-            <li class="font-bold text-xs">Oposición al Tratamiento</li>
-          </ul>
-        </div>
-        <p>Para ejercer estos derechos, utiliza nuestro <a href="/contact"
-            class="text-ec-gold font-bold underline">Formulario de Contacto</a>. Atenderemos tu solicitud en el plazo
-          legal de 15 días hábiles.</p>
+        <h2>Derechos ARCO</h2>
+        <p>Como usuario en territorio ecuatoriano, usted posee derechos de Acceso, Rectificación, Cancelación y
+          Oposición. Para ejercerlos, puede contactar directamente con nuestro despacho digital mediante el canal
+          oficial de comunicación.</p>
       </div>
     </div>
   </main>

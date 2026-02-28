@@ -12,9 +12,11 @@ export function initAds() {
 
 export function renderInFeedAd(slotId) {
   slotId = slotId || '2222222222';
-  return '<div class="ad-slot ad-slot--square col-span-1 sm:col-span-2 lg:col-span-3 my-4" role="complementary" aria-label="Publicidad">' +
-    '<p class="ad-label">Publicidad</p>' +
-    '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"' +
+  return '<div class="ad-slot bento-card col-span-1 sm:col-span-2 lg:col-span-3 my-4 overflow-hidden">' +
+    '<p class="ad-label">Sugerencia Premium</p>' +
+    '<div class="flex items-center justify-center p-8 w-full">' +
+    '<ins class="adsbygoogle" style="display:block; width:100%" data-ad-client="ca-pub-9813915136648702"' +
     ' data-ad-slot="' + slotId + '" data-ad-format="auto" data-full-width-responsive="true"></ins>' +
+    '</div>' +
     '</div>';
 }

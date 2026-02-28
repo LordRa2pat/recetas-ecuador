@@ -41,15 +41,12 @@
           colors: {
             'ec-gold': '#DCA011',
             'ec-blue': '#14213D',
-            'ec-red': '#9A1B22',
-            'ec-green': '#284B34',
-            'luxury-dark': '#0F172A',
-            'luxury-gold': '#C5A059',
+            'luxury-dark': '#0B1221',
           },
           fontFamily: {
             sans: ['"Inter"', 'system-ui', 'sans-serif'],
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            display: ['"Outfit"', 'sans-serif']
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Outfit"', 'sans-serif'],
           }
         }
       }
@@ -65,803 +62,342 @@
 
   <style>
     :root {
-      --luxury-gradient: linear-gradient(135deg, #14213D 0%, #0F172A 100%);
-      --gold-gradient: linear-gradient(90deg, #DCA011 0%, #C5A059 100%);
+      --ec-gold: #DCA011;
+      --ec-blue: #14213D;
+      --luxury-dark: #0B1221;
     }
 
     body {
+      background-color: var(--luxury-dark);
+      color: white;
       overflow-x: hidden;
       scroll-behavior: smooth;
-      font-family: 'Inter', system-ui, sans-serif;
     }
 
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
-    .line-clamp-2 {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      line-clamp: 2;
-      overflow: hidden;
+    .recipe-title-cinematic {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
     }
 
-    .ec-stripe {
-      background: linear-gradient(90deg,
-          #dca011 0% 50%,
-          #14213d 50% 75%,
-          #9a1b22 75% 100%);
-      height: 4px;
-      width: 100%;
+    .gold-text-gradient {
+      background: linear-gradient(to right, #DCA011, #F5D17E, #DCA011);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: shine 5s linear infinite;
     }
 
-    .glass-dark {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
     }
 
-    .btn-luxury {
-      background: var(--gold-gradient);
-      box-shadow: 0 10px 20px -5px rgba(220, 160, 17, 0.4);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .btn-luxury:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px -5px rgba(220, 160, 17, 0.6);
-    }
-
-    .ec-title-bar-luxury {
-      width: 80px;
-      height: 4px;
-      background: var(--gold-gradient);
-      border-radius: 2px;
-    }
-
-    .bento-card {
-      background: white;
+    .ad-slot-luxury {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(255, 255, 255, 0.1);
       border-radius: 24px;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      transition: all 0.3s ease;
-    }
-
-    .bento-card:hover {
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    /* Cook Mode Styles */
-    body.cook-mode-active {
-      background-color: #0f172a;
-      /* bg-slate-900 */
-      color: #f8fafc;
-      /* text-slate-50 */
-    }
-
-    body.cook-mode-active #instructions-section {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 9999;
-      margin: 0;
-      border-radius: 0;
-      background: #0f172a;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    body.cook-mode-active .bg-gradient-to-r.from-\[\#14213D\].to-\[\#001f6e\] {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: #1e293b;
-      /* slate-800 */
-      border-bottom: 2px solid #14213d;
-    }
-
-    body.cook-mode-active #instructions-list {
-      font-size: 1.25rem;
-      /* text-xl */
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem;
-    }
-
-    body.cook-mode-active #instructions-list li p {
-      color: #e2e8f0;
-      /* text-slate-200 */
-      line-height: 1.8;
-    }
-
-    body.cook-mode-active #instructions-list li .bg-\[\#14213D\] {
-      background-color: #3b82f6;
-      /* bg-blue-500 - matches dark mode better */
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1.125rem;
-    }
-
-    /* Checkbox Styles */
-    .ing-checkbox {
-      appearance: none;
-      background-color: #fff;
-      margin: 0;
-      font: inherit;
-      color: currentColor;
-      width: 1.25em;
-      height: 1.25em;
-      border: 2px solid #cbd5e1;
-      /* slate-300 */
-      border-radius: 0.25em;
-      display: grid;
-      place-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .ing-checkbox::before {
-      content: "";
-      width: 0.65em;
-      height: 0.65em;
-      transform: scale(0);
-      transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em white;
-      background-color: transform;
-      transform-origin: bottom left;
-      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    }
-
-    .ing-checkbox:checked {
-      background-color: #10b981;
-      /* emerald-500 */
-      border-color: #10b981;
-    }
-
-    .ing-checkbox:checked::before {
-      transform: scale(1);
-    }
-
-    .ing-row:has(input:checked) span.ing-text {
-      text-decoration: line-through;
-      color: #9ca3af;
-      /* gray-400 */
+      padding: 1rem;
+      position: relative;
     }
   </style>
 </head>
 
-<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased">
-  <!-- Google Tag Manager (noscript) -->
+<body class="font-sans antialiased text-white selection:bg-ec-gold/30">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9Z6G26N" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-  <div class="ec-stripe" aria-hidden="true"></div>
-
-  <!-- ═══ PREMIUM HEADER ═══ -->
-  <header class="fixed top-0 w-full z-[100] transition-all duration-500 glass shadow-sm py-4">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+  <!-- ═══ LUXURY NAVIGATION V2 ═══ -->
+  <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
       <a href="/" class="flex items-center gap-3 group">
         <div
-          class="w-12 h-12 rounded-2xl bg-ec-blue flex items-center justify-center text-2xl transition-transform group-hover:rotate-12">
-          🇪🇨
-        </div>
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-2xl shadow-2xl group-hover:rotate-12 transition-transform">
+          🇪🇨</div>
         <div class="flex flex-col">
-          <span class="text-ec-blue font-black uppercase tracking-tighter text-xl leading-none">Ecuador</span>
-          <span class="text-ec-gold font-display font-bold text-sm leading-none">A LA CARTA</span>
+          <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Ecuador</span>
+          <span class="text-ec-gold font-display font-bold text-[10px] tracking-[0.2em] leading-none">A LA CARTA.</span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8 text-[13px] font-bold uppercase tracking-widest text-ec-blue/80">
-        <a href="/" class="hover:text-ec-gold transition-colors relative group">
-          INICIO
-          <span
-            class="absolute -bottom-1 left-0 w-full h-0.5 bg-ec-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-        </a>
-        <a href="/recipes" class="hover:text-ec-gold transition-colors relative group">RECETAS</a>
-        <a href="/blog" class="hover:text-ec-gold transition-colors relative group">TURISMO</a>
-        <a href="/nosotros" class="hover:text-ec-gold transition-colors relative group">NOSOTROS</a>
-        <a href="/menu-semanal" class="hover:text-ec-red transition-colors relative group font-black">MENÚ SEMANAL</a>
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="recipes"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RECETARIO</a>
+        <a href="menu-semanal"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">PLANIFICADOR</a>
+        <a href="blog"
+          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RUTA</a>
       </nav>
 
       <div class="flex items-center gap-4">
         <button id="nav-toggle"
-          class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 glass rounded-xl">
-          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
-          <span class="w-5 h-0.5 bg-ec-blue rounded-full"></span>
+          class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors focus:outline-none">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
         </button>
-        <a href="/contact"
-          class="hidden sm:block btn-luxury text-[10px] font-black px-6 py-3 rounded-xl tracking-widest border-b-2 border-ec-gold">CONTACTO</a>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Nav Overlay -->
-  <div id="nav-mobile" class="fixed inset-0 z-[150] hidden opacity-0 transition-opacity duration-500">
-    <div class="absolute inset-0 bg-ec-blue/40 backdrop-blur-md"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl p-8 flex flex-col">
-      <button id="nav-close"
-        class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
-      <nav class="flex flex-col gap-8">
-        <a href="/" class="font-display font-black text-4xl text-ec-blue text-balance leading-none">Inicio</a>
-        <a href="/recipes" class="font-display font-black text-4xl text-ec-blue text-balance leading-none">Recetas</a>
-        <a href="/blog" class="font-display font-black text-4xl text-ec-blue text-balance leading-none">Turismo</a>
-        <a href="/menu-semanal" class="font-display font-black text-4xl text-ec-gold text-balance leading-none">Menú
-          Semanal</a>
-        <hr class="border-ec-blue/5">
-        <a href="/nosotros" class="text-xs font-black uppercase tracking-widest text-ec-blue/40">Historias</a>
-        <a href="/contact" class="text-xs font-black uppercase tracking-widest text-ec-blue/40">Contacto</a>
-      </nav>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('nav-toggle')?.addEventListener('click', function () {
-      const nm = document.getElementById('nav-mobile');
-      nm.classList.remove('hidden');
-      setTimeout(() => nm.classList.remove('opacity-0'), 10);
-    });
-    document.getElementById('nav-close')?.addEventListener('click', function () {
-      const nm = document.getElementById('nav-mobile');
-      nm.classList.add('opacity-0');
-      setTimeout(() => nm.classList.add('hidden'), 500);
-    });
-  </script>
-
-  <!-- ═══ LOADING ═══ -->
-  <div id="recipe-loading" class="min-h-screen flex items-center justify-center" aria-live="polite"
-    aria-label="Cargando receta">
-    <div class="text-center">
-      <div class="w-12 h-12 border-4 border-[#14213D] border-t-transparent rounded-full animate-spin mx-auto mb-4">
-      </div>
-      <p class="text-gray-500 text-sm">Cargando receta...</p>
-    </div>
-  </div>
-
-  <!-- ═══ ERROR ═══ -->
-  <div id="recipe-error" class="hidden min-h-screen flex items-center justify-center px-4" role="alert">
-    <div class="text-center max-w-sm">
-      <div class="text-6xl mb-4">🍽️</div>
-      <h1 class="text-2xl font-black text-gray-800 mb-2">
-        Receta no encontrada
-      </h1>
-      <p data-error-msg class="text-gray-500 mb-6">
-        No pudimos encontrar esta receta.
-      </p>
-      <a href="recipes.html"
-        class="inline-flex items-center gap-2 bg-[#14213D] text-white font-bold px-6 py-3 rounded-2xl hover:bg-[#0b1324] transition-colors">
-        ← Ver todas las recetas
-      </a>
-    </div>
-  </div>
-
-  <!-- ═══ RECIPE CONTENT ═══ -->
-  <div id="recipe-content" class="hidden">
-    <!-- Breadcrumb -->
-    <nav class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-2" aria-label="Ruta de navegación">
-      <ol class="flex items-center gap-2 text-xs text-gray-400 flex-wrap">
-        <li>
-          <a href="index.html" class="hover:text-[#14213D] transition-colors">Inicio</a>
-        </li>
-        <li aria-hidden="true">/</li>
-        <li>
-          <a href="recipes.html" class="hover:text-[#14213D] transition-colors">Recetas</a>
-        </li>
-        <li aria-hidden="true">/</li>
-        <li id="bc-recipe" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">
-          Receta
-        </li>
-      </ol>
-    </nav>
-
-    <!-- Hero imagen -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-      <div class="relative h-64 sm:h-96 rounded-2xl overflow-hidden shadow-2xl">
-        <img id="recipe-hero-img" src="" alt="" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-
-        <!-- Audience chip -->
-        <div id="recipe-audience-chip" class="hidden absolute top-4 left-4"></div>
-        <!-- Categoría y región sobre imagen -->
-        <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-          <span data-optional id="recipe-region-badge"
-            class="bg-white/90 backdrop-blur-sm text-[#14213D] text-xs font-bold px-3 py-1 rounded-full border border-white/20">
-            <span id="recipe-region"></span>
-          </span>
-          <span data-optional id="recipe-category-badge"
-            class="bg-ec-gold/90 backdrop-blur-sm text-[#14213D] text-xs font-bold px-3 py-1 rounded-full border border-yellow-200/20">
-            <span id="recipe-category"></span>
-          </span>
+  <!-- Mobile Nav V2 -->
+  <div id="nav-mobile"
+    class="fixed inset-0 z-[200] translate-x-full transition-transform duration-700 pointer-events-none">
+    <div class="absolute inset-0 bg-[#0B1221]/95 backdrop-blur-2xl pointer-events-auto">
+      <div class="flex flex-col h-full p-12">
+        <div class="flex justify-between items-center mb-24">
+          <span class="text-ec-gold font-black text-[10px] tracking-[0.5em] uppercase">Menú Maestro</span>
+          <button id="nav-close" class="text-white/40 hover:text-white transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-      </div>
-      <!-- Crédito de imagen (fuera del contenedor de la imagen) -->
-      <div id="image-credit" class="hidden text-right text-xs text-gray-500 mt-2 px-1"></div>
-    </div>
-
-    <!-- Título y descripción -->
-    <!-- CINEMATIC HERO -->
-    <section class="relative h-[60vh] min-h-[400px] flex items-end pb-12 overflow-hidden">
-      <img id="recipe-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover -z-10" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ec-blue via-ec-blue/40 to-transparent -z-10"></div>
-      <div id="image-credit"
-        class="absolute bottom-4 right-6 text-[10px] text-white/50 uppercase tracking-widest hidden"></div>
-
-      <div class="max-w-7xl mx-auto px-6 w-full" data-aos="fade-up">
-        <nav class="flex items-center gap-2 text-white/70 text-[10px] font-bold uppercase tracking-widest mb-4"
-          aria-label="Breadcrumb">
-          <a href="/" class="hover:text-ec-gold transition-colors">Inicio</a>
-          <span>/</span>
-          <a href="/recipes" class="hover:text-ec-gold transition-colors">Recetas</a>
-          <span>/</span>
-          <span id="recipe-category-crumb" class="text-ec-gold">Receta</span>
+        <nav class="flex flex-col gap-12">
+          <a href="/" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">INICIO.</a>
+          <a href="blog" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">DESTINOS.</a>
+          <a href="recipes" class="text-6xl font-display font-black hover:text-ec-gold transition-colors">ARCHIVOS.</a>
         </nav>
+      </div>
+    </div>
+  </div>
 
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div class="max-w-3xl">
-            <div class="flex gap-2 mb-4">
-              <span id="recipe-region"
-                class="bg-ec-gold text-ec-blue text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">SIERRA</span>
-              <span id="recipe-difficulty-badge"
-                class="bg-white/10 backdrop-blur-md text-white border border-white/20 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1.5">
-                <span class="text-ec-gold">⚡</span> <span id="recipe-difficulty">Intermedio</span>
-              </span>
+  <!-- ═══ LOADING & ERROR STATES ═══ -->
+  <div id="recipe-loading" class="min-h-screen flex items-center justify-center">
+    <div class="flex flex-col items-center">
+      <div class="w-12 h-12 border-2 border-ec-gold border-t-transparent rounded-full animate-spin mb-6"></div>
+      <p class="text-[10px] font-black uppercase tracking-[0.5em] text-white/30">Accediendo a la Receta...</p>
+    </div>
+  </div>
+
+  <div id="recipe-error" class="hidden min-h-screen flex items-center justify-center px-6">
+    <div class="text-center max-w-lg">
+      <h1 class="text-6xl md:text-8xl font-display font-black text-white mb-8">404 <span
+          class="text-ec-gold italic">NotFound.</span></h1>
+      <p class="text-white/40 mb-12">La receta que busca ha sido archivada o no existe en nuestras bases de datos
+        tradicionales.</p>
+      <a href="recipes"
+        class="glass-card px-12 py-5 rounded-2xl text-[10px] font-black tracking-widest hover:text-ec-gold transition-all block underline">VOLVER
+        AL RECETARIO</a>
+    </div>
+  </div>
+
+  <main id="recipe-content" class="hidden">
+    <!-- ═══ LUXURY HERO V2 ═══ -->
+    <section class="relative pt-64 pb-20 overflow-hidden min-h-[80vh] flex flex-col justify-center">
+      <div id="hero-bg" class="absolute inset-0 bg-[#0B1221] -z-20"></div>
+      <div id="recipe-image-container"
+        class="absolute inset-0 opacity-40 -z-10 bg-cover bg-center grayscale filter contrast-125 transition-all duration-1000">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/60 to-transparent -z-10"></div>
+
+      <div class="max-w-[1400px] mx-auto px-6 w-full" data-aos="fade-up">
+        <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+          <span id="recipe-region"
+            class="text-ec-gold font-black text-[9px] tracking-[0.5em] uppercase mb-8 block border border-ec-gold/30 px-6 py-2 rounded-full backdrop-blur-md"></span>
+          <h1 id="recipe-title"
+            class="recipe-title-cinematic text-6xl md:text-9xl text-white tracking-tighter mb-8 uppercase leading-[0.85]">
+          </h1>
+          <p id="recipe-description"
+            class="text-white/50 text-xl max-w-3xl font-light mb-16 text-balance tracking-wide lg:mx-0 mx-auto"></p>
+
+          <div class="flex flex-wrap justify-center lg:justify-start gap-12 pt-12 border-t border-white/5 w-full">
+            <div class="flex flex-col">
+              <span class="text-white/20 text-[9px] font-black uppercase tracking-widest mb-1">Duración</span>
+              <span id="recipe-time" class="text-white font-bold text-sm tracking-widest uppercase"></span>
             </div>
-            <h1 id="recipe-title"
-              class="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[0.9] text-balance mb-4">
-              Loading...
-            </h1>
-            <p id="recipe-description" class="text-lg text-white/80 leading-relaxed max-w-2xl line-clamp-3 font-medium">
-            </p>
-          </div>
-
-          <div class="flex flex-col gap-3 shrink-0">
-            <button id="btn-favorite"
-              class="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 font-bold text-sm px-8 py-4 rounded-2xl transition-all shadow-xl group"
-              aria-pressed="false">
-              <svg class="w-6 h-6 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                </path>
-              </svg>
-              <span class="btn-text">Guardar en Recetario</span>
-            </button>
+            <div class="flex flex-col">
+              <span class="text-white/20 text-[9px] font-black uppercase tracking-widest mb-1">Rinde</span>
+              <span id="recipe-servings" class="text-white font-bold text-sm tracking-widest uppercase"></span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-white/20 text-[9px] font-black uppercase tracking-widest mb-1">Impacto</span>
+              <span id="recipe-difficulty" class="text-white font-bold text-sm tracking-widest uppercase"></span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BENTO LAYOUT -->
-    <div class="max-w-7xl mx-auto px-6 py-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- ═══ BENTO GRID RECIPE V2 ═══ -->
+    <section class="max-w-[1400px] mx-auto px-6 py-32">
+      <div class="grid lg:grid-cols-12 gap-16">
 
-        <!-- LEFT: INFOGRAPHY BENTO -->
-        <aside class="lg:col-span-4 flex flex-col gap-6">
-
-          <!-- Quick Info Bento -->
-          <div class="bento-card p-8 bg-ec-blue text-white" data-aos="fade-right">
-            <h3
-              class="text-ec-gold font-display font-black text-lg uppercase tracking-widest mb-6 border-b border-white/10 pb-4">
-              Detalles Técnica</h3>
-            <div class="grid grid-cols-2 gap-y-8">
-              <div>
-                <p class="text-[10px] text-white/50 uppercase tracking-widest mb-1">Preparación</p>
-                <p id="recipe-prep-time" class="text-2xl font-black font-display tracking-tight text-white">-</p>
-              </div>
-              <div>
-                <p class="text-[10px] text-white/50 uppercase tracking-widest mb-1">Cocción</p>
-                <p id="recipe-cook-time" class="text-2xl font-black font-display tracking-tight text-white">-</p>
-              </div>
-              <div>
-                <p class="text-[10px] text-white/50 uppercase tracking-widest mb-1">Porciones</p>
-                <div class="flex items-center gap-3">
-                  <p id="servings-counter" class="text-3xl font-black font-display tracking-tight text-ec-gold">2</p>
-                  <div class="flex flex-col gap-1">
-                    <button id="btn-servings-plus" class="text-white hover:text-ec-gold transition-colors">▲</button>
-                    <button id="btn-servings-minus" class="text-white hover:text-ec-gold transition-colors">▼</button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p class="text-[10px] text-white/50 uppercase tracking-widest mb-1">Calificación</p>
-                <div id="star-picker" class="flex gap-1 text-ec-gold text-xl" role="group">
-                  <button class="star-btn" data-star="1">★</button>
-                  <button class="star-btn" data-star="2">★</button>
-                  <button class="star-btn" data-star="3">★</button>
-                  <button class="star-btn" data-star="4">★</button>
-                  <button class="star-btn" data-star="5">★</button>
-                </div>
-                <span id="rating-label" class="text-[10px] text-white/40 mt-1 block uppercase">SÉ EL PRIMERO EN
-                  CALIFICAR</span>
-              </div>
-            </div>
-
-            <div id="estimated-cost-row" class="hidden mt-8 pt-6 border-t border-white/10">
-              <p class="text-[10px] text-white/50 uppercase tracking-widest mb-1">Costo Estimado</p>
-              <p id="estimated-cost-value"
-                class="text-2xl font-black font-display text-ec-green-light text-emerald-400"></p>
-            </div>
-          </div>
-
-          <!-- Ad Slot Sidebar -->
-          <div
-            class="bento-card p-4 border-dashed border-2 border-ec-blue/10 flex flex-col items-center justify-center min-h-[300px]">
-            <span class="text-[10px] text-ec-blue/30 uppercase tracking-widest mb-4">ESPACIO PUBLICITARIO</span>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
-              data-ad-slot="12345678" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          </div>
-
-          <!-- Author & Share -->
-          <div class="bento-card p-8 flex flex-col items-center text-center" data-aos="fade-up">
-            <div class="w-16 h-16 rounded-full bg-ec-blue/5 flex items-center justify-center text-3xl mb-4">👨‍🍳
-            </div>
-            <p class="text-[10px] text-ec-blue/50 uppercase tracking-widest mb-1">Receta publicada por</p>
-            <p id="recipe-author" class="font-display font-black text-ec-blue text-xl leading-none mb-1">Chef IA
-              Ecuador</p>
-            <p id="recipe-date" class="text-xs text-ec-blue/40 font-bold"></p>
-
-            <div class="flex gap-4 mt-8">
-              <a href="#"
-                class="w-10 h-10 rounded-full border border-ec-blue/10 flex items-center justify-center text-ec-blue hover:bg-ec-blue hover:text-white transition-all transform hover:scale-110">𝕏</a>
-              <a href="#"
-                class="w-10 h-10 rounded-full border border-ec-blue/10 flex items-center justify-center text-ec-blue hover:bg-ec-blue hover:text-white transition-all transform hover:scale-110">📸</a>
-            </div>
-          </div>
-
-        </aside>
-
-        <!-- RIGHT: PRIMARY CONTENT BENTO -->
-        <main class="lg:col-span-8 flex flex-col gap-8">
-
-          <!-- Ingredients Editorial -->
-          <div id="ingredients-section" class="bento-card p-10 bg-[#F9FAFB] relative overflow-hidden"
-            data-aos="fade-up">
-            <div class="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
-              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                </path>
-              </svg>
-            </div>
-
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-              <div>
-                <h2 class="font-display font-black text-4xl text-ec-blue leading-none mb-2 tracking-tighter uppercase">
-                  Ingredientes</h2>
-                <div class="ec-title-bar-luxury"></div>
-              </div>
-              <button id="btn-grocery-list"
-                class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-ec-gold bg-ec-blue px-6 py-3 rounded-xl hover:scale-105 transition-transform">
-                Añadir a lista +
-              </button>
-            </div>
-
-            <div id="ingredients-list" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-              <!-- Injected via JS -->
-              <div class="animate-pulse flex items-center gap-4 py-2 border-b border-ec-blue/5">
-                <div class="w-5 h-5 bg-ec-blue/10 rounded"></div>
-                <div class="h-4 bg-ec-blue/10 rounded w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cook Mode / Instructions -->
-          <div id="instructions-section" class="bento-card p-10 border-2 border-ec-blue/5" data-aos="fade-up">
+        <!-- Ingredients Sidebar -->
+        <div class="lg:col-span-4 space-y-12" data-aos="fade-right">
+          <div class="glass-card p-12 rounded-[48px] sticky top-32">
             <div class="flex items-center justify-between mb-12">
-              <div>
-                <h2 class="font-display font-black text-4xl text-ec-blue leading-none mb-2 tracking-tighter uppercase">
-                  Preparación</h2>
-                <div class="ec-title-bar-luxury"></div>
+              <h3 class="text-white font-black text-[10px] tracking-[0.4em] uppercase">Requisitos.</h3>
+              <span class="text-ec-gold text-lg">📦</span>
+            </div>
+            <ul id="ingredients-list" class="space-y-6">
+              <!-- Rendered via JS -->
+            </ul>
+
+            <!-- Internal Ad Slot -->
+            <div class="mt-16 pt-16 border-t border-white/5">
+              <div class="ad-slot-luxury">
+                <span class="text-[8px] text-white/20 font-black uppercase absolute -top-4 left-6 bg-[#0B1221] px-3">Ad
+                  Placement</span>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
+                  data-ad-slot="1111111111" data-ad-format="auto"></ins>
               </div>
-              <button id="btn-cook-mode"
-                class="flex items-center gap-2 bg-ec-gold text-ec-blue font-black text-[11px] uppercase tracking-widest px-6 py-4 rounded-2xl hover:bg-yellow-400 transition-all shadow-lg hover:shadow-ec-gold/20">
-                <span class="text-xl">👩‍🍳</span> MODO COCINAR
-              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructions Main -->
+        <div class="lg:col-span-8 space-y-32" data-aos="fade-left">
+          <div class="space-y-20">
+            <div class="flex items-center gap-6">
+              <div class="h-px bg-ec-gold/20 flex-1"></div>
+              <h3 class="text-ec-gold font-black text-[10px] tracking-[0.6em] uppercase">El Proceso Maestro</h3>
+              <div class="h-px bg-ec-gold/20 flex-1"></div>
             </div>
 
-            <ol id="instructions-list" class="space-y-12">
-              <!-- Injected via JS -->
-              <li class="flex gap-8 group">
-                <div
-                  class="shrink-0 w-12 h-12 rounded-2xl bg-ec-blue text-white flex items-center justify-center font-display font-black text-xl shadow-lg transform transition-transform group-hover:rotate-12">
-                  ?
-                </div>
-                <div class="pt-2">
-                  <p class="text-ec-blue/40 font-bold uppercase text-[10px] tracking-widest mb-1">Cargando paso...</p>
-                  <div class="h-4 bg-ec-blue/5 rounded w-full animate-pulse"></div>
-                </div>
-              </li>
+            <ol id="instructions-list" class="space-y-24">
+              <!-- Rendered via JS -->
             </ol>
           </div>
 
-          <!-- Ad Slot middle -->
-          <div class="ad-slot w-full py-8">
-            <p class="ad-label">Publicidad Recomendada</p>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
-              data-ad-slot="87654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          </div>
-
-          <!-- Tips & Tourism Section -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div id="tips-section" class="bento-card p-8 bg-ec-gold/5 border-ec-gold/20 hidden" data-aos="fade-up">
-              <h3
-                class="font-display font-black text-xl text-ec-blue uppercase tracking-widest mb-6 flex items-center gap-2">
-                <span class="text-2xl">💡</span> Consejos
-              </h3>
-              <ul id="tips-list" class="space-y-4 text-sm font-medium text-ec-blue/80 italic leading-relaxed"></ul>
+          <!-- FAQs / Notes Section -->
+          <div class="pt-32 border-t border-white/5">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+              <div>
+                <span class="text-ec-gold font-black text-[9px] tracking-[0.4em] uppercase mb-4 block">Knowledge
+                  Base</span>
+                <h2
+                  class="font-display text-5xl md:text-7xl font-bold italic text-white leading-none tracking-tighter uppercase">
+                  Archivos de <br> <span class="gold-text-gradient italic font-serif uppercase">Sabiduría.</span></h2>
+              </div>
             </div>
-
-            <div id="tourism-card" class="bento-card p-8 bg-ec-blue text-white hidden" data-aos="fade-up">
-              <h3
-                class="font-display font-black text-xl text-ec-gold uppercase tracking-widest mb-6 flex items-center gap-2">
-                <span class="text-2xl">🗺️</span> Turismo
-              </h3>
-              <div id="tourism-content" class="text-sm font-medium leading-relaxed text-white/80"></div>
+            <div id="faqs-container" class="grid md:grid-cols-2 gap-10">
+              <!-- Rendered via JS -->
             </div>
           </div>
-
-          <!-- Comments Section -->
-          <div class="bento-card p-10 bg-white" data-aos="fade-up">
-            <h2
-              class="font-display font-black text-4xl text-ec-blue leading-none mb-10 tracking-tighter uppercase border-b border-ec-blue/5 pb-6">
-              Comentarios</h2>
-            <div id="comments-section">
-              <form id="review-form" class="space-y-6 mb-12">
-                <div class="flex gap-2" id="review-stars-picker">
-                  <button type="button" class="text-3xl text-gray-200 hover:text-ec-gold transition-colors"
-                    data-val="1">★</button>
-                  <button type="button" class="text-3xl text-gray-200 hover:text-ec-gold transition-colors"
-                    data-val="2">★</button>
-                  <button type="button" class="text-3xl text-gray-200 hover:text-ec-gold transition-colors"
-                    data-val="3">★</button>
-                  <button type="button" class="text-3xl text-gray-200 hover:text-ec-gold transition-colors"
-                    data-val="4">★</button>
-                  <button type="button" class="text-3xl text-gray-200 hover:text-ec-gold transition-colors"
-                    data-val="5">★</button>
-                </div>
-                <textarea id="review-text" rows="4"
-                  class="w-full bg-gray-50 border-0 rounded-2xl p-6 text-sm focus:ring-2 focus:ring-ec-gold transition-all"
-                  placeholder="Comparte tu experiencia con esta receta..."></textarea>
-                <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-                  <label
-                    class="cursor-pointer flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-ec-blue">
-                    📸 SUBIR FOTO DEL PLATO
-                    <input type="file" id="review-photo" class="hidden" accept="image/*" />
-                  </label>
-                  <button type="submit"
-                    class="w-full sm:w-auto btn-luxury text-white font-black text-xs px-10 py-4 rounded-xl">PUBLICAR
-                    RESEÑA</button>
-                </div>
-              </form>
-              <div id="reviews-list" class="space-y-8"></div>
-            </div>
-          </div>
-
-        </main>
+        </div>
       </div>
-    </div>
-  </div>
-  <!-- /recipe-content -->
+    </section>
 
-  <!-- Botonera flotante de redes sociales (desktop) -->
-  <div id="social-share" class="hidden fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2">
-    <a id="share-whatsapp" href="#" target="_blank" rel="noopener"
-      class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform"
-      title="Compartir en WhatsApp">
-      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-      </svg>
-    </a>
-    <a id="share-facebook" href="#" target="_blank" rel="noopener"
-      class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform"
-      title="Compartir en Facebook">
-      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-      </svg>
-    </a>
-    <a id="share-x" href="#" target="_blank" rel="noopener"
-      class="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform"
-      title="Compartir en X">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-        <path
-          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    </a>
-    <a id="share-pinterest" href="#" target="_blank" rel="noopener"
-      class="w-10 h-10 rounded-full bg-[#E60023] flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform"
-      title="Guardar en Pinterest">
-      <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
-        <path
-          d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
-      </svg>
-    </a>
-  </div>
-
-  <!-- ═══ STICKY RECIPE BAR (Mobile) ═══ -->
-  <div id="sticky-recipe-bar"
-    class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-40 transform -translate-y-full transition-transform duration-300 md:hidden border-b border-gray-100 flex items-center justify-between px-4 py-2 opacity-0 pointer-events-none">
-    <div class="flex flex-col max-w-[50%]">
-      <span id="sticky-recipe-title" class="font-bold text-gray-900 text-sm truncate">Receta</span>
-      <span class="text-xs text-[#14213D] font-medium flex gap-1 items-center">
-        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        <span id="sticky-recipe-time">-- min</span>
-      </span>
-    </div>
-    <div class="flex items-center gap-2">
-      <button id="sticky-btn-favorite"
-        class="w-9 h-9 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center hover:bg-rose-100 transition-colors focus:outline-none"
-        aria-label="Guardar receta">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path
-            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-          </path>
-        </svg>
-      </button>
-      <a href="#instructions-section"
-        class="bg-[#DCA011] text-[#14213D] font-bold text-xs px-3 py-2 rounded-xl shadow-sm hover:bg-yellow-400">
-        Cocinar
-      </a>
-    </div>
-  </div>
-
-  <!-- ═══ NEWSLETTER ═══ -->
-  <section class="bg-[#14213D] py-10 px-4 sm:px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">
-        Gratis · Sin spam
-      </p>
-      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">
-        📬 Suscríbete al Menú Semanal
-      </h2>
-      <p class="text-blue-200 mb-6">
-        Recibe cada lunes 7 recetas seleccionadas para la semana directo a
-        tu email.
-      </p>
-      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-        class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta" />
-        <input type="email" name="email" placeholder="tu@email.com" required
-          class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-          aria-label="Email para newsletter" />
-        <button type="submit"
-          class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
-          Suscribirme →
-        </button>
-      </form>
-    </div>
-  </section>
+    <!-- Ad Banner Footer -->
+    <section class="max-w-[1400px] mx-auto px-6 pb-32">
+      <div class="ad-slot-luxury min-h-[300px] flex items-center justify-center rounded-[48px]">
+        <span
+          class="text-[9px] text-white/20 font-black uppercase absolute -top-4 left-1/2 -translate-x-1/2 bg-[#0B1221] px-10 tracking-[0.5em]">Billboard
+          Premium</span>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
+          data-ad-slot="2222222222" data-ad-format="rectangle"></ins>
+      </div>
+    </section>
   </main>
-  <!-- /#main-content -->
 
-  <!-- ═══ LUXURY FOOTER ═══ -->
-  <footer class="bg-ec-blue text-white pt-24 pb-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-        <div class="lg:col-span-1">
-          <a href="/" class="flex items-center gap-3 mb-8">
-            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-xl">🇪🇨</div>
-            <span class="font-display font-black text-xl tracking-tighter">ECUADOR <span class="text-ec-gold">A LA
-                CARTA</span></span>
-          </a>
-          <p class="text-white/50 text-sm leading-relaxed mb-8">
-            La biblioteca digital más completa de recetas ecuatorianas auténticas. Preservando nuestra cultura,
-            ingrediente a ingrediente.
-          </p>
-          <div class="flex gap-4">
-            <div
-              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-              𝕏</div>
-            <div
-              class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-              📸</div>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Navegación</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li><a href="/" class="text-white/60 hover:text-white transition-colors">Inicio</a></li>
-            <li><a href="/recipes" class="text-white/60 hover:text-white transition-colors">Recetas</a></li>
-            <li><a href="/blog" class="text-white/60 hover:text-white transition-colors">Blog Turismo</a></li>
-            <li><a href="/menu-semanal" class="text-white/60 hover:text-white transition-colors">Menú Semanal</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Regiones</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li><a href="/recipes?region=Sierra" class="text-white/60 hover:text-white transition-colors">🏔️ Sierra</a>
-            </li>
-            <li><a href="/recipes?region=Costa" class="text-white/60 hover:text-white transition-colors">🌊 Costa</a>
-            </li>
-            <li><a href="/recipes?region=Amazonia" class="text-white/60 hover:text-white transition-colors">🌿
-                Amazonía</a></li>
-            <li><a href="/recipes?region=Galapagos" class="text-white/60 hover:text-white transition-colors">🐢
-                Galápagos</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-ec-gold font-bold text-[10px] tracking-[0.2em] uppercase mb-8">Legal</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li><a href="/privacy" class="text-white/60 hover:text-white transition-colors">Privacidad</a></li>
-            <li><a href="/terms" class="text-white/60 hover:text-white transition-colors">Términos</a></li>
-            <li><a href="/nosotros" class="text-white/60 hover:text-white transition-colors">Nosotros</a></li>
-            <li><a href="/contact" class="text-white/60 hover:text-white transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 Ecuador a la Carta — Premium
-          Gastronomy</p>
-        <div class="flex gap-4">
-          <span class="w-1 h-1 rounded-full bg-ec-gold"></span>
-          <span class="w-1 h-1 rounded-full bg-ec-blue"></span>
-          <span class="w-1 h-1 rounded-full bg-ec-red"></span>
-        </div>
-      </div>
+  <!-- ═══ LUXURY FOOTER V2 ═══ -->
+  <footer class="bg-[#0B1221] text-white pt-32 pb-16 px-6 border-t border-white/5 relative overflow-hidden">
+    <div class="max-w-[1400px] mx-auto relative z-10 text-center">
+      <p class="text-white/20 text-[9px] font-black uppercase tracking-[0.4em]">© MMXXVI ECUADOR A LA CARTA — PREMIUM
+        GASTRONOMY ECOSYSTEM</p>
     </div>
   </footer>
 
   <script>
-    // Navigation Logic
+    // Navigation
     const navToggle = document.getElementById('nav-toggle');
     const navClose = document.getElementById('nav-close');
     const navMobile = document.getElementById('nav-mobile');
+    navToggle?.addEventListener('click', () => navMobile?.classList.remove('translate-x-full'));
+    navClose?.addEventListener('click', () => navMobile?.classList.add('translate-x-full'));
 
-    navToggle?.addEventListener('click', () => {
-      navMobile?.classList.remove('hidden');
-      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
-    });
+    // Recipe Logic
+    async function loadRecipe() {
+      const urlParams = new URL(window.location.toLocaleString()).searchParams;
+      const slug = urlParams.get('slug');
+      const loader = document.getElementById('recipe-loading');
+      const errorState = document.getElementById('recipe-error');
+      const content = document.getElementById('recipe-content');
 
-    navClose?.addEventListener('click', () => {
-      navMobile?.classList.add('opacity-0');
-      setTimeout(() => navMobile?.classList.add('hidden'), 500);
-    });
-
-    // Close on link click
-    navMobile?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMobile?.classList.add('hidden');
-      });
-    });
-
-    // Scroll effect for header
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.classList.add('py-2', 'shadow-xl');
-        header.classList.remove('py-4', 'shadow-sm');
-      } else {
-        header.classList.add('py-4', 'shadow-sm');
-        header.classList.remove('py-2', 'shadow-xl');
+      if (!slug) {
+        loader.classList.add('hidden');
+        errorState.classList.remove('hidden');
+        return;
       }
-    });
 
-    // Initialize AOS
+      try {
+        const response = await fetch('recipes.json');
+        const recipes = await response.json();
+        const recipe = recipes.find(r => r.slug === slug);
+
+        if (recipe) {
+          loader.classList.add('hidden');
+          content.classList.remove('hidden');
+          renderRecipe(recipe);
+        } else {
+          loader.classList.add('hidden');
+          errorState.classList.remove('hidden');
+        }
+      } catch (err) {
+        console.error('Error load recipe:', err);
+        loader.classList.add('hidden');
+        errorState.classList.remove('hidden');
+      }
+    }
+
+    function renderRecipe(recipe) {
+      document.title = `${recipe.title} — Esencia Tradicional | Ecuador a la Carta`;
+      document.getElementById('recipe-title').innerText = recipe.title;
+      document.getElementById('recipe-description').innerText = recipe.description || 'Una joya curada de nuestra herencia culinaria ancestral, preservada para la excelencia gastronómica de hoy.';
+      document.getElementById('recipe-region').innerText = recipe.region;
+      document.getElementById('recipe-time').innerText = recipe.time || '45 MIN';
+      document.getElementById('recipe-servings').innerText = recipe.servings || '4 POR';
+      document.getElementById('recipe-difficulty').innerText = recipe.difficulty || 'ALTO';
+
+      const imgContainer = document.getElementById('recipe-image-container');
+      if (recipe.image) imgContainer.style.backgroundImage = `url('${recipe.image}')`;
+
+      // Ingredients
+      const ingList = document.getElementById('ingredients-list');
+      ingList.innerHTML = (recipe.ingredients || []).map(ing => `
+        <li class="flex items-start gap-4 text-white/40 hover:text-white transition-colors group cursor-default">
+          <span class="w-1.5 h-1.5 rounded-full bg-ec-gold group-hover:scale-150 transition-transform mt-2"></span>
+          <span class="text-sm tracking-[0.05em] font-light italic">${ing}</span>
+        </li>
+      `).join('');
+
+      // Instructions
+      const instList = document.getElementById('instructions-list');
+      instList.innerHTML = (recipe.instructions || []).map((inst, i) => `
+        <li class="grid md:grid-cols-[100px_1fr] gap-12 group" data-aos="fade-up">
+          <div class="flex flex-col items-center">
+             <span class="w-16 h-16 rounded-[24px] border border-ec-gold/20 flex items-center justify-center text-ec-gold font-display font-black italic text-2xl group-hover:scale-110 transition-all">${i + 1}</span>
+             <div class="w-px h-full bg-gradient-to-b from-ec-gold/20 to-transparent mt-8"></div>
+          </div>
+          <p class="text-white/60 text-2xl font-light leading-relaxed tracking-tight group-hover:text-white transition-colors text-balance">${inst}</p>
+        </li>
+      `).join('');
+
+      // FAQs/Notes
+      const faqCont = document.getElementById('faqs-container');
+      faqCont.innerHTML = (recipe.faqs || []).map(faq => `
+        <div class="glass-card p-12 rounded-[48px] space-y-6 hover:border-ec-gold/20 transition-all group">
+          <h4 class="text-white font-black text-xs tracking-widest uppercase group-hover:text-ec-gold transition-colors italic">¿${faq.question || faq.q}?</h4>
+          <p class="text-white/30 text-base font-light leading-relaxed italic text-balance">${faq.answer || faq.a}</p>
+        </div>
+      `).join('');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-      });
+      loadRecipe();
+      if (typeof AOS !== 'undefined') AOS.init({ duration: 1000, once: true });
     });
   </script>
-  <script type="module" src="script.js"></script>
 </body>
 
 </html>

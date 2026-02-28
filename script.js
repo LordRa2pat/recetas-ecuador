@@ -728,41 +728,80 @@ async function initRecipe() {
     });
   }
 
-  // --- Integración Cook Mode (Modo Cocinar) ---
+  // --- Integración Cook Mode Premium (Rewarded Ad Flow) ---
   var btnCookMode = document.getElementById("btn-cook-mode");
   var wakeLock = null;
+  var recognition = null;
+  var chefModeBadge = document.getElementById("chef-mode-badge");
+
+  function stopChefMode() {
+    document.body.classList.remove("cook-mode-active");
+    btnCookMode.innerHTML = '<span class="text-xl">👩‍🍳</span> MODO CHEF (MANOS LIBRES)';
+    btnCookMode.classList.remove("bg-red-500", "text-white");
+    btnCookMode.classList.add("bg-gradient-to-r", "from-ec-gold", "to-yellow-400");
+    if (chefModeBadge) chefModeBadge.style.display = "none";
+
+    if (wakeLock !== null) {
+      wakeLock.release().then(() => { wakeLock = null; });
+    }
+    if (recognition) {
+      recognition.stop();
+      recognition = null;
+    }
+  }
+
+  async function startChefMode() {
+    // 1. Simular Rewarded Ad
+    btnCookMode.innerHTML = "<span>⏳ Cargando Experiencia...</span>";
+    btnCookMode.disabled = true;
+
+    // Simulación de 3 segundos de "Ad"
+    await new Promise(r => setTimeout(r, 2000));
+
+    // Activar Modo
+    document.body.classList.add("cook-mode-active");
+    btnCookMode.innerHTML = '<span class="text-white font-bold">✖ DETENER MODO CHEF</span>';
+    btnCookMode.classList.remove("bg-gradient-to-r", "from-ec-gold", "to-yellow-400");
+    btnCookMode.classList.add("bg-red-500", "text-white");
+    btnCookMode.disabled = false;
+    if (chefModeBadge) chefModeBadge.style.display = "flex";
+
+    // 2. Wake Lock
+    try {
+      if ("wakeLock" in navigator) {
+        wakeLock = await navigator.wakeLock.request("screen");
+      }
+    } catch (err) {
+      console.warn("Wake Lock not supported");
+    }
+
+    // 3. Speech Recognition (Hands-Free)
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.lang = 'es-EC';
+      recognition.interimResults = false;
+
+      recognition.onresult = (event) => {
+        const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
+        console.log("Comando Chef:", command);
+        if (command.includes("siguiente") || command.includes("próximo")) {
+          // Lógica para scroll al siguiente paso (si tuviéramos IDs de pasos)
+          console.log("Navegando al siguiente paso...");
+        }
+      };
+
+      recognition.start();
+    }
+  }
 
   if (btnCookMode) {
-    btnCookMode.addEventListener("click", async function () {
-      var body = document.body;
-      var isActive = body.classList.contains("cook-mode-active");
-
-      if (!isActive) {
-        body.classList.add("cook-mode-active");
-        btnCookMode.innerHTML =
-          '<span class="text-red-400 font-bold">\u2716 Salir de Modo Cocinar</span>';
-        btnCookMode.classList.remove("bg-white/20", "text-white");
-        btnCookMode.classList.add("bg-slate-800", "text-red-400");
-
-        try {
-          if ("wakeLock" in navigator) {
-            wakeLock = await navigator.wakeLock.request("screen");
-          }
-        } catch (err) {
-          console.warn("Wake Lock no soportado o bloqueado:", err.message);
-        }
+    btnCookMode.addEventListener("click", function () {
+      if (document.body.classList.contains("cook-mode-active")) {
+        stopChefMode();
       } else {
-        body.classList.remove("cook-mode-active");
-        btnCookMode.innerHTML =
-          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line><line x1="12" y1="8" x2="12" y2="16"></line></svg><span>Modo Cocinar</span>';
-        btnCookMode.classList.remove("bg-slate-800", "text-red-400");
-        btnCookMode.classList.add("bg-white/20", "text-white");
-
-        if (wakeLock !== null) {
-          wakeLock.release().then(() => {
-            wakeLock = null;
-          });
-        }
+        startChefMode();
       }
     });
   }

@@ -52,8 +52,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <style>
+    :root {
+      --ec-gold: #DCA011;
+      --ec-blue: #14213D;
+      --luxury-dark: #0B1221;
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--luxury-dark);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+    }
+
+    .gold-text-gradient {
+      background: linear-gradient(to right, #DCA011, #F5D17E, #DCA011);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
     }
 
     .ec-stripe {
@@ -210,9 +247,11 @@
       }
     }
   </style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-<body class="bg-[#FDFBF7] font-sans text-gray-900 antialiased">
+<body class="font-sans antialiased text-white selection:bg-ec-gold/30">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9Z6G26N" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -288,187 +327,95 @@
       <a href="contact.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">✉️ Contacto</a>
     </div>
   </header>
-  <main id="main-content">
-    <script>
-      document.getElementById('nav-toggle')?.addEventListener('click', function () {
-        document.getElementById('nav-mobile')?.classList.toggle('hidden');
-      });
-    </script>
+  <main id="main-content" class="pt-24 lg:pt-32">
+    <!-- ═══ TOP BILLBOARD ═══ -->
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="ad-slot--billboard">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702" data-ad-slot="12341234"
+          data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
 
     <!-- ═══ LOADING ═══ -->
-    <div id="post-loading" class="min-h-screen flex items-center justify-center" aria-live="polite">
-      <div class="text-center">
-        <div class="w-12 h-12 border-4 border-[#9A1B22] border-t-transparent rounded-full animate-spin mx-auto mb-4">
-        </div>
-        <p class="text-gray-500 text-sm">Cargando artículo...</p>
-      </div>
+    <div id="post-loading" class="min-h-[60vh] flex items-center justify-center">
+      <div class="w-12 h-12 border-2 border-ec-gold border-t-transparent rounded-full animate-spin"></div>
     </div>
 
     <!-- ═══ ERROR ═══ -->
-    <div id="post-error" class="hidden min-h-screen flex items-center justify-center px-4" role="alert">
-      <div class="text-center max-w-sm">
-        <div class="text-6xl mb-4">📰</div>
-        <h1 class="text-2xl font-black text-gray-800 mb-2">Artículo no encontrado</h1>
-        <p data-error-msg class="text-gray-500 mb-6">No pudimos encontrar este artículo.</p>
-        <a href="blog.html"
-          class="inline-flex items-center gap-2 bg-[#9A1B22] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors">
-          ← Ver el blog
-        </a>
+    <div id="post-error" class="hidden min-h-[60vh] flex items-center justify-center px-6">
+      <div class="text-center">
+        <h1 class="hero-title text-4xl mb-8">Artículo no hallado</h1>
+        <a href="blog"
+          class="glass-card px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all">←
+          Volver a la Ruta</a>
       </div>
     </div>
 
-    <!-- ═══ POST CONTENT ═══ -->
-    <div id="post-content" class="hidden">
+    <!-- ═══ POST CONTENT V2 ═══ -->
+    <article id="post-content" class="hidden">
+      <!-- Cinematic Hero -->
+      <section class="max-w-[1400px] mx-auto px-6 mb-24" data-aos="fade-up">
+        <div class="relative h-[60vh] md:h-[80vh] rounded-[48px] overflow-hidden shadow-3xl">
+          <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
 
-      <!-- Breadcrumb -->
-      <nav class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-2" aria-label="Ruta de navegación">
-        <ol class="flex items-center gap-2 text-xs text-gray-400 flex-wrap">
-          <li><a href="index.html" class="hover:text-[#14213D] transition-colors">Inicio</a></li>
-          <li aria-hidden="true">/</li>
-          <li><a href="blog.html" class="hover:text-[#14213D] transition-colors">Blog Turismo</a></li>
-          <li aria-hidden="true">/</li>
-          <li id="bc-post" class="text-gray-600 font-medium truncate max-w-48" aria-current="page">Artículo</li>
-        </ol>
-      </nav>
+          <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-24">
+            <div class="flex gap-4 mb-8">
+              <span id="post-category"
+                class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-ec-gold border-white/10"></span>
+              <span id="post-region"
+                class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-white/60 border-white/10"></span>
+            </div>
+            <h1 id="post-title"
+              class="hero-title text-5xl md:text-8xl lg:text-9xl text-white tracking-tighter uppercase mb-6 leading-[0.9]">
+            </h1>
+            <p id="post-subtitle" class="text-white/40 text-xl md:text-2xl font-light max-w-3xl mb-12 italic"></p>
 
-      <!-- Hero imagen -->
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-        <div class="relative h-64 sm:h-96 rounded-2xl overflow-hidden shadow-2xl">
-          <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
-          <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-            <span data-optional id="post-category-badge-hero"
-              class="hidden bg-[#9A1B22]/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
-              <span id="post-category"></span>
-            </span>
-            <span data-optional id="post-region-badge-hero"
-              class="hidden bg-white/90 backdrop-blur-sm text-[#14213D] text-xs font-bold px-3 py-1 rounded-full">
-              <span id="post-region"></span>
-            </span>
+            <div class="flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
+              <span id="post-date"></span>
+              <span class="w-1 h-1 rounded-full bg-white/20"></span>
+              <span id="post-reading-time"></span>
+            </div>
           </div>
-          <!-- Crédito de imagen -->
-          <div id="image-credit" class="hidden absolute bottom-3 right-4 z-10"></div>
         </div>
-      </div>
+      </section>
 
-      <!-- Título, meta y contenido -->
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 pb-16">
-        <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Editorial Layout -->
+      <div class="max-w-[1400px] mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-20">
 
-          <!-- Artículo principal -->
+          <!-- Content Body -->
           <div class="flex-1 min-w-0">
-
-            <!-- Header del artículo -->
-            <div class="mb-6">
-              <h1 id="post-title" class="text-3xl sm:text-4xl font-bold font-serif text-[#14213D] leading-tight mb-2">
-                Cargando...
-              </h1>
-              <p data-optional id="post-subtitle-wrap" class="hidden text-xl text-gray-500 mb-4 font-medium">
-                <span id="post-subtitle"></span>
-              </p>
-              <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500">
-                <span data-optional id="post-date-wrap" class="hidden flex items-center gap-1">
-                  📅 <span id="post-date"></span>
-                </span>
-                <span data-optional id="post-rt-wrap" class="hidden flex items-center gap-1">
-                  ⏱ <span id="post-reading-time"></span> de lectura
-                </span>
-                <span data-optional id="post-source-wrap" class="hidden flex items-center gap-1 text-xs">
-                  Fuente: <span id="post-source" class="font-medium"></span>
-                </span>
-              </div>
-            </div>
-
-            <!-- AdSense in-article #1 -->
-            <div class="ad-slot w-full mb-6">
-              <p class="ad-label">Publicidad</p>
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="2020202020"
-                data-ad-format="auto" data-full-width-responsive="true"></ins>
-            </div>
-
-            <!-- Contenido del artículo -->
-            <div id="post-content-body" class="prose max-w-none text-gray-700 leading-relaxed mb-6">
-              <p class="text-gray-300 animate-pulse">Cargando contenido...</p>
-            </div>
-
-            <!-- AdSense in-article #2 -->
-            <div class="ad-slot w-full mb-6">
-              <p class="ad-label">Publicidad</p>
-              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="3030303030"
-                data-ad-format="auto" data-full-width-responsive="true"></ins>
-            </div>
-
-            <!-- FAQs accordion -->
-            <div id="post-faqs" class="hidden"></div>
-
-            <!-- Recetas relacionadas de la misma región -->
-            <div id="post-related-recipes" class="hidden"></div>
-
-            <!-- Navegación volver -->
-            <div class="pt-6 border-t border-gray-100 mt-6">
-              <a href="blog.html"
-                class="inline-flex items-center gap-2 bg-[#9A1B22] text-white font-bold px-6 py-3 rounded-2xl hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#9A1B22] focus:ring-offset-2">
-                ← Ver más artículos
-              </a>
-            </div>
-
+            Ver menú →
+            </a>
           </div>
-
-          <!-- Sidebar sticky desktop -->
-          <aside class="hidden lg:flex flex-col gap-5 w-64 flex-shrink-0" aria-label="Barra lateral del artículo">
-            <div class="sticky top-24">
-              <div class="ad-slot ad-slot--tall w-full mb-5">
-                <p class="ad-label">Publicidad</p>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="4040404040"
-                  data-ad-format="auto" data-full-width-responsive="true"></ins>
-              </div>
-
-              <!-- CTA Recetas -->
-              <div class="bg-gradient-to-br from-[#14213D] to-[#001f6e] rounded-2xl p-5 text-white">
-                <p class="font-bold text-sm mb-2">🍽️ Recetas de Ecuador</p>
-                <p class="text-blue-200 text-xs mb-3">Cocina los sabores auténticos del Ecuador en casa</p>
-                <a href="recipes.html"
-                  class="inline-block bg-ec-gold text-[#001f6e] font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-                  Ver recetas →
-                </a>
-              </div>
-
-              <!-- CTA Menú Semanal -->
-              <div class="bg-white rounded-2xl p-5 shadow-md border border-gray-100 mt-4">
-                <p class="font-bold text-gray-800 text-sm mb-2">📅 Menú Semanal</p>
-                <p class="text-gray-500 text-xs mb-3">7 recetas para toda la semana, generadas por IA</p>
-                <a href="menu-semanal.html"
-                  class="inline-block bg-[#14213D] text-white font-bold text-xs px-4 py-2 rounded-full hover:bg-[#0b1324] transition-colors">
-                  Ver menú →
-                </a>
-              </div>
-            </div>
-          </aside>
-
         </div>
+        </aside>
+
+      </div>
       </div>
 
-    </div><!-- /post-content -->
+      </div><!-- /post-content -->
 
-    <!-- ═══ NEWSLETTER ═══ -->
-    <section class="bg-[#14213D] py-10 px-4 sm:px-6">
-      <div class="max-w-2xl mx-auto text-center">
-        <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-        <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
-        <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
-        <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-          class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
-          <input type="email" name="email" placeholder="tu@email.com" required
-            class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-            aria-label="Email para newsletter">
-          <button type="submit"
-            class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
-            Suscribirme →
-          </button>
-        </form>
-      </div>
-    </section>
+      <!-- ═══ NEWSLETTER ═══ -->
+      <section class="bg-[#14213D] py-10 px-4 sm:px-6">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+          <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
+          <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+          <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+            <input type="email" name="email" placeholder="tu@email.com" required
+              class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+              aria-label="Email para newsletter">
+            <button type="submit"
+              class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+              Suscribirme →
+            </button>
+          </form>
+        </div>
+      </section>
 
   </main><!-- /#main-content -->
 

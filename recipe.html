@@ -237,6 +237,46 @@
                 </div>
               </label>
             </div>
+            <!-- achievement Badges V3.0 -->
+            <div id="achievements-card" class="mb-10 p-6 rounded-[32px] bg-white/5 border border-white/5 hidden">
+              <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest mb-4 block">Logros
+                Gastronómicos</span>
+              <div id="badges-container" class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <!-- Badges injected via JS -->
+              </div>
+            </div>
+
+            <!-- B2B Entrepreneur Mode V3.0 -->
+            <div
+              class="mb-10 p-5 rounded-3xl bg-ec-blue/10 border border-ec-blue/20 group transition-all hover:bg-ec-blue/20">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex flex-col gap-1">
+                  <span class="text-[9px] font-black text-ec-blue uppercase tracking-widest">Modo Emprendedor</span>
+                  <span class="text-[8px] font-bold text-white/40 uppercase tracking-tight">Cálculo de Costo B2B</span>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="b2b-switch" class="sr-only peer">
+                  <div
+                    class="w-10 h-5 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-ec-blue">
+                  </div>
+                </label>
+              </div>
+              <div id="b2b-panel" class="hidden space-y-4 pt-4 border-t border-white/5">
+                <div class="flex justify-between items-center text-[10px] font-bold text-white/60">
+                  <span>Costo Mat. Prima:</span>
+                  <span id="b2b-cost-base">$ 0.00</span>
+                </div>
+                <div class="flex justify-between items-center text-[10px] font-bold text-white/60">
+                  <span>Gas/Empaque/Mermas:</span>
+                  <span id="b2b-cost-extra">$ 1.50</span>
+                </div>
+                <div class="flex justify-between items-center text-ec-gold font-black">
+                  <span class="uppercase tracking-widest">PVP Sugerido (30%):</span>
+                  <span id="b2b-pvp">$ 0.00</span>
+                </div>
+              </div>
+            </div>
+
             <!-- Portion Calculator V3.0 -->
             <div class="mb-10 p-5 rounded-3xl bg-ec-gold/5 border border-ec-gold/10">
               <div class="flex items-center justify-between mb-4">
@@ -333,6 +373,92 @@
           <!-- YouTube & Extra Section -->
           <div id="videos-card" class="hidden transition-all duration-700">
             <!-- JS Render - renderVideosCard -->
+          </div>
+
+          <!-- Section: La Yapa (Gated Content) V3.0 -->
+          <div class="mt-32 p-12 glass-card rounded-[48px] border border-ec-gold/20 relative overflow-hidden group">
+            <div id="yapa-lock"
+              class="absolute inset-0 bg-luxury-dark/80 backdrop-blur-md z-20 flex flex-col items-center justify-center p-8 text-center transition-all duration-700">
+              <span class="text-4xl mb-6 group-hover:scale-125 transition-transform duration-500">🎁</span>
+              <h4 class="text-white font-black text-xs tracking-[0.4em] uppercase mb-4">La Yapa del Chef</h4>
+              <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-8">Desbloquea este secreto
+                milenario compartiendo en tus redes.</p>
+              <button id="unlock-yapa-btn"
+                class="px-8 py-4 bg-ec-gold text-luxury-dark font-black text-[10px] tracking-widest uppercase rounded-2xl hover:bg-white transition-all shadow-2xl">REVELAR
+                SECRETO</button>
+            </div>
+            <div class="relative z-10">
+              <span
+                class="text-ec-gold font-black text-[10px] tracking-[0.5em] uppercase mb-4 block underline decoration-ec-gold/30">Truco
+                Maestro</span>
+              <p id="yapa-content" class="text-white/60 text-lg font-light italic leading-relaxed">Cargando secreto...
+              </p>
+            </div>
+          </div>
+
+          <!-- Pairing & Local Spots V3.0 -->
+          <div class="mt-24 grid md:grid-cols-2 gap-12">
+            <!-- Maridaje -->
+            <div class="p-8 rounded-[40px] bg-white/5 border border-white/5 hover:border-ec-gold/20 transition-all">
+              <span class="text-ec-gold font-black text-[9px] uppercase tracking-widest mb-6 block">Maridaje Ancestral
+                🍷</span>
+              <!-- Flavor Profile V3.0 -->
+              <div class="mb-10 p-6 rounded-[32px] bg-luxury-dark/50 border border-white/5 backdrop-blur-sm">
+                <span
+                  class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em] mb-6 block text-center">Perfil de
+                  Sabor Maestría</span>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <span class="text-[8px] font-bold text-white/40 uppercase w-16">Dulzor</span>
+                    <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div id="bitter-bar" class="h-full bg-ec-gold w-[30%]"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-[8px] font-bold text-white/40 uppercase w-16">Acidez</span>
+                    <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div id="acid-bar" class="h-full bg-ec-blue w-[60%]"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-[8px] font-bold text-white/40 uppercase w-16">Picante</span>
+                    <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div id="spicy-bar-infog" class="h-full bg-ec-red w-[10%]"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <span class="text-[8px] font-bold text-white/40 uppercase w-16">Umami</span>
+                    <div class="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div id="umami-bar" class="h-full bg-white/40 w-[80%]"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-6">
+                <div id="pairing-icon" class="text-4xl">🍹</div>
+                <div>
+                  <h5 id="pairing-title" class="text-white font-bold text-sm uppercase italic mb-1">Cargando...</h5>
+                  <p id="pairing-desc"
+                    class="text-white/40 text-[9px] uppercase tracking-tighter leading-tight font-black">Complemento
+                    perfecto para esta experiencia.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Huecas -->
+            <a id="huecas-link" href="#" target="_blank"
+              class="p-8 rounded-[40px] bg-ec-red/5 border border-ec-red/10 hover:bg-ec-red/10 transition-all group">
+              <span class="text-ec-red font-black text-[9px] uppercase tracking-widest mb-6 block">Huecas Legendarias
+                📍</span>
+              <div class="flex items-center justify-between">
+                <div>
+                  <h5 class="text-white font-bold text-sm uppercase italic mb-1">¿Dónde Comer?</h5>
+                  <p class="text-white/40 text-[9px] uppercase tracking-tighter leading-tight font-black">Restaurantes
+                    cercanos con este plato.</p>
+                </div>
+                <span class="text-white/20 group-hover:text-ec-red transition-colors">➜</span>
+              </div>
+            </a>
           </div>
 
           <div id="faqs-section" class="hidden">

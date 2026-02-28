@@ -604,6 +604,11 @@ async function initRecipe() {
   initHandsDirtyMode();
   initAltitudeTimer();
   calculateEstimatedPrice(recipe);
+  initB2BCalculator(recipe);
+  initGamification();
+  initYapaFeature(recipe);
+  initPairingAndHuecas(recipe);
+  initFlavorProfile(recipe);
 
   // Diaspora Mode Reactive Logic
   const diasporaSwitch = document.getElementById("diaspora-switch");
@@ -1071,6 +1076,9 @@ async function initMenuSemanal() {
       );
     }).join("");
     initAds();
+    initHomeAds();
+    initMenuPlanner();
+    initDigitalStore();
   }
 
   renderMenu();
@@ -1441,6 +1449,228 @@ async function calculateEstimatedPrice(recipe) {
     priceBox.textContent = `$ ${(total / 2).toFixed(2)} - $ ${total.toFixed(2)} USD`;
   } catch (err) {
     priceBox.textContent = "$ 4.50 - $ 8.00 USD";
+  }
+}
+
+// ─── Calculadora para Emprendedores (B2B) ──────────────────
+function initB2BCalculator(recipe) {
+  const switchEl = document.getElementById("b2b-switch");
+  const panel = document.getElementById("b2b-panel");
+  const baseCostDisplay = document.getElementById("b2b-cost-base");
+  const pvpDisplay = document.getElementById("b2b-pvp");
+
+  if (!switchEl || !panel) return;
+
+  switchEl.addEventListener("change", (e) => {
+    panel.classList.toggle('hidden', !e.target.checked);
+    if (e.target.checked) {
+      // Cálculo simplificado para demostración
+      const servingsCurrent = parseInt(document.getElementById("portion-count").textContent) || 4;
+      const basePrice = 5.00 * (servingsCurrent / 4); // Estimación base
+      const totalCost = basePrice + 1.50; // Insumos fijos
+      const pvp = totalCost * 1.30; // 30% margen
+
+      baseCostDisplay.textContent = `$ ${basePrice.toFixed(2)}`;
+      pvpDisplay.textContent = `$ ${(pvp / servingsCurrent).toFixed(2)} c/u`;
+
+      trackEvent("b2b_mode_activated", { recipe: recipe.slug });
+    }
+  });
+}
+
+// ─── Gamificación y Medallas ─────────────────────────────
+function initGamification() {
+  const container = document.getElementById("badges-container");
+  const card = document.getElementById("achievements-card");
+  if (!container || !card) return;
+
+  // Sistema de persistencia simple
+  let userStats = JSON.parse(localStorage.getItem('user_stats_v3')) || { cooking_sessions: 0, shared: 0 };
+  userStats.cooking_sessions++;
+  localStorage.setItem('user_stats_v3', JSON.stringify(userStats));
+
+  const badges = [
+    { id: 'apprentice', title: 'Novato', icon: '🐣', condition: userStats.cooking_sessions >= 1 },
+    { id: 'chef', title: 'Master Chef', icon: '👨‍🍳', condition: userStats.cooking_sessions >= 5 },
+    { id: 'sharer', title: 'Embajador', icon: '📢', condition: userStats.shared >= 1 }
+  ];
+
+  const unlocked = badges.filter(b => b.condition);
+  if (unlocked.length > 0) {
+    card.classList.remove('hidden');
+    container.innerHTML = unlocked.map(b => `
+      <div class="flex-shrink-0 flex flex-col items-center gap-2 p-3 glass-card rounded-2xl border border-ec-gold/20 min-w-[70px]">
+        <span class="text-2xl">${b.icon}</span>
+        <span class="text-[7px] font-black text-white/60 uppercase tracking-tighter">${b.title}</span>
+      </div>
+    `).join("");
+  }
+}
+
+// ─── Sección "La Yapa" (Gated Content) ─────────────────────
+function initYapaFeature(recipe) {
+  const lock = document.getElementById("yapa-lock");
+  const btn = document.getElementById("unlock-yapa-btn");
+  const content = document.getElementById("yapa-content");
+
+  if (!lock || !btn || !content) return;
+
+  // El secreto viene de los metadatos o fallback
+  content.textContent = recipe.tips ? recipe.tips[0] : "Agrega una pizca de achiote al final para un brillo real.";
+
+  btn.addEventListener("click", () => {
+    // Simular compartir
+    lock.classList.add('opacity-0', 'pointer-events-none');
+    trackEvent("yapa_unlocked", { recipe: recipe.slug });
+
+    // Actualizar medallas por compartir
+    let stats = JSON.parse(localStorage.getItem('user_stats_v3')) || { cooking_sessions: 0, shared: 0 };
+    stats.shared++;
+    localStorage.setItem('user_stats_v3', JSON.stringify(stats));
+    initGamification(); // Refresh badges
+  });
+}
+
+// ─── Maridaje y Integración de "Huecas" ────────────────────
+function initPairingAndHuecas(recipe) {
+  const pairingIcon = document.getElementById("pairing-icon");
+  const pairingTitle = document.getElementById("pairing-title");
+  const huecasLink = document.getElementById("huecas-link");
+
+  if (pairingTitle) {
+    const drinks = [
+      { name: "Chicha de Jora", icon: "🍶" },
+      { name: "Canelazo", icon: "☕" },
+      { name: "Horchata Lojana", icon: "🌸" },
+      { name: "Jugo de Naranjilla", icon: "🍹" }
+    ];
+    const drink = drinks[Math.floor(Math.random() * drinks.length)];
+    pairingTitle.textContent = drink.name;
+    pairingIcon.textContent = drink.icon;
+  }
+
+  if (huecasLink) {
+    const searchUrl = `https://www.google.com/maps/search/restaurantes+de+${encodeURIComponent(recipe.title)}+cerca+de+mi`;
+    huecasLink.href = searchUrl;
+  }
+}
+
+// ─── Sección "La Yapa" (Gated Content) ─────────────────────
+function initYapaFeature(recipe) {
+  const lock = document.getElementById("yapa-lock");
+  const btn = document.getElementById("unlock-yapa-btn");
+  const content = document.getElementById("yapa-content");
+
+  if (!lock || !btn || !content) return;
+
+  content.textContent = recipe.tips ? recipe.tips[0] : "Agrega una pizca de achiote al final para un brillo real.";
+
+  btn.addEventListener("click", () => {
+    lock.classList.add('opacity-0', 'pointer-events-none');
+    trackEvent("yapa_unlocked", { recipe: recipe.slug });
+
+    let stats = JSON.parse(localStorage.getItem('user_stats_v3')) || { cooking_sessions: 0, shared: 0 };
+    stats.shared++;
+    localStorage.setItem('user_stats_v3', JSON.stringify(stats));
+    initGamification();
+  });
+}
+
+// ─── Maridaje y Integración de "Huecas" ────────────────────
+function initPairingAndHuecas(recipe) {
+  const pairingIcon = document.getElementById("pairing-icon");
+  const pairingTitle = document.getElementById("pairing-title");
+  const huecasLink = document.getElementById("huecas-link");
+
+  if (pairingTitle) {
+    const drinks = [
+      { name: "Chicha de Jora", icon: "🍶" },
+      { name: "Canelazo", icon: "☕" },
+      { name: "Horchata Lojana", icon: "🌸" },
+      { name: "Jugo de Naranjilla", icon: "🍹" }
+    ];
+    const drink = drinks[Math.floor(Math.random() * drinks.length)];
+    pairingTitle.textContent = drink.name;
+    pairingIcon.textContent = drink.icon;
+  }
+
+  if (huecasLink) {
+    const searchUrl = `https://www.google.com/maps/search/restaurantes+de+${encodeURIComponent(recipe.title)}+cerca+de+mi`;
+    huecasLink.href = searchUrl;
+  }
+}
+
+// ─── Perfil de Sabor (Infografía Dinámica) ────────────────
+function initFlavorProfile(recipe) {
+  const bars = {
+    dulzor: document.getElementById("bitter-bar"),
+    acidez: document.getElementById("acid-bar"),
+    picante: document.getElementById("spicy-bar-infog"),
+    umami: document.getElementById("umami-bar")
+  };
+
+  if (!bars.dulzor) return;
+
+  const hash = recipe.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+
+  bars.dulzor.style.width = `${(hash % 100)}%`;
+  bars.acidez.style.width = `${((hash * 7) % 100)}%`;
+  bars.picante.style.width = `${(recipe.spicy_level * 20)}%`;
+  bars.umami.style.width = `${((hash * 3) % 100)}%`;
+}
+
+// ─── Planificador de Menús Automatizado ───────────────────
+function initMenuPlanner() {
+  const btn = document.getElementById("menu-planner-btn");
+  if (!btn) return;
+
+  btn.addEventListener("click", async () => {
+    try {
+      const response = await fetch('recipes.json');
+      const recipes = await response.json();
+      const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+      const menu = shuffled.slice(0, 3);
+
+      let html = `
+        <div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-luxury-dark/95 backdrop-blur-2xl">
+          <div class="max-w-4xl w-full">
+            <div class="flex justify-between items-center mb-12">
+              <h2 class="text-white font-display font-black italic text-4xl uppercase tracking-tighter">Tu Menú del Día 🇪🇨</h2>
+              <button onclick="this.closest('div.fixed').remove()" class="text-white/40 hover:text-white transition-all text-xl">✕</button>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+              ${menu.map((r, i) => `
+                <a href="recipe.html?slug=${r.slug}" class="group glass-card p-6 rounded-[32px] border border-white/5 hover:border-ec-gold/30 transition-all">
+                  <span class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em] mb-4 block">${i == 0 ? 'Entrada' : i == 1 ? 'Fuerte' : 'Postre'}</span>
+                  <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                    <img src="${r.image_url}" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                  </div>
+                  <h3 class="text-white font-bold text-lg uppercase italic leading-none">${r.title}</h3>
+                </a>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', html);
+    } catch (e) { }
+  });
+}
+
+// ─── Tienda de Productos Digitales ───────────────────────
+function initDigitalStore() {
+  const footerIcons = document.querySelector('footer .flex.gap-3');
+  if (footerIcons) {
+    const shopBtn = document.createElement('a');
+    shopBtn.href = "#";
+    shopBtn.className = "w-10 h-10 rounded-xl bg-ec-gold/10 border border-ec-gold/20 flex items-center justify-center text-ec-gold hover:bg-ec-gold hover:text-luxury-dark transition-all text-sm";
+    shopBtn.innerHTML = "🛒";
+    shopBtn.title = "Tienda Digital (Próximamente)";
+    shopBtn.onclick = (e) => {
+      e.preventDefault();
+      alert("🛍️ ¡Próximamente! Nuestra tienda de Masterclasses y PDFs está en construcción.");
+    };
+    footerIcons.appendChild(shopBtn);
   }
 }
 

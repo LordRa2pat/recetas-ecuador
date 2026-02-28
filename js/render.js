@@ -65,20 +65,20 @@ export function renderCard(recipe) {
     '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent opacity-80"></div>' +
     (chip ? '<div class="absolute top-8 left-8 z-10">' + chip + "</div>" : "") +
     "</div>" +
-    '<div class="p-10">' +
+    '<div class="p-10 flex flex-col flex-1">' +
     '<div class="flex items-center gap-3 mb-6">' +
-    (recipe.region ? '<span class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em]">' + escapeHtml(recipe.region) + "</span>" : "") +
+    (recipe.region ? '<span class="text-[10px] font-black text-ec-gold uppercase tracking-[0.3em]">' + escapeHtml(recipe.region) + "</span>" : "") +
     '<span class="w-1 h-1 rounded-full bg-white/10"></span>' +
-    '<span class="text-[9px] font-bold text-white/30 uppercase tracking-widest">' + escapeHtml(recipe.difficulty || "Tradicional") + '</span>' +
+    '<span class="text-[10px] font-bold text-white/30 uppercase tracking-widest">' + escapeHtml(recipe.difficulty || "Tradicional") + '</span>' +
     "</div>" +
     '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold transition-colors duration-500">' + escapeHtml(recipe.title) + "</h3>" +
     '<p class="text-white/40 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(recipe.description || "") + "</p>" +
-    '<div class="flex items-center justify-between pt-8 border-t border-white/5">' +
-    '<div class="flex items-center gap-6 text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">' +
+    '<div class="mt-auto flex items-center justify-between pt-8 border-t border-white/5">' +
+    '<div class="flex items-center gap-6 text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">' +
     (recipe.total_time ? '<span class="flex items-center gap-2">⏳ ' + escapeHtml(recipe.total_time) + "</span>" : "") +
     (recipe.servings ? '<span class="flex items-center gap-2">🍽️ ' + escapeHtml(recipe.servings) + "</span>" : "") +
     "</div>" +
-    '<span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all">→</span>' +
+    '<span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all">→</span>' +
     "</div>" +
     "</div>" +
     "</a>" +
@@ -183,10 +183,13 @@ export function renderPlacesCard(recipe) {
 // ─── Videos Card ─────────────────────────────────────────────
 export function renderVideosCard(recipe) {
   var el = document.getElementById("videos-card");
-  if (!el || !recipe.youtube_videos || recipe.youtube_videos.length === 0)
-    return;
+  var videos = (recipe.youtube_videos || [])
+    .filter(v => {
+      const channel = (v.channel || "").toUpperCase();
+      return channel !== "KIWA" && channel !== "KWA"; // Excluir canales no deseados (KWA a veces se confunde con KIWA en logs, pero el usuario especificó KIWA)
+    })
+    .slice(0, 3);
 
-  var videos = recipe.youtube_videos.slice(0, 3);
   var videosHTML = videos
     .map(function (video, i) {
       if (!video.videoId) return "";

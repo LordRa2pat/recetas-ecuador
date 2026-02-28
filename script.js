@@ -609,6 +609,7 @@ async function initRecipe() {
   initYapaFeature(recipe);
   initPairingAndHuecas(recipe);
   initFlavorProfile(recipe);
+  initChefMode();
 
   // Diaspora Mode Reactive Logic
   const diasporaSwitch = document.getElementById("diaspora-switch");
@@ -1079,6 +1080,7 @@ async function initMenuSemanal() {
     initHomeAds();
     initMenuPlanner();
     initDigitalStore();
+    initNewsletter();
   }
 
   renderMenu();
@@ -1674,6 +1676,107 @@ function initDigitalStore() {
   }
 }
 
+// ─── Desbloqueo "Modo Chef" (Rewarded Ads) ───────────────
+function initChefMode() {
+  const lock = document.getElementById("chef-mode-lock");
+  const btn = document.getElementById("unlock-chef-btn");
+  const content = document.getElementById("chef-mode-content");
+
+  if (!lock || !btn || !content) return;
+
+  btn.addEventListener("click", () => {
+    btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> CARGANDO ANUNCIO...`;
+    setTimeout(() => {
+      lock.remove();
+      content.classList.remove('hidden');
+      trackEvent("chef_mode_unlocked");
+    }, 2000);
+  });
+}
+
+// ─── Newsletter Segmentada ──────────────────────────────
+function initNewsletter() {
+  const btn = document.getElementById("newsletter-btn");
+  if (!btn) return;
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const html = `
+      <div class="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-luxury-dark/95 backdrop-blur-2xl">
+        <div class="max-w-md w-full glass-card p-12 rounded-[48px] border border-ec-gold/20 text-center">
+          <span class="text-4xl mb-6 block">📩</span>
+          <h3 class="text-white font-display font-black italic text-2xl uppercase tracking-tighter mb-4">Secretos de la Abuela</h3>
+          <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-8">Recetas exclusivas y tips B2B cada semana.</p>
+          <input type="email" placeholder="tu@email.com" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white mb-6 focus:border-ec-gold outline-none">
+          <button onclick="this.innerHTML='¡UNIDO!'; setTimeout(()=>this.closest('div.fixed').remove(), 1000)" class="w-full py-5 bg-ec-gold text-luxury-dark font-black text-xs tracking-widest uppercase rounded-2xl shadow-2xl">UNIRME A LA ÉLITE</button>
+          <button onclick="this.closest('div.fixed').remove()" class="mt-6 text-white/20 text-[8px] font-bold uppercase tracking-widest hover:text-white transition-all">No me interesa cocinar como pro</button>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+  });
+}
+
+// ─── Dashboard de Emprendedor ────────────────────────────
+function initEntrepreneurDashboard() {
+  const html = `
+    <div class="fixed inset-0 z-[300] bg-luxury-dark overflow-y-auto p-12">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="flex justify-between items-center mb-16">
+          <h2 class="text-white font-display font-black italic text-5xl uppercase tracking-tighter">Panel de Control: Emprendedor PRO 📈</h2>
+          <button onclick="window.location.hash=''" class="px-8 py-3 rounded-xl border border-white/20 text-white font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-luxury-dark transition-all">Salir del Dashboard</button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+           <div class="glass-card p-8 rounded-[40px] border border-ec-gold/20">
+              <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest block mb-4">Ingresos Hoy (Est.)</span>
+              <p class="text-4xl font-display font-black text-white italic">$ 124.50</p>
+           </div>
+           <div class="glass-card p-8 rounded-[40px] border border-white/5">
+              <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Órdenes a través de Huecas</span>
+              <p class="text-4xl font-display font-black text-white italic">12</p>
+           </div>
+           <div class="glass-card p-8 rounded-[40px] border border-white/5">
+              <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Ahorro en Insumos (n8n)</span>
+              <p class="text-4xl font-display font-black text-ec-blue italic">15%</p>
+           </div>
+           <div class="glass-card p-8 rounded-[40px] border border-white/5">
+              <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Nivel de Reputación</span>
+              <p class="text-4xl font-display font-black text-ec-red italic">PLATINO</p>
+           </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+           <div class="p-10 bg-white/5 rounded-[48px] border border-white/5">
+              <h4 class="text-white font-bold text-xl uppercase italic mb-8">Top Recetas Monetizables</h4>
+              <div class="space-y-6">
+                 ${['Fanesca Tradicional', 'Encebollado Mixto', 'Bolón de Queso'].map(r => `
+                    <div class="flex items-center justify-between p-4 bg-luxury-dark/40 rounded-2xl border border-white/5">
+                       <span class="text-white/60 font-bold">${r}</span>
+                       <span class="text-ec-gold font-black">45% Margen</span>
+                    </div>
+                 `).join("")}
+              </div>
+           </div>
+           <div class="p-10 bg-ec-gold rounded-[48px] border border-white/5 flex flex-col items-center justify-center text-center">
+              <span class="text-4xl mb-6">📢</span>
+              <h4 class="text-luxury-dark font-black text-2xl uppercase italic mb-4">Impulsa tu Negocio</h4>
+              <p class="text-luxury-dark/60 text-sm font-bold mb-8">Activa campañas segmentadas para usuarios de tu ciudad.</p>
+              <button class="px-12 py-5 bg-luxury-dark text-white font-black text-[10px] tracking-widest uppercase rounded-2xl hover:scale-105 transition-transform">CREAR ANUNCIO</button>
+           </div>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', html);
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash !== '#dashboard') {
+      const dash = document.querySelector('div.fixed.z-\\[300\\]');
+      if (dash) dash.remove();
+    }
+  });
+}
+
 // ─── Router ───────────────────────────────────────────────────
 (function router() {
   initI18n();
@@ -1685,6 +1788,7 @@ function initDigitalStore() {
   if (path === 'index' || pathname === '/') {
     initIndex();
     if (typeof loadBlogPreview === 'function') loadBlogPreview();
+    if (window.location.hash === '#dashboard') initEntrepreneurDashboard();
   } else if (path === 'recipes') {
     initListing();
   } else if (path === 'recipe') {

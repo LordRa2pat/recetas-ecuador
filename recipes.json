@@ -1,5 +1,145 @@
 [
   {
+    "slug": "yahuarlocro",
+    "title": "Yahuarlocro Ecuatoriano Receta Tradicional",
+    "description": "Yahuarlocro es una sopa icónica de la Sierra ecuatoriana con tripa y sangre de res, perfecta para probar sabores andinos. Esta receta tradicional incluye ingredientes frescos y pasos detallados para un plato nutritivo y reconfortante, ideal para reuniones familiares.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "60 min",
+    "total_time": "80 min",
+    "ingredients": [
+      "500 gramos, peladas y cortadas en cubos papas (comprar en Supermaxi)",
+      "300 gramos, lavada y cortada en trozos tripa de res (comprar en Mercado local)",
+      "200 gramos, fresca o coagulada sangre de res (comprar en Mercado local)",
+      "1 unidad mediana, picada finamente cebolla blanca (comprar en TIA)",
+      "3 dientes, machacados ajo (comprar en Megamaxi)",
+      "1 cucharadita achiote en polvo (comprar en Supermaxi)",
+      "1/2 cucharadita comino molido (comprar en TIA)",
+      "1 litro caldo de res (comprar en Megamaxi)",
+      "1/2 taza, picado cilantro fresco (comprar en Mercado local)",
+      "al gusto sal (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En una olla grande, calienta 2 cucharadas de aceite a fuego medio durante 2 minutos y sofríe la cebolla picada y el ajo machacado hasta que estén transparentes, aproximadamente 5 minutos.",
+      "Paso 2: Agrega el achiote en polvo y el comino molido a la olla, revolviendo constantemente por 1 minuto a fuego bajo para liberar los aromas sin quemar las especias.",
+      "Paso 3: Incorpora la tripa de res cortada en trozos y cocina por 10 minutos a fuego medio, revolviendo ocasionalmente para que se dore ligeramente.",
+      "Paso 4: Añade las papas en cubos y el caldo de res, lleva a ebullición a fuego alto durante 5 minutos, luego reduce a fuego medio-bajo y cocina por 20 minutos hasta que las papas estén suaves.",
+      "Paso 5: Mezcla la sangre de res coagulada en la olla, revolviendo suavemente para integrarla sin que se desmorone, y cocina por 15 minutos más a fuego bajo, manteniendo una temperatura de 80°C para evitar que se endurezca.",
+      "Paso 6: Agrega el cilantro picado y ajusta la sal al gusto, deja reposar la sopa tapada por 5 minutos a temperatura ambiente antes de servir para que los sabores se fusionen.",
+      "Paso 7: Sirve caliente en bowls individuales, decorando con cilantro fresco adicional si se desea, y disfruta inmediatamente para un mejor sabor."
+    ],
+    "tips": [
+      "Para un sabor auténtico, usa sangre de res fresca de mercados locales en Ecuador, pero asegúrate de cocinarla a la temperatura correcta para evitar riesgos sanitarios.",
+      "Si el yahuarlocro queda muy espeso, agrega más caldo durante la cocción para ajustar la consistencia sin alterar los sabores tradicionales."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Otavalo"
+    ],
+    "image_keywords": [
+      "yahuarlocro soup",
+      "ecuadorian food",
+      "traditional sierra dish"
+    ],
+    "image_alt": "Fotografía del yahuarlocro terminado, una sopa espesa con papas, tripa y sangre de res en un bowl de cerámica",
+    "seo_keywords": [
+      "receta de yahuarlocro ecuatoriano tradicional paso a paso",
+      "cómo hacer yahuarlocro en casa con ingredientes simples",
+      "yahuarlocro sopa de la sierra ecuatoriana",
+      "platos típicos de ecuador yahuarlocro",
+      "sustitutos para yahuarlocro en estados unidos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el yahuarlocro y de dónde proviene?",
+        "a": "El yahuarlocro es una sopa tradicional de la Sierra ecuatoriana, originaria de ciudades como Quito y Otavalo, que combina papas, tripa y sangre de res con especias, representando la cocina andina con influencias indígenas."
+      },
+      {
+        "q": "¿Es seguro comer yahuarlocro con sangre de res?",
+        "a": "Sí, siempre que la sangre se cocine adecuadamente a temperaturas superiores a 70°C para eliminar bacterias; en Ecuador, se usa sangre fresca de fuentes confiables, pero verifica la frescura al prepararlo."
+      },
+      {
+        "q": "¿Puedo hacer yahuarlocro vegetariano?",
+        "a": "Puedes adaptar el yahuarlocro a una versión vegetariana sustituyendo la tripa y sangre de res por tofu o setas, pero perderá su autenticidad; experimenta con condimentos para mantener el sabor umami."
+      },
+      {
+        "q": "¿Cuánto dura el yahuarlocro en la nevera?",
+        "a": "El yahuarlocro refrigerado dura hasta 2 días en un contenedor hermético; recálcalo a fuego bajo antes de servir para preservar la textura y evitar riesgos de contaminación."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante La Casa de la Abuela",
+        "city": "Quito",
+        "description": "Un lugar tradicional en el centro histórico donde sirven yahuarlocro con ingredientes frescos de la región, ideal para turistas que buscan experiencias auténticas."
+      },
+      {
+        "name": "Mercado de Otavalo",
+        "city": "Otavalo",
+        "description": "En este vibrante mercado, varios puestos ofrecen yahuarlocro casero con toques locales, perfecto para probarlo en un ambiente cultural y comprar ingredientes frescos."
+      },
+      {
+        "name": "Restaurante El Quinche",
+        "city": "Quito",
+        "description": "Especializado en platos serranos, este restaurante prepara yahuarlocro con recetas heredadas, acompañado de vistas panorámicas para una experiencia completa."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "sangre de res",
+        "substitute": "tofu firme",
+        "notes": "Disponible en supermercados como Whole Foods en EE.UU. o Carrefour en Europa; usa tofu para imitar la textura coagulada."
+      },
+      {
+        "original": "tripa de res",
+        "substitute": "salchicha de cerdo o pollo",
+        "notes": "Encuéntrala en tiendas como Walmart en EE.UU. o Lidl en Europa; proporciona un sabor similar sin la complejidad de preparar tripa fresca."
+      },
+      {
+        "original": "achiote",
+        "substitute": "pimentón ahumado",
+        "notes": "Fácil de hallar en supermercados generales en EE.UU. y Europa; añade color y sabor ahumado comparable."
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "YAHUARLOCRO | Receta Ecuatoriana 🇪🇨 | Cocinando Con Malú",
+        "videoId": "XJXvm5kZkbk",
+        "channel": "Cocinando Con Malú",
+        "url": "https://www.youtube.com/watch?v=XJXvm5kZkbk",
+        "embed": "https://www.youtube-nocookie.com/embed/XJXvm5kZkbk",
+        "uploadDate": "2022-11-25",
+        "description": "Hola, te extrañaba, volví con más recetas vamos a cocinar juntos !!!\n\n🍲NUEVA RECETA: YAHUARLOCRO🍲\n\nEn este video te enseño de enseño como preparar un caldo de patas 100% #Ecuatoriano​ con el sabor a"
+      },
+      {
+        "title": "YAHUARLOCRO ... Locro de Sangre!",
+        "videoId": "WoWCNcFguJo",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=WoWCNcFguJo",
+        "embed": "https://www.youtube-nocookie.com/embed/WoWCNcFguJo",
+        "uploadDate": "2021-11-30",
+        "description": "PYCCA nos trae el #YAHUARLOCRO una emblemárica sopa de serranía ecuatoriana que cuenta con siglos de historia y sabor, su nombre significa Yaguar=Sangre y Locro=cocido de papas y su exótico sabor, úni"
+      },
+      {
+        "title": "EL LOCRO de papa 🇪🇨 de las MEJORES SOPAS de Latinoamérica | KWA",
+        "videoId": "ofDwbA5sP7k",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=ofDwbA5sP7k",
+        "embed": "https://www.youtube-nocookie.com/embed/ofDwbA5sP7k",
+        "uploadDate": "2024-01-26",
+        "description": "Prueba este delicioso #LocroDePapas, con la textura perfecta. Seguro vas a repetir! #KWAEC\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nI"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/XJXvm5kZkbk/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 40,
+    "created_at": "2026-02-28T11:22:30.687Z"
+  },
+  {
     "slug": "maito",
     "title": "Maito Ecuatoriano Receta Tradicional",
     "description": "Maito es un plato tradicional de la Amazonia ecuatoriana hecho con pescado envuelto en hojas y cocinado al vapor. Esta receta incluye ingredientes frescos y pasos simples para recrear el sabor auténtico en casa, perfecta para amantes de la cocina indígena.",

@@ -27,86 +27,27 @@ import { renderIngredient } from "./js/prices.js";
 async function initIndex() {
   var recipes = await loadRecipes();
 
-  var classicGrid = document.getElementById("classic-grid");
-  if (classicGrid) {
-    var classics = recipes
-      .filter(function (r) {
-        return !r.target_audience || r.target_audience === "Local";
-      })
-      .slice(0, 6);
-    if (classics.length > 0) {
-      classicGrid.innerHTML = classics.map(renderCard).join("");
-    } else if (recipes.length > 0) {
-      classicGrid.innerHTML = recipes.slice(0, 6).map(renderCard).join("");
-    } else {
-      renderEmptyState(
-        classicGrid,
-        "Pronto publicaremos nuestras primeras recetas cl\u00e1sicas.",
-      );
-    }
-  }
-
-  var diasporaSection = document.getElementById("diaspora-section");
-  var diasporaGrid = document.getElementById("diaspora-grid");
-  if (diasporaGrid) {
-    var diaspora = recipes
-      .filter(function (r) {
-        return (
-          r.target_audience === "Di\u00e1spora" ||
-          (r.international_substitutes &&
-            r.international_substitutes.length > 0)
-        );
-      })
-      .slice(0, 4);
-    if (diaspora.length > 0) {
-      diasporaGrid.innerHTML = diaspora.map(renderCard).join("");
-      if (diasporaSection) diasporaSection.classList.remove("hidden");
-    }
-  }
-
-  var tourismSection = document.getElementById("tourism-section");
-  var tourismGrid = document.getElementById("tourism-grid");
-  if (tourismGrid) {
-    var tourism = recipes
-      .filter(function (r) {
-        return !!r.tourism_route || (r.places && r.places.length > 0);
-      })
-      .slice(0, 4);
-    if (tourism.length > 0) {
-      tourismGrid.innerHTML = tourism.map(renderCard).join("");
-      if (tourismSection) tourismSection.classList.remove("hidden");
-    }
-  }
-
-  var searchInput = document.getElementById("search-input");
-  if (searchInput) {
-    searchInput.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        var q = searchInput.value.trim();
-        if (q) {
-          trackEvent("search_use", {
-            query: q,
-            page: "index",
-            destination: "recipes",
-          });
-          window.location.href = "recipes.html?q=" + encodeURIComponent(q);
-        }
-      }
-    });
-    var searchBtn = document.getElementById("search-btn");
-    if (searchBtn) {
-      searchBtn.addEventListener("click", function () {
-        var q = searchInput.value.trim();
-        if (q) {
-          trackEvent("search_use", {
-            query: q,
-            page: "index",
-            destination: "recipes",
-          });
-          window.location.href = "recipes.html?q=" + encodeURIComponent(q);
-        }
+  // Mapeo a la nueva estructura V2.5
+  var featuredGrid = document.getElementById("recipe-featured-grid");
+  if (featuredGrid) {
+    if (recipes.length > 0) {
+      // Priorizar las que tengan imagen o video
+      var sorted = recipes.slice().sort((a, b) => {
+        const aHasImg = a.image_url || (a.youtube_videos && a.youtube_videos.length > 0);
+        const bHasImg = b.image_url || (b.youtube_videos && b.youtube_videos.length > 0);
+        return bHasImg - aHasImg;
       });
+      featuredGrid.innerHTML = sorted.slice(0, 6).map(renderCard).join("");
+    } else {
+      renderEmptyState(featuredGrid, "Archivos cargando...");
     }
+  }
+
+  // Compatibilidad con secciones antiguas (si existen)
+  var classics = recipes.filter(r => !r.target_audience || r.target_audience === "Local");
+  var classicGrid = document.getElementById("classic-grid");
+  if (classicGrid && classics.length > 0) {
+    classicGrid.innerHTML = classics.slice(0, 6).map(renderCard).join("");
   }
 
   initAds();
@@ -533,598 +474,99 @@ function initFavoritesAndSticky(recipe) {
 
 // ─── Página: RECETA ───────────────────────────────────────────
 async function initRecipe() {
-  var params = new URLSearchParams(window.location.search);
-  var slug = params.get("slug");
-  var loadingEl = document.getElementById("recipe-loading");
-  var errorEl = document.getElementById("recipe-error");
-  var contentEl = document.getElementById("recipe-content");
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const loadingEl = document.getElementById("recipe-loading");
+  const errorEl = document.getElementById("recipe-error");
+  const contentEl = document.getElementById("recipe-content");
 
   if (!slug) {
     if (loadingEl) loadingEl.classList.add("hidden");
-    if (errorEl) {
-      errorEl.classList.remove("hidden");
-      var msgEl = errorEl.querySelector("[data-error-msg]");
-      if (msgEl) msgEl.textContent = "No se especific\u00f3 ninguna receta.";
-    }
+    if (errorEl) errorEl.classList.remove("hidden");
     return;
   }
 
-  var recipes = await loadRecipes();
-  var priceDb = await loadPriceDb();
-  var recipe = null;
-  for (var i = 0; i < recipes.length; i++) {
-    if (recipes[i].slug === slug) {
-      recipe = recipes[i];
-      break;
-    }
+  const recipes = await loadRecipes();
+  const recipe = recipes.find(r => r.slug === slug);
+
+  if (!recipe) {
+    if (loadingEl) loadingEl.classList.add("hidden");
+    if (errorEl) errorEl.classList.remove("hidden");
+    return;
   }
 
   if (loadingEl) loadingEl.classList.add("hidden");
-
-  if (!recipe) {
-    if (errorEl) {
-      errorEl.classList.remove("hidden");
-      var msgEl2 = errorEl.querySelector("[data-error-msg]");
-      if (msgEl2)
-        msgEl2.textContent =
-          'No encontramos la receta "' + escapeHtml(slug) + '".';
-    }
-    return;
+  if (contentEl) {
+    contentEl.classList.remove("hidden");
+    contentEl.style.opacity = "1"; // For transition
   }
-
-  if (contentEl) contentEl.classList.remove("hidden");
 
   injectSEO(recipe);
 
-  var bcRecipe = document.getElementById("bc-recipe");
+  // Sync breadcrumbs and title
+  const bcRecipe = document.getElementById("bc-recipe");
   if (bcRecipe) bcRecipe.textContent = recipe.title;
 
-  var heroImg = document.getElementById("recipe-hero-img");
+  const titleEl = document.getElementById("recipe-title");
+  if (titleEl) titleEl.textContent = recipe.title;
+
+  const descEl = document.getElementById("recipe-description");
+  if (descEl) descEl.textContent = recipe.description || "Receta tradicional de la gastronomía ecuatoriana, preservada en nuestros archivos maestros.";
+
+  const catEl = document.getElementById("recipe-category");
+  if (catEl) catEl.textContent = recipe.category || "General";
+
+  const regEl = document.getElementById("recipe-region");
+  if (regEl) regEl.textContent = recipe.region || "Ecuador";
+
+  // Specs
+  const specs = {
+    "recipe-total-time": recipe.total_time || "-- min",
+    "recipe-servings": recipe.servings || "-- per",
+    "recipe-difficulty": recipe.difficulty || "Media"
+  };
+  for (const [id, val] of Object.entries(specs)) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  // Hero Image (Using the same logic as renderCard)
+  const heroImg = document.getElementById("recipe-hero-img");
   if (heroImg) {
-    heroImg.src =
-      recipe.image_url ||
-      "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80";
-    heroImg.alt = recipe.image_alt || recipe.title;
-    heroImg.onerror = function () {
-      this.src =
-        "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80";
-    };
-  }
-
-  var creditEl = document.getElementById("image-credit");
-  if (creditEl) {
-    if (recipe._image_source_url) {
-      try {
-        var host = new URL(recipe._image_source_url).hostname;
-        if (host.startsWith("www.")) host = host.substring(4);
-        creditEl.innerHTML =
-          'Fuente: <a href="' +
-          escapeHtml(recipe._image_source_url) +
-          '" target="_blank" rel="noopener nofollow" class="underline hover:text-gray-700 transition-colors">' +
-          escapeHtml(host) +
-          "</a>";
-        creditEl.classList.remove("hidden");
-      } catch (e) {
-        creditEl.classList.add("hidden");
-      }
-    } else {
-      creditEl.classList.add("hidden");
+    let img = recipe.image_url || "";
+    if (!img && recipe.youtube_videos && recipe.youtube_videos.length > 0) {
+      const v = recipe.youtube_videos.find(x => !["KIWA", "KWA"].includes((x.channel || "").toUpperCase())) || recipe.youtube_videos[0];
+      if (v && v.videoId) img = "https://img.youtube.com/vi/" + v.videoId + "/maxresdefault.jpg";
     }
+    heroImg.src = img || "https://images.unsplash.com/photo-1547517023-7ca0c162f816?w=1200";
   }
 
-  var heroChip = document.getElementById("recipe-audience-chip");
-  if (heroChip) {
-    var chip = getAudienceChip(recipe);
-    if (chip) {
-      heroChip.innerHTML = chip;
-      heroChip.classList.remove("hidden");
-    }
+  // Ingredients and Instructions (New containers)
+  const ingList = document.getElementById("ingredients-list");
+  if (ingList && recipe.ingredients) {
+    ingList.innerHTML = recipe.ingredients.map(ing => `
+          <li class="flex items-start gap-4 text-white/40 hover:text-white transition-colors group cursor-default">
+            <span class="w-1.5 h-1.5 rounded-full bg-ec-gold group-hover:scale-150 transition-transform mt-2"></span>
+            <span class="text-sm tracking-[0.05em] font-light italic">${escapeHtml(ing)}</span>
+          </li>
+      `).join("");
   }
 
-  var fields = [
-    ["recipe-title", recipe.title],
-    ["recipe-description", recipe.description],
-    ["recipe-region", recipe.region],
-    ["recipe-difficulty", recipe.difficulty],
-    ["recipe-category", recipe.category],
-    ["recipe-servings", recipe.servings],
-    ["recipe-prep-time", recipe.prep_time],
-    ["recipe-cook-time", recipe.cook_time],
-    ["recipe-total-time", recipe.total_time],
-  ];
-  fields.forEach(function (pair) {
-    var el = document.getElementById(pair[0]);
-    if (el && pair[1]) {
-      el.textContent = pair[1];
-    } else if (el && !pair[1]) {
-      var parent = el.closest("[data-optional]");
-      if (parent) parent.classList.add("hidden");
-    }
-  });
-
-  // --- Integración Escalado de Porciones ---
-  var baseServings = 2; // Default fallback
-  if (recipe.servings) {
-    var match = recipe.servings.match(/\d+/);
-    if (match) baseServings = parseInt(match[0], 10);
-  }
-  var currentServings = baseServings;
-
-  var servingsCounterEl = document.getElementById("servings-counter");
-  var btnServMinus = document.getElementById("btn-servings-minus");
-  var btnServPlus = document.getElementById("btn-servings-plus");
-  if (servingsCounterEl) servingsCounterEl.textContent = currentServings;
-
-  function parseAndScaleIngredientList() {
-    var ingList = document.getElementById("ingredients-list");
-    if (!ingList || !recipe.ingredients) return;
-
-    var scaleFactor = currentServings / baseServings;
-
-    ingList.innerHTML = recipe.ingredients
-      .map(function (ing) {
-        var scaledText = ing;
-        if (scaleFactor !== 1) {
-          // Find leading numbers like "1/2", "1.5", "2", "1 1/2", "1,5"
-          scaledText = ing.replace(
-            /^(\d+\s*\/\s*\d+|\d+[\.,]\d+|\d+\s+\d+\/\d+|\d+)\s*/,
-            function (match, p1) {
-              try {
-                var num = 0;
-                var parts = p1.trim().split(/\s+/);
-
-                if (parts.length === 2 && parts[1].indexOf("/") !== -1) {
-                  // e.g. "1 1/2"
-                  var fraction = parts[1].split("/");
-                  num =
-                    parseInt(parts[0], 10) +
-                    parseInt(fraction[0], 10) / parseInt(fraction[1], 10);
-                } else if (p1.indexOf("/") !== -1) {
-                  // e.g. "1/2"
-                  var fraction = p1.split("/");
-                  num = parseInt(fraction[0], 10) / parseInt(fraction[1], 10);
-                } else {
-                  // e.g. "2" or "1.5" or "1,5"
-                  num = parseFloat(p1.replace(",", "."));
-                }
-
-                var newNum = num * scaleFactor;
-
-                // Format output elegantly
-                var outstr =
-                  newNum % 1 !== 0
-                    ? newNum.toFixed(1).replace(/\.0$/, "").replace(".", ",")
-                    : newNum;
-                // Add original trailing space back
-                return outstr + (match.endsWith(" ") ? " " : "");
-              } catch (e) {
-                return match;
-              }
-            },
-          );
-        }
-        return renderIngredient(scaledText, priceDb);
-      })
-      .join("");
+  const instList = document.getElementById("instructions-list");
+  if (instList && recipe.instructions) {
+    instList.innerHTML = recipe.instructions.map((inst, i) => `
+        <li class="grid md:grid-cols-[80px_1fr] gap-8 group instruction-line" data-aos="fade-up">
+          <div class="flex flex-col items-center">
+             <span class="w-12 h-12 rounded-xl border border-ec-gold/20 flex items-center justify-center text-ec-gold font-display font-black italic text-xl group-hover:scale-110 transition-all">${i + 1}</span>
+          </div>
+          <p class="text-white/60 text-xl font-light leading-relaxed tracking-tight group-hover:text-white transition-colors text-balance">${escapeHtml(inst)}</p>
+        </li>
+      `).join("");
   }
 
-  // Initial render
-  parseAndScaleIngredientList();
-
-  if (btnServMinus && btnServPlus) {
-    btnServMinus.addEventListener("click", function () {
-      if (currentServings > 1) {
-        currentServings--;
-        servingsCounterEl.textContent = currentServings;
-        parseAndScaleIngredientList();
-      }
-    });
-    btnServPlus.addEventListener("click", function () {
-      if (currentServings < 25) {
-        currentServings++;
-        servingsCounterEl.textContent = currentServings;
-        parseAndScaleIngredientList();
-      }
-    });
-  }
-
-  // --- Integración Cook Mode Premium (Rewarded Ad Flow) ---
-  var btnCookMode = document.getElementById("btn-cook-mode");
-  var wakeLock = null;
-  var recognition = null;
-  var chefModeBadge = document.getElementById("chef-mode-badge");
-
-  function stopChefMode() {
-    document.body.classList.remove("cook-mode-active");
-    btnCookMode.innerHTML = '<span class="text-xl">👩‍🍳</span> MODO CHEF (MANOS LIBRES)';
-    btnCookMode.classList.remove("bg-red-500", "text-white");
-    btnCookMode.classList.add("bg-gradient-to-r", "from-ec-gold", "to-yellow-400");
-    if (chefModeBadge) chefModeBadge.style.display = "none";
-
-    if (wakeLock !== null) {
-      wakeLock.release().then(() => { wakeLock = null; });
-    }
-    if (recognition) {
-      recognition.stop();
-      recognition = null;
-    }
-  }
-
-  async function startChefMode() {
-    // 1. Simular Rewarded Ad
-    btnCookMode.innerHTML = "<span>⏳ Cargando Experiencia...</span>";
-    btnCookMode.disabled = true;
-
-    // Simulación de 3 segundos de "Ad"
-    await new Promise(r => setTimeout(r, 2000));
-
-    // Activar Modo
-    document.body.classList.add("cook-mode-active");
-    btnCookMode.innerHTML = '<span class="text-white font-bold">✖ DETENER MODO CHEF</span>';
-    btnCookMode.classList.remove("bg-gradient-to-r", "from-ec-gold", "to-yellow-400");
-    btnCookMode.classList.add("bg-red-500", "text-white");
-    btnCookMode.disabled = false;
-    if (chefModeBadge) chefModeBadge.style.display = "flex";
-
-    // 2. Wake Lock
-    try {
-      if ("wakeLock" in navigator) {
-        wakeLock = await navigator.wakeLock.request("screen");
-      }
-    } catch (err) {
-      console.warn("Wake Lock not supported");
-    }
-
-    // 3. Speech Recognition (Hands-Free)
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (SpeechRecognition) {
-      recognition = new SpeechRecognition();
-      recognition.continuous = true;
-      recognition.lang = 'es-EC';
-      recognition.interimResults = false;
-
-      recognition.onresult = (event) => {
-        const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
-        console.log("Comando Chef:", command);
-        if (command.includes("siguiente") || command.includes("próximo")) {
-          // Lógica para scroll al siguiente paso (si tuviéramos IDs de pasos)
-          console.log("Navegando al siguiente paso...");
-        }
-      };
-
-      recognition.start();
-    }
-  }
-
-  if (btnCookMode) {
-    btnCookMode.addEventListener("click", function () {
-      if (document.body.classList.contains("cook-mode-active")) {
-        stopChefMode();
-      } else {
-        startChefMode();
-      }
-    });
-  }
-
-  var instrList = document.getElementById("instructions-list");
-  if (instrList && recipe.instructions && recipe.instructions.length > 0) {
-    instrList.innerHTML = recipe.instructions
-      .map(function (step, i) {
-        var text = typeof step === "string" ? step : step.text || step;
-        return (
-          '<li class="flex gap-4 mb-5">' +
-          '<div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0033A0] text-white flex items-center justify-center font-bold text-sm">' +
-          (i + 1) +
-          "</div>" +
-          '<p class="text-gray-700 leading-relaxed pt-1">' +
-          escapeHtml(text) +
-          "</p>" +
-          "</li>"
-        );
-      })
-      .join("");
-  }
-
-  var tipsList = document.getElementById("tips-list");
-  if (tipsList && recipe.tips && recipe.tips.length > 0) {
-    tipsList.innerHTML = recipe.tips
-      .map(function (tip) {
-        return (
-          '<li class="flex gap-2 py-1.5">' +
-          '<span class="text-[#FFD100] flex-shrink-0 mt-0.5">\uD83D\uDCA1</span>' +
-          '<span class="text-gray-700">' +
-          escapeHtml(tip) +
-          "</span>" +
-          "</li>"
-        );
-      })
-      .join("");
-    var tipsParent = tipsList.closest("[data-optional]");
-    if (tipsParent) tipsParent.classList.remove("hidden");
-  }
-
-  var kwEl = document.getElementById("recipe-keywords");
-  if (kwEl && recipe.keywords && recipe.keywords.length > 0) {
-    kwEl.innerHTML = recipe.keywords
-      .map(function (kw) {
-        return (
-          '<a href="recipes.html?q=' +
-          encodeURIComponent(kw) +
-          '" class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:bg-[#0033A0] hover:text-white transition-colors duration-200">' +
-          escapeHtml(kw) +
-          "</a>"
-        );
-      })
-      .join("");
-    var kwParent = kwEl.closest("[data-optional]");
-    if (kwParent) kwParent.classList.remove("hidden");
-  }
-
-  var subEl = document.getElementById("substitutes-card");
-  if (
-    subEl &&
-    recipe.international_substitutes &&
-    recipe.international_substitutes.length > 0
-  ) {
-    var subsRows = recipe.international_substitutes
-      .map(function (s) {
-        return (
-          '<tr class="border-b border-blue-100/60 last:border-0">' +
-          '<td class="py-2 pr-3 font-medium text-gray-800">' +
-          escapeHtml(s.original || "") +
-          "</td>" +
-          '<td class="py-2 pr-3 text-gray-600">' +
-          escapeHtml(s.sustituto_usa || "-") +
-          "</td>" +
-          '<td class="py-2 text-gray-600">' +
-          escapeHtml(s.sustituto_europa || "-") +
-          "</td>" +
-          "</tr>"
-        );
-      })
-      .join("");
-    subEl.innerHTML =
-      '<div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/60 rounded-3xl p-5 backdrop-blur-sm">' +
-      '<h3 class="font-bold text-blue-800 text-sm mb-3 flex items-center gap-2">\u2708\uFE0F Ingredientes en el Extranjero</h3>' +
-      '<p class="text-blue-600 text-xs mb-4">\u00bfEst\u00e1s fuera de Ecuador? Estos son los equivalentes que puedes encontrar.</p>' +
-      '<div class="overflow-x-auto"><table class="w-full text-xs">' +
-      '<thead><tr class="text-blue-600 font-semibold border-b border-blue-200/60">' +
-      '<th class="text-left pb-2 pr-3">Original (Ecuador)</th>' +
-      '<th class="text-left pb-2 pr-3">\uD83C\uDDFA\uD83C\uDDF8 EE.UU.</th>' +
-      '<th class="text-left pb-2">\uD83C\uDDEA\uD83C\uDDF8 Europa</th>' +
-      "</tr></thead>" +
-      "<tbody>" +
-      subsRows +
-      "</tbody>" +
-      "</table></div>" +
-      "</div>";
-    subEl.classList.remove("hidden");
-  }
-
-  var tourEl = document.getElementById("tourism-card");
-  if (tourEl && recipe.tourism_route) {
-    tourEl.innerHTML =
-      '<div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 rounded-3xl p-5 backdrop-blur-sm">' +
-      '<h3 class="font-bold text-amber-800 text-sm mb-3 flex items-center gap-2">\uD83D\uDDFA\uFE0F Ruta Gastron\u00f3mica 2026</h3>' +
-      '<p class="text-amber-700 leading-relaxed text-sm">' +
-      escapeHtml(recipe.tourism_route) +
-      "</p>" +
-      "</div>";
-    tourEl.classList.remove("hidden");
-  }
-
-  renderPlacesCard(recipe);
+  // Extra Cards
   renderVideosCard(recipe);
-  renderImageCredit(recipe);
   renderFaqsSection(recipe);
-
-  var costRow = document.getElementById("estimated-cost-row");
-  var costVal = document.getElementById("estimated-cost-value");
-  if (costRow && costVal && recipe.estimated_cost) {
-    costVal.textContent = recipe.estimated_cost;
-    costRow.classList.remove("hidden");
-  }
-
-  var pinterestBtn = document.getElementById("pinterest-btn");
-  if (pinterestBtn) {
-    var pinImgUrl = encodeURIComponent(recipe.image_url || "");
-    var pinDesc = encodeURIComponent(
-      recipe.title + " — Ecuador a la Carta | " + (recipe.description || ""),
-    );
-    var pinPageUrl = encodeURIComponent(
-      "https://ecuadoralacarta.com/recipe.html?slug=" + (recipe.slug || ""),
-    );
-    pinterestBtn.href =
-      "https://pinterest.com/pin/create/button/?url=" +
-      pinPageUrl +
-      "&media=" +
-      pinImgUrl +
-      "&description=" +
-      pinDesc;
-  }
-
-  var socialShare = document.getElementById("social-share");
-  if (socialShare) {
-    var pageUrl = encodeURIComponent(
-      "https://ecuadoralacarta.com/recipe.html?slug=" + (recipe.slug || ""),
-    );
-    var shareText = encodeURIComponent(
-      "\uD83C\uDF7D\uFE0F " +
-      recipe.title +
-      " \u2014 Receta ecuatoriana aut\u00e9ntica | Ecuador a la Carta",
-    );
-    var waShare = document.getElementById("share-whatsapp");
-    var fbShare = document.getElementById("share-facebook");
-    var xShare = document.getElementById("share-x");
-    var pinShare = document.getElementById("share-pinterest");
-    if (waShare) {
-      waShare.href = "https://wa.me/?text=" + shareText + "%20" + pageUrl;
-      waShare.addEventListener("click", function () {
-        trackEvent("social_share", { platform: "whatsapp", slug: recipe.slug });
-      });
-    }
-    if (fbShare) {
-      fbShare.href = "https://www.facebook.com/sharer/sharer.php?u=" + pageUrl;
-      fbShare.addEventListener("click", function () {
-        trackEvent("social_share", { platform: "facebook", slug: recipe.slug });
-      });
-    }
-    if (xShare) {
-      xShare.href =
-        "https://x.com/intent/tweet?text=" + shareText + "&url=" + pageUrl;
-      xShare.addEventListener("click", function () {
-        trackEvent("social_share", { platform: "x", slug: recipe.slug });
-      });
-    }
-    if (pinShare) {
-      pinShare.href =
-        "https://pinterest.com/pin/create/button/?url=" +
-        pageUrl +
-        "&media=" +
-        encodeURIComponent(recipe.image_url || "") +
-        "&description=" +
-        shareText;
-      pinShare.addEventListener("click", function () {
-        trackEvent("social_share", {
-          platform: "pinterest",
-          slug: recipe.slug,
-        });
-      });
-    }
-    socialShare.classList.remove("hidden");
-  }
-
-  if (recipe.en_translation) {
-    var langWrap = document.getElementById("lang-toggle-wrap");
-    var langBtn = document.getElementById("lang-toggle");
-    var langFlag = document.getElementById("lang-flag");
-    var langText = document.getElementById("lang-text");
-    var titleEl = document.getElementById("recipe-title");
-    var descEl = document.getElementById("recipe-description");
-    if (langWrap && langBtn) {
-      langWrap.classList.remove("hidden");
-      var isEnglish = false;
-      var esTitle = recipe.title;
-      var esDesc = recipe.description || "";
-      var enTitle = recipe.en_translation.title || recipe.title;
-      var enDesc =
-        recipe.en_translation.description || recipe.description || "";
-      langBtn.addEventListener("click", function () {
-        isEnglish = !isEnglish;
-        if (titleEl) titleEl.textContent = isEnglish ? enTitle : esTitle;
-        if (descEl) descEl.textContent = isEnglish ? enDesc : esDesc;
-        if (langFlag)
-          langFlag.textContent = isEnglish
-            ? "\uD83C\uDDEA\uD83C\uDDE8"
-            : "\uD83C\uDDFA\uD83C\uDDF8";
-        if (langText)
-          langText.textContent = isEnglish
-            ? "Ver en Espa\u00f1ol"
-            : "Ver en English";
-        document.documentElement.lang = isEnglish ? "en" : "es";
-      });
-    }
-  }
-
-  // --- Integración Lista de Compras ---
-  var btnGrocery = document.getElementById("btn-grocery-list");
-  if (btnGrocery) {
-    btnGrocery.addEventListener("click", function () {
-      var originalText = this.innerHTML;
-      this.innerHTML =
-        '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="btn-text">¡Añadido a tu lista!</span>';
-      this.classList.replace("bg-[#0033A0]", "bg-gray-800");
-      trackEvent("grocery_list_add", { slug: slug });
-      setTimeout(function () {
-        btnGrocery.innerHTML = originalText;
-        btnGrocery.classList.replace("bg-gray-800", "bg-[#0033A0]");
-      }, 3000);
-    });
-  }
-
-  // --- Integración de Reseñas (Mock) ---
-  var reviewForm = document.getElementById("review-form");
-  var starsPicker = document.getElementById("review-stars-picker");
-  var reviewStars = 5;
-
-  if (starsPicker) {
-    var starsBtns = starsPicker.querySelectorAll("button");
-    function updateStars() {
-      starsBtns.forEach(function (b) {
-        if (parseInt(b.getAttribute("data-val")) <= reviewStars) {
-          b.classList.add("text-yellow-400");
-          b.classList.remove("text-gray-300");
-        } else {
-          b.classList.remove("text-yellow-400");
-          b.classList.add("text-gray-300");
-        }
-      });
-    }
-    updateStars();
-    starsBtns.forEach(function (b) {
-      b.addEventListener("click", function () {
-        reviewStars = parseInt(this.getAttribute("data-val"));
-        updateStars();
-      });
-    });
-  }
-
-  var photoInput = document.getElementById("review-photo");
-  var photoName = document.getElementById("review-photo-name");
-  if (photoInput && photoName) {
-    photoInput.addEventListener("change", function () {
-      if (this.files && this.files[0]) {
-        photoName.textContent = this.files[0].name;
-      }
-    });
-  }
-
-  if (reviewForm) {
-    reviewForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var textInput = document.getElementById("review-text").value;
-      if (!textInput.trim()) return;
-
-      var list = document.getElementById("reviews-list");
-      var fotoHtml = "";
-      if (photoInput && photoInput.files && photoInput.files[0]) {
-        fotoHtml =
-          '<img src="' +
-          URL.createObjectURL(photoInput.files[0]) +
-          '" class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-xl shadow-sm mt-3">';
-      }
-
-      var starsHtml = "";
-      for (var i = 1; i <= 5; i++) {
-        starsHtml += i <= reviewStars ? "★" : "☆";
-      }
-
-      var html =
-        '<div class="flex gap-4 mb-6">' +
-        '<div class="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold shrink-0">TU</div>' +
-        "<div>" +
-        '<div class="flex items-center gap-2 mb-1">' +
-        '<span class="font-bold text-gray-800">Tú</span>' +
-        '<span class="text-yellow-400 text-sm">' +
-        starsHtml +
-        "</span>" +
-        '<span class="text-xs text-gray-400">Justo ahora</span>' +
-        "</div>" +
-        '<p class="text-gray-600 text-sm">' +
-        escapeHtml(textInput) +
-        "</p>" +
-        fotoHtml +
-        "</div>" +
-        "</div>";
-      list.insertAdjacentHTML("afterbegin", html);
-      reviewForm.reset();
-      if (photoName) photoName.textContent = "";
-      reviewStars = 5;
-      if (typeof updateStars === "function") updateStars();
-      trackEvent("review_submitted", { slug: slug, stars: reviewStars });
-    });
-  }
-
   initRating(slug);
   initFavoritesAndSticky(recipe);
   initAds();
@@ -1620,23 +1062,24 @@ function initRating(slug) {
 
 // ─── Router ───────────────────────────────────────────────────
 (function router() {
-  // i18n
   initI18n();
 
-  const path = window.location.pathname.replace(/^\/|\.html$/g, '') || 'index';
+  // Robust path detection for local and prod
+  const pathname = window.location.pathname;
+  const path = pathname.split('/').pop().replace(/\.html$/, '') || 'index';
 
-  if (path === 'index' || path === '') {
+  if (path === 'index' || pathname === '/') {
     initIndex();
-    loadBlogPreview();
+    if (typeof loadBlogPreview === 'function') loadBlogPreview();
   } else if (path === 'recipes') {
     initListing();
   } else if (path === 'recipe') {
     initRecipe();
   } else if (path === 'blog') {
-    initBlog();
+    if (typeof initBlog === 'function') initBlog();
   } else if (path === 'post') {
-    initPost();
+    if (typeof initPost === 'function') initPost();
   } else if (path === 'menu-semanal') {
-    initMenuSemanal();
+    if (typeof initMenuSemanal === 'function') initMenuSemanal();
   }
 })();

@@ -52,9 +52,24 @@ export function renderSkeleton(count) {
 // ─── Card ─────────────────────────────────────────────────────
 export function renderCard(recipe) {
   var chip = getAudienceChip(recipe);
-  var img = recipe.image_url && recipe.image_url.trim() !== ""
-    ? escapeHtml(recipe.image_url)
-    : "images/default-recipe.jpg";
+
+  // YouTube Thumbnail Engine (Auto-Visuals)
+  var img = "";
+  if (recipe.image_url && recipe.image_url.trim() !== "") {
+    img = escapeHtml(recipe.image_url);
+  } else if (recipe.youtube_videos && recipe.youtube_videos.length > 0) {
+    // Buscar primer video que no sea de canal KIWA si es posible
+    var validVideo = recipe.youtube_videos.find(v => {
+      const ch = (v.channel || "").toUpperCase();
+      return ch !== "KIWA" && ch !== "KWA";
+    }) || recipe.youtube_videos[0];
+
+    if (validVideo && validVideo.videoId) {
+      img = "https://img.youtube.com/vi/" + validVideo.videoId + "/maxresdefault.jpg";
+    }
+  }
+
+  if (!img) img = "images/default-recipe.jpg";
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return (

@@ -197,28 +197,72 @@
     class="fixed inset-0 z-[200] translate-x-full transition-transform duration-700 pointer-events-none">
     <div class="absolute inset-0 bg-luxury-dark/95 backdrop-blur-2xl pointer-events-auto">
       <div class="flex flex-col h-full p-16">
-        <div class="flex justify-between items-center mb-32">
-          <span class="text-ec-gold font-black text-[11px] tracking-[0.5em] uppercase">Archivos Reales</span>
-          <button id="nav-close" class="text-white/40 hover:text-white transition-colors">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+        <div class="flex items-center justify-between mb-16 border-b border-white/5 pb-8">
+          <span class="text-white/20 font-black text-[11px] tracking-[0.4em] uppercase">Archivos Inmortales</span>
+          <p class="text-[8px] font-bold text-white/40 uppercase tracking-tighter">Hidratación + Carbos Turbo</p>
         </div>
-        <nav class="flex flex-col gap-12">
-          <a href="/" class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">INICIO.</a>
-          <a href="recipes.html"
-            class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">SABORES.</a>
-          <a href="blog.html"
-            class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">DESTINOS.</a>
-          <a href="contact.html"
-            class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">CONTACTO.</a>
-        </nav>
+        </button>
       </div>
+      <button id="nav-close" class="text-white/40 hover:text-white transition-colors absolute top-16 right-16">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <nav class="flex flex-col gap-12">
+        <a href="/" class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">INICIO.</a>
+        <a href="recipes.html"
+          class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">SABORES.</a>
+        <a href="blog.html"
+          class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">DESTINOS.</a>
+        <a href="contact.html"
+          class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">CONTACTO.</a>
+      </nav>
     </div>
+  </div>
   </div>
 
   <main id="main-content">
+    <!-- ═══ INTERACTIVE GASTRONOMIC MAP V3.0 ═══ -->
+    <section class="max-w-4xl mx-auto mb-32 p-12 glass-card rounded-[48px] border border-white/10" data-aos="zoom-in">
+      <div class="text-center mb-16">
+        <span class="text-ec-gold font-black text-[10px] tracking-[0.5em] uppercase mb-4 block">Exploración
+          Geográfica</span>
+        <h2 class="hero-title text-4xl md:text-6xl text-white mb-6">Mapa del <span
+            class="gold-text-gradient italic">Sabor.</span></h2>
+        <p class="text-white/40 text-sm font-light italic">Toca una región para descubrir sus secretos custodiados.</p>
+      </div>
+      <div id="map-container" class="relative group">
+        <!-- SVG Map injected via JS or object -->
+        <div id="ecuador-map-wrapper"
+          class="aspect-video bg-white/5 rounded-3xl flex items-center justify-center overflow-hidden">
+          <p class="text-white/20 text-[10px] font-black uppercase tracking-widest animate-pulse">Cargando
+            Cartografía...</p>
+        </div>
+      </div>
+    </section>
+    <!-- ═══ CALENTADO GENERATOR V3.0 ═══ -->
+    <section
+      class="max-w-4xl mx-auto mb-32 p-12 glass-card rounded-[48px] border border-white/10 overflow-hidden relative"
+      data-aos="fade-up">
+      <div class="absolute top-0 right-0 p-8 opacity-10 text-8xl grayscale">🍳</div>
+      <div class="relative z-10">
+        <span class="text-ec-gold font-black text-[10px] tracking-[0.5em] uppercase mb-4 block">Alquimia de
+          Sobras</span>
+        <h2 class="hero-title text-4xl md:text-5xl text-white mb-8 italic text-balance">Generador de <span
+            class="gold-text-gradient font-black">Calentado.</span></h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <input id="calentado-input" type="text"
+            placeholder="¿QUÉ TIENES EN TU REFRIGERADORA? (EJ. ARROZ, MENESTRA...)"
+            class="flex-1 bg-white/5 border border-white/10 rounded-2xl px-8 py-5 text-white placeholder-white/20 text-xs font-black tracking-widest uppercase focus:ring-1 focus:ring-ec-gold transition-all">
+          <button id="calentado-btn"
+            class="bg-ec-gold text-luxury-dark font-black text-[10px] tracking-[0.3em] uppercase px-12 py-5 rounded-2xl hover:bg-white transition-all shadow-2xl">SOLUCIONAR
+            CENA</button>
+        </div>
+        <div id="calentado-results" class="mt-12 grid md:grid-cols-2 gap-6">
+          <!-- Results injected via JS -->
+        </div>
+      </div>
+    </section>
     <!-- ═══ CINEMATIC HERO V2.5 ═══ -->
     <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">

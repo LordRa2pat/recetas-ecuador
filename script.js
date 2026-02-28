@@ -52,6 +52,22 @@ async function initIndex() {
 
   initAds();
   injectIndexSEO();
+  initMapNavigation();
+  initCalentadoGenerator(recipes);
+
+  // Chuchaqui Mode Implementation
+  const chuchaquiBtn = document.getElementById("chuchaqui-btn");
+  if (chuchaquiBtn) {
+    chuchaquiBtn.addEventListener("click", () => {
+      const chuchaquiRecipes = recipes.filter(r => r.is_chuchaqui);
+      if (featuredGrid) {
+        featuredGrid.innerHTML = chuchaquiRecipes.map(renderCard).join("");
+        // Visual Feedback
+        chuchaquiBtn.classList.toggle('bg-ec-red/40');
+        trackEvent("chuchaqui_mode_activated", { count: chuchaquiRecipes.length });
+      }
+    });
+  }
 }
 
 // ─── Página: LISTADO ──────────────────────────────────────────
@@ -570,6 +586,42 @@ async function initRecipe() {
   initRating(slug);
   initFavoritesAndSticky(recipe);
   initAds();
+  initGlossary();
+  initSpotifyPlayer(recipe);
+  initSpicySlider(recipe);
+
+  // Diaspora Mode Reactive Logic
+  const diasporaSwitch = document.getElementById("diaspora-switch");
+  if (diasporaSwitch) {
+    diasporaSwitch.addEventListener("change", (e) => {
+      const active = e.target.checked;
+      const ingList = document.getElementById("ingredients-list");
+
+      if (ingList && recipe.ingredients) {
+        let displayIngredients = [...recipe.ingredients];
+
+        if (active && recipe.diaspora_substitutes) {
+          recipe.diaspora_substitutes.forEach(sub => {
+            displayIngredients = displayIngredients.map(ing => {
+              if (ing.includes(sub.original)) {
+                return `${sub.substitute} (${sub.notes})`;
+              }
+              return ing;
+            });
+          });
+        }
+
+        ingList.innerHTML = displayIngredients.map(ing => `
+              <li class="flex items-start gap-4 text-white/40 hover:text-white transition-colors group cursor-default">
+                <span class="w-1.5 h-1.5 rounded-full bg-ec-gold group-hover:scale-150 transition-transform mt-2"></span>
+                <span class="text-sm tracking-[0.05em] font-light italic">${escapeHtml(ing)}</span>
+              </li>
+          `).join("");
+
+        trackEvent("diaspora_mode_toggle", { enabled: active, recipe: recipe.slug });
+      }
+    });
+  }
 }
 
 // ─── Página: BLOG ─────────────────────────────────────────────
@@ -1057,6 +1109,136 @@ function initRating(slug) {
       setDisplay(v);
       trackEvent("recipe_rating", { slug: slug, stars: v });
     });
+  });
+}
+
+// ─── Diccionario de la Abuela (Tooltips) ──────────────────────
+async function initGlossary() {
+  try {
+    const response = await fetch('glossary.json');
+    const glossary = await response.json();
+
+    // Escanear ingredientes e instrucciones
+    const containers = [
+      document.getElementById("ingredients-list"),
+      document.getElementById("instructions-list"),
+      document.getElementById("recipe-description")
+    ];
+
+    containers.forEach(container => {
+      if (!container) return;
+
+      let html = container.innerHTML;
+      // Ordenamos los términos por longitud (descendente) para evitar colisiones (ej. "achiote" vs "achi")
+      const sortedKeys = Object.keys(glossary).sort((a, b) => b.length - a.length);
+
+      sortedKeys.forEach(key => {
+        const item = glossary[key];
+        // Solo reemplazar texto que no esté ya dentro de una etiqueta glossary-term
+        const regex = new RegExp(`\\b(${item.term})\\b(?![^<]*>|[^<>]*<\/span>)`, 'gi');
+        html = html.replace(regex, `<span class="glossary-term cursor-help border-b border-dotted border-ec-gold/50 hover:text-ec-gold transition-all" data-term="${key}">$1</span>`);
+      });
+      container.innerHTML = html;
+    });
+
+    // Event listener para tooltips (Simplificado para V3.0)
+    document.querySelectorAll('.glossary-term').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const key = e.target.getAttribute('data-term');
+        const item = glossary[key];
+        alert(`${item.term}: ${item.definition}`); // Placeholder para modal ligero
+      });
+    });
+  } catch (err) {
+    console.warn("Glosario no cargado:", err);
+  }
+}
+
+// ─── Mapa Gastronómico Interactivo ──────────────────────────
+async function initMapNavigation() {
+  const wrapper = document.getElementById("ecuador-map-wrapper");
+  if (!wrapper) return;
+
+  try {
+    const response = await fetch('mapa.svg');
+    const svgText = await response.text();
+    wrapper.innerHTML = svgText; // Cambiado a innerHTML para renderizado correcto
+
+    const regions = wrapper.querySelectorAll('.region-path');
+    regions.forEach(path => {
+      path.addEventListener('click', () => {
+        const region = path.getAttribute('data-region');
+        window.location.href = `recipes.html?region=${encodeURIComponent(region)}`;
+      });
+    });
+  } catch (err) {
+    console.error("Error al cargar mapa:", err);
+  }
+}
+
+// ─── Playlists para Cocinar (Spotify) ──────────────────────
+function initSpotifyPlayer(recipe) {
+  const container = document.getElementById("spotify-player-container");
+  if (!container || !recipe.spotify_playlist_id) return;
+
+  container.innerHTML = `
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/${recipe.spotify_playlist_id}?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  `;
+}
+
+// ─── Nivel de Ají Visual ───────────────────────────────────
+function initSpicySlider(recipe) {
+  const slider = document.getElementById("spicy-slider");
+  const valDisplay = document.getElementById("spicy-value");
+  if (!slider || !valDisplay) return;
+
+  slider.addEventListener("input", (e) => {
+    const val = e.target.value;
+    const labels = ["", "Suave", "Medio", "Picante", "Fuego", "Explosivo"];
+    valDisplay.textContent = `Nivel ${val}: ${labels[val]}`;
+
+    // Visual mutation (ej. cambiar color del slider o inyectar emojis de fuego)
+    if (val >= 4) valDisplay.classList.add('text-ec-red');
+    else valDisplay.classList.remove('text-ec-red');
+
+    trackEvent("spicy_level_change", { level: val, recipe: recipe.slug });
+  });
+}
+
+// ─── Generador de Calentado (Buscador Inverso) ─────────────
+function initCalentadoGenerator(recipes) {
+  const input = document.getElementById("calentado-input");
+  const btn = document.getElementById("calentado-btn");
+  const results = document.getElementById("calentado-results");
+
+  if (!btn || !input || !results) return;
+
+  btn.addEventListener("click", () => {
+    const query = input.value.toLowerCase().trim();
+    if (!query) return;
+
+    // Algoritmo de coincidencia parcial
+    const matches = recipes.filter(r => {
+      const allText = (r.ingredients.join(" ") + " " + r.title + " " + r.description).toLowerCase();
+      return query.split(/[\s,]+/).some(q => q.length > 2 && allText.includes(q));
+    });
+
+    if (matches.length > 0) {
+      results.innerHTML = matches.slice(0, 2).map(r => `
+        <a href="recipe.html?slug=${encodeURIComponent(r.slug)}" class="flex items-center gap-6 p-6 glass-card rounded-3xl border border-white/5 hover:border-ec-gold/30 transition-all group">
+          <div class="w-20 h-20 rounded-2xl overflow-hidden shadow-xl">
+            <img src="${r.image_url || 'images/default-recipe.jpg'}" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+          </div>
+          <div>
+            <p class="text-[8px] font-black text-ec-gold uppercase tracking-[0.3em] mb-1">Coincidencia Hallada</p>
+            <h4 class="text-white font-bold text-sm uppercase italic">${r.title}</h4>
+          </div>
+        </a>
+      `).join("");
+      trackEvent("calentado_search_success", { query, count: matches.length });
+    } else {
+      results.innerHTML = `<p class="text-white/20 text-[10px] font-black uppercase tracking-[0.3em] col-span-2 text-center p-8 border border-dashed border-white/5 rounded-3xl italic">Archivos insuficientes. Prueba con otros ingredientes.</p>`;
+    }
   });
 }
 

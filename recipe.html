@@ -187,6 +187,27 @@
               <span id="recipe-difficulty" class="text-white font-bold text-sm tracking-widest uppercase"></span>
             </div>
           </div>
+
+          <!-- Playlist & Spicy Slider V3.0 -->
+          <div class="mt-12 flex flex-col md:flex-row gap-8 items-center border-t border-white/5 pt-12">
+            <div id="spotify-player-container"
+              class="w-full md:w-64 h-20 bg-black/40 rounded-2xl overflow-hidden border border-white/10">
+              <!-- Injected via JS -->
+            </div>
+            <div class="w-full flex-1 glass-card p-6 rounded-3xl border border-white/5">
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest">Nivel de Ají Maestro</span>
+                <span id="spicy-value" class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Nivel
+                  1</span>
+              </div>
+              <input type="range" id="spicy-slider" min="1" max="5" value="1"
+                class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-ec-gold">
+              <div class="flex justify-between mt-2 text-[8px] font-black text-white/10 uppercase italic">
+                <span>Suave</span>
+                <span>Explosivo</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -198,10 +219,24 @@
         <!-- Ingredients Sidebar -->
         <aside class="lg:col-span-4 space-y-12">
           <div class="glass-card p-12 rounded-[48px] sticky top-36">
-            <h3
-              class="text-white font-black text-xs tracking-[0.4em] uppercase mb-12 flex items-center justify-between">
+            <h3 class="text-white font-black text-xs tracking-[0.4em] uppercase mb-8 flex items-center justify-between">
               Suministros <span class="text-ec-gold">📜</span>
             </h3>
+
+            <!-- Diaspora Switch -->
+            <div
+              class="mb-10 p-5 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between group transition-all hover:bg-white/10">
+              <div class="flex flex-col gap-1">
+                <span class="text-[9px] font-black text-white/40 uppercase tracking-widest">Modo Diáspora</span>
+                <span class="text-[8px] font-bold text-ec-gold/60 uppercase tracking-tight">Vivo en el Extranjero</span>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="diaspora-switch" class="sr-only peer">
+                <div
+                  class="w-10 h-5 bg-white/10 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-ec-gold">
+                </div>
+              </label>
+            </div>
             <ul id="ingredients-list" class="space-y-6">
               <!-- JS Render -->
             </ul>

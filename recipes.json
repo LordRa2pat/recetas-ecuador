@@ -138,7 +138,22 @@
     "image_url": "https://i.ytimg.com/vi/xY1gS8rj_-o/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 41,
-    "created_at": "2026-02-28T17:22:28.181Z"
+    "created_at": "2026-02-28T17:22:28.181Z",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [
+      {
+        "original": "Bacalao",
+        "substitute": "Tofu ahumado o Pescado blanco seco",
+        "notes": "Más fácil de hallar en Europa/EEUU"
+      },
+      {
+        "original": "Chochos",
+        "substitute": "Garbanzos enlatados",
+        "notes": "Textura similar"
+      }
+    ],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "yahuarlocro",
@@ -278,7 +293,11 @@
     "image_url": "https://i.ytimg.com/vi/XJXvm5kZkbk/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 40,
-    "created_at": "2026-02-28T11:22:30.687Z"
+    "created_at": "2026-02-28T11:22:30.687Z",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "maito",
@@ -419,7 +438,11 @@
     "image_url": "https://i.ytimg.com/vi/I6jZ-pkdGLU/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 39,
-    "created_at": "2026-02-28T05:22:30.807Z"
+    "created_at": "2026-02-28T05:22:30.807Z",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "caldo-de-bolas",
@@ -560,7 +583,11 @@
     "image_url": "https://i.ytimg.com/vi/GuVY0kwe21I/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 38,
-    "created_at": "2026-02-27T23:22:36.865Z"
+    "created_at": "2026-02-27T23:22:36.865Z",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "tigrillo-manabita",
@@ -700,7 +727,11 @@
     "image_url": "https://i.ytimg.com/vi/UrB1pSwBJiY/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 37,
-    "created_at": "2026-02-27T17:22:10.370Z"
+    "created_at": "2026-02-27T17:22:10.370Z",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "inchicapi",
@@ -840,7 +871,11 @@
     "image_url": "https://i.ytimg.com/vi/03HORnxFPq8/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 36,
-    "created_at": "2026-02-27T11:22:12.875Z"
+    "created_at": "2026-02-27T11:22:12.875Z",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "sopa-de-mani",
@@ -981,7 +1016,11 @@
     "image_url": "https://i.ytimg.com/vi/h5UMaa5hlHQ/hqdefault.jpg",
     "_image_source": "youtube_thumbnail",
     "id": 35,
-    "created_at": "2026-02-27T05:22:09.214Z"
+    "created_at": "2026-02-27T05:22:09.214Z",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "seco-de-tilapia-amazonica",
@@ -1121,7 +1160,11 @@
     ],
     "_image_source": "pending",
     "id": 34,
-    "created_at": "2026-02-27T03:15:08.464Z"
+    "created_at": "2026-02-27T03:15:08.464Z",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "bollo-de-elote-ecuatoriano",
@@ -1263,7 +1306,11 @@
     "_image_source": "youtube_thumbnail",
     "id": 33,
     "created_at": "2026-02-27T02:55:14.007Z",
-    "image_url": "https://i.ytimg.com/vi/BfWhFvT0-F0/hqdefault.jpg"
+    "image_url": "https://i.ytimg.com/vi/BfWhFvT0-F0/hqdefault.jpg",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "sopa-de-quinoa-ecuatoriana-variations-de-la-sierra-sur",
@@ -1404,7 +1451,11 @@
     "_image_source": "youtube_thumbnail",
     "id": 32,
     "created_at": "2026-02-27T02:32:00.218Z",
-    "image_url": "https://i.ytimg.com/vi/T0zgpm4ay78/hqdefault.jpg"
+    "image_url": "https://i.ytimg.com/vi/T0zgpm4ay78/hqdefault.jpg",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "cuy-asado",
@@ -1547,7 +1598,11 @@
     "_image_source": "youtube_thumbnail",
     "id": 31,
     "created_at": "2026-02-26T22:36:38.243Z",
-    "image_url": "https://i.ytimg.com/vi/p_q9H4DHYYk/hqdefault.jpg"
+    "image_url": "https://i.ytimg.com/vi/p_q9H4DHYYk/hqdefault.jpg",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "locro-de-zapallo",
@@ -1688,7 +1743,11 @@
     "_image_source": "youtube_thumbnail",
     "id": 30,
     "created_at": "2026-02-26T20:18:08.509Z",
-    "image_url": "https://i.ytimg.com/vi/io0oeAMRxMc/hqdefault.jpg"
+    "image_url": "https://i.ytimg.com/vi/io0oeAMRxMc/hqdefault.jpg",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "caldo-de-pata",
@@ -1837,7 +1896,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Calder%C3%B3n_2009_01.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "seco-de-gallina",
@@ -2025,7 +2088,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Madrid_-_Restaurante_Pe_de_Pisco_-.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "seco-de-pato-lojano",
@@ -2200,7 +2267,11 @@
       "author": "Fotógrafo Independiente",
       "license": "Public / Free License",
       "url": "https://unsplash.com/"
-    }
+    },
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "bollo-de-yuca-ecuatoriano",
@@ -2350,7 +2421,11 @@
     },
     "_image_source": "youtube_thumbnail",
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:El_nuevo_viajero_universal_en_Am%C3%A9rica_(Tomo_II).djvu",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "carne-colorada-ecuatoriana-receta",
@@ -2500,7 +2575,11 @@
     },
     "_image_source": "web_search",
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Fiestas_de_Calder%C3%B3n_2009_01.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "seco-de-conejo-amazonia-ecuatoriana",
@@ -2640,7 +2719,11 @@
     },
     "_image_source": "youtube_thumbnail",
     "_image_source_url": "images/default-recipe.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "tapado-ecuatoriano-esmeraldas-coco-mariscos-selvaticos",
@@ -2796,7 +2879,11 @@
       "author": "Fotógrafo Independiente",
       "license": "Public / Free License",
       "url": "https://unsplash.com/"
-    }
+    },
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "bolon-de-verde-con-chorizo-regional",
@@ -2945,7 +3032,11 @@
       "author": "Fotógrafo Independiente",
       "license": "Public / Free License",
       "url": "https://unsplash.com/"
-    }
+    },
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "ayampaco-receta-tradicional-ecuatoriana",
@@ -3097,7 +3188,11 @@
       "url": "https://commons.wikimedia.org/wiki/File:Ayampaco.jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Ayampaco.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "humitas-ecuatorianas-costa-norte",
@@ -3246,7 +3341,11 @@
       "license": "CC BY-SA",
       "url": "https://es.wikipedia.org/wiki/Humita"
     },
-    "_image_source_url": "https://es.wikipedia.org/wiki/Humita"
+    "_image_source_url": "https://es.wikipedia.org/wiki/Humita",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "viche-manabita-receta-tradicional",
@@ -3403,7 +3502,11 @@
       "license": "",
       "url": ""
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "guatita-ecuatoriana-sierra-central",
@@ -3557,7 +3660,11 @@
       "license": "",
       "url": ""
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "encebollado-ecuatoriano-receta",
@@ -3716,7 +3823,11 @@
       "url": "https://commons.wikimedia.org/wiki/File:Ecuadorian_food.jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Ecuadorian_food.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "llapingachos-ecuatorianos-receta",
@@ -3859,7 +3970,11 @@
       "license": "",
       "url": ""
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "seco-de-chivo-manabita-receta",
@@ -4012,7 +4127,11 @@
       "license": "",
       "url": ""
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "quimbolitos-ecuatorianos-receta-tradicional",
@@ -4161,7 +4280,11 @@
       "license": "",
       "url": ""
     },
-    "_image_source_url": ""
+    "_image_source_url": "",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "mote-pillo-sierra-central-ecuador",
@@ -4314,7 +4437,11 @@
       "url": "https://es.wikipedia.org/wiki/Mote_pillo"
     },
     "_image_source_url": "https://es.wikipedia.org/wiki/Mote_pillo",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "fritada-ecuatoriana-sierra-oriental",
@@ -4460,7 +4587,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Odas_seculares.djvu",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "chugchucara-receta-tradicional-ecuatoriana",
@@ -4606,7 +4737,11 @@
       "url": "https://commons.wikimedia.org/wiki/File:EC_Latacunga_Chugchucara_2012.jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:EC_Latacunga_Chugchucara_2012.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "fanesca-de-la-costa-ecuatoriana-receta",
@@ -4760,7 +4895,11 @@
       "license": "CC BY-SA",
       "url": "https://es.wikipedia.org/wiki/Fanesca"
     },
-    "_image_source_url": "https://es.wikipedia.org/wiki/Fanesca"
+    "_image_source_url": "https://es.wikipedia.org/wiki/Fanesca",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "hornado-quiteno-receta-tradicional",
@@ -4906,7 +5045,11 @@
       "license": "CC BY-SA",
       "url": "https://es.wikipedia.org/wiki/Hornado"
     },
-    "_image_source_url": "https://es.wikipedia.org/wiki/Hornado"
+    "_image_source_url": "https://es.wikipedia.org/wiki/Hornado",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "caldo-de-mondongo-ecuatoriano",
@@ -5051,7 +5194,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Pelar_borrego_-comunidad_Los_Tipines.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "maito-de-pescado-ecuatoriano",
@@ -5183,7 +5330,11 @@
       "url": "https://commons.wikimedia.org/wiki/File:Maito_de_Tilapia.jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Maito_de_Tilapia.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "tigrillo-de-platano-verde-y-huevo-costeno",
@@ -5308,7 +5459,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "caldo-de-bolas-ecuatoriano",
@@ -5437,7 +5592,11 @@
       "url": "https://commons.wikimedia.org/wiki/File:Caldo_de_bolas_ecuatoriano.jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Caldo_de_bolas_ecuatoriano.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "yahuarlocro-receta-ecuatoriana",
@@ -5580,7 +5739,11 @@
       "url": "https://commons.wikimedia.org/wiki/File:Yahuarlocro_(Ecuador).jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Yahuarlocro_(Ecuador).jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "muchines-de-choclo",
@@ -5659,7 +5822,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "empanadas-de-yuca",
@@ -5742,7 +5909,11 @@
       "url": "https://unsplash.com/"
     },
     "_image_source_url": "",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": false,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   },
   {
     "slug": "sopa-de-mani-ecuatoriana",
@@ -5822,6 +5993,10 @@
       "url": "https://commons.wikimedia.org/wiki/File:Sopa_de_Man%C3%AD_BetoComics.jpg"
     },
     "_image_source_url": "https://commons.wikimedia.org/wiki/File:Sopa_de_Man%C3%AD_BetoComics.jpg",
-    "_imagen_status": "ok"
+    "_imagen_status": "ok",
+    "is_chuchaqui": true,
+    "diaspora_substitutes": [],
+    "spicy_level": 1,
+    "spotify_playlist_id": "37i9dQZF1DX1s99uSno89p"
   }
 ]

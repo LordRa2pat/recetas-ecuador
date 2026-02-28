@@ -1,5 +1,146 @@
 [
   {
+    "slug": "maito",
+    "title": "Maito Ecuatoriano Receta Tradicional",
+    "description": "Maito es un plato tradicional de la Amazonia ecuatoriana hecho con pescado envuelto en hojas y cocinado al vapor. Esta receta incluye ingredientes frescos y pasos simples para recrear el sabor auténtico en casa, perfecta para amantes de la cocina indígena.",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "1 kg Pescado fresco (tilapia o pargo) (comprar en Supermaxi)",
+      "10 unidades Hojas de bijao (comprar en Mercado local)",
+      "2 unidades medianas Cebolla blanca (comprar en Megamaxi)",
+      "2 unidades Tomate maduro (comprar en Supermaxi)",
+      "2 unidades Ají o pimiento verde (comprar en TIA)",
+      "3 dientes Ajo (comprar en Mercado local)",
+      "4 unidades Limón (comprar en Supermaxi)",
+      "al gusto Sal (comprar en Megamaxi)",
+      "2 cucharadas Aceite vegetal (comprar en TIA)",
+      "1 manojo Culantro fresco (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia el pescado fresco bajo agua fría durante 5 minutos y sazónalo con el jugo de 2 limones y una cucharadita de sal; deja marinar en el refrigerador por 10 minutos para realzar los sabores.",
+      "Paso 2: Pica finamente la cebolla, el tomate, el ají, el ajo y el culantro; mezcla estos ingredientes en un bowl con una cucharada de aceite y reserva a temperatura ambiente por 5 minutos para que los sabores se integren.",
+      "Paso 3: Rellena cada filete de pescado con la mezcla de verduras, asegurándote de distribuir uniformemente para un sabor equilibrado, y envuelve cada uno en una hoja de bijao, asegurando bien los bordes.",
+      "Paso 4: Calienta una parrilla o sartén a fuego medio (alrededor de 150°C) y coloca los paquetes de maito; cocina por 15 minutos por cada lado, volteando con cuidado para evitar que se rompan.",
+      "Paso 5: Verifica la cocción pinchando el pescado; debe estar tierno y jugoso, lo que toma unos 5 minutos adicionales si es necesario, manteniendo la temperatura constante.",
+      "Paso 6: Retira del fuego y deja reposar por 5 minutos antes de servir, para que los aromas se asienten y el plato se enfríe ligeramente para un mejor disfrute.",
+      "Paso 7: Sirve el maito acompañado de yuca o plátano maduro, decorando con rodajas de limón para un toque fresco y auténtico."
+    ],
+    "tips": [
+      "Usa hojas de bijao frescas para un sabor auténtico, ya que secas pueden alterar el aroma tradicional.",
+      "No cocines el pescado demasiado tiempo para mantenerlo jugoso; prueba con un termómetro a 60°C interno."
+    ],
+    "origin_cities": [
+      "Coca",
+      "Tena"
+    ],
+    "image_keywords": [
+      "maito dish",
+      "ecuadorian food",
+      "traditional amazonian meal",
+      "wrapped fish recipe"
+    ],
+    "image_alt": "Fotografía del maito ecuatoriano terminado, mostrando pescado envuelto en hojas verdes con verduras frescas y jugo de limón",
+    "seo_keywords": [
+      "receta de maito ecuatoriano tradicional paso a paso",
+      "como preparar maito en casa amazonia ecuador",
+      "maito receta autentica con ingredientes frescos",
+      "plato tipico maito de la selva ecuatoriana",
+      "sustitutos para maito en estados unidos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el maito y de dónde proviene?",
+        "a": "El maito es un plato indígena de la Amazonia ecuatoriana, hecho con pescado envuelto en hojas y cocinado al vapor, originario de comunidades como shuar y achuar, y se usa para preservar el sabor natural de los ingredientes."
+      },
+      {
+        "q": "¿Puedo usar otro tipo de pescado para el maito?",
+        "a": "Sí, aunque se usa típicamente tilapia o pargo, puedes sustituir por salmón o bagre si está fresco, pero ajusta el tiempo de cocción para evitar que se seque."
+      },
+      {
+        "q": "¿Es el maito saludable?",
+        "a": "Sí, es una opción saludable con proteínas del pescado, vitaminas de las verduras y bajo en grasas, ideal para dietas balanceadas, pero controla la sal para beneficios cardiovasculares."
+      },
+      {
+        "q": "¿Cuánto dura el maito refrigerado?",
+        "a": "El maito refrigerado dura hasta 2 días en un contenedor hermético; recalentarlo al vapor preserva el sabor, pero evite el microondas para no perder la textura."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Churo",
+        "city": "Coca",
+        "description": "Un lugar especializado en cocina amazónica donde probar maito fresco con ingredientes locales y vistas al río."
+      },
+      {
+        "name": "Mercado de Tena",
+        "city": "Tena",
+        "description": "En este vibrante mercado, puedes encontrar vendedores que preparan maito al momento con productos de la selva, ofreciendo una experiencia auténtica y asequible."
+      },
+      {
+        "name": "Hotel Auca Lodge",
+        "city": "Puyo",
+        "description": "Ofrece maito en un entorno ecológico, con guías que explican la historia del plato durante comidas inclusivas."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Hojas de bijao",
+        "substitute": "Hojas de plátano o papel aluminio",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Lidl en Europa, para mantener el efecto de cocción al vapor."
+      },
+      {
+        "original": "Ají ecuatoriano",
+        "substitute": "Pimiento jalapeño o serrano",
+        "notes": "Encuéntralo en tiendas latinas como Fiesta Mart en EE.UU. o mercados étnicos en Europa para un sabor picante similar."
+      },
+      {
+        "original": "Pescado fresco de río",
+        "substitute": "Tilapia congelada",
+        "notes": "Fácil de obtener en supermercados como Aldi en Europa o Costco en EE.UU., pero descongela adecuadamente para textura óptima."
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Viche de Pescado: Delicioso Plato Típico del Ecuador | KWA",
+        "videoId": "Vg-T6WDc8WI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Vg-T6WDc8WI",
+        "embed": "https://www.youtube-nocookie.com/embed/Vg-T6WDc8WI",
+        "uploadDate": "2025-10-02",
+        "description": "Ingredientes:  https://recetaskwa.com/2024/02/23/viche-de-pescado/\n\nEl Viche de pescado es una de las sopas más representativas de la gastronomía ecuatoriana, especialmente de la provincia de Manabí. "
+      },
+      {
+        "title": "MAITO PLATO TÍPICO PASTAZA",
+        "videoId": "I6jZ-pkdGLU",
+        "channel": "José CHICA-PINCAY",
+        "url": "https://www.youtube.com/watch?v=I6jZ-pkdGLU",
+        "embed": "https://www.youtube-nocookie.com/embed/I6jZ-pkdGLU",
+        "uploadDate": "2014-07-24",
+        "description": ""
+      },
+      {
+        "title": "Como hacer Delicioso Maito de Tilapia, Fácil y Rápido😁",
+        "videoId": "4_ITWibfU34",
+        "channel": "Truquitos y Variedades JB",
+        "url": "https://www.youtube.com/watch?v=4_ITWibfU34",
+        "embed": "https://www.youtube-nocookie.com/embed/4_ITWibfU34",
+        "uploadDate": "2023-07-22",
+        "description": ""
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/I6jZ-pkdGLU/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 39,
+    "created_at": "2026-02-28T05:22:30.807Z"
+  },
+  {
     "slug": "caldo-de-bolas",
     "title": "Caldo de Bolas Ecuatoriano Receta Tradicional",
     "description": "Caldo de Bolas es una sopa reconfortante de la Sierra ecuatoriana con bolas de yuca y carne, ideal para días fríos. Esta receta paso a paso incluye ingredientes frescos y técnicas auténticas para un sabor casero, perfecto para familias o eventos. Descubre variantes regionales.",

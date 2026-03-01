@@ -1,5 +1,147 @@
 [
   {
+    "slug": "mote-pillo",
+    "title": "Mote Pillo Ecuatoriano Receta Tradicional",
+    "description": "Mote Pillo es un plato icónico de la cocina ecuatoriana, hecho con maíz hominy y huevos, ideal para desayunos energéticos. Esta receta detallada te permite recrear su sabor auténtico en casa, con ingredientes simples y pasos fáciles.",
+    "region": "Sierra",
+    "category": "Desayunos",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "10 min",
+    "cook_time": "15 min",
+    "total_time": "25 min",
+    "ingredients": [
+      "2 tazas cocidas Mote (maíz hominy) (comprar en Supermaxi)",
+      "4 unidades Huevos (comprar en Supermaxi)",
+      "1 unidad mediana picada Cebolla (comprar en Mercado local)",
+      "2 unidades medianas picadas Tomate (comprar en Supermaxi)",
+      "2 dientes picados Ajo (comprar en Supermaxi)",
+      "1/4 taza picada Cilantro fresco (comprar en Mercado local)",
+      "2 cucharadas Aceite vegetal (comprar en TIA)",
+      "al gusto Sal (comprar en Supermaxi)",
+      "1/2 unidad picada (opcional) Pimentón rojo (comprar en Megamaxi)",
+      "100 gramos desmenuzado Queso fresco (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Remojar el mote durante 30 minutos si no está precocido, luego escurrir y reservar, esto toma unos 10 minutos de preparación.",
+      "Paso 2: Picar finamente la cebolla, tomate, ajo, cilantro y pimentón, asegurándose de que todo esté listo para una cocción rápida, aproximadamente 5 minutos.",
+      "Paso 3: Calentar 2 cucharadas de aceite en una sartén a fuego medio (alrededor de 150°C) durante 1 minuto para evitar que se queme.",
+      "Paso 4: Sofreír la cebolla y el ajo en la sartén por 3-4 minutos hasta que estén transparentes, revolviendo constantemente para un sabor uniforme.",
+      "Paso 5: Agregar el tomate, pimentón y el mote a la sartén, cocinar por 5 minutos a fuego medio para que se integren los sabores.",
+      "Paso 6: Batir los huevos en un bowl y verterlos sobre la mezcla en la sartén, revolver por 2-3 minutos hasta que los huevos estén cocidos pero no secos.",
+      "Paso 7: Incorporar el cilantro y el queso fresco, sazonar con sal al gusto y cocinar por 1 minuto más antes de retirar del fuego.",
+      "Paso 8: Servir inmediatamente en platos calientes para mantener la textura cremosa del plato."
+    ],
+    "tips": [
+      "Elige mote fresco para un sabor más auténtico y texturizado, en lugar de enlatado.",
+      "Acompaña con un café negro ecuatoriano para realzar los sabores tradicionales de la Sierra."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "mote pillo",
+      "comida ecuatoriana",
+      "desayuno tradicional sierra"
+    ],
+    "image_alt": "Plato de Mote Pillo ecuatoriano con maíz hominy, huevos, cebolla, tomate y cilantro fresco",
+    "seo_keywords": [
+      "receta de mote pillo ecuatoriano tradicional paso a paso",
+      "como preparar mote pillo en casa",
+      "mote pillo desayuno ecuatoriano autentico",
+      "plato sierra ecuatoriana con maiz y huevos",
+      "ingredientes para mote pillo facil y rapido",
+      "variantes de mote pillo en quito y cuenca"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Mote Pillo y de dónde proviene?",
+        "a": "Mote Pillo es un plato tradicional de la Sierra ecuatoriana, hecho principalmente con maíz hominy y huevos, servido como desayuno nutritivo y reconfortante en ciudades como Quito y Cuenca."
+      },
+      {
+        "q": "¿Es Mote Pillo adecuado para vegetarianos?",
+        "a": "Sí, puedes hacerlo vegetariano omitiendo o sustituyendo los huevos por tofu, manteniendo el maíz y verduras como base, lo que lo hace versátil para diferentes dietas."
+      },
+      {
+        "q": "¿Cuánto tiempo dura Mote Pillo almacenado?",
+        "a": "Mote Pillo se debe consumir fresco, pero si se refrigera en un contenedor hermético, dura hasta 2 días; recalentarlo en una sartén evita que se seque."
+      },
+      {
+        "q": "¿Puedo congelar Mote Pillo para usarlo después?",
+        "a": "No se recomienda congelar por su textura, ya que el maíz puede volverse blando; es mejor prepararlo al momento para disfrutar su frescura auténtica."
+      }
+    ],
+    "places": [
+      {
+        "name": "Mercado Central de Quito",
+        "city": "Quito",
+        "description": "Un lugar icónico para probar Mote Pillo en puestos tradicionales, con ingredientes frescos y sabores auténticos de la Sierra."
+      },
+      {
+        "name": "Restaurante El Pedregal",
+        "city": "Cuenca",
+        "description": "Ofrece una versión casera y deliciosa de Mote Pillo, ideal para turistas que buscan comida ecuatoriana genuina en un ambiente acogedor."
+      },
+      {
+        "name": "Plaza San Francisco",
+        "city": "Quito",
+        "description": "En los alrededores, hay vendedores que sirven Mote Pillo como desayuno local, perfecto para una experiencia cultural auténtica."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Mote",
+        "substitute": "Hominy enlatado",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Tesco en Europa, manteniendo el sabor similar."
+      },
+      {
+        "original": "Cilantro",
+        "substitute": "Perejil",
+        "notes": "Disponible en cualquier supermercado en EE.UU. o Europa, como Aldi, para un sabor más suave si no te gusta el cilantro."
+      },
+      {
+        "original": "Aceite vegetal",
+        "substitute": "Aceite de oliva",
+        "notes": "Común en tiendas europeas como Lidl, añade un toque mediterráneo sin alterar mucho el plato original."
+      }
+    ],
+    "estimated_cost": "$4.50 USD",
+    "youtube_videos": [
+      {
+        "title": "MOTE PILLO",
+        "videoId": "cNa5j5wglgA",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=cNa5j5wglgA",
+        "embed": "https://www.youtube-nocookie.com/embed/cNa5j5wglgA",
+        "uploadDate": "2020-03-06",
+        "description": "Fácil, rápido y delicioso con @bonella.ec\n¿Lo han probado?\n#DescubreBonella\n\nEncuentras más recetas aquí:\nhttps://www.youtube.com/user/BonellaEcuador\n\n\nMote cocido………………….. 500 gr\nMargarina……………………. 4"
+      },
+      {
+        "title": "MEGA Motepillo | KWA",
+        "videoId": "Fp3BHzntw-k",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Fp3BHzntw-k",
+        "embed": "https://www.youtube-nocookie.com/embed/Fp3BHzntw-k",
+        "uploadDate": "2023-11-03",
+        "description": "Delicioso y facil de hacer! No te quedes con las ganas de probar este MEGA #Motepillo #KWAEC \n\nEncuentra los ingredientes:\nhttps://recetaskwa.com/2023/11/03/motepillo/\n\nSIGUENOS:\r\nFB: https://tinyurl."
+      },
+      {
+        "title": "Motepillo Cuencano - Mote Pillo",
+        "videoId": "sS_QQSnEKsI",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=sS_QQSnEKsI",
+        "embed": "https://www.youtube-nocookie.com/embed/sS_QQSnEKsI",
+        "uploadDate": "2023-10-24",
+        "description": "Como hacer Motepillo cuencano"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/sS_QQSnEKsI/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 44,
+    "created_at": "2026-03-01T23:22:44.876Z"
+  },
+  {
     "slug": "chugchucara",
     "title": "Chugchucara Ecuatoriana Receta Tradicional",
     "description": "Chugchucara es un plato icónico de la Sierra ecuatoriana, una fritura mixta con chicharrón, papas y acompañantes que representa la gastronomía andina. Esta receta tradicional te guía paso a paso para recrear este festín crujiente en casa, perfecto para reuniones familiares.",

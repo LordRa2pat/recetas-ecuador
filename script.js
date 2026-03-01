@@ -1799,33 +1799,6 @@ function initEntrepreneurDashboard() {
   });
 }
 
-// ─── Router ───────────────────────────────────────────────────
-(function router() {
-  initI18n();
-
-  const pathname = window.location.pathname;
-  // Extraer el nombre del archivo, quitar parámetros y extensión
-  const filename = pathname.split('/').pop().split('?')[0];
-  const path = filename.replace(/\.(html|php|htm)$/, '') || 'index';
-
-  if (path === 'index' || pathname === '/' || pathname.endsWith('/')) {
-    initIndex();
-    if (typeof loadBlogPreview === 'function') loadBlogPreview();
-    if (window.location.hash === '#dashboard') initEntrepreneurDashboard();
-  } else if (path === 'recipes') {
-    initListing();
-  } else if (path === 'recipe') {
-    initRecipe();
-  } else if (path === 'blog') {
-    if (typeof initBlog === 'function') initBlog();
-  } else if (path === 'post') {
-    if (typeof initPost === 'function') initPost();
-  } else if (path === 'mapa') {
-    initMapa();
-  } else if (path === 'menu-semanal') {
-    if (typeof initMenuSemanal === 'function') initMenuSemanal();
-  }
-})();
 // ─── Mapa del Sabor: Interactividad V3.5 ──────────────────
 function initMapa() {
   const mapSvg = document.getElementById("ecuador-map");
@@ -1872,3 +1845,31 @@ function initMapa() {
     });
   });
 }
+
+// ─── Router ───────────────────────────────────────────────────
+(function router() {
+  initI18n();
+
+  const pathname = window.location.pathname;
+  // Extraer el nombre del archivo, quitar parámetros y extensión
+  const filename = pathname.split('/').pop().split('?')[0];
+  const path = filename.replace(/\.(html|php|htm)$/, '') || 'index';
+
+  if (path === 'index' || pathname === '/' || pathname.endsWith('/')) {
+    initIndex();
+    if (typeof loadBlogPreview === 'function') loadBlogPreview();
+    if (window.location.hash === '#dashboard') initEntrepreneurDashboard();
+  } else if (path === 'recipes') {
+    initListing();
+  } else if (path === 'recipe') {
+    initRecipe();
+  } else if (path === 'blog') {
+    if (typeof initBlog === 'function') initBlog();
+  } else if (path === 'post') {
+    if (typeof initPost === 'function') initPost();
+  } else if (path === 'mapa') {
+    initMapa();
+  } else if (path === 'menu-semanal') {
+    if (typeof initMenuSemanal === 'function') initMenuSemanal();
+  }
+})();

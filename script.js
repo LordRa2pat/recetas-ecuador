@@ -53,6 +53,7 @@ async function initIndex() {
   initAds();
   injectIndexSEO();
   initMapNavigation();
+  initThemeEngine(); // Sistema de Temas V3.5
   initCalentadoGenerator(recipes);
   initHomeAds();
   initMenuPlanner();
@@ -1239,6 +1240,40 @@ function initSpicySlider(recipe) {
 
     trackEvent("spicy_level_change", { level: val, recipe: recipe.slug });
   });
+}
+
+// ─── Motor de Temas Premium V3.5 ──────────────────────────────
+function initThemeEngine() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+
+  // Aplicar tema inicial
+  applyTheme(currentTheme);
+
+  themeToggle?.addEventListener('click', () => {
+    const newTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
+function applyTheme(theme) {
+  const body = document.body;
+  const logo = document.getElementById('main-logo');
+
+  if (theme === 'dark') {
+    body.classList.add('dark-theme');
+    body.classList.remove('light-theme');
+    document.documentElement.classList.add('dark');
+  } else {
+    body.classList.add('light-theme');
+    body.classList.remove('dark-theme');
+    document.documentElement.classList.remove('dark');
+  }
+
+  // Notificar cambio (para componentes específicos que necesiten re-renderizar)
+  window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
 }
 
 // ─── Generador de Calentado (Buscador Inverso) ─────────────

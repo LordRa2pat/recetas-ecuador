@@ -140,48 +140,73 @@
     </div>
   </header>
 
-  class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
-  <nav class="flex flex-col gap-8">
-    <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
-    <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
-    <a href="/blog" class="font-display font-black text-4xl text-ec-blue">Turismo</a>
-    <a href="/contact" class="font-display font-black text-4xl text-ec-gold">Contacto</a>
-    <hr class="border-ec-blue/5">
-  </nav>
-  </div>
-  </div>
+  <main id="main-content" class="pt-40">
+    <!-- ═══ CINEMATIC HERO ═══ -->
+    <section class="max-w-7xl mx-auto px-6 mb-24 text-center" data-aos="fade-up">
+      <span class="text-ec-gold font-black text-[10px] tracking-[0.6em] uppercase mb-8 block">Conversemos</span>
+      <h1 class="hero-title text-6xl md:text-9xl text-white tracking-tighter mb-12 uppercase">Canal de <br>
+        <span class="gold-text-gradient italic font-serif">Colaboración.</span>
+      </h1>
+    </section>
 
-  <script>
-    document.getElementById('nav-toggle')?.addEventListener('click', function () {
-      const navMobile = document.getElementById('nav-mobile');
-      navMobile?.classList.remove('hidden');
-      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
-    });
-    document.getElementById('nav-close')?.addEventListener('click', function () {
-      const navMobile = document.getElementById('nav-mobile');
-      navMobile?.classList.add('opacity-0');
-      setTimeout(() => navMobile?.classList.add('hidden'), 500);
-    });
-  </script>
+    <!-- ═══ CONTACT BENTO ═══ -->
+    <section class="max-w-[1400px] mx-auto px-6 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Contact Form Card -->
+        <div class="lg:col-span-8 glass-card p-12 md:p-20 rounded-[56px] relative overflow-hidden"
+          data-aos="fade-right">
+          <form class="space-y-12 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12">
+              <div class="space-y-4">
+                <label class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em] block">Nombre
+                  Maestro</label>
+                <input type="text" placeholder="Escribe tu nombre..."
+                  class="w-full bg-white/5 border-b border-white/10 py-5 text-xl font-light focus:border-ec-gold outline-none transition-all placeholder:text-white/10">
+              </div>
+              <div class="space-y-4">
+                <label class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em] block">Correo
+                  Electrónico</label>
+                <input type="email" placeholder="maestro@chef.com"
+                  class="w-full bg-white/5 border-b border-white/10 py-5 text-xl font-light focus:border-ec-gold outline-none transition-all placeholder:text-white/10">
+              </div>
+            </div>
+            <div class="space-y-4">
+              <label class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em] block">Tu Mensaje o
+                Sugerencia</label>
+              <textarea rows="4" placeholder="Cuéntanos sobre esa receta secreta o una posible colaboración..."
+                class="w-full bg-white/5 border-b border-white/10 py-5 text-xl font-light focus:border-ec-gold outline-none transition-all placeholder:text-white/10 resize-none"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full md:w-fit px-16 py-6 bg-ec-gold text-white font-black text-[10px] tracking-[0.4em] uppercase rounded-2xl hover:bg-white hover:text-ec-blue transition-all shadow-2xl">
+              ENVIAR TRANSMISIÓN
+            </button>
+          </form>
+        </div>
 
-  <span>Si quieres ser patrocinador oficial.</span>
-  </li>
-  <li class="flex gap-3 text-sm font-medium text-ec-blue/60 italic">
-    <span>✔</span>
-    <span>Si encontraste algo que podemos mejorar.</span>
-  </li>
-  </ul>
-  </div>
+        <!-- Info Sidebar -->
+        <div class="lg:col-span-4 space-y-8">
+          <div class="glass-card p-12 rounded-[48px] border border-ec-gold/20" data-aos="fade-left">
+            <h4 class="text-white font-black text-xs tracking-widest uppercase mb-8">Ecosistema B2B</h4>
+            <p class="text-white/40 text-sm font-light leading-relaxed mb-8 italic">Ideal para patrocinadores que deseen
+              visibilidad en nuestra red de 8 sitios gastronómicos.</p>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-ec-gold flex items-center justify-center text-xl">📧</div>
+                <span class="text-xs font-bold tracking-widest uppercase">partners@ecuadoralacarta.com</span>
+              </div>
+            </div>
+          </div>
 
-  <div class="bento-card p-10 bg-ec-gold/5 border-ec-gold/20">
-    <p class="text-[10px] font-black uppercase tracking-widest text-ec-gold mb-2">LOPDP Ecuador</p>
-    <p class="text-[10px] font-medium text-ec-blue/60 leading-relaxed italic">
-      Cumplimos con la Ley Orgánica de Protección de Datos Personales. Tus mensajes son privados y seguros.
-    </p>
-  </div>
-  </div>
-
-  </div>
+          <div class="glass-card p-12 rounded-[48px]" data-aos="fade-left" data-aos-delay="100">
+            <h4 class="text-white font-black text-xs tracking-widest uppercase mb-6">LOPDP Ecuador</h4>
+            <p class="text-[10px] font-medium text-white/30 leading-relaxed italic">
+              Tus datos están protegidos bajo la Ley Orgánica de Protección de Datos. No compartimos información con
+              terceros.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- LUXURY FOOTER -->

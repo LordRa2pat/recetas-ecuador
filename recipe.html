@@ -127,11 +127,20 @@
         <a href="menu-semanal.html"
           class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-widest transition-colors">Planificador</a>
       </nav>
-      <button id="nav-toggle" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle"
+          class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all group overflow-hidden relative">
+          <div class="theme-sun transition-transform duration-500 group-[.light-theme]:translate-y-12">☀️</div>
+          <div
+            class="theme-moon absolute transition-transform duration-500 translate-y-12 group-[.dark-theme]:translate-y-0">
+            🌙</div>
+        </button>
+        <button id="nav-toggle" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -171,44 +180,49 @@
         </div>
         <h1 id="recipe-title"
           class="hero-title text-7xl md:text-9xl lg:text-[11rem] text-white leading-[0.85] mb-12 tracking-tighter"></h1>
-        <div class="flex flex-col lg:flex-row lg:items-end gap-16 lg:gap-32">
-          <p id="recipe-description" class="text-white/50 text-xl font-light leading-relaxed max-w-2xl italic"></p>
-          <div class="flex gap-12 pt-12 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-16">
+        <div class="flex flex-col gap-12 pt-16 border-t border-white/10">
+          <div class="max-w-3xl">
+            <span class="text-ec-gold font-black text-[10px] uppercase tracking-[0.4em] mb-4 block italic">Crónica del
+              Sabor</span>
+            <p id="recipe-description"
+              class="text-white/60 text-2xl md:text-3xl font-light leading-relaxed italic text-balance"></p>
+          </div>
+          <div class="flex flex-wrap gap-12 lg:gap-24">
             <div class="flex flex-col">
               <span class="text-white/20 text-[9px] font-black uppercase tracking-widest mb-2">Cronos</span>
-              <span id="recipe-total-time" class="text-white font-bold text-sm tracking-widest uppercase"></span>
+              <span id="recipe-total-time" class="text-white font-bold text-lg tracking-widest uppercase"></span>
             </div>
             <div class="flex flex-col">
               <span class="text-white/20 text-[9px] font-black uppercase tracking-widest mb-2">Gente</span>
-              <span id="recipe-servings" class="text-white font-bold text-sm tracking-widest uppercase"></span>
+              <span id="recipe-servings" class="text-white font-bold text-lg tracking-widest uppercase"></span>
             </div>
             <div class="flex flex-col">
               <span class="text-white/20 text-[9px] font-black uppercase tracking-widest mb-2">Dificultad</span>
-              <span id="recipe-difficulty" class="text-white font-bold text-sm tracking-widest uppercase"></span>
-            </div>
-          </div>
-
-          <!-- Playlist & Spicy Slider V3.0 -->
-          <div class="mt-12 flex flex-col md:flex-row gap-8 items-center border-t border-white/5 pt-12">
-            <div id="spotify-player-container"
-              class="w-full md:w-64 h-20 bg-black/40 rounded-2xl overflow-hidden border border-white/10">
-              <!-- Injected via JS -->
-            </div>
-            <div class="w-full flex-1 glass-card p-6 rounded-3xl border border-white/5">
-              <div class="flex justify-between items-center mb-4">
-                <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest">Nivel de Ají Maestro</span>
-                <span id="spicy-value" class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Nivel
-                  1</span>
-              </div>
-              <input type="range" id="spicy-slider" min="1" max="5" value="1"
-                class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-ec-gold">
-              <div class="flex justify-between mt-2 text-[8px] font-black text-white/10 uppercase italic">
-                <span>Suave</span>
-                <span>Explosivo</span>
-              </div>
+              <span id="recipe-difficulty" class="text-white font-bold text-lg tracking-widest uppercase"></span>
             </div>
           </div>
         </div>
+        <!-- Playlist & Spicy Slider V3.0 -->
+        <div class="mt-12 flex flex-col md:flex-row gap-8 items-center border-t border-white/5 pt-12">
+          <div id="spotify-player-container"
+            class="w-full md:w-64 h-20 bg-black/40 rounded-2xl overflow-hidden border border-white/10">
+            <!-- Injected via JS -->
+          </div>
+          <div class="w-full flex-1 glass-card p-6 rounded-3xl border border-white/5">
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest">Nivel de Ají Maestro</span>
+              <span id="spicy-value" class="text-[9px] font-bold text-white/40 uppercase tracking-widest">Nivel
+                1</span>
+            </div>
+            <input type="range" id="spicy-slider" min="1" max="5" value="1"
+              class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-ec-gold">
+            <div class="flex justify-between mt-2 text-[8px] font-black text-white/10 uppercase italic">
+              <span>Suave</span>
+              <span>Explosivo</span>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
 

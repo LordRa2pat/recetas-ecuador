@@ -140,59 +140,54 @@
     </div>
   </header>
 
-  class="self-end w-10 h-10 flex items-center justify-center glass rounded-xl mb-12 text-ec-blue font-bold">✕</button>
-  <nav class="flex flex-col gap-8">
-    <a href="/" class="font-display font-black text-4xl text-ec-blue">Inicio</a>
-    <a href="/recipes" class="font-display font-black text-4xl text-ec-blue">Recetas</a>
-    <a href="/blog" class="font-display font-black text-4xl text-ec-blue">Turismo</a>
-    <a href="/nosotros" class="font-display font-black text-4xl text-ec-gold">Nosotros</a>
-    <hr class="border-ec-blue/5">
-    <div class="flex flex-col gap-4">
-      <a href="/privacy" class="text-xs font-bold text-ec-blue/40 uppercase tracking-widest">Privacidad</a>
-      <a href="/terms" class="text-xs font-bold text-ec-blue/40 uppercase tracking-widest">Términos</a>
-    </div>
-  </nav>
-  </div>
-  </div>
+  <main id="main-content" class="pt-40">
+    <!-- ═══ CINEMATIC HERO ═══ -->
+    <section class="max-w-7xl mx-auto px-6 mb-32 text-center" data-aos="fade-up">
+      <span class="text-ec-gold font-black text-[10px] tracking-[0.6em] uppercase mb-8 block">Nuestra Esencia</span>
+      <h1 class="hero-title text-6xl md:text-9xl text-white tracking-tighter mb-12 uppercase">Herencia & <br>
+        <span class="gold-text-gradient italic font-serif">Algoritmos.</span>
+      </h1>
+      <p class="text-white/40 text-xl max-w-3xl mx-auto font-light leading-relaxed text-balance">
+        Ecuador a la Carta es la fusión definitiva entre la sabiduría ancestral de nuestras abuelas y la precisión de la
+        inteligencia artificial contemporánea.
+      </p>
+    </section>
 
-  <script>
-    document.getElementById('nav-toggle')?.addEventListener('click', function () {
-      const navMobile = document.getElementById('nav-mobile');
-      navMobile?.classList.remove('hidden');
-      setTimeout(() => navMobile?.classList.remove('opacity-0'), 10);
-    });
-    document.getElementById('nav-close')?.addEventListener('click', function () {
-      const navMobile = document.getElementById('nav-mobile');
-      navMobile?.classList.add('opacity-0');
-      setTimeout(() => navMobile?.classList.add('hidden'), 500);
-    });
-  </script>
-
-  <div class="grid grid-cols-2 gap-4 text-center">
-    <a href="/recipes?region=Sierra"
-      class="glass-dark p-8 rounded-3xl hover:bg-white hover:text-ec-blue transition-all group">
-      <span class="text-4xl block mb-4">🏔️</span>
-      <span class="font-display font-black text-xl">Sierra</span>
-    </a>
-    <a href="/recipes?region=Costa"
-      class="glass-dark p-8 rounded-3xl hover:bg-white hover:text-ec-blue transition-all group">
-      <span class="text-4xl block mb-4">🌊</span>
-      <span class="font-display font-black text-xl">Costa</span>
-    </a>
-    <a href="/recipes?region=Amazonia"
-      class="glass-dark p-8 rounded-3xl hover:bg-white hover:text-ec-blue transition-all group">
-      <span class="text-4xl block mb-4">🌿</span>
-      <span class="font-display font-black text-xl">Amazonía</span>
-    </a>
-    <a href="/recipes?region=Galapagos"
-      class="glass-dark p-8 rounded-3xl hover:bg-white hover:text-ec-blue transition-all group">
-      <span class="text-4xl block mb-4">🐢</span>
-      <span class="font-display font-black text-xl">Islas</span>
-    </a>
-  </div>
-  </div>
-  </div>
-
+    <!-- ═══ STORY GRID ═══ -->
+    <section class="max-w-[1400px] mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-12 glass-card p-16 rounded-[48px] relative overflow-hidden group" data-aos="zoom-in">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-ec-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        </div>
+        <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl md:text-6xl font-display font-black mb-8 leading-none">El Estatuto de la <br><span
+                class="text-ec-gold">Autenticidad.</span></h2>
+            <p class="text-white/50 text-lg font-light leading-relaxed mb-8">
+              No solo recopilamos recetas; archivamos memorias. Cada gramo de sal, cada tiempo de ebullición y cada
+              ingrediente local ha sido verificado por expertos y normalizado por IA para garantizar que el sabor del
+              Ecuador se mantenga inmortal.
+            </p>
+            <div class="flex gap-8">
+              <div class="flex flex-col">
+                <span class="text-white font-black text-4xl">500+</span>
+                <span class="text-ec-gold font-bold text-[9px] uppercase tracking-widest">Recetas Archivadas</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-white font-black text-4xl">4.0</span>
+                <span class="text-ec-gold font-bold text-[9px] uppercase tracking-widest">Versión Ecosistema</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="aspect-square rounded-[32px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+            <img src="https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80"
+              class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-1000"
+              alt="Tradition">
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- LUXURY FOOTER -->

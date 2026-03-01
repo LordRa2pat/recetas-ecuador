@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa del Sabor | Ecuador a la Carta</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813915136648702"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --luxury-dark: #0B1221;
+            --ec-gold: #DCA011;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--luxury-dark);
+            color: white;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Map Styling */
+        #ecuador-map {
+            max-width: 100%;
+            height: auto;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .province {
+            fill: rgba(255, 255, 255, 0.1);
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .province:hover {
+            fill: var(--ec-gold);
+            stroke: white;
+            stroke-width: 2;
+            filter: drop-shadow(0 0 10px rgba(220, 160, 17, 0.5));
+        }
+
+        .province.active {
+            fill: var(--ec-gold);
+            stroke: white;
+            stroke-width: 2;
+        }
+
+        .region-sierra {
+            fill: rgba(165, 180, 252, 0.1);
+        }
+
+        .region-costa {
+            fill: rgba(110, 231, 183, 0.1);
+        }
+
+        .region-amazonia {
+            fill: rgba(252, 165, 165, 0.1);
+        }
+
+        .region-insular {
+            fill: rgba(253, 230, 138, 0.1);
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(to right, #DCA011, #F5D17E, #DCA011);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .province-label {
+            font-size: 10px;
+            font-weight: 900;
+            pointer-events: none;
+            fill: white;
+            opacity: 0.4;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Theme Toggle Classes */
+        body.light-theme {
+            background: #F8FAFC;
+            color: #0F172A;
+        }
+
+        .light-theme .glass-card {
+            background: rgba(15, 23, 42, 0.03);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .light-theme .province {
+            fill: rgba(15, 23, 42, 0.05);
+            stroke: rgba(15, 23, 42, 0.1);
+        }
+
+        .light-theme .province-label {
+            fill: #0F172A;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(220, 160, 17, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="dark-theme">
+    <!-- PREMIUM HEADER V3.5 -->
+    <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
+            <a href="/" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-xl">
+                    🇪🇨</div>
+                <div class="flex flex-col">
+                    <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Mapa</span>
+                    <span class="text-ec-gold font-bold text-[10px] tracking-[0.2em] leading-none uppercase">DEL
+                        SABOR.</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="recipes.html"
+                    class="hidden md:block text-white/40 text-[10px] font-black uppercase tracking-widest hover:text-ec-gold transition-all">Todas
+                    las Recetas</a>
+                <button id="theme-toggle" class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-40 px-6 min-h-screen">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+            <!-- LEFT: INTERACTIVE MAP CONTAINER -->
+            <div class="lg:col-span-8 glass-card rounded-[56px] p-8 md:p-12 relative overflow-hidden"
+                data-aos="zoom-out">
+                <div class="absolute top-12 left-12">
+                    <h1
+                        class="hero-title text-5xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.8] mb-4">
+                        Explora <br><span class="gold-text-gradient">Ecuador</span>
+                    </h1>
+                    <p class="text-white/40 text-xs font-bold uppercase tracking-[0.2em]">Haz clic en una provincia para
+                        descubrir sus tesoros.</p>
+                </div>
+
+                <div class="mt-32 md:mt-0 flex justify-center items-center">
+                    <!-- SVG MAP OF ECUADOR - SIMPLIFIED PATHS FOR DEMO -->
+                    <svg id="ecuador-map" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Placeholder paths will be replaced with real GeoJSON paths in production -->
+                        <!-- Costa -->
+                        <path id="esmeraldas" class="province region-costa" d="M150,50 L250,30 L280,100 L180,120 Z" />
+                        <path id="manabi" class="province region-costa" d="M100,150 L180,130 L200,300 L80,280 Z" />
+                        <path id="guayas" class="province region-costa" d="M180,310 L250,310 L260,450 L150,450 Z" />
+                        <!-- Sierra -->
+                        <path id="pichincha" class="province region-sierra" d="M260,110 L350,110 L360,200 L270,200 Z" />
+                        <path id="azuay" class="province region-sierra" d="M260,460 L350,460 L340,550 L250,550 Z" />
+                        <!-- Amazonia -->
+                        <path id="napo" class="province region-amazonia" d="M370,120 L500,100 L550,250 L400,280 Z" />
+
+                        <text x="180" y="80" class="province-label">Esmeraldas</text>
+                        <text x="130" y="220" class="province-label">Manabí</text>
+                        <text x="300" y="160" class="province-label">Pichincha</text>
+                        <text x="200" y="400" class="province-label">Guayas</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- RIGHT: DYNAMIC INFO PANEL -->
+            <aside class="lg:col-span-4 space-y-8">
+                <!-- SELECTION STATUS -->
+                <div id="selection-panel"
+                    class="glass-card rounded-[48px] p-10 border border-ec-gold/20 sticky top-40 translate-x-20 opacity-0 transition-all duration-700">
+                    <span id="selected-region"
+                        class="text-ec-gold font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">SIERRA</span>
+                    <h2 id="selected-province" class="hero-title text-5xl uppercase tracking-tighter mb-8 leading-none">
+                        PICHINCHA</h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-white/40 text-[9px] font-black uppercase tracking-widest mb-4">Ciudades
+                                Gastronómicas</h4>
+                            <div id="city-list" class="flex flex-wrap gap-2">
+                                <!-- Dynamic City Buttons -->
+                            </div>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/5 space-y-4">
+                            <button
+                                class="w-full py-5 bg-ec-gold text-luxury-dark font-black text-[10px] tracking-widest uppercase rounded-2xl hover:scale-105 transition-transform">Ver
+                                Todas las Recetas</button>
+                            <button
+                                class="w-full py-5 glass-card text-white font-black text-[10px] tracking-widest uppercase rounded-2xl hover:bg-white/10 transition-all">Explorar
+                                Turismo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AD SLOT -->
+                <div class="glass-card rounded-[48px] p-6 text-center border border-white/5">
+                    <span
+                        class="text-[8px] font-black text-white/10 uppercase tracking-[0.3em] mb-4 block">Patrocinado</span>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
+                        data-ad-slot="12341234" data-ad-format="auto"></ins>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="mt-32 border-t border-white/5 py-20 px-6">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <span class="text-3xl">🍲</span>
+                <span class="font-black tracking-tighter text-xl uppercase italic">Ecuador a la Carta</span>
+            </div>
+            <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2026 — Gastronomía y Territorio
+            </p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+
+</html>

@@ -141,6 +141,14 @@ async function initListing() {
         ).toLowerCase();
         if (haystack.indexOf(q) === -1) return false;
       }
+
+      // Filtro Geográfico Granular (V3.5)
+      var urlParams = new URLSearchParams(window.location.search);
+      var cityFilter = urlParams.get("city");
+      if (cityFilter) {
+        if (!(r.origin_cities && r.origin_cities.includes(cityFilter))) return false;
+      }
+
       if (region && r.region !== region) return false;
       if (difficulty && r.difficulty !== difficulty) return false;
       if (category && r.category !== category) return false;
@@ -789,8 +797,6 @@ function renderBlogCard(p) {
       </div>
     </div>
   `;
-}
-applyBlogFilters();
 }
 
 // ─── Página: POST ─────────────────────────────────────────────
@@ -1814,7 +1820,55 @@ function initEntrepreneurDashboard() {
     if (typeof initBlog === 'function') initBlog();
   } else if (path === 'post') {
     if (typeof initPost === 'function') initPost();
+  } else if (path === 'mapa') {
+    initMapa();
   } else if (path === 'menu-semanal') {
     if (typeof initMenuSemanal === 'function') initMenuSemanal();
   }
 })();
+// ─── Mapa del Sabor: Interactividad V3.5 ──────────────────
+function initMapa() {
+  const mapSvg = document.getElementById("ecuador-map");
+  const panel = document.getElementById("selection-panel");
+  const provinceTitle = document.getElementById("selected-province");
+  const regionLabel = document.getElementById("selected-region");
+  const cityList = document.getElementById("city-list");
+
+  if (!mapSvg || !panel) return;
+
+  const dataProvincias = {
+    esmeraldas: { name: "Esmeraldas", region: "COSTA", cities: ["Esmeraldas", "Atacames", "Muisne"] },
+    manabi: { name: "Manabí", region: "COSTA", cities: ["Manta", "Portoviejo", "Puerto López", "Chone"] },
+    guayas: { name: "Guayas", region: "COSTA", cities: ["Guayaquil", "Durán", "Milagro", "Playas"] },
+    pichincha: { name: "Pichincha", region: "SIERRA", cities: ["Quito", "Sangolquí", "Machachi"] },
+    azuay: { name: "Azuay", region: "SIERRA", cities: ["Cuenca", "Gualaceo", "Paute"] },
+    napo: { name: "Napo", region: "AMAZONÍA", cities: ["Tena", "Baeza", "Archidona"] }
+  };
+
+  const provinces = mapSvg.querySelectorAll(".province");
+
+  provinces.forEach(p => {
+    p.addEventListener("click", () => {
+      provinces.forEach(pr => pr.classList.remove("active"));
+      p.classList.add("active");
+
+      const info = dataProvincias[p.id];
+      if (info) {
+        provinceTitle.textContent = info.name;
+        regionLabel.textContent = info.region;
+
+        cityList.innerHTML = info.cities.map(c => `
+          <button onclick="window.location.href='recipes.html?city=${encodeURIComponent(c)}'" 
+             class="px-4 py-2 glass-card rounded-full text-[9px] font-black uppercase tracking-widest text-white/60 hover:text-ec-gold hover:border-ec-gold transition-all">
+             ${c}
+          </button>
+        `).join("");
+
+        panel.classList.remove("translate-x-20", "opacity-0");
+        panel.classList.add("translate-x-0", "opacity-100");
+
+        trackEvent("map_province_click", { province: info.name });
+      }
+    });
+  });
+}

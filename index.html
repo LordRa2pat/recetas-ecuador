@@ -201,7 +201,6 @@
           <span class="text-white/20 font-black text-[11px] tracking-[0.4em] uppercase">Archivos Inmortales</span>
           <p class="text-[8px] font-bold text-white/40 uppercase tracking-tighter">Hidratación + Carbos Turbo</p>
         </div>
-        </button>
       </div>
       <button id="nav-close" class="text-white/40 hover:text-white transition-colors absolute top-16 right-16">
         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -219,9 +218,51 @@
       </nav>
     </div>
   </div>
-  </div>
 
   <main id="main-content">
+    <!-- ═══ CINEMATIC HERO V2.5 ═══ -->
+    <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1547517023-7ca0c162f816?w=1920&q=80"
+          class="w-full h-full object-cover opacity-40 grayscale contrast-125" alt="Hero Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-luxury-dark via-transparent to-luxury-dark"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div data-aos="fade-down" class="mb-10">
+          <span
+            class="text-ec-gold font-black text-xs tracking-[0.5em] uppercase border border-ec-gold/30 px-8 py-3 rounded-full backdrop-blur-md">
+            The Master Archives
+          </span>
+        </div>
+
+        <h1 data-aos="zoom-out" data-aos-delay="200"
+          class="hero-title text-white text-7xl md:text-[10rem] lg:text-[12rem] mb-12">
+          Sabor <br> <span class="gold-text-gradient italic font-display">Eterno.</span>
+        </h1>
+
+        <div data-aos="fade-up" data-aos-delay="400" class="max-w-2xl mx-auto">
+          <p class="text-white/50 text-xl font-light leading-relaxed mb-16 tracking-wide">
+            La enciclopedia definitiva del patrimonio culinario ecuatoriano. <br>
+            <span class="text-white font-medium">Más que recetas, historias en cada bocado.</span>
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <a href="recipes.html" class="btn-luxury px-12 py-5 rounded-[24px] text-xs">EXPLORAR ARCHIVO</a>
+            <button id="chuchaqui-btn"
+              class="glass-card px-10 py-5 rounded-[24px] text-[10px] font-black tracking-widest hover:bg-ec-red transition-all group flex items-center gap-4">
+              <span class="text-xl group-hover:animate-bounce">🚑</span> BOTÓN CHUCHAQUI
+            </button>
+            <a href="menu-semanal.html"
+              class="text-white hover:text-ec-gold font-black text-xs tracking-widest uppercase flex items-center gap-4 transition-all group">
+              PLANIFICADOR PRO
+              <span class="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-ec-gold transition-all"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ INTERACTIVE GASTRONOMIC MAP V3.0 ═══ -->
     <section class="max-w-4xl mx-auto mb-32 p-12 glass-card rounded-[48px] border border-white/10" data-aos="zoom-in">
       <div class="text-center mb-16">
@@ -260,44 +301,6 @@
         </div>
         <div id="calentado-results" class="mt-12 grid md:grid-cols-2 gap-6">
           <!-- Results injected via JS -->
-        </div>
-      </div>
-    </section>
-    <!-- ═══ CINEMATIC HERO V2.5 ═══ -->
-    <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1547517023-7ca0c162f816?w=1920&q=80"
-          class="w-full h-full object-cover opacity-40 grayscale contrast-125" alt="Hero Background">
-        <div class="absolute inset-0 bg-gradient-to-b from-luxury-dark via-transparent to-luxury-dark"></div>
-      </div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <div data-aos="fade-down" class="mb-10">
-          <span
-            class="text-ec-gold font-black text-xs tracking-[0.5em] uppercase border border-ec-gold/30 px-8 py-3 rounded-full backdrop-blur-md">
-            The Master Archives
-          </span>
-        </div>
-
-        <h1 data-aos="zoom-out" data-aos-delay="200"
-          class="hero-title text-white text-7xl md:text-[10rem] lg:text-[12rem] mb-12">
-          Sabor <br> <span class="gold-text-gradient italic font-display">Eterno.</span>
-        </h1>
-
-        <div data-aos="fade-up" data-aos-delay="400" class="max-w-2xl mx-auto">
-          <p class="text-white/50 text-xl font-light leading-relaxed mb-16 tracking-wide">
-            La enciclopedia definitiva del patrimonio culinario ecuatoriano. <br>
-            <span class="text-white font-medium">Más que recetas, historias en cada bocado.</span>
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
-            <a href="recipes.html" class="btn-luxury px-12 py-5 rounded-[24px] text-xs">EXPLORAR ARCHIVO</a>
-            <a href="menu-semanal.html"
-              class="text-white hover:text-ec-gold font-black text-xs tracking-widest uppercase flex items-center gap-4 transition-all group">
-              PLANIFICADOR PRO
-              <span class="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-ec-gold transition-all"></span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -366,6 +369,29 @@
       </div>
 
       <div id="recipe-featured-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Rendered via JS in script.js -->
+      </div>
+
+      <!-- Ads V3.0 Deployment -->
+      <div id="ads-container" class="mt-24 max-w-4xl mx-auto">
+        <!-- Injected via script.js -->
+      </div>
+    </section>
+
+    <!-- ═══ BLOG PREVIEW V3.0 ═══ -->
+    <section class="max-w-[1400px] mx-auto px-6 py-32 border-t border-white/5">
+      <div class="flex flex-col md:flex-row items-end justify-between mb-24 gap-12">
+        <div data-aos="fade-right">
+          <span class="text-ec-gold font-black text-xs tracking-[0.4em] uppercase mb-6 block">Crónicas
+            Gastronómicas</span>
+          <h2 class="hero-title text-6xl md:text-8xl text-white tracking-tighter uppercase">Relatos de <br> <span
+              class="gold-text-gradient italic font-display">Sabor.</span></h2>
+        </div>
+        <a href="blog.html"
+          class="glass-card px-12 py-5 rounded-2xl text-[10px] font-black tracking-widest hover:text-ec-gold transition-all">BIBLIOTECA
+          DE SABOR</a>
+      </div>
+      <div id="blog-preview-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         <!-- Rendered via JS in script.js -->
       </div>
     </section>

@@ -54,16 +54,24 @@ async function initIndex() {
   injectIndexSEO();
   initMapNavigation();
   initCalentadoGenerator(recipes);
+  initHomeAds();
+  initMenuPlanner();
+  initDigitalStore();
+  initNewsletter();
 
   // Chuchaqui Mode Implementation
   const chuchaquiBtn = document.getElementById("chuchaqui-btn");
   if (chuchaquiBtn) {
     chuchaquiBtn.addEventListener("click", () => {
-      const chuchaquiRecipes = recipes.filter(r => r.is_chuchaqui);
+      const chuchaquiRecipes = recipes.filter(r => r.is_chuchaqui || (r.tags && r.tags.includes('chuchaqui')));
       if (featuredGrid) {
-        featuredGrid.innerHTML = chuchaquiRecipes.map(renderCard).join("");
-        // Visual Feedback
-        chuchaquiBtn.classList.toggle('bg-ec-red/40');
+        featuredGrid.innerHTML = chuchaquiRecipes.length > 0
+          ? chuchaquiRecipes.map(renderCard).join("")
+          : '<div class="col-span-full py-20 text-center"><p class="text-white/40 italic">Buscando elixires de recuperación...</p></div>';
+
+        // Visual feedback & Scroll
+        chuchaquiBtn.classList.toggle('bg-ec-red');
+        featuredGrid.scrollIntoView({ behavior: 'smooth', block: 'center' });
         trackEvent("chuchaqui_mode_activated", { count: chuchaquiRecipes.length });
       }
     });
@@ -1077,10 +1085,6 @@ async function initMenuSemanal() {
       );
     }).join("");
     initAds();
-    initHomeAds();
-    initMenuPlanner();
-    initDigitalStore();
-    initNewsletter();
   }
 
   renderMenu();
@@ -1186,14 +1190,21 @@ async function initMapNavigation() {
 
   try {
     const response = await fetch('mapa.svg');
-    const svgText = await response.text();
-    wrapper.innerHTML = svgText; // Cambiado a innerHTML para renderizado correcto
+    let svgText = await response.text();
+
+    // Clean SVG string (strip XML declarations and junk from encoding mismatches)
+    const svgStart = svgText.indexOf('<svg');
+    if (svgStart !== -1) svgText = svgText.substring(svgStart);
+
+    wrapper.innerHTML = svgText;
 
     const regions = wrapper.querySelectorAll('.region-path');
     regions.forEach(path => {
       path.addEventListener('click', () => {
         const region = path.getAttribute('data-region');
-        window.location.href = `recipes.html?region=${encodeURIComponent(region)}`;
+        if (region) {
+          window.location.href = `recipes.html?region=${encodeURIComponent(region)}`;
+        }
       });
     });
   } catch (err) {
@@ -1510,52 +1521,6 @@ function initGamification() {
 }
 
 // ─── Sección "La Yapa" (Gated Content) ─────────────────────
-function initYapaFeature(recipe) {
-  const lock = document.getElementById("yapa-lock");
-  const btn = document.getElementById("unlock-yapa-btn");
-  const content = document.getElementById("yapa-content");
-
-  if (!lock || !btn || !content) return;
-
-  // El secreto viene de los metadatos o fallback
-  content.textContent = recipe.tips ? recipe.tips[0] : "Agrega una pizca de achiote al final para un brillo real.";
-
-  btn.addEventListener("click", () => {
-    // Simular compartir
-    lock.classList.add('opacity-0', 'pointer-events-none');
-    trackEvent("yapa_unlocked", { recipe: recipe.slug });
-
-    // Actualizar medallas por compartir
-    let stats = JSON.parse(localStorage.getItem('user_stats_v3')) || { cooking_sessions: 0, shared: 0 };
-    stats.shared++;
-    localStorage.setItem('user_stats_v3', JSON.stringify(stats));
-    initGamification(); // Refresh badges
-  });
-}
-
-// ─── Maridaje y Integración de "Huecas" ────────────────────
-function initPairingAndHuecas(recipe) {
-  const pairingIcon = document.getElementById("pairing-icon");
-  const pairingTitle = document.getElementById("pairing-title");
-  const huecasLink = document.getElementById("huecas-link");
-
-  if (pairingTitle) {
-    const drinks = [
-      { name: "Chicha de Jora", icon: "🍶" },
-      { name: "Canelazo", icon: "☕" },
-      { name: "Horchata Lojana", icon: "🌸" },
-      { name: "Jugo de Naranjilla", icon: "🍹" }
-    ];
-    const drink = drinks[Math.floor(Math.random() * drinks.length)];
-    pairingTitle.textContent = drink.name;
-    pairingIcon.textContent = drink.icon;
-  }
-
-  if (huecasLink) {
-    const searchUrl = `https://www.google.com/maps/search/restaurantes+de+${encodeURIComponent(recipe.title)}+cerca+de+mi`;
-    huecasLink.href = searchUrl;
-  }
-}
 
 // ─── Sección "La Yapa" (Gated Content) ─────────────────────
 function initYapaFeature(recipe) {
@@ -1717,6 +1682,22 @@ function initNewsletter() {
   });
 }
 
+// ─── Publicidad en Home ──────────────────────────────────
+function initHomeAds() {
+  const container = document.getElementById('ads-container');
+  if (container) {
+    container.innerHTML = `
+      <div class="glass-card p-4 rounded-2xl border border-white/5 text-center">
+        <span class="text-[8px] font-bold text-white/20 uppercase tracking-widest block mb-2">Espacio Patrocinado</span>
+        <div class="h-32 bg-white/5 rounded-xl flex items-center justify-center">
+          <span class="text-white/10 text-[10px] uppercase font-black tracking-tighter italic">Ad Placement V3.0</span>
+        </div>
+      </div>
+    `;
+  }
+}
+
+
 // ─── Dashboard de Emprendedor ────────────────────────────
 function initEntrepreneurDashboard() {
   const html = `
@@ -1781,11 +1762,12 @@ function initEntrepreneurDashboard() {
 (function router() {
   initI18n();
 
-  // Robust path detection for local and prod
   const pathname = window.location.pathname;
-  const path = pathname.split('/').pop().replace(/\.html$/, '') || 'index';
+  // Extraer el nombre del archivo, quitar parámetros y extensión
+  const filename = pathname.split('/').pop().split('?')[0];
+  const path = filename.replace(/\.(html|php|htm)$/, '') || 'index';
 
-  if (path === 'index' || pathname === '/') {
+  if (path === 'index' || pathname === '/' || pathname.endsWith('/')) {
     initIndex();
     if (typeof loadBlogPreview === 'function') loadBlogPreview();
     if (window.location.hash === '#dashboard') initEntrepreneurDashboard();

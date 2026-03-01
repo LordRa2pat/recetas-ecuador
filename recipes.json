@@ -1,5 +1,146 @@
 [
   {
+    "slug": "hornado-de-chancho-con-hierbas-regionales",
+    "title": "Hornado de Chancho Ecuatoriano Receta Tradicional con Hierbas Regionales",
+    "description": "Hornado de chancho es un icónico plato ecuatoriano de cerdo asado con hierbas aromáticas de la sierra, ideal para celebraciones familiares. Esta receta detallada incluye pasos para lograr un sabor auténtico y jugoso, con variantes regionales para adaptarlo en casa.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "240 min",
+    "total_time": "270 min",
+    "ingredients": [
+      "2 kg Pierna de chancho (comprar en Mercado local)",
+      "6 dientes Ajo (comprar en Supermaxi)",
+      "2 unidades medianas Cebolla (comprar en Megamaxi)",
+      "2 cucharadas Orégano seco (comprar en TIA)",
+      "1 cucharadita Comino molido (comprar en Supermaxi)",
+      "2 cucharadas Achiote en pasta (comprar en Mercado local)",
+      "1 cucharada Sal (comprar en Megamaxi)",
+      "1 cucharadita Pimienta negra (comprar en TIA)",
+      "1 manojo Hierbas frescas (orégano y culantro) (comprar en Mercado local)",
+      "4 cucharadas Aceite vegetal (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia la pierna de chancho bajo agua fría y sécala con papel absorbente, luego marina con ajo machacado, cebolla picada, orégano, comino, achiote, sal y pimienta durante 30 minutos a temperatura ambiente para infusionar sabores.",
+      "Paso 2: Precalienta el horno a 180°C y coloca la carne en una bandeja resistente al horno, untada con aceite vegetal para evitar que se pegue, y agrega las hierbas frescas alrededor para aroma adicional.",
+      "Paso 3: Hornea la carne durante 60 minutos a 180°C, volteándola una vez a la mitad del tiempo para una cocción uniforme y dorado en ambos lados.",
+      "Paso 4: Reduce la temperatura a 160°C y continúa horneando por otros 120 minutos, verificando con un termómetro que la carne alcance 75°C en el interior para asegurar que esté bien cocida.",
+      "Paso 5: Retira la carne del horno y déjala reposar durante 15 minutos cubierta con papel aluminio para que los jugos se redistribuyan y quede más tierna al cortarla.",
+      "Paso 6: Sirve el hornado cortado en rodajas gruesas, acompañado de papas horneadas y una ensalada fresca, asegurándote de espolvorear hierbas regionales picadas para realzar el sabor auténtico.",
+      "Paso 7: Para variantes regionales, agrega culantro fresco en los últimos 30 minutos de cocción si estás en la Costa, y ajusta el tiempo si usas un horno convencional versus uno eléctrico."
+    ],
+    "tips": [
+      "Usa hierbas frescas de la sierra ecuatoriana para un sabor más intenso y auténtico en el hornado.",
+      "Deja marinar la carne por más tiempo si es posible, como overnight en el refrigerador, para mejorar la penetración de los sabores."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Ambato"
+    ],
+    "image_keywords": [
+      "hornado de chancho ecuatoriano",
+      "ecuadorian pork roast",
+      "traditional ecuadorian dish with herbs"
+    ],
+    "image_alt": "Fotografía del plato terminado de Hornado de Chancho ecuatoriano con hierbas regionales, mostrando carne jugosa y dorada servida con guarniciones",
+    "seo_keywords": [
+      "receta tradicional de hornado de chancho con hierbas ecuatorianas",
+      "como preparar hornado de chancho sierra ecuatoriana",
+      "hornado de chancho autentico paso a paso",
+      "plato ecuatoriano de cerdo asado con orégano y culantro",
+      "hornado de chancho para fiestas familiares en ecuador",
+      "variantes regionales del hornado de chancho en quito"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es hornado de chancho y de dónde proviene?",
+        "a": "Hornado de chancho es un plato tradicional ecuatoriano de la sierra, hecho con cerdo asado y hierbas aromáticas, originario de ciudades como Quito y Ambato, y se sirve en celebraciones por su sabor jugoso y crujiente."
+      },
+      {
+        "q": "¿Cuánto tiempo toma preparar hornado de chancho en casa?",
+        "a": "La preparación toma unos 30 minutos, la cocción alrededor de 4 horas, y el tiempo total es de aproximadamente 4.5 horas, pero el reposo hace que valga la pena por el resultado tierno."
+      },
+      {
+        "q": "¿Puedo hacer hornado de chancho en un horno convencional?",
+        "a": "Sí, se puede hacer en un horno convencional precalentado, ajustando tiempos y temperaturas como se indica, aunque en Ecuador se usa tradicionalmente hornos de leña para un sabor ahumado extra."
+      },
+      {
+        "q": "¿Cuáles son las hierbas regionales más comunes en esta receta?",
+        "a": "Las hierbas regionales incluyen orégano, culantro y comino de la sierra ecuatoriana, que aportan un aroma único; sustitúyelas con hierbas locales si no están disponibles."
+      }
+    ],
+    "places": [
+      {
+        "name": "Mercado Central de Quito",
+        "city": "Quito",
+        "description": "Famoso mercado donde probar hornado de chancho fresco y auténtico, servido en puestos tradicionales con hierbas locales."
+      },
+      {
+        "name": "Restaurante El Hornado de Ambato",
+        "city": "Ambato",
+        "description": "Restaurante especializado en platos de la sierra, ofreciendo hornado con hierbas regionales en un ambiente familiar y con opciones para turistas."
+      },
+      {
+        "name": "Plaza de la Independencia",
+        "city": "Quito",
+        "description": "Área con vendedores ambulantes que ofrecen hornado de chancho con variantes herbáceas, ideal para una experiencia callejera auténtica."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Achiote en pasta",
+        "substitute": "Pimentón ahumado",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para un sabor similar ahumado."
+      },
+      {
+        "original": "Hierbas frescas como culantro",
+        "substitute": "Cilantro fresco",
+        "notes": "Fácil de encontrar en mercados locales de EE.UU. o Europa, como Whole Foods, manteniendo el frescor aromático."
+      },
+      {
+        "original": "Pierna de chancho",
+        "substitute": "Lomo de cerdo",
+        "notes": "Sustituto común en carnicerías de EE.UU. como Kroger o en Europa en mercados como Lidl, para una textura similar pero más magra."
+      }
+    ],
+    "estimated_cost": "$25.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Hornado Ecuatoriano",
+        "videoId": "G-BVfbHNWMI",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=G-BVfbHNWMI",
+        "embed": "https://www.youtube-nocookie.com/embed/G-BVfbHNWMI",
+        "uploadDate": "2024-01-30",
+        "description": "Hoy vamos a preparar Hornado Ecuatoriano delicioso con un sabor incomparable"
+      },
+      {
+        "title": "PIERNA DE CHANCHO",
+        "videoId": "02X2sBA-eHI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=02X2sBA-eHI",
+        "embed": "https://www.youtube-nocookie.com/embed/02X2sBA-eHI",
+        "uploadDate": "2018-12-21",
+        "description": "INGREDIENTES:\n\nPierna de cerdo\nPasta de ajo .......... 1 taza\nComino molido ..... 3/4 taza\nSal gruesa. ............. 3/4 taza\nPimienta molida .... 1 cucharada\nOrégano molido ..... 1 cucharada\nCerveza "
+      },
+      {
+        "title": "HORNADO ECUATORIANO  Crujiente y Jugosito",
+        "videoId": "wWzDb8uB6wo",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=wWzDb8uB6wo",
+        "embed": "https://www.youtube-nocookie.com/embed/wWzDb8uB6wo",
+        "uploadDate": "2021-04-01",
+        "description": "HORNADO ECUATORIANO\nCerdo al horno\ncerdo horneado"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/G-BVfbHNWMI/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 42,
+    "created_at": "2026-03-01T05:22:33.652Z"
+  },
+  {
     "slug": "fanesca",
     "title": "Fanesca Ecuatoriana Receta Tradicional",
     "description": "Fanesca es una sopa emblemática de la Semana Santa en Ecuador, preparada con granos variados, bacalao y leche para un sabor único y nutritivo. Esta receta paso a paso te guía para recrear este plato festivo en casa, ideal para reuniones familiares.",

@@ -1,0 +1,22 @@
+{
+    "refrito": {
+        "term": "Refrito",
+        "definition": "Base aromática fundamental de la cocina ecuatoriana hecha con cebolla, ajo, pimiento y achiote sofritos a fuego lento.",
+        "video": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZ3Q4ZWZ3ZmxmZmxmZmxmZmxmZmxmZmxmZmxmZmxmZmxmZmxmJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKQHqO5IJD8L3fG/giphy.gif"
+    },
+    "achiote": {
+        "term": "Achiote",
+        "definition": "Semilla roja que aporta color y un sabor terroso sutil. Es el 'oro rojo' de la gastronomía nacional.",
+        "video": ""
+    },
+    "sancochar": {
+        "term": "Sancochar",
+        "definition": "Cocer un alimento en agua hirviendo sin que llegue a ablandarse por completo o desarmarse.",
+        "video": ""
+    },
+    "chillangua": {
+        "term": "Chillangua",
+        "definition": "Hierba aromática silvestre del Esmeraldas, similar al cilantro pero mucho más potente y serrada.",
+        "video": ""
+    }
+}

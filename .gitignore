@@ -67,6 +67,10 @@ node_modules/
 package-lock.json
 *.json
 !package.json
+!recipes.json
+!posts.json
+!price_db.json
+!glossary.json
 !prisma.config.ts
 !schema.prisma
 *.log

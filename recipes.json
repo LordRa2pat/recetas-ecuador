@@ -1,5 +1,145 @@
 [
   {
+    "slug": "chugchucara",
+    "title": "Chugchucara Ecuatoriana Receta Tradicional",
+    "description": "Chugchucara es un plato icónico de la Sierra ecuatoriana, una fritura mixta con chicharrón, papas y acompañantes que representa la gastronomía andina. Esta receta tradicional te guía paso a paso para recrear este festín crujiente en casa, perfecto para reuniones familiares.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "500 gramos carne de cerdo para chicharrón (comprar en Supermaxi)",
+      "4 unidades medianas papas (comprar en Mercado local)",
+      "200 gramos mote (maíz blanco cocido) (comprar en TIA)",
+      "2 unidades grandes cebolla (comprar en Supermaxi)",
+      "3 unidades medianas tomate (comprar en Mercado local)",
+      "4 dientes ajo (comprar en Supermaxi)",
+      "2 unidades limón (comprar en Mercado local)",
+      "1 litro aceite vegetal para freír (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Enjuaga la carne de cerdo y corta en trozos de 2 cm, marina con sal y pimienta durante 15 minutos a temperatura ambiente para realzar los sabores.",
+      "Paso 2: Pela y corta las papas en rodajas de 1 cm de espesor, remójalas en agua fría durante 10 minutos para eliminar almidón, luego sécalas bien.",
+      "Paso 3: Cocina el mote en agua hirviendo con una pizca de sal durante 20 minutos a fuego medio hasta que esté tierno, luego escurre y reserva.",
+      "Paso 4: Pica finamente la cebolla, tomate y ajo, y saltea en una sartén con un chorrito de aceite a fuego medio durante 5 minutos hasta que estén suaves.",
+      "Paso 5: Calienta el aceite a 180°C en una freidora o sartén profunda, fríe la carne de cerdo durante 10-15 minutos hasta que esté dorada y crujiente, luego retira y escurre el exceso de grasa.",
+      "Paso 6: Fríe las papas en el mismo aceite a 160°C durante 5-7 minutos hasta que estén doradas, y combina todos los ingredientes en un plato grande para servir caliente.",
+      "Paso 7: Agrega el limón recién exprimido sobre el plato justo antes de servir para un toque ácido que equilibra los sabores fritos.",
+      "Paso 8: Sirve inmediatamente para mantener la crujiente, acompañando con el salteado de cebolla y tomate como guarnición."
+    ],
+    "tips": [
+      "El chef recomienda usar carne fresca de cerdo para un chicharrón más jugoso; evita congelados para preservar la textura.",
+      "Para una fritura perfecta, mide la temperatura del aceite con un termómetro para evitar que los ingredientes absorban exceso de grasa."
+    ],
+    "origin_cities": [
+      "Ambato",
+      "Latacunga"
+    ],
+    "image_keywords": [
+      "chugchucara dish",
+      "ecuadorian food",
+      "traditional sierra platter"
+    ],
+    "image_alt": "Fotografía del plato terminado de Chugchucara con chicharrón crujiente, papas fritas, mote y verduras frescas en un arreglo típico ecuatoriano",
+    "seo_keywords": [
+      "receta tradicional de chugchucara ecuatoriana paso a paso",
+      "como preparar chugchucara sierra ecuatoriana en casa",
+      "ingredientes y variaciones de chugchucara autentica",
+      "plato frito chugchucara de ambato ecuador",
+      "mejor receta de chugchucara para principiantes",
+      "historia y origen del chugchucara en la sierra ecuatoriana"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Chugchucara y de dónde proviene?",
+        "a": "Chugchucara es un plato típico de la Sierra ecuatoriana, originario de ciudades como Ambato, que consiste en una mezcla de chicharrón frito, papas, mote y verduras. Representa la cocina andina y es ideal para compartir en fiestas."
+      },
+      {
+        "q": "¿Puedo hacer Chugchucara más saludable?",
+        "a": "Sí, puedes hornear en lugar de freír los ingredientes para reducir grasa, o usar versiones al horno de chicharrón. Mantén los sabores tradicionales agregando hierbas frescas para un toque nutritivo sin perder el esencia."
+      },
+      {
+        "q": "¿Cuánto tiempo dura Chugchucara refrigerada?",
+        "a": "Chugchucara fresca dura hasta 2 días en el refrigerador si se guarda en un contenedor hermético. Recomendamos recalentar en horno para mantener la crujiente, ya que el microondas puede ablandarla."
+      },
+      {
+        "q": "¿Es Chugchucara apta para vegetarianos?",
+        "a": "La versión tradicional no lo es por el chicharrón de cerdo, pero puedes adaptarla usando tofu o setas fritas como sustituto, manteniendo los otros ingredientes para una opción vegetariana."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Quinche",
+        "city": "Ambato",
+        "description": "Un local famoso por su Chugchucara auténtica con ingredientes frescos de la región, ideal para probar la versión tradicional en un ambiente familiar."
+      },
+      {
+        "name": "Mercado Central de Latacunga",
+        "city": "Latacunga",
+        "description": "Aquí encuentras vendedores locales que ofrecen Chugchucara casera con variaciones diarias, perfecta para una experiencia cultural y gastronómica inmersiva."
+      },
+      {
+        "name": "Restaurante La Gran Colombia",
+        "city": "Quito",
+        "description": "Ofrece una versión moderna de Chugchucara con toques innovadores, ubicado en la capital para turistas que quieran probarlo fuera de su origen."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "mote",
+        "substitute": "hominy enlatado",
+        "notes": "Disponible en secciones de productos latinos en supermercados como Walmart en EE.UU. o Tesco en Europa, para mantener el textura similar."
+      },
+      {
+        "original": "carne de cerdo",
+        "substitute": "pechuga de pollo o tofu",
+        "notes": "Encuéntralo en cualquier supermercado general como Target en EE.UU. o Carrefour en Europa; ideal para versiones más ligeras o vegetarianas."
+      },
+      {
+        "original": "papas",
+        "substitute": "batatas",
+        "notes": "Fácilmente disponible en mercados orgánicos como Whole Foods en EE.UU. o Bio c/o en Europa, para una variante más dulce y nutritiva."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "✔️🔴Como Elaborar Chugchucara",
+        "videoId": "oAnuV4rVuN8",
+        "channel": "MARGARITA MÉNDEZ",
+        "url": "https://www.youtube.com/watch?v=oAnuV4rVuN8",
+        "embed": "https://www.youtube-nocookie.com/embed/oAnuV4rVuN8",
+        "uploadDate": "2020-09-25",
+        "description": "En tu canal Cocinando con Chulla Vidita Hay que Comer, tu canal de cocina nacional ecuatoriana y cocina internacional, te presentamos el video de la preparación muy sencilla y sabrosa de \n \n✔️🔴Como E"
+      },
+      {
+        "title": "Fritada de cerdo (Chugchucara) sopa de pollo #recetadeldia",
+        "videoId": "-X7on1BBuZI",
+        "channel": "Recetas de cocina caseras, fáciles y rápidas",
+        "url": "https://www.youtube.com/watch?v=-X7on1BBuZI",
+        "embed": "https://www.youtube-nocookie.com/embed/-X7on1BBuZI",
+        "uploadDate": "2022-09-11",
+        "description": ""
+      },
+      {
+        "title": "FRITADA",
+        "videoId": "dS129uXVOQU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=dS129uXVOQU",
+        "embed": "https://www.youtube-nocookie.com/embed/dS129uXVOQU",
+        "uploadDate": "2020-03-13",
+        "description": "GRASA = SABOR #Fritada #KWAEC\n\nCarne de Cerdo……………….. 2 kilos\nGrasa de cerdo………………… ½ kilo\nPasta de ajo…………………….. 30 gramos\nCebolla Blanca………………… 80 gr\nCerveza…………………………… 1 taza\nAgua……………………………….. 1 ½"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/oAnuV4rVuN8/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 43,
+    "created_at": "2026-03-01T11:22:31.617Z"
+  },
+  {
     "slug": "hornado-de-chancho-con-hierbas-regionales",
     "title": "Hornado de Chancho Ecuatoriano Receta Tradicional con Hierbas Regionales",
     "description": "Hornado de chancho es un icónico plato ecuatoriano de cerdo asado con hierbas aromáticas de la sierra, ideal para celebraciones familiares. Esta receta detallada incluye pasos para lograr un sabor auténtico y jugoso, con variantes regionales para adaptarlo en casa.",

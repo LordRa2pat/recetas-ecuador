@@ -745,42 +745,12 @@ async function initBlog() {
     grid.innerHTML = filtered.map(renderBlogCard).join("");
   }
 
-  var urlParams = new URLSearchParams(window.location.search);
-  if (searchInput && urlParams.get("q")) searchInput.value = urlParams.get("q");
-  if (categorySel && urlParams.get("category"))
-    categorySel.value = urlParams.get("category");
-  if (regionSel && urlParams.get("region"))
-    regionSel.value = urlParams.get("region");
+  // Escuchar cambios en los filtros
+  [searchInput, categorySel, regionSel].forEach(el => {
+    el?.addEventListener('change', applyBlogFilters);
+    el?.addEventListener('input', debounce(applyBlogFilters, 300));
+  });
 
-  if (searchInput)
-    searchInput.addEventListener(
-      "input",
-      debounce(function () {
-        applyBlogFilters();
-        var q = searchInput.value.trim();
-        if (q) trackEvent("search_use", { query: q, page: "blog" });
-      }, 300),
-    );
-  if (categorySel)
-    categorySel.addEventListener("change", function () {
-      applyBlogFilters();
-      if (categorySel.value)
-        trackEvent("filter_use", {
-          filter_type: "category",
-          value: categorySel.value,
-          page: "blog",
-        });
-    });
-  if (regionSel)
-    regionSel.addEventListener("change", function () {
-      applyBlogFilters();
-      if (regionSel.value)
-        trackEvent("filter_use", {
-          filter_type: "region",
-          value: regionSel.value,
-          page: "blog",
-        });
-    });
   if (clearBtn) {
     clearBtn.addEventListener("click", function () {
       if (searchInput) searchInput.value = "";
@@ -790,8 +760,37 @@ async function initBlog() {
     });
   }
 
-  if (grid) grid.innerHTML = renderSkeleton(3);
   applyBlogFilters();
+}
+
+function renderBlogCard(p) {
+  // Determinamos si es un slot grande o pequeño basado en el ID o posición (simplificado)
+  const isLarge = p.id % 5 === 0;
+  const colSpan = isLarge ? 'md:col-span-8' : 'md:col-span-4';
+  const minHeight = isLarge ? 'min-h-[500px]' : 'min-h-[350px]';
+
+  return `
+    <div class="${colSpan} glass-card rounded-[48px] overflow-hidden group relative ${minHeight}" data-aos="fade-up">
+      <div class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-1000">
+        <img src="${p.image_url || 'https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80'}" 
+             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" 
+             alt="${p.title}">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-8 right-8">
+        <span class="text-ec-gold font-black text-[8px] uppercase tracking-[0.3em] mb-3 block">${p.category || 'Crónica'}</span>
+        <h3 class="${isLarge ? 'text-3xl md:text-5xl' : 'text-xl md:text-2xl'} hero-title font-black text-white mb-4 uppercase tracking-tighter leading-tight">
+          ${p.title}
+        </h3>
+        <p class="text-white/60 text-xs font-light leading-relaxed mb-6 line-clamp-2">${p.description || ''}</p>
+        <a href="post.html?slug=${p.slug}" class="inline-flex px-8 py-4 bg-white text-black rounded-2xl text-[9px] font-black tracking-widest uppercase hover:bg-ec-gold transition-colors">
+          LEER MÁS
+        </a>
+      </div>
+    </div>
+  `;
+}
+applyBlogFilters();
 }
 
 // ─── Página: POST ─────────────────────────────────────────────

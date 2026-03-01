@@ -1,81 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P9Z6G26N');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FNPQKDBN3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-5FNPQKDBN3');
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crónica | Ecuador a la Carta</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813915136648702"
     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artículo de Turismo Ecuador | Ecuador a la Carta</title>
-  <meta name="description" content="Artículo de turismo y cultura ecuatoriana." />
-  <link rel="canonical" href="https://ecuadoralacarta.com/post.html" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
-
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['"DM Sans"', 'system-ui', 'sans-serif'], serif: ['"Playfair Display"', 'Georgia', 'serif'] }, colors: {
-            'ec-gold': '#DCA011',
-            'ec-blue': '#14213D',
-            'ec-red': '#9A1B22',
-            'ec-green': '#284B34',
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     :root {
-      --ec-gold: #DCA011;
-      --ec-blue: #14213D;
       --luxury-dark: #0B1221;
+      --ec-gold: #DCA011;
     }
 
     body {
-      background-color: var(--luxury-dark);
+      font-family: 'Inter', sans-serif;
+      background: var(--luxury-dark);
       color: white;
-      overflow-x: hidden;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     .glass-card {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
     .hero-title {
       font-family: 'Playfair Display', serif;
-      letter-spacing: -0.02em;
     }
 
     .gold-text-gradient {
@@ -93,329 +51,195 @@
       }
     }
 
-    .ec-stripe {
-      background: linear-gradient(90deg, #DCA011 0% 50%, #14213D 50% 75%, #9A1B22 75% 100%);
-      height: 4px;
-      width: 100%;
+    body.dark-theme {
+      background-color: var(--luxury-dark);
+      color: #F8FAFC;
     }
 
-    .ec-title-bar {
-      display: block;
-      width: 56px;
-      height: 4px;
-      margin-top: 8px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #DCA011 0% 38%, #14213D 38% 70%, #9A1B22 70% 100%);
+    body.light-theme {
+      background-color: #F8FAFC;
+      color: #0F172A;
     }
 
-    .nav-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 200px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(0, 51, 160, 0.1);
-      z-index: 100;
-      padding: 8px 0;
+    .light-theme .glass-card {
+      background: rgba(15, 23, 42, 0.03);
+      border: 1px solid rgba(15, 23, 42, 0.05);
     }
 
-    .nav-item:hover .nav-dropdown,
-    .nav-item:focus-within .nav-dropdown {
-      display: block;
+    .light-theme .text-white\/40,
+    .light-theme .text-white\/60,
+    .light-theme .text-white\/50 {
+      color: #64748B;
     }
 
-    .nav-dropdown a {
-      display: block;
-      padding: 8px 16px;
-      font-size: 0.875rem;
-      color: #374151;
-      transition: background 0.15s;
+    .light-theme .text-white {
+      color: #0F172A;
     }
 
-    .nav-dropdown a:hover {
-      background: #EEF2FF;
-      color: #14213D;
-    }
-
-    .ad-slot {
-      min-height: 120px;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
-      border-radius: 16px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ad-slot--square {
-      min-height: 280px;
-    }
-
-    .ad-slot--tall {
-      min-height: 600px;
-    }
-
-    .ad-label {
-      font-size: 10px;
-      color: #9ca3af;
+    .prose-premium h1,
+    .prose-premium h2,
+    .prose-premium h3 {
+      font-family: 'Playfair Display', serif;
+      color: white;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-      font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
-    /* Post content typography */
-    #post-content-body h2 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #111827;
-      margin: 1.5rem 0 0.75rem;
+    .light-theme .prose-premium h1,
+    .light-theme .prose-premium h2,
+    .light-theme .prose-premium h3 {
+      color: #0F172A;
     }
 
-    #post-content-body h3 {
+    .prose-premium p {
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      font-weight: 700;
-      color: #1f2937;
-      margin: 1.25rem 0 0.5rem;
     }
 
-    #post-content-body p {
-      color: #374151;
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    #post-content-body ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-      color: #374151;
-    }
-
-    #post-content-body ol {
-      list-style: decimal;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-      color: #374151;
-    }
-
-    #post-content-body li {
-      margin-bottom: 0.4rem;
-      line-height: 1.65;
-    }
-
-    #post-content-body strong {
-      color: #111827;
-      font-weight: 700;
-    }
-
-    #post-content-body a {
-      color: #14213D;
-      text-decoration: underline;
-    }
-
-    #post-content-body blockquote {
-      border-left: 4px solid #DCA011;
-      padding: 0.75rem 1rem;
-      background: #fffbf2;
-      margin: 1rem 0;
-      border-radius: 0 0.75rem 0.75rem 0;
-    }
-
-    details>summary {
-      list-style: none;
-    }
-
-    details>summary::-webkit-details-marker {
-      display: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    .light-theme .prose-premium p {
+      color: #475569;
     }
   </style>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-<body class="font-sans antialiased text-white selection:bg-ec-gold/30">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9Z6G26N" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-  <div class="ec-stripe" aria-hidden="true"></div>
-
-  <!-- ═══ HEADER ═══ -->
-  <header class="sticky top-0 z-50 bg-[#14213D]/90 backdrop-blur-md shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between relative">
-      <a href="index.html" class="flex items-center gap-2.5 text-white font-bold text-lg" aria-label="Inicio">
-        <span class="text-2xl">🍲</span>
-        <span class="hidden sm:inline leading-tight">Ecuador a la<br><span class="text-ec-gold">Carta</span></span>
-        <span class="sm:hidden text-ec-gold">Ecuador a la Carta</span>
+<body class="dark-theme">
+  <!-- PREMIUM HEADER V3.5 -->
+  <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
+      <a href="/" class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-xl">
+          🇪🇨</div>
+        <div class="flex flex-col">
+          <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Ecuador</span>
+          <span class="text-ec-gold font-bold text-[10px] tracking-[0.2em] leading-none uppercase">A LA CARTA.</span>
+        </div>
       </a>
-
-      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-white/90"
-        aria-label="Navegación principal">
-        <a href="index.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Inicio</a>
-
-        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
-          <span>Regiones ▾</span>
-          <div class="nav-dropdown">
-            <a href="recipes.html?region=Sierra">🏔️ Sierra</a>
-            <a href="recipes.html?region=Costa">🌊 Costa</a>
-            <a href="recipes.html?region=Amazonia">🌿 Amazonía</a>
-            <a href="recipes.html?region=Galapagos">🐢 Galápagos</a>
-          </div>
-        </div>
-
-        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
-          <span>Categorías ▾</span>
-          <div class="nav-dropdown">
-            <a href="recipes.html?category=Sopas">🍲 Sopas</a>
-            <a href="recipes.html?category=Platos%20Fuertes">🍽️ Platos Fuertes</a>
-            <a href="recipes.html?category=Mariscos">🦐 Mariscos</a>
-            <a href="recipes.html?category=Postres">🍮 Postres</a>
-            <a href="recipes.html?category=Bebidas">🥤 Bebidas</a>
-            <a href="recipes.html?category=Desayunos">☕ Desayunos</a>
-            <a href="recipes.html?category=Entradas">🥗 Entradas</a>
-          </div>
-        </div>
-
-        <a href="menu-semanal.html" class="px-3 py-2 hover:text-ec-gold transition-colors">Menú Semanal</a>
-
-        <div class="nav-item relative px-3 py-2 cursor-pointer hover:text-ec-gold transition-colors">
-          <span class="text-ec-gold font-bold">Sobre Nosotros ▾</span>
-          <div class="nav-dropdown">
-            <a href="nosotros.html">🏡 Nuestra Historia</a>
-            <a href="blog.html">📰 Blog Turismo</a>
-            <a href="contact.html">✉️ Contacto</a>
-          </div>
-        </div>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <a href="blog.html"
-          class="bg-ec-gold text-[#14213D] font-semibold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors">
-          ← Blog
-        </a>
-        <button id="nav-toggle" class="md:hidden text-white p-2" aria-label="Menú">☰</button>
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle"
+          class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all group overflow-hidden relative">
+          <div class="theme-sun transition-transform duration-500 group-[.light-theme]:translate-y-12">☀️</div>
+          <div
+            class="theme-moon absolute transition-transform duration-500 translate-y-12 group-[.dark-theme]:translate-y-0 text-white">
+            🌙</div>
+        </button>
       </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="nav-mobile" class="hidden md:hidden border-t border-[#14213D] py-3 px-4 space-y-1 bg-[#14213D]">
-      <a href="index.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Inicio</a>
-      <a href="recipes.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">Todas las Recetas</a>
-      <a href="menu-semanal.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">📅 Menú Semanal</a>
-      <a href="blog.html" class="block px-3 py-2 text-ec-gold font-bold text-sm">📰 Blog Turismo</a>
-      <a href="nosotros.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">🏡 Nosotros</a>
-      <a href="contact.html" class="block px-3 py-2 text-white/90 hover:text-ec-gold text-sm">✉️ Contacto</a>
     </div>
   </header>
-  <main id="main-content" class="pt-24 lg:pt-32">
-    <!-- ═══ TOP BILLBOARD ═══ -->
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="ad-slot--billboard">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702" data-ad-slot="12341234"
-          data-ad-format="auto" data-full-width-responsive="true"></ins>
-      </div>
+
+  <main class="pt-48 pb-32">
+    <div id="post-loading" class="flex items-center justify-center min-h-[50vh]">
+      <div class="w-12 h-12 border-4 border-ec-gold border-t-transparent rounded-full animate-spin"></div>
     </div>
 
-    <!-- ═══ LOADING ═══ -->
-    <div id="post-loading" class="min-h-[60vh] flex items-center justify-center">
-      <div class="w-12 h-12 border-2 border-ec-gold border-t-transparent rounded-full animate-spin"></div>
-    </div>
-
-    <!-- ═══ ERROR ═══ -->
-    <div id="post-error" class="hidden min-h-[60vh] flex items-center justify-center px-6">
-      <div class="text-center">
-        <h1 class="hero-title text-4xl mb-8">Artículo no hallado</h1>
-        <a href="blog"
-          class="glass-card px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all">←
-          Volver a la Ruta</a>
-      </div>
-    </div>
-
-    <!-- ═══ POST CONTENT V2 ═══ -->
     <article id="post-content" class="hidden">
-      <!-- Cinematic Hero -->
-      <section class="max-w-[1400px] mx-auto px-6 mb-24" data-aos="fade-up">
-        <div class="relative h-[60vh] md:h-[80vh] rounded-[48px] overflow-hidden shadow-3xl">
-          <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
-
-          <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-24">
-            <div class="flex gap-4 mb-8">
-              <span id="post-category"
-                class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-ec-gold border-white/10"></span>
-              <span id="post-region"
-                class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-white/60 border-white/10"></span>
-            </div>
+      <!-- CINEMATIC HERO -->
+      <section class="max-w-7xl mx-auto px-6 mb-24" data-aos="fade-up">
+        <div class="relative h-[60vh] md:h-[80vh] rounded-[56px] overflow-hidden">
+          <img id="post-hero-img" src="" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-transparent to-transparent"></div>
+          <div class="absolute bottom-16 left-12 right-12">
+            <span id="post-category"
+              class="text-ec-gold font-black text-[10px] uppercase tracking-[0.4em] mb-4 block"></span>
             <h1 id="post-title"
-              class="hero-title text-5xl md:text-8xl lg:text-9xl text-white tracking-tighter uppercase mb-6 leading-[0.9]">
-            </h1>
-            <p id="post-subtitle" class="text-white/40 text-xl md:text-2xl font-light max-w-3xl mb-12 italic"></p>
-
-            <div class="flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
-              <span id="post-date"></span>
-              <span class="w-1 h-1 rounded-full bg-white/20"></span>
-              <span id="post-reading-time"></span>
-            </div>
+              class="hero-title text-5xl md:text-8xl text-white tracking-tighter uppercase mb-6 leading-none"></h1>
           </div>
         </div>
       </section>
 
-      <!-- Editorial Layout -->
-      <div class="max-w-[1400px] mx-auto px-6">
-        <div class="flex flex-col lg:flex-row gap-20">
+      <!-- CONTENT GRID -->
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-20">
+        <div class="lg:col-span-8">
+          <!-- ADS TOP -->
+          <div class="mb-12"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
+              data-ad-slot="12341234" data-ad-format="auto"></ins></div>
 
-          <!-- Content Body -->
-          <div class="flex-1 min-w-0">
-            Ver menú →
-            </a>
-          </div>
+          <div id="post-content-body" class="prose-premium"></div>
+
+          <!-- ADS MIDDLE -->
+          <div class="my-12"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
+              data-ad-slot="56785678" data-ad-format="auto"></ins></div>
         </div>
+
+        <aside class="lg:col-span-4 space-y-12">
+          <div class="glass-card p-10 rounded-[40px] sticky top-32">
+            <h4 class="text-white font-black text-[10px] tracking-widest uppercase mb-8">FAQs de la Ruta</h4>
+            <div id="post-faqs" class="space-y-6"></div>
+          </div>
+          <div class="ad-slot--square bg-white/5 rounded-[40px] h-[300px] flex items-center justify-center">
+            <span class="text-[8px] font-black text-white/20 uppercase tracking-widest">Patrocinio Premium</span>
+          </div>
         </aside>
-
       </div>
-      </div>
+    </article>
+  </main>
+  <!-- Cinematic Hero -->
+  <section class="max-w-[1400px] mx-auto px-6 mb-24" data-aos="fade-up">
+    <div class="relative h-[60vh] md:h-[80vh] rounded-[48px] overflow-hidden shadow-3xl">
+      <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
 
-      </div><!-- /post-content -->
-
-      <!-- ═══ NEWSLETTER ═══ -->
-      <section class="bg-[#14213D] py-10 px-4 sm:px-6">
-        <div class="max-w-2xl mx-auto text-center">
-          <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-          <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
-          <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
-          <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-            class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
-            <input type="email" name="email" placeholder="tu@email.com" required
-              class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-              aria-label="Email para newsletter">
-            <button type="submit"
-              class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
-              Suscribirme →
-            </button>
-          </form>
+      <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-24">
+        <div class="flex gap-4 mb-8">
+          <span id="post-category"
+            class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-ec-gold border-white/10"></span>
+          <span id="post-region"
+            class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-white/60 border-white/10"></span>
         </div>
-      </section>
+        <h1 id="post-title"
+          class="hero-title text-5xl md:text-8xl lg:text-9xl text-white tracking-tighter uppercase mb-6 leading-[0.9]">
+        </h1>
+        <p id="post-subtitle" class="text-white/40 text-xl md:text-2xl font-light max-w-3xl mb-12 italic"></p>
+
+        <div class="flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
+          <span id="post-date"></span>
+          <span class="w-1 h-1 rounded-full bg-white/20"></span>
+          <span id="post-reading-time"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Layout -->
+  <div class="max-w-[1400px] mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-20">
+
+      <!-- Content Body -->
+      <div class="flex-1 min-w-0">
+        Ver menú →
+        </a>
+      </div>
+    </div>
+    </aside>
+
+  </div>
+  </div>
+
+  </div><!-- /post-content -->
+
+  <!-- ═══ NEWSLETTER ═══ -->
+  <section class="bg-[#14213D] py-10 px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
+      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
+      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
+        class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
+        <input type="email" name="email" placeholder="tu@email.com" required
+          class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
+          aria-label="Email para newsletter">
+        <button type="submit"
+          class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
+          Suscribirme →
+        </button>
+      </form>
+    </div>
+  </section>
 
   </main><!-- /#main-content -->
 

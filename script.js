@@ -1813,54 +1813,45 @@ function initMapa() {
   if (!mapSvg || !panel) return;
 
   const dataProvincias = {
-    // COSTA
     esmeraldas: { name: "Esmeraldas", region: "COSTA", icon: "🌴", cities: ["Esmeraldas", "Atacames", "Muisne", "Quinindé"] },
     manabi: { name: "Manabí", region: "COSTA", icon: "🐟", cities: ["Manta", "Portoviejo", "Chone", "Bahía", "Puerto López"] },
     guayas: { name: "Guayas", region: "COSTA", icon: "🛶", cities: ["Guayaquil", "Durán", "Milagro", "Playas", "Samborondón"] },
-    "santa-elena": { name: "Santa Elena", region: "COSTA", icon: "🏖️", cities: ["Salinas", "Santa Elena", "La Libertad"] },
-    "el-oro": { name: "El Oro", region: "COSTA", icon: "🍌", cities: ["Machala", "Pasaje", "Santa Rosa"] },
-    "los-rios": { name: "Los Ríos", region: "COSTA", icon: "🍫", cities: ["Babahoyo", "Quevedo", "Vinces"] },
-    // SIERRA
     pichincha: { name: "Pichincha", region: "SIERRA", icon: "⛰️", cities: ["Quito", "Sangolquí", "Machachi", "Cayambe"] },
     azuay: { name: "Azuay", region: "SIERRA", icon: "⛪", cities: ["Cuenca", "Gualaceo", "Paute"] },
-    loja: { name: "Loja", region: "SIERRA", icon: "🎻", cities: ["Loja", "Catamayo", "Vilcabamba"] },
-    imbabura: { name: "Imbabura", region: "SIERRA", icon: "🧶", cities: ["Ibarra", "Otavalo", "Cotacachi"] },
-    carchi: { name: "Carchi", region: "SIERRA", icon: "🥔", cities: ["Tulcán", "San Gabriel"] },
-    cotopaxi: { name: "Cotopaxi", region: "SIERRA", icon: "🌋", cities: ["Latacunga", "Pujilí", "Salcedo"] },
-    tungurahua: { name: "Tungurahua", region: "SIERRA", icon: "🍎", cities: ["Ambato", "Baños", "Pelileo"] },
-    chimborazo: { name: "Chimborazo", region: "SIERRA", icon: "🚞", cities: ["Riobamba", "Guano", "Alausí"] },
-    bolivar: { name: "Bolívar", region: "SIERRA", icon: "🎭", cities: ["Guaranda", "San Miguel"] },
-    canar: { name: "Cañar", region: "SIERRA", icon: "🏛️", cities: ["Azogues", "Cañar"] },
-    // AMAZONIA
     napo: { name: "Napo", region: "AMAZONÍA", icon: "🦜", cities: ["Tena", "Archidona", "Baeza"] },
-    sucumbios: { name: "Sucumbíos", region: "AMAZONÍA", icon: "💧", cities: ["Lago Agrio", "Shushufindi"] },
-    orellana: { name: "Orellana", region: "AMAZONÍA", icon: "🐆", cities: ["El Coca", "Tiputini"] },
+    galapagos: { name: "Galápagos", region: "INSULAR", icon: "🐢", cities: ["Puerto Ayora", "Puerto Baquerizo"] },
+    loja: { name: "Loja", region: "SIERRA", icon: "🎻", cities: ["Loja", "Catamayo"] },
+    tungurahua: { name: "Tungurahua", region: "SIERRA", icon: "🍎", cities: ["Ambato", "Baños"] },
+    chimborazo: { name: "Chimborazo", region: "SIERRA", icon: "🚞", cities: ["Riobamba", "Guano"] },
     pastaza: { name: "Pastaza", region: "AMAZONÍA", icon: "🚣", cities: ["Puyo", "Mera"] },
-    "morona-santiago": { name: "Morona Santiago", region: "AMAZONÍA", icon: "🏹", cities: ["Macas", "Gualaquiza"] },
-    "zamora-chinchipe": { name: "Zamora Chinchipe", region: "AMAZONÍA", icon: "⛏️", cities: ["Zamora", "Yantzaza"] },
-    // INSULAR
-    galapagos: { name: "Galápagos", region: "INSULAR", icon: "🐢", cities: ["Puerto Ayora", "Puerto Baquerizo", "Puerto Villamil"] }
+    orellana: { name: "Orellana", region: "AMAZONÍA", icon: "🐆", cities: ["El Coca", "Tiputini"] }
   };
 
   const provinces = mapSvg.querySelectorAll(".province");
 
   provinces.forEach(p => {
-    p.addEventListener("click", () => {
+    p.onclick = null; // Limpiar previos
+    p.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
       provinces.forEach(pr => pr.classList.remove("active"));
       p.classList.add("active");
 
       const info = dataProvincias[p.id];
       if (info) {
-        provinceTitle.textContent = info.name;
-        regionLabel.textContent = info.region;
+        if (provinceTitle) provinceTitle.textContent = info.name;
+        if (regionLabel) regionLabel.textContent = info.region;
         if (regionIcon) regionIcon.textContent = info.icon;
 
-        cityList.innerHTML = info.cities.map(c => `
-          <button onclick="window.location.href='recipes.html?city=${encodeURIComponent(c)}'" 
-             class="px-5 py-3 glass-card rounded-2xl text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-ec-gold hover:border-ec-gold/50 hover:bg-white/5 transition-all">
-             ${c}
-          </button>
-        `).join("");
+        if (cityList) {
+          cityList.innerHTML = info.cities.map(c => `
+            <button onclick="window.location.href='recipes.html?city=${encodeURIComponent(c)}'" 
+               class="px-5 py-3 glass-card rounded-2xl text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-ec-gold hover:border-ec-gold/50 hover:bg-white/5 transition-all">
+               ${c}
+            </button>
+          `).join("");
+        }
 
         initialMsg?.classList.add("hidden");
         dataPanel?.classList.remove("hidden");
@@ -1875,37 +1866,39 @@ function initMapa() {
 }
 
 // ─── Router ───────────────────────────────────────────────────
-(function router() {
-  initI18n();
+(async function router() {
+  await initI18n();
 
   const pathname = window.location.pathname;
   const filename = pathname.split('/').pop().split('?')[0];
   const path = filename.replace(/\.(html|php|htm)$/, '') || 'index';
 
-  // Asegurar que la carga sea secuencial y robusta
   const boot = async () => {
-    if (path === 'index' || pathname === '/' || pathname.endsWith('/')) {
-      await initIndex();
-      if (typeof loadBlogPreview === 'function') loadBlogPreview();
+    try {
+      if (path === 'index' || pathname === '/' || pathname.endsWith('/')) {
+        await initIndex();
+        if (typeof loadBlogPreview === 'function') await loadBlogPreview();
+      } else if (path === 'recipes') {
+        await initListing();
+      } else if (path === 'recipe') {
+        await initRecipe();
+      } else if (path === 'blog') {
+        if (typeof initBlog === 'function') await initBlog();
+      } else if (path === 'post') {
+        if (typeof initPost === 'function') await initPost();
+      } else if (path === 'mapa') {
+        initMapa();
+      }
+
       if (window.location.hash === '#dashboard') initEntrepreneurDashboard();
-    } else if (path === 'recipes') {
-      await initListing();
-    } else if (path === 'recipe') {
-      await initRecipe();
-    } else if (path === 'blog') {
-      if (typeof initBlog === 'function') await initBlog();
-    } else if (path === 'post') {
-      if (typeof initPost === 'function') await initPost();
-    } else if (path === 'mapa') {
-      initMapa();
-    } else if (path === 'menu-semanal') {
-      if (typeof initMenuSemanal === 'function') await initMenuSemanal();
+    } catch (e) {
+      console.error("Critical Boot Error:", e);
     }
   };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
   } else {
-    boot();
+    await boot();
   }
 })();

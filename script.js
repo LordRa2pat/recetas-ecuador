@@ -1246,13 +1246,14 @@ function initSpicySlider(recipe) {
 function initThemeEngine() {
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
-  const currentTheme = localStorage.getItem('theme') || 'dark';
 
-  // Aplicar tema inicial
-  applyTheme(currentTheme);
+  // El tema inicial ya fue aplicado por el script inline en el head
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  applyTheme(savedTheme);
 
   themeToggle?.addEventListener('click', () => {
-    const newTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
+    const isDark = body.classList.contains('dark-theme');
+    const newTheme = isDark ? 'light' : 'dark';
     applyTheme(newTheme);
     localStorage.setItem('theme', newTheme);
   });

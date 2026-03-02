@@ -1,5 +1,146 @@
 [
   {
+    "slug": "encebollado",
+    "title": "Encebollado Ecuatoriano Receta Tradicional",
+    "description": "Encebollado es una sopa icónica de la costa ecuatoriana, preparada con yuca, pescado fresco y cebolla, ideal para desayunos energéticos. Esta receta auténtica te guía paso a paso para recrear el sabor casero en tu cocina, con ingredientes accesibles y consejos para variantes.",
+    "region": "Costa",
+    "category": "Sopas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "500 gramos Yuca (comprar en Mercado local)",
+      "500 gramos Pescado fresco (al Tuna o albacora) (comprar en Mercado local)",
+      "2 unidades medianas Cebolla (comprar en Supermaxi)",
+      "1 manojo Cilantro fresco (comprar en TIA)",
+      "3 dientes Ajo (comprar en Megamaxi)",
+      "2 unidades Limón (comprar en Supermaxi)",
+      "1 cucharadita Sal (comprar en Mercado local)",
+      "2 cucharadas Aceite de oliva (comprar en Megamaxi)",
+      "1.5 litros Agua (comprar en Cualquiera)",
+      "1/2 cucharadita Comino molido (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia y pela 500 gramos de yuca, cortándola en trozos grandes. Enjuaga bajo agua fría para eliminar el almidón, lo que toma unos 5 minutos.",
+      "Paso 2: En una olla grande, calienta 2 cucharadas de aceite de oliva a fuego medio durante 2 minutos, luego agrega 2 cebollas picadas finamente y 3 dientes de ajo machacados, sofriéndolos por 5 minutos hasta que estén transparentes.",
+      "Paso 3: Añade la yuca a la olla con 1.5 litros de agua, 1 cucharadita de sal y 1/2 cucharadita de comino molido. Lleva a ebullición a fuego alto, luego reduce a fuego medio y cocina por 20 minutos hasta que la yuca esté suave.",
+      "Paso 4: Mientras se cocina la yuca, limpia 500 gramos de pescado fresco, quitando escamas y cortándolo en filetes. Agrega el pescado a la olla y cocina por 10 minutos más a fuego medio, asegurándote de que el pescado no se deshaga.",
+      "Paso 5: Incorpora 1 manojo de cilantro picado y el jugo de 2 limones a la sopa, removiendo suavemente. Deja cocinar por 2 minutos adicionales para infusionar los sabores.",
+      "Paso 6: Retira la olla del fuego y deja reposar por 5 minutos. Sirve caliente en bowls, agregando más cilantro fresco si deseas.",
+      "Paso 7: Para una variante, ajusta la temperatura del fuego según tu estufa; si es eléctrica, mantén entre 150-180°C para evitar sobrecalentamiento."
+    ],
+    "tips": [
+      "Usa pescado fresco de la costa ecuatoriana para un sabor auténtico, pero si está disponible, elige variedades locales para mantener la frescura.",
+      "Agrega cilantro al final para preservar su aroma; esto realza el perfil herbal típico del Encebollado."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "encebollado soup",
+      "ecuadorian food",
+      "traditional ecuadorian dish",
+      "coastal ecuador recipe"
+    ],
+    "image_alt": "Fotografía del plato terminado de Encebollado, una sopa humeante con yuca, pescado y cebolla en un bowl tradicional ecuatoriano",
+    "seo_keywords": [
+      "receta de encebollado ecuatoriano tradicional paso a paso",
+      "como hacer encebollado autentico en casa",
+      "sopa encebollado de la costa ecuatoriana",
+      "ingredientes para encebollado facil y rapido",
+      "variantes de encebollado en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "Qué es el Encebollado y de dónde proviene?",
+        "a": "El Encebollado es una sopa tradicional de la costa ecuatoriana, originaria de ciudades como Guayaquil y Manta, hecha principalmente con yuca, pescado fresco, cebolla y cilantro, y se consume comúnmente como desayuno nutritivo."
+      },
+      {
+        "q": "Cómo se sirve el Encebollado de manera tradicional?",
+        "a": "Se sirve caliente en bowls, acompañado de plátano maduro frito, aguacate y limón extra para realzar los sabores, y es ideal para desayunos o comidas ligeras en la costa ecuatoriana."
+      },
+      {
+        "q": "Es el Encebollado adecuado para dietas específicas?",
+        "a": "Sí, es bajo en calorías y rico en proteínas del pescado, adecuado para dietas saludables, pero ajusta los ingredientes si tienes restricciones, como usar pescado magro para dietas bajas en grasa."
+      },
+      {
+        "q": "Cuánto dura el Encebollado en la nevera?",
+        "a": "El Encebollado puede durar hasta 2 días en la nevera si se guarda en un contenedor hermético; recálcialo a fuego bajo para mantener su textura y sabor originales."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Famoso por su Encebollado fresco con pescado del día, ubicado en el centro histórico, perfecto para una experiencia auténtica."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Ofrece Encebollado casero en puestos locales, con ingredientes ultra frescos del mar, ideal para probarlo en un ambiente vibrante y tradicional."
+      },
+      {
+        "name": "Restaurante La Casa del Pescado",
+        "city": "Guayaquil",
+        "description": "Especializado en mariscos, sirve Encebollado con variantes regionales, ubicado cerca de la playa para una atmósfera costera."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca fresca",
+        "substitute": "Yuca congelada o patata",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Lidl en Europa, para mantener la textura similar."
+      },
+      {
+        "original": "Pescado fresco como albacora",
+        "substitute": "Atún en lata o salmón",
+        "notes": "Encuéntralo en tiendas como Target en EE.UU. o Carrefour en Europa, para una opción conveniente sin perder el sabor marino."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil o culantro",
+        "notes": "Disponible en mercados locales o supermercados en EE.UU. y Europa, como un sustituto aromático para alérgicos."
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Encebollado ECUATORIANO | KWA 🇪🇨",
+        "videoId": "Eac1dI_SpeQ",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Eac1dI_SpeQ",
+        "embed": "https://www.youtube-nocookie.com/embed/Eac1dI_SpeQ",
+        "uploadDate": "2025-01-31",
+        "description": "Considerado unas de las mejores sopas del mundo!  El #Encebollado #Ecuatoriano se ganó el corazón de muchos! Un platillo que seguro debes probar 🌎🇪🇨 #KWAEC\n\nEncuentra todos los ingredientes aquí:\nh"
+      },
+      {
+        "title": "Como hacer Encebollado Ecuatoriano facil y delicioso.",
+        "videoId": "CR14d7aiY60",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=CR14d7aiY60",
+        "embed": "https://www.youtube-nocookie.com/embed/CR14d7aiY60",
+        "uploadDate": "2023-09-01",
+        "description": "Como hacer Encebollado Ecuatoriano facil y delicioso. Encebollado Ecuatoriano"
+      },
+      {
+        "title": "ENCEBOLLADO",
+        "videoId": "AhJpRnQqcVs",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=AhJpRnQqcVs",
+        "embed": "https://www.youtube-nocookie.com/embed/AhJpRnQqcVs",
+        "uploadDate": "2022-01-07",
+        "description": "Alfin llego! el más esperado. #Encebollado #KWAEC\n\nEncebollado (8 porciones)\nIngredientes:\nhttps://recetaskwa.com/2023/09/19/encebollado-2/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/CR14d7aiY60/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 48,
+    "created_at": "2026-03-02T23:22:33.788Z"
+  },
+  {
     "slug": "llapingachos",
     "title": "Llapingachos Ecuatorianos Receta Tradicional",
     "description": "Llapingachos son tortitas de papa fritas rellenas de queso, un plato emblemático de la cocina ecuatoriana de la Sierra. Esta receta paso a paso te guía para prepararlos en casa, con ingredientes simples y consejos para un sabor auténtico.",

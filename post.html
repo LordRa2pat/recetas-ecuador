@@ -1,54 +1,106 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P9Z6G26N');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FNPQKDBN3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5FNPQKDBN3');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813915136648702"
+    crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crónica | Ecuador a la Carta</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813915136648702"
-    crossorigin="anonymous"></script>
+  <meta name="description"
+    content="Exploraciones narrativas sobre los orígenes, las técnicas y las historias humanas detrás de cada bocado." />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ec-gold': '#DCA011',
+            'ec-blue': '#14213D',
+            'luxury-dark': '#0B1221',
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"Outfit"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
     :root {
       --luxury-dark: #0B1221;
       --ec-gold: #DCA011;
+      --gold-gradient: linear-gradient(135deg, #FFC107 0%, #DCA011 50%, #B8860B 100%);
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--luxury-dark);
-      color: white;
-      scroll-behavior: smooth;
+      background-color: var(--luxury-dark);
+      color: #F8FAFC;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .glass-card {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .hero-title {
       font-family: 'Playfair Display', serif;
+      letter-spacing: -0.04em;
     }
 
     .gold-text-gradient {
-      background: linear-gradient(to right, #DCA011, #F5D17E, #DCA011);
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      background-size: 200% auto;
-      animation: shine 5s linear infinite;
+      -webkit-text-fill-color: transparent;
     }
 
-    @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
+    .btn-luxury {
+      background: var(--gold-gradient);
+      color: #0B1221;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-luxury:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(220, 160, 17, 0.4);
     }
 
     body.dark-theme {
@@ -66,14 +118,16 @@
       border: 1px solid rgba(15, 23, 42, 0.05);
     }
 
-    .light-theme .text-white\/40,
-    .light-theme .text-white\/60,
-    .light-theme .text-white\/50 {
+    .light-theme .text-white {
+      color: #0F172A;
+    }
+
+    .light-theme .text-white\/40 {
       color: #64748B;
     }
 
-    .light-theme .text-white {
-      color: #0F172A;
+    .light-theme .text-white\/60 {
+      color: #475569;
     }
 
     .prose-premium h1,
@@ -106,53 +160,137 @@
   </style>
 </head>
 
-<body class="dark-theme">
-  <!-- PREMIUM HEADER V3.5 -->
+<body class="font-sans antialiased selection:bg-ec-gold/30">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9Z6G26N" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ═══ LUXURY NAVIGATION V2.5 ═══ -->
   <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
-    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
-      <a href="/" class="flex items-center gap-3">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-10 py-5">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-4 group shrink-0">
         <div
-          class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-xl">
+          class="w-12 h-12 rounded-2xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-2xl shadow-2xl group-hover:rotate-12 transition-transform">
           🇪🇨</div>
         <div class="flex flex-col">
-          <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Ecuador</span>
-          <span class="text-ec-gold font-bold text-[10px] tracking-[0.2em] leading-none uppercase">A LA CARTA.</span>
+          <span class="text-white font-black uppercase tracking-tighter text-xl leading-none">Ecuador</span>
+          <span class="text-ec-gold font-display font-bold text-[11px] tracking-[0.3em] leading-none">A LA CARTA.</span>
         </div>
       </a>
-      <div class="flex items-center gap-4">
-        <button id="theme-toggle"
-          class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all group overflow-hidden relative">
-          <div class="theme-sun transition-transform duration-500 group-[.light-theme]:translate-y-12">☀️</div>
-          <div
-            class="theme-moon absolute transition-transform duration-500 translate-y-12 group-[.dark-theme]:translate-y-0 text-white">
-            🌙</div>
-        </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center justify-center gap-12 flex-1">
+        <a href="recipes.html"
+          class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Recetario
+          <span class="absolute -bottom-2 left-0 w-0 h-px bg-ec-gold transition-all group-hover:w-full"></span>
+        </a>
+        <a href="menu-semanal.html"
+          class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Planificador
+          <span class="absolute -bottom-2 left-0 w-0 h-px bg-ec-gold transition-all group-hover:w-full"></span>
+        </a>
+        <a href="blog.html"
+          class="text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Ruta del Sabor
+          <span class="absolute -bottom-2 left-0 w-full h-px bg-ec-gold"></span>
+        </a>
+        <a href="nosotros.html"
+          class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Estatuto
+          <span class="absolute -bottom-2 left-0 w-0 h-px bg-ec-gold transition-all group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-6 shrink-0">
+        <a href="contact.html" class="hidden md:block btn-luxury px-8 py-3.5 rounded-2xl text-[10px]">ESCRIBIRNOS</a>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle"
+            class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all group overflow-hidden relative">
+            <div class="theme-sun transition-transform duration-500 group-[.light-theme]:translate-y-12">☀️</div>
+            <div
+              class="theme-moon absolute transition-transform duration-500 translate-y-12 group-[.dark-theme]:translate-y-0">
+              🌙</div>
+          </button>
+          <button id="nav-toggle"
+            class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors focus:outline-none">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="pt-48 pb-32">
+  <!-- Mobile Nav Overlay -->
+  <div id="nav-mobile"
+    class="fixed inset-0 z-[200] translate-x-full transition-transform duration-700 pointer-events-none">
+    <div class="absolute inset-0 bg-luxury-dark/95 backdrop-blur-2xl pointer-events-auto">
+      <button id="nav-close" class="text-white/40 hover:text-white transition-colors absolute top-16 right-16">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <nav class="flex flex-col gap-12 p-16 pt-32">
+        <a href="/" class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">INICIO.</a>
+        <a href="recipes.html"
+          class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">SABORES.</a>
+        <a href="mapa.html"
+          class="text-6xl md:text-8xl font-display font-black text-ec-gold hover:text-white transition-all italic tracking-tighter">MAPA.</a>
+        <a href="blog.html"
+          class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">DESTINOS.</a>
+        <a href="contact.html"
+          class="text-6xl md:text-8xl font-display font-black hover:text-ec-gold transition-all">CONTACTO.</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main-content" class="pt-48 pb-32">
     <div id="post-loading" class="flex items-center justify-center min-h-[50vh]">
       <div class="w-12 h-12 border-4 border-ec-gold border-t-transparent rounded-full animate-spin"></div>
     </div>
 
+    <div id="post-error" class="hidden min-h-[50vh] flex items-center justify-center">
+      <div class="text-center max-w-2xl px-6">
+        <h1 class="hero-title text-8xl text-white mb-8">404 <span class="gold-text-gradient italic">Invisible.</span>
+        </h1>
+        <p class="text-white/40 text-xl font-light mb-12 italic">Este artículo no se encuentra en nuestros archivos.</p>
+        <a href="blog.html"
+          class="inline-block py-5 px-12 glass-card rounded-2xl text-[10px] font-black tracking-[0.3em] hover:text-ec-gold transition-colors">REGRESAR
+          AL BLOG</a>
+      </div>
+    </div>
+
     <article id="post-content" class="hidden">
       <!-- CINEMATIC HERO -->
-      <section class="max-w-7xl mx-auto px-6 mb-24" data-aos="fade-up">
-        <div class="relative h-[60vh] md:h-[80vh] rounded-[56px] overflow-hidden">
-          <img id="post-hero-img" src="" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-transparent to-transparent"></div>
-          <div class="absolute bottom-16 left-12 right-12">
-            <span id="post-category"
-              class="text-ec-gold font-black text-[10px] uppercase tracking-[0.4em] mb-4 block"></span>
+      <section class="max-w-[1400px] mx-auto px-6 mb-24" data-aos="fade-up">
+        <div class="relative h-[60vh] md:h-[80vh] rounded-[48px] overflow-hidden shadow-3xl">
+          <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-24">
+            <div class="flex gap-4 mb-8">
+              <span id="post-category"
+                class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-ec-gold border-white/10"></span>
+              <span id="post-region"
+                class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-white/60 border-white/10"></span>
+            </div>
             <h1 id="post-title"
-              class="hero-title text-5xl md:text-8xl text-white tracking-tighter uppercase mb-6 leading-none"></h1>
+              class="hero-title text-5xl md:text-8xl lg:text-9xl text-white tracking-tighter uppercase mb-6 leading-[0.9]">
+            </h1>
+            <p id="post-subtitle" class="text-white/40 text-xl md:text-2xl font-light max-w-3xl mb-12 italic"></p>
+            <div class="flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
+              <span id="post-date"></span>
+              <span class="w-1 h-1 rounded-full bg-white/20"></span>
+              <span id="post-reading-time"></span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- CONTENT GRID -->
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-20">
+      <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-20">
         <div class="lg:col-span-8">
           <!-- ADS TOP -->
           <div class="mb-12"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
@@ -177,97 +315,26 @@
       </div>
     </article>
   </main>
-  <!-- Cinematic Hero -->
-  <section class="max-w-[1400px] mx-auto px-6 mb-24" data-aos="fade-up">
-    <div class="relative h-[60vh] md:h-[80vh] rounded-[48px] overflow-hidden shadow-3xl">
-      <img id="post-hero-img" src="" alt="" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/20 to-transparent"></div>
 
-      <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-24">
-        <div class="flex gap-4 mb-8">
-          <span id="post-category"
-            class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-ec-gold border-white/10"></span>
-          <span id="post-region"
-            class="glass-card px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest text-white/60 border-white/10"></span>
-        </div>
-        <h1 id="post-title"
-          class="hero-title text-5xl md:text-8xl lg:text-9xl text-white tracking-tighter uppercase mb-6 leading-[0.9]">
-        </h1>
-        <p id="post-subtitle" class="text-white/40 text-xl md:text-2xl font-light max-w-3xl mb-12 italic"></p>
-
-        <div class="flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.2em] text-white/20">
-          <span id="post-date"></span>
-          <span class="w-1 h-1 rounded-full bg-white/20"></span>
-          <span id="post-reading-time"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Editorial Layout -->
-  <div class="max-w-[1400px] mx-auto px-6">
-    <div class="flex flex-col lg:flex-row gap-20">
-
-      <!-- Content Body -->
-      <div class="flex-1 min-w-0">
-        Ver menú →
-        </a>
-      </div>
-    </div>
-    </aside>
-
-  </div>
-  </div>
-
-  </div><!-- /post-content -->
-
-  <!-- ═══ NEWSLETTER ═══ -->
-  <section class="bg-[#14213D] py-10 px-4 sm:px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-blue-200 text-xs font-bold uppercase tracking-widest mb-2">Gratis · Sin spam</p>
-      <h2 class="text-2xl font-bold font-serif text-[#FDFBF7] mb-2">📬 Suscríbete al Menú Semanal</h2>
-      <p class="text-blue-200 mb-6">Recibe cada lunes 7 recetas seleccionadas para la semana directo a tu email.</p>
-      <form id="newsletter-form" action="https://formspree.io/f/xnjbokvk" method="POST"
-        class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input type="hidden" name="_subject" value="Nueva suscripción Newsletter Ecuador a la Carta">
-        <input type="email" name="email" placeholder="tu@email.com" required
-          class="flex-1 px-4 py-3 rounded-2xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-ec-gold"
-          aria-label="Email para newsletter">
-        <button type="submit"
-          class="bg-ec-gold text-[#14213D] font-bold px-6 py-3 rounded-2xl hover:bg-yellow-300 transition-colors text-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white">
-          Suscribirme →
-        </button>
-      </form>
-    </div>
-  </section>
-
-  </main><!-- /#main-content -->
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-[#14213D] text-white py-10 px-4 sm:px-6 border-t border-[#14213D]">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-2">
-          <span class="text-2xl">🍲</span>
-          <span class="font-black">Ecuador a la Carta</span>
-        </div>
-        <nav class="flex flex-wrap items-center justify-center gap-4 text-blue-200 text-sm" aria-label="Pie de página">
-          <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-          <a href="recipes.html" class="hover:text-white transition-colors">Recetas</a>
-          <a href="menu-semanal.html" class="hover:text-white transition-colors">Menú Semanal</a>
-          <a href="blog.html" class="hover:text-white transition-colors">Blog Turismo</a>
-          <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-          <a href="privacy.html" class="hover:text-white transition-colors">Privacidad</a>
-          <a href="terms.html" class="hover:text-white transition-colors">Términos</a>
-          <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
-        </nav>
-      </div>
-      <p class="text-center text-blue-300 text-xs mt-6">&copy; 2026 Ecuador a la Carta</p>
+  <!-- ═══ LUXURY FOOTER V2.5 ═══ -->
+  <footer class="bg-luxury-dark text-white pt-32 pb-16 px-6 border-t border-white/5">
+    <div class="max-w-[1400px] mx-auto text-center">
+      <p class="text-white/20 text-[10px] font-black uppercase tracking-[0.5em]">© MMXXVI ECUADOR A LA CARTA — PREMIUM
+        GASTRONOMY ECOSYSTEM</p>
     </div>
   </footer>
-  <div class="ec-stripe" aria-hidden="true"></div>
 
-  <script type="module" src="script.js"></script>
+  <script src="script.js" type="module"></script>
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navMobile = document.getElementById('nav-mobile');
+    navToggle?.addEventListener('click', () => navMobile?.classList.remove('translate-x-full'));
+    navClose?.addEventListener('click', () => navMobile?.classList.add('translate-x-full'));
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') AOS.init({ duration: 1000, once: true });
+    });
+  </script>
 </body>
 
 </html>

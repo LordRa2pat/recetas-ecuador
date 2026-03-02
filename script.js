@@ -1,5 +1,5 @@
 // ============================================================
-// Ecuador a la Carta — script.js v8
+// Ecuador a la Carta — script.js v3.6.2
 // Módulos: js/utils.js, js/data.js, js/ads.js,
 //          js/render.js, js/seo.js, js/prices.js, js/i18n.js
 // ============================================================
@@ -797,33 +797,6 @@ async function initBlog() {
   applyBlogFilters();
 }
 
-function renderBlogCard(p) {
-  // Determinamos si es un slot grande o pequeño basado en el ID o posición (simplificado)
-  const isLarge = p.id % 5 === 0;
-  const colSpan = isLarge ? 'md:col-span-8' : 'md:col-span-4';
-  const minHeight = isLarge ? 'min-h-[500px]' : 'min-h-[350px]';
-
-  return `
-    <div class="${colSpan} glass-card rounded-[48px] overflow-hidden group relative ${minHeight}" data-aos="fade-up">
-      <div class="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-1000">
-        <img src="${p.image_url || 'https://images.unsplash.com/photo-1547514701-42782101795e?w=800&q=80'}" 
-             class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" 
-             alt="${p.title}">
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-      <div class="absolute bottom-8 left-8 right-8">
-        <span class="text-ec-gold font-black text-[8px] uppercase tracking-[0.3em] mb-3 block">${p.category || 'Crónica'}</span>
-        <h3 class="${isLarge ? 'text-3xl md:text-5xl' : 'text-xl md:text-2xl'} hero-title font-black text-white mb-4 uppercase tracking-tighter leading-tight">
-          ${p.title}
-        </h3>
-        <p class="text-white/60 text-xs font-light leading-relaxed mb-6 line-clamp-2">${p.description || ''}</p>
-        <a href="post.html?slug=${p.slug}" class="inline-flex px-8 py-4 bg-white text-black rounded-2xl text-[9px] font-black tracking-widest uppercase hover:bg-ec-gold transition-colors">
-          LEER MÁS
-        </a>
-      </div>
-    </div>
-  `;
-}
 
 // ─── Página: POST ─────────────────────────────────────────────
 async function initPost() {
@@ -978,19 +951,6 @@ async function initPost() {
   initAds();
 }
 
-// ─── Blog preview en index ─────────────────────────────────────
-async function loadBlogPreview() {
-  var grid = document.getElementById("blog-preview-grid");
-  if (!grid) return;
-  var posts = await loadPosts();
-  if (posts.length === 0) {
-    grid.innerHTML =
-      '<div class="col-span-full text-center py-12 text-gray-400">' +
-      '<p class="font-medium">Pr\u00f3ximamente: art\u00edculos de turismo</p></div>';
-    return;
-  }
-  grid.innerHTML = posts.slice(0, 3).map(renderBlogCard).join("");
-}
 
 // ─── Página: MENÚ SEMANAL ─────────────────────────────────────
 async function initMenuSemanal() {

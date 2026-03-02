@@ -952,141 +952,7 @@ async function initPost() {
 }
 
 
-// ─── Página: MENÚ SEMANAL ─────────────────────────────────────
-async function initMenuSemanal() {
-  var recipes = await loadRecipes();
-  var grid = document.getElementById("menu-grid");
-  var regenBtn = document.getElementById("menu-regen");
-  if (!grid) return;
 
-  var DAYS = [
-    "Lunes",
-    "Martes",
-    "Mi\u00e9rcoles",
-    "Jueves",
-    "Viernes",
-    "S\u00e1bado",
-    "Domingo",
-  ];
-  var DAY_EMOJIS = [
-    "\uD83C\uDF31",
-    "\uD83C\uDF72",
-    "\uD83C\uDF5B",
-    "\uD83C\uDF7D\uFE0F",
-    "\uD83E\uDD57",
-    "\uD83C\uDF89",
-    "\u2728",
-  ];
-
-  function pickMenu() {
-    var mains = recipes.filter(function (r) {
-      return (
-        !r.category ||
-        [
-          "Platos Fuertes",
-          "Sopas",
-          "Mariscos",
-          "Desayunos",
-          "Entradas",
-        ].indexOf(r.category) !== -1
-      );
-    });
-    var desserts = recipes.filter(function (r) {
-      return r.category === "Postres";
-    });
-    var shuffled = mains.slice().sort(function () {
-      return Math.random() - 0.5;
-    });
-    var dessertShuffled = desserts.slice().sort(function () {
-      return Math.random() - 0.5;
-    });
-
-    var result = [];
-    for (var i = 0; i < 7; i++) {
-      if ((i === 5 || i === 6) && dessertShuffled.length > 0) {
-        result.push(
-          dessertShuffled.shift() || shuffled[i % shuffled.length] || null,
-        );
-      } else {
-        result.push(shuffled[i % shuffled.length] || null);
-      }
-    }
-    return result;
-  }
-
-  function renderMenu() {
-    var menu = pickMenu();
-    if (recipes.length === 0) {
-      grid.innerHTML =
-        '<div class="col-span-full text-center py-16 text-gray-400">' +
-        '<div class="text-5xl mb-4">\uD83D\uDCC5</div>' +
-        '<p class="text-lg font-medium">Pronto publicaremos el men\u00fa semanal</p>' +
-        "</div>";
-      return;
-    }
-    grid.innerHTML = DAYS.map(function (day, i) {
-      var r = menu[i];
-      if (!r)
-        return (
-          '<div class="bg-white rounded-3xl shadow-md p-5 text-center text-gray-400 border border-gray-100">' +
-          '<p class="font-bold">' +
-          DAY_EMOJIS[i] +
-          " " +
-          day +
-          "</p>" +
-          '<p class="text-sm mt-2">Sin receta</p></div>'
-        );
-      var img =
-        r.image_url ||
-        "https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&q=70";
-      return (
-        '<a href="recipe.html?slug=' +
-        encodeURIComponent(r.slug) +
-        '"' +
-        ' class="group bg-white rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 overflow-hidden block">' +
-        '<div class="relative h-36 overflow-hidden">' +
-        '<img src="' +
-        escapeHtml(img) +
-        '" alt="' +
-        escapeHtml(r.title) +
-        '"' +
-        ' class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">' +
-        '<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>' +
-        '<div class="absolute top-3 left-3 bg-[#0033A0] text-white text-xs font-bold px-2.5 py-1 rounded-full">' +
-        DAY_EMOJIS[i] +
-        " " +
-        day +
-        "</div>" +
-        "</div>" +
-        '<div class="p-4">' +
-        '<p class="font-bold text-gray-900 text-sm leading-snug group-hover:text-[#0033A0] transition-colors">' +
-        escapeHtml(r.title) +
-        "</p>" +
-        (r.total_time
-          ? '<p class="text-xs text-gray-400 mt-1">\u23f1 ' +
-          escapeHtml(r.total_time) +
-          "</p>"
-          : "") +
-        (r.region
-          ? '<p class="text-xs text-[#0033A0] mt-1 font-medium">' +
-          escapeHtml(r.region) +
-          "</p>"
-          : "") +
-        "</div>" +
-        "</a>"
-      );
-    }).join("");
-    initAds();
-  }
-
-  renderMenu();
-  if (regenBtn) {
-    regenBtn.addEventListener("click", function () {
-      grid.innerHTML = renderSkeleton(7);
-      setTimeout(renderMenu, 300);
-    });
-  }
-}
 
 // ─── Valoración con estrellas (localStorage) ──────────────────
 var RATING_LABELS = [
@@ -1610,7 +1476,68 @@ function initFlavorProfile(recipe) {
   bars.dulzor.style.width = `${(hash % 100)}%`;
   bars.acidez.style.width = `${((hash * 7) % 100)}%`;
   bars.picante.style.width = `${(recipe.spicy_level * 20)}%`;
-  bars.umami.style.width = `${((hash * 3) % 100)}%`;
+}
+
+// ─── Página: MENU SEMANAL ─────────────────────────────────────
+async function initMenuSemanal() {
+  const btn = document.getElementById("menu-regen");
+  const grid = document.getElementById("menu-grid");
+  if (!grid) return;
+
+  const recipes = await loadRecipes();
+
+  function generateMenu() {
+    if (!recipes || recipes.length === 0) {
+      grid.innerHTML = '<div class="col-span-full text-center py-20 text-white/40 italic">Cargando orquestación...</div>';
+      return;
+    }
+    const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+    const menu = shuffled.slice(0, 7);
+
+    const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+    grid.innerHTML = menu.map((r, i) => `
+      <div class="glass-card rounded-[32px] overflow-hidden group relative flex flex-col h-full border border-white/5 hover:border-ec-gold/30 transition-all duration-500 hover:-translate-y-2 cursor-pointer" onclick="window.location.href='recipe.html?slug=${encodeURIComponent(r.slug)}'">
+        <div class="absolute top-4 left-4 z-10 px-4 py-1.5 bg-[#0B1221]/80 backdrop-blur-md rounded-xl border border-white/10 shadow-xl">
+          <span class="text-ec-gold font-black text-[10px] uppercase tracking-widest">${days[i]}</span>
+        </div>
+        <div class="aspect-[4/3] w-full relative overflow-hidden">
+          <img src="${r.image_url || 'images/default-recipe.jpg'}" alt="${escapeHtml(r.title)}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent opacity-80"></div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="font-display font-black text-xl text-white mb-2 leading-tight group-hover:text-ec-gold transition-colors">${escapeHtml(r.title)}</h3>
+          <p class="text-white/40 text-xs font-light line-clamp-2 mb-6">${escapeHtml(r.description || '')}</p>
+          <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+            <span class="text-white/30 text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">⏳ ${escapeHtml(r.total_time || '-- min')}</span>
+            <span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all font-bold">→</span>
+          </div>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  generateMenu();
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const icon = btn.querySelector("span");
+      if (icon) {
+        let currentRot = parseInt(icon.dataset.rot || "0");
+        currentRot += 360;
+        icon.style.transform = `rotate(${currentRot}deg)`;
+        icon.dataset.rot = currentRot;
+      }
+      grid.innerHTML = `
+        <div class="col-span-full glass-card rounded-[32px] p-12 text-center animate-pulse border border-ec-gold/20">
+          <span class="text-4xl block mb-4">🔄</span>
+          <span class="text-ec-gold font-black text-[10px] uppercase tracking-widest block mb-2">Re-orquestando sabores...</span>
+        </div>
+      `;
+      setTimeout(generateMenu, 600);
+      if (typeof trackEvent === 'function') trackEvent("menu_regen_clicked");
+    });
+  }
 }
 
 // ─── Planificador de Menús Automatizado ───────────────────
@@ -1626,7 +1553,7 @@ function initMenuPlanner() {
       const menu = shuffled.slice(0, 3);
 
       let html = `
-        <div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-luxury-dark/95 backdrop-blur-2xl">
+        < div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-luxury-dark/95 backdrop-blur-2xl" >
           <div class="max-w-4xl w-full">
             <div class="flex justify-between items-center mb-12">
               <h2 class="text-white font-display font-black italic text-4xl uppercase tracking-tighter">Tu Menú del Día 🇪🇨</h2>
@@ -1644,8 +1571,8 @@ function initMenuPlanner() {
               `).join("")}
             </div>
           </div>
-        </div>
-      `;
+        </div >
+        `;
       document.body.insertAdjacentHTML('beforeend', html);
     } catch (e) { }
   });
@@ -1677,7 +1604,7 @@ function initChefMode() {
   if (!lock || !btn || !content) return;
 
   btn.addEventListener("click", () => {
-    btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> CARGANDO ANUNCIO...`;
+    btn.innerHTML = `< span class="animate-spin inline-block mr-2" >⏳</span > CARGANDO ANUNCIO...`;
     setTimeout(() => {
       lock.remove();
       content.classList.remove('hidden');
@@ -1694,17 +1621,17 @@ function initNewsletter() {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     const html = `
-      <div class="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-luxury-dark/95 backdrop-blur-2xl">
-        <div class="max-w-md w-full glass-card p-12 rounded-[48px] border border-ec-gold/20 text-center">
-          <span class="text-4xl mb-6 block">📩</span>
-          <h3 class="text-white font-display font-black italic text-2xl uppercase tracking-tighter mb-4">Secretos de la Abuela</h3>
-          <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-8">Recetas exclusivas y tips B2B cada semana.</p>
-          <input type="email" placeholder="tu@email.com" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white mb-6 focus:border-ec-gold outline-none">
-          <button onclick="this.innerHTML='¡UNIDO!'; setTimeout(()=>this.closest('div.fixed').remove(), 1000)" class="w-full py-5 bg-ec-gold text-luxury-dark font-black text-xs tracking-widest uppercase rounded-2xl shadow-2xl">UNIRME A LA ÉLITE</button>
-          <button onclick="this.closest('div.fixed').remove()" class="mt-6 text-white/20 text-[8px] font-bold uppercase tracking-widest hover:text-white transition-all">No me interesa cocinar como pro</button>
-        </div>
-      </div>
-    `;
+    < div class= "fixed inset-0 z-[200] flex items-center justify-center p-6 bg-luxury-dark/95 backdrop-blur-2xl" >
+    <div class="max-w-md w-full glass-card p-12 rounded-[48px] border border-ec-gold/20 text-center">
+      <span class="text-4xl mb-6 block">📩</span>
+      <h3 class="text-white font-display font-black italic text-2xl uppercase tracking-tighter mb-4">Secretos de la Abuela</h3>
+      <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-8">Recetas exclusivas y tips B2B cada semana.</p>
+      <input type="email" placeholder="tu@email.com" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white mb-6 focus:border-ec-gold outline-none">
+        <button onclick="this.innerHTML='¡UNIDO!'; setTimeout(()=>this.closest('div.fixed').remove(), 1000)" class="w-full py-5 bg-ec-gold text-luxury-dark font-black text-xs tracking-widest uppercase rounded-2xl shadow-2xl">UNIRME A LA ÉLITE</button>
+        <button onclick="this.closest('div.fixed').remove()" class="mt-6 text-white/20 text-[8px] font-bold uppercase tracking-widest hover:text-white transition-all">No me interesa cocinar como pro</button>
+    </div>
+      </div >
+      `;
     document.body.insertAdjacentHTML('beforeend', html);
   });
 }
@@ -1714,13 +1641,13 @@ function initHomeAds() {
   const container = document.getElementById('ads-container');
   if (container) {
     container.innerHTML = `
-      <div class="glass-card p-4 rounded-2xl border border-white/5 text-center">
+      < div class= "glass-card p-4 rounded-2xl border border-white/5 text-center" >
         <span class="text-[8px] font-bold text-white/20 uppercase tracking-widest block mb-2">Espacio Patrocinado</span>
         <div class="h-32 bg-white/5 rounded-xl flex items-center justify-center">
           <span class="text-white/10 text-[10px] uppercase font-black tracking-tighter italic">Ad Placement V3.0</span>
         </div>
-      </div>
-    `;
+      </div >
+      `;
   }
 }
 
@@ -1728,54 +1655,54 @@ function initHomeAds() {
 // ─── Dashboard de Emprendedor ────────────────────────────
 function initEntrepreneurDashboard() {
   const html = `
-    <div class="fixed inset-0 z-[300] bg-luxury-dark overflow-y-auto p-12">
+      < div class= "fixed inset-0 z-[300] bg-luxury-dark overflow-y-auto p-12" >
       <div class="max-w-[1400px] mx-auto">
         <div class="flex justify-between items-center mb-16">
           <h2 class="text-white font-display font-black italic text-5xl uppercase tracking-tighter">Panel de Control: Emprendedor PRO 📈</h2>
           <button onclick="window.location.hash=''" class="px-8 py-3 rounded-xl border border-white/20 text-white font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-luxury-dark transition-all">Salir del Dashboard</button>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-           <div class="glass-card p-8 rounded-[40px] border border-ec-gold/20">
-              <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest block mb-4">Ingresos Hoy (Est.)</span>
-              <p class="text-4xl font-display font-black text-white italic">$ 124.50</p>
-           </div>
-           <div class="glass-card p-8 rounded-[40px] border border-white/5">
-              <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Órdenes a través de Huecas</span>
-              <p class="text-4xl font-display font-black text-white italic">12</p>
-           </div>
-           <div class="glass-card p-8 rounded-[40px] border border-white/5">
-              <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Ahorro en Insumos (n8n)</span>
-              <p class="text-4xl font-display font-black text-ec-blue italic">15%</p>
-           </div>
-           <div class="glass-card p-8 rounded-[40px] border border-white/5">
-              <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Nivel de Reputación</span>
-              <p class="text-4xl font-display font-black text-ec-red italic">PLATINO</p>
-           </div>
+          <div class="glass-card p-8 rounded-[40px] border border-ec-gold/20">
+            <span class="text-[9px] font-black text-ec-gold uppercase tracking-widest block mb-4">Ingresos Hoy (Est.)</span>
+            <p class="text-4xl font-display font-black text-white italic">$ 124.50</p>
+          </div>
+          <div class="glass-card p-8 rounded-[40px] border border-white/5">
+            <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Órdenes a través de Huecas</span>
+            <p class="text-4xl font-display font-black text-white italic">12</p>
+          </div>
+          <div class="glass-card p-8 rounded-[40px] border border-white/5">
+            <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Ahorro en Insumos (n8n)</span>
+            <p class="text-4xl font-display font-black text-ec-blue italic">15%</p>
+          </div>
+          <div class="glass-card p-8 rounded-[40px] border border-white/5">
+            <span class="text-[9px] font-black text-white/40 uppercase tracking-widest block mb-4">Nivel de Reputación</span>
+            <p class="text-4xl font-display font-black text-ec-red italic">PLATINO</p>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-           <div class="p-10 bg-white/5 rounded-[48px] border border-white/5">
-              <h4 class="text-white font-bold text-xl uppercase italic mb-8">Top Recetas Monetizables</h4>
-              <div class="space-y-6">
-                 ${['Fanesca Tradicional', 'Encebollado Mixto', 'Bolón de Queso'].map(r => `
+          <div class="p-10 bg-white/5 rounded-[48px] border border-white/5">
+            <h4 class="text-white font-bold text-xl uppercase italic mb-8">Top Recetas Monetizables</h4>
+            <div class="space-y-6">
+              ${['Fanesca Tradicional', 'Encebollado Mixto', 'Bolón de Queso'].map(r => `
                     <div class="flex items-center justify-between p-4 bg-luxury-dark/40 rounded-2xl border border-white/5">
                        <span class="text-white/60 font-bold">${r}</span>
                        <span class="text-ec-gold font-black">45% Margen</span>
                     </div>
                  `).join("")}
-              </div>
-           </div>
-           <div class="p-10 bg-ec-gold rounded-[48px] border border-white/5 flex flex-col items-center justify-center text-center">
-              <span class="text-4xl mb-6">📢</span>
-              <h4 class="text-luxury-dark font-black text-2xl uppercase italic mb-4">Impulsa tu Negocio</h4>
-              <p class="text-luxury-dark/60 text-sm font-bold mb-8">Activa campañas segmentadas para usuarios de tu ciudad.</p>
-              <button class="px-12 py-5 bg-luxury-dark text-white font-black text-[10px] tracking-widest uppercase rounded-2xl hover:scale-105 transition-transform">CREAR ANUNCIO</button>
-           </div>
+            </div>
+          </div>
+          <div class="p-10 bg-ec-gold rounded-[48px] border border-white/5 flex flex-col items-center justify-center text-center">
+            <span class="text-4xl mb-6">📢</span>
+            <h4 class="text-luxury-dark font-black text-2xl uppercase italic mb-4">Impulsa tu Negocio</h4>
+            <p class="text-luxury-dark/60 text-sm font-bold mb-8">Activa campañas segmentadas para usuarios de tu ciudad.</p>
+            <button class="px-12 py-5 bg-luxury-dark text-white font-black text-[10px] tracking-widest uppercase rounded-2xl hover:scale-105 transition-transform">CREAR ANUNCIO</button>
+          </div>
         </div>
       </div>
-    </div>
-  `;
+    </div >
+      `;
   document.body.insertAdjacentHTML('beforeend', html);
   window.addEventListener('hashchange', () => {
     if (window.location.hash !== '#dashboard') {
@@ -1832,11 +1759,11 @@ function initMapa() {
 
         if (cityList) {
           cityList.innerHTML = info.cities.map(c => `
-            <button onclick="window.location.href='recipes.html?city=${encodeURIComponent(c)}'" 
-               class="px-5 py-3 glass-card rounded-2xl text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-ec-gold hover:border-ec-gold/50 hover:bg-white/5 transition-all">
-               ${c}
-            </button>
-          `).join("");
+      < button onclick = "window.location.href='recipes.html?city=${encodeURIComponent(c)}'" 
+               class= "px-5 py-3 glass-card rounded-2xl text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-ec-gold hover:border-ec-gold/50 hover:bg-white/5 transition-all" >
+      ${c}
+            </button >
+      `).join("");
         }
 
         initialMsg?.classList.add("hidden");
@@ -1893,6 +1820,9 @@ function initMapa() {
       } else if (page === 'mapa') {
         console.log("[v3.6.1] Iniciando Mapa...");
         if (typeof initMapa === 'function') initMapa();
+      } else if (page === 'menu-semanal') {
+        console.log("[v3.6.1] Iniciando Menu Semanal...");
+        if (typeof initMenuSemanal === 'function') await initMenuSemanal();
       } else {
         console.warn("[v3.6.1] Página no reconocida en router:", page);
       }

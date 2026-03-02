@@ -151,7 +151,7 @@
 
     <!-- BENTO BLOG GRID -->
     <section class="max-w-[1400px] mx-auto px-6 py-24">
-      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-12 gap-8 blog-bento-grid">
+      <div id="bento-hero" class="grid grid-cols-1 md:grid-cols-12 gap-8 blog-bento-grid">
         <!-- Main Bento Slot -->
         <div class="md:col-span-8 glass-card rounded-[48px] overflow-hidden group relative min-h-[500px]"
           data-aos="fade-right">
@@ -191,6 +191,36 @@
             <span class="text-[9px] font-bold text-white/20 uppercase tracking-widest italic">8 min. lectura</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══ BLOG ARCHIVE FILTERS & GRID ═══ -->
+    <section class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
+      <div class="flex flex-col md:flex-row items-center gap-6 mb-16 relative z-20">
+        <input type="text" id="blog-search" placeholder="Buscar crónicas..."
+          class="w-full md:w-96 bg-[#0B1221] border border-white/10 text-white px-6 py-4 rounded-2xl outline-none focus:border-ec-gold transition-colors font-light text-sm shadow-xl">
+        <select id="blog-category"
+          class="w-full md:w-48 bg-[#0B1221] border border-white/10 text-white px-6 py-4 rounded-2xl outline-none focus:border-ec-gold appearance-none font-light text-sm">
+          <option value="">Todas las Categorías</option>
+        </select>
+        <select id="blog-region"
+          class="w-full md:w-48 bg-[#0B1221] border border-white/10 text-white px-6 py-4 rounded-2xl outline-none focus:border-ec-gold appearance-none font-light text-sm">
+          <option value="">Todas las Regiones</option>
+        </select>
+        <button id="blog-clear"
+          class="w-full md:w-auto px-6 py-4 text-white/40 hover:text-white font-bold text-xs uppercase tracking-widest transition-colors">
+          Limpiar
+        </button>
+      </div>
+
+      <div class="mb-12 flex items-center justify-between">
+        <h2 class="text-3xl font-display font-black text-white italic uppercase tracking-tighter">Últimas Publicaciones
+        </h2>
+        <span id="blog-results-count" class="text-ec-gold font-bold text-xs uppercase tracking-widest"></span>
+      </div>
+
+      <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        <!-- Posts load here -->
       </div>
     </section>
   </main>

@@ -1,5 +1,143 @@
 [
   {
+    "slug": "quimbolitos",
+    "title": "Quimbolitos Ecuatorianos Receta Tradicional",
+    "description": "Quimbolitos son un delicioso postre tradicional ecuatoriano envuelto en hojas de maíz, perfecto para fiestas familiares. Esta receta paso a paso te guía para preparar esta delicia de la Sierra con ingredientes frescos y técnicas auténticas, ideal para quienes aman la cocina latina.",
+    "region": "Sierra",
+    "category": "Postres",
+    "difficulty": "Facil",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "45 min",
+    "total_time": "75 min",
+    "ingredients": [
+      "2 tazas Harina de maíz precocida (comprar en Supermaxi)",
+      "1/2 taza Manteca de cerdo (comprar en Megamaxi)",
+      "1 taza Azúcar blanca (comprar en TIA)",
+      "3 unidades Huevos (comprar en Mercado local)",
+      "1 taza Leche entera (comprar en Supermaxi)",
+      "1 cucharadita Anís en semillas (comprar en Megamaxi)",
+      "1/2 taza Pasas (comprar en TIA)",
+      "12 unidades Hojas de maíz frescas (comprar en Mercado local)",
+      "1/2 cucharadita Sal (comprar en Supermaxi)",
+      "1 cucharadita Esencia de vainilla (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En un tazón grande, mezcle la harina de maíz con la sal y el anís durante 5 minutos para integrar los sabores.",
+      "Paso 2: Agregue la manteca de cerdo a temperatura ambiente y bata con una cuchara de madera durante 10 minutos hasta obtener una mezcla cremosa.",
+      "Paso 3: Incorpore los huevos uno por uno, luego añada el azúcar, la leche y la esencia de vainilla, batiendo por 5 minutos más para una masa homogénea.",
+      "Paso 4: Mezcle las pasas en la masa y deje reposar durante 10 minutos para que los ingredientes se hidraten.",
+      "Paso 5: Limpie las hojas de maíz con agua tibia y enrolle porciones de masa en ellas, asegurando que estén bien cerradas para evitar fugas durante la cocción.",
+      "Paso 6: Coloque los quimbolitos en una olla con agua hirviendo a 100°C y cocine al vapor durante 45 minutos, verificando el nivel de agua cada 15 minutos.",
+      "Paso 7: Retire del vapor y deje enfriar durante 10 minutos antes de deshojar y servir calientes."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Use hojas de maíz frescas para un sabor auténtico y evite las secas, que pueden romperse fácilmente.",
+      "Consejo 2: Para un toque regional, agregue un poco de panela en lugar de azúcar para una variante más dulce de la Sierra."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Riobamba"
+    ],
+    "image_keywords": [
+      "quimbolitos ecuatorianos",
+      "ecuadorian food",
+      "traditional dessert"
+    ],
+    "image_alt": "Fotografía de quimbolitos ecuatorianos terminados, envueltos en hojas de maíz y listos para servir",
+    "seo_keywords": [
+      "receta de quimbolitos ecuatorianos paso a paso",
+      "quimbolitos tradicionales de la sierra ecuatoriana",
+      "como hacer quimbolitos en casa",
+      "postre ecuatoriano quimbolitos autentico",
+      "ingredientes para quimbolitos receta facil",
+      "variantes de quimbolitos en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué son los quimbolitos y de dónde provienen?",
+        "a": "Los quimbolitos son un postre tradicional ecuatoriano originario de la Sierra, hechos con harina de maíz, manteca y otros ingredientes, envueltos en hojas de maíz y cocidos al vapor, similar a los tamales dulces."
+      },
+      {
+        "q": "¿Puedo congelar los quimbolitos después de prepararlos?",
+        "a": "Sí, puedes congelar los quimbolitos cocidos en un recipiente hermético por hasta 2 meses; para recalentar, usa vapor durante 10-15 minutos para mantener su textura suave."
+      },
+      {
+        "q": "¿Es necesario usar hojas de maíz frescas?",
+        "a": "Aunque las hojas frescas dan el mejor sabor, puedes usar hojas secas remojadas en agua caliente; sin embargo, esto puede afectar ligeramente el aroma tradicional."
+      },
+      {
+        "q": "¿Cuánto tiempo duran los quimbolitos una vez cocidos?",
+        "a": ""
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante La Ronda",
+        "city": "Quito",
+        "description": "Un lugar histórico en el centro de Quito donde sirven quimbolitos auténticos con ingredientes locales y un ambiente colonial."
+      },
+      {
+        "name": "Mercado San Francisco",
+        "city": "Riobamba",
+        "description": "Mercado local donde puedes probar quimbolitos freshly made por vendedores tradicionales, ideal para una experiencia cultural auténtica."
+      },
+      {
+        "name": "Café Cultura"
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Manteca de cerdo",
+        "substitute": "Manteca vegetal",
+        "notes": "Disponible en supermercados como Walmart en EE.UU., ideal para versiones veganas sin alterar el sabor graso."
+      },
+      {
+        "original": "Hojas de maíz",
+        "substitute": "Hojas de plátano",
+        "notes": "Fácil de encontrar en tiendas latinas en Europa, como en mercados étnicos de Londres, para mantener la técnica de envoltura."
+      },
+      {
+        "original": "Harina de maíz precocida",
+        "substitute": "Harina de maíz regular"
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "QUIMBOLITO … Un dulce encantador !",
+        "videoId": "QcIyzmiPO4Y",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=QcIyzmiPO4Y",
+        "embed": "https://www.youtube-nocookie.com/embed/QcIyzmiPO4Y",
+        "uploadDate": "2021-03-04",
+        "description": "Los #Quimbolitos son unos delicados pastelitos que van envueltos en hoja de Achira , dandole un sabor exótico único en el mundo! Debes probarlos y quedaras enamorado para siempre de ellos!! \n\n#Recetad"
+      },
+      {
+        "title": "Cómo hacer CALDO DE BOLA Ecuatoriano 🇪🇨 con Camarón 🦐 Receta paso a paso | KWA",
+        "videoId": "H4zMaS9ypo4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=H4zMaS9ypo4",
+        "embed": "https://www.youtube-nocookie.com/embed/H4zMaS9ypo4",
+        "uploadDate": "2025-07-19",
+        "description": "🦐 ¡Deléitate con esta receta tradicional de Caldo de Bola rellena de camarón! 🇪🇨\n\nEn este video te enseñamos paso a paso cómo preparar un delicioso caldo de bola ecuatoriano, una sopa típica llena "
+      },
+      {
+        "title": "Como HACER QUIMBOLITOS ECUATORIANOS",
+        "videoId": "FHLPpr0yXmQ",
+        "channel": "Cocinando con Manu",
+        "url": "https://www.youtube.com/watch?v=FHLPpr0yXmQ",
+        "embed": "https://www.youtube-nocookie.com/embed/FHLPpr0yXmQ",
+        "uploadDate": "2019-04-17",
+        "description": "hola amigos..\nesta semana les traugo una receta deliciosa tipico de nuestro pais..\nQuimbolitos Ecuatorianos delicioso rapido y facil.. \ncontinua con nossotros...\n\n\nsi te gusto suscribete subo videos t"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/QcIyzmiPO4Y/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 45,
+    "created_at": "2026-03-02T05:22:41.437Z"
+  },
+  {
     "slug": "mote-pillo",
     "title": "Mote Pillo Ecuatoriano Receta Tradicional",
     "description": "Mote Pillo es un plato icónico de la cocina ecuatoriana, hecho con maíz hominy y huevos, ideal para desayunos energéticos. Esta receta detallada te permite recrear su sabor auténtico en casa, con ingredientes simples y pasos fáciles.",

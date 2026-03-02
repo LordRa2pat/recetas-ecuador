@@ -1,5 +1,146 @@
 [
   {
+    "slug": "llapingachos",
+    "title": "Llapingachos Ecuatorianos Receta Tradicional",
+    "description": "Llapingachos son tortitas de papa fritas rellenas de queso, un plato emblemático de la cocina ecuatoriana de la Sierra. Esta receta paso a paso te guía para prepararlos en casa, con ingredientes simples y consejos para un sabor auténtico.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "1 kg Papas (comprar en Supermaxi)",
+      "200 g Queso blanco (comprar en Mercado local)",
+      "1 unidad mediana Cebolla (comprar en TIA)",
+      "100 ml Aceite vegetal (comprar en Megamaxi)",
+      "1 cucharadita Sal (comprar en Supermaxi)",
+      "1 cucharadita Achiote (comprar en Mercado local)",
+      "1 unidad Huevo (comprar en TIA)",
+      "50 ml Leche (comprar en Megamaxi)",
+      "2 cucharadas Harina (comprar en Supermaxi)",
+      "2 cucharadas picadas Perejil fresco (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Lava y pela 1 kg de papas, luego córtalas en trozos y hierve en agua con sal durante 15 minutos a fuego medio hasta que estén suaves.",
+      "Paso 2: Escurre las papas y machácalas en un bol hasta formar un puré uniforme, permitiendo que se enfríen por 5 minutos para manejar mejor la mezcla.",
+      "Paso 3: Agrega 200 g de queso blanco rallado, 1 cucharadita de achiote, 1 cucharadita de sal y 2 cucharadas de perejil picado al puré, mezclando bien para integrar los sabores.",
+      "Paso 4: Forma bolas con la mezcla de papa, aplástalas en discos de 1 cm de grosor y rellénalas con un poco más de queso en el centro, sellando los bordes.",
+      "Paso 5: En una sartén, calienta 100 ml de aceite vegetal a 180°C y fríe los llapingachos por 5 minutos por cada lado hasta que estén dorados y crujientes.",
+      "Paso 6: Retira los llapingachos del aceite y escúrrelos en papel absorbente por 2 minutos, luego sírvelos calientes acompañados de cebolla curtida.",
+      "Paso 7: Para la cebolla curtida, corta 1 cebolla en rodajas finas, sazónala con sal y vinagre, y déjala reposar por 10 minutos antes de servir.",
+      "Paso 8: Sirve los llapingachos en platos individuales, agregando un huevo frito por porción si se desea, y acompaña con ensalada fresca."
+    ],
+    "tips": [
+      "Usa papas amarillas para un sabor más cremoso y auténtico, como las de la Sierra ecuatoriana.",
+      "Evita sobrecocinar las papas para que la mezcla no quede demasiado blanda y se desarme al freír."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Ambato"
+    ],
+    "image_keywords": [
+      "llapingachos",
+      "ecuadorian food",
+      "traditional potato cakes"
+    ],
+    "image_alt": "Plato de llapingachos ecuatorianos terminados, con tortitas doradas rellenas de queso y cebolla curtida",
+    "seo_keywords": [
+      "receta de llapingachos ecuatorianos tradicionales paso a paso",
+      "como preparar llapingachos en casa estilo sierra",
+      "platos tipicos de ecuador llapingachos con queso",
+      "llapingachos receta facil y autentica",
+      "comida ecuatoriana llapingachos para principiantes",
+      "ingredientes para llapingachos de la sierra ecuatoriana"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué son los llapingachos y de dónde provienen?",
+        "a": "Los llapingachos son tortitas de papa fritas rellenas de queso, originarias de la Sierra ecuatoriana, específicamente ciudades como Quito y Ambato, y forman parte de la gastronomía andina."
+      },
+      {
+        "q": "¿Puedo hacer llapingachos sin freír para una versión más saludable?",
+        "a": "Sí, puedes hornearlos en lugar de freírlos; precalienta el horno a 200°C, coloca los llapingachos en una bandeja y hornea por 15-20 minutos por lado para reducir el aceite sin perder sabor."
+      },
+      {
+        "q": "¿Cuáles son los acompañamientos tradicionales para los llapingachos?",
+        "a": "Tradicionalmente se sirven con cebolla curtida, chorizo, huevo frito y ensalada de tomate; en la Sierra, a menudo se combinan con carnes asadas para un plato completo."
+      },
+      {
+        "q": "¿Cuánto tiempo duran los llapingachos guardados?",
+        "a": "Pueden durar hasta 2 días en el refrigerador si se almacenan en un contenedor hermético; recalentarlos en una sartén evita que se pongan blandos."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en Quito donde probar llapingachos tradicionales con ingredientes frescos de la región."
+      },
+      {
+        "name": "Mercado Central de Ambato",
+        "city": "Ambato",
+        "description": "En este mercado, vendedores locales ofrecen llapingachos recién hechos, ideales para experimentar la autenticidad de la Sierra."
+      },
+      {
+        "name": "Casa de la Cultura Ecuatoriana",
+        "city": "Quito",
+        "description": "Eventos culturales aquí incluyen degustaciones de llapingachos, combinados con historia y folklore ecuatoriano."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Queso blanco ecuatoriano",
+        "substitute": "Queso fresco o mozzarella",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa para mantener la cremosidad."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Encontrado en tiendas de especias como Whole Foods en EE.UU. o Lidl en Europa, para un color y sabor similar."
+      },
+      {
+        "original": "Papas amarillas",
+        "substitute": "Papas russet",
+        "notes": "Usa variedades comunes en EE.UU. como en Costco, ya que son más accesibles y proporcionan una textura similar."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Llapingachos de papa con SALSA DE MANÍ | KWA",
+        "videoId": "Un7WxYDq_4c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Un7WxYDq_4c",
+        "embed": "https://www.youtube-nocookie.com/embed/Un7WxYDq_4c",
+        "uploadDate": "2024-06-14",
+        "description": "Aprende a preparar estos deliciosos #Llapingachos de papa de una manera super fácil y rápida. Acompáñalos con una #SalsaDeManí #Deliciosa #KWAEC\n\nEncuentra todos los ingredientes aquí:\nhttps://recetas"
+      },
+      {
+        "title": "LLAPINGACHO",
+        "videoId": "S9HdmW8FHFU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=S9HdmW8FHFU",
+        "embed": "https://www.youtube-nocookie.com/embed/S9HdmW8FHFU",
+        "uploadDate": "2018-09-07",
+        "description": "Después de ver esta receta, la dieta tiene que esperar.\n\nSIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nJoakim Karud - Love mode\nhttp://twitt"
+      },
+      {
+        "title": "Prueba esta RECETA de LLAPINGACHOS",
+        "videoId": "mEWRnj5tJXw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=mEWRnj5tJXw",
+        "embed": "https://www.youtube-nocookie.com/embed/mEWRnj5tJXw",
+        "uploadDate": "2024-06-18",
+        "description": "#Llapingachos con #SalsaDeMani y #longaniza , combinación PERFECTA!\n\nSIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nMás recetas aqui: https://recetaskwa.com\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMA"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 47,
+    "created_at": "2026-03-02T17:22:43.980Z"
+  },
+  {
     "slug": "encocado-de-camarones-ecuatoriano-de-manabi",
     "title": "Encocado de Camarones Ecuatoriano de Manabí Receta Tradicional",
     "description": "Encocado de Camarones es un plato icónico de la costa ecuatoriana, elaborado con camarones frescos en una salsa cremosa de coco, especias y verduras. Esta receta tradicional de Manabí te permite recrear sus sabores tropicales en casa, ideal para amantes de los mariscos con un toque autóctono.",

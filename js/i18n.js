@@ -6,8 +6,8 @@
 'use strict';
 
 const LANG_KEY = 'ec_lang';
-const LANG_ES  = 'es';
-const LANG_EN  = 'en';
+const LANG_ES = 'es';
+const LANG_EN = 'en';
 
 // ─── Carga de strings ────────────────────────────────────────
 let _strings = null;
@@ -25,13 +25,19 @@ async function loadStrings(lang) {
 
 // ─── Preferencia de idioma ───────────────────────────────────
 export function getLang() {
-  var stored = localStorage.getItem(LANG_KEY);
-  if (stored === LANG_EN || stored === LANG_ES) return stored;
+  try {
+    var stored = localStorage.getItem(LANG_KEY);
+    if (stored === LANG_EN || stored === LANG_ES) return stored;
+  } catch (e) {
+    console.warn('[i18n] LocalStorage bloqueado, usando idioma por defecto.');
+  }
   return navigator.language && navigator.language.startsWith('en') ? LANG_EN : LANG_ES;
 }
 
 export function setLang(lang) {
-  localStorage.setItem(LANG_KEY, lang);
+  try {
+    localStorage.setItem(LANG_KEY, lang);
+  } catch (e) { }
 }
 
 // ─── Traducción de elementos conocidos ──────────────────────
@@ -39,7 +45,7 @@ function applyStrings(s) {
   if (!s || Object.keys(s).length === 0) return;
 
   // Elementos con data-i18n attribute
-  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
     var key = el.getAttribute('data-i18n');
     if (s[key] !== undefined) {
       if (el.tagName === 'INPUT' && el.type !== 'submit') {
@@ -63,11 +69,11 @@ function applyStrings(s) {
   }
 
   // Nav dropdown regions/categories/about — span children of nav-item
-  document.querySelectorAll('nav .nav-item > span').forEach(function(span) {
+  document.querySelectorAll('nav .nav-item > span').forEach(function (span) {
     var t = span.textContent.trim();
     if (t.startsWith('Regiones') || t.startsWith('Regions')) {
       if (s.nav_regions) span.textContent = s.nav_regions;
-    } else if (t.startsWith('Categor') ) {
+    } else if (t.startsWith('Categor')) {
       if (s.nav_categories) span.textContent = s.nav_categories;
     } else if (t.startsWith('Sobre') || t.startsWith('About')) {
       if (s.nav_about) span.textContent = s.nav_about;
@@ -75,14 +81,14 @@ function applyStrings(s) {
   });
 
   // "Ver Recetas" CTA button
-  document.querySelectorAll('a[href="recipes.html"].bg-ec-gold, a[href="recipes.html"].rounded-full').forEach(function(btn) {
+  document.querySelectorAll('a[href="recipes.html"].bg-ec-gold, a[href="recipes.html"].rounded-full').forEach(function (btn) {
     if (s.nav_btn_recipes) btn.textContent = s.nav_btn_recipes;
   });
 
   // Mobile nav
   var mobileNav = document.getElementById('nav-mobile');
   if (mobileNav) {
-    mobileNav.querySelectorAll('a').forEach(function(a) {
+    mobileNav.querySelectorAll('a').forEach(function (a) {
       var href = a.getAttribute('href');
       var t = a.textContent.trim();
       if (href === 'index.html') {
@@ -150,10 +156,10 @@ function injectSwitcher(currentLang) {
   ].join(';');
   btn.textContent = currentLang === LANG_ES ? 'EN' : 'ES';
 
-  btn.addEventListener('mouseenter', function() { btn.style.background = 'rgba(255,255,255,0.25)'; });
-  btn.addEventListener('mouseleave', function() { btn.style.background = 'rgba(255,255,255,0.15)'; });
+  btn.addEventListener('mouseenter', function () { btn.style.background = 'rgba(255,255,255,0.25)'; });
+  btn.addEventListener('mouseleave', function () { btn.style.background = 'rgba(255,255,255,0.15)'; });
 
-  btn.addEventListener('click', async function() {
+  btn.addEventListener('click', async function () {
     var newLang = getLang() === LANG_ES ? LANG_EN : LANG_ES;
     setLang(newLang);
     btn.textContent = newLang === LANG_ES ? 'EN' : 'ES';

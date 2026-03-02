@@ -1,42 +1,43 @@
-<svg id='ecuador-map-svg' viewBox='0 0 1000 800' class='w-full h-auto cursor-pointer drop-shadow-2xl' xmlns='http://www.w3.org/2000/svg'>
+<svg id='ecuador-map-svg' viewBox='0 100 800 650' class='w-full h-auto cursor-pointer drop-shadow-2xl' xmlns='http://www.w3.org/2000/svg'>
   <style>
-    .province { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.2); stroke-width: 0.8; transition: all 0.4s ease; }
-    .province:hover { fill: #DCA011 !important; stroke: white; filter: drop-shadow(0 0 10px #DCA011); }
+    .province { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.2); stroke-width: 0.8; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .province:hover { fill: #DCA011 !important; stroke: white; filter: drop-shadow(0 0 10px rgba(220, 160, 17, 0.5)); transform: scale(1.02); }
     .province.active { fill: #DCA011 !important; stroke: white; stroke-width: 2; }
-    .region-costa { fill: rgba(16, 185, 129, 0.1); }
-    .region-sierra { fill: rgba(59, 130, 246, 0.1); }
-    .region-amazonia { fill: rgba(239, 68, 68, 0.1); }
-    .region-insular { fill: rgba(245, 158, 11, 0.1); }
+    .region-costa { fill: rgba(16, 185, 129, 0.08); }
+    .region-sierra { fill: rgba(59, 130, 246, 0.08); }
+    .region-amazonia { fill: rgba(239, 68, 68, 0.08); }
+    .region-insular { fill: rgba(245, 158, 11, 0.08); }
   </style>
-  <!-- COSTA -->
-  <path id="esmeraldas" data-region="Costa" class="province region-costa" d="M300,50 L400,60 L380,120 L350,150 L280,130 Z" />
-  <path id="manabi" data-region="Costa" class="province region-costa" d="M200,160 L290,140 L320,320 L180,300 Z" />
-  <path id="guayas" data-region="Costa" class="province region-costa" d="M280,330 L360,340 L360,500 L230,500 L230,420 Z" />
-  <path id="santa-elena" data-region="Costa" class="province region-costa" d="M180,310 L230,320 L220,410 L160,380 Z" />
-  <path id="el-oro" data-region="Costa" class="province region-costa" d="M230,510 L330,520 L300,580 L200,560 Z" />
-  <path id="los-rios" data-region="Costa" class="province region-costa" d="M300,220 L350,210 L370,330 L330,330 Z" />
-  <path id="santo-domingo" data-region="Costa" class="province region-costa" d="M360,130 L400,140 L410,200 L350,200 Z" />
   
+  <!-- COSTA (simplified paths) -->
+  <path id="esmeraldas" data-region="Costa" class="province region-costa" d="M280,110 Q320,100 380,115 L370,180 Q340,200 300,190 Z" />
+  <path id="manabi" data-region="Costa" class="province region-costa" d="M180,240 Q250,220 285,225 L295,350 L200,340 Q170,290 180,240" />
+  <path id="santa-elena" data-region="Costa" class="province region-costa" d="M170,350 L220,360 L210,440 L150,420 Z" />
+  <path id="guayas" data-region="Costa" class="province region-costa" d="M225,360 L330,370 L340,520 L240,530 L215,445 Z" />
+  <path id="el-oro" data-region="Costa" class="province region-costa" d="M245,540 L340,550 L310,630 L220,600 Z" />
+  <path id="los-rios" data-region="Costa" class="province region-costa" d="M290,230 L340,225 L360,365 L300,365 Z" />
+  <path id="santo-domingo" data-region="Costa" class="province region-costa" d="M305,190 L360,200 L370,245 L320,245 Z" />
+
   <!-- SIERRA -->
-  <path id="pichincha" data-region="Sierra" class="province region-sierra" d="M440,70 L530,80 L520,180 L420,160 Z" />
-  <path id="carchi" data-region="Sierra" class="province region-sierra" d="M540,30 L630,40 L600,90 L510,80 Z" />
-  <path id="imbabura" data-region="Sierra" class="province region-sierra" d="M530,90 L610,100 L590,150 L510,140 Z" />
-  <path id="cotopaxi" data-region="Sierra" class="province region-sierra" d="M420,170 L510,180 L490,250 L400,230 Z" />
-  <path id="tungurahua" data-region="Sierra" class="province region-sierra" d="M500,190 L580,200 L560,260 L480,260 Z" />
-  <path id="bolivar" data-region="Sierra" class="province region-sierra" d="M400,260 L460,270 L450,340 L380,330 Z" />
-  <path id="chimborazo" data-region="Sierra" class="province region-sierra" d="M470,270 L570,280 L550,380 L440,360 Z" />
-  <path id="canar" data-region="Sierra" class="province region-sierra" d="M370,350 L450,370 L430,430 L350,420 Z" />
-  <path id="azuay" data-region="Sierra" class="province region-sierra" d="M360,440 L480,450 L460,560 L340,550 Z" />
-  <path id="loja" data-region="Sierra" class="province region-sierra" d="M320,570 L420,580 L400,700 L280,680 Z" />
-  
+  <path id="pichincha" data-region="Sierra" class="province region-sierra" d="M385,125 L480,135 L470,230 L380,210 Z" />
+  <path id="carchi" data-region="Sierra" class="province region-sierra" d="M485,100 L560,110 L540,150 L475,145 Z" />
+  <path id="imbabura" data-region="Sierra" class="province region-sierra" d="M475,150 L550,160 L530,200 L465,195 Z" />
+  <path id="cotopaxi" data-region="Sierra" class="province region-sierra" d="M375,235 L460,245 L445,310 L370,300 Z" />
+  <path id="tungurahua" data-region="Sierra" class="province region-sierra" d="M450,250 L520,260 L505,320 L440,315 Z" />
+  <path id="bolivar" data-region="Sierra" class="province region-sierra" d="M350,310 L430,320 L420,380 L345,370 Z" />
+  <path id="chimborazo" data-region="Sierra" class="province region-sierra" d="M435,320 L530,330 L515,420 L415,410 Z" />
+  <path id="canar" data-region="Sierra" class="province region-sierra" d="M350,385 L440,405 L425,475 L345,465 Z" />
+  <path id="azuay" data-region="Sierra" class="province region-sierra" d="M350,480 L490,490 L470,590 L340,580 Z" />
+  <path id="loja" data-region="Sierra" class="province region-sierra" d="M345,595 L440,605 L415,720 L310,700 Z" />
+
   <!-- AMAZONIA -->
-  <path id="sucumbios" data-region="Amazonia" class="province region-amazonia" d="M640,50 L830,60 L810,150 L620,140 Z" />
-  <path id="napo" data-region="Amazonia" class="province region-amazonia" d="M630,150 L730,160 L700,280 L590,270 Z" />
-  <path id="orellana" data-region="Amazonia" class="province region-amazonia" d="M740,170 L930,180 L900,300 L720,290 Z" />
-  <path id="pastaza" data-region="Amazonia" class="province region-amazonia" d="M700,310 L900,320 L860,500 L660,480 Z" />
-  <path id="morona-santiago" data-region="Amazonia" class="province region-amazonia" d="M580,390 L650,410 L620,600 L530,580 Z" />
-  <path id="zamora-chinchipe" data-region="Amazonia" class="province region-amazonia" d="M440,590 L540,600 L510,720 L420,700 Z" />
-  
+  <path id="sucumbios" data-region="Amazonia" class="province region-amazonia" d="M570,110 L780,120 L750,220 L550,210 Z" />
+  <path id="napo" data-region="Amazonia" class="province region-amazonia" d="M540,215 L660,225 L630,360 L520,350 Z" />
+  <path id="orellana" data-region="Amazonia" class="province region-amazonia" d="M670,230 L790,240 L760,380 L650,370 Z" />
+  <path id="pastaza" data-region="Amazonia" class="province region-amazonia" d="M620,385 L785,395 L740,550 L590,540 Z" />
+  <path id="morona-santiago" data-region="Amazonia" class="province region-amazonia" d="M525,430 L640,440 L600,650 L510,630 Z" />
+  <path id="zamora-chinchipe" data-region="Amazonia" class="province region-amazonia" d="M445,610 L580,620 L545,740 L435,725 Z" />
+
   <!-- INSULAR -->
-  <path id="galapagos" data-region="Insular" class="province region-insular" d="M50,150 L100,160 L90,200 L40,190 Z" />
+  <path id="galapagos" data-region="Insular" class="province region-insular" d="M50,200 Q100,200 100,250 Q100,300 50,300 Q20,250 50,200 Z" />
 </svg>

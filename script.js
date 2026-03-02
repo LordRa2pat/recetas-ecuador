@@ -87,6 +87,21 @@ async function initIndex() {
   }
 }
 
+// ─── Componente: BLOG PREVIEW ─────────────────────────────────
+async function loadBlogPreview() {
+  console.log("[v3.5] Cargando vista previa del blog...");
+  const posts = await loadPosts();
+  console.log("[v3.5] Posts cargados:", posts.length);
+  const grid = document.getElementById("blog-preview-grid");
+  if (!grid) return;
+
+  if (posts.length > 0) {
+    grid.innerHTML = posts.slice(0, 3).map(p => p ? renderBlogCard(p) : '').join("");
+  } else {
+    grid.innerHTML = '<p class="col-span-full text-center text-white/20 italic">Crónicas en camino...</p>';
+  }
+}
+
 // ─── Página: LISTADO ──────────────────────────────────────────
 async function initListing() {
   var recipes = await loadRecipes();

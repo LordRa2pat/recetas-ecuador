@@ -134,33 +134,26 @@
                 </div>
 
                 <div class="relative z-10 map-container">
-                    <svg id="ecuador-map" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg"
+                    <svg id="ecuador-map" viewBox="0 100 800 650" xmlns="http://www.w3.org/2000/svg"
                         class="w-full h-auto drop-shadow-2xl">
                         <!-- COSTA -->
-                        <path id="esmeraldas" title="Esmeraldas" class="province region-costa"
-                            d="M320 50 L450 60 L420 120 L380 150 L300 130 Z" />
-                        <path id="manabi" title="Manabí" class="province region-costa"
-                            d="M220 160 L310 140 L340 320 L200 300 Z" />
-                        <path id="guayas" title="Guayas" class="province region-costa"
-                            d="M300 330 L380 340 L380 500 L250 500 L250 420 Z" />
-                        <path id="santa-elena" title="Santa Elena" class="province region-costa"
-                            d="M200 310 L250 320 L240 410 L180 380 Z" />
-                        <path id="el-oro" title="El Oro" class="province region-costa"
-                            d="M250 510 L350 520 L320 580 L220 560 Z" />
-                        <path id="los-rios" title="Los Ríos" class="province region-costa"
-                            d="M320 220 L370 210 L390 330 L350 330 Z" />
+                        <path id="esmeraldas" data-region="Costa" class="province region-costa"
+                            d="M280,110 Q320,100 380,115 L370,180 Q340,200 300,190 Z" />
+                        <path id="manabi" data-region="Costa" class="province region-costa"
+                            d="M180,240 Q250,220 285,225 L295,350 L200,340 Q170,290 180,240" />
+                        <path id="santa-elena" data-region="Costa" class="province region-costa"
+                            d="M170,350 L220,360 L210,440 L150,420 Z" />
+                        <path id="guayas" data-region="Costa" class="province region-costa"
+                            d="M225,360 L330,370 L340,520 L240,530 L215,445 Z" />
+                        <path id="el-oro" data-region="Costa" class="province region-costa"
+                            d="M245,540 L340,550 L310,630 L220,600 Z" />
+                        <path id="los-rios" data-region="Costa" class="province region-costa"
+                            d="M290,230 L340,225 L360,365 L300,365 Z" />
+                        <path id="santo-domingo" data-region="Costa" class="province region-costa"
+                            d="M305,190 L360,200 L370,245 L320,245 Z" />
 
                         <!-- SIERRA -->
-                        <path id="pichincha" title="Pichincha" class="province region-sierra"
-                            d="M460 70 L550 80 L540 180 L440 160 Z" />
-                        <path id="carchi" title="Carchi" class="province region-sierra"
-                            d="M560 30 L650 40 L620 90 L530 80 Z" />
-                        <path id="imbabura" title="Imbabura" class="province region-sierra"
-                            d="M550 90 L630 100 L610 150 L530 140 Z" />
-                        <path id="cotopaxi" title="Cotopaxi" class="province region-sierra"
-                            d="M440 170 L530 180 L510 250 L420 230 Z" />
-                        <path id="tungurahua" title="Tungurahua" class="province region-sierra"
-                            d="M520 190 L600 200 L580 260 L500 260 Z" />
+                        d="M520 190 L600 200 L580 260 L500 260 Z" />
                         <path id="bolivar" title="Bolívar" class="province region-sierra"
                             d="M420 260 L480 270 L470 340 L400 330 Z" />
                         <path id="chimborazo" title="Chimborazo" class="province region-sierra"

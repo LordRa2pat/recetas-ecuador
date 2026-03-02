@@ -1891,40 +1891,57 @@ function initMapa() {
   });
 }
 
-// ─── Router ───────────────────────────────────────────────────
+// ─── Router Pro V3.5.4 ─────────────────────────────────────────
 (async function router() {
-  await initI18n();
+  console.log("[v3.5.4] Router iniciado...");
+
+  // No bloquear el renderizado por I18n
+  try {
+    initI18n();
+  } catch (e) {
+    console.error("I18n Early Error:", e);
+  }
 
   const pathname = window.location.pathname;
   const filename = pathname.split('/').pop().split('?')[0];
-  const path = filename.replace(/\.(html|php|htm)$/, '') || 'index';
+  const page = filename.replace(/\.(html|php|htm)$/, '') || 'index';
 
   const boot = async () => {
     try {
-      if (path === 'index' || pathname === '/' || pathname.endsWith('/')) {
+      console.log("[v3.5.4] Booting page:", page);
+
+      if (page === 'index' || pathname === '/' || pathname.endsWith('/')) {
         await initIndex();
-        if (typeof loadBlogPreview === 'function') await loadBlogPreview();
-      } else if (path === 'recipes') {
+        // Carga diferida del blog para no bloquear recetas
+        setTimeout(async () => {
+          if (typeof loadBlogPreview === 'function') {
+            console.log("[v3.5.4] Iniciando carga de Crónicas...");
+            await loadBlogPreview();
+          }
+        }, 100);
+      } else if (page === 'recipes') {
         await initListing();
-      } else if (path === 'recipe') {
+      } else if (page === 'recipe') {
         await initRecipe();
-      } else if (path === 'blog') {
+      } else if (page === 'blog') {
         if (typeof initBlog === 'function') await initBlog();
-      } else if (path === 'post') {
+      } else if (page === 'post') {
         if (typeof initPost === 'function') await initPost();
-      } else if (path === 'mapa') {
-        initMapa();
+      } else if (page === 'mapa') {
+        if (typeof initMapa === 'function') initMapa();
       }
 
-      if (window.location.hash === '#dashboard') initEntrepreneurDashboard();
+      if (window.location.hash === '#dashboard') {
+        if (typeof initEntrepreneurDashboard === 'function') initEntrepreneurDashboard();
+      }
     } catch (e) {
-      console.error("Critical Boot Error:", e);
+      console.error("[v3.5.4] Critical Boot Error:", e);
     }
   };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
   } else {
-    await boot();
+    boot();
   }
 })();

@@ -93,6 +93,20 @@
         background-position: 200% center;
       }
     }
+
+    .btn-luxury {
+      background: linear-gradient(135deg, #FFC107 0%, #DCA011 50%, #B8860B 100%);
+      color: #0B1221;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-luxury:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(220, 160, 17, 0.4);
+    }
   </style>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -106,35 +120,62 @@
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   <div class="ec-stripe" aria-hidden="true"></div>
 
-  <!-- ═══ LUXURY NAVIGATION V2 ═══ -->
+  <!-- ═══ LUXURY NAVIGATION V2.5 ═══ -->
   <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 py-6 px-6">
-    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-8 py-4">
-      <a href="/" class="flex items-center gap-3 group">
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between glass-card rounded-[32px] px-10 py-5">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-4 group shrink-0">
         <div
-          class="w-10 h-10 rounded-xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-2xl shadow-2xl group-hover:rotate-12 transition-transform">
+          class="w-12 h-12 rounded-2xl bg-gradient-to-br from-ec-gold to-[#B8860B] flex items-center justify-center text-2xl shadow-2xl group-hover:rotate-12 transition-transform">
           🇪🇨</div>
         <div class="flex flex-col">
-          <span class="text-white font-black uppercase tracking-tighter text-lg leading-none">Ecuador</span>
-          <span class="text-ec-gold font-display font-bold text-[10px] tracking-[0.2em] leading-none">A LA CARTA.</span>
+          <span class="text-white font-black uppercase tracking-tighter text-xl leading-none">Ecuador</span>
+          <span class="text-ec-gold font-bold text-[11px] tracking-[0.3em] leading-none">A LA CARTA.</span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-10">
-        <a href="recipes"
-          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RECETARIO</a>
-        <a href="menu-semanal"
-          class="text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">PLANIFICADOR</a>
-        <a href="blog"
-          class="text-white/60 hover:text-ec-gold font-bold text-[10px] uppercase tracking-widest transition-colors">RUTA</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center justify-center gap-12 flex-1">
+        <a href="recipes.html"
+          class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Recetario
+          <span class="absolute -bottom-2 left-0 w-0 h-px bg-ec-gold transition-all group-hover:w-full"></span>
+        </a>
+        <a href="menu-semanal.html"
+          class="text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Planificador
+          <span class="absolute -bottom-2 left-0 w-full h-px bg-ec-gold"></span>
+        </a>
+        <a href="blog.html"
+          class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Ruta del Sabor
+          <span class="absolute -bottom-2 left-0 w-0 h-px bg-ec-gold transition-all group-hover:w-full"></span>
+        </a>
+        <a href="nosotros.html"
+          class="text-white/60 hover:text-ec-gold font-bold text-xs uppercase tracking-[0.2em] transition-colors relative group">
+          Estatuto
+          <span class="absolute -bottom-2 left-0 w-0 h-px bg-ec-gold transition-all group-hover:w-full"></span>
+        </a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <button id="nav-toggle"
-          class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors focus:outline-none">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-          </svg>
-        </button>
+      <!-- Actions -->
+      <div class="flex items-center gap-6 shrink-0">
+        <a href="contact.html" class="hidden md:block btn-luxury px-8 py-3.5 rounded-2xl text-[10px]">ESCRIBIRNOS</a>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle"
+            class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-all group overflow-hidden relative">
+            <div class="theme-sun transition-transform duration-500 group-[.light-theme]:translate-y-12">☀️</div>
+            <div
+              class="theme-moon absolute transition-transform duration-500 translate-y-12 group-[.dark-theme]:translate-y-0">
+              🌙</div>
+          </button>
+          <button id="nav-toggle"
+            class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors focus:outline-none">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>

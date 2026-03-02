@@ -39,40 +39,41 @@
         }
 
         .province {
-            fill: rgba(255, 255, 255, 0.1);
+            fill: rgba(255, 255, 255, 0.05);
             stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 0.5;
+            stroke-width: 0.8;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .province:hover {
             fill: var(--ec-gold) !important;
             stroke: white;
             filter: drop-shadow(0 0 15px rgba(220, 160, 17, 0.5));
+            transform: scale(1.02);
             z-index: 50;
         }
 
         .province.active {
             fill: var(--ec-gold) !important;
             stroke: white;
-            stroke-width: 1.5;
+            stroke-width: 2.5;
         }
 
         .region-sierra {
-            fill: rgba(59, 130, 246, 0.15);
+            fill: rgba(59, 130, 246, 0.1);
         }
 
         .region-costa {
-            fill: rgba(16, 185, 129, 0.15);
+            fill: rgba(16, 185, 129, 0.1);
         }
 
         .region-amazonia {
-            fill: rgba(239, 68, 68, 0.15);
+            fill: rgba(239, 68, 68, 0.1);
         }
 
         .region-insular {
-            fill: rgba(245, 158, 11, 0.15);
+            fill: rgba(245, 158, 11, 0.1);
         }
 
         .gold-text-gradient {
@@ -87,17 +88,6 @@
         @keyframes shine {
             to {
                 background-position: 200% center;
-            }
-        }
-
-        .map-container {
-            transform: scale(1);
-            transition: transform 0.5s ease;
-        }
-
-        @media (max-width: 768px) {
-            .map-container {
-                transform: scale(3) translate(30%, 30%);
             }
         }
     </style>
@@ -153,35 +143,44 @@
                             d="M305,190 L360,200 L370,245 L320,245 Z" />
 
                         <!-- SIERRA -->
-                        d="M520 190 L600 200 L580 260 L500 260 Z" />
-                        <path id="bolivar" title="Bolívar" class="province region-sierra"
-                            d="M420 260 L480 270 L470 340 L400 330 Z" />
-                        <path id="chimborazo" title="Chimborazo" class="province region-sierra"
-                            d="M490 270 L590 280 L570 380 L460 360 Z" />
-                        <path id="canar" title="Cañar" class="province region-sierra"
-                            d="M390 350 L470 370 L450 430 L370 420 Z" />
-                        <path id="azuay" title="Azuay" class="province region-sierra"
-                            d="M380 440 L500 450 L480 560 L360 550 Z" />
-                        <path id="loja" title="Loja" class="province region-sierra"
-                            d="M340 570 L440 580 L420 700 L300 680 Z" />
+                        <path id="pichincha" data-region="Sierra" class="province region-sierra"
+                            d="M385,125 L480,135 L470,230 L380,210 Z" />
+                        <path id="carchi" data-region="Sierra" class="province region-sierra"
+                            d="M485,100 L560,110 L540,150 L475,145 Z" />
+                        <path id="imbabura" data-region="Sierra" class="province region-sierra"
+                            d="M475,150 L550,160 L530,200 L465,195 Z" />
+                        <path id="cotopaxi" data-region="Sierra" class="province region-sierra"
+                            d="M375,235 L460,245 L445,310 L370,300 Z" />
+                        <path id="tungurahua" data-region="Sierra" class="province region-sierra"
+                            d="M450,250 L520,260 L505,320 L440,315 Z" />
+                        <path id="bolivar" data-region="Sierra" class="province region-sierra"
+                            d="M350,310 L430,320 L420,380 L345,370 Z" />
+                        <path id="chimborazo" data-region="Sierra" class="province region-sierra"
+                            d="M435,320 L530,330 L515,420 L415,410 Z" />
+                        <path id="canar" data-region="Sierra" class="province region-sierra"
+                            d="M350,385 L440,405 L425,475 L345,465 Z" />
+                        <path id="azuay" data-region="Sierra" class="province region-sierra"
+                            d="M350,480 L490,490 L470,590 L340,580 Z" />
+                        <path id="loja" data-region="Sierra" class="province region-sierra"
+                            d="M345,595 L440,605 L415,720 L310,700 Z" />
 
                         <!-- AMAZONIA -->
-                        <path id="sucumbios" title="Sucumbios" class="province region-amazonia"
-                            d="M660 50 L850 60 L830 150 L640 140 Z" />
-                        <path id="napo" title="Napo" class="province region-amazonia"
-                            d="M650 150 L750 160 L720 280 L610 270 Z" />
-                        <path id="orellana" title="Orellana" class="province region-amazonia"
-                            d="M760 170 L950 180 L920 300 L740 290 Z" />
-                        <path id="pastaza" title="Pastaza" class="province region-amazonia"
-                            d="M720 310 L920 320 L880 500 L680 480 Z" />
-                        <path id="morona-santiago" title="Morona Santiago" class="province region-amazonia"
-                            d="M600 390 L670 410 L640 600 L550 580 Z" />
-                        <path id="zamora-chinchipe" title="Zamora Chinchipe" class="province region-amazonia"
-                            d="M460 590 L560 600 L530 720 L440 700 Z" />
+                        <path id="sucumbios" data-region="Amazonia" class="province region-amazonia"
+                            d="M570,110 L780,120 L750,220 L550,210 Z" />
+                        <path id="napo" data-region="Amazonia" class="province region-amazonia"
+                            d="M540,215 L660,225 L630,360 L520,350 Z" />
+                        <path id="orellana" data-region="Amazonia" class="province region-amazonia"
+                            d="M670,230 L790,240 L760,380 L650,370 Z" />
+                        <path id="pastaza" data-region="Amazonia" class="province region-amazonia"
+                            d="M620,385 L785,395 L740,550 L590,540 Z" />
+                        <path id="morona-santiago" data-region="Amazonia" class="province region-amazonia"
+                            d="M525,430 L640,440 L600,650 L510,630 Z" />
+                        <path id="zamora-chinchipe" data-region="Amazonia" class="province region-amazonia"
+                            d="M445,610 L580,620 L545,740 L435,725 Z" />
 
                         <!-- INSULAR -->
-                        <path id="galapagos" title="Galápagos" class="province region-insular"
-                            d="M50 100 Q80 120 100 100 Q120 80 100 60 Q80 40 60 70 Z" />
+                        <path id="galapagos" data-region="Insular" class="province region-insular"
+                            d="M50,200 Q100,200 100,250 Q100,300 50,300 Q20,250 50,200 Z" />
                     </svg>
                 </div>
             </div>
@@ -213,9 +212,7 @@
                                 class="text-[10px] font-black uppercase tracking-widest text-ec-gold mb-6 flex items-center gap-2">
                                 <span class="w-1 h-3 bg-ec-gold rounded-full"></span> Ciudades Destacadas
                             </h4>
-                            <div id="city-list" class="flex flex-wrap gap-3">
-                                <!-- Dynamic Cities -->
-                            </div>
+                            <div id="city-list" class="flex flex-wrap gap-3"></div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
@@ -235,31 +232,18 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Google Ad Slots -->
-                    <div class="mt-12 pt-12 border-t border-white/5">
-                        <div class="bg-white/5 border border-dashed border-white/20 rounded-3xl p-8 text-center">
-                            <span
-                                class="text-[8px] font-black text-white/20 uppercase tracking-widest mb-4 block italic">Espacio
-                                para Patrocinio Local</span>
-                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9813915136648702"
-                                data-ad-slot="12341234" data-ad-format="auto"></ins>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="script.js" type="module"></script>
+    <script src="script.js?v=3.5.3" type="module"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
-
-        let currentCity = "";
         function navigateWithCity(type) {
-            if (!currentCity) return;
-            window.location.href = `recipes.html?city=${encodeURIComponent(currentCity)}`;
+            const provinceName = document.getElementById("selected-province").textContent;
+            window.location.href = `recipes.html?q=${encodeURIComponent(provinceName)}`;
         }
     </script>
 </body>

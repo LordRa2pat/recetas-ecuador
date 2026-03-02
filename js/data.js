@@ -28,12 +28,16 @@ export function showDataError(containerId, msg, retryFn) {
 }
 
 export async function loadRecipes() {
+  console.log("[js/data.js] Iniciando fetch de recetas...");
   try {
     var res = await fetch(DATA_URL + '?t=' + Date.now());
+    console.log("[js/data.js] Respuesta de recetas:", res.status);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     allRecipes = await res.json();
+    console.log("[js/data.js] Recetas parseadas:", allRecipes.length);
     return allRecipes;
   } catch (err) {
+    console.error('[js/data.js] Error en loadRecipes:', err);
     showDataError('recipe-featured-grid', 'No pudimos cargar las recetas. Revisa tu conexi\u00f3n.', true);
     showDataError('recipes-grid', 'No pudimos cargar las recetas.', false);
     return [];
@@ -54,12 +58,16 @@ export async function loadPriceDb() {
 }
 
 export async function loadPosts() {
+  console.log("[js/data.js] Iniciando fetch de posts...");
   try {
     var res = await fetch(POSTS_URL + '?t=' + Date.now());
+    console.log("[js/data.js] Respuesta de posts:", res.status);
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.json();
+    const data = await res.json();
+    console.log("[js/data.js] Posts parseados:", data.length);
+    return data;
   } catch (err) {
-    console.error('Error cargando posts:', err);
+    console.error('[js/data.js] Error en loadPosts:', err);
     showDataError('blog-preview-grid', 'No pudimos cargar el blog.', true);
     showDataError('blog-grid', 'No pudimos cargar los art\u00edculos.', false);
     return [];

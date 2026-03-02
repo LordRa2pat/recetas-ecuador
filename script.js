@@ -1891,57 +1891,63 @@ function initMapa() {
   });
 }
 
-// ─── Router Pro V3.5.4 ─────────────────────────────────────────
+// ─── Router Pro V3.6.1 ─────────────────────────────────────────
 (async function router() {
-  console.log("[v3.5.4] Router iniciado...");
+  console.log("[v3.6.1] Router iniciado...");
 
-  // No bloquear el renderizado por I18n
   try {
     initI18n();
   } catch (e) {
-    console.error("I18n Early Error:", e);
+    console.warn("I18n Non-Critical Error:", e);
   }
 
   const pathname = window.location.pathname;
+  const search = window.location.search;
   const filename = pathname.split('/').pop().split('?')[0];
   const page = filename.replace(/\.(html|php|htm)$/, '') || 'index';
 
+  console.log("[v3.6.1] Pathname:", pathname, "Page Extracted:", page);
+
   const boot = async () => {
     try {
-      console.log("[v3.5.4] Booting page:", page);
-
-      if (page === 'index' || pathname === '/' || pathname.endsWith('/')) {
+      if (page === 'index' || pathname === '/' || pathname.endsWith('/') || pathname === '/index.html') {
+        console.log("[v3.6.1] Iniciando Index...");
         await initIndex();
-        // Carga diferida del blog para no bloquear recetas
         setTimeout(async () => {
           if (typeof loadBlogPreview === 'function') {
-            console.log("[v3.5.4] Iniciando carga de Crónicas...");
             await loadBlogPreview();
           }
         }, 100);
       } else if (page === 'recipes') {
+        console.log("[v3.6.1] Iniciando Listing...");
         await initListing();
       } else if (page === 'recipe') {
+        console.log("[v3.6.1] Iniciando Detalle Receta...");
         await initRecipe();
       } else if (page === 'blog') {
+        console.log("[v3.6.1] Iniciando Blog...");
         if (typeof initBlog === 'function') await initBlog();
       } else if (page === 'post') {
+        console.log("[v3.6.1] Iniciando Post...");
         if (typeof initPost === 'function') await initPost();
       } else if (page === 'mapa') {
+        console.log("[v3.6.1] Iniciando Mapa...");
         if (typeof initMapa === 'function') initMapa();
+      } else {
+        console.warn("[v3.6.1] Página no reconocida en router:", page);
       }
 
       if (window.location.hash === '#dashboard') {
         if (typeof initEntrepreneurDashboard === 'function') initEntrepreneurDashboard();
       }
     } catch (e) {
-      console.error("[v3.5.4] Critical Boot Error:", e);
+      console.error("[v3.6.1] Error crítico en el arranque:", e);
     }
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
     boot();
+  } else {
+    document.addEventListener('DOMContentLoaded', boot);
   }
 })();

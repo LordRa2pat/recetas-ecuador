@@ -23,9 +23,17 @@ import {
 import { injectSEO, injectPostSEO, setMeta, injectIndexSEO } from "./js/seo.js";
 import { renderIngredient } from "./js/prices.js";
 
+// ─── Safe LocalStorage Wrapper ──────────────────────────────
+const safeLS = {
+  get: (key) => { try { return localStorage.getItem(key); } catch (e) { return null; } },
+  set: (key, val) => { try { localStorage.setItem(key, val); return true; } catch (e) { return false; } }
+};
+
 // ─── Página: INDEX ────────────────────────────────────────────
 async function initIndex() {
+  console.log("[v3.5] Iniciando Index...");
   var recipes = await loadRecipes();
+  console.log("[v3.5] Recetas cargadas:", recipes.length);
 
   // Mapeo a la nueva estructura V2.5
   var featuredGrid = document.getElementById("recipe-featured-grid");
@@ -178,7 +186,8 @@ async function initListing() {
       if (urlParamsFavorites.get("favorites") === "true") {
         var savedFavs = [];
         try {
-          savedFavs = JSON.parse(localStorage.getItem("ec_favorites")) || [];
+          const rawFavs = safeLS.get("ec_favorites");
+          savedFavs = rawFavs ? JSON.parse(rawFavs) : [];
         } catch (e) { }
         if (savedFavs.indexOf(r.slug) === -1) return false;
       }
@@ -464,16 +473,18 @@ function initFavoritesAndSticky(recipe) {
   }
 
   function toggleFavorite() {
-    var favs = getFavorites();
-    var idx = favs.indexOf(slug);
-    if (idx !== -1) favs.splice(idx, 1);
-    else favs.push(slug);
-    localStorage.setItem("ec_favorites", JSON.stringify(favs));
+    const saved = safeLS.get('ec_favorites');
+    let favs = saved ? JSON.parse(saved) : [];
+    const idx = favs.indexOf(slug);
+    if (idx === -1) {
+      favs.push(slug);
+      trackEvent('recipe_favorite_add', { slug });
+    } else {
+      favs.splice(idx, 1);
+      trackEvent('recipe_favorite_remove', { slug });
+    }
+    safeLS.set('ec_favorites', JSON.stringify(favs));
     updateButtonsUI();
-    trackEvent("recipe_favorite_toggle", {
-      slug: slug,
-      action: idx !== -1 ? "remove" : "add",
-    });
   }
 
   if (btnMain) btnMain.addEventListener("click", toggleFavorite);
@@ -1253,15 +1264,14 @@ function initThemeEngine() {
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // El tema inicial ya fue aplicado por el script inline en el head
-  const savedTheme = localStorage.getItem('theme') || 'dark';
+  const savedTheme = safeLS.get('theme') || 'dark';
   applyTheme(savedTheme);
 
   themeToggle?.addEventListener('click', () => {
     const isDark = body.classList.contains('dark-theme');
     const newTheme = isDark ? 'light' : 'dark';
     applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
+    safeLS.set('theme', newTheme);
   });
 }
 

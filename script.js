@@ -33,11 +33,11 @@ async function initIndex() {
     if (recipes.length > 0) {
       // Priorizar las que tengan imagen o video
       var sorted = recipes.slice().sort((a, b) => {
-        const aHasImg = a.image_url || (a.youtube_videos && a.youtube_videos.length > 0);
-        const bHasImg = b.image_url || (b.youtube_videos && b.youtube_videos.length > 0);
+        const aHasImg = (a?.image_url && a.image_url !== "") || (a?.youtube_videos?.length > 0);
+        const bHasImg = (b?.image_url && b.image_url !== "") || (b?.youtube_videos?.length > 0);
         return bHasImg - aHasImg;
       });
-      featuredGrid.innerHTML = sorted.slice(0, 6).map(renderCard).join("");
+      featuredGrid.innerHTML = sorted.slice(0, 6).map(r => r ? renderCard(r) : '').join("");
     } else {
       renderEmptyState(featuredGrid, "Archivos cargando...");
     }
@@ -1195,26 +1195,27 @@ async function initMapNavigation() {
   if (!wrapper) return;
 
   try {
-    const response = await fetch('mapa.svg');
+    const response = await fetch('mapa.svg?t=' + Date.now());
     let svgText = await response.text();
-
-    // Clean SVG string (strip XML declarations and junk from encoding mismatches)
     const svgStart = svgText.indexOf('<svg');
     if (svgStart !== -1) svgText = svgText.substring(svgStart);
-
     wrapper.innerHTML = svgText;
 
-    const regions = wrapper.querySelectorAll('.region-path');
-    regions.forEach(path => {
+    const provinces = wrapper.querySelectorAll('.province');
+    provinces.forEach(path => {
       path.addEventListener('click', () => {
         const region = path.getAttribute('data-region');
-        if (region) {
+        const id = path.id;
+        if (id === 'pichincha') { // Ejemplo de navegación Premium
+          window.location.href = `recipes.html?city=Quito`;
+        } else if (region) {
           window.location.href = `recipes.html?region=${encodeURIComponent(region)}`;
         }
       });
     });
   } catch (err) {
     console.error("Error al cargar mapa:", err);
+    wrapper.innerHTML = '<p class="text-white/20 text-[10px] font-black">Error geográfico. Recarga.</p>';
   }
 }
 

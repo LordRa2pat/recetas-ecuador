@@ -5,11 +5,11 @@
 
 import { escapeHtml } from './utils.js';
 
-const DATA_URL   = 'recipes.json';
-const POSTS_URL  = 'posts.json';
+const DATA_URL = 'recipes.json';
+const POSTS_URL = 'posts.json';
 const PRICES_URL = 'price_db.json';
 
-let allRecipes   = [];
+let allRecipes = [];
 let priceDbCache = null;
 
 export function showDataError(containerId, msg, retryFn) {
@@ -21,8 +21,8 @@ export function showDataError(containerId, msg, retryFn) {
     '<p class="text-gray-600 text-sm">' + escapeHtml(msg) + '</p>' +
     (retryFn
       ? '<button onclick="location.reload()" ' +
-        'class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">' +
-        'Intentar de nuevo</button>'
+      'class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">' +
+      'Intentar de nuevo</button>'
       : '') +
     '</div>';
 }
@@ -34,11 +34,8 @@ export async function loadRecipes() {
     allRecipes = await res.json();
     return allRecipes;
   } catch (err) {
-    console.error('Error cargando recetas:', err);
-    showDataError('recipes-grid', 'No pudimos cargar las recetas. Revisa tu conexi\u00f3n.', true);
-    showDataError('classics-grid', 'No pudimos cargar las recetas.', false);
-    showDataError('diaspora-grid', 'No pudimos cargar las recetas.', false);
-    showDataError('tourism-grid', 'No pudimos cargar las recetas.', false);
+    showDataError('recipe-featured-grid', 'No pudimos cargar las recetas. Revisa tu conexi\u00f3n.', true);
+    showDataError('recipes-grid', 'No pudimos cargar las recetas.', false);
     return [];
   }
 }
@@ -63,8 +60,8 @@ export async function loadPosts() {
     return await res.json();
   } catch (err) {
     console.error('Error cargando posts:', err);
-    showDataError('blog-grid', 'No pudimos cargar los art\u00edculos. Revisa tu conexi\u00f3n.', true);
-    showDataError('blog-preview-grid', 'No pudimos cargar el blog.', false);
+    showDataError('blog-preview-grid', 'No pudimos cargar el blog.', true);
+    showDataError('blog-grid', 'No pudimos cargar los art\u00edculos.', false);
     return [];
   }
 }

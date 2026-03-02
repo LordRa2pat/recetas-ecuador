@@ -1,5 +1,145 @@
 [
   {
+    "slug": "encocado-de-camarones-ecuatoriano-de-manabi",
+    "title": "Encocado de Camarones Ecuatoriano de Manabí Receta Tradicional",
+    "description": "Encocado de Camarones es un plato icónico de la costa ecuatoriana, elaborado con camarones frescos en una salsa cremosa de coco, especias y verduras. Esta receta tradicional de Manabí te permite recrear sus sabores tropicales en casa, ideal para amantes de los mariscos con un toque autóctono.",
+    "region": "Costa",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "20 min",
+    "total_time": "35 min",
+    "ingredients": [
+      "500 g Camarones frescos (comprar en Mercado local)",
+      "400 ml Leche de coco (comprar en Supermaxi)",
+      "1 unidad mediana Cebolla blanca (comprar en Supermaxi)",
+      "3 dientes Ajo (comprar en Supermaxi)",
+      "2 unidades medianas Tomate maduro (comprar en Mercado local)",
+      "1 unidad Pimiento rojo (comprar en Megamaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "1 cucharadita Achiote en polvo (comprar en TIA)",
+      "al gusto Sal (comprar en Supermaxi)",
+      "2 cucharadas Aceite vegetal (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia y pela los camarones frescos, quitando las cabezas y colas, y enjuágalos bajo agua fría durante 5 minutos para eliminar impurezas.",
+      "Paso 2: Pica finamente la cebolla, el ajo, el tomate y el pimiento rojo, y reserva en un bowl; esto toma aproximadamente 10 minutos a temperatura ambiente.",
+      "Paso 3: Calienta 2 cucharadas de aceite vegetal en una olla a fuego medio (alrededor de 150°C) durante 2 minutos, luego agrega la cebolla y el ajo, y sofríe por 5 minutos hasta que estén translúcidos.",
+      "Paso 4: Incorpora el tomate picado, el pimiento rojo y el achiote en polvo a la olla, mezcla bien y cocina a fuego medio (150°C) por 5 minutos hasta que los vegetales suelten sus jugos.",
+      "Paso 5: Añade la leche de coco y los camarones a la mezcla, sube el fuego a medio-alto (180°C) y cocina por 10 minutos, removiendo ocasionalmente hasta que los camarones estén rosados y cocidos.",
+      "Paso 6: Retira la olla del fuego, agrega el cilantro picado, ajusta la sal al gusto y deja reposar por 3 minutos antes de servir para que los sabores se integren.",
+      "Paso 7: Sirve el encocado caliente en platos individuales, acompañado de arroz o plátano maduro para una experiencia auténtica."
+    ],
+    "tips": [
+      "Usa camarones frescos de la costa para un sabor más auténtico y evita los congelados si es posible.",
+      "Ajusta la cantidad de achiote para controlar el color y el sabor picante, ya que varía por región en Ecuador."
+    ],
+    "origin_cities": [
+      "Manta",
+      "Portoviejo"
+    ],
+    "image_keywords": [
+      "encocado de camarones",
+      "ecuadorian food",
+      "traditional dish with coconut"
+    ],
+    "image_alt": "Fotografía del encocado de camarones ecuatoriano terminado, con camarones rosados en salsa cremosa de coco y verduras frescas",
+    "seo_keywords": [
+      "receta encocado de camarones ecuatoriano tradicional",
+      "encocado de manabi con ingredientes frescos",
+      "plato de mariscos ecuatorianos paso a paso",
+      "comida costera de ecuador con coco",
+      "preparar encocado de camarones en casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el encocado de camarones y de dónde proviene?",
+        "a": "El encocado de camarones es un estofado tradicional de la costa ecuatoriana, específicamente de Manabí, que combina camarones con leche de coco, verduras y especias para crear un plato cremoso y sabroso, representativo de la gastronomía costera."
+      },
+      {
+        "q": "¿Puedo hacer encocado de camarones si soy alérgico al coco?",
+        "a": "Sí, puedes sustituir la leche de coco por leche de almendra o crema de soja para una versión sin coco, aunque esto alterará ligeramente el sabor auténtico; prueba con especias adicionales para mantener el equilibrio."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el encocado de camarones en la nevera?",
+        "a": "El encocado de camarones se mantiene fresco en la nevera por hasta 2 días en un recipiente sellado; caliéntalo a fuego bajo para evitar que los camarones se pongan gomosos, y no lo congele para preservar la textura."
+      },
+      {
+        "q": "¿Es el encocado de camarones picante?",
+        "a": "No necesariamente, ya que el picante depende de los ingredientes como el achiote; en la versión tradicional de Manabí es más suave, pero puedes agregar ají o pimientos para hacerlo más picante según tu preferencia."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Faro",
+        "city": "Manta",
+        "description": "Un restaurante costero famoso por su encocado de camarones fresco y auténtico, con vistas al mar y ambiente local."
+      },
+      {
+        "name": "Mercado Municipal de Portoviejo",
+        "city": "Portoviejo",
+        "description": "Mercado local donde puedes comprar ingredientes frescos para el encocado y probar versiones caseras de vendedores tradicionales."
+      },
+      {
+        "name": "Restaurante Mar y Tierra",
+        "city": "Bahía de Caráquez",
+        "description": "Ofrece encocado de camarones con toques innovadores, ideal para turistas que quieran experimentar la cocina manabita."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Leche de coco fresca",
+        "substitute": "Leche de coco en lata",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Tesco en Europa, para un sabor similar pero más conveniente."
+      },
+      {
+        "original": "Camarones frescos",
+        "substitute": "Camarones congelados",
+        "notes": "Encontrados en tiendas como Target en EE.UU. o Lidl en Europa, descongela antes de usar para mantener la textura."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Puedes comprarlo en mercados étnicos o secciones internacionales de supermercados en EE.UU. y Europa para un color y sabor aproximado."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "ENCOCADO DE CAMARÓN",
+        "videoId": "kLV6TW33xHg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=kLV6TW33xHg",
+        "embed": "https://www.youtube-nocookie.com/embed/kLV6TW33xHg",
+        "uploadDate": "2020-11-06",
+        "description": "Desde la provincia verde hasta tu mesa! #EncocadoDeCamarón #KWAEC\n\nIngredientes:\nCamarones 500 gr\nCoco Rayado 200 gr\nAgua de coco 350 gr\nAchiote 30 ml\nPasta de ajo 30 gr\nCebolla colorada 100 gr\nCeboll"
+      },
+      {
+        "title": "Camarones Encocados Ecuatorianos - ENCOCADO DE CAMARON",
+        "videoId": "jmzh7-mB3lc",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=jmzh7-mB3lc",
+        "embed": "https://www.youtube-nocookie.com/embed/jmzh7-mB3lc",
+        "uploadDate": "2023-09-14",
+        "description": "Camarones Encocados Ecuatorianos - ENCOCADO DE CAMARON. Los Mejores Camarones Encocados ecuatorianos."
+      },
+      {
+        "title": "Encocado de Camarón ... Alucinante!",
+        "videoId": "dSyx64Gg5BM",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=dSyx64Gg5BM",
+        "embed": "https://www.youtube-nocookie.com/embed/dSyx64Gg5BM",
+        "uploadDate": "2022-02-01",
+        "description": "Desde las costas del pacífico Ecuatoriano nos llega este ENCOCADO DE CAMARÓN un exquisito manjar! con sabores de coco, chillangua y camarón , tienes que probar esta receta. \n#EncocadoDeCamarón #Receta"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/jmzh7-mB3lc/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 46,
+    "created_at": "2026-03-02T11:22:52.238Z"
+  },
+  {
     "slug": "quimbolitos",
     "title": "Quimbolitos Ecuatorianos Receta Tradicional",
     "description": "Quimbolitos son un delicioso postre tradicional ecuatoriano envuelto en hojas de maíz, perfecto para fiestas familiares. Esta receta paso a paso te guía para preparar esta delicia de la Sierra con ingredientes frescos y técnicas auténticas, ideal para quienes aman la cocina latina.",

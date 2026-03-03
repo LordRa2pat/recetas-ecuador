@@ -1,5 +1,145 @@
 [
   {
+    "slug": "seco-de-chivo",
+    "title": "Seco de Chivo Ecuatoriano Receta Tradicional",
+    "description": "Seco de chivo es un estofado ecuatoriano de la costa con carne de chivo marinada en cerveza y especias, ideal para comidas familiares; esta receta detalla los pasos para un sabor auténtico y tierno, perfecto para principiantes y expertos en cocina ecuatoriana.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "ingredients": [
+      "1 kg, cortada en trozos Carne de chivo (comprar en Mercado local)",
+      "2 unidades, picadas finamente Cebolla (comprar en Supermaxi)",
+      "4 dientes, machacados Ajo (comprar en Megamaxi)",
+      "500 ml Cerveza clara (comprar en TIA)",
+      "2 cucharadas, en pasta Achiote (comprar en Mercado local)",
+      "1 manojo, picado Cilantro fresco (comprar en Supermaxi)",
+      "3 unidades, picados Tomate (comprar en Megamaxi)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "1 cucharadita Comino molido (comprar en Supermaxi)",
+      "4 cucharadas Aceite vegetal (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En un recipiente grande, marina la carne de chivo con achiote, ajo machacado, comino, sal y cilantro picado durante 20 minutos a temperatura ambiente para infusionar sabores.",
+      "Paso 2: Calienta 4 cucharadas de aceite vegetal en una olla a fuego medio (alrededor de 150°C) y sofríe la cebolla picada hasta que esté transparente, aproximadamente 5 minutos.",
+      "Paso 3: Agrega la carne marinada a la olla y dora por todos lados durante 10 minutos a fuego alto para sellar los jugos y potenciar el sabor.",
+      "Paso 4: Incorpora los tomates picados y cocina por 5 minutos más a fuego medio para que suelten sus jugos y formen una base de salsa.",
+      "Paso 5: Vierte la cerveza clara sobre la mezcla, reduce el fuego a bajo, tapa la olla y cocina a fuego lento durante 90 minutos, revolviendo ocasionalmente hasta que la carne esté tierna.",
+      "Paso 6: Destapa la olla y cocina por 15 minutos adicionales a fuego medio para espesar la salsa, ajustando la sal al gusto y verificando que la carne se desmorone fácilmente.",
+      "Paso 7: Retira del fuego y deja reposar por 5 minutos antes de servir para que los sabores se integren completamente."
+    ],
+    "tips": [
+      "El chef recomienda usar achiote fresco para un color y sabor más vibrante, evitando el envasado si es posible.",
+      "Para una textura más tierna, no excedas los 120 minutos de cocción y elige carne fresca de mercados locales."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Quito"
+    ],
+    "image_keywords": [
+      "seco de chivo",
+      "comida ecuatoriana",
+      "plato tradicional ecuatoriano"
+    ],
+    "image_alt": "Plato de Seco de Chivo con carne tierna en salsa espesa, acompañado de arroz y plátano maduro",
+    "seo_keywords": [
+      "receta de seco de chivo ecuatoriano tradicional paso a paso",
+      "como preparar seco de chivo autentico de la costa ecuatoriana",
+      "seco de chivo receta facil para principiantes en cocina ecuatoriana",
+      "ingredientes y preparacion de seco de chivo en casa",
+      "mejor receta de seco de chivo con cerveza y achiote"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Seco de Chivo y de dónde proviene?",
+        "a": "Seco de Chivo es un estofado tradicional ecuatoriano originario de la región costera, hecho con carne de chivo cocida en cerveza y especias, conocido por su sabor robusto y es común en festividades como fiestas patronales."
+      },
+      {
+        "q": "¿Puedo usar otro tipo de carne si no encuentro chivo?",
+        "a": "Sí, puedes sustituir la carne de chivo por cabra o cordero, pero el sabor será ligeramente diferente; asegúrate de ajustar los tiempos de cocción para mantener la ternura."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el Seco de Chivo en la nevera?",
+        "a": "El Seco de Chivo refrigerado puede durar hasta 3 días en un contenedor hermético; para congelar, se mantiene hasta 2 meses, pero es mejor consumirlo fresco para el máximo sabor."
+      },
+      {
+        "q": "¿Es Seco de Chivo picante?",
+        "a": "No necesariamente, aunque puedes agregar ají o pimientos para picante; la receta tradicional es más bien sabrosa y aromática, dependiendo de las especias usadas."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Ofrece una versión casera y auténtica de Seco de Chivo con ingredientes frescos de la región costera."
+      },
+      {
+        "name": "Mercado Central",
+        "city": "Quito",
+        "description": "Lugar ideal para probar Seco de Chivo en puestos callejeros, con variaciones locales y precios asequibles."
+      },
+      {
+        "name": "Restaurante La Casa del Chivo",
+        "city": "Guayaquil",
+        "description": "Especializado en platos con chivo, su Seco de Chivo es famoso por el uso de cerveza artesanal."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Carne de chivo",
+        "substitute": "Carne de cabra o cordero",
+        "notes": "Disponible en mercados étnicos o secciones internacionales de supermercados como Whole Foods en EE.UU."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Fácil de encontrar en supermercados como Tesco en Europa, pero ajusta la cantidad para similar color y sabor."
+      },
+      {
+        "original": "Cerveza clara",
+        "substitute": "Caldo de verduras",
+        "notes": "Usa marcas como Knorr en EE.UU. o Europa para un sabor no alcohólico, pero podría variar la textura."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "SECO DE CHIVO",
+        "videoId": "nalrrzDx6ok",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=nalrrzDx6ok",
+        "embed": "https://www.youtube-nocookie.com/embed/nalrrzDx6ok",
+        "uploadDate": "2019-07-19",
+        "description": "Ingredientes:\nCarne de Chivo ............. 2 lb\nCebolla Colorada ......... 1 taza\nPimiento Verde ............. 3/4 taza \nPasta de Ajo .................. 1 cucharada\nCilantro .........................."
+      },
+      {
+        "title": "SECO DE CHIVO ECUATORIANO   #secodechivo #secodecarne #secodecabrito",
+        "videoId": "quc5AVfbVPA",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=quc5AVfbVPA",
+        "embed": "https://www.youtube-nocookie.com/embed/quc5AVfbVPA",
+        "uploadDate": "2022-02-15",
+        "description": "Seco de Chivo ecuatoriano con naranjilla y cerveza plato tipico de la gastronomia Ecuatoriana."
+      },
+      {
+        "title": "Seco de Chivo /  Recetas Ecuador / Tasty Ecuatoriano",
+        "videoId": "k9e_eJya7wg",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=k9e_eJya7wg",
+        "embed": "https://www.youtube-nocookie.com/embed/k9e_eJya7wg",
+        "uploadDate": "2018-06-15",
+        "description": "El SECO DE CHIVO es un jugoso guiso que presentamos hoy desde la provincia de Santa Elena, sabores exóticos del cordero con la mezcla de naranjilla y cerveza que le dan un toque único! Espero disfrute"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/quc5AVfbVPA/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 52,
+    "created_at": "2026-03-03T23:22:36.646Z"
+  },
+  {
     "slug": "humitas-ecuatorianas-de-la-costa-con-queso-fresco",
     "title": "Humitas Ecuatorianas de la Costa con Queso Fresco Receta Tradicional",
     "description": "Humitas Ecuatorianas son un plato tradicional de maíz relleno y cocido al vapor. Esta versión de la Costa incluye queso fresco para un sabor cremoso y auténtico, perfecta para quienes buscan recetas ecuatorianas fáciles y deliciosas en casa. Ideal para fiestas o comidas familiares.",

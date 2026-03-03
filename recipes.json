@@ -1,5 +1,147 @@
 [
   {
+    "slug": "fritada-ecuatoriana-de-la-sierra",
+    "title": "Fritada Ecuatoriana de la Sierra Receta Tradicional",
+    "description": "Fritada Ecuatoriana es un plato emblemático de la Sierra con carne de cerdo frita, acompañada de mote, papas y yucas, ideal para fiestas familiares. Esta receta paso a paso te guía para recrear el sabor auténtico en casa, con ingredientes accesibles y consejos para perfeccionarla.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "45 min",
+    "total_time": "60 min",
+    "ingredients": [
+      "1 kg Carne de cerdo (cortada en cubos) (comprar en Supermaxi)",
+      "2 unidades medianas Cebolla (picada) (comprar en Mercado local)",
+      "4 dientes Ajo (machacado) (comprar en TIA)",
+      "1 cucharadita Comino molido (comprar en Megamaxi)",
+      "1/2 taza Naranjas agrias (jugo) (comprar en Mercado local)",
+      "500 g Mote (maíz blanco cocido) (comprar en Mercado local)",
+      "4 unidades medianas Papas (peladas y cortadas) (comprar en Supermaxi)",
+      "300 g Yuca (pelada y cortada) (comprar en TIA)",
+      "1/2 taza Cilantro fresco (picado) (comprar en Megamaxi)",
+      "al gusto Sal (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En un bowl grande, marina la carne de cerdo con el jugo de naranjas agrias, comino, ajo machacado, cebolla picada y sal durante 15 minutos a temperatura ambiente para infusionar sabores.",
+      "Paso 2: Calienta una sartén grande a fuego medio-alto (alrededor de 180°C) y agrega la carne marinada, fríela por 10 minutos hasta que dore uniformemente, revolviendo ocasionalmente.",
+      "Paso 3: Mientras se fríe la carne, hierve las papas y yuca en agua salada a fuego alto durante 15 minutos hasta que estén tiernas, luego escúrrelas y reserva.",
+      "Paso 4: Baja el fuego a medio (alrededor de 150°C) y continúa cocinando la carne por otros 20 minutos, agregando un poco de agua si es necesario para evitar que se seque, hasta que la carne esté suave.",
+      "Paso 5: En una olla aparte, calienta el mote previamente cocido a fuego bajo durante 5 minutos para que esté caliente y listo para servir.",
+      "Paso 6: Sirve la carne frita en platos individuales, acompañada de papas, yuca y mote; espolvorea cilantro fresco por encima y deja reposar 2 minutos antes de comer para que los sabores se integren.",
+      "Paso 7: Ajusta el sazón final con sal si es necesario y sirve inmediatamente para mantener la carne crujiente.",
+      "Paso 8: Para una variante, agrega cebolla caramelizada en los últimos 5 minutos de cocción a fuego bajo."
+    ],
+    "tips": [
+      "Usa carne de cerdo fresca y de corte magro para un sabor más autentico y menos grasa, como se hace en las highlands de la Sierra.",
+      "Sirve la fritada con una cerveza artesanal ecuatoriana para realzar los sabores terrosos, una tradición en fiestas regionales."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "fritada ecuatoriana",
+      "comida ecuatoriana sierra",
+      "plato tradicional carne"
+    ],
+    "image_alt": "Plato de Fritada Ecuatoriana con carne de cerdo frita, mote, papas y yuca en un arreglo tradicional de la Sierra",
+    "seo_keywords": [
+      "receta fritada ecuatoriana sierra tradicional paso a paso",
+      "como preparar fritada ecuatoriana en casa",
+      "ingredientes para fritada ecuatoriana de la sierra",
+      "plato tipico ecuatoriano carne frita",
+      "fritada receta autentica sierra ecuador",
+      "consejos para hacer fritada ecuatoriana perfecta"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es la Fritada Ecuatoriana y de dónde proviene?",
+        "a": "La Fritada Ecuatoriana es un plato tradicional de la Sierra, originario de ciudades como Quito y Cuenca, hecho con carne de cerdo frita marinada en especias y servido con acompañamientos como mote, papas y yuca, representando la gastronomía montañesa del Ecuador."
+      },
+      {
+        "q": "¿Puedo hacer la Fritada Ecuatoriana en una freidora de aire?",
+        "a": "Sí, puedes adaptar la receta usando una freidora de aire a 180°C por 20-25 minutos para reducir grasa, pero el sabor tradicional se logra mejor en una sartén; agrega jugo de naranja para mantener la humedad."
+      },
+      {
+        "q": "¿Cuántas calorías tiene una porción de Fritada Ecuatoriana?",
+        "a": "Una porción típica de 300g puede tener alrededor de 500-600 calorías, dependiendo de los cortes de carne; para una versión más ligera, usa menos aceite y aumenta los vegetales como yuca y papas."
+      },
+      {
+        "q": "¿Es la Fritada Ecuatoriana apta para eventos vegetarianos?",
+        "a": "No es originalmente vegetariana, pero puedes sustituir la carne por setas o tofu y marinarlos de manera similar para una versión vegana, manteniendo los acompañamientos tradicionales."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Ofrece fritada autentica con ingredientes locales y un ambiente familiar, ideal para turistas que buscan sabores de la Sierra."
+      },
+      {
+        "name": "Mercado Central de Cuenca",
+        "city": "Cuenca",
+        "description": "Prueba fritada fresca en puestos callejeros, con variaciones regionales y productos de la zona, perfecto para una experiencia cultural."
+      },
+      {
+        "name": "Hacienda La Ciénega",
+        "city": "Riobamba",
+        "description": "Sirve fritada en un entorno rural con vistas a los Andes, destacando recetas heredadas de generaciones."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Naranjas agrias",
+        "substitute": "Limones o vinagre blanco",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para un sabor ácido similar."
+      },
+      {
+        "original": "Mote",
+        "substitute": "Maíz dulce enlatado o arroz integral",
+        "notes": "Encuéntralo en secciones de productos internacionales en tiendas como Whole Foods en EE.UU. o Lidl en Europa, manteniendo el textura masticable."
+      },
+      {
+        "original": "Yuca",
+        "substitute": "Batatas o papas dulces",
+        "notes": "Fácilmente disponible en mercados locales como Kroger en EE.UU. o Aldi en Europa, para un sabor similar y fácil cocción."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "FRITADA",
+        "videoId": "dS129uXVOQU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=dS129uXVOQU",
+        "embed": "https://www.youtube-nocookie.com/embed/dS129uXVOQU",
+        "uploadDate": "2020-03-13",
+        "description": "GRASA = SABOR #Fritada #KWAEC\n\nCarne de Cerdo……………….. 2 kilos\nGrasa de cerdo………………… ½ kilo\nPasta de ajo…………………….. 30 gramos\nCebolla Blanca………………… 80 gr\nCerveza…………………………… 1 taza\nAgua……………………………….. 1 ½"
+      },
+      {
+        "title": "Fritada de Cerdo.😋#shortsyoutubevideos",
+        "videoId": "0gn8px9mS_Y",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=0gn8px9mS_Y",
+        "embed": "https://www.youtube-nocookie.com/embed/0gn8px9mS_Y",
+        "uploadDate": "2023-03-01",
+        "description": "deliciosa fritada de cerdo prepara esta delicia"
+      },
+      {
+        "title": "FRITADA … Sabroso y Festivo!",
+        "videoId": "R8y4UqcAe5A",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=R8y4UqcAe5A",
+        "embed": "https://www.youtube-nocookie.com/embed/R8y4UqcAe5A",
+        "uploadDate": "2021-06-18",
+        "description": "La Fritada de cerdo es un Plato Típico de la sierra del Ecuador que combina sabores como el cerdo cocinado en su propia grasa con acompañantes autóctonos como el mote, choclo , papa y  Maíz Tostado . "
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/0gn8px9mS_Y/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 50,
+    "created_at": "2026-03-03T11:22:59.917Z"
+  },
+  {
     "slug": "guatita-ecuatoriana-de-la-costa-con-verduras-regionales",
     "title": "Guatita Ecuatoriana Receta Tradicional de la Costa con Verduras Regionales",
     "description": "Guatita Ecuatoriana es un plato icónico de la costa del Ecuador, preparado con tripas de vaca y verduras frescas, ideal para comidas familiares. Esta receta incluye ingredientes regionales como zapallo y zanahoria para un sabor auténtico y nutritivo, perfecta para principiantes en la cocina ecuatoriana.",

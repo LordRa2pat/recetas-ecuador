@@ -1,5 +1,146 @@
 [
   {
+    "slug": "humitas-ecuatorianas-de-la-costa-con-queso-fresco",
+    "title": "Humitas Ecuatorianas de la Costa con Queso Fresco Receta Tradicional",
+    "description": "Humitas Ecuatorianas son un plato tradicional de maíz relleno y cocido al vapor. Esta versión de la Costa incluye queso fresco para un sabor cremoso y auténtico, perfecta para quienes buscan recetas ecuatorianas fáciles y deliciosas en casa. Ideal para fiestas o comidas familiares.",
+    "region": "Costa",
+    "category": "Entradas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "45 min",
+    "total_time": "75 min",
+    "ingredients": [
+      "4 tazas (desgranado) Maiz dulce fresco (comprar en Mercado local)",
+      "1 unidad (picada fina) Cebolla blanca (comprar en Supermaxi)",
+      "3 dientes (machacados) Ajo (comprar en TIA)",
+      "200 gramos (rallado) Queso fresco (comprar en Megamaxi)",
+      "1 taza Leche entera (comprar en Supermaxi)",
+      "100 gramos Manteca de cerdo (comprar en Mercado local)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "12 unidades (limpias) Hojas de maiz para envolver (comprar en Mercado local)",
+      "1/2 taza (picado) Cilantro fresco (comprar en Supermaxi)",
+      "1 unidad (picado) Pimenton rojo (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpie y desgrane el maíz dulce fresco, luego muela en un procesador hasta obtener una masa suave, esto toma aproximadamente 10 minutos a temperatura ambiente.",
+      "Paso 2: En una sartén a fuego medio (alrededor de 150°C), dore la cebolla picada y el ajo machacado con la manteca de cerdo durante 5 minutos hasta que estén translúcidos.",
+      "Paso 3: Mezcle la masa de maíz con la cebolla dorada, agregue la sal, el pimentón picado y el cilantro, revolviendo bien durante 5 minutos a temperatura ambiente para integrar los sabores.",
+      "Paso 4: Incorpore el queso fresco rallado y la leche entera a la mezcla, cocine a fuego bajo (100°C) por 10 minutos, removiendo constantemente hasta que la mezcla espese.",
+      "Paso 5: Prepare las hojas de maíz lavándolas y escaldándolas en agua hirviendo por 2 minutos, luego seque y coloque 2-3 cucharadas de la mezcla en cada hoja, envolviendo firmemente.",
+      "Paso 6: Coloque las humitas envueltas en una olla a vapor y cocine a 100°C durante 45 minutos hasta que estén firmes, verificando el vapor cada 15 minutos.",
+      "Paso 7: Retire las humitas del vapor y deje reposar por 5 minutos a temperatura ambiente antes de servir para que se asienten los sabores."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Use maíz fresco de la Costa para un sabor más auténtico, y evite sobrecalentar la mezcla para mantener la cremosidad del queso fresco.",
+      "Consejo 2: Para un toque regional, agregue un poco de achiote si está disponible, lo que realza el color y el sabor típico de las humitas costeñas."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "humitas ecuatorianas",
+      "ecuadorian food",
+      "traditional corn tamales"
+    ],
+    "image_alt": "Fotografía de humitas ecuatorianas de la Costa con queso fresco, mostrando el plato terminado envuelto en hojas de maíz y listo para servir",
+    "seo_keywords": [
+      "receta de humitas ecuatorianas con queso fresco de la Costa",
+      "como hacer humitas tradicionales ecuatorianas paso a paso",
+      "ingredientes para humitas costeñas autenticas",
+      "humitas ecuatorianas faciles en casa",
+      "platos ecuatorianos de maiz con queso fresco",
+      "variantes de humitas en la region de Guayaquil"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es la diferencia entre humitas de la Costa y de la Sierra?",
+        "a": "Las humitas de la Costa, como esta receta, suelen ser más cremosas y llevan queso fresco, mientras que las de la Sierra son más dulces y a veces incluyen frutas, reflejando las variaciones regionales en el Ecuador."
+      },
+      {
+        "q": "¿Puedo congelar las humitas después de prepararlas?",
+        "a": "Sí, puede congelar las humitas envueltas por hasta 2 meses. Para recalentar, hierva al vapor durante 20 minutos para mantener la textura y evitar que se sequen."
+      },
+      {
+        "q": "¿Es necesario usar maíz fresco si no está disponible?",
+        "a": "No es estrictamente necesario; puede usar harina de maíz nixtamalizado como sustituto, pero el maíz fresco ofrece un sabor más auténtico. Ajuste la cantidad de líquido para lograr la consistencia correcta."
+      },
+      {
+        "q": "¿Cuántas calorías tienen las humitas?",
+        "a": "Una porción de humitas ecuatorianas con queso fresco tiene aproximadamente 250-300 calorías, dependiendo de los ingredientes; son ricas en carbohidratos y proteínas, ideales para un desayuno nutritivo."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Famoso por sus humitas tradicionales de la Costa, con opciones frescas y caseras en un ambiente familiar."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Lugar ideal para probar humitas recién hechas por vendedores locales, con variedades que incluyen queso fresco y un toque costeño auténtico."
+      },
+      {
+        "name": "Café de la Costa",
+        "city": "Guayaquil",
+        "description": "Ofrece humitas como entrada en menús turísticos, con guías que explican la historia del plato en la región."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Hojas de maiz",
+        "substitute": "Hojas de platano o papel aluminio",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Lidl en Europa, para envolver y cocinar al vapor."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso ricotta o feta",
+        "notes": "Fácil de encontrar en tiendas como Whole Foods en EE.UU. o Carrefour en Europa, manteniendo la cremosidad similar."
+      },
+      {
+        "original": "Maiz dulce fresco",
+        "substitute": "Harina de maiz nixtamalizado",
+        "notes": "Compre en secciones étnicas de mercados como Target en EE.UU. o Aldi en Europa para un resultado cercano."
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "HUMITAS",
+        "videoId": "aLtGdXLbQNg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=aLtGdXLbQNg",
+        "embed": "https://www.youtube-nocookie.com/embed/aLtGdXLbQNg",
+        "uploadDate": "2021-04-09",
+        "description": "Lleve lleve! Humitas calientes! #Humitas #KWAEC\n\nIngredientes:\nChoclo 8 unidades \nMantequilla derretida (fria) 150 gr\nHuevos 4 unidades \nSal 10 gr\nAzúcar 50 gr\nQueso\n\nSIGUENOS:\r\nFB: https://tinyurl.co"
+      },
+      {
+        "title": "Choclotanda o Humita, cual te gusta más?",
+        "videoId": "Pu_w6W7N0ec",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=Pu_w6W7N0ec",
+        "embed": "https://www.youtube-nocookie.com/embed/Pu_w6W7N0ec",
+        "uploadDate": "2024-01-16",
+        "description": "La CHOCLOTANDA o HUMITA ha sido el envuelto que ha acompañado por años las tardes de los ecuatorianos junto a un buen café , es un delicioso pastelito de maíz fácil de preparar y muy tradicional en la"
+      },
+      {
+        "title": "Humitas Ecuatorianas",
+        "videoId": "GRed_NSmNAc",
+        "channel": "Cocina De Rosita (CocinadeRosita)",
+        "url": "https://www.youtube.com/watch?v=GRed_NSmNAc",
+        "embed": "https://www.youtube-nocookie.com/embed/GRed_NSmNAc",
+        "uploadDate": "2019-05-05",
+        "description": "30 choclos \nAnis Chiquito\nCebolla blanca\n4 Huevos\n1 Taza De Azucar \n¼ de Sal\nI taza de Mantequilla no muy llena\nQueso Rallado \nQueso Cortado en cubitos para el relleno\nMasarepa"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/Pu_w6W7N0ec/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 51,
+    "created_at": "2026-03-03T17:22:40.899Z"
+  },
+  {
     "slug": "fritada-ecuatoriana-de-la-sierra",
     "title": "Fritada Ecuatoriana de la Sierra Receta Tradicional",
     "description": "Fritada Ecuatoriana es un plato emblemático de la Sierra con carne de cerdo frita, acompañada de mote, papas y yucas, ideal para fiestas familiares. Esta receta paso a paso te guía para recrear el sabor auténtico en casa, con ingredientes accesibles y consejos para perfeccionarla.",

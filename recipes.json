@@ -1,5 +1,146 @@
 [
   {
+    "slug": "guatita-ecuatoriana-de-la-costa-con-verduras-regionales",
+    "title": "Guatita Ecuatoriana Receta Tradicional de la Costa con Verduras Regionales",
+    "description": "Guatita Ecuatoriana es un plato icónico de la costa del Ecuador, preparado con tripas de vaca y verduras frescas, ideal para comidas familiares. Esta receta incluye ingredientes regionales como zapallo y zanahoria para un sabor auténtico y nutritivo, perfecta para principiantes en la cocina ecuatoriana.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "60 min",
+    "total_time": "90 min",
+    "ingredients": [
+      "500 gramos Tripas de vaca (comprar en Mercado local)",
+      "4 unidades medianas Papas (comprar en Supermaxi)",
+      "2 unidades grandes Cebolla (comprar en Megamaxi)",
+      "4 dientes Ajo (comprar en TIA)",
+      "1 manojo Cilantro fresco (comprar en Mercado local)",
+      "1 cucharada Achiote en polvo (comprar en Supermaxi)",
+      "500 ml Leche entera (comprar en Megamaxi)",
+      "2 tazas cortadas en cubos Zapallo (comprar en Mercado local)",
+      "3 unidades medianas Zanahoria (comprar en TIA)",
+      "1 unidad Pimentón rojo (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia las tripas de vaca bajo agua fría durante 10 minutos para eliminar impurezas, luego corta en trozos de 2 cm y reserva en un bol con vinagre durante 15 minutos para marinar.",
+      "Paso 2: En una olla grande a fuego medio, calienta 2 cucharadas de aceite durante 2 minutos y sofríe la cebolla picada y el ajo machacado hasta que estén dorados, aproximadamente 5 minutos.",
+      "Paso 3: Agrega las tripas de vaca marinadas a la olla y cocina a fuego alto durante 10 minutos, revolviendo constantemente para sellar los sabores y evitar que se peguen.",
+      "Paso 4: Incorpora el achiote, el zapallo y la zanahoria cortados en cubos, y vierte la leche entera; reduce el fuego a bajo y cocina tapado por 30 minutos, verificando que las verduras estén tiernas.",
+      "Paso 5: Añade las papas peladas y cortadas en cubos, el pimentón en tiras y el cilantro picado; continua cocinando por 15 minutos más a fuego medio hasta que todo esté bien integrado y las papas estén suaves.",
+      "Paso 6: Retira del fuego y deja reposar por 5 minutos antes de servir caliente, ajustando la sazón con sal y pimienta al gusto para realzar los sabores regionales.",
+      "Paso 7: Sirve en platos hondos acompañada de arroz o plátano maduro para una experiencia completa, asegurándote de que la temperatura sea de al menos 60°C para mantener la frescura."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa tripas frescas y limpias para un sabor auténtico y evita sobrecocinarlas para mantener la textura tierna.",
+      "Consejo 2: Incorpora verduras de temporada de la Costa como zapallo local para realzar el sabor tradicional y añadir nutrientes."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Esmeraldas"
+    ],
+    "image_keywords": [
+      "guatita ecuatoriana",
+      "ecuadorian food",
+      "traditional dish with vegetables"
+    ],
+    "image_alt": "Fotografía del plato de guatita ecuatoriana terminado, con tripas de vaca, papas, zapallo y zanahoria en una salsa cremosa",
+    "seo_keywords": [
+      "receta de guatita ecuatoriana de la costa con verduras regionales",
+      "como hacer guatita tradicional ecuatoriana paso a paso",
+      "ingredientes para guatita ecuatoriana con verduras frescas",
+      "plato fuerte ecuatoriano guatita de la costa",
+      "variantes de guatita con vegetales en ecuador",
+      "consejos para cocinar guatita autentica en casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es la guatita ecuatoriana y de dónde proviene?",
+        "a": "La guatita es un plato tradicional de la costa de Ecuador hecho con tripas de vaca, papas y verduras, originario de ciudades como Guayaquil. Es un estofado cremoso que representa la gastronomía costera y suele servirse con arroz."
+      },
+      {
+        "q": "¿Puedo hacer la guatita vegetariana?",
+        "a": "Sí, puedes sustituir las tripas de vaca por setas o tofu para una versión vegetariana, manteniendo los demás ingredientes como papas y verduras, lo que preserva el sabor cremoso tradicional."
+      },
+      {
+        "q": "¿Cuánto tiempo dura la guatita refrigerada?",
+        "a": "La guatita refrigerada puede durar hasta 3 días en el frigorífico si se guarda en un contenedor hermético. Recalienta a fuego medio para mantener la textura y evita congelarla para no alterar los sabores."
+      },
+      {
+        "q": "¿Cuáles son las verduras regionales típicas en la guatita?",
+        "a": "En la guatita de la costa, se usan verduras como zapallo, zanahoria y pimentón, que son comunes en Ecuador y aportan dulzura y color al plato, destacando los ingredientes frescos de la región."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Un lugar icónico para probar guatita auténtica con verduras frescas de la costa, en un ambiente familiar y con opciones tradicionales."
+      },
+      {
+        "name": "Mercado Central de Esmeraldas",
+        "city": "Esmeraldas",
+        "description": "Aquí puedes encontrar vendedores locales que ofrecen guatita casera con ingredientes regionales, ideal para una experiencia auténtica y económica."
+      },
+      {
+        "name": "Restaurante La Costa",
+        "city": "Manta",
+        "description": "Ofrece variaciones de guatita con verduras de la zona, en un entorno coastal con vistas al mar para una degustación memorable."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Tripas de vaca",
+        "substitute": "Tripa de cerdo o tofu",
+        "notes": "En EE.UU., encuentra tripa en mercados hispanos como Walmart; en Europa, en tiendas asiáticas o supermarkets como Tesco."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Paprika ahumada",
+        "notes": "Disponible en supermercados como Whole Foods en EE.UU. o Carrefour en Europa, para un sabor similar sin perder el color rojizo."
+      },
+      {
+        "original": "Zapallo",
+        "substitute": "Calabaza butternut",
+        "notes": "Fácil de encontrar en mercados como Kroger en EE.UU. o Lidl en Europa, manteniendo la textura dulce y regional."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Guatita | KWA",
+        "videoId": "0TkRzV5mZtE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=0TkRzV5mZtE",
+        "embed": "https://www.youtube-nocookie.com/embed/0TkRzV5mZtE",
+        "uploadDate": "2022-01-28",
+        "description": "Guatita (4 Porciones)\n\nPara el caldo:\n1.5 Libras de Mondongo\n1/2 Atado de Perejil \n1/2 Atado Cilantro \n5 Dientes de Ajo \n3 litros de Agua\nSal - Orégano Seco \n\nPara la Guatita:\n3 Cucharadas de Achiote "
+      },
+      {
+        "title": "GUATITA",
+        "videoId": "k_rbpkZ6aDc",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=k_rbpkZ6aDc",
+        "embed": "https://www.youtube-nocookie.com/embed/k_rbpkZ6aDc",
+        "uploadDate": "2021-08-21",
+        "description": "LA GUATITA es un delicios plato del Ecuador, que mezcla los sabores de la papa y el maní con el exótico sabor y textura del mondongo o panza de res, se lo disfruta en la Costa y en la Sierra con  vari"
+      },
+      {
+        "title": "Guatita",
+        "videoId": "6-BLsc91qQQ",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=6-BLsc91qQQ",
+        "embed": "https://www.youtube-nocookie.com/embed/6-BLsc91qQQ",
+        "uploadDate": "2023-05-31",
+        "description": "Aprende a prepara conmigo esta deliciosa comida ecuatoriana"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/k_rbpkZ6aDc/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 49,
+    "created_at": "2026-03-03T05:22:35.594Z"
+  },
+  {
     "slug": "encebollado",
     "title": "Encebollado Ecuatoriano Receta Tradicional",
     "description": "Encebollado es una sopa icónica de la costa ecuatoriana, preparada con yuca, pescado fresco y cebolla, ideal para desayunos energéticos. Esta receta auténtica te guía paso a paso para recrear el sabor casero en tu cocina, con ingredientes accesibles y consejos para variantes.",

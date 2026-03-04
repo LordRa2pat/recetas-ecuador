@@ -1,5 +1,146 @@
 [
   {
+    "slug": "muchines-de-yuca",
+    "title": "Muchines de Yuca Ecuatoriana Receta Tradicional",
+    "description": "Muchines de yuca es un delicioso snack frito ecuatoriano hecho con yuca rallada y queso, ideal para aperitivos. Esta receta tradicional te guía paso a paso para recrear este plato costero en casa, con ingredientes frescos y fáciles de encontrar, perfecto para fiestas o comidas familiares.",
+    "region": "Costa",
+    "category": "Entradas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "1 kg Yuca (comprar en Mercado local)",
+      "200 g Queso fresco (comprar en Supermaxi)",
+      "2 unidades Huevos (comprar en Megamaxi)",
+      "100 g Harina de trigo (comprar en TIA)",
+      "1 taza Leche entera (comprar en Supermaxi)",
+      "1 unidad mediana Cebolla blanca (comprar en Mercado local)",
+      "2 dientes Ajo (comprar en Megamaxi)",
+      "al gusto Sal (comprar en TIA)",
+      "500 ml Aceite vegetal para freír (comprar en Supermaxi)",
+      "2 cucharadas picadas Perejil fresco (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Lava y pela 1 kg de yuca, luego rállala finamente usando un rallador, lo que tomará aproximadamente 10 minutos para preparar los ingredientes base.",
+      "Paso 2: En un tazón grande, mezcla la yuca rallada con 200 g de queso fresco desmenuzado, 2 huevos batidos, 100 g de harina, 1 taza de leche, 1 cebolla blanca picada finamente y 2 dientes de ajo machacados; agrega sal al gusto y mezcla bien durante 5 minutos hasta obtener una masa homogénea.",
+      "Paso 3: Deja reposar la masa en el refrigerador por 10 minutos para que se compacte y sea más fácil de manejar.",
+      "Paso 4: Forma bolas del tamaño de una pelota de golf con la masa, asegurándote de que queden compactas para evitar que se desarmen al freír.",
+      "Paso 5: Calienta 500 ml de aceite vegetal en una sartén profunda a 180°C; fríe las bolas por 5-7 minutos cada una hasta que estén doradas y crujientes por fuera.",
+      "Paso 6: Retira las bolas fritas y coloca sobre papel absorbente para eliminar el exceso de aceite, luego sirve caliente con perejil fresco picado como guarnición.",
+      "Paso 7: Asegúrate de que el aceite no supere los 180°C para evitar que se quemen, y fríe en lotes para mantener la temperatura constante."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa yuca fresca para un sabor auténtico y evita la yuca enlatada, ya que altera la textura.",
+      "Consejo 2: Para una versión más saludable, hornea las bolas a 200°C durante 20 minutos en lugar de freír, pero mantén la fritura para el crujido tradicional."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Quito"
+    ],
+    "image_keywords": [
+      "muchines de yuca",
+      "ecuadorian food",
+      "traditional ecuadorian snack"
+    ],
+    "image_alt": "Fotografía de muchines de yuca ecuatorianos fritos y dorados, servidos en un plato con perejil fresco",
+    "seo_keywords": [
+      "receta de muchines de yuca ecuatorianos paso a paso",
+      "como hacer muchines de yuca tradicionales en casa",
+      "ingredientes para muchines de yuca autentica receta",
+      "muchines de yuca plato costero ecuatoriano",
+      "snacks ecuatorianos con yuca y queso facil",
+      "variantes de muchines de yuca en la costa ecuatoriana"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es muchines de yuca y de dónde proviene?",
+        "a": "Muchines de yuca es un popular snack frito ecuatoriano hecho de yuca rallada mezclada con queso y otros ingredientes, originario de la región de la Costa, especialmente Guayaquil, y se sirve como entrada o acompañamiento en comidas tradicionales."
+      },
+      {
+        "q": "¿Puedo hacer muchines de yuca al horno en lugar de freír?",
+        "a": "Sí, para una versión más saludable, hornea las bolas a 200°C durante 20-25 minutos, pero el resultado será menos crujiente que la versión frita, que es la tradicional."
+      },
+      {
+        "q": "¿Cuánto duran los muchines de yuca una vez preparados?",
+        "a": "Los muchines de yuca frescos duran hasta 2 días en el refrigerador si se guardan en un contenedor hermético; recalentarlos en el horno revitaliza su textura crujiente."
+      },
+      {
+        "q": "¿Es necesario usar queso fresco específico para esta receta?",
+        "a": "El queso fresco es ideal por su sabor suave, pero puedes usar queso blanco o mozzarella como alternativa, asegurándote de que se integre bien en la masa para mantener la autenticidad."
+      }
+    ],
+    "places": [
+      {
+        "name": "Mercado Municipal de Guayaquil",
+        "city": "Guayaquil",
+        "description": "Un mercado vibrante donde puedes probar muchines de yuca recién hechos en puestos callejeros, junto a otros platos costeros."
+      },
+      {
+        "name": "Restaurante Lo Nuestro",
+        "city": "Quito",
+        "description": "Un restaurante en Quito que ofrece una versión tradicional de muchines de yuca como entrada, con toques modernos y ambiente familiar."
+      },
+      {
+        "name": "Plaza de la Independencia",
+        "city": "Guayaquil",
+        "description": "En esta plaza, vendedores locales preparan y sirven muchines de yuca como parte de la oferta callejera, ideal para turistas."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca",
+        "substitute": "Papa o cassava",
+        "notes": "En EE.UU., encuentra cassava en supermercados étnicos como Whole Foods o mercados hispanos."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Ricotta o queso blanco",
+        "notes": "En Europa, usa ricotta de marcas como Galbani, disponible en Tesco o Carrefour, para mantener la cremosidad."
+      },
+      {
+        "original": "Harina de trigo",
+        "substitute": "Harina de maíz",
+        "notes": "En EE.UU., elige harina de maíz en tiendas como Walmart para una textura similar si no tienes trigo."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "MUCHINES DE YUCA",
+        "videoId": "u8JEE6yvKmc",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=u8JEE6yvKmc",
+        "embed": "https://www.youtube-nocookie.com/embed/u8JEE6yvKmc",
+        "uploadDate": "2018-09-21",
+        "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nJoakim Karud - Longing\nhttp://twitter.com/joakimkarud\nhttp://facebook.com/joakimkarudmusic\n\nTO"
+      },
+      {
+        "title": "Muchines RELLENOS de CARNE | KWA",
+        "videoId": "jAwtWMJKpTc",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=jAwtWMJKpTc",
+        "embed": "https://www.youtube-nocookie.com/embed/jAwtWMJKpTc",
+        "uploadDate": "2025-03-28",
+        "description": "Prueba esta deliciosa versión de #Muchines rellenos de #Carne , perfecto para compartir y disfrutar con tus seres queridos. #kwaec \nEncuentra todo los ingredientes aquí:\n\nhttps://recetaskwa.com/2025/0"
+      },
+      {
+        "title": "Como preparar muchines - puro sabor Ecuatoriano -  Ecuadorian food - muchines - Anabelle's Kitchen",
+        "videoId": "wCOsRAdh8LA",
+        "channel": "Anabelle's Kitchen",
+        "url": "https://www.youtube.com/watch?v=wCOsRAdh8LA",
+        "embed": "https://www.youtube-nocookie.com/embed/wCOsRAdh8LA",
+        "uploadDate": "2021-05-14",
+        "description": "#muchines #comidaecuatoriana #cassava\nReceta facil para unos ricos muchines Ecuatorianos.  Ideal para un desayuno.\n\nIngredientes:\n2 libras de yuca rallada (2 pounds of grated cassava) \nQueso desmenuza"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/wCOsRAdh8LA/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 53,
+    "created_at": "2026-03-04T05:22:43.887Z"
+  },
+  {
     "slug": "seco-de-chivo",
     "title": "Seco de Chivo Ecuatoriano Receta Tradicional",
     "description": "Seco de chivo es un estofado ecuatoriano de la costa con carne de chivo marinada en cerveza y especias, ideal para comidas familiares; esta receta detalla los pasos para un sabor auténtico y tierno, perfecto para principiantes y expertos en cocina ecuatoriana.",

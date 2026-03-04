@@ -1,5 +1,149 @@
 [
   {
+    "slug": "bolones-de-verde",
+    "title": "Bolones de Verde Ecuatorianos Receta Tradicional",
+    "description": "Bolones de verde son una especialidad costera ecuatoriana hechas con plátanos verdes, queso y chicharrón, perfectas para desayunos o como acompañante. Esta receta fácil te guía paso a paso para recrear este plato auténtico en casa, con ingredientes frescos y consejos para el mejor sabor.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "20 min",
+    "total_time": "35 min",
+    "ingredients": [
+      "4 unidades medianas Plátanos verdes (comprar en Mercado local)",
+      "200 gramos Queso fresco (comprar en Supermaxi)",
+      "100 gramos Chicharrón de cerdo (comprar en TIA)",
+      "1 unidad mediana picada Cebolla blanca (comprar en Megamaxi)",
+      "2 dientes picados Ajo (comprar en Mercado local)",
+      "1/2 taza picada Cilantro fresco (comprar en Supermaxi)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "1 litro para freír Aceite vegetal (comprar en Megamaxi)",
+      "1 unidad batido Huevo (comprar en Mercado local)",
+      "1/2 cucharadita Pimienta negra (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Lava y pela los 4 plátanos verdes, luego córtalos en rodajas de 2 cm de grosor y hiérvelos en agua con sal durante 10 minutos a fuego medio hasta que estén tiernos.",
+      "Paso 2: Escurre los plátanos y májalos en un bol grande mientras aún están calientes, agregando 1 cucharadita de sal y 1/2 cucharadita de pimienta para formar una masa homogénea.",
+      "Paso 3: En una sartén a fuego medio-alto, calienta 2 cucharadas de aceite vegetal y sofríe la cebolla picada y los 2 dientes de ajo durante 3 minutos hasta que estén transparentes.",
+      "Paso 4: Incorpora el chicharrón picado y el cilantro al majado de plátanos, junto con el sofrito de cebolla y ajo, y mezcla bien para distribuir los sabores uniformemente.",
+      "Paso 5: Forma bolas del tamaño de una pelota de golf con la mezcla, pasando cada una por el huevo batido para que se adhiera mejor durante la fritura.",
+      "Paso 6: En una olla con aceite vegetal caliente a 180°C, fríe las bolas por 5 minutos por lado hasta que estén doradas y crocantes, luego escúrrelas en papel absorbente.",
+      "Paso 7: Sirve los bolones inmediatamente, acompañados de queso fresco desmenuzado por encima para realzar el sabor tradicional.",
+      "Paso 8: Deja reposar por 2 minutos antes de servir para que se enfríen ligeramente y no quemen."
+    ],
+    "tips": [
+      "El chef profesional recomienda usar plátanos muy verdes para que los bolones mantengan su forma y no se desmoronen durante la fritura.",
+      "Asegúrate de que el aceite esté a la temperatura correcta (180°C) para un friturado uniforme y evitar que absorban exceso de grasa."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "bolones de verde",
+      "plato ecuatoriano",
+      "comida tradicional ecuador",
+      "plátanos verdes fritos"
+    ],
+    "image_alt": "Bolones de verde ecuatorianos servidos en un plato con queso fresco y chicharrón, listos para comer",
+    "seo_keywords": [
+      "receta de bolones de verde ecuatorianos paso a paso",
+      "como hacer bolones de verde tradicionales",
+      "platos ecuatorianos con plátanos verdes",
+      "bolones de verde receta costa ecuatoriana",
+      "mejor receta de bolones de verde para desayuno",
+      "ingredientes para bolones de verde autenticos",
+      "preparacion facil de bolones de verde en casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué son los bolones de verde y de dónde vienen?",
+        "a": "Los bolones de verde son bolas fritas de plátano verde rellenas o mezcladas con ingredientes como queso y chicharrón, originarias de la costa de Ecuador, especialmente en ciudades como Guayaquil, y son populares para desayunos o meriendas."
+      },
+      {
+        "q": "¿Puedo hacer bolones de verde sin freír para una versión más saludable?",
+        "a": "Sí, puedes hornearlos en lugar de freírlos: precalienta el horno a 200°C, coloca las bolas en una bandeja y hornea por 15-20 minutos, aunque el sabor tradicional frito será diferente."
+      },
+      {
+        "q": "¿Cuánto duran los bolones de verde una vez preparados?",
+        "a": "Los bolones de verde frescos duran hasta 2 días en el refrigerador si se guardan en un contenedor hermético; recaliéntalos en el horno para mantener la textura crocante y no en el microondas para evitar que se pongan blandos."
+      },
+      {
+        "q": "¿Son los bolones de verde aptos para vegetarianos?",
+        "a": "Depende de los ingredientes; la versión tradicional con chicharrón no lo es, pero puedes hacerla vegetariana sustituyendo el chicharrón por vegetales como espinacas o simplemente omitiéndolo para un plato más ligero."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante Lo Nuestro",
+        "city": "Guayaquil",
+        "description": "Un lugar icónico en Guayaquil que sirve bolones de verde con ingredientes frescos y auténticos, ideal para probar la versión tradicional con vista a la ciudad."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "En este vibrante mercado, puedes encontrar vendedores locales que preparan bolones de verde al momento con productos frescos de la región, ofreciendo una experiencia auténtica y asequible."
+      },
+      {
+        "name": "Parrillada El Quinche",
+        "city": "Quito",
+        "description": "Aunque no es de la costa, este restaurante en Quito ofrece una variante de bolones de verde con toques serranos, perfecto para turistas explorando la capital."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Plátanos verdes",
+        "substitute": "Bananos verdes o plantains verdes",
+        "notes": "Fácilmente disponibles en supermercados como Walmart en EE.UU. o Lidl en Europa, busca en la sección de frutas tropicales."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso feta o queso panela",
+        "notes": "Encuéntralo en tiendas de productos latinos como Hispanic Market en EE.UU. o en secciones internacionales de supermercados como Tesco en Europa."
+      },
+      {
+        "original": "Chicharrón",
+        "substitute": "Tocino ahumado o jamón",
+        "notes": "Sustituye con tocino de marcas como Oscar Mayer en EE.UU. o en carnicerías de Sainsbury's en Europa para un sabor similar aunque menos tradicional."
+      }
+    ],
+    "estimated_cost": "$4.50 USD",
+    "youtube_videos": [
+      {
+        "title": "EL BOLÓN de tus sueños | KWA",
+        "videoId": "UaCEH8cRzpI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=UaCEH8cRzpI",
+        "embed": "https://www.youtube-nocookie.com/embed/UaCEH8cRzpI",
+        "uploadDate": "2023-07-14",
+        "description": "Un Bolón irresistible que no te puedes perder! #BolónMixto #KWAEC \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/13/bolon-de-verde-mixto/\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/y"
+      },
+      {
+        "title": "BOLON DE VERDE ...LA BOLA DEL SABOR!",
+        "videoId": "JqneshX8JSI",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=JqneshX8JSI",
+        "embed": "https://www.youtube-nocookie.com/embed/JqneshX8JSI",
+        "uploadDate": "2021-02-03",
+        "description": "Hoy preparamos BOLON DE VERDE con Chicharrón y con Queso, esta es una receta que nos trae toda la tradición de la costa Ecuatoriana, preparada con nuestros deliciosos plátanos verdes y acompañados de "
+      },
+      {
+        "title": "BOLONES DE VERDE muy CROCANTES YOUTUBE",
+        "videoId": "_-rAwOVobFU",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=_-rAwOVobFU",
+        "embed": "https://www.youtube-nocookie.com/embed/_-rAwOVobFU",
+        "uploadDate": "2022-01-31",
+        "description": "Siguenos en Facebook: https://www.facebook.com/100048743916416/\nInstagram: COCINAFACILITOCONISA\nBolones de Verde"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/JqneshX8JSI/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 56,
+    "created_at": "2026-03-04T23:22:49.162Z"
+  },
+  {
     "slug": "enchilado-de-cangrejo",
     "title": "Enchilado de Cangrejo Ecuatoriano Receta Tradicional",
     "description": "Enchilado de cangrejo es un sabroso estofado costero ecuatoriano con cangrejo fresco en una salsa de tomate y especias. Esta receta paso a paso te guía para recrear el auténtico sabor en casa, ideal para amantes de los mariscos ecuatorianos.",

@@ -1,5 +1,146 @@
 [
   {
+    "slug": "viche-manabita",
+    "title": "Viche Manabita Receta Tradicional Ecuatoriana",
+    "description": "Viche Manabita es una sopa costera ecuatoriana con mariscos frescos y plátano verde, ideal para comidas familiares y amantes de la cocina marina. Preparada con ingredientes autóctonos, ofrece sabores intensos y nutritivos en una receta fácil de seguir.",
+    "region": "Costa",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "40 min",
+    "total_time": "60 min",
+    "ingredients": [
+      "500g Pescado fresco (como corvina) (comprar en Supermaxi)",
+      "200g Camarones pelados (comprar en Mercado local)",
+      "2 unidades medianas Plátano verde (comprar en TIA)",
+      "1 unidad grande picada Cebolla blanca (comprar en Supermaxi)",
+      "3 dientes picados Ajo (comprar en Supermaxi)",
+      "1 manojo picado Cilantro fresco (comprar en Mercado local)",
+      "1 lata (400ml) Leche de coco (comprar en Megamaxi)",
+      "2 cucharadas Aceite vegetal (comprar en Supermaxi)",
+      "al gusto Sal (comprar en Supermaxi)",
+      "1 cucharadita Pimienta (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Lava y prepara los ingredientes; pica la cebolla, el ajo y el cilantro, y corta el plátano verde en rodajas de 1 cm, lo que toma aproximadamente 10 minutos a temperatura ambiente.",
+      "Paso 2: En una olla grande, calienta 2 cucharadas de aceite a fuego medio (alrededor de 150°C) durante 2 minutos y sofríe la cebolla y el ajo hasta que estén dorados, unos 5 minutos.",
+      "Paso 3: Agrega el plátano verde a la olla y cocina por 10 minutos a fuego medio, revolviendo ocasionalmente para evitar que se pegue, hasta que comience a ablandar.",
+      "Paso 4: Incorpora el pescado y los camarones, sazona con sal y pimienta, y cocina por 5 minutos a fuego medio-alto para sellar los mariscos y evitar que se sequen.",
+      "Paso 5: Vierte la leche de coco y el cilantro picado, baja el fuego a bajo y deja hervir la mezcla durante 15 minutos, removiendo cada 5 minutos para integrar los sabores.",
+      "Paso 6: Prueba y ajusta el sazón si es necesario, luego retira del fuego y deja reposar por 5 minutos antes de servir caliente.",
+      "Paso 7: Sirve en bowls individuales, decorado con cilantro fresco, para una presentación atractiva."
+    ],
+    "tips": [
+      "El chef ecuatoriano recomienda usar pescado fresco de Manabí para un sabor auténtico y evitar congelados que alteren la textura.",
+      "Para un toque regional, añade un poco de achiote si está disponible, pero no exageres para no dominar los sabores marinos."
+    ],
+    "origin_cities": [
+      "Portoviejo",
+      "Manta"
+    ],
+    "image_keywords": [
+      "viche manabita soup",
+      "ecuadorian coastal food",
+      "traditional ecuadorian dish"
+    ],
+    "image_alt": "Fotografía de Viche Manabita, una sopa espesa con mariscos frescos, plátano verde y leche de coco en un bowl tradicional",
+    "seo_keywords": [
+      "receta de viche manabita ecuatoriana tradicional",
+      "como preparar viche manabita de la costa",
+      "ingredientes para viche manabita autentico",
+      "viche manabita sopa de mariscos ecuador",
+      "pasos para hacer viche manabita en casa",
+      "variantes regionales de viche manabita manabi"
+    ],
+    "faqs": [
+      {
+        "q": "Qué es Viche Manabita y de dónde proviene?",
+        "a": "Viche Manabita es una sopa tradicional de la región costera de Manabí en Ecuador, hecha principalmente con mariscos, plátano verde y leche de coco, representando la rica gastronomía marinera del país."
+      },
+      {
+        "q": "Puedo hacer Viche Manabita si soy alérgico a los mariscos?",
+        "a": "Sí, puedes sustituir los mariscos por proteínas como pollo o tofu, pero esto alterará el sabor auténtico; asegúrate de cocinar adecuadamente para mantener la consistencia cremosa."
+      },
+      {
+        "q": "Cuánto tiempo dura Viche Manabita refrigerada?",
+        "a": "Viche Manabita se conserva hasta 2 días en el refrigerador en un contenedor hermético; recálcala a fuego bajo para evitar que los mariscos se endurezcan y pierde frescura después de ese periodo."
+      },
+      {
+        "q": "Es Viche Manabita picante?",
+        "a": "No necesariamente, aunque puedes añadir ají o pimienta para picante; la versión tradicional es suave y enfocada en sabores marinos, ideal para todos los paladares."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manaba",
+        "city": "Portoviejo",
+        "description": "Un lugar icónico en Portoviejo que sirve Viche Manabita con ingredientes frescos del mar, ofreciendo una experiencia auténtica con vistas al océano."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Aquí puedes probar Viche Manabita en puestos locales con mariscos recién pescados, ideal para una inmersión en la cultura gastronómica costera."
+      },
+      {
+        "name": "Restaurante Mar y Tierra",
+        "city": "Bahía de Caráquez",
+        "description": "Ofrece una versión moderna de Viche Manabita con toques innovadores, ubicado cerca de la playa para una comida memorable."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Plátano verde",
+        "substitute": "Banana verde o yuca",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para mantener la textura similar."
+      },
+      {
+        "original": "Pescado fresco",
+        "substitute": "Filete de tilapia congelada",
+        "notes": "Fácil de encontrar en tiendas como Costco en EE.UU. o Lidl en Europa, pero descongela primero para preservar el sabor."
+      },
+      {
+        "original": "Leche de coco",
+        "substitute": "Leche de almendras con extracto de coco",
+        "notes": "Se vende en cadenas como Whole Foods en EE.UU. o Edeka en Europa, para una opción vegana sin perder el toque cremoso."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Viche de Pescado IRRESISTIBLE | KWA",
+        "videoId": "PHvTsKlzw5c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=PHvTsKlzw5c",
+        "embed": "https://www.youtube-nocookie.com/embed/PHvTsKlzw5c",
+        "uploadDate": "2024-02-23",
+        "description": "No te quedes con las ganas de probar este #VicheDePescado. Prepáralo y disfruta de esta preciosura. #KWAEC \nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/02/23/viche-de-pescado\n\nS"
+      },
+      {
+        "title": "Viche de Pescado: Delicioso Plato Típico del Ecuador | KWA",
+        "videoId": "Vg-T6WDc8WI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Vg-T6WDc8WI",
+        "embed": "https://www.youtube-nocookie.com/embed/Vg-T6WDc8WI",
+        "uploadDate": "2025-10-02",
+        "description": "Ingredientes:  https://recetaskwa.com/2024/02/23/viche-de-pescado/\n\nEl Viche de pescado es una de las sopas más representativas de la gastronomía ecuatoriana, especialmente de la provincia de Manabí. "
+      },
+      {
+        "title": "VICHE DE PESCADO Y CAMARÓN ... Exótico sabor Manabita!",
+        "videoId": "HmungqII3NI",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=HmungqII3NI",
+        "embed": "https://www.youtube-nocookie.com/embed/HmungqII3NI",
+        "uploadDate": "2021-04-09",
+        "description": "La sopa más relevante de la provincia de Manabí es sin dudarlo el VICHE DE PESCADO y ahora la acompañamos con camarones para hacerla aún mas deliciosa.\nLes invito a seguirnos en nuestro SPOTIFY  para "
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/HmungqII3NI/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 54,
+    "created_at": "2026-03-04T11:22:35.986Z"
+  },
+  {
     "slug": "muchines-de-yuca",
     "title": "Muchines de Yuca Ecuatoriana Receta Tradicional",
     "description": "Muchines de yuca es un delicioso snack frito ecuatoriano hecho con yuca rallada y queso, ideal para aperitivos. Esta receta tradicional te guía paso a paso para recrear este plato costero en casa, con ingredientes frescos y fáciles de encontrar, perfecto para fiestas o comidas familiares.",

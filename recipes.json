@@ -1,5 +1,146 @@
 [
   {
+    "slug": "enchilado-de-cangrejo",
+    "title": "Enchilado de Cangrejo Ecuatoriano Receta Tradicional",
+    "description": "Enchilado de cangrejo es un sabroso estofado costero ecuatoriano con cangrejo fresco en una salsa de tomate y especias. Esta receta paso a paso te guía para recrear el auténtico sabor en casa, ideal para amantes de los mariscos ecuatorianos.",
+    "region": "Costa",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "1 kg Cangrejo fresco (comprar en Mercado local)",
+      "4 unidades, picados Tomates maduros (comprar en Supermaxi)",
+      "2 unidades, finamente picadas Cebolla blanca (comprar en Megamaxi)",
+      "1 unidad, en rodajas Pimiento rojo (comprar en Supermaxi)",
+      "4 dientes, machacados Ajo (comprar en Mercado local)",
+      "1 manojo, picado Cilantro fresco (comprar en Mercado local)",
+      "2 cucharadas Aceite vegetal (comprar en Supermaxi)",
+      "al gusto Sal (comprar en TIA)",
+      "1 cucharadita Pimienta negra (comprar en Megamaxi)",
+      "1/2 cucharadita Comino molido (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Limpia el cangrejo fresco eliminando las conchas y partes no comestibles, lo que toma aproximadamente 10 minutos para asegurar que esté listo para cocinar.",
+      "En una sartén grande, calienta 2 cucharadas de aceite vegetal a temperatura media (alrededor de 150°C) durante 2 minutos y sofríe la cebolla picada y el ajo machacado hasta que estén transparentes, unos 5 minutos.",
+      "Agrega el pimiento rojo en rodajas y cocina por 3 minutos más, revolviendo constantemente para que se ablanden sin quemarse.",
+      "Incorpora los tomates picados y sazona con sal, pimienta negra y comino molido; deja que se cocine a fuego medio por 10 minutos hasta formar una salsa espesa.",
+      "Añade el cangrejo limpio a la salsa, cubre la sartén y cocina a fuego bajo durante 15 minutos, asegurándote de que el cangrejo se cocine uniformemente sin sobrepasar para mantener su jugosidad.",
+      "Espolvorea cilantro fresco picado sobre la mezcla y cocina por 2 minutos adicionales para infusionar los sabores, luego retira del fuego.",
+      "Sirve inmediatamente en platos calientes, acompañado de arroz, para un plato completo que resalta los sabores costeros."
+    ],
+    "tips": [
+      "Usa cangrejo fresco de la costa para un sabor auténtico; si no está disponible, elige opciones congeladas de calidad alta.",
+      "No sobrecocines el cangrejo para evitar que quede fibroso; prueba con un tenedor después de 15 minutos."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "enchilado de cangrejo",
+      "ecuadorian seafood dish",
+      "traditional ecuadorian food"
+    ],
+    "image_alt": "Plato de enchilado de cangrejo ecuatoriano con cangrejo en salsa roja y hierbas frescas",
+    "seo_keywords": [
+      "receta de enchilado de cangrejo ecuatoriano paso a paso",
+      "como preparar enchilado de cangrejo tradicional",
+      "ingredientes para enchilado de cangrejo costa ecuatoriana",
+      "plato de mariscos enchilado de cangrejo autentico",
+      "receta facil de enchilado de cangrejo en casa",
+      "variantes regionales de enchilado de cangrejo en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el enchilado de cangrejo y de dónde proviene?",
+        "a": "El enchilado de cangrejo es un estofado tradicional de la costa ecuatoriana, hecho con cangrejo en una salsa de tomate, cebolla y especias, originario de ciudades como Guayaquil, y es popular por su sabor fresco y picante."
+      },
+      {
+        "q": "¿Puedo usar cangrejo congelado en lugar de fresco?",
+        "a": "Sí, puedes usar cangrejo congelado si no tienes acceso a fresco; descongela primero y ajusta el tiempo de cocción para evitar que se desmorone, manteniendo el sabor auténtico."
+      },
+      {
+        "q": "¿Cómo se sirve el enchilado de cangrejo?",
+        "a": "Se sirve caliente con arroz blanco, plátano maduro frito o yuca, para complementar los sabores marinos; en Ecuador, a menudo se acompaña de una cerveza fría para realzar el picante."
+      },
+      {
+        "q": "¿Es el enchilado de cangrejo picante?",
+        "a": "Puede ser picante dependiendo de las especias añadidas, pero la receta tradicional es moderadamente picante; ajusta el nivel de pimienta según tu preferencia para un sabor personalizado."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Caracol",
+        "city": "Guayaquil",
+        "description": "Famoso por su enchilado de cangrejo fresco con vistas al malecón, ideal para turistas que buscan autenticidad."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Lugar donde probar enchilado de cangrejo en puestos locales con ingredientes del mar, ofreciendo una experiencia cultural inmersiva."
+      },
+      {
+        "name": "Restaurante La Costa",
+        "city": "Esmeraldas",
+        "description": "Ofrece variaciones del plato con cangrejo local, perfecto para combinar con un tour por la región costera."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Cangrejo fresco",
+        "substitute": "Langostinos o camarones",
+        "notes": "Fácilmente disponibles en supermercados como Walmart en EE.UU. o Carrefour en Europa, manteniendo el sabor marino."
+      },
+      {
+        "original": "Tomates frescos",
+        "substitute": "Tomates en lata",
+        "notes": "Encuéntralos en tiendas como Target en EE.UU. o Lidl en Europa para una opción práctica cuando los tomates frescos no estén en temporada."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil",
+        "notes": "Disponible en mercados locales como Aldi en Europa, como alternativa para un sabor similar sin el toque herbáceo fuerte."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "CANGREJOS CRIOLLOS 🇪🇨    La receta de la Cangrejada Ecuatoriana | KWA",
+        "videoId": "zkAROgpmdF8",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=zkAROgpmdF8",
+        "embed": "https://www.youtube-nocookie.com/embed/zkAROgpmdF8",
+        "uploadDate": "2025-07-12",
+        "description": "¿Has probado una auténtica cangrejada ecuatoriana? 🦀🇪🇨 Las #cangrejadas son una de las tradiciones gastronómicas más queridas de la costa del Ecuador. Más que un plato, es una experiencia que une a"
+      },
+      {
+        "title": "Sopa de cangrejo Delicioso!!",
+        "videoId": "EkHlOxT4wRA",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=EkHlOxT4wRA",
+        "embed": "https://www.youtube-nocookie.com/embed/EkHlOxT4wRA",
+        "uploadDate": "2022-01-26",
+        "description": ""
+      },
+      {
+        "title": "Explosión de Sabor! Así se Hace la Sopa de Cangrejo Más Rica del Ecuador 🦀🌴 | KWA",
+        "videoId": "eF9jYyNJRKA",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=eF9jYyNJRKA",
+        "embed": "https://www.youtube-nocookie.com/embed/eF9jYyNJRKA",
+        "uploadDate": "2025-04-25",
+        "description": "🦀🌊 ¡Prepárate para una explosión de sabor! En este video te enseñamos a cocinar la auténtica #sopadecangrejo ecuatoriana, un plato típico de la costa que reúne todo el sabor del mar con ingredientes"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/EkHlOxT4wRA/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 55,
+    "created_at": "2026-03-04T17:22:43.038Z"
+  },
+  {
     "slug": "viche-manabita",
     "title": "Viche Manabita Receta Tradicional Ecuatoriana",
     "description": "Viche Manabita es una sopa costera ecuatoriana con mariscos frescos y plátano verde, ideal para comidas familiares y amantes de la cocina marina. Preparada con ingredientes autóctonos, ofrece sabores intensos y nutritivos en una receta fácil de seguir.",

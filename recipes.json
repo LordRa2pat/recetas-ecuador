@@ -1,5 +1,146 @@
 [
   {
+    "slug": "chaulafan",
+    "title": "Chaulafan Ecuatoriano Receta Tradicional",
+    "description": "Chaulafan es un frito de arroz ecuatoriano con influencias chinas, ideal para comidas familiares, preparado con ingredientes frescos y sabores auténticos. Esta receta paso a paso te guía para recrear este plato costero en casa.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "20 min",
+    "total_time": "35 min",
+    "ingredients": [
+      "2 tazas arroz cocido (comprar en Supermaxi)",
+      "200 gramos pechuga de pollo (comprar en Supermaxi)",
+      "1 unidad mediana cebolla picada (comprar en Mercado local)",
+      "2 dientes ajo picado (comprar en Supermaxi)",
+      "1 unidad grande zanahoria rallada (comprar en TIA)",
+      "1/2 taza guisantes congelados (comprar en Supermaxi)",
+      "2 unidades huevo (comprar en Supermaxi)",
+      "2 cucharadas salsa de soja (comprar en Supermaxi)",
+      "3 cucharadas aceite vegetal (comprar en Megamaxi)",
+      "al gusto sal (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Primero, cocina el arroz con 4 tazas de agua durante 15 minutos a fuego medio hasta que quede suave, luego enfríalo para que los granos queden sueltos.",
+      "En una sartén grande a fuego alto, calienta 2 cucharadas de aceite durante 1 minuto y sofríe el ajo y la cebolla picados por 2 minutos hasta que estén translúcidos.",
+      "Agrega la pechuga de pollo cortada en trozos pequeños y cocina por 5 minutos a fuego medio, revolviendo constantemente hasta que el pollo esté dorado y cocido.",
+      "Incorpora la zanahoria rallada y los guisantes, saltea por 3 minutos a fuego medio para que las verduras queden crujientes pero tiernas.",
+      "En un bowl aparte, bate los huevos y viértelos en la sartén, cocinando por 1 minuto hasta que se cuajen, luego mezcla todo con el arroz cocido.",
+      "Añade la salsa de soja y la sal al gusto, revuelve todo durante 2 minutos a fuego bajo para integrar los sabores y sirve inmediatamente caliente.",
+      "Finalmente, deja reposar el chaulafan por 1 minuto antes de servir para que los ingredientes se asienten y los sabores se intensifiquen."
+    ],
+    "tips": [
+      "Usa arroz previamente cocido y frío para que los granos queden sueltos y no se peguen durante el salteado.",
+      "Agrega un toque de ají o cilantro fresco al final para realzar los sabores regionales de la Costa ecuatoriana."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Quito"
+    ],
+    "image_keywords": [
+      "chaulafan ecuatoriano",
+      "frito de arroz",
+      "comida ecuatoriana tradicional"
+    ],
+    "image_alt": "Plato de Chaulafan ecuatoriano con arroz frito, pollo, verduras y salsa",
+    "seo_keywords": [
+      "receta de chaulafan ecuatoriano tradicional paso a paso",
+      "como preparar chaulafan en casa",
+      "ingredientes para chaulafan ecuatoriano autentico",
+      "plato ecuatoriano chaulafan de la costa",
+      "mejor receta de chaulafan con pollo y verduras",
+      "variantes regionales de chaulafan en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Chaulafan y de dónde proviene?",
+        "a": "Chaulafan es un frito de arroz adaptado de la cocina china en Ecuador, originario de la Costa, especialmente en Guayaquil, y se prepara con arroz, proteínas como pollo y verduras frescas para un plato versátil y sabroso."
+      },
+      {
+        "q": "¿Puedo hacer Chaulafan vegetariano?",
+        "a": "Sí, puedes hacer Chaulafan vegetariano sustituyendo el pollo por tofu o más verduras, manteniendo los sabores con salsa de soja y especias, lo que lo convierte en una opción ligera y saludable."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el Chaulafan guardado?",
+        "a": "El Chaulafan guardado en el refrigerador en un contenedor hermético dura hasta 2 días; para recalentarlo, usa una sartén a fuego medio para mantener la textura crujiente y evitar que se vuelva blando."
+      },
+      {
+        "q": "¿Cuáles son las variaciones regionales de Chaulafan en Ecuador?",
+        "a": "En la Costa, el Chaulafan es más picante y con mariscos, mientras que en la Sierra se usa más carne de res o cerdo, y en la Amazonia se incorporan ingredientes locales como yuca para adaptarlo a los sabores regionales."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Hornero",
+        "city": "Guayaquil",
+        "description": "Famoso por su Chaulafan auténtico con ingredientes frescos de la Costa, ideal para probar versiones tradicionales en un ambiente familiar."
+      },
+      {
+        "name": "Mercado Central",
+        "city": "Quito",
+        "description": "Ofrece Chaulafan en puestos de comida callejera con variantes serranas, perfecto para una experiencia auténtica y asequible."
+      },
+      {
+        "name": "Restaurante Chifa Oriental",
+        "city": "Cuenca",
+        "description": "Especializado en platos chinos-ecuatorianos, su Chaulafan es una delicia con toques locales que fusionan sabores."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "salsa de soja",
+        "substitute": "salsa de soja baja en sodio de marca Kikkoman",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Tesco en Europa para un sabor similar con menos sal."
+      },
+      {
+        "original": "pechuga de pollo",
+        "substitute": "tofu firme",
+        "notes": "Encuéntralo en tiendas de alimentos asiáticos o secciones veganas de supermercados como Whole Foods en EE.UU. y Sainsbury's en Europa para una versión vegetariana."
+      },
+      {
+        "original": "guisantes",
+        "substitute": "judías verdes frescas",
+        "notes": "Usa judías verdes de marcas locales en EE.UU. o Europa, disponibles en mercados como Aldi, para mantener la textura crujiente."
+      }
+    ],
+    "estimated_cost": "$8.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Chaulafán Ecuatoriano SÚPER ESPECIAL | KWA",
+        "videoId": "ZbvNmAsx7lw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=ZbvNmAsx7lw",
+        "embed": "https://www.youtube-nocookie.com/embed/ZbvNmAsx7lw",
+        "uploadDate": "2024-09-20",
+        "description": "Ya no tienes excusa para comer un buen #ChaulafánEspecial, prueba esta receta y seguro vas a quedar encantado! #KWAEC\n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/09/20/chaulafa"
+      },
+      {
+        "title": "Chaulafan Ecuatoriano - Receta Original.",
+        "videoId": "j4tqviaNROg",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=j4tqviaNROg",
+        "embed": "https://www.youtube-nocookie.com/embed/j4tqviaNROg",
+        "uploadDate": "2019-11-08",
+        "description": "Autentico Chaulafan Ecuatoriano\nchaulafan receta chifa\nchaulafan de pollo chifa\ncomo hacer chaulafan chino ingredientes\ncomo hacer chaulafan ecuatoriano costeño\nreceta para preparar chaulafan especial"
+      },
+      {
+        "title": "CHAULAFAN ... Creación Ecuatoriana!",
+        "videoId": "zKSLdNNQ_4s",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=zKSLdNNQ_4s",
+        "embed": "https://www.youtube-nocookie.com/embed/zKSLdNNQ_4s",
+        "uploadDate": "2021-09-10",
+        "description": "EL CHAULAFAN es una delicia original de Ecuador, la mezcla de sabores asiáticos con productos originarios y por supuesto el mejor ARROZ SUPER EXTRA hacen que este platillo sea un deleite para toda la "
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/j4tqviaNROg/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 57,
+    "created_at": "2026-03-05T05:22:40.815Z"
+  },
+  {
     "slug": "bolones-de-verde",
     "title": "Bolones de Verde Ecuatorianos Receta Tradicional",
     "description": "Bolones de verde son una especialidad costera ecuatoriana hechas con plátanos verdes, queso y chicharrón, perfectas para desayunos o como acompañante. Esta receta fácil te guía paso a paso para recrear este plato auténtico en casa, con ingredientes frescos y consejos para el mejor sabor.",

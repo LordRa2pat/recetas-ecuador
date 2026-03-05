@@ -1,5 +1,147 @@
 [
   {
+    "slug": "caldo-de-queso",
+    "title": "Caldo de Queso Ecuatoriano Receta Tradicional",
+    "description": "Caldo de Queso es una sopa reconfortante de la Sierra ecuatoriana con queso fresco y papas, ideal para días fríos. Esta receta tradicional incluye ingredientes auténticos y pasos simples para recrear el sabor casero en casa, perfecto para familias y amantes de la cocina ecuatoriana.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "10 min",
+    "cook_time": "20 min",
+    "total_time": "30 min",
+    "ingredients": [
+      "300 gramos Queso fresco (comprar en Supermaxi)",
+      "4 unidades medianas Papas (comprar en Megamaxi)",
+      "500 mililitros Leche entera (comprar en TIA)",
+      "1 unidad grande Cebolla blanca (comprar en Mercado local)",
+      "3 dientes Ajo (comprar en Supermaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "2 cucharadas Aceite de oliva (comprar en Megamaxi)",
+      "1/2 cucharadita Achiote en polvo (comprar en Mercado local)",
+      "1 litro Agua (comprar en Cualquiera)"
+    ],
+    "instructions": [
+      "Paso 1: Pelar y cortar las papas en cubos de 2 cm, luego picar finamente la cebolla y el ajo; esto toma aproximadamente 5 minutos para preparar todos los vegetales.",
+      "Paso 2: Calentar el aceite de oliva en una olla grande a fuego medio durante 1 minuto, agregar la cebolla y el ajo, y saltearlos hasta que estén transparentes, alrededor de 3 minutos.",
+      "Paso 3: Añadir las papas cortadas a la olla, revolver bien con los ingredientes salteados y cocinar por 2 minutos a fuego medio para que absorban los sabores.",
+      "Paso 4: Verter el agua y la leche en la olla, agregar la sal y el achiote, llevar a ebullición a fuego alto durante 5 minutos, luego reducir a fuego bajo.",
+      "Paso 5: Cocinar la mezcla a fuego bajo durante 15 minutos o hasta que las papas estén tiernas, removiendo ocasionalmente para evitar que se pegue.",
+      "Paso 6: Agregar el queso fresco cortado en cubos y el cilantro picado, cocinar por 2 minutos más hasta que el queso se derrita parcialmente, y servir inmediatamente caliente.",
+      "Paso 7: Dejar reposar el caldo por 1 minuto antes de servir para que los sabores se integren mejor."
+    ],
+    "tips": [
+      "Usa queso fresco de la Sierra para un sabor auténtico y cremoso; si es posible, elige variedades artesanales de mercados locales.",
+      "Agrega achiote al final para mantener su color vivo, y no excedas el tiempo de cocción para evitar que el queso se vuelva demasiado blando."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Otavalo"
+    ],
+    "image_keywords": [
+      "caldo de queso ecuatoriano",
+      "ecuadorian food",
+      "traditional soup"
+    ],
+    "image_alt": "Fotografía del Caldo de Queso terminado, mostrando una sopa cremosa con queso derretido, papas y hierbas frescas en un bowl humeante",
+    "seo_keywords": [
+      "receta tradicional de caldo de queso ecuatoriano",
+      "como hacer caldo de queso sierra ecuador",
+      "ingredientes para caldo de queso autentico",
+      "caldo de queso facil para principiantes",
+      "variantes de caldo de queso en quito",
+      "platos calientes ecuatorianos para invierno",
+      "sopa de queso con papas receta paso a paso"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué tipo de queso es mejor para el Caldo de Queso?",
+        "a": "El queso fresco es ideal por su textura suave y sabor lácteo; en Ecuador, usa queso de la Sierra, pero si no está disponible, el queso panela funciona bien para mantener la cremosidad."
+      },
+      {
+        "q": "¿Puedo hacer esta receta vegana?",
+        "a": "Sí, sustituye el queso fresco por tofu o queso vegano, y usa leche de almendras en lugar de leche de vaca para una versión vegana que conserve el sabor cremoso."
+      },
+      {
+        "q": "¿Cuánto dura el Caldo de Queso en la nevera?",
+        "a": "El caldo se conserva hasta 2 días en la nevera si se guarda en un contenedor hermético; recálentelo a fuego bajo para evitar que el queso se separe."
+      },
+      {
+        "q": "¿Es el Caldo de Queso picante?",
+        "a": "Tradicionalmente no es picante, pero puedes agregar ají o pimientos para un toque de calor; ajusta según tu preferencia para equilibrar los sabores."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante La Casa de Mi Abuela",
+        "city": "Quito",
+        "description": "Un lugar acogedor en el centro histórico donde sirven Caldo de Queso con ingredientes frescos de la región, perfecto para turistas."
+      },
+      {
+        "name": "Mercado de Otavalo",
+        "city": "Otavalo",
+        "description": "En este vibrante mercado, puedes probar versiones caseras de Caldo de Queso en puestos locales, junto con otros platos tradicionales de la Sierra."
+      },
+      {
+        "name": "Café Cultura",
+        "city": "Quito",
+        "description": "Ofrece una variante moderna del Caldo de Queso con toques innovadores, ideal para viajeros que buscan autenticidad en un ambiente urbano."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso mozzarella",
+        "notes": "Disponible en supermercados como Walmart en EE.UU., usa para un sabor similar pero más suave."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Encuéntralo en tiendas de especias en Europa, como en mercados de Londres, para un color y sabor comparable."
+      },
+      {
+        "original": "Papas",
+        "substitute": "Batatas",
+        "notes": "Fácil de encontrar en mercados de EE.UU. y Europa, proporciona una dulzura extra que complementa el queso."
+      }
+    ],
+    "estimated_cost": "$5.50 USD",
+    "youtube_videos": [
+      {
+        "title": "SOPA DE FIDEO CON QUESO",
+        "videoId": "BRy96I9j_54",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=BRy96I9j_54",
+        "embed": "https://www.youtube-nocookie.com/embed/BRy96I9j_54",
+        "uploadDate": "2021-06-18",
+        "description": "Un sopita que te llena el corazón! #SopaDeFideoConQueso #KWAEC\n\nIngredientes:\nMantequilla 30 gr\nAchiote 20 ml\nCebolla Blanca 80 gr \nPapa 200 gr\nAgua 1.2 litros \nFideos 150 gr \nLeche 200 ml\nQueso fresc"
+      },
+      {
+        "title": "Sopa de Queso.",
+        "videoId": "hxLCXiTRZDs",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=hxLCXiTRZDs",
+        "embed": "https://www.youtube-nocookie.com/embed/hxLCXiTRZDs",
+        "uploadDate": "2022-07-13",
+        "description": "Sopa de Queso\nSopa de Papas con Queso\nLocro de papas\nQuesocon fideos\ntallarines"
+      },
+      {
+        "title": "RASPADO DE VERDE CON QUESO",
+        "videoId": "7gl9ZmqGpQ4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=7gl9ZmqGpQ4",
+        "embed": "https://www.youtube-nocookie.com/embed/7gl9ZmqGpQ4",
+        "uploadDate": "2023-05-26",
+        "description": "Un delicioso Raspado de verde que no te puedes perder!\n\nIngredientes:\n(8 Porciones)\n2 Plátanos verde\n\r6 cucharadas de achiote\n30 Gramos de mantequilla \n\r2 Dientes de ajo picado \n\r3 Ramas de cebolla bl"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/hxLCXiTRZDs/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 60,
+    "created_at": "2026-03-05T23:22:33.246Z"
+  },
+  {
     "slug": "bolas-de-yuca-con-queso",
     "title": "Bolas de Yuca con Queso Receta Ecuatoriana Tradicional",
     "description": "Bolas de Yuca con Queso es un aperitivo frito y crujiente de la cocina ecuatoriana, hecho con yuca hervida y queso derretido. Esta receta fácil te guía paso a paso para recrear este plato casero, perfecto para fiestas o snacks, con ingredientes accesibles y tips para un resultado ideal.",

@@ -1,5 +1,147 @@
 [
   {
+    "slug": "hornado-de-pollo-regional-con-hierbas-amazonicas",
+    "title": "Hornado de Pollo Ecuatoriano con Hierbas Amazónicas Receta Tradicional",
+    "description": "Hornado de pollo es un plato ecuatoriano asado con hierbas de la Amazonia, ideal para cenas familiares y eventos especiales, combinando sabores autóctonos con técnicas de cocción regional para un resultado jugoso y aromático.",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "90 min",
+    "total_time": "120 min",
+    "ingredients": [
+      "1 kg Pollo entero (comprar en Supermaxi)",
+      "2 cucharadas Hierbas amazónicas (como achiote y guayusa) (comprar en Mercado local)",
+      "2 unidades Cebolla picada (comprar en Supermaxi)",
+      "4 dientes Ajo picado (comprar en Supermaxi)",
+      "2 unidades Limón jugo (comprar en Supermaxi)",
+      "1 cucharadita Sal (comprar en Supermaxi)",
+      "1/2 cucharadita Pimienta negra (comprar en Megamaxi)",
+      "4 cucharadas Aceite vegetal (comprar en TIA)",
+      "500 g Papas cortadas (comprar en Supermaxi)",
+      "3 unidades Zanahorias en rodajas (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: En un recipiente grande, mezcle el pollo con las hierbas amazónicas, cebolla, ajo, jugo de limón, sal y pimienta. Deje marinar durante 20 minutos a temperatura ambiente para que los sabores penetren.",
+      "Paso 2: Precaliente el horno a 180°C (350°F) y en una bandeja, coloque el pollo marinado con las papas y zanahorias alrededor para un horneado uniforme.",
+      "Paso 3: Rocíe el pollo con aceite vegetal y hornee durante 45 minutos, volteando una vez a la mitad para asegurar una cocción pareja y dorado en todos lados.",
+      "Paso 4: Aumente la temperatura a 200°C (400°F) y continúe horneando por otros 30 minutos, verificando con un termómetro que la temperatura interna del pollo llegue a 75°C para evitar riesgos de contaminación.",
+      "Paso 5: Retire del horno y deje reposar el pollo durante 10 minutos para que los jugos se redistribuyan, manteniendo la carne tierna y jugosa.",
+      "Paso 6: Sirva el hornado de pollo caliente, acompañado de las verduras asadas, y adicione hierbas frescas por encima para realzar los aromas amazónicos.",
+      "Paso 7: Para un toque extra, prepare una salsa con los jugos del horneado reducidos en una sartén a fuego medio durante 5 minutos.",
+      "Paso 8: Asegúrese de cortar el pollo en porciones antes de servir, verificando que esté completamente cocido en el centro."
+    ],
+    "tips": [
+      "Use hierbas amazónicas frescas para un sabor más auténtico y aromático en este plato regional.",
+      "Evite sobrecocinar el pollo para mantenerlo jugoso; pruebe con un termómetro de cocina."
+    ],
+    "origin_cities": [
+      "Puyo",
+      "Tena"
+    ],
+    "image_keywords": [
+      "hornado de pollo",
+      "ecuadorian food",
+      "traditional amazon herbs chicken"
+    ],
+    "image_alt": "Plato de hornado de pollo con hierbas amazónicas servido con verduras, representando la cocina tradicional ecuatoriana",
+    "seo_keywords": [
+      "receta hornado de pollo con hierbas amazónicas ecuatoriano",
+      "plato tradicional hornado de pollo amazonia",
+      "como hacer hornado de pollo ecuatoriano facil",
+      "hornado de pollo receta autentica con ingredientes regionales",
+      "comida ecuatoriana hornado de pollo con hierbas naturales",
+      "hornado de pollo paso a paso en casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es hornado de pollo y de dónde proviene?",
+        "a": "Hornado de pollo es una variante del tradicional hornado ecuatoriano, originalmente de cerdo, pero adaptado con pollo y hierbas amazónicas. Proviene de la región amazónica de Ecuador, como Puyo y Tena, y se caracteriza por su asado lento que infunde sabores herbales."
+      },
+      {
+        "q": "¿Puedo sustituir las hierbas amazónicas en esta receta?",
+        "a": "Sí, puede sustituirlas con hierbas comunes, pero el sabor auténtico se pierde. Intente con combinaciones como cilantro y comino para aproximarse, manteniendo el equilibrio de sabores en el marinado."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el hornado de pollo refrigerado?",
+        "a": "El hornado de pollo refrigerado puede durar hasta 3 días en el frigorífico si se guarda en un contenedor hermético. Para congelar, enváselo bien y use dentro de 2 meses para preservar la calidad y evitar riesgos de deterioro."
+      },
+      {
+        "q": "¿Es este plato apto para dietas específicas?",
+        "a": "Hornado de pollo puede adaptarse a dietas bajas en carbohidratos eliminando las papas, pero no es ideal para veganos. Consulte con un nutricionista para modificaciones, ya que las hierbas agregan valor nutricional pero el pollo es la base proteica."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Churo",
+        "city": "Puyo",
+        "description": "Famoso por platos amazónicos como hornado de pollo, con ingredientes frescos y ambiente cultural"
+      },
+      {
+        "name": "Mercado Central de Tena",
+        "city": "Tena",
+        "description": "Lugar ideal para probar hornado de pollo en stands locales y comprar hierbas amazónicas frescas"
+      },
+      {
+        "name": "Restaurante La Floresta",
+        "city": "Puyo",
+        "description": "Ofrece variaciones regionales de hornado con hierbas, en un entorno familiar y accesible"
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Hierbas amazónicas",
+        "substitute": "Cilantro y comino",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para un sabor similar pero menos exótico"
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Paprika ahumada",
+        "notes": "Fácil de encontrar en tiendas de especias en EE.UU. o mercados étnicos en Europa, manteniendo el color y el sabor picante"
+      },
+      {
+        "original": "Pollo fresco",
+        "substitute": "Pechuga de pollo congelada",
+        "notes": "Compre en cadenas como Costco en EE.UU. o Lidl en Europa, descongelando adecuadamente para preservar la textura"
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "POLLO AL HORNO CON ENSALADA RUSA",
+        "videoId": "jq6t2O7b9TE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=jq6t2O7b9TE",
+        "embed": "https://www.youtube-nocookie.com/embed/jq6t2O7b9TE",
+        "uploadDate": "2021-12-03",
+        "description": "Una gran recetas que te puede acompañar en estas fiesta! #PolloAlHorno #EnsaladaRusa #KWAEC\n\nIngredientes:\nPresas de Pollo 10 unidades\nDientes de Ajo 3 unidades \nComino 1 cucharada \nPasta de soya 200 "
+      },
+      {
+        "title": "¡Descubre el Secreto del Mejor Pollo Asado Casero!",
+        "videoId": "Vtfnj6inIJw",
+        "channel": "Receta Cubana",
+        "url": "https://www.youtube.com/watch?v=Vtfnj6inIJw",
+        "embed": "https://www.youtube-nocookie.com/embed/Vtfnj6inIJw",
+        "uploadDate": "2023-09-09",
+        "description": "¿Quieres saber cómo lograr un pollo asado inolvidable? 🤔 En este video, te revelo el paso a paso para obtener un pollo dorado, crujiente y lleno de sabor. ¡Prepara el mejor pollo asado y conviértete "
+      },
+      {
+        "title": "POLLO AL HORNO, PAPAS Y AJÍ ESTILO ECUATORIANO",
+        "videoId": "7rInjmUWUOM",
+        "channel": "La Cocina De Mayri y Más",
+        "url": "https://www.youtube.com/watch?v=7rInjmUWUOM",
+        "embed": "https://www.youtube-nocookie.com/embed/7rInjmUWUOM",
+        "uploadDate": "2018-01-16",
+        "description": ""
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/Vtfnj6inIJw/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 58,
+    "created_at": "2026-03-05T11:22:44.552Z"
+  },
+  {
     "slug": "chaulafan",
     "title": "Chaulafan Ecuatoriano Receta Tradicional",
     "description": "Chaulafan es un frito de arroz ecuatoriano con influencias chinas, ideal para comidas familiares, preparado con ingredientes frescos y sabores auténticos. Esta receta paso a paso te guía para recrear este plato costero en casa.",

@@ -1,5 +1,128 @@
 [
   {
+    "slug": "bolas-de-yuca-con-queso",
+    "title": "Bolas de Yuca con Queso Receta Ecuatoriana Tradicional",
+    "description": "Bolas de Yuca con Queso es un aperitivo frito y crujiente de la cocina ecuatoriana, hecho con yuca hervida y queso derretido. Esta receta fácil te guía paso a paso para recrear este plato casero, perfecto para fiestas o snacks, con ingredientes accesibles y tips para un resultado ideal.",
+    "region": "Costa",
+    "category": "Entradas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "500 gramos Yuca (comprar en Mercado local)",
+      "200 gramos Queso fresco (comprar en Supermaxi)",
+      "100 gramos Harina de trigo (comprar en Supermaxi)",
+      "2 unidades Huevos (comprar en Megamaxi)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "2 dientes Ajo (comprar en Mercado local)",
+      "1 unidad mediana Cebolla (comprar en Mercado local)",
+      "1 litro Aceite vegetal para freír (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Lave y pele 500 gramos de yuca, corte en trozos y hierva en agua con sal durante 15-20 minutos a temperatura media hasta que esté suave.",
+      "Paso 2: Escurra la yuca hervida y macháquela en un bol grande mientras aún está caliente, agregue 1 cucharadita de sal y deje enfriar por 5 minutos.",
+      "Paso 3: Picar finamente 2 dientes de ajo y 1 cebolla, luego mezcle con la yuca machacada, añada 200 gramos de queso fresco desmenuzado y 100 gramos de harina para formar una masa homogénea.",
+      "Paso 4: Incorpore 2 huevos batidos a la masa y amase durante 2-3 minutos hasta obtener una consistencia manejable, dividiendo la mezcla en porciones iguales.",
+      "Paso 5: Forme bolas del tamaño de una pelota de golf con la masa y fríalas en aceite caliente a 180°C durante 5-7 minutos por lado hasta que estén doradas y crujientes.",
+      "Paso 6: Retire las bolas fritas y escúrralas en papel absorbente por 2 minutos, luego sirva inmediatamente mientras están calientes para mantener su textura."
+    ],
+    "tips": [
+      "Para un sabor más intenso, use queso fresco de leche de vaca fresca como el de la Costa ecuatoriana, y evite sobrecalentar la masa para que no se seque.",
+      "Si la masa está demasiado pegajosa, añada un poco más de harina gradualmente para facilitar el moldeo y lograr bolas uniformes."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Quito"
+    ],
+    "image_keywords": [
+      "bolas de yuca fritas",
+      "ecuadorian food",
+      "traditional ecuadorian snack"
+    ],
+    "image_alt": "Plato de bolas de yuca con queso recién fritas y doradas, acompañadas de salsa en un fondo rústico",
+    "seo_keywords": [
+      "receta de bolas de yuca con queso ecuatoriano tradicional",
+      "como hacer bolas de yuca fritas paso a paso",
+      "aperitivos ecuatorianos con yuca y queso",
+      "platos tipicos de ecuador para fiestas",
+      "receta facil de bolas de yuca con queso en casa"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es bolas de yuca con queso?",
+        "a": "Bolas de yuca con queso es un plato tradicional ecuatoriano que consiste en yuca hervida y machacada, mezclada con queso fresco y frita hasta lograr una textura crujiente por fuera y suave por dentro, comúnmente servido como entrada en la Costa."
+      },
+      {
+        "q": "¿Es difícil preparar bolas de yuca con queso en casa?",
+        "a": "No, es una receta fácil que toma unos 50 minutos en total, ideal para principiantes, siempre que se sigan los pasos de hervir y machacar la yuca correctamente para evitar que se desmorone."
+      },
+      {
+        "q": "¿Puedo congelar las bolas de yuca con queso para usarlas después?",
+        "a": "Sí, puedes congelarlas crudas por hasta 1 mes; descongela en el refrigerador y fríe directamente, pero asegúrate de que estén bien selladas para mantener la frescura y evitar que absorban olores."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Caracol",
+        "city": "Guayaquil",
+        "description": "Un lugar icónico en la Costa donde sirven bolas de yuca con queso como entrada estrella, acompañado de salsas locales."
+      },
+      {
+        "name": "Mercado Central",
+        "city": "Quito",
+        "description": "En este vibrante mercado de la Sierra, puedes probar versiones caseras de bolas de yuca con queso en puestos de comida callejera."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca",
+        "substitute": "Papa",
+        "notes": "La papa es un sustituto común en EE.UU. y Europa, disponible en supermercados como Walmart o Tesco, pero resultará en una textura más suave."
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Mozzarella",
+        "notes": "La mozzarella se encuentra fácilmente en tiendas como Whole Foods en EE.UU. o Carrefour en Europa, y ofrece un derretido similar, aunque con un sabor menos ácido."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Bolitas de Yuca con Queso: Crujientes, Fáciles y con SOLO 3 Ingredientes",
+        "videoId": "Y4oz6Y0nNDY",
+        "channel": "Receta Cubana",
+        "url": "https://www.youtube.com/watch?v=Y4oz6Y0nNDY",
+        "embed": "https://www.youtube-nocookie.com/embed/Y4oz6Y0nNDY",
+        "uploadDate": "2025-01-20",
+        "description": "Si buscas una receta fácil, rápida y absolutamente deliciosa, ¡estas bolas de yuca rellenas con queso son la opción perfecta! Solo necesitas tres ingredientes básicos y un poco de creatividad.\n\nIngred"
+      },
+      {
+        "title": "Bollitos de yuca rellenos de queso muy fácil de hacer",
+        "videoId": "kFZpdb54LZk",
+        "channel": "Gustillos Recetas",
+        "url": "https://www.youtube.com/watch?v=kFZpdb54LZk",
+        "embed": "https://www.youtube-nocookie.com/embed/kFZpdb54LZk",
+        "uploadDate": "2023-03-08",
+        "description": "La manera mas fácil de hacer bollitos de yuca o Carimañolas \n\nContacto directo: gustillosrecetas@gmail.com\n\nInstagram: https://www.instagram.com/GustillosRecetas/\nFacebook: https://www.facebook.com/mi"
+      },
+      {
+        "title": "MUCHINES DE YUCA",
+        "videoId": "u8JEE6yvKmc",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=u8JEE6yvKmc",
+        "embed": "https://www.youtube-nocookie.com/embed/u8JEE6yvKmc",
+        "uploadDate": "2018-09-21",
+        "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nJoakim Karud - Longing\nhttp://twitter.com/joakimkarud\nhttp://facebook.com/joakimkarudmusic\n\nTO"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/Y4oz6Y0nNDY/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 59,
+    "created_at": "2026-03-05T17:22:43.005Z"
+  },
+  {
     "slug": "hornado-de-pollo-regional-con-hierbas-amazonicas",
     "title": "Hornado de Pollo Ecuatoriano con Hierbas Amazónicas Receta Tradicional",
     "description": "Hornado de pollo es un plato ecuatoriano asado con hierbas de la Amazonia, ideal para cenas familiares y eventos especiales, combinando sabores autóctonos con técnicas de cocción regional para un resultado jugoso y aromático.",

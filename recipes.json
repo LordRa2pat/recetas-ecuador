@@ -1,5 +1,146 @@
 [
   {
+    "slug": "caldo-de-cabeza",
+    "title": "Caldo de Cabeza Ecuatoriano Receta Tradicional",
+    "description": "Caldo de Cabeza es una sopa reconfortante de la cocina ecuatoriana, preparada con carne de res y verduras frescas, ideal para días fríos. Esta receta tradicional ofrece un sabor auténtico y nutritivo, perfecto para familias, con pasos simples para recrear en casa.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "120 min",
+    "total_time": "150 min",
+    "ingredients": [
+      "1 kg Cabeza de vaca (comprar en Mercado local)",
+      "500 g, peladas y cortadas en cubos Papas (comprar en Supermaxi)",
+      "300 g, peladas y cortadas Yucas (comprar en Megamaxi)",
+      "2 unidades, picadas finamente Cebollas (comprar en TIA)",
+      "4 dientes, machacados Ajo (comprar en Supermaxi)",
+      "200 g, cortadas en rodajas Zanahorias (comprar en Megamaxi)",
+      "1 manojo, picado Cilantro (comprar en Mercado local)",
+      "al gusto Sal (comprar en TIA)",
+      "2 cucharadas Aceite vegetal (comprar en Supermaxi)",
+      "2 litros Agua (comprar en No aplica)"
+    ],
+    "instructions": [
+      "Paso 1: En una olla grande, calienta 2 cucharadas de aceite vegetal a fuego medio durante 2 minutos y sofríe las cebollas y el ajo picados hasta que estén transparentes, aproximadamente 5 minutos.",
+      "Paso 2: Agrega la cabeza de vaca lavada y cortada en trozos al sofrito, y cocina por 10 minutos a fuego medio para sellar la carne y realzar los sabores.",
+      "Paso 3: Incorpora las papas, yucas y zanahorias cortadas, luego vierte 2 litros de agua y lleva la mezcla a ebullición a fuego alto, lo que tomará alrededor de 10 minutos.",
+      "Paso 4: Una vez que hierva, reduce el fuego a bajo, tapa la olla y cocina durante 90 minutos, revolviendo ocasionalmente para asegurar una cocción uniforme y tierna de la carne.",
+      "Paso 5: Añade el cilantro picado y sazona con sal al gusto en los últimos 10 minutos de cocción para infusionar los aromas frescos.",
+      "Paso 6: Retira del fuego y deja reposar por 5 minutos antes de servir caliente, asegurándote de que la temperatura interna de la sopa esté por encima de 75°C para seguridad alimentaria.",
+      "Paso 7: Sirve en bowls individuales, acompañando con limón opcional para un toque ácido que equilibre los sabores."
+    ],
+    "tips": [
+      "Usa carne fresca de cabeza de vaca para un sabor auténtico y evita cortes congelados para mantener la textura; en la Sierra ecuatoriana, elige proveedores locales para calidad superior.",
+      "Para un caldo más claro, desespuma la superficie durante la ebullición para eliminar impurezas, lo que mejora la presentación y el sabor final."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "caldo de cabeza ecuatoriano",
+      "sopa tradicional ecuador",
+      "plato sierra ecuador"
+    ],
+    "image_alt": "Fotografía de un tazón humeante de Caldo de Cabeza ecuatoriano con trozos de carne, verduras y hierbas frescas",
+    "seo_keywords": [
+      "receta de caldo de cabeza ecuatoriano paso a paso",
+      "como preparar caldo de cabeza tradicional en casa",
+      "ingredientes para caldo de cabeza de la sierra ecuatoriana",
+      "caldo de cabeza autentico receta familiar",
+      "mejor caldo de cabeza en ecuador variaciones regionales",
+      "consejos para cocinar sopas ecuatorianas como un profesional"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el Caldo de Cabeza y de dónde proviene?",
+        "a": "El Caldo de Cabeza es una sopa nutritiva de la región de la Sierra en Ecuador, hecha principalmente con cabeza de vaca y verduras, originaria de ciudades como Quito y Cuenca, y se consume como un plato reconfortante en climas fríos."
+      },
+      {
+        "q": "¿Es saludable el Caldo de Cabeza?",
+        "a": "Sí, es saludable si se prepara con ingredientes frescos, ya que proporciona proteínas de la carne y vitaminas de las verduras; sin embargo, modera el consumo de sal para evitar problemas de sodio."
+      },
+      {
+        "q": "¿Puedo congelar el Caldo de Cabeza?",
+        "a": "Sí, puedes congelarlo en porciones después de enfriarlo completamente, pero consume dentro de 2 meses para mantener la frescura; descongela en el refrigerador y recalienta a fuego medio."
+      },
+      {
+        "q": "¿Cuáles son las variaciones regionales del Caldo de Cabeza?",
+        "a": "En la Costa, puede incluir mariscos, mientras que en la Amazonia se agregan frutas tropicales; en la Sierra, se mantiene tradicional con papas y yucas."
+      }
+    ],
+    "places": [
+      {
+        "name": "Mercado San Francisco",
+        "city": "Quito",
+        "description": "Un mercado local vibrante donde probar Caldo de Cabeza fresco preparado por vendedores tradicionales, ideal para una experiencia auténtica."
+      },
+      {
+        "name": "Restaurante El Pedregal",
+        "city": "Cuenca",
+        "description": "Un restaurante familiar que sirve Caldo de Cabeza con toques modernos, ubicado en el centro histórico, perfecto para turistas."
+      },
+      {
+        "name": "Plaza de Abastos",
+        "city": "Quito",
+        "description": "Otro spot popular para saborear versiones caseras del plato, con opciones económicas y ambiente local."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Cabeza de vaca",
+        "substitute": "Huesos de res o carne de falda",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para un sabor similar sin la dificultad de encontrar el corte original."
+      },
+      {
+        "original": "Yucas",
+        "substitute": "Patatas o mandioca congelada",
+        "notes": "Fácil de encontrar en secciones de productos étnicos en tiendas como Whole Foods en EE.UU. o Lidl en Europa, manteniendo la textura esponjosa."
+      },
+      {
+        "original": "Cilantro",
+        "substitute": "Perejil o culantro",
+        "notes": "Sustituto común en supermercados generales como Tesco en Europa, para un aroma fresco similar."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "COMO HACER UN CALDO DE CABEZA DE CORDERO Y MOTE🥣 🐑 COMIDA ANDINA",
+        "videoId": "8pn9oQdAMuM",
+        "channel": "La Receta del buen sabor",
+        "url": "https://www.youtube.com/watch?v=8pn9oQdAMuM",
+        "embed": "https://www.youtube-nocookie.com/embed/8pn9oQdAMuM",
+        "uploadDate": "2020-11-08",
+        "description": "COMO HACER UN CALDO DE CABEZA DE CORDERO Y MOTE🥣 🐑 COMIDA ANDINA\nhola queridos amantes de la gastronomía  hoy preparamos un super caldo andino muy consumido en muchas partes  del Perú \nun caldo reco"
+      },
+      {
+        "title": "Un Chupe de Pescado EXQUISITO | KWA",
+        "videoId": "GC9PswxqcsA",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=GC9PswxqcsA",
+        "embed": "https://www.youtube-nocookie.com/embed/GC9PswxqcsA",
+        "uploadDate": "2023-01-20",
+        "description": "Anímate a preparar este #ChupeDePescado y no te quedes con las ganas! #KWAEC\n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/12/chupe-de-pescado/\n\nSÍGUENOS:\r\nFB: https://tinyurl"
+      },
+      {
+        "title": "🔥 Caldo de Bagre | Una receta poderosa y llena de sabor 🇪🇨🐟",
+        "videoId": "lxQVYzLoVxI",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=lxQVYzLoVxI",
+        "embed": "https://www.youtube-nocookie.com/embed/lxQVYzLoVxI",
+        "uploadDate": "2025-05-28",
+        "description": "Hoy te traigo una joya de la cocina ecuatoriana: el tradicional caldo de bagre, perfecto para recargar energías y reconectarte con los sabores de la costa.\nEsta receta está llena de historia, sabor y "
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/8pn9oQdAMuM/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 64,
+    "created_at": "2026-03-06T23:22:28.850Z"
+  },
+  {
     "slug": "sancocho-de-pescado-ecuatoriano-regional-de-la-costa",
     "title": "Sancocho de Pescado Ecuatoriano Receta Tradicional de la Costa",
     "description": "Sancocho de pescado ecuatoriano es una sopa reconfortante de la costa ecuatoriana con pescado fresco, yuca y plátanos, ideal para comidas familiares. Aprende a prepararla con ingredientes auténticos y pasos detallados en esta guía completa.",

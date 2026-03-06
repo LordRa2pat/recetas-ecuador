@@ -1,5 +1,149 @@
 [
   {
+    "slug": "sancocho-de-pescado-ecuatoriano-regional-de-la-costa",
+    "title": "Sancocho de Pescado Ecuatoriano Receta Tradicional de la Costa",
+    "description": "Sancocho de pescado ecuatoriano es una sopa reconfortante de la costa ecuatoriana con pescado fresco, yuca y plátanos, ideal para comidas familiares. Aprende a prepararla con ingredientes auténticos y pasos detallados en esta guía completa.",
+    "region": "Costa",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "40 min",
+    "total_time": "60 min",
+    "ingredients": [
+      "500 gramos Pescado fresco (corvina o mero) (comprar en Mercado local)",
+      "400 gramos, pelada y cortada en trozos Yuca (comprar en Supermaxi)",
+      "2 unidades, cortadas en rodajas Plátano verde (comprar en Mercado local)",
+      "1 unidad, picada finamente Cebolla blanca (comprar en TIA)",
+      "2 unidades, picados Tomate maduro (comprar en Supermaxi)",
+      "3 dientes, machacados Ajo (comprar en Megamaxi)",
+      "1/2 taza, picado Cilantro fresco (comprar en Mercado local)",
+      "2 cucharadas Aceite de oliva (comprar en Megamaxi)",
+      "al gusto Sal (comprar en TIA)",
+      "1 unidad, picado Pimiento verde (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En una olla grande, calienta 2 cucharadas de aceite a fuego medio durante 2 minutos y sofríe la cebolla, el ajo y el pimiento verde hasta que estén transparentes, aproximadamente 5 minutos.",
+      "Paso 2: Agrega los tomates picados y cocina por 3 minutos más a fuego medio, revolviendo ocasionalmente para que se integren los sabores y formen una base aromática.",
+      "Paso 3: Incorpora 1.5 litros de agua o caldo de pescado, la yuca y el plátano verde. Lleva a ebullición a fuego alto y luego reduce a fuego medio-bajo, cocinando por 20 minutos hasta que las verduras estén tiernas.",
+      "Paso 4: Mientras se cocina el caldo, limpia y corta el pescado en porciones de 100 gramos cada una, sazónalo con sal y déjalo reposar por 5 minutos para que absorba los condimentos.",
+      "Paso 5: Añade el pescado a la olla y cocina por 10 minutos a fuego medio, asegurándote de que el pescado no se deshaga, verificando la temperatura interna del pescado que debe llegar a 63°C.",
+      "Paso 6: Retira la olla del fuego, incorpora el cilantro picado y deja reposar por 5 minutos para que los aromas se fusionen. Sirve inmediatamente en platos hondos.",
+      "Paso 7: Acompaña el sancocho con arroz blanco o plátanos maduros fritos para una experiencia auténtica, asegurando que el plato se mantenga caliente a más de 60°C."
+    ],
+    "tips": [
+      "Usa pescado fresco de la costa para un sabor auténtico; si es congelado, descongela en el refrigerador para mantener la textura.",
+      "Ajusta la sal al final de la cocción para realzar los sabores regionales sin sobrecargar el plato."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "sancocho de pescado",
+      "ecuadorian food",
+      "traditional dish",
+      "sopa costera ecuatoriana",
+      "pescado con yuca"
+    ],
+    "image_alt": "Fotografía de un plato de sancocho de pescado ecuatoriano con yuca, plátano y cilantro fresco, listo para servir",
+    "seo_keywords": [
+      "receta de sancocho de pescado ecuatoriano tradicional de la costa",
+      "como preparar sancocho de pescado autentico en casa",
+      "ingredientes para sancocho de pescado ecuatoriano",
+      "sancocho de pescado ecuatoriano paso a paso",
+      "platos de mariscos ecuatorianos faciles de hacer",
+      "variantes regionales del sancocho en ecuador",
+      "receta saludable de sancocho con pescado fresco"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué tipo de pescado es mejor para el sancocho ecuatoriano?",
+        "a": "El mejor pescado es el fresco de la costa como corvina o mero, ya que tienen carne firme que no se desmorona fácilmente durante la cocción; en Ecuador, puedes encontrarlos en mercados locales."
+      },
+      {
+        "q": "¿Puedo hacer sancocho de pescado vegano?",
+        "a": "Sí, puedes sustituir el pescado por tofu o setas para una versión vegana, manteniendo las verduras como yuca y plátano, lo que preserva el sabor reconfortante del plato original."
+      },
+      {
+        "q": "¿Cuánto dura el sancocho de pescado en el refrigerador?",
+        "a": "El sancocho de pescado se conserva hasta 2 días en el refrigerador si se guarda en un contenedor hermético; recálfalo a fuego bajo para evitar que el pescado se seque."
+      },
+      {
+        "q": "¿Es el sancocho de pescado picante?",
+        "a": "No necesariamente, aunque puedes agregar ají o pimientos picantes para un toque regional; la versión tradicional de la costa es más suave y se enfoca en los sabores marinos y vegetales."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Caracol",
+        "city": "Guayaquil",
+        "description": "Famoso por su sancocho de pescado fresco con ingredientes locales, ubicado en el malecón, ideal para turistas que buscan autenticidad."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Lugar donde probar sancocho de pescado preparado por vendedores locales con pescado del día, ofreciendo una experiencia cultural inmersiva."
+      },
+      {
+        "name": "Restaurante La Costa",
+        "city": "Esmeraldas",
+        "description": "Ofrece sancocho de pescado con variantes regionales, en un ambiente playero, perfecto para degustar platos costeros ecuatorianos."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca",
+        "substitute": "Batata o papa en EE.UU./Europa",
+        "notes": "Encuéntrala en supermercados como Walmart o Tesco como alternativa versátil para mantener la textura."
+      },
+      {
+        "original": "Pescado fresco (corvina)",
+        "substitute": "Tilapia o bacalao en EE.UU./Europa",
+        "notes": "Disponible en tiendas como Whole Foods o Carrefour, para un sabor similar sin comprometer la frescura."
+      },
+      {
+        "original": "Plátano verde",
+        "substitute": "Plátano maduro o plantain en EE.UU./Europa",
+        "notes": "Busca en secciones de frutas exóticas en mercados como Aldi o Publix para replicar el dulzor y la consistencia."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "SANCOCHO DE PESCADO",
+        "videoId": "aHCE_sZ3B-k",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=aHCE_sZ3B-k",
+        "embed": "https://www.youtube-nocookie.com/embed/aHCE_sZ3B-k",
+        "uploadDate": "2021-06-11",
+        "description": "¿Han probado este caldo? #SancochoDePescado #KWAEC\n\nIngredientes: (4 porciones)\n\nAchiote 30 ml\nPasta de ajo 30 gr \nCebolla colorada 60 gr (1/2 taza)\nCebolla blanca 80 gr (1/2 taza)\nPasta de Maní 100 g"
+      },
+      {
+        "title": "Sancocho de pescado | Como preparar esta deliciosa receta",
+        "videoId": "2mgFKg6w02c",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=2mgFKg6w02c",
+        "embed": "https://www.youtube-nocookie.com/embed/2mgFKg6w02c",
+        "uploadDate": "2023-07-31",
+        "description": "Sancocho de pescado, una receta muy deliciosa y  fácil de preparar 🤤👇🏼\nIngredientes:\n1 lb Huesos de Pescado \n3 cdas de Achiote\n3 dientes de ajo \n1/2 Cebolla colorada\n1 Cebolla blanca o larga\nsal, p"
+      },
+      {
+        "title": "Caldo de Bagre Ecuatoriano - Fácil de preparar y muy delicioso",
+        "videoId": "BHnqZR5UcKs",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=BHnqZR5UcKs",
+        "embed": "https://www.youtube-nocookie.com/embed/BHnqZR5UcKs",
+        "uploadDate": "2023-02-22",
+        "description": "Caldo de Bagre Ecuatoriano - Fácil de preparar y muy delicioso. Sopa de Bagre. Sopa de pescado."
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/2mgFKg6w02c/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 63,
+    "created_at": "2026-03-06T17:22:37.245Z"
+  },
+  {
     "slug": "locro-de-gallina-ecuatoriano-de-la-sierra-central",
     "title": "Locro de Gallina Ecuatoriano Receta Tradicional",
     "description": "Locro de gallina es una sopa reconfortante de la sierra ecuatoriana, preparada con gallina tierna, papas y especias aromáticas, ideal para comidas familiares. Esta receta paso a paso te guía para recrear el auténtico sabor en casa, con variantes regionales.",

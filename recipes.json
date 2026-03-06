@@ -1,5 +1,146 @@
 [
   {
+    "slug": "cebiche-de-chochos",
+    "title": "Cebiche de Chochos Ecuatoriano Receta Tradicional",
+    "description": "Cebiche de chochos es un plato ecuatoriano refrescante de la Sierra, hecho con chochos, cebolla, tomate y limón, ideal para entradas saludables. Descubre esta receta fácil y auténtica para preparar en casa con ingredientes frescos.",
+    "region": "Sierra",
+    "category": "Entradas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "0 min",
+    "total_time": "15 min",
+    "ingredients": [
+      "2 tazas chochos (comprar en Mercado local)",
+      "1 unidad mediana cebolla roja (comprar en Supermaxi)",
+      "2 unidades medianas tomate (comprar en Supermaxi)",
+      "1/2 taza picada cilantro fresco (comprar en Mercado local)",
+      "4 unidades limones (comprar en Supermaxi)",
+      "2 unidades ají o chile fresco (comprar en Mercado local)",
+      "al gusto sal (comprar en Supermaxi)",
+      "2 cucharadas aceite de oliva (comprar en Megamaxi)",
+      "1 unidad pepino (comprar en TIA)",
+      "2 dientes ajo (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Lava los chochos bajo agua fría durante 2 minutos para eliminar impurezas y escúrrelos bien en un colador.",
+      "Paso 2: Pica finamente la cebolla roja y el tomate en cubos pequeños, reservándolos en un bol separado para evitar que se oxiden.",
+      "Paso 3: Pica el cilantro fresco y el ají o chile en trozos pequeños, usando guantes si el ají es picante, y agrégalos al bol con los vegetales.",
+      "Paso 4: Exprime el jugo de 4 limones en un recipiente aparte y mezcla con sal al gusto, asegurándote de que el jugo esté fresco y a temperatura ambiente.",
+      "Paso 5: Combina todos los ingredientes en un bol grande, incluyendo los chochos, y revuelve suavemente durante 1 minuto para que los sabores se integren.",
+      "Paso 6: Deja marinar la mezcla en el refrigerador por al menos 10 minutos para realzar los sabores, revolviendo una vez a la mitad del tiempo.",
+      "Paso 7: Sirve el cebiche de chochos frío en platos individuales, decorando con pepino adicional si se desea, listo para comer inmediatamente."
+    ],
+    "tips": [
+      "Para un sabor más auténtico, usa chochos en escabeche si están disponibles, ya que agregan un toque ácido tradicional de la Sierra.",
+      "Ajusta la cantidad de ají según tu tolerancia al picante para evitar que el plato sea demasiado fuerte y equilibrar los sabores frescos."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Otavalo"
+    ],
+    "image_keywords": [
+      "cebiche de chochos",
+      "comida ecuatoriana",
+      "plato tradicional sierra"
+    ],
+    "image_alt": "Plato de Cebiche de Chochos con chochos, cebolla, tomate y cilantro fresco listo para servir",
+    "seo_keywords": [
+      "receta de cebiche de chochos ecuatoriano paso a paso",
+      "como preparar cebiche de chochos tradicional sierra",
+      "ingredientes para cebiche de chochos autentico ecuador",
+      "plato vegetariano cebiche de chochos facil",
+      "mejor receta cebiche de chochos para principiantes",
+      "variantes regionales cebiche de chochos en quito"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué son los chochos y dónde se consiguen?",
+        "a": "Los chochos son frijoles andinos comunes en Ecuador, similares a los garbanzos. Se consiguen en mercados locales o supermercados como Supermaxi en Ecuador, y como sustitutos en EE.UU., puedes usar garbanzos enlatados."
+      },
+      {
+        "q": "¿Es el cebiche de chochos vegano y saludable?",
+        "a": "Sí, es completamente vegano ya que no contiene ingredientes de origen animal. Es saludable por su alto contenido de fibra y vitaminas de los vegetales, pero consume con moderación debido al ácido del limón."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el cebiche de chochos en el refrigerador?",
+        "a": "Puede durar hasta 2 días en el refrigerador si se guarda en un contenedor hermético, pero es mejor consumirlo fresco para mantener su textura crujiente y sabor óptimo."
+      },
+      {
+        "q": "¿Puedo hacer variaciones al cebiche de chochos?",
+        "a": "Sí, en regiones como Otavalo, se agregan ingredientes locales como maíz; experimenta agregando aguacate, pero mantén el equilibrio de ácidos para no alterar el sabor tradicional."
+      }
+    ],
+    "places": [
+      {
+        "name": "Mercado de Otavalo",
+        "city": "Otavalo",
+        "description": "Famoso mercado indígena donde puedes probar cebiche de chochos fresco preparado por vendedores locales con ingredientes de la región."
+      },
+      {
+        "name": "Restaurante Zazu",
+        "city": "Quito",
+        "description": "Restaurante en el centro histórico de Quito que sirve cebiche de chochos con un toque moderno, ideal para turistas que buscan platos auténticos de la Sierra."
+      },
+      {
+        "name": "Plaza San Francisco",
+        "city": "Quito",
+        "description": "Área con puestos de comida callejera donde se ofrece cebiche de chochos económico y tradicional, perfecto para una experiencia cultural."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "chochos",
+        "substitute": "garbanzos enlatados",
+        "notes": "Fáciles de encontrar en supermercados como Walmart en EE.UU. o Carrefour en Europa, usa los mismos en escabeche para sabor similar."
+      },
+      {
+        "original": "ají fresco",
+        "substitute": "jalapeño o pimiento rojo",
+        "notes": "Disponible en tiendas como Whole Foods en EE.UU. o mercados locales en Europa, ajusta la cantidad para mantener el picante equilibrado."
+      },
+      {
+        "original": "cebolla roja",
+        "substitute": "cebolla blanca o morada",
+        "notes": "En Europa, usa cebolla roja común de supermercados como Tesco, ya que es más suave y fácil de obtener."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "CEVICHOCHO",
+        "videoId": "wjUhymfTkME",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=wjUhymfTkME",
+        "embed": "https://www.youtube-nocookie.com/embed/wjUhymfTkME",
+        "uploadDate": "2020-08-07",
+        "description": "Rapido y lleno de sabor! #Cevichocho #KWAEC\n\nIngredientes:\nChochos 200 gr\nTomate 6 ud\nCebolla colorada 1 ud\nZumo de limón 150 ml\nJugo de naranja 50 ml\nCilantro 30 gr\n\nSal - Pimienta\n\nSIGUENOS:\r\nFB: ht"
+      },
+      {
+        "title": "Cevichocho Ecuatoriano - Autentico Ceviche de Chocho",
+        "videoId": "P1aMahcj3W0",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=P1aMahcj3W0",
+        "embed": "https://www.youtube-nocookie.com/embed/P1aMahcj3W0",
+        "uploadDate": "2024-08-19",
+        "description": "¡Bienvenidos a mi canal! En el video de hoy, les enseñaré a preparar uno de los platos más emblemáticos de la gastronomía ecuatoriana: el delicioso ceviche de chocho, también conocido como cevichocho."
+      },
+      {
+        "title": "Cevichocho",
+        "videoId": "j1sGeBGQoH0",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=j1sGeBGQoH0",
+        "embed": "https://www.youtube-nocookie.com/embed/j1sGeBGQoH0",
+        "uploadDate": "2024-08-14",
+        "description": ""
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/P1aMahcj3W0/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 61,
+    "created_at": "2026-03-06T05:22:37.010Z"
+  },
+  {
     "slug": "caldo-de-queso",
     "title": "Caldo de Queso Ecuatoriano Receta Tradicional",
     "description": "Caldo de Queso es una sopa reconfortante de la Sierra ecuatoriana con queso fresco y papas, ideal para días fríos. Esta receta tradicional incluye ingredientes auténticos y pasos simples para recrear el sabor casero en casa, perfecto para familias y amantes de la cocina ecuatoriana.",

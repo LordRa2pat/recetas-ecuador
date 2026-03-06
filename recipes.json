@@ -1,5 +1,143 @@
 [
   {
+    "slug": "locro-de-gallina-ecuatoriano-de-la-sierra-central",
+    "title": "Locro de Gallina Ecuatoriano Receta Tradicional",
+    "description": "Locro de gallina es una sopa reconfortante de la sierra ecuatoriana, preparada con gallina tierna, papas y especias aromáticas, ideal para comidas familiares. Esta receta paso a paso te guía para recrear el auténtico sabor en casa, con variantes regionales.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "60 min",
+    "total_time": "80 min",
+    "ingredients": [
+      "1 pollo entero (aprox. 1.5 kg) Gallina (comprar en Mercado local)",
+      "500 g, peladas y cortadas en cubos Papas (comprar en Supermaxi)",
+      "1 unidad grande, picada Cebolla (comprar en Supermaxi)",
+      "3 dientes, machacados Ajo (comprar en TIA)",
+      "1 cucharada, disuelta en agua Achiote (comprar en Mercado local)",
+      "1 litro, entera Leche (comprar en Megamaxi)",
+      "1 manojo, finamente picado Cilantro (comprar en Mercado local)",
+      "1 taza, congeladas o frescas Arvejas (comprar en Supermaxi)",
+      "2 unidades, cortadas en rodajas Zanahoria (comprar en TIA)",
+      "al gusto Sal (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia la gallina bajo agua fría, retira la piel y corta en piezas grandes. Deja reposar durante 10 minutos para que suelte sabores naturales.",
+      "Paso 2: En una olla grande a fuego medio (alrededor de 150°C), calienta 2 cucharadas de aceite y sofríe la cebolla y el ajo por 5 minutos hasta que estén transparentes.",
+      "Paso 3: Agrega la gallina a la olla y cocina por 10 minutos, revolviendo ocasionalmente para sellar los sabores y evitar que se pegue.",
+      "Paso 4: Incorpora las papas, zanahorias, arvejas y achiote disuelto, luego añade suficiente agua para cubrir los ingredientes. Lleva a ebullición a 100°C y cocina por 30 minutos.",
+      "Paso 5: Vierte la leche gradualmente mientras revuelves para evitar que se corte, y cocina a fuego bajo por 15 minutos más hasta que espese.",
+      "Paso 6: Retira del fuego, agrega el cilantro picado y deja reposar por 5 minutos para infusionar los aromas. Sirve caliente en bowls.",
+      "Paso 7: Para una variante regional, añade queso fresco derretido al final si estás en la sierra central, y ajusta la sal al gusto antes de servir."
+    ],
+    "tips": [
+      "Usa gallina fresca de la sierra para un sabor más auténtico y jugoso, evitando pollo congelado que puede diluir el gusto tradicional.",
+      "Agrega achiote al principio para un color vibrante y sabor terroso, pero no excedas la cantidad para evitar amargura."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Ambato"
+    ],
+    "image_keywords": [
+      "locro de gallina ecuatoriano",
+      "ecuadorian food",
+      "traditional sierra soup"
+    ],
+    "image_alt": "Fotografía del plato terminado de locro de gallina ecuatoriano, con trozos de gallina, papas y cilantro en un bowl humeante",
+    "seo_keywords": [
+      "receta de locro de gallina ecuatoriano paso a paso",
+      "locro de gallina tradicional de la sierra central",
+      "como preparar sopa de gallina ecuatoriana en casa",
+      "ingredientes para locro de gallina autentico",
+      "variantes regionales del locro ecuatoriano",
+      "mejor receta de locro de gallina para principiantes"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el locro de gallina y de dónde proviene?",
+        "a": "El locro de gallina es una sopa espesa y nutritiva de la sierra ecuatoriana, originaria de ciudades como Quito y Ambato, que combina gallina con papas y leche para un plato reconfortante típico de la gastronomía andina."
+      },
+      {
+        "q": "¿Puedo hacer locro de gallina en una olla a presión?",
+        "a": "Sí, puedes usar una olla a presión para reducir el tiempo de cocción a 20 minutos, pero asegúrate de no sobrepasar la presión máxima para mantener la textura de las papas y la gallina."
+      },
+      {
+        "q": "¿Es el locro de gallina apto para dietas vegetarianas?",
+        "a": "El locro tradicional no es vegetariano por el uso de gallina, pero puedes adaptarlo reemplazando la gallina por tofu o setas para una versión vegetariana, manteniendo los demás ingredientes para el sabor auténtico."
+      },
+      {
+        "q": "¿Cuánto dura el locro de gallina refrigerado?",
+        "a": ""
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante La Ronda",
+        "city": "Quito",
+        "description": "Un lugar icónico en el centro histórico de Quito donde probar el locro de gallina con ingredientes frescos de la sierra, en un ambiente colonial."
+      },
+      {
+        "name": "Mercado Central de Ambato",
+        "city": "Ambato",
+        "description": "En este vibrante mercado, puedes degustar locro de gallina preparado por vendedores locales con productos de la región, ideal para una experiencia auténtica."
+      },
+      {
+        "name": "Restaurante El Pedregal"
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Gallina",
+        "substitute": "Pechuga de pollo convencional",
+        "notes": "Disponible en supermercados como Walmart en EE.UU., usa para un sabor similar pero más suave"
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Paprika ahumada",
+        "notes": "Fácil de encontrar en tiendas como Whole Foods en Europa y EE.UU., para mantener el color y sabor picante"
+      },
+      {
+        "original": "Papas andinas",
+        "substitute": "Papas russet",
+        "notes": "Comunes en mercados como Aldi en Europa, para una textura similar en la sopa"
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Caldo de Gallina",
+        "videoId": "iJ-2dnu9YgM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=iJ-2dnu9YgM",
+        "embed": "https://www.youtube-nocookie.com/embed/iJ-2dnu9YgM",
+        "uploadDate": "2022-05-20",
+        "description": "Un plato que seguro repites! #CaldoDeGallina #KWAEC\n\nIngredientes:\n½ Gallina Criolla\n2 Litros de Agua\n3 Dientes de Ajo\n3 Ramas de Cebolla Blanca\n2 Ramas Pequeñas de Hierba Buena\n1 Zanahoria\n1 Yuca Med"
+      },
+      {
+        "title": "LOCRO DE PAPAS",
+        "videoId": "zasWN2D3UgM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=zasWN2D3UgM",
+        "embed": "https://www.youtube-nocookie.com/embed/zasWN2D3UgM",
+        "uploadDate": "2019-09-06",
+        "description": "Aqui les compartimos una deliciosa receta de locro de papas:\n\nPapa ......................... 1 k\nCebolla Blanca ....... 1 tazas\nPasta de Ajo ........... 1 cucharada\nAchiote\nLeche ....................."
+      },
+      {
+        "title": "Aguado de GALLINA CRIOLLA | KWA",
+        "videoId": "_HQTthi1nV4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=_HQTthi1nV4",
+        "embed": "https://www.youtube-nocookie.com/embed/_HQTthi1nV4",
+        "uploadDate": "2024-02-02",
+        "description": "Prueba esta deliciosa receta de #AguadoDeGallinaCriolla y enamórate de todos sus sabores. #KWAEC\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/02/02/aguado-de-gallina-criolla/\n\nSÍ"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 62,
+    "created_at": "2026-03-06T11:22:32.996Z"
+  },
+  {
     "slug": "cebiche-de-chochos",
     "title": "Cebiche de Chochos Ecuatoriano Receta Tradicional",
     "description": "Cebiche de chochos es un plato ecuatoriano refrescante de la Sierra, hecho con chochos, cebolla, tomate y limón, ideal para entradas saludables. Descubre esta receta fácil y auténtica para preparar en casa con ingredientes frescos.",

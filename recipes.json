@@ -1,5 +1,146 @@
 [
   {
+    "slug": "seco-de-pato",
+    "title": "Seco de Pato Ecuatoriano Receta Tradicional",
+    "description": "Seco de pato es un plato ecuatoriano icónico de la Costa, preparado con pato estofado en salsa de cerveza y hierbas aromáticas. Esta receta tradicional incluye pasos detallados para lograr un sabor auténtico, ideal para cenas familiares o eventos especiales, con ingredientes frescos y accesibles.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "60 min",
+    "total_time": "80 min",
+    "ingredients": [
+      "1 (aprox. 1.5 kg, limpio) Pato entero (comprar en Mercado local)",
+      "2 unidades medianas, picadas Cebolla (comprar en Supermaxi)",
+      "4 dientes, machacados Ajo (comprar en Megamaxi)",
+      "3 unidades maduros, picados Tomate (comprar en TIA)",
+      "500 ml Cerveza Pilsner (comprar en Supermaxi)",
+      "1/2 taza, picado Cilantro fresco (comprar en Mercado local)",
+      "1 cucharadita Comino molido (comprar en Megamaxi)",
+      "1 cucharadita al gusto Sal (comprar en TIA)",
+      "2 cucharadas Aceite vegetal (comprar en Supermaxi)",
+      "1 unidad, picado Pimiento rojo (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia el pato bajo agua fría y córtalo en piezas de tamaño uniforme, eliminando exceso de grasa; esto toma aproximadamente 10 minutos.",
+      "Paso 2: En una sartén grande a fuego medio (alrededor de 150°C), calienta 2 cucharadas de aceite vegetal y dora las piezas de pato durante 5-7 minutos por lado para sellar los sabores.",
+      "Paso 3: Agrega la cebolla, ajo, tomate y pimiento rojo picados a la sartén con el pato; cocina por 5 minutos hasta que las verduras suavicen, revolviendo ocasionalmente.",
+      "Paso 4: Incorpora el comino molido, sal y cerveza Pilsner; deja hervir a fuego bajo durante 10 minutos para que los sabores se integren y el alcohol se evapore parcialmente.",
+      "Paso 5: Cubre la sartén y cocina a fuego lento por 40-45 minutos, verificando cada 10 minutos para asegurar que el pato esté tierno y la salsa espese; agrega agua si es necesario.",
+      "Paso 6: Retira del fuego, agrega el cilantro fresco picado y deja reposar por 5 minutos para que los aromas se asienten antes de servir.",
+      "Paso 7: Sirve caliente con arroz o plátano maduro al lado, asegurándote de que la temperatura interna del pato supere los 75°C para seguridad alimentaria."
+    ],
+    "tips": [
+      "El chef recomienda marinar el pato con ajo y comino durante 30 minutos antes de cocinar para intensificar los sabores tradicionales de la Costa.",
+      "Usa cerveza clara para un sabor más ligero; si el seco queda muy espeso, agrega un poco de caldo de pollo para ajustar la consistencia."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Esmeraldas"
+    ],
+    "image_keywords": [
+      "seco de pato ecuatoriano",
+      "comida tradicional costa ecuador",
+      "plato con pato y salsa"
+    ],
+    "image_alt": "Plato de seco de pato ecuatoriano terminado, con piezas de pato en salsa espesa, acompañado de arroz y hierbas frescas",
+    "seo_keywords": [
+      "receta de seco de pato ecuatoriano tradicional paso a paso",
+      "como preparar seco de pato en casa",
+      "platos ecuatorianos de la costa con pato",
+      "ingredientes y coccion de seco de pato autentico",
+      "seco de pato receta facil para principiantes",
+      "variantes regionales de seco de pato en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es seco de pato y de dónde proviene?",
+        "a": "Seco de pato es un estofado tradicional ecuatoriano de la región Costa, originario de ciudades como Guayaquil, hecho con pato cocinado en salsa de cerveza, hierbas y verduras, representando la fusión de influencias indígenas y españolas en la gastronomía ecuatoriana."
+      },
+      {
+        "q": "¿Puedo usar otro tipo de carne en lugar de pato?",
+        "a": "Sí, aunque el pato es tradicional, puedes sustituirlo por pollo o conejo para un sabor similar, pero el resultado será menos jugoso; ajusta el tiempo de cocción para evitar que la carne se seque."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el seco de pato en la nevera?",
+        "a": "El seco de pato refrigerado puede durar hasta 3 días en un contenedor hermético; caliéntalo a fuego bajo antes de servir para mantener la textura, y congela porciones para hasta 2 meses si no lo consumes pronto."
+      },
+      {
+        "q": "¿Es seco de pato apto para dietas específicas?",
+        "a": "Puede adaptarse a dietas bajas en carbohidratos si omites el arroz, pero es alto en proteínas y grasas; para opciones más saludables, usa pato sin piel y reduce la sal, consultando con un nutricionista para ajustes personalizados."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante Lo Nuestro",
+        "city": "Guayaquil",
+        "description": "Ofrece una versión auténtica de seco de pato con ingredientes frescos de la región, en un ambiente familiar y con opciones para grupos grandes."
+      },
+      {
+        "name": "Mercado Central de Esmeraldas",
+        "city": "Esmeraldas",
+        "description": "Lugar ideal para probar seco de pato preparado por vendedores locales con toques costeros, acompañado de bebidas tradicionales y productos frescos."
+      },
+      {
+        "name": "Parrillada El Puerto",
+        "city": "Guayaquil",
+        "description": "Especializado en platos de pato, incluyendo seco de pato con guarniciones locales, en un entorno con vistas al río y música ecuatoriana."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Pato",
+        "substitute": "Pollo",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Carrefour en Europa; proporciona un sabor similar pero más suave."
+      },
+      {
+        "original": "Cerveza Pilsner",
+        "substitute": "Cerveza lager",
+        "notes": "Disponible en tiendas de licores como Total Wine en EE.UU. o Tesco en Europa; usa una versión sin alcohol para versiones no alcohólicas."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil",
+        "notes": "Común en mercados como Whole Foods en EE.UU. o Sainsbury's en Europa; ofrece un sabor fresco similar aunque menos aromático."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "MELOSO DE PATO",
+        "videoId": "op3cWEsjuqY",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=op3cWEsjuqY",
+        "embed": "https://www.youtube-nocookie.com/embed/op3cWEsjuqY",
+        "uploadDate": "2021-05-07",
+        "description": "Cada plato lleno de sabor! #MelosoDePato #KWAEC\n\nIngredientes:\nPato 600 gr\n\nCaldo:\nAjo 4 unidades \nCebolla Blanca 3 ramas\nZanahoria 1 unidad \nApio 3 tallos\nAgua 3 litros \nOrégano Seco\n\nAchiote 40 ml\nP"
+      },
+      {
+        "title": "SECO DE PATO ECUATORIANO EN OLLA PRESION",
+        "videoId": "7962_vV6RYE",
+        "channel": "Cocina De Maria Y Más",
+        "url": "https://www.youtube.com/watch?v=7962_vV6RYE",
+        "embed": "https://www.youtube-nocookie.com/embed/7962_vV6RYE",
+        "uploadDate": "2017-11-16",
+        "description": "CANAL DE RECETAS DE LA DIETA CETOGENICA O CARNIVORA\nhttps://www.youtube.com/channel/UC4co...\nTAMBIEN LES DEJO EL GRUPO DE LA DIETA, PARA LOS QUE DESEAN APRENDER..    https://www.facebook.com/groups/12"
+      },
+      {
+        "title": "SECO DE POLLO",
+        "videoId": "CJFdqk2HP4A",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=CJFdqk2HP4A",
+        "embed": "https://www.youtube-nocookie.com/embed/CJFdqk2HP4A",
+        "uploadDate": "2021-10-08",
+        "description": "El favorito de muchos. #SecoDePollo #KWAEC\n\nIngredientes:\nPresas de Pollo 8 unidades\nAchiote 30 ml\nPasta de Ajo 30 gr\nCebolla Colorada 60 gr\nPimiento Verde 50 gr\nTomate 80 gr\nPasta de Tomate 40 gr\nCer"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/7962_vV6RYE/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 65,
+    "created_at": "2026-03-07T05:22:33.219Z"
+  },
+  {
     "slug": "caldo-de-cabeza",
     "title": "Caldo de Cabeza Ecuatoriano Receta Tradicional",
     "description": "Caldo de Cabeza es una sopa reconfortante de la cocina ecuatoriana, preparada con carne de res y verduras frescas, ideal para días fríos. Esta receta tradicional ofrece un sabor auténtico y nutritivo, perfecto para familias, con pasos simples para recrear en casa.",

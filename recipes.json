@@ -1,5 +1,149 @@
 [
   {
+    "slug": "seco-de-conejo-ecuatoriano-con-hierbas-de-la-sierra",
+    "title": "Seco de Conejo Ecuatoriano con Hierbas de la Sierra Receta Tradicional",
+    "description": "Seco de conejo ecuatoriano es un guiso aromático de la sierra con hierbas frescas y sabores intensos, ideal para comidas familiares; aprende esta receta auténtica con ingredientes accesibles y técnicas simples para un resultado delicioso y casero.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "60 min",
+    "total_time": "80 min",
+    "ingredients": [
+      "1 kg, cortado en piezas Conejo (comprar en Supermaxi)",
+      "2 unidades, picadas finamente Cebolla (comprar en Megamaxi)",
+      "4 dientes, machacados Ajo (comprar en TIA)",
+      "1 manojo, picado Culantro (comprar en Mercado local)",
+      "500 ml Cerveza o chicha (comprar en Supermaxi)",
+      "2 cucharadas, en pasta Achiote (comprar en Megamaxi)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "1/2 cucharadita, molida Pimienta (comprar en Mercado local)",
+      "2 cucharadas, frescas Hierbas de la sierra (orégano y tomillo) (comprar en Mercado local)",
+      "500 g, cortadas en cubos Papas (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia el conejo con agua fría y sazónalo con sal y pimienta; deja marinar por 15 minutos a temperatura ambiente para que absorba los sabores.",
+      "Paso 2: En una olla grande a fuego medio (alrededor de 150°C), calienta 2 cucharadas de aceite y sofríe la cebolla y el ajo durante 5 minutos hasta que estén transparentes.",
+      "Paso 3: Agrega el achiote y las hierbas de la sierra al sofrito, revolviendo por 2 minutos para liberar los aromas; esto infunde el sabor característico de la sierra.",
+      "Paso 4: Incorpora el conejo marinado a la olla y dora por 10 minutos, volteando las piezas para una cocción uniforme y sellar los jugos.",
+      "Paso 5: Vierte la cerveza o chicha, tapa la olla y cocina a fuego bajo (120°C) por 40 minutos, agregando las papas en los últimos 20 minutos para que se ablanden.",
+      "Paso 6: Añade el culantro picado en los últimos 5 minutos de cocción para preservar su frescura; retira del fuego y deja reposar por 5 minutos antes de servir.",
+      "Paso 7: Sirve caliente en platos hondos, acompañado de arroz o yuca para un balance perfecto de texturas y sabores.",
+      "Paso 8: Ajusta el sazón final con más sal si es necesario y disfruta inmediatamente para óptimo sabor."
+    ],
+    "tips": [
+      "Usa hierbas frescas de la sierra como orégano y tomillo para un aroma auténtico y evita las secas para no alterar el sabor tradicional.",
+      "No sobre cocines el conejo para mantenerlo tierno; prueba con un tenedor después de 40 minutos para verificar la textura."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "seco de conejo",
+      "comida ecuatoriana",
+      "plato tradicional sierra",
+      "guiso con hierbas",
+      "receta ecuatoriana"
+    ],
+    "image_alt": "Plato de seco de conejo ecuatoriano con hierbas de la sierra, guiso dorado servido en un bowl con vegetales frescos",
+    "seo_keywords": [
+      "receta de seco de conejo ecuatoriano con hierbas de la sierra",
+      "seco de conejo tradicional de la sierra ecuatoriana",
+      "como preparar seco de conejo ecuatoriano paso a paso",
+      "platos tipicos de ecuador con conejo y hierbas",
+      "receta autentica de seco de conejo sierra ecuatoriana",
+      "guisos ecuatorianos con ingredientes de la sierra"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es seco de conejo ecuatoriano?",
+        "a": "El seco de conejo ecuatoriano es un guiso tradicional de la sierra hecho con carne de conejo cocida en cerveza o chicha, sazonada con hierbas frescas, cebolla, ajo y achiote, resultando en un plato jugoso y aromático típico de las regiones altas de Ecuador."
+      },
+      {
+        "q": "¿Puedo sustituir el conejo por otra carne?",
+        "a": "Sí, puedes sustituir el conejo por pollo o pato para un sabor similar, pero el conejo ofrece una textura más delicada; ajusta el tiempo de cocción para evitar que se seque la carne."
+      },
+      {
+        "q": "¿De dónde proviene esta receta?",
+        "a": "Esta receta se origina en las ciudades de la sierra como Quito y Cuenca, donde las hierbas locales y los ingredientes frescos de la región se usan para crear platos reconfortantes y nutritivos en la gastronomía ecuatoriana."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el seco de conejo guardado?",
+        "a": "El seco de conejo puede durar hasta 3 días en el refrigerador si se guarda en un contenedor hermético; recálentelo a fuego bajo para mantener la humedad y el sabor original."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en Quito que sirve seco de conejo con hierbas frescas de la sierra, ideal para turistas que buscan comida auténtica ecuatoriana."
+      },
+      {
+        "name": "Mercado de Cuenca",
+        "city": "Cuenca",
+        "description": "En el mercado central de Cuenca, prueba versiones tradicionales de seco de conejo preparadas por vendedores locales con ingredientes de la región."
+      },
+      {
+        "name": "Restaurante La Viña",
+        "city": "Quito",
+        "description": "Ofrece una variante moderna del seco de conejo con hierbas de la sierra, perfecto para viajeros interesados en la fusión de sabores ecuatorianos."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Conejo",
+        "substitute": "Pollo",
+        "notes": "El pollo es fácilmente disponible en supermercados como Walmart en EE.UU. y mantiene un sabor similar sin alterar la receta"
+      },
+      {
+        "original": "Chicha",
+        "substitute": "Cerveza lager",
+        "notes": "La cerveza lager se encuentra en tiendas comunes como Tesco en Europa y proporciona un sabor ácido comparable para el guiso"
+      },
+      {
+        "original": "Hierbas de la sierra",
+        "substitute": "Mezcla de orégano y tomillo seco",
+        "notes": "Esta mezcla está disponible en herboristerías o supermercados como Whole Foods en EE.UU. para un aroma aproximado si no se accede a las frescas"
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Estofado de conejo",
+        "videoId": "e2jqKuBlFUI",
+        "channel": "Andalucía Videorecetas",
+        "url": "https://www.youtube.com/watch?v=e2jqKuBlFUI",
+        "embed": "https://www.youtube-nocookie.com/embed/e2jqKuBlFUI",
+        "uploadDate": "2019-09-07",
+        "description": "Receta de cocina sobre como hacer estofado de conejo. Desde ingredientes y cantidades, hasta como elaborar un delicioso estofado de conejo.\n\nINGREDIENTES:\n\n1 conejo de 1,3 kilos limpio y troceado\n1 pi"
+      },
+      {
+        "title": "Conejo en Salsa Tradicional  | Receta Casera con el Toque Secreto de la Abuela",
+        "videoId": "cZqXEG4ZHW0",
+        "channel": "Chef mspin",
+        "url": "https://www.youtube.com/watch?v=cZqXEG4ZHW0",
+        "embed": "https://www.youtube-nocookie.com/embed/cZqXEG4ZHW0",
+        "uploadDate": "2025-10-16",
+        "description": "🐇🍷 Receta de CONEJO EN SALSA TRADICIONAL\nUna receta familiar llena de sabor y tradición. Con una salsa casera que te recordará a la cocina de la abuela… ¡y con un secreto muy especial! 🤫✨\n\n♥️💾 GUA"
+      },
+      {
+        "title": "Como Hacer CONEJO en SALSA | Receta Casera Rapida y Facil",
+        "videoId": "2YxkPRpnS34",
+        "channel": "A La Rica Cocina",
+        "url": "https://www.youtube.com/watch?v=2YxkPRpnS34",
+        "embed": "https://www.youtube-nocookie.com/embed/2YxkPRpnS34",
+        "uploadDate": "2020-05-14",
+        "description": "¿Quieres preparar una deliciosa y saludable receta de conejo en salsa? ¡No te pierdas este vídeo! En él te mostramos paso a paso cómo cocinar un conejo en una deliciosa salsa de vino blanco y verduras"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/e2jqKuBlFUI/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 67,
+    "created_at": "2026-03-07T17:22:39.744Z"
+  },
+  {
     "slug": "bollo-prenado-de-la-costa-ecuatoriana",
     "title": "Bollo Preñado Ecuatoriano de la Costa Receta Tradicional con Variación de Mariscos",
     "description": "Bollo preñado ecuatoriano de la Costa Bollo preñado es un plato costero relleno de mariscos frescos, ideal para comidas familiares, con masa de yuca y sabores del Pacífico. Aprende a prepararlo con variantes regionales en esta guía completa.",

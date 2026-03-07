@@ -1,5 +1,149 @@
 [
   {
+    "slug": "tigrillo-ecuatoriano",
+    "title": "Tigrillo Ecuatoriano Receta Tradicional",
+    "description": "Tigrillo Ecuatoriano es un plato costero hecho con plátano verde machacado, verduras y especias, ideal para desayunos. Esta receta auténtica te lleva a la esencia de la gastronomía ecuatoriana, fácil de preparar en casa.",
+    "region": "Costa",
+    "category": "Desayunos",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "10 min",
+    "cook_time": "15 min",
+    "total_time": "25 min",
+    "ingredients": [
+      "4 unidades medianas Plátanos verdes (comprar en Supermaxi)",
+      "1 unidad mediana picada Cebolla blanca (comprar en Supermaxi)",
+      "2 unidades medianas picadas Tomate maduro (comprar en Mercado local)",
+      "2 dientes finamente picados Ajo (comprar en Supermaxi)",
+      "2 cucharadas Aceite vegetal (comprar en Supermaxi)",
+      "Al gusto Sal (comprar en Supermaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "2 unidades Huevos (comprar en Supermaxi)",
+      "100 gramos desmenuzado Queso fresco (comprar en TIA)",
+      "1/2 cucharadita Pimienta negra (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Pelar los 4 plátanos verdes y cortarlos en rodajas de 2 cm, luego colocados en una olla con agua salada y hervir a fuego medio durante 10 minutos hasta que estén suaves.",
+      "Paso 2: Mientras se cocinan los plátanos, en una sartén calentar 2 cucharadas de aceite a temperatura media (alrededor de 150°C) y saltear la cebolla picada y el ajo durante 3 minutos hasta que estén transparentes.",
+      "Paso 3: Agregar los tomates picados a la sartén y cocinar por 5 minutos más a fuego medio, removiendo ocasionalmente hasta que se integren bien y suelten jugo.",
+      "Paso 4: Escurrir los plátanos hervidos y machacarlos en un bowl con una pizca de sal hasta obtener una pasta uniforme, incorporando el cilantro picado para sabor.",
+      "Paso 5: Mezclar la pasta de plátanos con la preparación de la sartén, agregando los huevos batidos y el queso fresco desmenuzado, cocinando todo junto a fuego bajo por 2 minutos para que se integren los sabores.",
+      "Paso 6: Servir inmediatamente en platos, espolvoreando pimienta negra al gusto, y dejar reposar 1 minuto antes de comer para que los ingredientes se asienten.",
+      "Paso 7: Opcionalmente, calentar la mezcla final en la sartén por 1 minuto adicional si se desea una textura más crujiente."
+    ],
+    "tips": [
+      "Usa plátanos bien verdes para lograr la textura firme y no dulce típica del tigrillo costero.",
+      "Agrega queso fresco al final para un toque cremoso y auténtico, variando según las preferencias regionales de Guayaquil."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "tigrillo ecuatoriano",
+      "plato ecuatoriano",
+      "comida costera ecuador",
+      "receta tradicional",
+      "desayuno ecuatoriano"
+    ],
+    "image_alt": "Plato de Tigrillo Ecuatoriano con plátano verde machacado, verduras salteadas y queso fresco",
+    "seo_keywords": [
+      "receta de tigrillo ecuatoriano tradicional paso a paso",
+      "como preparar tigrillo ecuatoriano en casa",
+      "plato de desayuno ecuatoriano con plátano verde",
+      "tigrillo receta autentica de la costa ecuatoriana",
+      "ingredientes para tigrillo ecuatoriano facil y rapido",
+      "variantes regionales del tigrillo en ecuador",
+      "sustitutos para hacer tigrillo fuera de ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el Tigrillo Ecuatoriano y de dónde proviene?",
+        "a": "El Tigrillo Ecuatoriano es un plato típico de la Costa, especialmente de ciudades como Guayaquil y Manta, hecho a base de plátano verde machacado con verduras, huevos y queso, servido como desayuno nutritivo y reconfortante."
+      },
+      {
+        "q": "¿Puedo usar plátanos maduros en lugar de verdes para esta receta?",
+        "a": "No se recomienda usar plátanos maduros, ya que alteran el sabor dulce y la textura; los plátanos verdes son esenciales para la versión tradicional, manteniendo el plato salado y firme."
+      },
+      {
+        "q": "¿Es el Tigrillo Ecuatoriano picante?",
+        "a": "Generalmente no es picante, pero puedes agregar ají o chiles si lo deseas; la receta original se enfoca en sabores frescos y suaves, variando según las preferencias regionales."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el Tigrillo Ecuatoriano guardado?",
+        "a": "El Tigrillo se debe consumir fresco, pero si se refrigera en un contenedor hermético, dura hasta 2 días; recálentelo en una sartén para mantener la textura, evitando el microondas que lo puede hacer pastoso."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Famoso por su tigrillo auténtico con ingredientes frescos de la región costera, ideal para probar la versión tradicional."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Lugar donde se sirven variantes locales de tigrillo en puestos callejeros, usando productos frescos del mar y la costa."
+      },
+      {
+        "name": "Cafetería La Costa",
+        "city": "Guayaquil",
+        "description": "Ofrece tigrillo como desayuno con toques modernos, en un ambiente acogedor cerca del centro histórico."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Plátanos verdes",
+        "substitute": "Plantains verdes (bananas verdes)",
+        "notes": "Disponibles en secciones étnicas de supermercados como Walmart en EE.UU. o Carrefour en Europa"
+      },
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso feta o ricotta",
+        "notes": "Fácil de encontrar en supermercados comunes como Tesco en Europa o Kroger en EE.UU., para un sabor similar pero más accesible"
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil o culantro seco",
+        "notes": "En supermercados como Aldi en Europa o Publix en EE.UU., use en cantidades menores para no alterar el aroma."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "TIGRILLO",
+        "videoId": "mbZETORPR2c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=mbZETORPR2c",
+        "embed": "https://www.youtube-nocookie.com/embed/mbZETORPR2c",
+        "uploadDate": "2018-10-13",
+        "description": "SIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nTODOS LOS DERECHOS RESERVADOS."
+      },
+      {
+        "title": "Cómo hacer TIGRILLO | Receta fácil",
+        "videoId": "9mzxZIgMUiA",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=9mzxZIgMUiA",
+        "embed": "https://www.youtube-nocookie.com/embed/9mzxZIgMUiA",
+        "uploadDate": "2024-03-26",
+        "description": "✨Trigrillo✨\n.\n.\nIngredientes Tigrillo con chicharrón:\n\n• 1 ½ lbs de panceta\n• Condimentamos para la panceta:\n• 3 dientes de ajo\n• 1 cdta de comino\n• 1 cdta de paprika\n• ½ cdta de pimienta\n• 1 cda de s"
+      },
+      {
+        "title": "TIGRILLO ECUATORIANO CON PLATANO COCIDO🤩😋(RECETA FÁCIL)",
+        "videoId": "TAZllBiDLEo",
+        "channel": "Any Delicias",
+        "url": "https://www.youtube.com/watch?v=TAZllBiDLEo",
+        "embed": "https://www.youtube-nocookie.com/embed/TAZllBiDLEo",
+        "uploadDate": "2021-09-10",
+        "description": "Miren lo que prepare el día de hoy, un delicioso tigrillo ecuatoriano a mi estilo. De seguro les encantara.\n\n🎯Suscribete ¡YA!!!! Es Gratis\n https://youtube.com/channel/UCmbevclu... \n🎯 FACEBOOK https"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/9mzxZIgMUiA/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 68,
+    "created_at": "2026-03-07T23:22:38.470Z"
+  },
+  {
     "slug": "seco-de-conejo-ecuatoriano-con-hierbas-de-la-sierra",
     "title": "Seco de Conejo Ecuatoriano con Hierbas de la Sierra Receta Tradicional",
     "description": "Seco de conejo ecuatoriano es un guiso aromático de la sierra con hierbas frescas y sabores intensos, ideal para comidas familiares; aprende esta receta auténtica con ingredientes accesibles y técnicas simples para un resultado delicioso y casero.",

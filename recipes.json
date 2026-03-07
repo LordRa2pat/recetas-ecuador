@@ -1,5 +1,129 @@
 [
   {
+    "slug": "bollo-prenado-de-la-costa-ecuatoriana",
+    "title": "Bollo Preñado Ecuatoriano de la Costa Receta Tradicional con Variación de Mariscos",
+    "description": "Bollo preñado ecuatoriano de la Costa Bollo preñado es un plato costero relleno de mariscos frescos, ideal para comidas familiares, con masa de yuca y sabores del Pacífico. Aprende a prepararlo con variantes regionales en esta guía completa.",
+    "region": "Costa",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "45 min",
+    "total_time": "75 min",
+    "ingredients": [
+      "1 kg Yuca (comprar en Mercado local)",
+      "500 g Camarones pelados (comprar en Mercado local)",
+      "300 g Calamares frescos (comprar en Mercado local)",
+      "2 unidades medianas Cebolla blanca (comprar en Supermaxi)",
+      "4 dientes Ajo (comprar en Supermaxi)",
+      "1 unidad Pimiento rojo (comprar en Supermaxi)",
+      "2 unidades Tomates maduros (comprar en TIA)",
+      "1 manojo Cilantro fresco (comprar en Mercado local)",
+      "100 ml Aceite de cocina (comprar en Megamaxi)",
+      "al gusto Sal (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Lava y pela 1 kg de yuca, corta en trozos y hierve en agua con sal durante 20-25 minutos a fuego medio hasta que esté suave, luego escúrrela y machácala en un bol para formar una masa uniforme.",
+      "Paso 2: En una sartén, calienta 50 ml de aceite a temperatura media (alrededor de 150°C) y sofríe 4 dientes de ajo picados y 2 cebollas cortadas en dados por 5 minutos hasta que estén transparentes.",
+      "Paso 3: Agrega 1 pimiento rojo picado y 2 tomates cortados en cubos, cocina por 5 minutos más, revolviendo para evitar que se queme, y sazona con sal al gusto.",
+      "Paso 4: Incorpora 500 g de camarones y 300 g de calamares cortados, cocina por 10 minutos a fuego medio hasta que los mariscos estén rosados y tiernos, luego añade cilantro picado y retira del fuego.",
+      "Paso 5: Toma porciones de la masa de yuca, forma bolas y rellénalas con la mezcla de mariscos, cerrándolas cuidadosamente para evitar que se abran durante la cocción.",
+      "Paso 6: Hierve los bollos en agua salada a fuego medio por 15 minutos o hasta que floten, luego escúrrelos y fríelos en 50 ml de aceite caliente por 5 minutos para dorarlos ligeramente.",
+      "Paso 7: Sirve los bollos preñados calientes, acompañados de salsa de ají o limón, y deja reposar 5 minutos antes de comer para que los sabores se integren."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa yuca fresca para una textura más suave; si la masa se desmorona, agrega un poco de agua caliente para unirla mejor.",
+      "Consejo 2: Para variar con mariscos regionales, incorpora conchas o cangrejo si están disponibles, y no sobrecargues el relleno para que los bollos no se rompan durante la cocción."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "bollo preñado ecuatoriano",
+      "ecuadorian food",
+      "traditional dish with seafood"
+    ],
+    "image_alt": "Fotografía del bollo preñado ecuatoriano de la Costa, mostrando bollos dorados rellenos de mariscos frescos en un plato tradicional",
+    "seo_keywords": [
+      "receta de bollo preñado ecuatoriano con mariscos",
+      "como hacer bollo preñado de la costa",
+      "platos de mariscos ecuatorianos tradicionales",
+      "variantes de bollo preñado en Ecuador",
+      "bollo preñado receta paso a paso",
+      "comida costera ecuatoriana con yuca",
+      "mariscos en platos ecuatorianos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es un bollo preñado y de dónde proviene?",
+        "a": "El bollo preñado es un plato tradicional de la Costa Ecuatoriana, hecho de masa de yuca rellena con ingredientes como mariscos, originario de ciudades como Guayaquil y Manta, y se consume como un plato fuerte en celebraciones."
+      },
+      {
+        "q": "¿Puedo congelar los bollos preñados?",
+        "a": "Sí, puedes congelar los bollos preñados crudos por hasta 2 meses; descongela en el refrigerador y cocina directamente para mantener la textura, evitando que se sequen durante el proceso."
+      },
+      {
+        "q": "¿Cuáles son las variantes regionales de este plato?",
+        "a": "En la Costa, se usa mariscos frescos como camarones y calamares, mientras que en otras regiones como la Sierra, podría incluir carne; para variaciones, agrega ingredientes locales como plátano verde para un toque único."
+      },
+      {
+        "q": "¿Es este plato apto para dietas especiales?",
+        "a": "El bollo preñado tradicional no es apto para veganos debido a los mariscos, pero puedes hacer una versión vegetariana con verduras; es alto en carbohidratos, así que modera las porciones en dietas bajas en carbs."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Caracol",
+        "city": "Guayaquil",
+        "description": "Famoso por sus bollos preñados con mariscos frescos del Pacífico, en un ambiente costero auténtico."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "Lugar ideal para probar bollos preñados hechos al momento por vendedores locales, con ingredientes ultra frescos del mar."
+      },
+      {
+        "name": "Restaurante Mar y Tierra",
+        "city": "Esmeraldas",
+        "description": "Ofrece variaciones de bollos preñados con mariscos regionales, en un entorno que combina cocina ecuatoriana con vistas al océano."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca",
+        "substitute": "Patata o yuca congelada",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para mantener la textura similar."
+      },
+      {
+        "original": "Camarones frescos",
+        "substitute": "Camarones congelados o langostinos",
+        "notes": "Encuéntralos en secciones de mariscos de tiendas como Costco en EE.UU. o Aldi en Europa, asegurando que sean de calidad para preservar el sabor."
+      },
+      {
+        "original": "Calamares frescos",
+        "substitute": "Anillos de calamar congelados",
+        "notes": "Fáciles de obtener en pescaderías o supermercados como Tesco en Europa, para una alternativa práctica sin perder el esencia del plato."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "CHORIPAN - Cómo hacer Choripanes 🌭",
+        "videoId": "1k7XUYc8s7c",
+        "channel": "COOK WOW",
+        "url": "https://www.youtube.com/watch?v=1k7XUYc8s7c",
+        "embed": "https://www.youtube-nocookie.com/embed/1k7XUYc8s7c",
+        "uploadDate": "2018-07-24",
+        "description": "Receta tipica argentina de Choripan. Es un sandwich a base de pan frances que tiene chorizo argentino y chimichurri. Los chorizos argentinos tienen una mezcla de carne de res y de cerdo con vino blanc"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/1k7XUYc8s7c/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 66,
+    "created_at": "2026-03-07T11:22:35.672Z"
+  },
+  {
     "slug": "seco-de-pato",
     "title": "Seco de Pato Ecuatoriano Receta Tradicional",
     "description": "Seco de pato es un plato ecuatoriano icónico de la Costa, preparado con pato estofado en salsa de cerveza y hierbas aromáticas. Esta receta tradicional incluye pasos detallados para lograr un sabor auténtico, ideal para cenas familiares o eventos especiales, con ingredientes frescos y accesibles.",

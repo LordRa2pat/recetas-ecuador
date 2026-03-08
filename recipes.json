@@ -1,5 +1,146 @@
 [
   {
+    "slug": "ayampaco",
+    "title": "Ayampaco Ecuatoriano Receta Tradicional",
+    "description": "Ayampaco es un plato tradicional ecuatoriano de la Costa, hecho con pollo envuelto en hojas y sazonado con especias locales, ideal para comidas familiares. Esta receta paso a paso te guía para recrear su sabor auténtico en casa, con ingredientes frescos y técnicas simples.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "45 min",
+    "total_time": "75 min",
+    "ingredients": [
+      "500g de pechuga sin hueso Pollo (comprar en Supermaxi)",
+      "8 unidades grandes Hojas de bijao (comprar en Mercado local)",
+      "2 unidades medianas picadas Cebolla (comprar en Megamaxi)",
+      "3 unidades maduros cortados Tomate (comprar en TIA)",
+      "4 dientes machacados Ajo (comprar en Supermaxi)",
+      "1/2 taza fresca picada Cilantro (comprar en Mercado local)",
+      "2 cucharadas de pasta Achiote (comprar en Mercado local)",
+      "1 cucharadita al gusto Sal (comprar en Megamaxi)",
+      "2 cucharadas Aceite vegetal (comprar en TIA)",
+      "1 taza Caldo de pollo (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia y corta el pollo en trozos de 100g cada uno, marina con achiote, sal y ajo durante 15 minutos a temperatura ambiente para infusionar sabores.",
+      "Paso 2: En una sartén a fuego medio (alrededor de 150°C), sofríe la cebolla y el tomate picados con 2 cucharadas de aceite durante 5 minutos hasta que estén blandos.",
+      "Paso 3: Mezcla el pollo marinado con la sofrito, agrega cilantro y caldo de pollo, cocina a fuego bajo durante 10 minutos, revolviendo ocasionalmente para evitar que se queme.",
+      "Paso 4: Lava las hojas de bijao y bláncalas en agua hirviendo a 100°C durante 2 minutos para ablandarlas, luego escúrrelas y sécalas.",
+      "Paso 5: Envuelve cada trozo de pollo con la mezcla en una hoja de bijao, asegurando un cierre hermético, y repite para todas las porciones.",
+      "Paso 6: Coloca los paquetes en una olla a vapor y cocina a 100°C durante 30 minutos hasta que el pollo esté completamente cocido.",
+      "Paso 7: Retira del vapor y deja reposar por 5 minutos a temperatura ambiente antes de servir para que los sabores se asienten."
+    ],
+    "tips": [
+      "Usa hojas de bijao frescas para un sabor auténtico, pero si no están disponibles, hojas de plátano funcionan bien como alternativa.",
+      "Agrega un poco de lima al final para realzar los sabores ácidos típicos de la Costa ecuatoriana."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Esmeraldas"
+    ],
+    "image_keywords": [
+      "ayampaco dish",
+      "ecuadorian food",
+      "traditional wrapped chicken"
+    ],
+    "image_alt": "Plato de Ayampaco ecuatoriano terminado, con pollo envuelto en hojas verdes y salsas tradicionales",
+    "seo_keywords": [
+      "receta de ayampaco ecuatoriano tradicional paso a paso",
+      "como hacer ayampaco autentico en casa",
+      "plato ayampaco de la costa ecuatoriana",
+      "ingredientes para ayampaco receta original",
+      "ayampaco ecuatoriano variaciones regionales",
+      "donde comprar ingredientes para ayampaco en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es Ayampaco y de dónde proviene?",
+        "a": "Ayampaco es un plato tradicional de la Costa ecuatoriana, hecho con pollo o pescado envuelto en hojas de bijao y cocinado al vapor, originario de ciudades como Guayaquil y Esmeraldas, representando la fusión de influencias indígenas y españolas."
+      },
+      {
+        "q": "¿Es Ayampaco difícil de preparar para principiantes?",
+        "a": "Aunque se clasifica como de dificultad media, es accesible para principiantes con práctica; el paso clave es el envoltura y cocción al vapor, pero siguiendo la receta paso a paso, puedes lograrlo en casa sin problemas."
+      },
+      {
+        "q": "¿Cómo se sirve Ayampaco tradicionalmente?",
+        "a": "Se sirve caliente, acompañado de arroz, plátanos maduros y ensalada, para resaltar sus sabores; en Ecuador, es común disfrutarlo en comidas familiares o festivales locales."
+      },
+      {
+        "q": "¿Ayampaco se puede congelar para más tarde?",
+        "a": "Sí, puedes congelar los paquetes envueltos antes de cocinarlos por hasta 2 meses; descongela en el refrigerador y cocina al vapor para mantener la frescura y textura original."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante Lo Nuestro",
+        "city": "Guayaquil",
+        "description": "Famoso por platos tradicionales como Ayampaco, con ambiente familiar y sabores auténticos de la Costa."
+      },
+      {
+        "name": "Mercado Central de Esmeraldas",
+        "city": "Esmeraldas",
+        "description": "Lugar ideal para probar Ayampaco fresco en puestos locales, con ingredientes directamente de la región."
+      },
+      {
+        "name": "Restaurante El Manantial",
+        "city": "Guayaquil",
+        "description": "Ofrece variaciones de Ayampaco con toques modernos, perfecto para turistas interesados en la gastronomía ecuatoriana."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Hojas de bijao",
+        "substitute": "Hojas de plátano",
+        "notes": "Disponible en supermercados latinos en EE.UU. o mercados étnicos en Europa"
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Fácil de encontrar en tiendas como Walmart en EE.UU. o Lidl en Europa, para un sabor similar"
+      },
+      {
+        "original": "Pollo",
+        "substitute": "Pavo molido",
+        "notes": "Opción en supermercados como Tesco en Europa o Target en EE.UU. para una textura comparable"
+      }
+    ],
+    "estimated_cost": "$8.50 USD",
+    "youtube_videos": [
+      {
+        "title": "La pechuga de #pavo se cocina más rápido 🎄😉 #buenazo #recetafacil  #receta",
+        "videoId": "OEAxiTql42M",
+        "channel": "Buenazo",
+        "url": "https://www.youtube.com/watch?v=OEAxiTql42M",
+        "embed": "https://www.youtube-nocookie.com/embed/OEAxiTql42M",
+        "uploadDate": "2023-11-17",
+        "description": "Quisimos preparar una cena navideña práctica y en corto tiempo, por eso se nos ocurrió hacer esta pechuga de pavo que alcanzó para todos y quedó buenaza. El aderezo que usamos fue ese que nunca falla,"
+      },
+      {
+        "title": "AYAMPACO tipico para los AMANTES de lo EXÓTICO 👀✅",
+        "videoId": "yktOujf-PnE",
+        "channel": "Recetas de la abuela",
+        "url": "https://www.youtube.com/watch?v=yktOujf-PnE",
+        "embed": "https://www.youtube-nocookie.com/embed/yktOujf-PnE",
+        "uploadDate": "2023-10-09",
+        "description": "🤩De visita donde mi ABUELITA, preparamos una receta solo para amantes de la gastronomia  EXÓTICA 🐸🐸  una receta de AYAMPACOS con un ingredinetes diferente. \n\nEn las tarjetas y al final del video ha"
+      },
+      {
+        "title": "Bollo de Pescado SUPER FÁCIL | KWA",
+        "videoId": "0eyjo-igI54",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=0eyjo-igI54",
+        "embed": "https://www.youtube-nocookie.com/embed/0eyjo-igI54",
+        "uploadDate": "2023-06-02",
+        "description": "Ingredientes:\nhttps://recetaskwa.com/2023/09/19/bollo-de-pescad/\n\nSÍGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r\nMás recetas aquí: https://tinyurl.com/RecetasKWA\r\n\r\nCONTACTO/BUSINESS: KWA"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/OEAxiTql42M/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 69,
+    "created_at": "2026-03-08T16:22:45.364Z"
+  },
+  {
     "slug": "tigrillo-ecuatoriano",
     "title": "Tigrillo Ecuatoriano Receta Tradicional",
     "description": "Tigrillo Ecuatoriano es un plato costero hecho con plátano verde machacado, verduras y especias, ideal para desayunos. Esta receta auténtica te lleva a la esencia de la gastronomía ecuatoriana, fácil de preparar en casa.",

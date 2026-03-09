@@ -1,5 +1,147 @@
 [
   {
+    "slug": "seco-de-res-amazonia-ecuatoriano-con-frutas-tropicales",
+    "title": "Seco de Res Ecuatoriano de la Amazonía Receta Tradicional con Frutas Tropicales",
+    "description": "Seco de res ecuatoriano es un estofado jugoso de la Amazonía que incorpora frutas tropicales para un sabor único y refrescante, perfecto para quienes buscan platos ecuatorianos auténticos y saludables.",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "90 min",
+    "total_time": "110 min",
+    "ingredients": [
+      "1 kg, cortada en cubos carne de res (comprar en Supermaxi)",
+      "2 unidades, picadas finamente cebolla (comprar en Mercado local)",
+      "4 dientes, machacados ajo (comprar en TIA)",
+      "3 unidades, picadas tomate (comprar en Megamaxi)",
+      "1 unidad, cortada en trozos piña (comprar en Mercado local)",
+      "2 unidades, en rodajas banano (comprar en Supermaxi)",
+      "1/2 taza, picado cilantro fresco (comprar en Mercado local)",
+      "500 ml chicha de yuca (comprar en Mercado local)",
+      "al gusto sal (comprar en TIA)",
+      "1 cucharadita comino molido (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: En un tazón grande, marina la carne de res con ajo machacado, comino y sal durante 15 minutos a temperatura ambiente para realzar los sabores.",
+      "Paso 2: En una olla grande a fuego medio-alto (alrededor de 180°C), calienta 2 cucharadas de aceite y dora la carne marinada durante 5 minutos por lado para sellar los jugos.",
+      "Paso 3: Agrega la cebolla picada y cocina por 5 minutos más hasta que esté translúcida, revolviendo constantemente para evitar que se queme.",
+      "Paso 4: Incorpora los tomates picados y cocina por 10 minutos, permitiendo que suelten su jugo y formen una salsa base a fuego medio.",
+      "Paso 5: Vierte la chicha de yuca y agrega las frutas tropicales como piña y banano, luego baja el fuego a bajo y cocina tapado por 60 minutos, revolviendo ocasionalmente hasta que la carne esté tierna.",
+      "Paso 6: Añade el cilantro fresco en los últimos 5 minutos de cocción para preservar su aroma, y ajusta la sazón si es necesario.",
+      "Paso 7: Retira del fuego y deja reposar por 5 minutos antes de servir caliente con arroz o yuca."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa frutas tropicales maduras para un balance ácido-dulce perfecto, y no excedas el tiempo de cocción para mantener la textura de la carne.",
+      "Consejo 2: Para un sabor más auténtico amazónico, incorpora hierbas locales como el ishpingo si está disponible en tu área."
+    ],
+    "origin_cities": [
+      "Coca",
+      "Lago Agrio"
+    ],
+    "image_keywords": [
+      "seco de res ecuatoriano",
+      "ecuadorian food",
+      "traditional amazonian dish",
+      "stew with tropical fruits"
+    ],
+    "image_alt": "Fotografía del plato terminado de seco de res ecuatoriano de la Amazonía, mostrando carne tierna en salsa con piña y banano",
+    "seo_keywords": [
+      "receta tradicional seco de res ecuatoriano amazonia con frutas tropicales",
+      "como hacer seco de res ecuatoriano con piña y banano",
+      "plato amazonico ecuatoriano seco de res paso a paso",
+      "seco de res ecuatoriano autentico con ingredientes tropicales",
+      "mejor receta seco de res de la amazonia ecuatoriana",
+      "variantes regionales de seco de res en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué hace único al seco de res de la Amazonía comparado con otras regiones?",
+        "a": "El seco de res de la Amazonía se distingue por la incorporación de frutas tropicales como piña y banano, que añaden un toque dulce y ácido, a diferencia de las versiones de la Costa o Sierra que usan más hierbas y chiles; esto refleja la biodiversidad de la región amazónica."
+      },
+      {
+        "q": "¿Puedo usar otro tipo de carne en lugar de res?",
+        "a": "Sí, puedes sustituir la res por pollo o pescado para una versión más ligera, pero el sabor tradicional se mantiene mejor con res; en la Amazonía, a veces se usa carne de caza local para adaptarse a los ingredientes disponibles."
+      },
+      {
+        "q": "¿Cuánto dura el seco de res refrigerado?",
+        "a": "El seco de res puede durar hasta 3 días en el refrigerador si se guarda en un contenedor hermético; para congelar, dura hasta 2 meses, pero es mejor consumirlo fresco para apreciar los sabores de las frutas tropicales."
+      },
+      {
+        "q": "¿Es este plato apto para dietas vegetarianas?",
+        "a": "No es apto en su forma tradicional por la carne, pero puedes hacer una versión vegetariana reemplazando la res con verduras como yuca y plátano, manteniendo las frutas para un sabor similar."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Chagra",
+        "city": "Coca",
+        "description": "Un restaurante especializado en cocina amazónica que sirve seco de res con frutas frescas locales, ideal para turistas que quieren una experiencia auténtica."
+      },
+      {
+        "name": "Mercado de Lago Agrio",
+        "city": "Lago Agrio",
+        "description": "En este vibrante mercado, puedes probar versiones caseras de seco de res preparadas por vendedores locales, junto con otros platos regionales."
+      },
+      {
+        "name": "Hotel Auca",
+        "city": "Coca",
+        "description": "Ofrece seco de res en su menú turístico, con guías que explican los ingredientes amazónicos usados en la preparación."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "chicha de yuca",
+        "substitute": "cerveza lager",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Tesco en Europa, proporciona un sabor similar de fermentación."
+      },
+      {
+        "original": "piña fresca",
+        "substitute": "piña enlatada",
+        "notes": "Disponible en tiendas como Target en EE.UU. o Carrefour en Europa; usa la variedad en jugo natural para mantener el sabor tropical auténtico."
+      },
+      {
+        "original": "banano",
+        "substitute": "plátano maduro",
+        "notes": "Común en mercados étnicos como Whole Foods en EE.UU., ofrece una textura similar y dulzura en platos europeos."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Un SECO de Carne FÁCIL | KWA",
+        "videoId": "d-PhS71NVYE",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=d-PhS71NVYE",
+        "embed": "https://www.youtube-nocookie.com/embed/d-PhS71NVYE",
+        "uploadDate": "2022-10-08",
+        "description": "Encuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/13/seco-de-carne/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG: @KWA.EC\r\n\r\nMás recetas aquí: https://tinyurl.com/RecetasKWA\r\n\r"
+      },
+      {
+        "title": "Seco de Carne e Res Ecuatoriano",
+        "videoId": "HYmwEOhV2wI",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=HYmwEOhV2wI",
+        "embed": "https://www.youtube-nocookie.com/embed/HYmwEOhV2wI",
+        "uploadDate": "2025-04-24",
+        "description": ""
+      },
+      {
+        "title": "SECO DE COSTILLA DE RES ECUATORIANO",
+        "videoId": "-Ohd1oxeZeE",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=-Ohd1oxeZeE",
+        "embed": "https://www.youtube-nocookie.com/embed/-Ohd1oxeZeE",
+        "uploadDate": "2023-08-17",
+        "description": "Seco de Costilla de Res Ecuatoriano, seco de costilla, seco de carne de res,"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/HYmwEOhV2wI/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 71,
+    "created_at": "2026-03-09T22:22:45.833Z"
+  },
+  {
     "slug": "maito-de-pescado-amazonico",
     "title": "Maito de Pescado Amazónico Receta Tradicional Ecuatoriana",
     "description": "Maito de pescado amazónico es un plato emblemático de la Amazonía ecuatoriana, donde el pescado se envuelve en hojas y se asa con especias para un sabor ahumado y fresco. Esta receta paso a paso te permite recrear esta delicia en casa, usando ingredientes accesibles y técnicas simples para un resultado auténtico.",

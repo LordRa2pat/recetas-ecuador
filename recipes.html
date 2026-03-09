@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-EC">
 
 <head>
   <!-- Google Tag Manager -->
@@ -24,7 +24,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813915136648702"
     crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Recetario Maestro — Gastronomía del Ecuador | Ecuador a la Carta</title>
   <meta name="description"
     content="Explora el catálogo definitivo de recetas ecuatorianas. Filtra por región, dificultad y audiencia migrante o turista." />
@@ -59,12 +59,24 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <style>
+    <style>
     :root {
-      --luxury-dark: #0B1221;
+      --luxury-dark: #070B14; /* Más profundo, casi vantablack */
       --ec-gold: #DCA011;
-      --gold-gradient: linear-gradient(135deg, #FFC107 0%, #DCA011 50%, #B8860B 100%);
+      --gold-gradient: linear-gradient(135deg, #FFEAA7 0%, #DCA011 40%, #8B6914 100%);
+      --glass-bg: rgba(255, 255, 255, 0.02);
+      --glass-border: rgba(255, 255, 255, 0.05);
+      --gold-glow: rgba(220, 160, 17, 0.15);
     }
+
+    /* ====== Scrollbar Personalizado ====== */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--luxury-dark); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--glass-border);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--ec-gold); }
 
     body {
       background-color: var(--luxury-dark);
@@ -73,31 +85,128 @@
       scroll-behavior: smooth;
     }
 
+    ::selection {
+      background: rgba(220, 160, 17, 0.3);
+      color: #ffffff;
+    }
+
     .glass-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
 
     .hero-title {
       font-family: 'Playfair Display', serif;
-      letter-spacing: -0.02em;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
     }
 
     .gold-text-gradient {
       background: var(--gold-gradient);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
+      color: transparent;
+      display: inline-block;
     }
 
-    select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23DCA011'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1.5rem center;
-      background-size: 1rem;
+    .btn-luxury {
+      background: var(--gold-gradient);
+      color: #0B1221;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-luxury::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+      transform: skewX(-20deg);
+      transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: -1;
+    }
+
+    .btn-luxury:hover::before {
+      left: 150%;
+    }
+
+    .btn-luxury:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(220, 160, 17, 0.5);
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ec-gold);
+      color: var(--luxury-dark);
+      padding: 1rem 2rem;
+      font-weight: bold;
+      z-index: 1000;
+      border-radius: 0 0 1rem 1rem;
+      transition: top 0.3s ease;
+    }
+
+    .skip-link:focus {
+      top: 0;
     }
   </style>
+
+    <!-- Canonical URL (SEO 9) -->
+    <link rel="canonical" href="https://ecuadoralacarta.com/recipes.html" />
+    
+    <!-- Language & Alternate (SEO 10) -->
+    <link rel="alternate" hreflang="es-EC" href="https://ecuadoralacarta.com/recipes.html" />
+
+    <!-- Open Graph (SEO 3) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecuadoralacarta.com/recipes.html">
+    <meta property="og:title" content="Recetario Maestro — Gastronomía del Ecuador | Ecuador a la Carta">
+    <meta property="og:description" content="Explora el catálogo definitivo de recetas ecuatorianas. Filtra por región, dificultad y audiencia migrante o turista.">
+    <meta property="og:locale" content="es_EC">
+    <meta property="og:site_name" content="Ecuador a la Carta">
+
+    <!-- Twitter (SEO 4) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ecuadoralacarta.com/recipes.html">
+    <meta property="twitter:title" content="Recetario Maestro — Gastronomía del Ecuador | Ecuador a la Carta">
+    <meta property="twitter:description" content="Explora el catálogo definitivo de recetas ecuatorianas. Filtra por región, dificultad y audiencia migrante o turista.">
+
+    
+    <!-- Schema.org JSON-LD (SEO 5 & 6) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ecuador a la Carta",
+      "url": "https://ecuadoralacarta.com",
+      "logo": "https://ecuadoralacarta.com/LogoEcuadorAlacarta.png",
+      "sameAs": [
+        "https://www.facebook.com/ecuadoralacarta",
+        "https://www.instagram.com/ecuadoralacarta"
+      ]
+    }
+    </script>
+
+
+    <!-- Preconnect (SEO 14) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
 
 <body class="font-sans antialiased selection:bg-ec-gold/30">

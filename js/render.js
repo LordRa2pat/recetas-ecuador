@@ -73,27 +73,28 @@ export function renderCard(recipe) {
   var imgAlt = escapeHtml(recipe.image_alt || recipe.title);
 
   return (
-    '<article class="group relative rounded-[48px] overflow-hidden glass-card transition-all duration-700 hover:-translate-y-2">' +
-    '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block" aria-label="' + escapeHtml(recipe.title) + '">' +
+    '<article class="group relative rounded-[48px] overflow-hidden glass-card shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] border border-white/5 hover:border-ec-gold/20 hover:shadow-[0_20px_50px_-15px_rgba(220,160,17,0.2)] transition-all duration-700 hover:-translate-y-2">' +
+    '<a href="recipe.html?slug=' + encodeURIComponent(recipe.slug) + '" class="block h-full flex flex-col" aria-label="' + escapeHtml(recipe.title) + '">' +
     '<div class="relative h-72 overflow-hidden">' +
     '<img src="' + img + '" alt="' + imgAlt + '" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent opacity-80"></div>' +
+    '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>' +
+    '<div class="absolute inset-0 bg-ec-gold/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>' +
     (chip ? '<div class="absolute top-8 left-8 z-10">' + chip + "</div>" : "") +
     "</div>" +
-    '<div class="p-10 flex flex-col flex-1">' +
+    '<div class="p-10 flex flex-col flex-1 relative z-10 bg-[#0B1221]/40 backdrop-blur-xl">' +
     '<div class="flex items-center gap-3 mb-6">' +
-    (recipe.region ? '<span class="text-[10px] font-black text-ec-gold uppercase tracking-[0.3em]">' + escapeHtml(recipe.region) + "</span>" : "") +
-    '<span class="w-1 h-1 rounded-full bg-white/10"></span>' +
-    '<span class="text-[10px] font-bold text-white/30 uppercase tracking-widest">' + escapeHtml(recipe.difficulty || "Tradicional") + '</span>' +
+    (recipe.region ? '<span class="text-[10px] font-black text-ec-gold uppercase tracking-[0.4em] drop-shadow-md">' + escapeHtml(recipe.region) + "</span>" : "") +
+    '<span class="w-1 h-1 rounded-full bg-white/20"></span>' +
+    '<span class="text-[10px] font-bold text-white/40 uppercase tracking-widest">' + escapeHtml(recipe.difficulty || "Tradicional") + '</span>' +
     "</div>" +
-    '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold transition-colors duration-500">' + escapeHtml(recipe.title) + "</h3>" +
-    '<p class="text-white/40 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(recipe.description || "") + "</p>" +
-    '<div class="mt-auto flex items-center justify-between pt-8 border-t border-white/5">' +
-    '<div class="flex items-center gap-6 text-[10px] font-black text-white/30 uppercase tracking-[0.2em]">' +
-    (recipe.total_time ? '<span class="flex items-center gap-2">⏳ ' + escapeHtml(recipe.total_time) + "</span>" : "") +
-    (recipe.servings ? '<span class="flex items-center gap-2">🍽️ ' + escapeHtml(recipe.servings) + "</span>" : "") +
+    '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold drop-shadow-lg transition-colors duration-500">' + escapeHtml(recipe.title) + "</h3>" +
+    '<p class="text-white/50 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(recipe.description || "") + "</p>" +
+    '<div class="mt-auto flex items-center justify-between pt-8 border-t border-white/5 group-hover:border-ec-gold/10 transition-colors duration-500">' +
+    '<div class="flex items-center gap-6 text-[10px] font-black text-white/40 uppercase tracking-[0.3em]">' +
+    (recipe.total_time ? '<span class="flex items-center gap-2 group-hover:text-white/60 transition-colors"><span class="text-ec-gold/70">⏳</span> ' + escapeHtml(recipe.total_time) + "</span>" : "") +
+    (recipe.servings ? '<span class="flex items-center gap-2 group-hover:text-white/60 transition-colors"><span class="text-ec-gold/70">🍽️</span> ' + escapeHtml(recipe.servings) + "</span>" : "") +
     "</div>" +
-    '<span class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all">→</span>' +
+    '<span class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:border-ec-gold group-hover:text-[#0B1221] shadow-[0_0_15px_rgba(0,0,0,0.2)] group-hover:shadow-[0_0_20px_rgba(220,160,17,0.4)] group-hover:rotate-45 transition-all duration-500"><span class="text-lg">→</span></span>' +
     "</div>" +
     "</div>" +
     "</a>" +
@@ -322,24 +323,25 @@ export function renderBlogCard(post) {
   var imgAlt = escapeHtml(post.image_alt || post.title);
 
   return (
-    '<article class="group relative rounded-[48px] overflow-hidden glass-card transition-all duration-700 hover:-translate-y-2">' +
-    '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="block" aria-label="' + escapeHtml(post.title) + '">' +
+    '<article class="group relative rounded-[48px] overflow-hidden glass-card shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] border border-white/5 hover:border-ec-gold/20 hover:shadow-[0_20px_50px_-15px_rgba(220,160,17,0.2)] transition-all duration-700 hover:-translate-y-2">' +
+    '<a href="post.html?slug=' + encodeURIComponent(post.slug) + '" class="block h-full flex flex-col" aria-label="' + escapeHtml(post.title) + '">' +
     '<div class="relative h-72 overflow-hidden">' +
     '<img src="' + img + '" alt="' + imgAlt + '" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent opacity-80"></div>' +
-    (post.featured ? '<div class="absolute top-8 left-8 z-10"><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-ec-gold text-[#0B1221] shadow-xl border border-white/20">Destacado</span></div>' : "") +
+    '<div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>' +
+    '<div class="absolute inset-0 bg-ec-gold/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>' +
+    (post.featured ? '<div class="absolute top-8 left-8 z-10"><span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-ec-gold text-[#0B1221] shadow-[0_0_15px_rgba(220,160,17,0.4)] border border-white/20">Destacado</span></div>' : "") +
     "</div>" +
-    '<div class="p-10">' +
+    '<div class="p-10 flex flex-col flex-1 relative z-10 bg-[#0B1221]/40 backdrop-blur-xl">' +
     '<div class="flex items-center gap-3 mb-6">' +
-    (post.category ? '<span class="text-[9px] font-black text-ec-gold uppercase tracking-[0.3em]">' + escapeHtml(post.category) + "</span>" : "") +
-    '<span class="w-1 h-1 rounded-full bg-white/10"></span>' +
-    '<span class="text-[9px] font-bold text-white/30 uppercase tracking-widest">' + escapeHtml(post.reading_time || "4 min") + '</span>' +
+    (post.category ? '<span class="text-[9px] font-black text-ec-gold uppercase tracking-[0.4em] drop-shadow-md">' + escapeHtml(post.category) + "</span>" : "") +
+    '<span class="w-1 h-1 rounded-full bg-white/20"></span>' +
+    '<span class="text-[9px] font-bold text-white/40 uppercase tracking-widest">' + escapeHtml(post.reading_time || "4 min") + '</span>' +
     "</div>" +
-    '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold transition-colors duration-500">' + escapeHtml(post.title) + "</h3>" +
-    '<p class="text-white/40 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(post.description || "") + "</p>" +
-    '<div class="flex items-center justify-between pt-8 border-t border-white/5">' +
-    '<span class="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">' + (post.date_published || "Cr\u00f3nica") + '</span>' +
-    '<span class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:text-[#0B1221] transition-all">→</span>' +
+    '<h3 class="font-display font-black text-3xl text-white leading-tight mb-4 group-hover:text-ec-gold drop-shadow-lg transition-colors duration-500">' + escapeHtml(post.title) + "</h3>" +
+    '<p class="text-white/50 text-sm font-light leading-relaxed line-clamp-2 mb-8">' + escapeHtml(post.description || "") + "</p>" +
+    '<div class="mt-auto flex items-center justify-between pt-8 border-t border-white/5 group-hover:border-ec-gold/10 transition-colors duration-500">' +
+    '<span class="text-[9px] font-black text-white/40 uppercase tracking-[0.3em] group-hover:text-white/60 transition-colors">' + (post.date_published || "Cr\u00f3nica") + '</span>' +
+    '<span class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white group-hover:bg-ec-gold group-hover:border-ec-gold group-hover:text-[#0B1221] shadow-[0_0_15px_rgba(0,0,0,0.2)] group-hover:shadow-[0_0_20px_rgba(220,160,17,0.4)] group-hover:rotate-45 transition-all duration-500"><span class="text-lg">→</span></span>' +
     "</div>" +
     "</div>" +
     "</a>" +

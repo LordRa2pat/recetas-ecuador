@@ -1,5 +1,144 @@
 [
   {
+    "slug": "maito-de-pescado-amazonico",
+    "title": "Maito de Pescado Amazónico Receta Tradicional Ecuatoriana",
+    "description": "Maito de pescado amazónico es un plato emblemático de la Amazonía ecuatoriana, donde el pescado se envuelve en hojas y se asa con especias para un sabor ahumado y fresco. Esta receta paso a paso te permite recrear esta delicia en casa, usando ingredientes accesibles y técnicas simples para un resultado auténtico.",
+    "region": "Amazonia",
+    "category": "Mariscos",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "4 filetes de 150g cada uno Pescado (pintado o tilapia) (comprar en Mercado local)",
+      "8 hojas grandes Hojas de bijao o plátano (comprar en Mercado local)",
+      "2 cucharadas Achiote en pasta (comprar en Supermaxi)",
+      "1 unidad mediana picada Cebolla (comprar en Supermaxi)",
+      "2 unidades medianas picadas Tomate (comprar en Supermaxi)",
+      "3 dientes picados Ajo (comprar en Supermaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "al gusto Sal (comprar en Supermaxi)",
+      "2 unidades jugo Limón (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia los filetes de pescado bajo agua fría durante 5 minutos y sazónalos con sal y jugo de limón; deja marinar por 10 minutos a temperatura ambiente para realzar los sabores.",
+      "Paso 2: En un tazón, mezcla el achiote con el ajo picado, cebolla y tomate; deja reposar esta marinada por 5 minutos para que los ingredientes se integren bien.",
+      "Paso 3: Unta cada filete de pescado con la marinada preparada, asegurándote de cubrirlos uniformemente; esto toma unos 2-3 minutos para una cobertura completa.",
+      "Paso 4: Calienta una parrilla a 180°C o prepara una fogata; lava y seca las hojas de bijao o plátano para envolver el pescado, evitando que se quemen.",
+      "Paso 5: Envuelve cada filete en 2 hojas, sellando bien los bordes para mantener los jugos; asa en la parrilla durante 15 minutos por lado, volteando una vez para cocción uniforme.",
+      "Paso 6: Retira el maito de la parrilla y déjalo reposar por 5 minutos; luego, desenvuelve cuidadosamente y sirve caliente con cilantro fresco por encima para un acabado aromático.",
+      "Paso 7: Acompaña con yuca hervida o plátano maduro, sirviendo inmediatamente para disfrutar el pescado tierno y jugoso."
+    ],
+    "tips": [
+      "Usa hojas frescas y grandes para envolver el pescado, ya que ayudan a mantener la humedad y evitan que se seque durante el asado.",
+      "Para un sabor más auténtico, agrega un poco de chicha de yuca a la marinada si está disponible en tu área."
+    ],
+    "origin_cities": [
+      "Coca",
+      "Puerto Francisco de Orellana"
+    ],
+    "image_keywords": [
+      "maito de pescado",
+      "comida ecuatoriana",
+      "plato amazónico tradicional"
+    ],
+    "image_alt": "Plato de maito de pescado amazónico terminado, con pescado envuelto en hojas verdes y sazonado, listo para servir",
+    "seo_keywords": [
+      "receta maito de pescado amazónico tradicional ecuatoriano",
+      "cómo preparar maito de pescado en casa",
+      "platos de mariscos de la amazonía ecuatoriana",
+      "maito de pescado con ingredientes frescos receta",
+      "auténtica cocina indígena ecuatoriana maito",
+      "pasos para hacer maito de pescado amazónico"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es exactamente el maito de pescado amazónico?",
+        "a": "El maito de pescado amazónico es un plato tradicional de la región amazónica de Ecuador, donde el pescado se envuelve en hojas de bijao y se asa con especias como achiote, cebolla y tomate, resultando en un sabor ahumado y jugoso que representa la cocina indígena."
+      },
+      {
+        "q": "¿Puedo usar otro tipo de pescado para esta receta?",
+        "a": "Sí, aunque el pintado es ideal, puedes sustituir con tilapia o bagre fresco, asegurándote de que sea un pescado blanco y firme para mantener la textura; ajusta el tiempo de cocción según el grosor para evitar que se reseque."
+      },
+      {
+        "q": "¿Dónde puedo encontrar hojas de bijao si no vivo en Ecuador?",
+        "a": "Si no estás en Ecuador, las hojas de bijao pueden ser difíciles de obtener; prueba con hojas de plátano en mercados latinos o usa papel aluminio como alternativa, disponible en supermercados comunes, para lograr un resultado similar."
+      },
+      {
+        "q": "¿Es seguro comer pescado asado de esta manera?",
+        "a": "Sí, siempre y cuando el pescado esté fresco y cocinado a una temperatura interna de al menos 63°C, lo que asegura que se eliminen bacterias; usa un termómetro para verificar y elige pescado de fuentes confiables."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Bosque",
+        "city": "Coca",
+        "description": "Un restaurante local que sirve maito de pescado auténtico con ingredientes frescos de la región amazónica, ideal para turistas que buscan sabores tradicionales."
+      },
+      {
+        "name": "Mercado Municipal de Lago Agrio",
+        "city": "Lago Agrio",
+        "description": "Aquí puedes probar maito de pescado preparado por vendedores locales, con opciones frescas y asequibles, rodeado de la vibrante atmósfera del mercado amazónico."
+      },
+      {
+        "name": "Hostal Turístico Napo",
+        "city": "Puerto Francisco de Orellana",
+        "description": "Ofrece maito de pescado como plato principal en sus comidas, con guías que explican su origen cultural, perfecto para una experiencia inmersiva."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Hojas de bijao",
+        "substitute": "Hojas de plátano o papel aluminio",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para mantener la técnica de envoltura."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Fácil de encontrar en tiendas de especias como Whole Foods en EE.UU. o Lidl en Europa, para un sabor similar ahumado."
+      },
+      {
+        "original": "Pescado pintado",
+        "substitute": "Tilapia",
+        "notes": "Común en pescaderías de EE.UU. como Costco o en mercados de Europa como Aldi, manteniendo la frescura y textura."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Manizado de Pescado 🇪🇨 Rápido y Súper CREMOSO 🐟 | KWA",
+        "videoId": "erVkQvk1PWw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=erVkQvk1PWw",
+        "embed": "https://www.youtube-nocookie.com/embed/erVkQvk1PWw",
+        "uploadDate": "2025-08-02",
+        "description": "Hoy te enseñamos cómo preparar el tradicional #ManizadoDePescado, un guiso ecuatoriano lleno de sabor hecho con pescado en una cremosa salsa de maní.\nPerfecto para almuerzos caseros o para sorprender "
+      },
+      {
+        "title": "Así el SUDADO DE PESCADO siempre te quedará JUGOSO | KWA",
+        "videoId": "9EeeJeIQN7Q",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=9EeeJeIQN7Q",
+        "embed": "https://www.youtube-nocookie.com/embed/9EeeJeIQN7Q",
+        "uploadDate": "2023-08-11",
+        "description": "Te vas a sorprender de su #Sabor #SudadoDePescado #kwaec \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/20/sudado-de-pescado/\n\nSIGUENOS:\r\nFB: https://tinyurl.com/ybs5zysg\r\nIG:"
+      },
+      {
+        "title": "Viche de Pescado: Delicioso Plato Típico del Ecuador | KWA",
+        "videoId": "Vg-T6WDc8WI",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Vg-T6WDc8WI",
+        "embed": "https://www.youtube-nocookie.com/embed/Vg-T6WDc8WI",
+        "uploadDate": "2025-10-02",
+        "description": "Ingredientes:  https://recetaskwa.com/2024/02/23/viche-de-pescado/\n\nEl Viche de pescado es una de las sopas más representativas de la gastronomía ecuatoriana, especialmente de la provincia de Manabí. "
+      }
+    ],
+    "_image_source": "pending",
+    "id": 70,
+    "created_at": "2026-03-09T10:22:56.638Z"
+  },
+  {
     "slug": "ayampaco",
     "title": "Ayampaco Ecuatoriano Receta Tradicional",
     "description": "Ayampaco es un plato tradicional ecuatoriano de la Costa, hecho con pollo envuelto en hojas y sazonado con especias locales, ideal para comidas familiares. Esta receta paso a paso te guía para recrear su sabor auténtico en casa, con ingredientes frescos y técnicas simples.",

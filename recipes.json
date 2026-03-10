@@ -1,5 +1,146 @@
 [
   {
+    "slug": "fanesca-receta-ecuatoriana",
+    "title": "Fanesca Ecuatoriana Receta Tradicional",
+    "description": "Fanesca es una sopa emblemática de la Semana Santa en Ecuador, preparada con granos variados, bacalao y verduras frescas para un sabor único y nutritivo. Esta receta detallada te guía paso a paso para recrear este plato festivo en casa, ideal para reuniones familiares.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "6 personas",
+    "prep_time": "30 min",
+    "cook_time": "90 min",
+    "total_time": "120 min",
+    "ingredients": [
+      "500g Bacalao (comprar en Supermaxi)",
+      "1 taza Chochos (comprar en Mercado local)",
+      "1 taza Habas (comprar en Megamaxi)",
+      "1 taza Arvejas (comprar en TIA)",
+      "1 taza Maiz tierno (comprar en Mercado local)",
+      "500g Zapallo (comprar en Supermaxi)",
+      "2 litros Leche (comprar en Megamaxi)",
+      "2 unidades Cebolla (comprar en TIA)",
+      "4 dientes Ajo (comprar en Supermaxi)",
+      "1 manojo Cilantro (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: Remoja el bacalao en agua fría durante 12 horas en el refrigerador para desalarlo, cambiando el agua cada 4 horas para asegurar un sabor suave.",
+      "Paso 2: En una olla grande, calienta 2 litros de agua a 100°C y agrega los granos secos como chochos, habas y arvejas; cocina a fuego medio durante 30 minutos hasta que estén tiernos.",
+      "Paso 3: Mientras tanto, pela y corta el zapallo en cubos de 2cm; en una sartén aparte, saltea la cebolla y el ajo picados en 2 cucharadas de aceite a fuego medio por 5 minutos hasta que estén dorados.",
+      "Paso 4: Incorpora el zapallo salteado a la olla con los granos, añade el maiz tierno y cocina todo junto a 90°C por 20 minutos, revolviendo ocasionalmente para evitar que se pegue.",
+      "Paso 5: Agrega el bacalao desmenuzado y la leche a la mezcla, baja el fuego a bajo y cocina por 30 minutos más a 80°C hasta que la sopa espese, ajustando la sal al gusto.",
+      "Paso 6: Finalmente, incorpora el cilantro picado fresco y deja reposar la sopa tapada por 10 minutos a temperatura ambiente antes de servir caliente en bowls.",
+      "Paso 7: Sirve acompañada de ají o maduro frito para realzar los sabores, asegurándote de que la temperatura sea de al menos 60°C para mantenerla caliente."
+    ],
+    "tips": [
+      "Usa granos frescos y de temporada para un sabor más auténtico y textura cremosa en la Fanesca.",
+      "Remoja el bacalao overnight para eliminar el exceso de sal y evitar que domine el plato."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "fanesca soup",
+      "ecuadorian traditional food",
+      "semana santa dish"
+    ],
+    "image_alt": "Plato de Fanesca ecuatoriana con granos variados y bacalao en un bowl",
+    "seo_keywords": [
+      "receta de fanesca ecuatoriana tradicional para semana santa",
+      "como preparar fanesca autentica en casa",
+      "ingredientes y pasos para hacer fanesca sierra ecuatoriana",
+      "fanesca receta facil y economica en ecuador",
+      "variantes de fanesca con sustitutos en estados unidos",
+      "mejor fanesca casera para celebraciones familiares"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es la Fanesca y cuándo se come?",
+        "a": "La Fanesca es una sopa tradicional ecuatoriana hecha con múltiples granos, bacalao y verduras, consumida principalmente durante la Semana Santa como un plato simbólico que representa la resurrección y la abundancia."
+      },
+      {
+        "q": "¿Puedo hacer Fanesca sin bacalao?",
+        "a": "Sí, puedes sustituir el bacalao por otros pescados o incluso hacerla vegetariana con tofu, pero el bacalao es esencial para el sabor auténtico; ajusta las especias para mantener el equilibrio."
+      },
+      {
+        "q": "¿Cuánto tiempo dura la Fanesca refrigerada?",
+        "a": "La Fanesca puede durar hasta 3 días en el refrigerador si se guarda en un contenedor hermético; recálcala a 70°C antes de servir para preservar su textura y evitar riesgos de contaminación."
+      },
+      {
+        "q": "¿Es la Fanesca nutritiva?",
+        "a": "Absolutamente, la Fanesca es altamente nutritiva gracias a los granos y verduras que proporcionan proteínas, fibra y vitaminas; es ideal para dietas balanceadas durante festividades."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Ofrece Fanesca auténtica con ingredientes frescos durante la Semana Santa, en un ambiente familiar."
+      },
+      {
+        "name": "Mercado San Francisco",
+        "city": "Cuenca",
+        "description": "Lugar ideal para probar Fanesca callejera preparada por vendedores locales con recetas tradicionales."
+      },
+      {
+        "name": "Café Cultura",
+        "city": "Quito",
+        "description": "Sirve una versión moderna de Fanesca con toques innovadores, perfecto para turistas."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Bacalao",
+        "substitute": "Trucha ahumada",
+        "notes": "Fácil de encontrar en supermercados como Walmart en EE.UU. o Carrefour en Europa"
+      },
+      {
+        "original": "Chochos",
+        "substitute": "Garbanzos enlatados",
+        "notes": "Disponible en tiendas latinas o secciones internacionales de mercados en EE.UU. y Europa"
+      },
+      {
+        "original": "Zapallo",
+        "substitute": "Calabaza butternut",
+        "notes": "Común en mercados locales de EE.UU. y Europa, ideal para mantener la textura cremosa"
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "La Fanesca de SEMANA SANTA | KWA",
+        "videoId": "WSlDzsVy2io",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=WSlDzsVy2io",
+        "embed": "https://www.youtube-nocookie.com/embed/WSlDzsVy2io",
+        "uploadDate": "2022-04-13",
+        "description": "No comerla es imperdonable #Fanesca #KWAEC\n\nIngredientes: \nPescado Salado 500 gr\n\nAchiote 4 cucharadas\nPasta de Ajo  3 cucharadas \nCebolla Blanca 1 taza\nCebolla Colorada  1 taza\nPimiento Verde   1/2 t"
+      },
+      {
+        "title": "Fanesca Ecuatoriana | Receta Fácil y Tradicional | KWA",
+        "videoId": "d7YSNovvwwM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=d7YSNovvwwM",
+        "embed": "https://www.youtube-nocookie.com/embed/d7YSNovvwwM",
+        "uploadDate": "2025-04-11",
+        "description": "🍲 Aprende a preparar #Fanesca ecuatoriana de forma fácil y deliciosa. Una receta tradicional de #SemanaSanta con todos los ingredientes y pasos que necesitas. ¡Ideal para compartir en familia!\n\nEncue"
+      },
+      {
+        "title": "La Fanesca …Sopa Divina!",
+        "videoId": "xY1gS8rj_-o",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=xY1gS8rj_-o",
+        "embed": "https://www.youtube-nocookie.com/embed/xY1gS8rj_-o",
+        "uploadDate": "2023-03-23",
+        "description": "La Fanesca, es un verdadero ícono de las sopas del Ecuador , se la realiza por la temporada de #SemanaSanta y #Cuaresma celebraciones religiosas que ahora son parte de nuestra cultura popular. Compart"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/xY1gS8rj_-o/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 72,
+    "created_at": "2026-03-10T04:22:40.607Z"
+  },
+  {
     "slug": "seco-de-res-amazonia-ecuatoriano-con-frutas-tropicales",
     "title": "Seco de Res Ecuatoriano de la Amazonía Receta Tradicional con Frutas Tropicales",
     "description": "Seco de res ecuatoriano es un estofado jugoso de la Amazonía que incorpora frutas tropicales para un sabor único y refrescante, perfecto para quienes buscan platos ecuatorianos auténticos y saludables.",

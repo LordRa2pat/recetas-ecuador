@@ -1,5 +1,147 @@
 [
   {
+    "slug": "patarashca",
+    "title": "Patarashca Receta Tradicional Ecuatoriana",
+    "description": "Patarashca es un plato emblemático de la Amazonía ecuatoriana, preparado con pescado envuelto en hojas y cocinado al vapor. Esta receta detallada te guía paso a paso para recrear su sabor auténtico en casa, ideal para amantes de la cocina regional.",
+    "region": "Amazonia",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "30 min",
+    "total_time": "50 min",
+    "ingredients": [
+      "800 gramos Pescado fresco (como corvina o bagre) (comprar en Mercado local)",
+      "8 unidades grandes Hojas de bijao (comprar en Mercado local)",
+      "2 unidades medianas, picadas Cebolla blanca (comprar en Supermaxi)",
+      "4 dientes, finamente picados Ajo (comprar en Supermaxi)",
+      "2 unidades, cortadas en rodajas Tomate maduro (comprar en TIA)",
+      "1/2 taza, picado Cilantro fresco (comprar en Mercado local)",
+      "2 unidades, picados Chiles aji (opcional, para picante) (comprar en Mercado local)",
+      "1 cucharadita Sal (comprar en Megamaxi)",
+      "2 unidades, para jugo Limón (comprar en Supermaxi)",
+      "2 cucharadas Aceite vegetal (comprar en TIA)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia el pescado fresco eliminando escamas y vísceras, enjuágalo con agua fría y sazónalo con sal y jugo de limón. Deja marinar durante 15 minutos a temperatura ambiente.",
+      "Paso 2: En una tabla de cortar, pica la cebolla, el ajo, el tomate, el cilantro y los chiles. Mezcla estos ingredientes en un bowl para formar un adobo, agregando una cucharada de aceite.",
+      "Paso 3: Calienta una parrilla o sartén a fuego medio, aproximadamente 180°C, para preparar el cocinado. Mientras, lava las hojas de bijao y sécalas para evitar que se quemen.",
+      "Paso 4: Coloca una porción del adobo en cada hoja de bijao, agrega el pescado encima y envuelve cuidadosamente para formar paquetes sellados, asegurándote de que no se abran durante la cocción.",
+      "Paso 5: Coloca los paquetes en la parrilla precalentada y cocina por 15 minutos por cada lado, volteando una vez a la mitad, hasta que el pescado esté tierno y el adobo aromatice el interior.",
+      "Paso 6: Retira los paquetes del fuego y déjalos reposar por 5 minutos antes de desenvuelva cuidadosamente para servir caliente, acompañando con yuca o plátano.",
+      "Paso 7: Sirve inmediatamente para disfrutar el sabor fresco, verificando que el pescado alcance una temperatura interna de 63°C para asegurar que esté completamente cocido."
+    ],
+    "tips": [
+      "Usa hojas de bijao frescas para un sabor auténtico, pero si no están disponibles, las de plátano funcionan bien para mantener la humedad.",
+      "Para un toque regional, agrega hierbas amazónicas como el guayusa si las consigues, lo que realza el aroma típico de la Amazonía ecuatoriana."
+    ],
+    "origin_cities": [
+      "Coca",
+      "Lago Agrio"
+    ],
+    "image_keywords": [
+      "patarashca dish",
+      "ecuadorian food",
+      "amazonian cuisine",
+      "wrapped fish recipe",
+      "traditional ecuador meal"
+    ],
+    "image_alt": "Plato de Patarashca ecuatoriano con pescado envuelto en hojas de bijao y aderezos frescos",
+    "seo_keywords": [
+      "receta de patarashca ecuatoriana tradicional",
+      "como hacer patarashca en casa",
+      "plato amazonico ecuatoriano patarashca",
+      "ingredientes para patarashca autentica",
+      "pasos para cocinar patarashca con pescado"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué tipo de pescado se usa en la patarashca?",
+        "a": "Tradicionalmente se usa pescado fresco de río como corvina o bagre en la Amazonía, pero puedes optar por tilapia si estás en ciudades, ya que es más accesible y mantiene el sabor jugoso."
+      },
+      {
+        "q": "¿Es posible hacer patarashca sin hojas de bijao?",
+        "a": "Sí, puedes sustituir las hojas de bijao por hojas de plátano o incluso papel aluminio, aunque el sabor no será exactamente el mismo; esto es común en regiones fuera de Ecuador para mantener la técnica de cocción al vapor."
+      },
+      {
+        "q": "¿Cuánto dura la patarashca preparada?",
+        "a": "La patarashca se debe consumir inmediatamente después de cocinar para disfrutar su frescura, pero si se refrigera en un contenedor hermético, dura hasta 2 días; recálcala al vapor para restaurar el sabor original."
+      },
+      {
+        "q": "¿Es la patarashca picante?",
+        "a": "Depende de los chiles que agregues; la versión tradicional puede ser picante, pero ajusta según tu preferencia para hacerla más suave o intensa."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Churo",
+        "city": "Coca",
+        "description": "Un lugar auténtico en la Amazonía donde probar patarashca con ingredientes locales y vista al río."
+      },
+      {
+        "name": "Mercado de Lago Agrio",
+        "city": "Lago Agrio",
+        "description": "En este vibrante mercado, puedes degustar patarashca preparada por vendedores locales con recetas heredadas."
+      },
+      {
+        "name": "Restaurante La Selva",
+        "city": "Quito",
+        "description": "Ofrece una versión adaptada de patarashca en la capital, ideal para turistas que no viajan a la Amazonía."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Hojas de bijao",
+        "substitute": "Hojas de plátano o papel aluminio",
+        "notes": "Disponible en supermercados como Whole Foods en EE.UU. o mercados étnicos en Europa"
+      },
+      {
+        "original": "Pescado de río",
+        "substitute": "Tilapia o salmón",
+        "notes": "Fácil de encontrar en tiendas como Walmart en EE.UU. o Tesco en Europa, manteniendo un sabor similar"
+      },
+      {
+        "original": "Chiles aji",
+        "substitute": "Jalapeños",
+        "notes": "Se venden en la sección de produce de cadenas como Aldi en Europa o local bodegas en EE.UU."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Cómo preparar tacacho con cecina",
+        "videoId": "feauxAWEOXc",
+        "channel": "Buenazo",
+        "url": "https://www.youtube.com/watch?v=feauxAWEOXc",
+        "embed": "https://www.youtube-nocookie.com/embed/feauxAWEOXc",
+        "uploadDate": "2024-06-20",
+        "description": "Ingredientes:\n- 3 plátanos bellacos verdes\n- 250 gramos de cecina\n- 2 cucharadas manteca de cerdo + 1 cucharadita para\nfreír la cecina\n- 100 gramos de chicharrón de cerdo, cortado en\ncuadraditos\n- Sal"
+      },
+      {
+        "title": "Pescado envuelto en hoja de plátano👩‍🍳🐟",
+        "videoId": "YXGXJ793_kM",
+        "channel": "Tiempo De Comida",
+        "url": "https://www.youtube.com/watch?v=YXGXJ793_kM",
+        "embed": "https://www.youtube-nocookie.com/embed/YXGXJ793_kM",
+        "uploadDate": "2022-04-23",
+        "description": "Esta receta es muy fácil y muy sabroso😻 #viral #sencillo #delicioso #tiempodecomida #"
+      },
+      {
+        "title": "VAMOS A DESALAR Y COCINAR PAICHE",
+        "videoId": "fhhSZpkGlHM",
+        "channel": "Tips y Trucos con Aracelice",
+        "url": "https://www.youtube.com/watch?v=fhhSZpkGlHM",
+        "embed": "https://www.youtube-nocookie.com/embed/fhhSZpkGlHM",
+        "uploadDate": "2023-06-10",
+        "description": "SI TE GUSTA EL CONTENIDO E INFORMACIÓN DE ESTE VÍDEO NO OLVIDES SUSCRIBIRTE, DALE ME GUSTA PARA VER MAS VÍDEOS COMO ESTE, COMPÁRTELO CON TUS AMIGOS Y DÉJANOS TUS COMENTARIOS.\n\n Carefree de Kevin MacLe"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/feauxAWEOXc/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 73,
+    "created_at": "2026-03-10T16:22:32.513Z"
+  },
+  {
     "slug": "fanesca-receta-ecuatoriana",
     "title": "Fanesca Ecuatoriana Receta Tradicional",
     "description": "Fanesca es una sopa emblemática de la Semana Santa en Ecuador, preparada con granos variados, bacalao y verduras frescas para un sabor único y nutritivo. Esta receta detallada te guía paso a paso para recrear este plato festivo en casa, ideal para reuniones familiares.",

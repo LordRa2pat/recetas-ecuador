@@ -1,5 +1,146 @@
 [
   {
+    "slug": "caldo-de-quinoa",
+    "title": "Caldo de Quinoa Ecuatoriano Receta Tradicional",
+    "description": "Caldo de Quinoa es una sopa nutritiva y reconfortante de la cocina ecuatoriana, hecha con quinoa, verduras frescas y hierbas, perfecta para un almuerzo saludable. Esta receta tradicional incluye pasos detallados para un sabor auténtico, ideal para familias en la Sierra.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "1 taza Quinoa (comprar en Supermaxi)",
+      "1 litro Caldo de pollo (comprar en Megamaxi)",
+      "2 unidades picadas Zanahorias (comprar en Mercado local)",
+      "2 unidades medianas cortadas en cubos Papas (comprar en TIA)",
+      "1 unidad grande picada Cebolla (comprar en Supermaxi)",
+      "3 dientes picados Ajo (comprar en Mercado local)",
+      "1/2 taza picada Cilantro fresco (comprar en TIA)",
+      "1 cucharadita al gusto Sal (comprar en Megamaxi)",
+      "2 cucharadas Aceite de oliva (comprar en Supermaxi)",
+      "1/2 cucharadita Pimienta (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: En una olla grande, calienta 2 cucharadas de aceite de oliva a fuego medio durante 2 minutos para saltear los vegetales.",
+      "Paso 2: Agrega la cebolla picada y el ajo, salteándolos durante 5 minutos hasta que estén transparentes y aromáticos.",
+      "Paso 3: Incorpora las zanahorias y papas cortadas en cubos, revolviendo por 3 minutos para que se impregnen de los sabores.",
+      "Paso 4: Añade 1 taza de quinoa lavada y 1 litro de caldo de pollo, lleva a ebullición a fuego alto durante 5 minutos.",
+      "Paso 5: Reduce el fuego a bajo, tapa la olla y cocina por 20 minutos hasta que la quinoa y las verduras estén tiernas, revolviendo ocasionalmente.",
+      "Paso 6: Apaga el fuego, agrega cilantro picado, sal y pimienta al gusto, y deja reposar por 5 minutos antes de servir caliente.",
+      "Paso 7: Sirve en bowls individuales, decorando con más cilantro fresco para realzar el sabor tradicional."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa quinoa remojada previamente para reducir el tiempo de cocción y mejorar la digestibilidad.",
+      "Consejo 2: Añade un toque de comino molido para un sabor más auténtico de la Sierra ecuatoriana."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Cuenca"
+    ],
+    "image_keywords": [
+      "caldo de quinoa ecuatoriano",
+      "ecuadorian food",
+      "traditional soup"
+    ],
+    "image_alt": "Fotografía del caldo de quinoa terminado, con quinoa hinchada, verduras frescas y hierbas en un bowl humeante",
+    "seo_keywords": [
+      "receta de caldo de quinoa ecuatoriano paso a paso",
+      "como hacer caldo de quinoa tradicional sierra",
+      "ingredientes para caldo de quinoa autentico ecuador",
+      "beneficios de la quinoa en sopas ecuatorianas",
+      "caldo de quinoa facil para principiantes",
+      "variantes regionales de caldo de quinoa en quito"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el caldo de quinoa y de dónde proviene?",
+        "a": "El caldo de quinoa es una sopa nutritiva originaria de la Sierra ecuatoriana, hecha principalmente con quinoa, verduras y caldo. Proviene de ciudades como Quito y Cuenca, donde la quinoa es un staple en la dieta andina por su alto valor proteico."
+      },
+      {
+        "q": "¿Es el caldo de quinoa adecuado para veganos?",
+        "a": "Sí, puedes hacer una versión vegana sustituyendo el caldo de pollo por caldo vegetal, manteniendo los mismos pasos para preservar el sabor. Es una opción saludable y versátil para dietas plant-based."
+      },
+      {
+        "q": "¿Cuánto dura el caldo de quinoa en la nevera?",
+        "a": "El caldo de quinoa refrigerado dura hasta 3 días en un contenedor hermético. Para congelar, almacénalo por hasta 2 meses; caliéntalo a fuego medio para mantener la textura de la quinoa."
+      },
+      {
+        "q": "¿Cómo puedo hacer el caldo de quinoa más espeso?",
+        "a": "Para espesar, agrega más quinoa o puréa parte de las verduras cocidas antes de servir. Esto realza la consistencia sin alterar el sabor tradicional."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en Quito que sirve caldo de quinoa fresco con ingredientes locales, ideal para probar la versión tradicional de la Sierra."
+      },
+      {
+        "name": "Mercado 10 de Agosto",
+        "city": "Cuenca",
+        "description": "En este vibrante mercado de Cuenca, puedes encontrar vendedores que ofrecen caldo de quinoa casero, hecho con productos frescos de la región."
+      },
+      {
+        "name": "Zazu Bistro",
+        "city": "Quito",
+        "description": "Un bistro moderno en Quito que fusiona el caldo de quinoa con toques innovadores, perfecto para una experiencia gastronómica actual."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Quinoa",
+        "substitute": "Arroz integral",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa, para un sabor similar pero con textura diferente."
+      },
+      {
+        "original": "Caldo de pollo",
+        "substitute": "Caldo vegetal en polvo",
+        "notes": "Fácil de encontrar en tiendas como Whole Foods en EE.UU. o Lidl en Europa, ideal para versiones veganas sin perder el sabor umami."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil",
+        "notes": "Común en mercados locales de EE.UU. y Europa, use perejil para un sabor fresco similar si el cilantro no está disponible."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "Sopa de Quinua con Carne NUTRITIVA Y DELICIOSA | KWA",
+        "videoId": "h9zxfVEMKx0",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=h9zxfVEMKx0",
+        "embed": "https://www.youtube-nocookie.com/embed/h9zxfVEMKx0",
+        "uploadDate": "2023-06-30",
+        "description": "Un plato nutritivo y lleno de sabor #SopaDeQuinuaConCarne, perfecta para reconfortar el alma! #KWAEC \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/11/18/sopa-de-quinua-con-carne"
+      },
+      {
+        "title": "SOPA DE QUINUA  … Tradición que alimenta!",
+        "videoId": "T0zgpm4ay78",
+        "channel": "Tasty Ecuatoriano",
+        "url": "https://www.youtube.com/watch?v=T0zgpm4ay78",
+        "embed": "https://www.youtube-nocookie.com/embed/T0zgpm4ay78",
+        "uploadDate": "2021-06-05",
+        "description": "Esta tradicional SOPA DE QUINUA utiliza este pseudocereal que se cultiva en tierras andinas desde épocas incaicas, hoy puede estar en tu mesa y deleitar a toda tu familia, es fácil de preparar y sumam"
+      },
+      {
+        "title": "Sopa de Quinua con Costilla",
+        "videoId": "MLa7VO_SJBw",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=MLa7VO_SJBw",
+        "embed": "https://www.youtube-nocookie.com/embed/MLa7VO_SJBw",
+        "uploadDate": "2022-12-27",
+        "description": "Deliciosa Sopa de Quinua con Costilla. Sopa de Quinoa con Carne\nSopita de Costilla de Res con Quinua."
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/T0zgpm4ay78/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 74,
+    "created_at": "2026-03-12T04:22:31.337Z"
+  },
+  {
     "slug": "patarashca",
     "title": "Patarashca Receta Tradicional Ecuatoriana",
     "description": "Patarashca es un plato emblemático de la Amazonía ecuatoriana, preparado con pescado envuelto en hojas y cocinado al vapor. Esta receta detallada te guía paso a paso para recrear su sabor auténtico en casa, ideal para amantes de la cocina regional.",

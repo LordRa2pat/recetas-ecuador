@@ -1,5 +1,146 @@
 [
   {
+    "slug": "caldo-de-almejas",
+    "title": "Caldo de Almejas Ecuatoriano Receta Tradicional",
+    "description": "Caldo de Almejas es una sopa reconfortante de la costa ecuatoriana con almejas frescas, verduras y especias, ideal para comidas familiares nutritivas y sabrosas. Esta receta paso a paso te permite recrear el auténtico sabor en casa.",
+    "region": "Costa",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "30 min",
+    "total_time": "45 min",
+    "ingredients": [
+      "1 kg Almejas frescas (comprar en Mercado local)",
+      "1 unidad mediana Cebolla blanca (comprar en Supermaxi)",
+      "4 dientes Ajo (comprar en Supermaxi)",
+      "2 unidades medianas Tomate maduro (comprar en Supermaxi)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "1 cucharadita Achiote en polvo (comprar en TIA)",
+      "1 litro Caldo de pescado (comprar en Supermaxi)",
+      "2 unidades medianas Patatas (comprar en Supermaxi)",
+      "2 unidades Limón (comprar en Megamaxi)",
+      "2 cucharadas Aceite de oliva (comprar en Supermaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia las almejas bajo agua fría durante 5 minutos, eliminando cualquier impureza y remojándolas en agua con sal para soltar la arena, deja reposar por 10 minutos a temperatura ambiente.",
+      "Paso 2: Pica finamente la cebolla, el ajo y el tomate, y corta las patatas en cubos de 1 cm; esta preparación toma aproximadamente 10 minutos para asegurar uniformidad en el corte.",
+      "Paso 3: En una olla grande a fuego medio-alto (alrededor de 150°C), calienta 2 cucharadas de aceite de oliva y sofríe la cebolla y el ajo durante 3 minutos hasta que estén translúcidos, agregando el achiote para infundir color.",
+      "Paso 4: Incorpora el tomate picado y las patatas cortadas, cocina por 5 minutos a fuego medio, revolviendo ocasionalmente para evitar que se peguen y permitir que suelten jugos.",
+      "Paso 5: Añade las almejas limpias y el caldo de pescado, lleva a ebullición a fuego alto (alrededor de 100°C), luego reduce a fuego bajo y cocina tapado por 15 minutos hasta que las almejas se abran.",
+      "Paso 6: Agrega el cilantro picado en los últimos 2 minutos de cocción, ajusta la sal y pimienta al gusto, y sirve inmediatamente en tazones calientes para mantener la frescura y el sabor.",
+      "Paso 7: Deja reposar el caldo por 1 minuto antes de servir para que los sabores se integren mejor, asegurando una presentación óptima."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa almejas frescas de la costa ecuatoriana para un sabor auténtico, pero si son de temporada, elige las más pequeñas para una textura más delicada.",
+      "Consejo 2: Para realzar el sabor, incorpora un toque de comino molido al final, una variante regional de Guayaquil que añade profundidad sin alterar la esencia tradicional."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "caldo de almejas ecuatoriano",
+      "sopa de mariscos tradicional",
+      "comida costera ecuador"
+    ],
+    "image_alt": "Fotografía de un tazón humeante de caldo de almejas ecuatoriano con almejas frescas, verduras y hierbas aromáticas",
+    "seo_keywords": [
+      "receta de caldo de almejas ecuatoriano tradicional",
+      "como preparar caldo de almejas de la costa ecuatoriana",
+      "sopa de almejas autentica receta ecuador",
+      "ingredientes para caldo de almejas en casa",
+      "caldo de almejas guayaquil estilo paso a paso",
+      "variantes regionales de sopas marinas en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el caldo de almejas y de dónde proviene?",
+        "a": "El caldo de almejas es una sopa tradicional de la costa ecuatoriana, originaria de ciudades como Guayaquil y Manta, hecha con almejas frescas, verduras y especias, conocida por su sabor marino y propiedades nutritivas."
+      },
+      {
+        "q": "¿Es el caldo de almejas saludable para consumir regularmente?",
+        "a": "Sí, es saludable ya que las almejas son ricas en proteínas, omega-3 y minerales; sin embargo, modera el consumo de sal y elige ingredientes frescos para maximizar beneficios sin exceder calorías."
+      },
+      {
+        "q": "¿Puedo congelar el caldo de almejas para uso futuro?",
+        "a": "Puedes congelarlo por hasta 2 meses en porciones herméticas, pero descongela lentamente en el refrigerador y recálcalo a fuego bajo para preservar el sabor y textura de las almejas, evitando reheating directo."
+      },
+      {
+        "q": "¿Cuáles son las variantes regionales del caldo de almejas en Ecuador?",
+        "a": "En la costa, se usa achiote para color; en la Amazonía, podría incluir yuca, pero en Guayaquil es más simple; adapta con ingredientes locales para mantener la esencia mientras exploras variaciones."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Pez Dorado",
+        "city": "Guayaquil",
+        "description": "Un restaurante costero famoso por su caldo de almejas fresco y auténtico, servido con vistas al malecón, ideal para turistas que buscan experiencia gastronómica tradicional."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "En este vibrante mercado, prueba caldo de almejas preparado por vendedores locales con ingredientes del día, ofreciendo una atmósfera auténtica y accesible para viajeros."
+      },
+      {
+        "name": "Restaurante Marisquería Costa Azul",
+        "city": "Guayaquil",
+        "description": "Especializado en mariscos, este lugar sirve caldo de almejas con toques modernos, perfecto para combinar con otros platos ecuatorianos en un entorno familiar."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Almejas frescas",
+        "substitute": "Almejas enlatadas o congeladas",
+        "notes": "Disponibles en supermercados como Walmart en EE.UU. o Carrefour en Europa, usa para mantener el sabor cuando no hay acceso a mariscos frescos."
+      },
+      {
+        "original": "Achiote",
+        "substitute": "Pimentón ahumado",
+        "notes": "Encuéntralo en secciones de especias en tiendas como Whole Foods en EE.UU. o Lidl en Europa, proporciona un color y sabor similar sin alterar la receta."
+      },
+      {
+        "original": "Caldo de pescado",
+        "substitute": "Caldo de verduras con extracto de pescado",
+        "notes": "Opta por marcas como Knorr en EE.UU. o Maggi en Europa, disponible en supermercados generales, para un sustituto vegano o más accesible."
+      }
+    ],
+    "estimated_cost": "$15.00 USD",
+    "youtube_videos": [
+      {
+        "title": "SOPA MARINERA",
+        "videoId": "FD3uRLZgK7M",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=FD3uRLZgK7M",
+        "embed": "https://www.youtube-nocookie.com/embed/FD3uRLZgK7M",
+        "uploadDate": "2020-02-21",
+        "description": "#SopaMarinera #KWAEC #KWA\n\nIngredienes:\nAchiote................... 5 cucharadas\nPasta de ajo........... 4 cucharadas\nCebolla colorada.... 1 taza\nCebolla blanca....... 1/2 taza\nPimiento verde......  1/"
+      },
+      {
+        "title": "SOPA DE POLVO DE ALVERJAS",
+        "videoId": "a3JxYxwMB2Y",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=a3JxYxwMB2Y",
+        "embed": "https://www.youtube-nocookie.com/embed/a3JxYxwMB2Y",
+        "uploadDate": "2021-08-06",
+        "description": "Tradici贸n en cada cucharada. #SopaDePolvoDeAlverjas #KWAEC\n\nIngredientes:\nCostillas de Chancho 400 gr\nHuesos de chancho 100 gr\nAchiote 30 ml\nPasta de ajo 40 gr\nCebolla Blanca 60 gr\nCebolla Perla 50 gr"
+      },
+      {
+        "title": "Almejas a la Marinera 隆un plato delicioso y f谩cil de preparar!",
+        "videoId": "cuCcuOZ4KRk",
+        "channel": "Cocina con Carmen",
+        "url": "https://www.youtube.com/watch?v=cuCcuOZ4KRk",
+        "embed": "https://www.youtube-nocookie.com/embed/cuCcuOZ4KRk",
+        "uploadDate": "2023-12-27",
+        "description": "Vamos a hacer almejas a la marinera, una receta tradicional de la cocina espa帽ola, que es muy f谩cil de preparar y el resultado es un plato sabroso y s煤per delicioso. Es ideal para prepararla en evento"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/cuCcuOZ4KRk/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 75,
+    "created_at": "2026-03-12T22:22:46.667Z"
+  },
+  {
     "slug": "caldo-de-quinoa",
     "title": "Caldo de Quinoa Ecuatoriano Receta Tradicional",
     "description": "Caldo de Quinoa es una sopa nutritiva y reconfortante de la cocina ecuatoriana, hecha con quinoa, verduras frescas y hierbas, perfecta para un almuerzo saludable. Esta receta tradicional incluye pasos detallados para un sabor auténtico, ideal para familias en la Sierra.",

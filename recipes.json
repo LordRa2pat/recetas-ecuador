@@ -1,5 +1,146 @@
 [
   {
+    "slug": "caldo-de-bolas-ecuatoriano-de-la-sierra",
+    "title": "Caldo de Bolas Ecuatoriano de la Sierra Receta Tradicional con Variación de Vegetales Andinos",
+    "description": "Caldo de bolas ecuatoriano es una sopa reconfortante de la sierra ecuatoriana, con bolas de masa hechas de yuca y plátano verde, enriquecida con vegetales andinos como chochos y habas para un sabor auténtico y nutritivo. Esta receta incluye variantes regionales para una experiencia casera inolvidable.",
+    "region": "Sierra",
+    "category": "Sopas",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "30 min",
+    "cook_time": "45 min",
+    "total_time": "75 min",
+    "ingredients": [
+      "500 gramos, pelada y cortada en trozos Yuca (comprar en Supermaxi)",
+      "2 unidades, medianas y maduros Plátano verde (comprar en Megamaxi)",
+      "300 gramos, para el relleno de las bolas Carne de res molida (comprar en TIA)",
+      "1 unidad, grande picada finamente Cebolla (comprar en Mercado local)",
+      "4 dientes, picados Ajo (comprar en Supermaxi)",
+      "200 gramos, cocidos Chochos (garbanzos andinos) (comprar en Mercado local)",
+      "150 gramos, frescas o congeladas Habas (comprar en Megamaxi)",
+      "1/2 taza, picado Cilantro fresco (comprar en TIA)",
+      "2 unidades, medianas cortadas en cubos Papa (comprar en Supermaxi)",
+      "1.5 litros Caldo de res (comprar en Mercado local)"
+    ],
+    "instructions": [
+      "Paso 1: En un tazón grande, mezcla 500 gramos de yuca rallada con 2 plátanos verdes machacados, agrega sal al gusto y amasa durante 10 minutos hasta formar una masa uniforme; deja reposar por 15 minutos.",
+      "Paso 2: Para el relleno, en una sartén a fuego medio, cocina 300 gramos de carne de res molida con 1 cebolla picada y 4 dientes de ajo durante 10 minutos hasta que dore; sazona con sal y pimienta.",
+      "Paso 3: Forma bolas del tamaño de una pelota de golf con la masa, rellenándolas con la mezcla de carne; sella bien para evitar que se abran durante la cocción.",
+      "Paso 4: En una olla grande, hierve 1.5 litros de caldo de res a 100°C, agrega las bolas, 2 papas en cubos, 200 gramos de chochos y 150 gramos de habas; cocina a fuego bajo durante 20 minutos.",
+      "Paso 5: Añade cilantro picado al final de la cocción para infusionar sabores; prueba y ajusta el sazón si es necesario, cocinando por otros 10 minutos a fuego medio.",
+      "Paso 6: Sirve caliente en bowls, decorando con más cilantro fresco; permite que repose por 5 minutos antes de servir para que los sabores se integren completamente.",
+      "Paso 7: Para la variación de vegetales andinos, incorpora más habas o chochos si deseas un plato más espeso, cocinando adicionalmente por 5 minutos."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Usa yuca fresca para una textura más auténtica, ya que absorbe mejor los sabores de la sierra.",
+      "Consejo 2: Si las bolas se desarman, añade un poco más de plátano verde a la masa para mayor cohesión."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Riobamba"
+    ],
+    "image_keywords": [
+      "caldo de bolas ecuatoriano",
+      "ecuadorian food",
+      "traditional sierra soup"
+    ],
+    "image_alt": "Fotografía del caldo de bolas ecuatoriano de la sierra con vegetales andinos, mostrando bolas de masa en un caldo humeante con chochos y habas",
+    "seo_keywords": [
+      "receta de caldo de bolas ecuatoriano con vegetales andinos",
+      "caldo de bolas sierra ecuatoriana tradicional",
+      "como hacer caldo de bolas con variaciones andinas",
+      "plato ecuatoriano de sopa con yuca y habas",
+      "receta autentica caldo de bolas para principiantes",
+      "ingredientes para caldo de bolas de la sierra"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es el caldo de bolas ecuatoriano y de dónde proviene?",
+        "a": "El caldo de bolas es una sopa tradicional de la sierra ecuatoriana, originaria de ciudades como Quito, hecha con bolas de masa de yuca y plátano rellenas de carne, servida en un caldo con vegetales; es un plato reconfortante y nutritivo común en almuerzos familiares."
+      },
+      {
+        "q": "¿Puedo hacer variaciones vegetarianas del caldo de bolas?",
+        "a": "Sí, puedes hacer una versión vegetariana sustituyendo la carne por verduras como espinacas o tofu, manteniendo las bolas de yuca y agregando más vegetales andinos como quinoa para un sabor similar y mayor nutrición."
+      },
+      {
+        "q": "¿Cuánto tiempo dura el caldo de bolas en la nevera?",
+        "a": "El caldo de bolas se conserva en la nevera hasta 3 días en un contenedor hermético; recálentelo a fuego bajo para mantener la textura de las bolas y evite congelarlo ya que las verduras andinas pueden perder frescura."
+      },
+      {
+        "q": "¿Cuáles son los beneficios de usar vegetales andinos en esta receta?",
+        "a": "Los vegetales andinos como chochos y habas añaden proteínas, fibra y nutrientes únicos, mejorando el valor nutricional del caldo; esto lo hace más saludable y representa la biodiversidad de la sierra ecuatoriana."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante La Casa de la Abuela",
+        "city": "Quito",
+        "description": "Un lugar tradicional en el centro histórico donde probar el caldo de bolas con ingredientes frescos de la sierra, en un ambiente familiar y auténtico."
+      },
+      {
+        "name": "Mercado de Riobamba",
+        "city": "Riobamba",
+        "description": "Aquí puedes encontrar vendedores locales que ofrecen caldo de bolas con variaciones de vegetales andinos, ideal para una experiencia callejera y cultural."
+      },
+      {
+        "name": "Restaurante El Pedregal",
+        "city": "Cuenca",
+        "description": "Ofrece una versión moderna del caldo de bolas con vegetales andinos orgánicos, en un entorno elegante que combina tradición y sabor ecuatoriano."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Yuca",
+        "substitute": "Patata o cassava en EE.UU./Europa",
+        "notes": "Encuéntrala en supermercados como Walmart o en secciones de productos étnicos en Europa para mantener la textura similar."
+      },
+      {
+        "original": "Chochos",
+        "substitute": "Garbanzos o frijoles en EE.UU./Europa",
+        "notes": "Disponible en tiendas como Whole Foods o Lidl, estos proporcionan un sabor y textura comparable en la variación del plato."
+      },
+      {
+        "original": "Habas",
+        "substitute": "Frijoles verdes o edamame en EE.UU./Europa",
+        "notes": "Busca en mercados de farmers o cadenas como Tesco para un sustituto fácil que preserve el perfil nutritivo andino."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "Caldo de Bola IRRESISTIBLE | KWA",
+        "videoId": "9GhS9PsKPhM",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=9GhS9PsKPhM",
+        "embed": "https://www.youtube-nocookie.com/embed/9GhS9PsKPhM",
+        "uploadDate": "2022-03-10",
+        "description": "Seguro lo vas a querer probar! #CaldoDeBola #KWAEC \n\nIngredientes:\n\nPara el Caldo:\n2 Libras de Osobuco\n1 Libra de Costilla de Res\n3 Cucharadas de Achiote\n3 Cucharadas de Ajo Picado\n1/2 Taza de Cebolla"
+      },
+      {
+        "title": "Cómo hacer CALDO DE BOLA Ecuatoriano 🇪🇨 con Camarón 🦐 Receta paso a paso | KWA",
+        "videoId": "H4zMaS9ypo4",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=H4zMaS9ypo4",
+        "embed": "https://www.youtube-nocookie.com/embed/H4zMaS9ypo4",
+        "uploadDate": "2025-07-19",
+        "description": "🦐 ¡Deléitate con esta receta tradicional de Caldo de Bola rellena de camarón! 🇪🇨\n\nEn este video te enseñamos paso a paso cómo preparar un delicioso caldo de bola ecuatoriano, una sopa típica llena "
+      },
+      {
+        "title": "CALDO de BOLA | Receta ecuatoriana súper fácil y deliciosa",
+        "videoId": "GuVY0kwe21I",
+        "channel": "Flor Villalta | EnSuPunto",
+        "url": "https://www.youtube.com/watch?v=GuVY0kwe21I",
+        "embed": "https://www.youtube-nocookie.com/embed/GuVY0kwe21I",
+        "uploadDate": "2023-11-09",
+        "description": "Definitivamente el tradicional caldo de bolas está en el top5 de los caldos que más me gustan, así que hoy te enseño como yo preparo está delicia.\n#caldodebolas #recetasecuatorianas #gastronomiaecuato"
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/GuVY0kwe21I/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 76,
+    "created_at": "2026-03-13T04:22:36.436Z"
+  },
+  {
     "slug": "caldo-de-almejas",
     "title": "Caldo de Almejas Ecuatoriano Receta Tradicional",
     "description": "Caldo de Almejas es una sopa reconfortante de la costa ecuatoriana con almejas frescas, verduras y especias, ideal para comidas familiares nutritivas y sabrosas. Esta receta paso a paso te permite recrear el auténtico sabor en casa.",

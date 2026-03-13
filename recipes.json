@@ -1,5 +1,146 @@
 [
   {
+    "slug": "seco-de-langostinos-ecuatoriano-con-coco-de-la-costa",
+    "title": "Seco de Langostinos Ecuatoriano con Coco Receta Tradicional",
+    "description": "Seco de langostinos ecuatoriano con coco es un estofado costero exquisito que combina mariscos frescos con sabores tropicales. Esta receta tradicional de Ecuador usa ingredientes locales para un plato aromático y cremoso, ideal para cenas especiales, con un toque de cilantro y especias que realzan el sabor del coco.",
+    "region": "Costa",
+    "category": "Platos Fuertes",
+    "difficulty": "Media",
+    "servings": "4 personas",
+    "prep_time": "15 min",
+    "cook_time": "25 min",
+    "total_time": "40 min",
+    "ingredients": [
+      "500 g Langostinos frescos (comprar en Supermaxi)",
+      "400 ml Leche de coco (comprar en Supermaxi)",
+      "1 unidad mediana Cebolla blanca (comprar en Mercado local)",
+      "3 dientes Ajo (comprar en Mercado local)",
+      "1 unidad Pimiento rojo (comprar en Supermaxi)",
+      "2 unidades medianas Tomate maduro (comprar en Mercado local)",
+      "1 manojo Cilantro fresco (comprar en Mercado local)",
+      "al gusto Sal marina (comprar en TIA)",
+      "1/2 cucharadita Pimienta negra molida (comprar en Supermaxi)",
+      "2 cucharadas Aceite de oliva (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Limpia y pela los 500 g de langostinos frescos, quitando las cabezas y colas, y enjuágalos bajo agua fría durante 5 minutos para eliminar impurezas.",
+      "Paso 2: Pica finamente 1 cebolla blanca, 3 dientes de ajo, 1 pimiento rojo y 2 tomates maduros; reserva en un bowl, lo que tomará aproximadamente 10 minutos.",
+      "Paso 3: Calienta 2 cucharadas de aceite de oliva en una sartén grande a fuego medio (alrededor de 150°C) durante 2 minutos hasta que esté caliente.",
+      "Paso 4: Agrega la cebolla picada y el ajo a la sartén, salteándolos durante 5 minutos hasta que estén transparentes y aromáticos, revolviendo constantemente.",
+      "Paso 5: Incorpora el pimiento rojo y los tomates picados a la mezcla, cocina por 5 minutos más a fuego medio para que se ablanden y suelten jugos.",
+      "Paso 6: Añade los langostinos y 400 ml de leche de coco, sazona con sal y pimienta al gusto, y cocina todo junto durante 10 minutos a fuego bajo hasta que los langostinos estén rosados y la salsa espesa.",
+      "Paso 7: Retira del fuego, incorpora el cilantro fresco picado y deja reposar por 2 minutos antes de servir para que los sabores se integren."
+    ],
+    "tips": [
+      "Usa langostinos frescos de la costa para un sabor auténtico y evita los congelados para mantener la textura jugosa.",
+      "Agrega un poco de chile opcional si quieres más picante, pero no excedas para no opacar el dulzor natural del coco."
+    ],
+    "origin_cities": [
+      "Guayaquil",
+      "Manta"
+    ],
+    "image_keywords": [
+      "seco de langostinos ecuatoriano",
+      "comida ecuatoriana con coco",
+      "plato costero ecuatoriano"
+    ],
+    "image_alt": "Plato de seco de langostinos ecuatoriano con coco, con langostinos rosados en una salsa cremosa de coco, decorado con cilantro fresco",
+    "seo_keywords": [
+      "receta de seco de langostinos con coco ecuatoriano tradicional",
+      "como preparar seco de mariscos con coco en casa",
+      "plato ecuatoriano de langostinos y coco de la costa",
+      "seco de langostinos receta autentica de ecuador",
+      "ingredientes para seco de coco y mariscos ecuatoriano",
+      "variantes regionales de seco con coco en ecuador"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué es seco de langostinos ecuatoriano con coco?",
+        "a": "El seco de langostinos con coco es un estofado tradicional de la costa ecuatoriana que combina langostinos frescos con leche de coco, cebolla, ajo y hierbas, creando un plato cremoso y aromático, similar a un curry suave pero con influencias indígenas y españolas."
+      },
+      {
+        "q": "¿Puedo usar otros mariscos en lugar de langostinos?",
+        "a": "Sí, puedes sustituir langostinos por camarones o calamares, pero ajusta el tiempo de cocción para evitar que se sobre cocinen; los langostinos tardan unos 10 minutos, mientras que los camarones necesitan solo 5-7 minutos para mantener su textura."
+      },
+      {
+        "q": "¿Es el seco de langostinos picante?",
+        "a": "No necesariamente, la versión tradicional no es muy picante, pero puedes añadir chiles o ají para un toque de calor; en la costa ecuatoriana, se sirve con moderación para resaltar el sabor dulce del coco."
+      },
+      {
+        "q": "¿Cuánto dura el seco de langostinos en la nevera?",
+        "a": "El plato se conserva en la nevera por hasta 2 días en un contenedor hermético; recálentalo a fuego bajo para mantener la frescura de los mariscos y evitar que se sequen."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Caracol",
+        "city": "Guayaquil",
+        "description": "Un lugar icónico en Guayaquil especializado en mariscos frescos, donde el seco de langostinos con coco se sirve con arroz, ofreciendo una experiencia auténtica de la costa ecuatoriana."
+      },
+      {
+        "name": "Mercado Municipal de Manta",
+        "city": "Manta",
+        "description": "En este vibrante mercado, puedes probar versiones caseras de seco de langostinos con coco en puestos locales, acompañadas de frutas tropicales, capturando el espíritu culinario de la región costera."
+      },
+      {
+        "name": "Restaurante La Costa",
+        "city": "Esmeraldas",
+        "description": "Famoso por sus platos de mariscos, este restaurante ofrece el seco con coco como especialidad, usando ingredientes ultra frescos del Pacífico, ideal para turistas explorando la diáspora ecuatoriana."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Langostinos frescos",
+        "substitute": "Camarones medianos",
+        "notes": "Fáciles de encontrar en supermercados como Walmart en EE.UU. o Carrefour en Europa, manteniendo un sabor similar pero más asequible."
+      },
+      {
+        "original": "Leche de coco fresca",
+        "substitute": "Leche de coco en lata",
+        "notes": "Disponible en tiendas asiáticas o secciones internacionales de supermercados en EE.UU. y Europa, como Tesco, para un sabor casi idéntico con menor preparación."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil o albahaca",
+        "notes": "Se puede comprar en cualquier supermercado local en EE.UU. o Europa si el cilantro no está disponible, aunque alterará ligeramente el aroma tradicional."
+      }
+    ],
+    "estimated_cost": "$12.50 USD",
+    "youtube_videos": [
+      {
+        "title": "ENCOCADO DE CAMARÓN",
+        "videoId": "kLV6TW33xHg",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=kLV6TW33xHg",
+        "embed": "https://www.youtube-nocookie.com/embed/kLV6TW33xHg",
+        "uploadDate": "2020-11-06",
+        "description": "Desde la provincia verde hasta tu mesa! #EncocadoDeCamarón #KWAEC\n\nIngredientes:\nCamarones 500 gr\nCoco Rayado 200 gr\nAgua de coco 350 gr\nAchiote 30 ml\nPasta de ajo 30 gr\nCebolla colorada 100 gr\nCeboll"
+      },
+      {
+        "title": "Arroz con COCO y camarones al AJILLO | KWA",
+        "videoId": "p00i2uq2hz8",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=p00i2uq2hz8",
+        "embed": "https://www.youtube-nocookie.com/embed/p00i2uq2hz8",
+        "uploadDate": "2024-09-13",
+        "description": "No te pierdas probar esta DELICIA, una combinación que no te puedes perder! #ArrozConCoco #CamaronesAlAjillo #KWAEC \n\nEncuentra todos los ingredientes aquí:\nhttps://recetaskwa.com/2024/09/13/arroz-de-"
+      },
+      {
+        "title": "Camarones Encocados Ecuatorianos - ENCOCADO DE CAMARON",
+        "videoId": "jmzh7-mB3lc",
+        "channel": "Cocina Facilito con ISA",
+        "url": "https://www.youtube.com/watch?v=jmzh7-mB3lc",
+        "embed": "https://www.youtube-nocookie.com/embed/jmzh7-mB3lc",
+        "uploadDate": "2023-09-14",
+        "description": "Camarones Encocados Ecuatorianos - ENCOCADO DE CAMARON. Los Mejores Camarones Encocados ecuatorianos."
+      }
+    ],
+    "image_url": "https://i.ytimg.com/vi/jmzh7-mB3lc/hqdefault.jpg",
+    "_image_source": "youtube_thumbnail",
+    "id": 77,
+    "created_at": "2026-03-13T16:22:58.664Z"
+  },
+  {
     "slug": "caldo-de-bolas-ecuatoriano-de-la-sierra",
     "title": "Caldo de Bolas Ecuatoriano de la Sierra Receta Tradicional con Variación de Vegetales Andinos",
     "description": "Caldo de bolas ecuatoriano es una sopa reconfortante de la sierra ecuatoriana, con bolas de masa hechas de yuca y plátano verde, enriquecida con vegetales andinos como chochos y habas para un sabor auténtico y nutritivo. Esta receta incluye variantes regionales para una experiencia casera inolvidable.",

@@ -1,5 +1,145 @@
 [
   {
+    "slug": "llapingachos-de-la-sierra-con-hierbas-aromaticas",
+    "title": "Llapingachos Ecuatorianos de la Sierra Receta Tradicional con Hierbas Aromáticas",
+    "description": "Llapingachos de la Sierra son tortas de papa fritas típicas de Ecuador, enriquecidas con hierbas aromáticas para un sabor fresco y auténtico. Esta receta incluye ingredientes regionales y pasos detallados para recrear el plato en casa, perfecto para comidas familiares.",
+    "region": "Sierra",
+    "category": "Platos Fuertes",
+    "difficulty": "Facil",
+    "servings": "4 personas",
+    "prep_time": "20 min",
+    "cook_time": "20 min",
+    "total_time": "40 min",
+    "ingredients": [
+      "1 kg Papas (comprar en Supermaxi)",
+      "200 g Queso fresco (comprar en Megamaxi)",
+      "1 unidad mediana Cebolla blanca (comprar en TIA)",
+      "1/2 taza picada Cilantro fresco (comprar en Mercado local)",
+      "1/4 taza picada Perejil fresco (comprar en Supermaxi)",
+      "1 cucharadita Achiote en polvo (comprar en Megamaxi)",
+      "1 cucharadita Sal (comprar en TIA)",
+      "1/2 litro Aceite vegetal para freír (comprar en Mercado local)",
+      "2 dientes Ajo (comprar en Supermaxi)",
+      "1/2 cucharadita Pimienta negra (comprar en Megamaxi)"
+    ],
+    "instructions": [
+      "Paso 1: Lave y pele 1 kg de papas, luego córtelas en cubos y hierva en agua con sal durante 15 minutos a fuego medio hasta que estén suaves.",
+      "Paso 2: Escurra las papas y macháquelas en un bol grande mientras aún están calientes, agregue 200 g de queso fresco desmenuzado y deje enfriar por 5 minutos.",
+      "Paso 3: En una sartén, dore 1 cebolla blanca picada fina y 2 dientes de ajo durante 3 minutos a fuego medio, luego incorpore 1 cucharadita de achiote en polvo.",
+      "Paso 4: Mezcle la preparación de cebolla con las papas machacadas, añada 1/2 taza de cilantro picado, 1/4 taza de perejil picado, 1 cucharadita de sal y 1/2 cucharadita de pimienta, amasando hasta formar una masa homogénea.",
+      "Paso 5: Forme bolas del tamaño de una pelota de golf con la masa y aplástelas en tortas de aproximadamente 1 cm de espesor, deje reposar por 10 minutos.",
+      "Paso 6: Caliente 1/2 litro de aceite vegetal en una sartén a 180°C y fría las tortas por 3-4 minutos por cada lado hasta que estén doradas y crujientes.",
+      "Paso 7: Retire las tortas del aceite y escúrralas en papel absorbente por 2 minutos antes de servir calientes."
+    ],
+    "tips": [
+      "Consejo 1 del chef profesional: Use hierbas aromáticas frescas como cilantro y perejil para realzar el sabor tradicional de la Sierra, evitando las secas para un aroma más intenso.",
+      "Consejo 2: Para una textura más crujiente, refrigere las tortas formadas por 15 minutos antes de freírlas, lo que ayuda a mantener su forma durante la cocción."
+    ],
+    "origin_cities": [
+      "Quito",
+      "Ambato"
+    ],
+    "image_keywords": [
+      "llapingachos ecuatorianos",
+      "tortas de papa sierra ecuador",
+      "plato tradicional con hierbas"
+    ],
+    "image_alt": "Fotografía de llapingachos ecuatorianos de la Sierra con hierbas aromáticas, mostrando tortas doradas y crujientes servidas en un plato",
+    "seo_keywords": [
+      "receta de llapingachos ecuatorianos con hierbas aromaticas de la sierra",
+      "como hacer llapingachos tradicionales de ecuador paso a paso",
+      "llapingachos de papa y queso con variantes regionales",
+      "platos tipicos de la sierra ecuatoriana con hierbas frescas",
+      "mejor receta de llapingachos para principiantes en casa",
+      "ingredientes autenticos para llapingachos ecuatorianos"
+    ],
+    "faqs": [
+      {
+        "q": "¿Qué son los llapingachos y de dónde provienen?",
+        "a": "Los llapingachos son tortas fritas de papa y queso originarias de la Sierra ecuatoriana, específicamente de ciudades como Quito y Ambato. Se preparan con hierbas aromáticas para añadir sabor y son un plato principal en comidas tradicionales."
+      },
+      {
+        "q": "¿Puedo hacer llapingachos sin freír para una versión más saludable?",
+        "a": "Sí, puede hornear los llapingachos en lugar de freírlos. Precaliente el horno a 200°C, coloque las tortas en una bandeja y hornee por 15-20 minutos por lado para reducir el aceite mientras mantiene el sabor."
+      },
+      {
+        "q": "¿Cuáles son las hierbas aromáticas recomendadas para esta receta?",
+        "a": "Para los llapingachos de la Sierra, se recomiendan hierbas como cilantro y perejil fresco, que aportan un aroma característico. En regiones con clima frío, el orégano también funciona como alternativa para un toque más robusto."
+      },
+      {
+        "q": "¿Cuánto duran los llapingachos refrigerados?",
+        "a": "Los llapingachos refrigerados pueden durar hasta 2 días en un contenedor hermético. Recaliente en una sartén o horno para restaurar la textura crujiente, evitando el microondas para no ablandarlos."
+      }
+    ],
+    "places": [
+      {
+        "name": "Restaurante El Maple",
+        "city": "Quito",
+        "description": "Un lugar icónico en Quito donde probar llapingachos tradicionales con hierbas aromáticas, servido con chorizo y ensalada en un ambiente familiar."
+      },
+      {
+        "name": "Mercado Central de Ambato",
+        "city": "Ambato",
+        "description": "En este vibrante mercado, encuentre vendedores locales que ofrecen llapingachos frescos con variantes de hierbas, ideal para una experiencia auténtica de la Sierra."
+      },
+      {
+        "name": "La Casa de la Abuela",
+        "city": "Riobamba",
+        "description": "Un restaurante cozy en Riobamba que sirve llapingachos con hierbas aromáticas como plato estrella, acompañado de bebidas tradicionales ecuatorianas."
+      }
+    ],
+    "substitutions": [
+      {
+        "original": "Queso fresco",
+        "substitute": "Queso feta",
+        "notes": "Disponible en supermercados como Walmart en EE.UU. o Carrefour en Europa; proporciona un sabor similar aunque más salado."
+      },
+      {
+        "original": "Achiote en polvo",
+        "substitute": "Pimentón ahumado",
+        "notes": "Fácil de encontrar en tiendas de especias en EE.UU. o mercados europeos; use la misma cantidad para mantener el color y el sabor ahumado."
+      },
+      {
+        "original": "Cilantro fresco",
+        "substitute": "Perejil o albahaca",
+        "notes": "En EE.UU., compre en Whole Foods; en Europa, en Lidl; estas hierbas ofrecen un aroma fresco similar para adaptarse a preferencias."
+      }
+    ],
+    "estimated_cost": "$5.00 USD",
+    "youtube_videos": [
+      {
+        "title": "LLAPINGACHO",
+        "videoId": "S9HdmW8FHFU",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=S9HdmW8FHFU",
+        "embed": "https://www.youtube-nocookie.com/embed/S9HdmW8FHFU",
+        "uploadDate": "2018-09-07",
+        "description": "Después de ver esta receta, la dieta tiene que esperar.\n\nSIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMAIL.COM\n\nCanción:\nJoakim Karud - Love mode\nhttp://twitt"
+      },
+      {
+        "title": "Llapingachos de papa con SALSA DE MANÍ | KWA",
+        "videoId": "Un7WxYDq_4c",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=Un7WxYDq_4c",
+        "embed": "https://www.youtube-nocookie.com/embed/Un7WxYDq_4c",
+        "uploadDate": "2024-06-14",
+        "description": "Aprende a preparar estos deliciosos #Llapingachos de papa de una manera super fácil y rápida. Acompáñalos con una #SalsaDeManí #Deliciosa #KWAEC\n\nEncuentra todos los ingredientes aquí:\nhttps://recetas"
+      },
+      {
+        "title": "Prueba esta RECETA de LLAPINGACHOS",
+        "videoId": "mEWRnj5tJXw",
+        "channel": "KWA",
+        "url": "https://www.youtube.com/watch?v=mEWRnj5tJXw",
+        "embed": "https://www.youtube-nocookie.com/embed/mEWRnj5tJXw",
+        "uploadDate": "2024-06-18",
+        "description": "#Llapingachos con #SalsaDeMani y #longaniza , combinación PERFECTA!\n\nSIGUENOS:\nFB: https://tinyurl.com/ybs5zysg\nIG: @KWA.EC\n\nMás recetas aqui: https://recetaskwa.com\n\nCONTACTO/BUSINESS: KWAVIDEOEC@GMA"
+      }
+    ],
+    "_image_source": "pending",
+    "id": 78,
+    "created_at": "2026-03-14T10:22:36.616Z"
+  },
+  {
     "slug": "seco-de-langostinos-ecuatoriano-con-coco-de-la-costa",
     "title": "Seco de Langostinos Ecuatoriano con Coco Receta Tradicional",
     "description": "Seco de langostinos ecuatoriano con coco es un estofado costero exquisito que combina mariscos frescos con sabores tropicales. Esta receta tradicional de Ecuador usa ingredientes locales para un plato aromático y cremoso, ideal para cenas especiales, con un toque de cilantro y especias que realzan el sabor del coco.",
